@@ -264,3 +264,82 @@ def all_perfect_numbers(x):
         if sum([i for i in range(1, n) if n % i == 0]) == n:
             result.append(n)
     return result
+
+
+####### List relayted questions #######
+
+# A python function that takes a list and returns the largest element of the list.
+def largest_element(l):
+    if not l:
+        return None
+
+    return max(l)
+
+
+# A python function that takes a list and returns the second largest element of the list.
+# For example if the list is [0,1,2] the second largest element is 1.
+# For example if the list is [0,1,2,2] the second largest element is 2.
+def second_largest_element(l):
+    if len(l)<=1:
+        return None
+    l.sort()
+
+    return l[-2]
+
+
+# A python function that takes a list and returns the n-th largest element of the list.
+# For example if the list is [2,2,2,2] the fourth largest element is 2.
+# For example if the list is [7,7,0,1,0,1,5] the fourth largest element is 1.
+def nth_largest_element(l,n):
+    if len(l) < n or n <= 0:
+        return None
+    l.sort()
+
+    return l[-n]
+
+
+# A python function that takes a list and returns the smallest element of the list.
+def smallest_element(l):
+    if not l:
+        return None
+
+    return min(l)
+
+
+# A python function that takes a list and returns the second smallest element of the list.
+# For example if the list is [0,1,2] the second smallest element is 1.
+# For example if the list is [2,0,1,0,1] the second smallest element is 0.
+# For example if the list is [2,1,0,1,1,2] the second smallest element is 1.
+def second_smallest_element(l):
+    if len(l)<=1:
+        return None
+    l.sort()
+
+    return l[1]
+
+
+# A python function that takes a list and returns the n-th smallest element of the list.
+# For example if the list is [2,2,2,2] the fourth smallest element is 2.
+# For example if the list is [7,7,0,1,0,1,5] the fourth smallest element is 1.
+def nth_smallest_element(l,n):
+    if len(l) < n or n <= 0:
+        return None
+    l.sort()
+
+    return l[n-1]
+
+
+# A python function that takes a list and returns the list of all sublists of the original list.
+def all_sublists(l):
+    from itertools import combinations
+    result = []
+    for i in range(0, len(l) + 1):
+        result = result + (list(combinations(l, i)))
+
+    return [list(i) for i in result]
+
+
+print(all_sublists([1,2,3]))
+
+    
+    
