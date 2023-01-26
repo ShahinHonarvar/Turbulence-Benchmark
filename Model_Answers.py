@@ -447,3 +447,70 @@ def string_chars(s):
     
     return [c for c in s]
 
+
+# A python function that takes a string and returns the number of all vowels (both lower case and upper case) in the string.
+def count_vowels(s):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    count = 0
+    s = s.lower()
+    for c in s:
+        if c in vowels:
+            count += 1
+    
+    return count
+
+
+# A python function that takes a string of length at least three and finds all palindrome sequences of size x in the string.
+# The function should return the list of the palindrome sequences. If there is no palindrome sequence of size x in the string, the function should return None.
+# For example, a palindrome sequence of size 3 in "ev en" is "eve".
+# For example, a palindrome sequence of size 4 in "Yesterday we met Anna" is "anna".
+def find_all_palindrome_x(s, x):
+    if len(s) <= 2 or x <= 2 or x > len(s):
+        return None
+
+    s = s.lower()
+    s = s.replace(" ", "")
+    all_palindrome = []
+    for i in range(0, len(s)):
+        chunk = s[i:i + x]
+        if len(chunk) < x:
+            break
+        if chunk == chunk[::-1]:
+            all_palindrome.append(chunk)
+
+    if len(all_palindrome) > 0:
+        return all_palindrome
+    else:
+        return None
+
+
+# A python function that takes a string of length at least three and finds all palindrome sequences of size at least three in the string.
+# The function should return the list of the palindrome sequences. If there is no palindrome sequence in the string, the function should return None.
+# For example, if "ev en" is given to the function, it should return ['eve'].
+# For example, if "Imperial College" is given to the function, it should return ['ege'].
+# For example, if "Yesterday we met Anna" is given to the function, it should return ['eme', 'anna'].
+def find_all_palindrome(s):
+    if len(s) <= 2:
+        return None
+    s = s.lower()
+    s = s.replace(" ", "")
+    c = 3
+    all_palindrome = []
+    for _ in range(0, len(s) - 2):
+        for i in range(0, len(s)):
+            chunk = s[i:i + c]
+            if len(chunk) < c:
+                break
+            if chunk == chunk[::-1]:
+                all_palindrome.append(chunk)
+        c += 1
+
+    if len(all_palindrome) > 0:
+        return all_palindrome
+    else:
+        return None
+    
+
+print(find_all_palindrome('Yesterday we met anna'))
+
+    
