@@ -329,9 +329,24 @@ def nth_smallest_element(l,n):
     return l[n-1]
 
 
+# A python function takes two lists and return a new list of all similar elements.
+def similar_elements(l1,l2):
+    
+    result = []
+    if not l1 or not l2:
+        return result
+    
+    for i in l1:
+        if i in l2 and i not in result:
+            result.append(i)
+
+    return result
+
+
 # A python function that takes a list and returns the list of all sublists of the original list.
 def all_sublists(l):
     from itertools import combinations
+
     result = []
     for i in range(0, len(l) + 1):
         result = result + (list(combinations(l, i)))
@@ -339,7 +354,96 @@ def all_sublists(l):
     return [list(i) for i in result]
 
 
-print(all_sublists([1,2,3]))
+# A python function that takes a list and returns the list of all sublists of length n of the original list.
+def all_sublists_length_n(l,n):
+    from itertools import combinations
+    
+    result = []
+    if n > len(l) or n < 0:
+        return result
+    result = result + (list(combinations(l, n)))
 
+    return [list(i) for i in result]
+
+
+# A python function that takes two lists l1 and l2 and returns true if either is a sublist of the other otherwise, it should return false.
+def if_sublist(l1,l2):
+
+    if l1 == [] or l2 == []:
+        return True
+
+    result1 = False
+    result2 = False
+    c1 = 0
+    c2 = 0
+
+    if len(l1) < len(l2):
+        for i in l1:
+            if i in l2:
+                c1 += 1
+        if len(l1) == c1:
+            result1 = True
+
+    else:
+        for i in l2:
+            if i in l1:
+                c2 += 1
+        if len(l2) == c2:
+            result1 = True
+        
+    return result1 or result2
+
+
+# A Python function takes an array of n lists.
+# The function should return a list where all the elements of the given array are sublists of the returned list.
+def original_list(l):
+    import itertools
+
+    return list(itertools.chain.from_iterable(l))
+
+
+# A python function that takes a list and removes duplicates from the list and returns the new list.
+def remove_duplicate(l):
+
+    result = []
+    if not l:
+        return result
     
+    for i in l:
+        if i not in result:
+            result.append(i)
+
+    return result
+
+
+# A python functon that takes a list of numbers and returns the average of the numbers.
+def mean_of_list(l):
+    return sum(l)/len(l)
+
+
+# A python functon that takes a list of numbers and returns the mode of the numbers.
+# If the given list has more than one mode then the function should return all of them.
+def mode_of_list(l):
+    import operator
     
+    result = []
+    d = {num: l.count(num) for num in l}
+    if all(v == 1 for v in d.values()):
+        return result
+    sorted_d = (dict(sorted(d.items(), key=operator.itemgetter(1), reverse=True)))
+    largest = list(sorted_d.values())[0]
+    for k, v in sorted_d.items():
+        if v == largest:
+            result.append(k)
+
+    return result
+
+
+# A python function that takes a string and returns the list of all characters of the string.
+def string_chars(s):
+    result = []
+    if s == '':
+        return result
+    
+    return [c for c in s]
+
