@@ -563,7 +563,7 @@ def permutations_with_repeat_length_x(l, x):
 
 
 # A python function that takes a list of characters and returns the list of
-# all possible strings of any length constructed from those characters. Repeat values are not allowed.
+# all possible strings of any length constructed from those characters. Repeat characters are not allowed.
 def all_permutations_no_repeat(l):
     from itertools import permutations
 
@@ -577,7 +577,7 @@ def all_permutations_no_repeat(l):
 
 
 # A python function that takes a list of characters and returns the list of
-# all possible strings of any length constructed from those characters. Repeat values not allowed.
+# all possible strings of any length constructed from those characters. Repeat characters are allowed.
 def all_permutations_with_repeat(l):
     from itertools import product
 
@@ -588,3 +588,48 @@ def all_permutations_with_repeat(l):
         result = result + (list(product(l, repeat=i)))
 
     return [''.join(i) for i in result]
+    
+    
+# A python function that takes a list and inserts a given element before a given index and returns the new list.
+def insert_before_index(l, e, n):
+    if n < 0:
+        return l
+    elif n >= len(l):
+        l.append(e)
+        return l
+    else:
+        return l[:n] + [e] + l[n:]
+
+
+# A python function that takes a list and inserts a given element after a given index and returns the new list.
+def insert_after_index(l, e, n):
+    if n < 0:
+        return l
+    elif n >= len(l):
+        l.append(e)
+        return l
+    else:
+        return l[:n + 1] + [e] + l[n + 1:]
+
+
+# A python function that takes a list and inserts a given element before an element in the list and returns the new list.
+def insert_before_element(l, list_e, given_e):
+    if not l:
+        return []
+    elif list_e not in l:
+        return l
+    else:
+        n = l.index(list_e)
+        return l[:n] + [given_e] + l[n:]
+
+
+# A python function that takes a list and inserts a given element after an element in the list and returns the new list.
+def insert_after_element(l, list_e, given_e):
+    if not l:
+        return []
+    elif list_e not in l:
+        return l
+    else:
+        n = l.index(list_e)
+        return l[:n + 1] + [given_e] + l[n + 1:]
+
