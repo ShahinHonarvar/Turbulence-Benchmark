@@ -146,9 +146,8 @@ def sum_prime_nums(n):
                 result.append(i)
         return sum(result)
 
-    # A python function that returns the list of all prime numbers between x and y both inclusive.
 
-
+# A python function that returns the list of all prime numbers between x and y both inclusive.
 def prime_nums_x_y(x, y):
     result = []
     if x > y:
@@ -192,6 +191,35 @@ def sum_prime_nums_x_y(x, y):
             else:
                 result.append(i)
         return sum(result)
+
+
+# A python function that takes an integer and returns a list of all composite numbers up to the integer inclusive.
+def find_composite_numbers(n):
+    result = []
+    if n < 4:
+        return result
+    else:
+        for i in range(4, n + 1):
+            for j in range(2, i):
+                if i % j == 0:
+                    result.append(i)
+                    break
+    return result
+
+
+# A python function that takes two integers and returns a list of all composite numbers between the two integers inclusive.
+def find_composite_nums_x_y(x, y):
+    result = []
+    if x > y:
+        return result
+    if x < 4:
+        x = 4
+    for i in range(x, y + 1):
+        for j in range(2, i):
+            if i % j == 0:
+                result.append(i)
+                break
+    return result
 
 
 # A python function that returns the greatest common factor of x and y.
@@ -522,7 +550,7 @@ def all_palindrome_length_3(l, x):
     return [''.join(i) for i in result if i == i[::-1]]
 
 
-# A python function that takes a list of characters and returns the list of all possible palindrome sequences made out of only those characters.
+# A Python function that accepts a list of characters and produces a list of all palindrome sequences that can be created using only those characters. All returned palindrome sequences must be at least three characters long.
 # For example, if the function takes ['t', 'e', 's', 'e', 't'] it should return ['tet', 'tst', 'tet', 'ese', 'teet', 'teset'].
 def all_palindrome_all_length(l):
     from itertools import combinations
@@ -588,8 +616,8 @@ def all_permutations_with_repeat(l):
         result = result + (list(product(l, repeat=i)))
 
     return [''.join(i) for i in result]
-    
-    
+
+
 # A python function that takes a list and inserts a given element before a given index and returns the new list.
 def insert_before_index(l, e, n):
     if n < 0:
@@ -632,4 +660,95 @@ def insert_after_element(l, list_e, given_e):
     else:
         n = l.index(list_e)
         return l[:n + 1] + [given_e] + l[n + 1:]
+
+
+# A python function that takes a string and returns characters with the lowest and highest ASCII values, respectively.
+def return_high_low_ascii(s):
+    if s == '':
+        return None
+    d = {c: ord(c) for c in s}
+
+    return min(d), max(d)
+
+
+# A python function that takes a positive integer and returns the binary representation of the given integer.
+def pos_int_to_binary(n):
+    result = ''
+    while n >= 2:
+        r = n % 2
+        n = n // 2
+        result += str(r)
+
+    result += str(n)
+
+    return result[::-1]
+
+
+# A python function that returns the sum of first n numbers of the Fibonacci sequence.
+# For example, if n = 5, the function should return 0+1+1+2+3=7.
+def sum_n_fibo(n):
+    s = 0
+    if n <= 1:
+        return s
+    f0 = 0
+    f1 = 1
+    s += f1
+    while n > 2:
+        f3 = f0 + f1
+        s += f3
+        f0, f1 = f1, f3
+        n -= 1
+
+    return s
+
+
+# A python function that returns the list of all prime numbers among the first n numbers of the Fibonacci sequence.
+def prime_nums_fibo(n):
+    result = []
+    if n <= 3:
+        return result
+    fibo = [0, 1]
+    f0 = 0
+    f1 = 1
+    while n > 2:
+        f3 = f0 + f1
+        fibo.append(f3)
+        f0, f1 = f1, f3
+        n -= 1
+
+    flag = False
+    for i in fibo[3:]:
+        for j in range(2, i):
+            if i % j == 0:
+                flag = True
+                break
+        if flag:
+            flag = False
+        else:
+            result.append(i)
+
+    return result
+
+
+# A python function that returns the list of all composite numbers among the first n numbers of the Fibonacci sequence.
+def composite_nums_fibo(n):
+    result = []
+    if n < 7:
+        return result
+    fibo = [0, 1]
+    f0 = 0
+    f1 = 1
+    while n > 2:
+        f3 = f0 + f1
+        fibo.append(f3)
+        f0, f1 = f1, f3
+        n -= 1
+
+    for i in fibo[6:]:
+        for j in range(2, i):
+            if i % j == 0:
+                result.append(i)
+                break
+
+    return result
 
