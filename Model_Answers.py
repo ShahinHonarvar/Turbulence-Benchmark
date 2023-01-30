@@ -684,6 +684,23 @@ def pos_int_to_binary(n):
     return result[::-1]
 
 
+# A python function that takes an integer and returns true if the integer is among the Fibonacci numbers otherwise it should return false.
+def is_fibo(n):
+    if n < 0:
+        return False
+    if n == 0 or n == 1:
+        return True
+    f0 = 0
+    f1 = 1
+    while True:
+        f3 = f0 + f1
+        if f3 == n:
+            return True
+        elif f3 > n:
+            return False
+        f0, f1 = f1, f3
+
+
 # A python function that returns the sum of first n numbers of the Fibonacci sequence.
 # For example, if n = 5, the function should return 0+1+1+2+3=7.
 def sum_n_fibo(n):
@@ -751,4 +768,142 @@ def composite_nums_fibo(n):
                 break
 
     return result
+
+
+# A python function takes a list of strings as input. It should return a list of separate lists each containing
+# strings from the given list that are the same length.
+def same_len_strings(ls):
+    result = {}
+    for i in ls:
+        length = len(i)
+        if length not in result:
+            result[length] = [i]
+        else:
+            result[length].append(i)
+
+    return list(result.values())
+
+
+# A python function that takes two strings and returns true if they are anagrams otherwise it should return false.
+def if_anagrams(s1, s2):
+    s1 = s1.replace(' ', '').lower()
+    s2 = s2.replace(' ', '').lower()
+    if len(s1) != len(s2):
+        return False
+    s1 = ''.join(sorted(s1))
+    s2 = ''.join(sorted(s2))
+
+    return s1 == s2
+
+
+# A python function that takes a list of strings as input and returns a list of distinct lists containing
+# anagrams from the given list.
+def all_anagrams(ls):
+    ls = [i.replace(' ', '').lower() for i in ls]
+    result = {}
+    for i in ls:
+        sorted_i = str(sorted(i))
+        if sorted_i not in result:
+            result[sorted_i] = [i]
+        else:
+            result[sorted_i].append(i)
+
+    return list(result.values())
+
+
+# A python function takes an array of strings as input. It should return the list of all strings from the given array that are numbers of any type.
+# For example, if ['1.5', '2', '35t', 'one'] is given to the function, it should return ['1.5', '2'].
+def find_numeric(ls):
+    if not ls:
+        return []
+    try:
+        float(ls[0])
+        return [ls[0]] + find_numeric(ls[1:])
+    except ValueError:
+        return find_numeric(ls[1:])
+
+
+# A python function takes an array of strings as input. It should return the list of all alphanumeric strings from the given array.
+def find_alphanumeric(ls):
+    if not ls:
+        return []
+    if ls[0].isalnum():
+        return [ls[0]] + find_alphanumeric(ls[1:])
+    else:
+        return find_alphanumeric(ls[1:])
+
+
+# A python function takes an integer as input. It should return the string representation of the integer with commas serving as the hundred separators.
+def commas_hunds(n):
+    if -100 < n < 100:
+        return n
+    flag = False
+    if n < 0:
+        flag = True
+        n = -n
+    s = str(n)[::-1]
+    result = ''
+    for i in range(0, len(s), 2):
+        if i + 2 >= len(s):
+            result = result + s[i:i + 2]
+        else:
+            result = result + s[i:i + 2] + ','
+
+    if flag:
+        return '-' + result[::-1]
+    return result[::-1]
+
+
+# A python function that takes a positive integer and returns true if the integer is a left-truncatable prime otherwise the function should return false.
+def is_left_truncatable_prime(n):
+    if '0' in str(n) or n < 2:
+        return False
+
+    while n >= 2:
+        length = len(str(n))
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        n = n % (10 ** (length - 1))
+
+    if n == 1:
+        return False
+
+    return True
+
+
+# A python function that takes a positive integer and returns true if the integer is a right-truncatable prime otherwise the function should return false.
+def is_right_truncatable_prime(n):
+    if '0' in str(n) or n < 2:
+        return False
+
+    while n >= 2:
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        n = n // 10
+
+    if n == 1:
+        return False
+
+    return True
+
+
+# A python function that takes a positive integer and returns true if the integer is a left-and-right-truncatable prime otherwise the function should return false.
+def is_left_right_truncatable_prime(n):
+    if '0' in str(n) or n < 2:
+        return False
+
+    while n >= 2:
+        length = len(str(n))
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        n = n % (10 ** (length - 1))
+        n = n // 10
+
+    if n == 1:
+        return False
+
+    return True
 
