@@ -907,3 +907,75 @@ def is_left_right_truncatable_prime(n):
 
     return True
 
+
+# A python function takes a sentence as input. It should return the list of all the words in the sentence that have duplicate characters.
+def words_with_duplicate_chars(s):
+    result = []
+    if len(s) < 2:
+        return result
+
+    words = [i for i in s.split()]
+    for word in words:
+        if len(set(word)) != len(word):
+            result.append(word)
+
+    return result
+
+
+# A python function takes a string as input. It should return the list of all longest substrings of the input with no duplicate letters.
+def longest_no_duplicate(s):
+    from itertools import combinations
+
+    if len(s) == 1 or len(set(s)) == len(s):
+        return s
+
+    all_no_dup = []
+    length = len(s) - 1
+    while length > 0:
+        chunks = [s[i:j] for i, j in combinations(range(len(s) + 1), r=2) if len(s[i:j]) == length]
+        for chunk in chunks:
+            if len(set(chunk)) == len(chunk):
+                all_no_dup.append(chunk)
+        length -= 1
+
+    dict = {}
+    for i in all_no_dup:
+        length = len(i)
+        if length not in dict:
+            dict[length] = [i]
+        else:
+            dict[length].append(i)
+    print(dict)
+    return list(set(dict[max(dict.keys())]))
+
+
+# A python function takes a string as input. It should return the list of all substrings of the length x that do not contain any duplicate characters.
+def length_x_no_duplicate(s, x):
+    from itertools import combinations
+
+    if x > len(s) or x <= 0:
+        return []
+
+    all_no_dup = []
+    length = len(s) - 1
+    while length > 0:
+        chunks = [s[i:j] for i, j in combinations(range(len(s) + 1), r=2) if len(s[i:j]) == length]
+        for chunk in chunks:
+            if len(set(chunk)) == len(chunk):
+                all_no_dup.append(chunk)
+        length -= 1
+
+    dict = {}
+    for i in all_no_dup:
+        length = len(i)
+        if length not in dict:
+            dict[length] = [i]
+        else:
+            dict[length].append(i)
+
+    result = []
+    for k, v in dict.items():
+        if k == x:
+            result = v
+
+    return result
