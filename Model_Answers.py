@@ -1073,5 +1073,18 @@ def sum_subarray_equal_n(ls, n):
         return result[0]
 
     return result
+    
+    
+# A python function takes a positive number as input. It should return the list of all combinations of positive integers in increasing order that add up to the given positive number.
+def pre_combinations_add_up(n, *, boundary=1):
+    for i in range(boundary, n - boundary + 1):
+        for j in pre_combinations_add_up(n - i, boundary=i):
+            yield (i,) + j
+    if n >= boundary:
+        yield n,
 
 
+def combinations_add_up(n):
+    tuples = pre_combinations_add_up(n)
+    return [list(i) for i in tuples]
+    
