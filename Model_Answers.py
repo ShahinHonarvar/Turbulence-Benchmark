@@ -979,3 +979,99 @@ def length_x_no_duplicate(s, x):
             result = v
 
     return result
+
+
+# A python function takes a positive integer as input. It should return the least common multiple of
+# all numbers ranging from 1 to the given integer inclusive.
+def divisible_by_nums_to_n(n):
+    from math import gcd
+
+    if n < 1:
+        return None
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i // gcd(result, i)
+
+    return result
+
+
+# A python function takes two positive integer as inputs. It should return the least common multiple of
+# all numbers between the given integers inclusive.
+def divisible_by_nums_x_y(x, y):
+    from math import gcd
+
+    if x < 1 or y < 1 or y < x:
+        return None
+
+    if x == y:
+        return x
+
+    result = 1
+    for i in range(x, y + 1):
+        result = result * i // gcd(result, i)
+
+    return result
+
+
+# A python function takes a circular integer array as input. It should return a contiguous subarray with the largest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
+def largest_sum_subarray(ls):
+    dictionary = {}
+    dictionary[sum(ls)] = [ls]
+    for j in range(len(ls)):
+        temp_ls = ls[j:] + ls[:j]
+        for i in range(1, len(temp_ls)):
+            s = sum(temp_ls[:i])
+            if s not in dictionary:
+                dictionary[s] = [temp_ls[:i]]
+            else:
+                dictionary[s].append(temp_ls[:i])
+
+    result = dictionary.get(max(dictionary.keys()))
+    if len(result) == 1:
+        return result[0]
+
+    return result
+
+
+# A python function takes a circular integer array as input. It should return a contiguous subarray with the smallest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
+def smallest_sum_subarray(ls):
+    dictionary = {}
+    dictionary[sum(ls)] = [ls]
+    for j in range(len(ls)):
+        temp_ls = ls[j:] + ls[:j]
+        for i in range(1, len(temp_ls)):
+            s = sum(temp_ls[:i])
+            if s not in dictionary:
+                dictionary[s] = [temp_ls[:i]]
+            else:
+                dictionary[s].append(temp_ls[:i])
+
+    result = dictionary.get(min(dictionary.keys()))
+    if len(result) == 1:
+        return result[0]
+
+    return result
+
+
+# A python function takes a circular integer array as input. It should return a contiguous subarray with a sum equal to a given number. If there is more than one of such subarrays, the function should return the list of all of them.
+def sum_subarray_equal_n(ls, n):
+    dictionary = {}
+    dictionary[sum(ls)] = [ls]
+    for j in range(len(ls)):
+        temp_ls = ls[j:] + ls[:j]
+        for i in range(1, len(temp_ls)):
+            s = sum(temp_ls[:i])
+            if s not in dictionary:
+                dictionary[s] = [temp_ls[:i]]
+            else:
+                dictionary[s].append(temp_ls[:i])
+
+    if n not in dictionary.keys():
+        return []
+    result = dictionary.get(n)
+    if len(result) == 1:
+        return result[0]
+
+    return result
+
+
