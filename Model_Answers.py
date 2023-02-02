@@ -1170,3 +1170,36 @@ def product_subarray_equal_n(ls, n):
         return result[0]
 
     return result
+
+
+# A Python function takes as input an integer array with distinct elements.
+# The function should find the surpasser count for each array element, that is,
+# the number of elements to the right that are greater than that element.
+# For example, if the given array is [6, 3, 5, 7], the function should return [1, 2, 1, 0]
+def surpasser_count(ls):
+    result = []
+    if len(ls) <= 1:
+        return result
+    c = 0
+    for i in range(0, len(ls) - 1):
+        for j in range(i + 1, len(ls)):
+            if ls[j] > ls[i]:
+                c += 1
+        result.append(c)
+        c = 0
+
+    result.append(0)
+    return result
+
+
+# A python function takes an integer array, It should return the list of all inversions of the given array.
+def find_inversions(ls):
+    result = []
+    if len(ls) <= 1:
+        return result
+    for i in range(0, len(ls)):
+        for j in range(i + 1, len(ls)):
+            if ls[j] < ls[i]:
+                result.append([ls[i], ls[j]])
+
+    return result
