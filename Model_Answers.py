@@ -1087,4 +1087,86 @@ def pre_combinations_add_up(n, *, boundary=1):
 def combinations_add_up(n):
     tuples = pre_combinations_add_up(n)
     return [list(i) for i in tuples]
+
+
+# A python function takes an array as input. It should return the contiguous sub-array with the highest element product.
+# If there is more than one of such sub-arrays, the function should return the list of all of them.
+def max_product_subarray(ls):
+    import math
     
+    if len(ls) < 2:
+        return ls
+    dictionary = {}
+    dictionary[math.prod(ls)] = [ls]
+
+    while len(ls) > 0:
+        for i in range(1, len(ls) + 1):
+            pr = math.prod(ls[:i])
+            if pr not in dictionary:
+                dictionary[pr] = [ls[:i]]
+            else:
+                dictionary[pr].append(ls[:i])
+
+        ls.remove(ls[0])
+
+    result = dictionary.get(max(dictionary.keys()))
+    if len(result) == 1:
+        return result[0]
+
+    return result
+
+
+# A python function takes an array as input. It should return the contiguous sub-array with the minimum element product.
+# If there is more than one of such sub-arrays, the function should return the list of all of them.
+def min_product_subarray(ls):
+    import math
+
+    if len(ls) < 2:
+        return ls
+    dictionary = {}
+    dictionary[math.prod(ls)] = [ls]
+
+    while len(ls) > 0:
+        for i in range(1, len(ls) + 1):
+            pr = math.prod(ls[:i])
+            if pr not in dictionary:
+                dictionary[pr] = [ls[:i]]
+            else:
+                dictionary[pr].append(ls[:i])
+
+        ls.remove(ls[0])
+
+    result = dictionary.get(min(dictionary.keys()))
+    if len(result) == 1:
+        return result[0]
+
+    return result
+
+
+# A python function takes a circular integer array as input. It should return a contiguous subarray with a product equal to a given number.
+# If there is more than one of such subarrays, the function should return the list of all of them.
+def product_subarray_equal_n(ls, n):
+    import math
+
+    if len(ls) < 2:
+        return ls
+    dictionary = {}
+    dictionary[math.prod(ls)] = [ls]
+
+    while len(ls) > 0:
+        for i in range(1, len(ls) + 1):
+            pr = math.prod(ls[:i])
+            if pr not in dictionary:
+                dictionary[pr] = [ls[:i]]
+            else:
+                dictionary[pr].append(ls[:i])
+
+        ls.remove(ls[0])
+    
+    if n not in dictionary.keys():
+        return []
+    result = dictionary.get(n)
+    if len(result) == 1:
+        return result[0]
+
+    return result
