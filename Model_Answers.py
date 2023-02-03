@@ -1238,3 +1238,38 @@ def element_with_max_occurrences(mat):
 
     ocurrence = Counter(itertools.chain.from_iterable(mat))
     return [k for k, v in ocurrence.items() if v == max(ocurrence.values())]
+
+
+#91) A python function takes an unsorted array X of size n, whose elements lie in the range 0 to n-1 as input.
+# The function should return a new array in which X[X[i]] is set to i for every given array's element A[i].
+#  For example, if [3, 1, 0, 2] is given to the function, then [2, 1, 3, 0] should be returned.
+def new_list_rearrangement(ls):
+    import copy
+
+    ls_copy = copy.deepcopy(ls)
+    for i in range(len(ls)):
+        ls_copy[ls[i]] = i
+    return ls_copy
+
+
+#92) A python function takes two arrays of the same size as inputs.
+# The function should return the longest subarrays from both arrays that start and end at the same index in both arrays and have the same sum.
+# For example, if [7, 13, 1, 6] and [0, 2, 12, 0] are passed to the function then it should return ([13, 1], [2, 12]).
+def longest_subarrays_same_sum(X, Y):
+    if not X or not Y or len(X) != len(Y):
+        return None
+    d = {}
+    for i in range(len(X)):
+        for j in range(i + 1, len(X)):
+            sum_sub_X = sum(X[i:j])
+            if sum_sub_X == sum(Y[i:j]):
+                if sum_sub_X not in d:
+                    d[sum_sub_X] = [i, j]
+                else:
+                    v = d.get(sum_sub_X)
+                    if v[1] - v[0] < j - i:
+                        d[sum_sub_X] = [i, j]
+    if not d:
+        return None
+    i, j = d.get(max(d.keys()))
+    return X[i:j], Y[i:j]
