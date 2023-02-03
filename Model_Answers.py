@@ -377,7 +377,7 @@ def all_sublists(l):
 
     result = []
     for i in range(0, len(l) + 1):
-        result = result + (list(combinations(l, i)))
+        result += (list(combinations(l, i)))
 
     return [list(i) for i in result]
 
@@ -389,7 +389,7 @@ def all_sublists_length_n(l, n):
     result = []
     if n > len(l) or n < 0:
         return result
-    result = result + (list(combinations(l, n)))
+    result += (list(combinations(l, n)))
 
     return [list(i) for i in result]
 
@@ -545,7 +545,7 @@ def all_palindrome_length_3(l, x):
     result = []
     if len(l) < x or x < 3 or len(l) < 3:
         return result
-    result = result + (list(combinations(l, x)))
+    result += (list(combinations(l, x)))
 
     return [''.join(i) for i in result if i == i[::-1]]
 
@@ -559,7 +559,7 @@ def all_palindrome_all_length(l):
     if len(l) < 3:
         return result
     for i in range(3, len(l) + 1):
-        result = result + (list(combinations(l, i)))
+        result += (list(combinations(l, i)))
 
     return [''.join(i) for i in result if i == i[::-1]]
 
@@ -572,7 +572,7 @@ def permutations_no_repeat_length_x(l, x):
     result = []
     if len(l) < x or x < 1:
         return result
-    result = result + (list(permutations(l, x)))
+    result += (list(permutations(l, x)))
 
     return [''.join(i) for i in result]
 
@@ -585,7 +585,7 @@ def permutations_with_repeat_length_x(l, x):
     result = []
     if len(l) < x or x < 1:
         return result
-    result = result + (list(product(l, repeat=x)))
+    result += (list(product(l, repeat=x)))
 
     return [''.join(i) for i in result]
 
@@ -599,7 +599,7 @@ def all_permutations_no_repeat(l):
     if len(l) < 1:
         return result
     for i in range(1, len(l) + 1):
-        result = result + (list(permutations(l, i)))
+        result += (list(permutations(l, i)))
 
     return [''.join(i) for i in result]
 
@@ -613,7 +613,7 @@ def all_permutations_with_repeat(l):
     if len(l) < 1:
         return result
     for i in range(1, len(l) + 1):
-        result = result + (list(product(l, repeat=i)))
+        result += (list(product(l, repeat=i)))
 
     return [''.join(i) for i in result]
 
@@ -845,9 +845,9 @@ def commas_hunds(n):
     result = ''
     for i in range(0, len(s), 2):
         if i + 2 >= len(s):
-            result = result + s[i:i + 2]
+            result += s[i:i + 2]
         else:
-            result = result + s[i:i + 2] + ','
+            result += s[i:i + 2] + ','
 
     if flag:
         return '-' + result[::-1]
@@ -1178,7 +1178,7 @@ def product_subarray_equal_n(ls, n):
 # For example, if the given array is [6, 3, 5, 7], the function should return [1, 2, 1, 0]
 def surpasser_count(ls):
     result = []
-    if len(ls) <= 1:
+    if len(ls) <= 1 or len(ls)!=len(set(ls)):
         return result
     c = 0
     for i in range(0, len(ls) - 1):
@@ -1255,21 +1255,96 @@ def new_list_rearrangement(ls):
 #92) A python function takes two arrays of the same size as inputs.
 # The function should return the longest subarrays from both arrays that start and end at the same index in both arrays and have the same sum.
 # For example, if [7, 13, 1, 6] and [0, 2, 12, 0] are passed to the function then it should return ([13, 1], [2, 12]).
+# For example, if [1, 1, 1, 6] and [1, 2, 12, 6] are passed to the function then it should return [([1], [1]), ([6], [6])].
 def longest_subarrays_same_sum(X, Y):
     if not X or not Y or len(X) != len(Y):
         return None
-    d = {}
+    d = []
+    flag = False
+    i_j_diff = 0
     for i in range(len(X)):
-        for j in range(i + 1, len(X)):
-            sum_sub_X = sum(X[i:j])
-            if sum_sub_X == sum(Y[i:j]):
-                if sum_sub_X not in d:
-                    d[sum_sub_X] = [i, j]
-                else:
-                    v = d.get(sum_sub_X)
-                    if v[1] - v[0] < j - i:
-                        d[sum_sub_X] = [i, j]
+        for j in range(i + 1, len(X) + 1):
+            if sum(X[i:j]) == sum(Y[i:j]):
+                if i_j_diff == j - i:
+                    flag = True
+                i_j_diff = j - i
+                d.append((i, j))
     if not d:
         return None
-    i, j = d.get(max(d.keys()))
+    maxim = -1
+    result = (-1, -1)
+
+    if flag:
+        subarrays = []
+        for tup in d:
+            ii = tup[0]
+            jj = tup[1]
+            subarrays.append((X[ii:jj], Y[ii:jj]))
+        return subarrays
+
+    for tup in d:
+        diff = tup[1] - tup[0]
+        if diff >= maxim:
+            maxim = diff
+            result = tup
+
+    i = result[0]
+    j = result[1]
     return X[i:j], Y[i:j]
+
+
+#93) A python function takes two arrays of the same size as inputs.
+# The function should return the longest subarrays from both arrays that start and end at the same index in both arrays and have the same product.
+# For example, if [2, 5, 1, 6] and [0, 1, 30, 1] are passed to the function then it should return ([5, 1, 6], [1, 30, 1]).
+def longest_subarrays_same_product(X, Y):
+    from math import prod
+
+    if not X or not Y or len(X) != len(Y):
+        return None
+    d = []
+    for i in range(len(X)):
+        for j in range(i + 1, len(X) + 1):
+            if prod(X[i:j]) == prod(Y[i:j]):
+                d.append((i, j))
+
+    if not d:
+        return None
+    maxim = -1
+    result = (-1, -1)
+    for tup in d:
+        diff = tup[1] - tup[0]
+        if diff > maxim:
+            maxim = diff
+            result = tup
+    i = result[0]
+    j = result[1]
+    return X[i:j], Y[i:j]
+
+
+#94) A python function takes an array of integers as input. The function should return a pair of two disjoint subarrays which completely cover the given array and have the same sum.
+# If there is more than a pair of such subarrays, the function should return the list of all such pairs.
+def subarrays_equal_sum(l):
+    from itertools import combinations
+
+    if len(l) < 2 or sum(l) % 2 != 0:
+        return []
+    l = sorted(l)
+    list_sum = sum(l)
+    all_combinations = []
+    for i in range(1, len(l)):
+        all_combinations += (list(combinations(l, i)))
+
+    combinations_list = [i for i in all_combinations if sum(i) == list_sum / 2]
+    if not combinations_list:
+        return []
+    final_result = []
+    for i in range(len(combinations_list)):
+        for j in range(i + 1, len(combinations_list)):
+            first = combinations_list[i]
+            second = combinations_list[j]
+            concat = sorted(first + second)
+            if concat == l and [list(first), list(second)] not in final_result:
+                final_result.append([list(first), list(second)])
+
+    return final_result
+
