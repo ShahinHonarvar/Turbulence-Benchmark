@@ -1348,3 +1348,44 @@ def subarrays_equal_sum(l):
 
     return final_result
 
+
+#95) A python function takes an array of possitive integers and a number as inputs.
+# The function should return all distinc lists of which elements are from the given array and each of which sum equals the given number. Repeat elements in the returned lists are allowed.
+# For example, if the given array and number are [1,2,3] and 4, respectively the function should return [[1,1,1,1],[1,1,2],[2,2],[1,3]].
+def all_lists_sum_equal_to_n(arr, n):
+    result = []
+    if not arr or sum(arr) < n:
+        return result
+    for i in arr:
+        if i <= 0:
+            return result
+    all_lists_to_n = combinations_add_up(n)
+    for i in all_lists_to_n:
+        if set(i).issubset(set(arr)):
+            result.append(i)
+
+    return result
+
+
+#96) A python function takes a circular integer array as input. It should return a new array containing the next greater element for each element in the original array.
+# If there is no next greater element for an element, then the function should insert None in the corresponding index of the returned array.
+# The next greater element of an element "x" in the array is the first larger number to the right side of "x".
+def next_greater_element(arr):
+    result = []
+    if not arr:
+        return result
+    if len(arr) == 1:
+        return [None]
+
+    for i in range(len(arr)):
+        temp_ls = arr[i:] + arr[:i]
+        first_element = temp_ls[0]
+        for j in range(1, len(temp_ls)):
+            next_element = temp_ls[j]
+            if next_element > first_element:
+                result.append(next_element)
+                break
+            if j == len(temp_ls) - 1:
+                result.append(None)
+
+    return result
