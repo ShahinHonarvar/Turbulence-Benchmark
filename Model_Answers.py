@@ -1321,8 +1321,8 @@ def longest_subarrays_same_product(X, Y):
     return X[i:j], Y[i:j]
 
 
-#94) A python function takes an array of integers as input. The function should return a pair of two disjoint subarrays which completely cover the given array and have the same sum.
-# If there is more than a pair of such subarrays, the function should return the list of all such pairs.
+#94) A python function takes an array of only positive integers as input. The function should return the list of all possible combination of "k" distinct disjoint lists which completely cover the given array and have the same sum.
+# For example, if the given array is []
 def subarrays_equal_sum(l):
     from itertools import combinations
 
@@ -1352,19 +1352,156 @@ def subarrays_equal_sum(l):
 #95) A python function takes an array of possitive integers and a number as inputs.
 # The function should return all distinc lists of which elements are from the given array and each of which sum equals the given number. Repeat elements in the returned lists are allowed.
 # For example, if the given array and number are [1,2,3] and 4, respectively the function should return [[1,1,1,1],[1,1,2],[2,2],[1,3]].
-def all_lists_sum_equal_to_n(arr, n):
-    result = []
-    if not arr or sum(arr) < n:
-        return result
-    for i in arr:
-        if i <= 0:
-            return result
-    all_lists_to_n = combinations_add_up(n)
-    for i in all_lists_to_n:
-        if set(i).issubset(set(arr)):
-            result.append(i)
+from collections import namedtuple
+class AbsComparator(int):
+    def __lt__(self, other):
+        if abs(int(self)) < abs(int(other)):
+            return True
+        elif abs(other) < abs(self):
+            return False
+        else:
+            return int(self) < int(other)
 
-    return result
+
+def abs_lt(x, y):
+    return AbsComparator(x) < AbsComparator(y)
+
+
+class RecursiveSums(
+    namedtuple('BaseRecursiveSums',
+               ['value', 'repeat', 'skip', 'tail', 'prev'])):
+
+    def sum_and_rest(self):
+        if self.tail is None:
+            if self.skip:
+                yield [self.value] * self.repeat, [(self.value, self.skip)]
+            else:
+                yield [self.value] * self.repeat, []
+        else:
+            for partial_sum, rest in self.tail.sum_and_rest():
+                for _ in range(self.repeat):
+                    partial_sum.append(self.value)
+                if self.skip:
+                    rest.append((self.value, self.skip))
+                yield partial_sum, rest
+        if self.prev is not None:
+            yield from self.prev.sum_and_rest()
+
+
+def lexically_maximal_subset_rest(elements, target, bound=None):
+    """
+        elements = [(value, count), (value, count), ...]
+            with largest absolute values first.
+        target = target sum
+        bound = a lexical bound on the maximal subset.
+    """
+    # First let's deal with all of the trivial cases.
+    if 0 == len(elements):
+        if 0 == target:
+            yield []
+    elif bound is None or 0 == len(bound):
+        # Set the bound to something that trivially works.
+        yield from lexically_maximal_subset_rest(elements, target, [abs(elements[0][0]) + 1])
+    elif bound[0] < elements[0][0]:
+        pass  # we automatically use more than the bound.
+    else:
+        # The trivial checks are done.
+
+        bound_satisfied = (bound[0] != elements[0][0])
+
+        # recurse_by_sum will have a key of (partial_sum, bound_index).
+        # If the bound_index is None, the bound is satisfied.
+        # Otherwise it will be the last used index in the bound.
+        recurse_by_sum = {}
+        # Populate it with all of the ways to use the first element at least once.
+        (init_value, init_count) = elements[0]
+        for i in range(init_count):
+            if not bound_satisfied:
+                if len(bound) <= i or bound[i] < init_value:
+                    # Bound exceeded.
+                    break
+                elif init_value < bound[i]:
+                    bound_satisfied = True
+            if bound_satisfied:
+                key = (init_value * (i + 1), None)
+            else:
+                key = (init_value * (i + 1), i)
+
+            recurse_by_sum[key] = RecursiveSums(
+                init_value, i + 1, init_count - i - 1, None, recurse_by_sum.get(key))
+
+        # And now we do the dynamic programming thing.
+        for j in range(1, len(elements)):
+            value, repeat = elements[j]
+            next_recurse_by_sum = {}
+            for key, tail in recurse_by_sum.items():
+                partial_sum, bound_index = key
+                # Record not using this value at all.
+                next_recurse_by_sum[key] = RecursiveSums(
+                    value, 0, repeat, tail, next_recurse_by_sum.get(key))
+                # Now record the rest.
+                for i in range(1, repeat + 1):
+                    if target < partial_sum + value * i:
+                        break  # these are too big.
+
+                    if bound_index is not None:
+                        # Bounds check.
+                        if len(bound) <= bound_index + i:
+                            break  # bound exceeded.
+                        elif bound[bound_index + i] < value:
+                            break  # bound exceeded.
+                        elif value < bound[bound_index + i]:
+                            bound_index = None  # bound satisfied!
+                    if bound_index is None:
+                        next_key = (partial_sum + value * i, None)
+                    else:
+                        next_key = (partial_sum + value * i, bound_index + i)
+
+                    next_recurse_by_sum[next_key] = RecursiveSums(
+                        value, i, repeat - i, tail, next_recurse_by_sum.get(next_key))
+            recurse_by_sum = next_recurse_by_sum
+
+        # We now have all of the answers in recurse_by_sum, but in several keys.
+        # Find all that may have answers.
+        bound_index = len(bound)
+        while 0 < bound_index:
+            bound_index -= 1
+            if (target, bound_index) in recurse_by_sum:
+                yield from recurse_by_sum[(target, bound_index)].sum_and_rest()
+        if (target, None) in recurse_by_sum:
+            yield from recurse_by_sum[(target, None)].sum_and_rest()
+
+
+def elements_split(elements, target, k, bound=None):
+    if 0 == len(elements):
+        if k == 0:
+            yield []
+    elif k == 0:
+        pass  # still have elements left over.
+    else:
+        for (subset, rest) in lexically_maximal_subset_rest(elements, target, bound):
+            for answer in elements_split(rest, target, k - 1, subset):
+                answer.append(subset)
+                yield answer
+
+
+def list_of_equal_sum_split(raw_elements, k):
+    if k < 1 or not raw_elements:
+        return None
+    for i in raw_elements:
+        if i < 1:
+            return None
+    total = sum(raw_elements)
+    if (total % k) != 0:
+        return None
+    else:
+        target = total // k
+        counts = {}
+        for e in sorted(raw_elements, key=AbsComparator, reverse=True):
+            counts[e] = 1 + counts.get(e, 0)
+        elements = list(counts.items())
+        result = elements_split(elements, target, k)
+        return [i for i in result]
 
 
 #96) A python function takes a circular integer array as input. It should return a new array containing the next greater element for each element in the original array.
@@ -1389,3 +1526,6 @@ def next_greater_element(arr):
                 result.append(None)
 
     return result
+
+
+    
