@@ -1528,4 +1528,50 @@ def next_greater_element(arr):
     return result
 
 
-    
+#97) A python function takes a matrix of real numbers. It should return a submatrix of size "n" by "n" in the given matrix that has the largest sum.
+def submatrix_with_max_sum(mat, n):
+    import math
+    import numpy as np
+
+    if not mat or n < 1:
+        return None
+    if type(mat).__module__ != np.__name__:
+        mat = np.asmatrix(mat)
+    max_sum = -math.inf
+    submat = mat[:0, :0]
+    height, width = mat.shape[0], mat.shape[1]
+    for i in range(height - (n - 1)):
+        for j in range(width - (n - 1)):
+            square = mat[i:i + n, j:j + n]
+            submat_sum = np.sum(square, dtype=np.float32)
+            if submat_sum > max_sum:
+                max_sum = submat_sum
+                submat = square
+
+    return submat
+
+
+#98) A python function takes a matrix of real numbers. It should return a square submatrix of in the given matrix that has the largest sum.
+def square_submatrix_with_max_sum(mat):
+    import math
+    import numpy as np
+
+    if not mat:
+        return None
+    if type(mat).__module__ != np.__name__:
+        mat = np.asmatrix(mat)
+    max_sum = -math.inf
+    submat = mat[:0, :0]
+    height, width = mat.shape[0], mat.shape[1]
+
+    boundary = max(height, width)
+    for k in range(1, boundary + 1):
+        for i in range(height - (k - 1)):
+            for j in range(width - (k - 1)):
+                square = mat[i:i + k, j:j + k]
+                submat_sum = np.sum(square, dtype=np.float32)
+                if submat_sum > max_sum:
+                    max_sum = submat_sum
+                    submat = square
+
+    return submat  
