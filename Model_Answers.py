@@ -1529,7 +1529,7 @@ def next_greater_element(arr):
 
 
 #97) A python function takes a matrix of real numbers. It should return a submatrix of size "n" by "n" in the given matrix that has the largest sum.
-def submatrix_with_max_sum(mat, n):
+def submatrix_size_n_with_max_sum(mat, n):
     import math
     import numpy as np
 
@@ -1575,3 +1575,121 @@ def square_submatrix_with_max_sum(mat):
                     submat = square
 
     return submat  
+
+
+#99) A python function takes a matrix of real numbers. It should return a submatrix of in the given matrix that has the largest sum.
+def submatrix_with_max_sum(mat):
+    import numpy as np
+
+    if not mat:
+        return None
+    if type(mat).__module__ != np.__name__:
+        mat = np.asmatrix(mat)
+    max_sum = -math.inf
+    submatrix = mat[:0, :0]
+    rows, columns = mat.shape[0], mat.shape[1]
+    for c in range(rows):
+        for i in range(columns):
+            for j in range(1, columns + 1 - i):
+                temp_submatrix = (mat[c:c + 1, i:i + j])
+                submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
+                if submatrix_sum > max_sum:
+                    max_sum = submatrix_sum
+                    submatrix = temp_submatrix
+
+
+    for c in range(columns):
+        for i in range(rows):
+            for j in range(2, rows + 1 - i):
+                temp_submatrix = (mat[i:i + j, c:c + 1])
+                submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
+                if submatrix_sum > max_sum:
+                    max_sum = submatrix_sum
+                    submatrix = temp_submatrix
+
+
+    boundary = min(rows, columns)
+    for k in range(2, boundary + 1):
+        for c in range(rows - (k - 1)):
+            for i in range((columns // k) + 1):
+                for j in range(i + k, columns + 1):
+                    temp_submatrix = (mat[c:c + k, i:j])
+                    submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
+                    if submatrix_sum > max_sum:
+                        max_sum = submatrix_sum
+                        submatrix = temp_submatrix
+
+    return submatrix
+
+
+#100) A python function takes a matrix. It should return the count of all submatrices in the given matrix.
+def count_all_submatrices(mat):
+    import numpy as np
+
+    if not mat:
+        return None
+    if type(mat).__module__ != np.__name__:
+        mat = np.asmatrix(mat)
+
+    rows, columns = mat.shape[0], mat.shape[1]
+    submatrix_count = 0
+
+    for c in range(rows):
+        for i in range(columns):
+            for j in range(1, columns + 1 - i):
+                submatrix_count += 1
+
+    for c in range(columns):
+        for i in range(rows):
+            for j in range(2, rows + 1 - i):
+                submatrix_count += 1
+
+    boundary = min(rows, columns)
+    for k in range(2, boundary + 1):
+        for c in range(rows - (k - 1)):
+            for i in range((columns // k) + 1):
+                for j in range(i + k, columns + 1):
+                    submatrix_count += 1
+
+    return submatrix_count
+
+
+#101) A python function takes a matrix. Among all submatrices in the given matrix, the function should return the count of submatrices that each has "k" elements.
+def count_submatrices_of_size_n(mat, n):
+    import numpy as np
+
+    if not mat or n < 1:
+        return None
+    if type(mat).__module__ != np.__name__:
+        mat = np.asmatrix(mat)
+
+    rows, columns = mat.shape[0], mat.shape[1]
+    submatrix_of_size_n = 0
+
+    for c in range(rows):
+        for i in range(columns):
+            for j in range(1, columns + 1 - i):
+                temp_submatrix = (mat[c:c + 1, i:i + j])
+                ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
+                if ro * co == n:
+                    submatrix_of_size_n += 1
+
+    for c in range(columns):
+        for i in range(rows):
+            for j in range(2, rows + 1 - i):
+                temp_submatrix = (mat[i:i + j, c:c + 1])
+                ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
+                if ro * co == n:
+                    submatrix_of_size_n += 1
+
+    boundary = min(rows, columns)
+    for k in range(2, boundary + 1):
+        for c in range(rows - (k - 1)):
+            for i in range((columns // k) + 1):
+                for j in range(i + k, columns + 1):
+                    temp_submatrix = (mat[c:c + k, i:j])
+                    ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
+                    if ro * co == n:
+                        submatrix_of_size_n += 1
+
+    return submatrix_of_size_n
