@@ -1,108 +1,110 @@
+from typing import List
+
 #1) A python function that returns the list of all integers from x to y both inclusive.
-def all_ints_inclusive(x, y):
+def all_ints_inclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y]
 
 
 #2) A python function that returns the list of all integers from x to y both exclusive.
-def all_ints_exclusive(x, y):
+def all_ints_exclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y]
 
 
 #3) A python function that returns the list of all positive integers from x to y both inclusive.
-def all_pos_ints_inclusive(x, y):
+def all_pos_ints_inclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i > 0]
 
 
 #4) A python function that returns the list of all positive integers from x to y both exclusive.
-def all_pos_ints_exclusive(x, y):
+def all_pos_ints_exclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y and i > 0]
 
 
 #5) A python function that returns the list of all negative integers from x to y both inclusive.
-def all_neg_ints_inclusive(x, y):
+def all_neg_ints_inclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i < 0]
 
 
 #6) A python function that returns the list of all negative integers from x to y both exclusive.
-def all_neg_ints_exclusive(x, y):
+def all_neg_ints_exclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y and i < 0]
 
 
 #7) A python function that returns the list of all even integers from x to y both inclusive.
-def all_even_ints_inclusive(x, y):
+def all_even_ints_inclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % 2 == 0]
 
 
 #8) A python function that returns the list of all even integers from x to y both exclusive.
-def all_even_ints_exclusive(x, y):
+def all_even_ints_exclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y and i % 2 == 0]
 
 
 #9) A python function that returns the list of all odd integers from x to y both inclusive.
-def all_odd_ints_inclusive(x, y):
+def all_odd_ints_inclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % 2 != 0]
 
 
 #10) A python function that returns the list of all odd integers from x to y both exclusive.
-def all_odd_ints_exclusive(x, y):
+def all_odd_ints_exclusive(x: int, y: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y and i % 2 != 0]
 
 
 #11) A python function that returns the list of all integers from x to y that are divisible by n. Both x and y should be inclusive.
-def all_ints_div_by_n_inclusive(x, y, n):
+def all_ints_div_by_n_inclusive(x: int, y: int, n: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % n == 0]
 
 
 #12) A python function that returns the list of all integers from x to y that are divisible by n. Both x and y should be exclusive.
-def all_ints_div_by_n_exclusive(x, y, n):
+def all_ints_div_by_n_exclusive(x: int, y: int, n: int) -> List[int]:
     return [i for i in range(x + 1, y) if x < y and i % n == 0]
 
 
 #13) A python function that returns the list of all integers from x to y that are not divisible by n. Both x and y should be inclusive.
-def all_ints_not_div_by_n_inclusive(x, y, n):
+def all_ints_not_div_by_n_inclusive(x: int, y: int, n: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % n != 0]
 
 
 #14) A python function that returns the list of all integers from x to y that are divisible by m and n. Both x and y should be inclusive.
-def all_ints_div_by_m_n_inclusive(x, y, m, n):
+def all_ints_div_by_m_n_inclusive(x: int, y: int, m: int ,n: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % m == 0 and i % n == 0]
 
 
 #15) A python function that returns the list of all integers from x to y that are divisible by m or by n. Both x and y should be inclusive.
-def all_ints_div_by_m_n_inclusive(x, y, m, n):
+def all_ints_div_by_m_n_inclusive(x: int, y: int, m: int ,n: int) -> List[int]:
     return [i for i in range(x, y + 1) if x <= y and i % m == 0 or i % n == 0]
 
 
 #16) A python function that returns the sum of all integers from x to y inclusive.
-def sum_ints(x, y):
+def sum_ints(x: int, y: int) -> int:
     return sum(range(x, y + 1))
 
 
 #17) A python function that returns the sum of all even integers from x to y inclusive.
-def sum_even_ints(x, y):
+def sum_even_ints(x: int, y: int) -> int:
     return sum([i for i in range(x, y + 1) if i % 2 == 0])
 
 
 #18) A python function that returns the sum of all odd integers from x to y inclusive.
-def sum_odd_ints(x, y):
+def sum_odd_ints(x: int, y: int) -> int:
     return sum([i for i in range(x, y + 1) if i % 2 != 0])
 
 
 #19) A python function that returns the sum of all integers from x to y that are divisible by n. Both x and y are inclusive.
-def sum_ints_div_by_n(x, y, n):
+def sum_ints_div_by_n(x: int, y: int, n: int) -> int:
     return sum([i for i in range(x, y + 1) if i % n == 0])
 
 
-#20) A python function that take an integer and returns the list of all positive divisors of that integer.
-def all_divs(n):
+#20) A python function that takes an integer and returns the list of all positive divisors of that integer.
+def all_divs(n: int) -> List[int]:
     result = []
     if n <= 0:
         return result
     return [i for i in range(1, n + 1) if n % i == 0]
 
 
-#21) A python function that take an integer and returns the sum of all positive divisors of that integer.
-def sum_all_divs(n):
+#21) A python function that takes an integer and returns the sum of all positive divisors of that integer.
+def sum_all_divs(n: int) -> int:
     result = []
     if n <= 0:
         return sum(result)
@@ -110,7 +112,7 @@ def sum_all_divs(n):
 
 
 #22) A python function that returns the list of all prime numbers up to n inclusive.
-def prime_nums(n):
+def prime_nums(n: int) -> List[int]:
     result = []
     if n <= 1:
         return result
@@ -129,7 +131,7 @@ def prime_nums(n):
 
 
 #23) A python function that returns the sum of all prime numbers up to n inclusive.
-def sum_prime_nums(n):
+def sum_prime_nums(n: int) -> int:
     result = []
     if n <= 1:
         return sum(result)
@@ -148,7 +150,7 @@ def sum_prime_nums(n):
 
 
 #24) A python function that returns the list of all prime numbers between x and y both inclusive.
-def prime_nums_x_y(x, y):
+def prime_nums_x_y(x: int, y: int) -> List[int]:
     result = []
     if x > y:
         return result
@@ -171,7 +173,7 @@ def prime_nums_x_y(x, y):
 
 
 #25) A python function that returns the sum of all prime numbers between x and y both inclusive.
-def sum_prime_nums_x_y(x, y):
+def sum_prime_nums_x_y(x: int, y: int) -> int:
     result = []
     if x > y:
         return sum(result)
@@ -194,7 +196,7 @@ def sum_prime_nums_x_y(x, y):
 
 
 #26) A python function that takes an integer and returns a list of all composite numbers up to the integer inclusive.
-def find_composite_numbers(n):
+def find_composite_numbers(n: int) -> List[int]:
     result = []
     if n < 4:
         return result
@@ -208,7 +210,7 @@ def find_composite_numbers(n):
 
 
 #27) A python function that takes two integers and returns a list of all composite numbers between the two integers inclusive.
-def find_composite_nums_x_y(x, y):
+def find_composite_nums_x_y(x: int, y: int) -> List[int]:
     result = []
     if x > y:
         return result
@@ -223,7 +225,7 @@ def find_composite_nums_x_y(x, y):
 
 
 #28) A python function that returns the greatest common factor of x and y.
-def gcf(x, y):
+def gcf(x: int, y: int) -> int:
     result = None
     if x == 0 and y == 0:
         return result
@@ -246,7 +248,7 @@ def gcf(x, y):
 
 
 #29) A python function that returns the greatest common factor of x and y and z.
-def gcf(x, y, z):
+def gcf(x: int, y: int, z: int) -> int:
     result = None
     if x == 0 and y == 0 and z == 0:
         return result
@@ -278,14 +280,14 @@ def gcf(x, y, z):
 
 
 #30) A python function that takes a positive integer and returns true if the integer is a perfect number otherwise it should return false.
-def is_perfect_number(n):
+def is_perfect_number(n: int) -> bool:
     if n <= 0:
         return False
     return sum([i for i in range(1, n) if n % i == 0]) == n
 
 
 #31) A python function that returns the list of all perfect numbers up to x inclusive.
-def all_perfect_numbers(x):
+def all_perfect_numbers(x: int) -> List[int]:
     result = []
     if x <= 0:
         return result
@@ -298,7 +300,7 @@ def all_perfect_numbers(x):
 ####### List relayted questions #######
 
 #32) A python function that takes a list and returns the largest element of the list.
-def largest_element(l):
+def largest_element(l: List[object]) -> object:
     if not l:
         return None
 
@@ -1693,3 +1695,16 @@ def count_submatrices_of_size_n(mat, n):
                         submatrix_of_size_n += 1
 
     return submatrix_of_size_n
+
+
+#102) A python function takes two integers "m" and "n" and a list of integers as input. The function should return the sum of all elements from the given list that lie in the range m to n inclusive.
+def sum_in_range(ls, m, n):
+    if not ls or m >= n:
+        return None
+
+    result = 0
+    for i in ls:
+        if m <= i <= n:
+            result += i
+    
+    return result
