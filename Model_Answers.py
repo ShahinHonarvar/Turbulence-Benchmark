@@ -1,124 +1,124 @@
 from typing import List
 
-#1) A python function that returns the list of all integers from x to y both inclusive.
-def all_ints_inclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y]
+#1) A python function that returns the list of all integers from H0_int to H1_int both inclusive.
+def all_ints_inclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1]
 
 
-#2) A python function that returns the list of all integers from x to y both exclusive.
-def all_ints_exclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y]
+#2) A python function that returns the list of all integers from H0_int to H1_int both exclusive.
+def all_ints_exclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1]
 
 
-#3) A python function that returns the list of all positive integers from x to y both inclusive.
-def all_pos_ints_inclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i > 0]
+#3) A python function that returns the list of all positive integers from H0_int to H1_int both inclusive.
+def all_pos_ints_inclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i > 0]
 
 
-#4) A python function that returns the list of all positive integers from x to y both exclusive.
-def all_pos_ints_exclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y and i > 0]
+#4) A python function that returns the list of all positive integers from H0_int to H1_int both exclusive.
+def all_pos_ints_exclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1 and i > 0]
 
 
-#5) A python function that returns the list of all negative integers from x to y both inclusive.
-def all_neg_ints_inclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i < 0]
+#5) A python function that returns the list of all negative integers from H0_int to H1_int both inclusive.
+def all_neg_ints_inclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i < 0]
 
 
-#6) A python function that returns the list of all negative integers from x to y both exclusive.
-def all_neg_ints_exclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y and i < 0]
+#6) A python function that returns the list of all negative integers from H0_int to H1_int both exclusive.
+def all_neg_ints_exclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1 and i < 0]
 
 
-#7) A python function that returns the list of all even integers from x to y both inclusive.
-def all_even_ints_inclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % 2 == 0]
+#7) A python function that returns the list of all even integers from H0_int to H1_int both inclusive.
+def all_even_ints_inclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % 2 == 0]
 
 
-#8) A python function that returns the list of all even integers from x to y both exclusive.
-def all_even_ints_exclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y and i % 2 == 0]
+#8) A python function that returns the list of all even integers from H0_int to H1_int both exclusive.
+def all_even_ints_exclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1 and i % 2 == 0]
 
 
-#9) A python function that returns the list of all odd integers from x to y both inclusive.
-def all_odd_ints_inclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % 2 != 0]
+#9) A python function that returns the list of all odd integers from H0_int to H1_int both inclusive.
+def all_odd_ints_inclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % 2 != 0]
 
 
-#10) A python function that returns the list of all odd integers from x to y both exclusive.
-def all_odd_ints_exclusive(x: int, y: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y and i % 2 != 0]
+#10) A python function that returns the list of all odd integers from H0_int to H1_int both exclusive.
+def all_odd_ints_exclusive(H0: int, H1: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1 and i % 2 != 0]
 
 
-#11) A python function that returns the list of all integers from x to y that are divisible by n. Both x and y should be inclusive.
-def all_ints_div_by_n_inclusive(x: int, y: int, n: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % n == 0]
+#11) A python function that returns the list of all integers from H0_int to H1_int inclusive that are divisible by H2_int.
+def all_ints_div_by_n_inclusive(H0: int, H1: int, H2: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % H2 == 0]
 
 
-#12) A python function that returns the list of all integers from x to y that are divisible by n. Both x and y should be exclusive.
-def all_ints_div_by_n_exclusive(x: int, y: int, n: int) -> List[int]:
-    return [i for i in range(x + 1, y) if x < y and i % n == 0]
+#12) A python function that returns the list of all integers from H0_int to H1_int exclusive that are divisible by H2_int.
+def all_ints_div_by_n_exclusive(H0: int, H1: int, H2: int) -> List[int]:
+    return [i for i in range(H0 + 1, H1) if H0 < H1 and i % H2 == 0]
 
 
-#13) A python function that returns the list of all integers from x to y that are not divisible by n. Both x and y should be inclusive.
-def all_ints_not_div_by_n_inclusive(x: int, y: int, n: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % n != 0]
+#13) A python function that returns the list of all integers from H0_int to H1_int inclusive that are not divisible by H2_int.
+def all_ints_not_div_by_n_inclusive(H0: int, H1: int, H2: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % H2 != 0]
 
 
-#14) A python function that returns the list of all integers from x to y that are divisible by m and n. Both x and y should be inclusive.
-def all_ints_div_by_m_n_inclusive(x: int, y: int, m: int ,n: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % m == 0 and i % n == 0]
+#14) A python function that returns the list of all integers from H0_int to H1_int inclusive that are divisible by H2_int and H3_int.
+def all_ints_div_by_m_n_inclusive(H0: int, H1: int, H2: int, H3: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % H2 == 0 and i % H3 == 0]
 
 
-#15) A python function that returns the list of all integers from x to y that are divisible by m or by n. Both x and y should be inclusive.
-def all_ints_div_by_m_n_inclusive(x: int, y: int, m: int ,n: int) -> List[int]:
-    return [i for i in range(x, y + 1) if x <= y and i % m == 0 or i % n == 0]
+#15) A python function that returns the list of all integers from H0_int to H1_int inclusive that are divisible by H2_int or H3_int.
+def all_ints_div_by_m_n_exclusive(H0: int, H1: int, H2: int, H3: int) -> List[int]:
+    return [i for i in range(H0, H1 + 1) if H0 <= H1 and i % H2 == 0 or i % H3 == 0]
 
 
-#16) A python function that returns the sum of all integers from x to y inclusive.
-def sum_ints(x: int, y: int) -> int:
-    return sum(range(x, y + 1))
+#16) A python function that returns the sum of all integers from from H0_int to H1_int inclusive.
+def sum_ints(H0_int: int, H1_int: int) -> int:
+    return sum(range(H0_int, H1_int + 1))
 
 
-#17) A python function that returns the sum of all even integers from x to y inclusive.
-def sum_even_ints(x: int, y: int) -> int:
-    return sum([i for i in range(x, y + 1) if i % 2 == 0])
+#17) A python function that returns the sum of all even integers from H0_int to H1_int inclusive.
+def sum_even_ints(H0_int: int, H1_int: int) -> int:
+    return sum([i for i in range(H0_int, H1_int + 1) if i % 2 == 0])
 
 
-#18) A python function that returns the sum of all odd integers from x to y inclusive.
-def sum_odd_ints(x: int, y: int) -> int:
-    return sum([i for i in range(x, y + 1) if i % 2 != 0])
+#18) A python function that returns the sum of all odd integers from H0_int to H1_int inclusive.
+def sum_odd_ints(H0_int: int, H1_int: int) -> int:
+    return sum([i for i in range(H0_int, H1_int + 1) if i % 2 != 0])
 
 
-#19) A python function that returns the sum of all integers from x to y that are divisible by n. Both x and y are inclusive.
-def sum_ints_div_by_n(x: int, y: int, n: int) -> int:
-    return sum([i for i in range(x, y + 1) if i % n == 0])
+#19) A python function that returns the sum of all integers from H0_int to H1_int inclusive that are divisible by H2_int.
+def sum_ints_div_by_n(H0_int: int, H1_int: int, H2_int: int) -> int:
+    return sum([i for i in range(H0_int, H1_int + 1) if i % H2_int == 0])
 
 
-#20) A python function that takes an integer and returns the list of all positive divisors of that integer.
-def all_divs(n: int) -> List[int]:
+#20) A python function that takes H0_int and returns the list of all positive divisors of H0_int.
+def all_divs(H0: int) -> List[int]:
     result = []
-    if n <= 0:
+    if H0 <= 0:
         return result
-    return [i for i in range(1, n + 1) if n % i == 0]
+    return [i for i in range(1, H0 + 1) if H0 % i == 0]
 
 
-#21) A python function that takes an integer and returns the sum of all positive divisors of that integer.
-def sum_all_divs(n: int) -> int:
+#21) A python function that takes H0_int and returns the sum of all positive divisors of H0_int.
+def sum_all_divs(H0: int) -> int:
     result = []
-    if n <= 0:
+    if H0 <= 0:
         return sum(result)
-    return sum([i for i in range(1, n + 1) if n % i == 0])
+    return sum([i for i in range(1, H0 + 1) if H0 % i == 0])
 
 
-#22) A python function that returns the list of all prime numbers up to n inclusive.
-def prime_nums(n: int) -> List[int]:
+#22) A python function takes H0_int as input. It should return the list of all prime numbers up to H0_int inclusive.
+def prime_nums(H0: int) -> List[int]:
     result = []
-    if n <= 1:
+    if H0 <= 1:
         return result
     else:
         flag = False
-        for i in range(2, n + 1):
+        for i in range(2, H0 + 1):
             for j in range(2, i):
                 if i % j == 0:
                     flag = True
@@ -130,14 +130,14 @@ def prime_nums(n: int) -> List[int]:
         return result
 
 
-#23) A python function that returns the sum of all prime numbers up to n inclusive.
-def sum_prime_nums(n: int) -> int:
+#23) A python function takes H0_int as input. It should return the sum of all prime numbers up to H0_int inclusive.
+def sum_prime_nums(H0_int: int) -> int:
     result = []
-    if n <= 1:
+    if H0_int <= 1:
         return sum(result)
     else:
         flag = False
-        for i in range(2, n + 1):
+        for i in range(2, H0_int + 1):
             for j in range(2, i):
                 if i % j == 0:
                     flag = True
@@ -149,18 +149,18 @@ def sum_prime_nums(n: int) -> int:
         return sum(result)
 
 
-#24) A python function that returns the list of all prime numbers between x and y both inclusive.
-def prime_nums_x_y(x: int, y: int) -> List[int]:
+#24) A python function takes H0_int and H1_int as inputs. It should return the list of all prime numbers between H0_int and H1_int both inclusive.
+def prime_nums_x_y(H0: int, H1: int) -> List[int]:
     result = []
-    if x > y:
+    if H0 > H1:
         return result
-    elif x <= 1 and y <= 1:
+    elif H0 <= 1 and H1 <= 1:
         return result
-    elif x <= 1:
-        return prime_nums_x_y(2, y)
+    elif H0 <= 1:
+        return prime_nums_x_y(2, H1)
     else:
         flag = False
-        for i in range(x, y + 1):
+        for i in range(H0, H1 + 1):
             for j in range(2, i):
                 if i % j == 0:
                     flag = True
@@ -172,18 +172,18 @@ def prime_nums_x_y(x: int, y: int) -> List[int]:
         return result
 
 
-#25) A python function that returns the sum of all prime numbers between x and y both inclusive.
-def sum_prime_nums_x_y(x: int, y: int) -> int:
+#25) A python function takes H0_int and H1_int as inputs. It should return the sum of all prime numbers between H0_int and H1_int both inclusive.
+def sum_prime_nums_x_y(H0: int, H1: int) -> int:
     result = []
-    if x > y:
+    if H0 > H1:
         return sum(result)
-    elif x <= 1 and y <= 1:
+    elif H0 <= 1 and H1 <= 1:
         return sum(result)
-    elif x <= 1:
-        return sum_prime_nums_x_y(2, y)
+    elif H0 <= 1:
+        return sum_prime_nums_x_y(2, H1)
     else:
         flag = False
-        for i in range(x, y + 1):
+        for i in range(H0, H1 + 1):
             for j in range(2, i):
                 if i % j == 0:
                     flag = True
@@ -195,13 +195,13 @@ def sum_prime_nums_x_y(x: int, y: int) -> int:
         return sum(result)
 
 
-#26) A python function that takes an integer and returns a list of all composite numbers up to the integer inclusive.
-def find_composite_numbers(n: int) -> List[int]:
+#26) A python function takes H0_int as input. It should return a list of all composite numbers up to H0_int inclusive.
+def find_composite_numbers(H0: int) -> List[int]:
     result = []
-    if n < 4:
+    if H0 < 4:
         return result
     else:
-        for i in range(4, n + 1):
+        for i in range(4, H0 + 1):
             for j in range(2, i):
                 if i % j == 0:
                     result.append(i)
@@ -209,14 +209,14 @@ def find_composite_numbers(n: int) -> List[int]:
     return result
 
 
-#27) A python function that takes two integers and returns a list of all composite numbers between the two integers inclusive.
-def find_composite_nums_x_y(x: int, y: int) -> List[int]:
+#27) A python function takes H0_int and H1_int as inputs. It should returns a list of all composite numbers between H0_int and H1_int inclusive.
+def find_composite_nums_x_y(H0: int, H1: int) -> List[int]:
     result = []
-    if x > y:
+    if H0 > H1:
         return result
-    if x < 4:
-        x = 4
-    for i in range(x, y + 1):
+    if H0 < 4:
+        H0 = 4
+    for i in range(H0, H1 + 1):
         for j in range(2, i):
             if i % j == 0:
                 result.append(i)
@@ -224,74 +224,75 @@ def find_composite_nums_x_y(x: int, y: int) -> List[int]:
     return result
 
 
-#28) A python function that returns the greatest common factor of x and y.
-def gcf(x: int, y: int) -> int:
+#28) A python function takes H0_int and H1_int as inputs. It should return the greatest common factor of H0_int and H1_int.
+def gcf(H0: int, H1: int) -> int:
     result = None
-    if x == 0 and y == 0:
+    if H0 == 0 and H1 == 0:
         return result
-    elif x < 0:
-        return gcf(-x, y)
-    elif y < 0:
-        return gcf(x, -y)
-    elif x == 0:
-        return y
-    elif y == 0:
-        return x
+    elif H0 < 0:
+        return gcf(-H0, H1)
+    elif H1 < 0:
+        return gcf(H0, -H1)
+    elif H0 == 0:
+        return H1
+    elif H1 == 0:
+        return H0
     else:
-        x_factors = [i for i in range(1, x + 1) if x % i == 0]
-        y_factors = [i for i in range(1, y + 1) if y % i == 0]
-        for i in reversed(x_factors):
-            if i in y_factors:
+        H0_factors = [i for i in range(1, H0 + 1) if H0 % i == 0]
+        H1_factors = [i for i in range(1, H1 + 1) if H1 % i == 0]
+        for i in reversed(H0_factors):
+            if i in H1_factors:
                 result = i
                 break
         return result
 
 
-#29) A python function that returns the greatest common factor of x and y and z.
-def gcf(x: int, y: int, z: int) -> int:
-    result = None
-    if x == 0 and y == 0 and z == 0:
-        return result
-    elif x < 0:
-        return gcf(-x, y, z)
-    elif y < 0:
-        return gcf(x, -y, z)
-    elif z < 0:
-        return gcf(x, y, -z)
-    else:
-        if x == 0:
-            x_factors = [i for i in range(0, max(y, z) + 1)]
-        else:
-            x_factors = [i for i in range(1, x + 1) if x % i == 0]
-        if y == 0:
-            y_factors = [i for i in range(0, max(x, z) + 1)]
-        else:
-            y_factors = [i for i in range(1, y + 1) if y % i == 0]
-        if z == 0:
-            z_factors = [i for i in range(0, max(x, y) + 1)]
-        else:
-            z_factors = [i for i in range(1, z + 1) if z % i == 0]
 
-        for i in reversed(x_factors):
-            if i in y_factors and i in z_factors:
+#29) A python function takes H0_int, H1_int and H2_int as inputs. It should return the greatest common factor of H0_int and H1_int and H2_int.
+def gcf(H0: int, H1: int, H2: int) -> int:
+    result = None
+    if H0 == 0 and H1 == 0 and H2 == 0:
+        return result
+    elif H0 < 0:
+        return gcf(-H0, H1, H2)
+    elif H1 < 0:
+        return gcf(H0, -H1, H2)
+    elif H2 < 0:
+        return gcf(H0, H1, -H2)
+    else:
+        if H0 == 0:
+            H0_factors = [i for i in range(0, max(H1, H2) + 1)]
+        else:
+            H0_factors = [i for i in range(1, H0 + 1) if H0 % i == 0]
+        if H1 == 0:
+            H1_factors = [i for i in range(0, max(H0, H2) + 1)]
+        else:
+            H1_factors = [i for i in range(1, H1 + 1) if H1 % i == 0]
+        if H2 == 0:
+            H2_factors = [i for i in range(0, max(H0, H1) + 1)]
+        else:
+            H2_factors = [i for i in range(1, H2 + 1) if H2 % i == 0]
+
+        for i in reversed(H0_factors):
+            if i in H1_factors and i in H2_factors:
                 result = i
                 break
         return result
 
 
-#30) A python function that takes a positive integer and returns true if the integer is a perfect number otherwise it should return false.
-def is_perfect_number(n: int) -> bool:
-    if n <= 0:
+#30) A python function takes H0_int>0 as input. It should return true if H0_int>0 is a perfect number otherwise it should return false.
+def is_perfect_number(H0: int) -> bool:
+    if H0 <= 0:
         return False
-    return sum([i for i in range(1, n) if n % i == 0]) == n
+    return sum([i for i in range(1, H0) if H0 % i == 0]) == H0
 
 
-#31) A python function that returns the list of all perfect numbers up to x inclusive.
-def all_perfect_numbers(x: int) -> List[int]:
+#31) A python function takes H0_int>0 as input. It should return the list of all perfect numbers up to H0_int>0 inclusive.
+def all_perfect_numbers(H0: int) -> List[int]:
     result = []
-    if x <= 0:
+    if H0 <= 0:
         return result
-    for n in range(1, x + 1):
+    for n in range(1, H0 + 1):
         if sum([i for i in range(1, n) if n % i == 0]) == n:
             result.append(n)
     return result
@@ -299,106 +300,106 @@ def all_perfect_numbers(x: int) -> List[int]:
 
 ####### List relayted questions #######
 
-#32) A python function that takes a list and returns the largest element of the list.
-def largest_element(l: List[object]) -> object:
-    if not l:
+#32) A python function takes H0_list(object) as input. It should return the largest element of H0_list(object).
+def largest_element(H0: List[object]) -> object:
+    if not H0:
         return None
 
-    return max(l)
+    return max(H0)
 
 
-#33) A python function that takes a list and returns the second largest element of the list.
-# For example if the list is [0,1,2] the second largest element is 1.
-# For example if the list is [0,1,2,2] the second largest element is 2.
-def second_largest_element(l: List[object]) -> object:
-    if len(l) <= 1:
+#33) A python function takes H0_list(object) as input. It should return the second largest element of the H0_list(object).
+# For example if [0,1,2] is the input then the function should return 1.
+# For example if [0,1,2,2] is the input then the function should return 2.
+def second_largest_element(H0: List[object]) -> object:
+    if len(H0) <= 1:
         return None
-    l.sort()
+    H0.sort()
 
-    return l[-2]
+    return H0[-2]
 
 
-#34) A python function that takes a list and returns the n-th largest element of the list.
-# For example if the list is [2,2,2,2] the fourth largest element is 2.
-# For example if the list is [7,7,0,1,0,1,5] the fourth largest element is 1.
-def nth_largest_element(l: List[object], n: int) -> object:
-    if len(l) < n or n <= 0:
+#34) A python function takes H0_list(object) and H1_int as inputs. It should return the H1_int-th largest element of H0_list(object).
+# For example if [2,2,2,2] and 4 are the inputs, then the function should return 2.
+# For example if [7,7,0,1,0,1,5] and 4 are the inputs, then the function should return 1.
+def nth_largest_element(H0: List[object], H1: int) -> object:
+    if len(H0) < H1 or H1 <= 0:
         return None
-    l.sort()
+    H0.sort()
 
-    return l[-n]
+    return H0[-H1]
 
 
-#35) A python function that takes a list and returns the smallest element of the list.
-def smallest_element(l: List[object]) -> object:
-    if not l:
+#35) A python function that takes H0_list(object) as input. It should return the smallest element of H0_list(object).
+def smallest_element(H0: List[object]) -> object:
+    if not H0:
         return None
 
-    return min(l)
+    return min(H0)
 
 
-#36) A python function that takes a list and returns the second smallest element of the list.
-# For example if the list is [0,1,2] the second smallest element is 1.
-# For example if the list is [2,0,1,0,1] the second smallest element is 0.
-# For example if the list is [2,1,0,1,1,2] the second smallest element is 1.
-def second_smallest_element(l: List[object]) -> object:
-    if len(l) <= 1:
+#36) A python function takes H0_list(object) as input. It should return the second smallest element of H0_list(object).
+# For example if the input is [0,1,2], then the function should return 1.
+# For example if the input is [2,0,1,0,1], then the function should return 0.
+# For example if the input is [2,1,0,1,1,2], then the function should return 1.
+def second_smallest_element(H0: List[object]) -> object:
+    if len(H0) <= 1:
         return None
-    l.sort()
+    H0.sort()
 
-    return l[1]
+    return H0[1]
 
 
-#37) A python function that takes a list and returns the n-th smallest element of the list.
-# For example if the list is [2,2,2,2] the fourth smallest element is 2.
-# For example if the list is [7,7,0,1,0,1,5] the fourth smallest element is 1.
-def nth_smallest_element(l: List[object], n: int) -> object:
-    if len(l) < n or n <= 0:
+#37) A python function takes H0_list(object) and H1_int as input. It should return the H1_int-th smallest element of H0_list(object).
+# For example if the input is [2,2,2,2], then the function should return 2.
+# For example if the input is [7,7,0,1,0,1,5], then the function should return 1.
+def nth_smallest_element(H0: List[object], H1: int) -> object:
+    if len(H0) < H1 or H1 <= 0:
         return None
-    l.sort()
+    H0.sort()
 
-    return l[n - 1]
+    return H0[H1 - 1]
 
 
-#38) A python function takes two lists and return a new list of all similar elements.
-def similar_elements(l1: List[object], l2: List[object]) -> List[object]:
+#38) A python function takes H0_list(object) and H1_list(object) as inputs. The function should return a new list of all similar elements in H0_list(object) and H1_list(object).
+def similar_elements(H0: List[object], H1: List[object]) -> List[object]:
     result = []
-    if not l1 or not l2:
+    if not H0 or not H1:
         return result
 
-    for i in l1:
-        if i in l2 and i not in result:
+    for i in H0:
+        if i in H1 and i not in result:
             result.append(i)
 
     return result
 
 
-#39) A python function that takes a list and returns the list of all sublists of the original list.
-def all_sublists(l: List[object]) -> List[List[object]]:
+#39) A python function takes H0_list(object) as input. It should return the list of all sublists of H0_list(object).
+def all_sublists(H0: List[object]) -> List[List[object]]:
     from itertools import combinations
 
     result = []
-    for i in range(0, len(l) + 1):
-        result += (list(combinations(l, i)))
+    for i in range(0, len(H0) + 1):
+        result += (list(combinations(H0, i)))
 
     return [list(i) for i in result]
 
 
-#40) A python function that takes a list and returns the list of all sublists of length n of the original list.
-def all_sublists_length_n(l: List[object], n: int) -> List[List[object]]:
+#40) A python function takes H0_list(object) and H1_int as inputs. It should return the list of all sublists of length H1_int of H0_list(object).
+def all_sublists_length_n(H0: List[object], H1: int) -> List[List[object]]:
     from itertools import combinations
 
     result = []
-    if n > len(l) or n < 0:
+    if H1 > len(H0) or H1 < 0:
         return result
-    result += (list(combinations(l, n)))
+    result += (list(combinations(H0, H1)))
 
     return [list(i) for i in result]
 
 
-#41) A python function that takes two lists l1 and l2 and returns true if either is a sublist of the other otherwise, it should return false.
-def if_sublist(l1: List[object], l2: List[object]) -> bool:
-    if l1 == [] or l2 == []:
+#41) A python function takes H0_list(object) and H1_list(object) as inputs. It should return true if either is a sublist of the other otherwise, it should return false.
+def if_sublist(H0: List[object], H1: List[object]) -> bool:
+    if H0 == [] or H1 == []:
         return True
 
     result1 = False
@@ -406,57 +407,56 @@ def if_sublist(l1: List[object], l2: List[object]) -> bool:
     c1 = 0
     c2 = 0
 
-    if len(l1) < len(l2):
-        for i in l1:
-            if i in l2:
+    if len(H0) < len(H1):
+        for i in H0:
+            if i in H1:
                 c1 += 1
-        if len(l1) == c1:
+        if len(H0) == c1:
             result1 = True
 
     else:
-        for i in l2:
-            if i in l1:
+        for i in H1:
+            if i in H0:
                 c2 += 1
-        if len(l2) == c2:
+        if len(H1) == c2:
             result1 = True
 
     return result1 or result2
 
 
-#42) A Python function takes an array of n lists.
-# The function should return a list where all the elements of the given array are sublists of the returned list.
-# For example, if the input is [[1], [2], [3]] the function should return [1, 2, 3].
-def original_list(l: List[List[object]]) -> List[object]:
+#42) A Python function takes H0_list(object) as input. The function should return a list where all the elements of H0_list(object) are sublists of the returned list.
+# For example, if the input is [[1], [2], [3]] then the function should return [1, 2, 3].
+def original_list(H0: List[List[object]]) -> List[object]:
     import itertools
 
-    return list(itertools.chain.from_iterable(l))
+    return list(itertools.chain.from_iterable(H0))
 
 
-#43) A python function that takes a list and removes duplicates from the list and returns the new list.
-def remove_duplicate(l: List[object]) -> List[object]:
+#43) A python function that takes H0_list(object) as input. The function should remove duplicates from H0_list(object) and returns the new list.
+def remove_duplicate(H0: List[object]) -> List[object]:
     result = []
-    if not l:
+    if not H0:
         return result
 
-    for i in l:
+    for i in H0:
         if i not in result:
             result.append(i)
 
     return result
 
 
-#44) A python functon that takes a list of numbers and returns the average of the numbers.
-def mean_of_list(l: List[float]) -> float:
-    return sum(l) / len(l)
+#44) A python functon takes H0_list(float) as input. It should return the average of the numbers in H0_list(float).
+def mean_of_list(H0: List[float]) -> float:
+    return sum(H0) / len(H0)
 
 
-#45) A python functon that takes a list of numbers and returns the mode of the numbers.
+#45) A python functon takes H0_list(float) as input. It should return the mode of the numbers in H0_list(float).
 # If the given list has more than one mode then the function should return all of them.
-def mode_of_list(l: List[float]) -> List[float]:
+def mode_of_list(H0: List[float]) -> List[float]:
     import operator
 
     result = []
-    d = {num: l.count(num) for num in l}
+    d = {num: H0.count(num) for num in H0}
     if all(v == 1 for v in d.values()):
         return result
     sorted_d = (dict(sorted(d.items(), key=operator.itemgetter(1), reverse=True)))
@@ -468,32 +468,32 @@ def mode_of_list(l: List[float]) -> List[float]:
     return result
 
 
-#46) A python function that takes a string and returns the list of all characters of the string.
-def string_chars(s):
+#46) A python function takes H0_str as input. It should return the list of all characters of H0_str.
+def string_chars(H0: str) -> List[str]:
     result = []
-    if s == '':
+    if H0 == '':
         return result
 
-    return [c for c in s]
+    return [c for c in H0]
 
 
-#47) A python function that takes a string and returns the number of all vowels (both lower case and upper case) in the string.
-def count_vowels(s):
+#47) A python function takes H0_str as input. It should return the number of all vowels (both lower case and upper case) in H0_str.
+def count_vowels(H0: str) -> int:
     vowels = ['a', 'e', 'i', 'o', 'u']
     count = 0
-    s = s.lower()
-    for c in s:
+    H0 = H0.lower()
+    for c in H0:
         if c in vowels:
             count += 1
 
     return count
 
 
-#48) A python function that takes a string of length at least three and finds all palindrome sequences of size x in the string.
+#48) A python function takes H0_str of length at least three and finds all palindrome sequences of size x in the string.
 # The function should return the list of the palindrome sequences. If there is no palindrome sequence of size x in the string, the function should return None.
 # For example, a palindrome sequence of size 3 in "ev en" is "eve".
 # For example, a palindrome sequence of size 4 in "Yesterday we met Anna" is "anna".
-def find_all_palindrome_x(s, x):
+def find_all_palindrome_x(s: str, x: int) -> List[str]:
     if len(s) <= 2 or x <= 2 or x > len(s):
         return None
 
@@ -518,7 +518,7 @@ def find_all_palindrome_x(s, x):
 # For example, if "ev en" is given to the function, it should return ['eve'].
 # For example, if "Imperial College" is given to the function, it should return ['ege'].
 # For example, if "Yesterday we met Anna" is given to the function, it should return ['eme', 'anna'].
-def find_all_palindrome(s):
+def find_all_palindrome(s: str) -> List[str]:
     if len(s) <= 2:
         return None
     s = s.lower()
@@ -542,7 +542,7 @@ def find_all_palindrome(s):
 
 #50) A python function that takes a list of characters and returns the list of all possible palindrome sequences of length x made out of only those characters.
 # For example, if the function takes ['e','v','a','e'] it should return ['eve', 'eae'].
-def all_palindrome_length_3(l, x):
+def all_palindrome_length_3(l: List[str], x: int) -> List[str]:
     from itertools import combinations
 
     result = []
@@ -555,7 +555,7 @@ def all_palindrome_length_3(l, x):
 
 #51) A Python function that accepts a list of characters and produces a list of all palindrome sequences that can be created using only those characters. All returned palindrome sequences must be at least three characters long.
 # For example, if the function takes ['t', 'e', 's', 'e', 't'] it should return ['tet', 'tst', 'tet', 'ese', 'teet', 'teset'].
-def all_palindrome_all_length(l):
+def all_palindrome_all_length(l: List[str]) -> List[str]:
     from itertools import combinations
 
     result = []
@@ -569,7 +569,7 @@ def all_palindrome_all_length(l):
 
 #52) A python function that takes a list of characters and returns the list of
 # all possible strings of length x constructed from those characters. Repeat characters are not allowed.
-def permutations_no_repeat_length_x(l, x):
+def permutations_no_repeat_length_x(l: List[str], x: int) -> List[str]:
     from itertools import permutations
 
     result = []
@@ -582,7 +582,7 @@ def permutations_no_repeat_length_x(l, x):
 
 #53) A python function that takes a list of characters and returns the list of
 # all possible strings of length x constructed from those characters. Repeat characters are allowed.
-def permutations_with_repeat_length_x(l, x):
+def permutations_with_repeat_length_x(l: List[str], x: int) -> List[str]:
     from itertools import product
 
     result = []
@@ -595,7 +595,7 @@ def permutations_with_repeat_length_x(l, x):
 
 #54) A python function that takes a list of characters and returns the list of
 # all possible strings of any length constructed from those characters. Repeat characters are not allowed.
-def all_permutations_no_repeat(l):
+def all_permutations_no_repeat(l: List[str]) -> List[str]:
     from itertools import permutations
 
     result = []
@@ -609,7 +609,7 @@ def all_permutations_no_repeat(l):
 
 #55) A python function that takes a list of characters and returns the list of
 # all possible strings of any length constructed from those characters. Repeat characters are allowed.
-def all_permutations_with_repeat(l):
+def all_permutations_with_repeat(l: List[str]) -> List[str]:
     from itertools import product
 
     result = []
@@ -622,7 +622,7 @@ def all_permutations_with_repeat(l):
 
 
 #56) A python function that takes a list and inserts a given element before a given index and returns the new list.
-def insert_before_index(l, e, n):
+def insert_before_index(l: List[object], e: object, n: int) -> List[object]:
     if n < 0:
         return l
     elif n >= len(l):
@@ -633,7 +633,7 @@ def insert_before_index(l, e, n):
 
 
 #57) A python function that takes a list and inserts a given element after a given index and returns the new list.
-def insert_after_index(l, e, n):
+def insert_after_index(l: List[object], e: object, n: int) -> List[object]:
     if n < 0:
         return l
     elif n >= len(l):
@@ -644,7 +644,7 @@ def insert_after_index(l, e, n):
 
 
 #58) A python function that takes a list and inserts a given element before an element in the list and returns the new list.
-def insert_before_element(l, list_e, given_e):
+def insert_before_element(l: List[object], list_e: object, given_e: object) -> List[object]:
     if not l:
         return []
     elif list_e not in l:
@@ -655,7 +655,7 @@ def insert_before_element(l, list_e, given_e):
 
 
 #59) A python function that takes a list and inserts a given element after an element in the list and returns the new list.
-def insert_after_element(l, list_e, given_e):
+def insert_after_element(l: List[object], list_e: object, given_e: object) -> List[object]:
     if not l:
         return []
     elif list_e not in l:
@@ -666,7 +666,7 @@ def insert_after_element(l, list_e, given_e):
 
 
 #60) A python function that takes a string and returns characters with the lowest and highest ASCII values, respectively.
-def return_high_low_ascii(s):
+def return_high_low_ascii(s: str) -> tuple[str, str]:
     if s == '':
         return None
     d = {c: ord(c) for c in s}
@@ -675,7 +675,7 @@ def return_high_low_ascii(s):
 
 
 #61) A python function that takes a positive integer and returns the binary representation of the given integer.
-def pos_int_to_binary(n):
+def pos_int_to_binary(n: int) -> str:
     result = ''
     while n >= 2:
         r = n % 2
@@ -688,7 +688,7 @@ def pos_int_to_binary(n):
 
 
 #62) A python function that takes an integer and returns true if the integer is among the Fibonacci numbers otherwise it should return false.
-def is_fibo(n):
+def is_fibo(n: int) -> bool:
     if n < 0:
         return False
     if n == 0 or n == 1:
@@ -706,7 +706,7 @@ def is_fibo(n):
 
 #63) A python function that returns the sum of first n numbers of the Fibonacci sequence.
 # For example, if n = 5, the function should return 0+1+1+2+3=7.
-def sum_n_fibo(n):
+def sum_n_fibo(n: int) -> int:
     s = 0
     if n <= 1:
         return s
@@ -723,7 +723,7 @@ def sum_n_fibo(n):
 
 
 #64) A python function that returns the list of all prime numbers among the first n numbers of the Fibonacci sequence.
-def prime_nums_fibo(n):
+def prime_nums_fibo(n: int) -> List[int]:
     result = []
     if n <= 3:
         return result
@@ -751,7 +751,7 @@ def prime_nums_fibo(n):
 
 
 #65) A python function that returns the list of all composite numbers among the first n numbers of the Fibonacci sequence.
-def composite_nums_fibo(n):
+def composite_nums_fibo(n: int) -> List[int]:
     result = []
     if n < 7:
         return result
@@ -775,7 +775,9 @@ def composite_nums_fibo(n):
 
 #66) A python function takes a list of strings as input. It should return a list of separate lists each containing
 # strings from the given list that are the same length.
-def same_len_strings(ls):
+def same_len_strings(ls: List[str]) -> list[list[str]]:
+    if not ls:
+        return []
     result = {}
     for i in ls:
         length = len(i)
@@ -787,8 +789,25 @@ def same_len_strings(ls):
     return list(result.values())
 
 
-#67) A python function that takes two strings and returns true if they are anagrams otherwise it should return false.
-def if_anagrams(s1, s2):
+#67) A python function takes a sentence of strings as input. It should return a list of separate lists each containing
+# strings without spaces from the given sentence that are the same length.
+def same_len_words(s: str) -> list[list[str]]:
+    if not s:
+        return []
+    result = {}
+    ls = s.split()
+    for i in ls:
+        length = len(i)
+        if length not in result:
+            result[length] = [i]
+        else:
+            result[length].append(i)
+
+    return list(result.values())
+
+
+#68) A python function that takes two strings and returns true if they are anagrams otherwise it should return false.
+def if_anagrams(s1: str, s2: str) -> bool:
     s1 = s1.replace(' ', '').lower()
     s2 = s2.replace(' ', '').lower()
     if len(s1) != len(s2):
@@ -799,9 +818,10 @@ def if_anagrams(s1, s2):
     return s1 == s2
 
 
-#68) A python function that takes a list of strings as input and returns a list of distinct lists containing
-# anagrams from the given list.
-def all_anagrams(ls):
+#69) A python function that takes a list of strings as input and returns a list of distinct lists containing
+# anagrams from the given list. For example if the input is ['Imperial', 'FourTH OF JUly', 'joyful fOURTH'] then
+# the output should be [['imperial'], ['fourthofjuly', 'joyfulfourth']]
+def all_anagrams(ls: List[str]) -> list[list[str]]:
     ls = [i.replace(' ', '').lower() for i in ls]
     result = {}
     for i in ls:
@@ -814,9 +834,9 @@ def all_anagrams(ls):
     return list(result.values())
 
 
-#69) A python function takes an array of strings as input. It should return the list of all strings from the given array that are numbers of any type.
+#70) A python function takes a list of strings as input. It should return the list of all strings from the given list that are real numbers.
 # For example, if ['1.5', '2', '35t', 'one'] is given to the function, it should return ['1.5', '2'].
-def find_numeric(ls):
+def find_numeric(ls: List[str]) -> List[str]:
     if not ls:
         return []
     try:
@@ -826,8 +846,8 @@ def find_numeric(ls):
         return find_numeric(ls[1:])
 
 
-#70) A python function takes an array of strings as input. It should return the list of all alphanumeric strings from the given array.
-def find_alphanumeric(ls):
+#71) A python function takes a list of strings as input. It should return the list of all alphanumeric strings from the given array.
+def find_alphanumeric(ls: List[str]) -> List[str]:
     if not ls:
         return []
     if ls[0].isalnum():
@@ -836,8 +856,8 @@ def find_alphanumeric(ls):
         return find_alphanumeric(ls[1:])
 
 
-#71) A python function takes an integer as input. It should return the string representation of the integer with commas serving as the hundred separators.
-def commas_hunds(n):
+#72) A python function takes an integer as input. It should return the string representation of the integer with commas serving as the hundred separators.
+def commas_hunds(n: int) -> str:
     if -100 < n < 100:
         return n
     flag = False
@@ -857,8 +877,8 @@ def commas_hunds(n):
     return result[::-1]
 
 
-#72) A python function that takes a positive integer and returns true if the integer is a left-truncatable prime otherwise the function should return false.
-def is_left_truncatable_prime(n):
+#73) A python function that takes a positive integer and returns true if the integer is a left-truncatable prime otherwise the function should return false.
+def is_left_truncatable_prime(n: int) -> bool:
     if '0' in str(n) or n < 2:
         return False
 
@@ -875,8 +895,8 @@ def is_left_truncatable_prime(n):
     return True
 
 
-#73) A python function that takes a positive integer and returns true if the integer is a right-truncatable prime otherwise the function should return false.
-def is_right_truncatable_prime(n):
+#74) A python function that takes a positive integer and returns true if the integer is a right-truncatable prime otherwise the function should return false.
+def is_right_truncatable_prime(n: int) -> bool:
     if '0' in str(n) or n < 2:
         return False
 
@@ -892,8 +912,8 @@ def is_right_truncatable_prime(n):
     return True
 
 
-#74) A python function that takes a positive integer and returns true if the integer is a left-and-right-truncatable prime otherwise the function should return false.
-def is_left_right_truncatable_prime(n):
+#75) A python function that takes a positive integer and returns true if the integer is a left-and-right-truncatable prime otherwise the function should return false.
+def is_left_right_truncatable_prime(n: int) -> bool:
     if '0' in str(n) or n < 2:
         return False
 
@@ -911,8 +931,9 @@ def is_left_right_truncatable_prime(n):
     return True
 
 
-#75) A python function takes a sentence as input. It should return the list of all the words in the sentence that have duplicate characters.
-def words_with_duplicate_chars(s):
+#76) A python function takes a sentence as input. It should return the list of all the words in the sentence that have duplicate characters.
+# For example is the input is "Imperial College is a decent university" then the output should be ['College', 'decent', 'university'].
+def words_with_duplicate_chars(s: str) -> List[str]:
     result = []
     if len(s) < 2:
         return result
@@ -925,8 +946,8 @@ def words_with_duplicate_chars(s):
     return result
 
 
-#76) A python function takes a string as input. It should return the list of all longest substrings of the input with no duplicate letters.
-def longest_no_duplicate(s):
+#77) A python function takes a string as input. It should return the list of all longest substrings of the input with no duplicate letters.
+def longest_no_duplicate(s: str) -> List[str]:
     from itertools import combinations
 
     if len(s) == 1 or len(set(s)) == len(s):
@@ -952,8 +973,9 @@ def longest_no_duplicate(s):
     return list(set(dict[max(dict.keys())]))
 
 
-#77) A python function takes a string as input. It should return the list of all substrings of the length x that do not contain any duplicate characters.
-def length_x_no_duplicate(s, x):
+#78) A python function takes a string as input. It should return the list of all substrings of the length x that do not contain any duplicate characters.
+# For examle if the inputs are "Imperial" and 3 then the output should be ['Imp', 'mpe', 'per', 'eri', 'ria', 'ial'].
+def length_x_no_duplicate(s: str, x: int) -> List[str]:
     from itertools import combinations
 
     if x > len(s) or x <= 0:
@@ -984,23 +1006,23 @@ def length_x_no_duplicate(s, x):
     return result
 
 
-#78) A python function takes a positive integer as input. It should return the least common multiple of
+#79) A python function takes a positive integer as input. It should return the least common multiple of
 # all numbers ranging from 1 to the given integer inclusive.
-def divisible_by_nums_to_n(n):
+def divisible_by_nums_to_n(n: int) -> int:
     from math import gcd
 
     if n < 1:
         return None
     result = 1
     for i in range(1, n + 1):
-        result = result * i // gcd(result, i)
+        result *= i // gcd(result, i)
 
     return result
 
 
-#79) A python function takes two positive integer as inputs. It should return the least common multiple of
+#80) A python function takes two positive integer as inputs. It should return the least common multiple of
 # all numbers between the given integers inclusive.
-def divisible_by_nums_x_y(x, y):
+def divisible_by_nums_x_y(x: int, y: int) -> int:
     from math import gcd
 
     if x < 1 or y < 1 or y < x:
@@ -1016,7 +1038,7 @@ def divisible_by_nums_x_y(x, y):
     return result
 
 
-#80) A python function takes a circular integer array as input. It should return a contiguous subarray with the largest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
+#81) A python function takes a circular integer array as input. It should return a contiguous subarray with the largest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
 def largest_sum_subarray(ls):
     dictionary = {}
     dictionary[sum(ls)] = [ls]
