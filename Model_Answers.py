@@ -310,7 +310,7 @@ def largest_element(l: List[object]) -> object:
 #33) A python function that takes a list and returns the second largest element of the list.
 # For example if the list is [0,1,2] the second largest element is 1.
 # For example if the list is [0,1,2,2] the second largest element is 2.
-def second_largest_element(l):
+def second_largest_element(l: List[object]) -> object:
     if len(l) <= 1:
         return None
     l.sort()
@@ -321,7 +321,7 @@ def second_largest_element(l):
 #34) A python function that takes a list and returns the n-th largest element of the list.
 # For example if the list is [2,2,2,2] the fourth largest element is 2.
 # For example if the list is [7,7,0,1,0,1,5] the fourth largest element is 1.
-def nth_largest_element(l, n):
+def nth_largest_element(l: List[object], n: int) -> object:
     if len(l) < n or n <= 0:
         return None
     l.sort()
@@ -330,7 +330,7 @@ def nth_largest_element(l, n):
 
 
 #35) A python function that takes a list and returns the smallest element of the list.
-def smallest_element(l):
+def smallest_element(l: List[object]) -> object:
     if not l:
         return None
 
@@ -341,7 +341,7 @@ def smallest_element(l):
 # For example if the list is [0,1,2] the second smallest element is 1.
 # For example if the list is [2,0,1,0,1] the second smallest element is 0.
 # For example if the list is [2,1,0,1,1,2] the second smallest element is 1.
-def second_smallest_element(l):
+def second_smallest_element(l: List[object]) -> object:
     if len(l) <= 1:
         return None
     l.sort()
@@ -352,7 +352,7 @@ def second_smallest_element(l):
 #37) A python function that takes a list and returns the n-th smallest element of the list.
 # For example if the list is [2,2,2,2] the fourth smallest element is 2.
 # For example if the list is [7,7,0,1,0,1,5] the fourth smallest element is 1.
-def nth_smallest_element(l, n):
+def nth_smallest_element(l: List[object], n: int) -> object:
     if len(l) < n or n <= 0:
         return None
     l.sort()
@@ -361,7 +361,7 @@ def nth_smallest_element(l, n):
 
 
 #38) A python function takes two lists and return a new list of all similar elements.
-def similar_elements(l1, l2):
+def similar_elements(l1: List[object], l2: List[object]) -> List[object]:
     result = []
     if not l1 or not l2:
         return result
@@ -374,7 +374,7 @@ def similar_elements(l1, l2):
 
 
 #39) A python function that takes a list and returns the list of all sublists of the original list.
-def all_sublists(l):
+def all_sublists(l: List[object]) -> List[List[object]]:
     from itertools import combinations
 
     result = []
@@ -385,7 +385,7 @@ def all_sublists(l):
 
 
 #40) A python function that takes a list and returns the list of all sublists of length n of the original list.
-def all_sublists_length_n(l, n):
+def all_sublists_length_n(l: List[object], n: int) -> List[List[object]]:
     from itertools import combinations
 
     result = []
@@ -397,7 +397,7 @@ def all_sublists_length_n(l, n):
 
 
 #41) A python function that takes two lists l1 and l2 and returns true if either is a sublist of the other otherwise, it should return false.
-def if_sublist(l1, l2):
+def if_sublist(l1: List[object], l2: List[object]) -> bool:
     if l1 == [] or l2 == []:
         return True
 
@@ -425,14 +425,15 @@ def if_sublist(l1, l2):
 
 #42) A Python function takes an array of n lists.
 # The function should return a list where all the elements of the given array are sublists of the returned list.
-def original_list(l):
+# For example, if the input is [[1], [2], [3]] the function should return [1, 2, 3].
+def original_list(l: List[List[object]]) -> List[object]:
     import itertools
 
     return list(itertools.chain.from_iterable(l))
 
 
 #43) A python function that takes a list and removes duplicates from the list and returns the new list.
-def remove_duplicate(l):
+def remove_duplicate(l: List[object]) -> List[object]:
     result = []
     if not l:
         return result
@@ -445,13 +446,13 @@ def remove_duplicate(l):
 
 
 #44) A python functon that takes a list of numbers and returns the average of the numbers.
-def mean_of_list(l):
+def mean_of_list(l: List[float]) -> float:
     return sum(l) / len(l)
 
 
 #45) A python functon that takes a list of numbers and returns the mode of the numbers.
 # If the given list has more than one mode then the function should return all of them.
-def mode_of_list(l):
+def mode_of_list(l: List[float]) -> List[float]:
     import operator
 
     result = []
