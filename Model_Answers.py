@@ -280,14 +280,14 @@ def gcf(H0: int, H1: int, H2: int) -> int:
         return result
 
 
-#30) A python function takes H0_int>0 as input. It should return true if H0_int>0 is a perfect number otherwise it should return false.
+#30) A python function takes H0_int_>0 as input. It should return true if H0_int_>0 is a perfect number otherwise it should return false.
 def is_perfect_number(H0: int) -> bool:
     if H0 <= 0:
         return False
     return sum([i for i in range(1, H0) if H0 % i == 0]) == H0
 
 
-#31) A python function takes H0_int>0 as input. It should return the list of all perfect numbers up to H0_int>0 inclusive.
+#31) A python function takes H0_int_>0 as input. It should return the list of all perfect numbers up to H0_int_>0 inclusive.
 def all_perfect_numbers(H0: int) -> List[int]:
     result = []
     if H0 <= 0:
@@ -300,7 +300,7 @@ def all_perfect_numbers(H0: int) -> List[int]:
 
 ####### List relayted questions #######
 
-#32) A python function takes H0_list(object) as input. It should return the largest element of H0_list(object).
+#32) A python function takes H0_list_obj as input. It should return the largest element of H0_list_obj.
 def largest_element(H0: List[object]) -> object:
     if not H0:
         return None
@@ -308,7 +308,7 @@ def largest_element(H0: List[object]) -> object:
     return max(H0)
 
 
-#33) A python function takes H0_list(object) as input. It should return the second largest element of the H0_list(object).
+#33) A python function takes H0_list_obj as input. It should return the second largest element of the H0_list_obj.
 # For example if [0,1,2] is the input then the function should return 1.
 # For example if [0,1,2,2] is the input then the function should return 2.
 def second_largest_element(H0: List[object]) -> object:
@@ -319,7 +319,7 @@ def second_largest_element(H0: List[object]) -> object:
     return H0[-2]
 
 
-#34) A python function takes H0_list(object) and H1_int as inputs. It should return the H1_int-th largest element of H0_list(object).
+#34) A python function takes H0_list_obj and H1_int as inputs. It should return the H1_int-th largest element of H0_list_obj.
 # For example if [2,2,2,2] and 4 are the inputs, then the function should return 2.
 # For example if [7,7,0,1,0,1,5] and 4 are the inputs, then the function should return 1.
 def nth_largest_element(H0: List[object], H1: int) -> object:
@@ -330,7 +330,7 @@ def nth_largest_element(H0: List[object], H1: int) -> object:
     return H0[-H1]
 
 
-#35) A python function that takes H0_list(object) as input. It should return the smallest element of H0_list(object).
+#35) A python function that takes H0_list_obj as input. It should return the smallest element of H0_list_obj.
 def smallest_element(H0: List[object]) -> object:
     if not H0:
         return None
@@ -338,7 +338,7 @@ def smallest_element(H0: List[object]) -> object:
     return min(H0)
 
 
-#36) A python function takes H0_list(object) as input. It should return the second smallest element of H0_list(object).
+#36) A python function takes H0_list_obj as input. It should return the second smallest element of H0_list_obj.
 # For example if the input is [0,1,2], then the function should return 1.
 # For example if the input is [2,0,1,0,1], then the function should return 0.
 # For example if the input is [2,1,0,1,1,2], then the function should return 1.
@@ -350,7 +350,7 @@ def second_smallest_element(H0: List[object]) -> object:
     return H0[1]
 
 
-#37) A python function takes H0_list(object) and H1_int as input. It should return the H1_int-th smallest element of H0_list(object).
+#37) A python function takes H0_list_obj and H1_int as input. It should return the H1_int-th smallest element of H0_list_obj.
 # For example if the input is [2,2,2,2], then the function should return 2.
 # For example if the input is [7,7,0,1,0,1,5], then the function should return 1.
 def nth_smallest_element(H0: List[object], H1: int) -> object:
@@ -361,7 +361,7 @@ def nth_smallest_element(H0: List[object], H1: int) -> object:
     return H0[H1 - 1]
 
 
-#38) A python function takes H0_list(object) and H1_list(object) as inputs. The function should return a new list of all similar elements in H0_list(object) and H1_list(object).
+#38) A python function takes H0_list_obj and H1_list_object as inputs. The function should return a new list of all similar elements in H0_list_obj and H1_list_object.
 def similar_elements(H0: List[object], H1: List[object]) -> List[object]:
     result = []
     if not H0 or not H1:
@@ -374,7 +374,7 @@ def similar_elements(H0: List[object], H1: List[object]) -> List[object]:
     return result
 
 
-#39) A python function takes H0_list(object) as input. It should return the list of all sublists of H0_list(object).
+#39) A python function takes H0_list_obj as input. It should return the list of all sublists of H0_list_obj.
 def all_sublists(H0: List[object]) -> List[List[object]]:
     from itertools import combinations
 
@@ -385,7 +385,7 @@ def all_sublists(H0: List[object]) -> List[List[object]]:
     return [list(i) for i in result]
 
 
-#40) A python function takes H0_list(object) and H1_int as inputs. It should return the list of all sublists of length H1_int of H0_list(object).
+#40) A python function takes H0_list_obj and H1_int as inputs. It should return the list of all sublists of length H1_int of H0_list_obj.
 def all_sublists_length_n(H0: List[object], H1: int) -> List[List[object]]:
     from itertools import combinations
 
@@ -397,7 +397,7 @@ def all_sublists_length_n(H0: List[object], H1: int) -> List[List[object]]:
     return [list(i) for i in result]
 
 
-#41) A python function takes H0_list(object) and H1_list(object) as inputs. It should return true if either is a sublist of the other otherwise, it should return false.
+#41) A python function takes H0_list_obj and H1_list_object as inputs. It should return true if either is a sublist of the other otherwise, it should return false.
 def if_sublist(H0: List[object], H1: List[object]) -> bool:
     if H0 == [] or H1 == []:
         return True
@@ -424,7 +424,7 @@ def if_sublist(H0: List[object], H1: List[object]) -> bool:
     return result1 or result2
 
 
-#42) A Python function takes H0_list(object) as input. The function should return a list where all the elements of H0_list(object) are sublists of the returned list.
+#42) A Python function takes H0_list_obj as input. The function should return a list where all the elements of H0_list_obj are sublists of the returned list.
 # For example, if the input is [[1], [2], [3]] then the function should return [1, 2, 3].
 def original_list(H0: List[List[object]]) -> List[object]:
     import itertools
@@ -432,7 +432,7 @@ def original_list(H0: List[List[object]]) -> List[object]:
     return list(itertools.chain.from_iterable(H0))
 
 
-#43) A python function that takes H0_list(object) as input. The function should remove duplicates from H0_list(object) and returns the new list.
+#43) A python function that takes H0_list_obj as input. The function should remove duplicates from H0_list_obj and returns the new list.
 def remove_duplicate(H0: List[object]) -> List[object]:
     result = []
     if not H0:
@@ -445,12 +445,12 @@ def remove_duplicate(H0: List[object]) -> List[object]:
     return result
 
 
-#44) A python functon takes H0_list(float) as input. It should return the average of the numbers in H0_list(float).
+#44) A python functon takes H0_list_float as input. It should return the average of the numbers in H0_list_float.
 def mean_of_list(H0: List[float]) -> float:
     return sum(H0) / len(H0)
 
 
-#45) A python functon takes H0_list(float) as input. It should return the mode of the numbers in H0_list(float).
+#45) A python functon takes H0_list_float as input. It should return the mode of the numbers in H0_list_float.
 # If the given list has more than one mode then the function should return all of them.
 def mode_of_list(H0: List[float]) -> List[float]:
     import operator
@@ -489,20 +489,20 @@ def count_vowels(H0: str) -> int:
     return count
 
 
-#48) A python function takes H0_str of length at least three and finds all palindrome sequences of size x in the string.
-# The function should return the list of the palindrome sequences. If there is no palindrome sequence of size x in the string, the function should return None.
+#48) A python function takes H0_str_>2 and H1_int as inputs. The function should find all palindrome sequences of size H1_int in the string.
+# The function should return the list of the palindrome sequences. If there is no palindrome sequence of size H1_int in the string, the function should return None.
 # For example, a palindrome sequence of size 3 in "ev en" is "eve".
 # For example, a palindrome sequence of size 4 in "Yesterday we met Anna" is "anna".
-def find_all_palindrome_x(s: str, x: int) -> List[str]:
-    if len(s) <= 2 or x <= 2 or x > len(s):
+def find_all_palindrome_x(H0: str, H1: int) -> List[str]:
+    if len(H0) <= 2 or H1 <= 2 or H1 > len(H0):
         return None
 
-    s = s.lower()
-    s = s.replace(" ", "")
+    H0 = H0.lower()
+    H0 = H0.replace(" ", "")
     all_palindrome = []
-    for i in range(0, len(s)):
-        chunk = s[i:i + x]
-        if len(chunk) < x:
+    for i in range(0, len(H0)):
+        chunk = H0[i:i + H1]
+        if len(chunk) < H1:
             break
         if chunk == chunk[::-1]:
             all_palindrome.append(chunk)
@@ -513,21 +513,21 @@ def find_all_palindrome_x(s: str, x: int) -> List[str]:
         return None
 
 
-#49) A python function that takes a string of length at least three and finds all palindrome sequences of size at least three in the string.
+#49) A python function takes H0_str_>2 as input. The function should finds all palindrome sequences of size at least three in the string.
 # The function should return the list of the palindrome sequences. If there is no palindrome sequence in the string, the function should return None.
 # For example, if "ev en" is given to the function, it should return ['eve'].
 # For example, if "Imperial College" is given to the function, it should return ['ege'].
 # For example, if "Yesterday we met Anna" is given to the function, it should return ['eme', 'anna'].
-def find_all_palindrome(s: str) -> List[str]:
-    if len(s) <= 2:
+def find_all_palindrome(H0: str) -> List[str]:
+    if len(H0) <= 2:
         return None
-    s = s.lower()
-    s = s.replace(" ", "")
+    H0 = H0.lower()
+    H0 = H0.replace(" ", "")
     c = 3
     all_palindrome = []
-    for _ in range(0, len(s) - 2):
-        for i in range(0, len(s)):
-            chunk = s[i:i + c]
+    for _ in range(0, len(H0) - 2):
+        for i in range(0, len(H0)):
+            chunk = H0[i:i + c]
             if len(chunk) < c:
                 break
             if chunk == chunk[::-1]:
@@ -540,201 +540,201 @@ def find_all_palindrome(s: str) -> List[str]:
         return None
 
 
-#50) A python function that takes a list of characters and returns the list of all possible palindrome sequences of length x made out of only those characters.
+#50) A python function takes H0_list_char and H1_int as inputs. The function should return the list of all possible palindrome sequences of length H1_int made out of only those characters.
 # For example, if the function takes ['e','v','a','e'] it should return ['eve', 'eae'].
-def all_palindrome_length_3(l: List[str], x: int) -> List[str]:
+def all_palindrome_length_3(H0: List[str], H1: int) -> List[str]:
     from itertools import combinations
 
     result = []
-    if len(l) < x or x < 3 or len(l) < 3:
+    if len(H0) < H1 or H1 < 3 or len(H0) < 3:
         return result
-    result += (list(combinations(l, x)))
+    result += (list(combinations(H0, H1)))
 
     return [''.join(i) for i in result if i == i[::-1]]
 
 
-#51) A Python function that accepts a list of characters and produces a list of all palindrome sequences that can be created using only those characters. All returned palindrome sequences must be at least three characters long.
-# For example, if the function takes ['t', 'e', 's', 'e', 't'] it should return ['tet', 'tst', 'tet', 'ese', 'teet', 'teset'].
-def all_palindrome_all_length(l: List[str]) -> List[str]:
+#51) A Python function takes H0_list_char as input. The function should return a list of all palindrome sequences that can be created using only characters in H0_list_char. All returned palindrome sequences must be at least three characters long.
+# For example, if ['t', 'e', 's', 'e', 't'] is the input, the function should return ['tet', 'tst', 'tet', 'ese', 'teet', 'teset'].
+def all_palindrome_all_length(H0: List[str]) -> List[str]:
     from itertools import combinations
 
     result = []
-    if len(l) < 3:
+    if len(H0) < 3:
         return result
-    for i in range(3, len(l) + 1):
-        result += (list(combinations(l, i)))
+    for i in range(3, len(H0) + 1):
+        result += (list(combinations(H0, i)))
 
     return [''.join(i) for i in result if i == i[::-1]]
 
 
-#52) A python function that takes a list of characters and returns the list of
-# all possible strings of length x constructed from those characters. Repeat characters are not allowed.
-def permutations_no_repeat_length_x(l: List[str], x: int) -> List[str]:
+#52) A python function takes H0_list_char and H1_int as inputs. The function should return the list of
+# all possible strings of length H1_int constructed from the characters in H0_list_char. Repeat characters are not allowed.
+def permutations_no_repeat_length_x(H0: List[str], H1: int) -> List[str]:
     from itertools import permutations
 
     result = []
-    if len(l) < x or x < 1:
+    if len(H0) < H1 or H1 < 1:
         return result
-    result += (list(permutations(l, x)))
+    result += (list(permutations(H0, H1)))
 
     return [''.join(i) for i in result]
 
 
-#53) A python function that takes a list of characters and returns the list of
-# all possible strings of length x constructed from those characters. Repeat characters are allowed.
-def permutations_with_repeat_length_x(l: List[str], x: int) -> List[str]:
+#53) A python function takes H0_list_char and H1_int as inputs. The function should return the list of
+# all possible strings of length H1_int constructed from the characters in H0_list_char. Repeat characters are allowed.
+def permutations_with_repeat_length_x(H0: List[str], H1: int) -> List[str]:
     from itertools import product
 
     result = []
-    if len(l) < x or x < 1:
+    if len(H0) < H1 or H1 < 1:
         return result
-    result += (list(product(l, repeat=x)))
+    result += (list(product(H0, repeat=H1)))
 
     return [''.join(i) for i in result]
 
 
-#54) A python function that takes a list of characters and returns the list of
-# all possible strings of any length constructed from those characters. Repeat characters are not allowed.
-def all_permutations_no_repeat(l: List[str]) -> List[str]:
+#54) A python function takes H0_list_char and H1_int as inputs. The function should return the list of
+# all possible strings of any length constructed from the characters in H0_list_char. Repeat characters are not allowed.
+def all_permutations_no_repeat(H0: List[str]) -> List[str]:
     from itertools import permutations
 
     result = []
-    if len(l) < 1:
+    if len(H0) < 1:
         return result
-    for i in range(1, len(l) + 1):
-        result += (list(permutations(l, i)))
+    for i in range(1, len(H0) + 1):
+        result += (list(permutations(H0, i)))
 
     return [''.join(i) for i in result]
 
 
-#55) A python function that takes a list of characters and returns the list of
-# all possible strings of any length constructed from those characters. Repeat characters are allowed.
-def all_permutations_with_repeat(l: List[str]) -> List[str]:
+#55) A python function takes H0_list_char as input. The function should return the list of
+# all possible strings of any length constructed from the characters in H0_list_char. Repeat characters are allowed.
+def all_permutations_with_repeat(H0: List[str]) -> List[str]:
     from itertools import product
 
     result = []
-    if len(l) < 1:
+    if len(H0) < 1:
         return result
-    for i in range(1, len(l) + 1):
-        result += (list(product(l, repeat=i)))
+    for i in range(1, len(H0) + 1):
+        result += (list(product(H0, repeat=i)))
 
     return [''.join(i) for i in result]
 
 
-#56) A python function that takes a list and inserts a given element before a given index and returns the new list.
-def insert_before_index(l: List[object], e: object, n: int) -> List[object]:
-    if n < 0:
-        return l
-    elif n >= len(l):
-        l.append(e)
-        return l
+#56) A python function takes H0_list_obj, H1_obj and H2_int as inputs. The function should insert H1_obj before index H2_int and returns the new list.
+def insert_before_index(H0: List[object], H1: object, H2: int) -> List[object]:
+    if H2 < 0:
+        return H0
+    elif H2 >= len(H0):
+        H0.append(H1)
+        return H0
     else:
-        return l[:n] + [e] + l[n:]
+        return H0[:H2] + [H1] + H0[H2:]
 
 
-#57) A python function that takes a list and inserts a given element after a given index and returns the new list.
-def insert_after_index(l: List[object], e: object, n: int) -> List[object]:
-    if n < 0:
-        return l
-    elif n >= len(l):
-        l.append(e)
-        return l
+#57) A python function takes H0_list_obj, H1_obj and H2_int as inputs. The function should insert H1_obj after index H2_int and returns the new list.
+def insert_after_index(H0: List[object], H1: object, H2: int) -> List[object]:
+    if H2 < 0:
+        return H0
+    elif H2 >= len(H0):
+        H0.append(H1)
+        return H0
     else:
-        return l[:n + 1] + [e] + l[n + 1:]
+        return H0[:H2 + 1] + [H1] + H0[H2 + 1:]
 
 
-#58) A python function that takes a list and inserts a given element before an element in the list and returns the new list.
-def insert_before_element(l: List[object], list_e: object, given_e: object) -> List[object]:
-    if not l:
+#58) A python function takes H0_list_obj, H1_obj and H2_obj. The function should insert H2_obj before H1_obj in H0_list_obj and returns the new list.
+def insert_before_element(H0: List[object], H1: object, H2: object) -> List[object]:
+    if not H0:
         return []
-    elif list_e not in l:
-        return l
+    elif H1 not in H0:
+        return H0
     else:
-        n = l.index(list_e)
-        return l[:n] + [given_e] + l[n:]
+        n = H0.index(H1)
+        return H0[:n] + [H2] + H0[n:]
 
 
-#59) A python function that takes a list and inserts a given element after an element in the list and returns the new list.
-def insert_after_element(l: List[object], list_e: object, given_e: object) -> List[object]:
-    if not l:
+#59) A python function takes H0_list_obj, H1_obj and H2_obj. The function should insert H2_obj after H1_obj in H0_list_obj and returns the new list.
+def insert_after_element(H0: List[object], H1: object, H2: object) -> List[object]:
+    if not H0:
         return []
-    elif list_e not in l:
-        return l
+    elif H1 not in H0:
+        return H0
     else:
-        n = l.index(list_e)
-        return l[:n + 1] + [given_e] + l[n + 1:]
+        n = H0.index(H1)
+        return H0[:n + 1] + [H2] + H0[n + 1:]
 
 
-#60) A python function that takes a string and returns characters with the lowest and highest ASCII values, respectively.
-def return_high_low_ascii(s: str) -> tuple[str, str]:
-    if s == '':
+#60) A python function takes a H0_str as input. The function should return characters with the lowest and highest ASCII values in H0_str.
+def return_high_low_ascii(H0: str) -> tuple[str, str]:
+    if H0 == '':
         return None
-    d = {c: ord(c) for c in s}
+    d = {c: ord(c) for c in H0}
 
     return min(d), max(d)
 
 
-#61) A python function that takes a positive integer and returns the binary representation of the given integer.
-def pos_int_to_binary(n: int) -> str:
+#61) A python function takes H0_int_>0 as input. The function should return the binary representation of H0_int_>0.
+def pos_int_to_binary(H0: int) -> str:
     result = ''
-    while n >= 2:
-        r = n % 2
-        n = n // 2
+    while H0 >= 2:
+        r = H0 % 2
+        H0 = H0 // 2
         result += str(r)
 
-    result += str(n)
+    result += str(H0)
 
     return result[::-1]
 
 
-#62) A python function that takes an integer and returns true if the integer is among the Fibonacci numbers otherwise it should return false.
-def is_fibo(n: int) -> bool:
-    if n < 0:
+#62) A python function takes H0_int as input. The function should return true if H0_int is among the Fibonacci numbers otherwise it should return false.
+def is_fibo(H0: int) -> bool:
+    if H0 < 0:
         return False
-    if n == 0 or n == 1:
+    if H0 == 0 or H0 == 1:
         return True
     f0 = 0
     f1 = 1
     while True:
         f3 = f0 + f1
-        if f3 == n:
+        if f3 == H0:
             return True
-        elif f3 > n:
+        elif f3 > H0:
             return False
         f0, f1 = f1, f3
 
 
-#63) A python function that returns the sum of first n numbers of the Fibonacci sequence.
+#63) A python function takes H0_int as input. The function should return the sum of first H0_int numbers of the Fibonacci sequence.
 # For example, if n = 5, the function should return 0+1+1+2+3=7.
-def sum_n_fibo(n: int) -> int:
+def sum_n_fibo(H0: int) -> int:
     s = 0
-    if n <= 1:
+    if H0 <= 1:
         return s
     f0 = 0
     f1 = 1
     s += f1
-    while n > 2:
+    while H0 > 2:
         f3 = f0 + f1
         s += f3
         f0, f1 = f1, f3
-        n -= 1
+        H0 -= 1
 
     return s
 
 
-#64) A python function that returns the list of all prime numbers among the first n numbers of the Fibonacci sequence.
-def prime_nums_fibo(n: int) -> List[int]:
+#64) A python function takes H0_int as input. The function should return the list of all prime numbers among the first H0_int numbers of the Fibonacci sequence.
+def prime_nums_fibo(H0: int) -> List[int]:
     result = []
-    if n <= 3:
+    if H0 <= 3:
         return result
     fibo = [0, 1]
     f0 = 0
     f1 = 1
-    while n > 2:
+    while H0 > 2:
         f3 = f0 + f1
         fibo.append(f3)
         f0, f1 = f1, f3
-        n -= 1
+        H0 -= 1
 
     flag = False
     for i in fibo[3:]:
@@ -750,19 +750,19 @@ def prime_nums_fibo(n: int) -> List[int]:
     return result
 
 
-#65) A python function that returns the list of all composite numbers among the first n numbers of the Fibonacci sequence.
-def composite_nums_fibo(n: int) -> List[int]:
+#65) A python function takes H0_int as input. The function should return the list of all composite numbers among the first H0_int numbers of the Fibonacci sequence.
+def composite_nums_fibo(H0: int) -> List[int]:
     result = []
-    if n < 7:
+    if H0 < 7:
         return result
     fibo = [0, 1]
     f0 = 0
     f1 = 1
-    while n > 2:
+    while H0 > 2:
         f3 = f0 + f1
         fibo.append(f3)
         f0, f1 = f1, f3
-        n -= 1
+        H0 -= 1
 
     for i in fibo[6:]:
         for j in range(2, i):
@@ -773,12 +773,29 @@ def composite_nums_fibo(n: int) -> List[int]:
     return result
 
 
-#66) A python function takes a list of strings as input. It should return a list of separate lists each containing
-# strings from the given list that are the same length.
-def same_len_strings(ls: List[str]) -> list[list[str]]:
-    if not ls:
+#66) A python function takes H0_list_str as input. The function should return a list of separate lists each containing
+# strings from H0_list_str that are the same length.
+def same_len_strings(H0: List[str]) -> list[list[str]]:
+    if not H0:
         return []
     result = {}
+    for i in H0:
+        length = len(i)
+        if length not in result:
+            result[length] = [i]
+        else:
+            result[length].append(i)
+
+    return list(result.values())
+
+
+#67) A python function takes H0_str=sentence as input. It should return a list of separate lists each containing
+# strings without spaces from H0_str_sentence that are the same length.
+def same_len_words(H0: str) -> list[list[str]]:
+    if not H0:
+        return []
+    result = {}
+    ls = H0.split()
     for i in ls:
         length = len(i)
         if length not in result:
@@ -789,42 +806,25 @@ def same_len_strings(ls: List[str]) -> list[list[str]]:
     return list(result.values())
 
 
-#67) A python function takes a sentence of strings as input. It should return a list of separate lists each containing
-# strings without spaces from the given sentence that are the same length.
-def same_len_words(s: str) -> list[list[str]]:
-    if not s:
-        return []
-    result = {}
-    ls = s.split()
-    for i in ls:
-        length = len(i)
-        if length not in result:
-            result[length] = [i]
-        else:
-            result[length].append(i)
-
-    return list(result.values())
-
-
-#68) A python function that takes two strings and returns true if they are anagrams otherwise it should return false.
-def if_anagrams(s1: str, s2: str) -> bool:
-    s1 = s1.replace(' ', '').lower()
-    s2 = s2.replace(' ', '').lower()
-    if len(s1) != len(s2):
+#68) A python function takes H0_str and H1_str as inputs. The function should return true if H0_str and H1_str are anagrams otherwise it should return false.
+def if_anagrams(H0: str, H1: str) -> bool:
+    H0 = H0.replace(' ', '').lower()
+    H1 = H1.replace(' ', '').lower()
+    if len(H0) != len(H1):
         return False
-    s1 = ''.join(sorted(s1))
-    s2 = ''.join(sorted(s2))
+    H0 = ''.join(sorted(H0))
+    H1 = ''.join(sorted(H1))
 
-    return s1 == s2
+    return H0 == H1
 
 
-#69) A python function that takes a list of strings as input and returns a list of distinct lists containing
-# anagrams from the given list. For example if the input is ['Imperial', 'FourTH OF JUly', 'joyful fOURTH'] then
+#69) A python function takes H0_list_str as input. The function should return a list of distinct lists containing
+# anagrams from H0_list_str. For example if the input is ['Imperial', 'FourTH OF JUly', 'joyful fOURTH'] then
 # the output should be [['imperial'], ['fourthofjuly', 'joyfulfourth']]
-def all_anagrams(ls: List[str]) -> list[list[str]]:
-    ls = [i.replace(' ', '').lower() for i in ls]
+def all_anagrams(H0: List[str]) -> list[list[str]]:
+    H0 = [i.replace(' ', '').lower() for i in H0]
     result = {}
-    for i in ls:
+    for i in H0:
         sorted_i = str(sorted(i))
         if sorted_i not in result:
             result[sorted_i] = [i]
@@ -834,37 +834,37 @@ def all_anagrams(ls: List[str]) -> list[list[str]]:
     return list(result.values())
 
 
-#70) A python function takes a list of strings as input. It should return the list of all strings from the given list that are real numbers.
+#70) A python function takes H0_list_str as input. The function should return the list of all strings from H0_list_str that are real numbers.
 # For example, if ['1.5', '2', '35t', 'one'] is given to the function, it should return ['1.5', '2'].
-def find_numeric(ls: List[str]) -> List[str]:
-    if not ls:
+def find_numeric(H0: List[str]) -> List[str]:
+    if not H0:
         return []
     try:
-        float(ls[0])
-        return [ls[0]] + find_numeric(ls[1:])
+        float(H0[0])
+        return [H0[0]] + find_numeric(H0[1:])
     except ValueError:
-        return find_numeric(ls[1:])
+        return find_numeric(H0[1:])
 
 
-#71) A python function takes a list of strings as input. It should return the list of all alphanumeric strings from the given array.
-def find_alphanumeric(ls: List[str]) -> List[str]:
-    if not ls:
+#71) A python function takes H0_list_str as input. The function should return the list of all alphanumeric strings from H0_list_str.
+def find_alphanumeric(H0: List[str]) -> List[str]:
+    if not H0:
         return []
-    if ls[0].isalnum():
-        return [ls[0]] + find_alphanumeric(ls[1:])
+    if H0[0].isalnum():
+        return [H0[0]] + find_alphanumeric(H0[1:])
     else:
-        return find_alphanumeric(ls[1:])
+        return find_alphanumeric(H0[1:])
 
 
-#72) A python function takes an integer as input. It should return the string representation of the integer with commas serving as the hundred separators.
-def commas_hunds(n: int) -> str:
-    if -100 < n < 100:
-        return n
+#72) A python function takes H0_int as input. The function should return the string representation of H0_int with commas serving as the hundred separators.
+def commas_hunds(H0: int) -> str:
+    if -100 < H0 < 100:
+        return H0
     flag = False
-    if n < 0:
+    if H0 < 0:
         flag = True
-        n = -n
-    s = str(n)[::-1]
+        H0 = -H0
+    s = str(H0)[::-1]
     result = ''
     for i in range(0, len(s), 2):
         if i + 2 >= len(s):
@@ -877,68 +877,68 @@ def commas_hunds(n: int) -> str:
     return result[::-1]
 
 
-#73) A python function that takes a positive integer and returns true if the integer is a left-truncatable prime otherwise the function should return false.
-def is_left_truncatable_prime(n: int) -> bool:
-    if '0' in str(n) or n < 2:
+#73) A python function takes H0_int_>0 as input. The function should return true if H0_int_>0 is a left-truncatable prime otherwise the function should return false.
+def is_left_truncatable_prime(H0: int) -> bool:
+    if '0' in str(H0) or H0 < 2:
         return False
 
-    while n >= 2:
-        length = len(str(n))
-        for i in range(2, n):
-            if n % i == 0:
+    while H0 >= 2:
+        length = len(str(H0))
+        for i in range(2, H0):
+            if H0 % i == 0:
                 return False
-        n = n % (10 ** (length - 1))
+        H0 = H0 % (10 ** (length - 1))
 
-    if n == 1:
+    if H0 == 1:
         return False
 
     return True
 
 
-#74) A python function that takes a positive integer and returns true if the integer is a right-truncatable prime otherwise the function should return false.
-def is_right_truncatable_prime(n: int) -> bool:
-    if '0' in str(n) or n < 2:
+#74) A python function takes H0_int_>0 as input. The function should return true if the integer is a right-truncatable prime otherwise the function should return false.
+def is_right_truncatable_prime(H0: int) -> bool:
+    if '0' in str(H0) or H0 < 2:
         return False
 
-    while n >= 2:
-        for i in range(2, n):
-            if n % i == 0:
+    while H0 >= 2:
+        for i in range(2, H0):
+            if H0 % i == 0:
                 return False
-        n = n // 10
+        H0 = H0 // 10
 
-    if n == 1:
+    if H0 == 1:
         return False
 
     return True
 
 
-#75) A python function that takes a positive integer and returns true if the integer is a left-and-right-truncatable prime otherwise the function should return false.
-def is_left_right_truncatable_prime(n: int) -> bool:
-    if '0' in str(n) or n < 2:
+#75) A python function takes H0_int_>0 as input. The function should return true if H0_int_>0 is a left-and-right-truncatable prime otherwise the function should return false.
+def is_left_right_truncatable_prime(H0: int) -> bool:
+    if '0' in str(H0) or H0 < 2:
         return False
 
-    while n >= 2:
-        length = len(str(n))
-        for i in range(2, n):
-            if n % i == 0:
+    while H0 >= 2:
+        length = len(str(H0))
+        for i in range(2, H0):
+            if H0 % i == 0:
                 return False
-        n = n % (10 ** (length - 1))
-        n = n // 10
+        H0 = H0 % (10 ** (length - 1))
+        H0 = H0 // 10
 
-    if n == 1:
+    if H0 == 1:
         return False
 
     return True
 
 
-#76) A python function takes a sentence as input. It should return the list of all the words in the sentence that have duplicate characters.
-# For example is the input is "Imperial College is a decent university" then the output should be ['College', 'decent', 'university'].
-def words_with_duplicate_chars(s: str) -> List[str]:
+#76) A python function takes H0_str=sentence as input. The function should return the list of all the words in H0_str=sentence that have duplicate characters.
+# For example if the input is "Imperial College is a decent university" then the output should be ['College', 'decent', 'university'].
+def words_with_duplicate_chars(H0: str) -> List[str]:
     result = []
-    if len(s) < 2:
+    if len(H0) < 2:
         return result
 
-    words = [i for i in s.split()]
+    words = [i for i in H0.split()]
     for word in words:
         if len(set(word)) != len(word):
             result.append(word)
@@ -946,17 +946,17 @@ def words_with_duplicate_chars(s: str) -> List[str]:
     return result
 
 
-#77) A python function takes a string as input. It should return the list of all longest substrings of the input with no duplicate letters.
-def longest_no_duplicate(s: str) -> List[str]:
+#77) A python function takes H0_str as input. The function should return the list of all longest substrings of H0_str with no duplicate letters.
+def longest_no_duplicate(H0: str) -> List[str]:
     from itertools import combinations
 
-    if len(s) == 1 or len(set(s)) == len(s):
-        return s
+    if len(H0) == 1 or len(set(H0)) == len(H0):
+        return H0
 
     all_no_dup = []
-    length = len(s) - 1
+    length = len(H0) - 1
     while length > 0:
-        chunks = [s[i:j] for i, j in combinations(range(len(s) + 1), r=2) if len(s[i:j]) == length]
+        chunks = [H0[i:j] for i, j in combinations(range(len(H0) + 1), r=2) if len(H0[i:j]) == length]
         for chunk in chunks:
             if len(set(chunk)) == len(chunk):
                 all_no_dup.append(chunk)
@@ -973,18 +973,18 @@ def longest_no_duplicate(s: str) -> List[str]:
     return list(set(dict[max(dict.keys())]))
 
 
-#78) A python function takes a string as input. It should return the list of all substrings of the length x that do not contain any duplicate characters.
+#78) A python function takes H0_str and H1_int as input. The function should return the list of all substrings of the length H1_int that do not contain any duplicate characters.
 # For examle if the inputs are "Imperial" and 3 then the output should be ['Imp', 'mpe', 'per', 'eri', 'ria', 'ial'].
-def length_x_no_duplicate(s: str, x: int) -> List[str]:
+def length_x_no_duplicate(H0: str, H1: int) -> List[str]:
     from itertools import combinations
 
-    if x > len(s) or x <= 0:
+    if H1 > len(H0) or H1 <= 0:
         return []
 
     all_no_dup = []
-    length = len(s) - 1
+    length = len(H0) - 1
     while length > 0:
-        chunks = [s[i:j] for i, j in combinations(range(len(s) + 1), r=2) if len(s[i:j]) == length]
+        chunks = [H0[i:j] for i, j in combinations(range(len(H0) + 1), r=2) if len(H0[i:j]) == length]
         for chunk in chunks:
             if len(set(chunk)) == len(chunk):
                 all_no_dup.append(chunk)
@@ -1000,50 +1000,51 @@ def length_x_no_duplicate(s: str, x: int) -> List[str]:
 
     result = []
     for k, v in dict.items():
-        if k == x:
+        if k == H1:
             result = v
 
     return result
 
 
-#79) A python function takes a positive integer as input. It should return the least common multiple of
-# all numbers ranging from 1 to the given integer inclusive.
-def divisible_by_nums_to_n(n: int) -> int:
+#79) A python function takes H0_int_>0 as input. The function should return the least common multiple of
+# all numbers ranging from 1 to H0_int_>0 inclusive.
+def divisible_by_nums_to_n(H0: int) -> int:
     from math import gcd
 
-    if n < 1:
+    if H0 < 1:
         return None
     result = 1
-    for i in range(1, n + 1):
+    for i in range(1, H0 + 1):
         result *= i // gcd(result, i)
 
     return result
 
 
-#80) A python function takes two positive integer as inputs. It should return the least common multiple of
-# all numbers between the given integers inclusive.
-def divisible_by_nums_x_y(x: int, y: int) -> int:
+#80) A python function takes H0_int_>0 and H1_int>0 as inputs. The function should return the least common multiple of
+# all numbers between H0_int_>0 and H1_int>0 inclusive.
+def divisible_by_nums_x_y(H0: int, H1: int) -> int:
     from math import gcd
 
-    if x < 1 or y < 1 or y < x:
+    if H0 < 1 or H1 < 1 or H1 < H0:
         return None
 
-    if x == y:
-        return x
+    if H0 == H1:
+        return H0
 
     result = 1
-    for i in range(x, y + 1):
+    for i in range(H0, H1 + 1):
         result = result * i // gcd(result, i)
 
     return result
 
 
-#81) A python function takes a circular integer array as input. It should return a contiguous subarray with the largest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
-def largest_sum_subarray(ls):
-    dictionary = {}
-    dictionary[sum(ls)] = [ls]
-    for j in range(len(ls)):
-        temp_ls = ls[j:] + ls[:j]
+#81) A python function takes a circular integer list H0_list_int as input. The function should return a contiguous sublist with the largest sum.
+# If there is more than one such sublist, the function should return the list of all of them.
+# For example if the input is [2, -7, -3, 1] then the function should return [1, 2].
+def largest_sum_subarray(H0):
+    dictionary = {sum(H0): [H0]}
+    for j in range(len(H0)):
+        temp_ls = H0[j:] + H0[:j]
         for i in range(1, len(temp_ls)):
             s = sum(temp_ls[:i])
             if s not in dictionary:
@@ -1058,12 +1059,13 @@ def largest_sum_subarray(ls):
     return result
 
 
-#81) A python function takes a circular integer array as input. It should return a contiguous subarray with the smallest sum in it. If there is more than one of such subarrays, the function should return the list of all of them.
-def smallest_sum_subarray(ls):
-    dictionary = {}
-    dictionary[sum(ls)] = [ls]
-    for j in range(len(ls)):
-        temp_ls = ls[j:] + ls[:j]
+#81) A python function takes a circular integer list H0_list_int as input. It should return a contiguous sublist with the smallest sum in it.
+# If there is more than one such sublist, the function should return the list of all of them.
+# For example, if the input is [-2, 7, -3, 1] then the function should return [-3, 1, -2].
+def smallest_sum_subarray(H0):
+    dictionary = {sum(H0): [H0]}
+    for j in range(len(H0)):
+        temp_ls = H0[j:] + H0[:j]
         for i in range(1, len(temp_ls)):
             s = sum(temp_ls[:i])
             if s not in dictionary:
@@ -1078,12 +1080,13 @@ def smallest_sum_subarray(ls):
     return result
 
 
-#82) A python function takes a circular integer array as input. It should return a contiguous subarray with a sum equal to a given number. If there is more than one of such subarrays, the function should return the list of all of them.
-def sum_subarray_equal_n(ls, n):
-    dictionary = {}
-    dictionary[sum(ls)] = [ls]
-    for j in range(len(ls)):
-        temp_ls = ls[j:] + ls[:j]
+#82) A python function takes H0_int and a circular integer list H1_list_int as inputs. The function should return a contiguous sublist with a sum equal to H0_int.
+# If there is more than one such sublist, the function should return the list of all of them.
+# For example, if the inputs are [0, 7, -3, 1] and 1 then the function should return [[1], [1, 0]].
+def sum_subarray_equal_n(H1, H0):
+    dictionary = {sum(H1): [H1]}
+    for j in range(len(H1)):
+        temp_ls = H1[j:] + H1[:j]
         for i in range(1, len(temp_ls)):
             s = sum(temp_ls[:i])
             if s not in dictionary:
@@ -1091,16 +1094,16 @@ def sum_subarray_equal_n(ls, n):
             else:
                 dictionary[s].append(temp_ls[:i])
 
-    if n not in dictionary.keys():
+    if H0 not in dictionary.keys():
         return []
-    result = dictionary.get(n)
+    result = dictionary.get(H0)
     if len(result) == 1:
         return result[0]
 
     return result
     
     
-#83) A python function takes a positive number as input. It should return the list of all combinations of positive integers in increasing order that add up to the given positive number.
+#83) A python function takes H0_int_>0 as input. It should return the list of all combinations of positive integers in increasing order that add up to H0_int_>0.
 def pre_combinations_add_up(n, *, boundary=1):
     for i in range(boundary, n - boundary + 1):
         for j in pre_combinations_add_up(n - i, boundary=i):
@@ -1109,30 +1112,29 @@ def pre_combinations_add_up(n, *, boundary=1):
         yield n,
 
 
-def combinations_add_up(n):
-    tuples = pre_combinations_add_up(n)
+def combinations_add_up(H0):
+    tuples = pre_combinations_add_up(H0)
     return [list(i) for i in tuples]
 
 
-#84) A python function takes an array as input. It should return the contiguous sub-array with the highest element product.
-# If there is more than one of such sub-arrays, the function should return the list of all of them.
-def max_product_subarray(ls):
+#84) A python function takes H0_list_int as input. It should return the contiguous sublist of H0_list_int that has the highest element product.
+# If there is more than one such sublist, the function should return the list of all of them.
+# For example, if the input is [4, -3, 6, 1] then the function should return [[6], [6, 1]].
+def max_product_subarray(H0):
     import math
+
+    if len(H0) < 2:
+        return H0
     
-    if len(ls) < 2:
-        return ls
     dictionary = {}
-    dictionary[math.prod(ls)] = [ls]
-
-    while len(ls) > 0:
-        for i in range(1, len(ls) + 1):
-            pr = math.prod(ls[:i])
+    while len(H0) > 0:
+        for i in range(1, len(H0) + 1):
+            pr = math.prod(H0[:i])
             if pr not in dictionary:
-                dictionary[pr] = [ls[:i]]
+                dictionary[pr] = [H0[:i]]
             else:
-                dictionary[pr].append(ls[:i])
-
-        ls.remove(ls[0])
+                dictionary[pr].append(H0[:i])
+        H0.remove(H0[0])
 
     result = dictionary.get(max(dictionary.keys()))
     if len(result) == 1:
@@ -1141,25 +1143,24 @@ def max_product_subarray(ls):
     return result
 
 
-#85) A python function takes an array as input. It should return the contiguous sub-array with the minimum element product.
-# If there is more than one of such sub-arrays, the function should return the list of all of them.
-def min_product_subarray(ls):
+#85) A python function takes H0_list_int as input. The function should return the contiguous sublist with the minimum element product.
+# If there is more than one such sublist, the function should return the list of all of them.
+def min_product_subarray(H0):
     import math
 
-    if len(ls) < 2:
-        return ls
+    if len(H0) < 2:
+        return H0
+    
     dictionary = {}
-    dictionary[math.prod(ls)] = [ls]
-
-    while len(ls) > 0:
-        for i in range(1, len(ls) + 1):
-            pr = math.prod(ls[:i])
+    while len(H0) > 0:
+        for i in range(1, len(H0) + 1):
+            pr = math.prod(H0[:i])
             if pr not in dictionary:
-                dictionary[pr] = [ls[:i]]
+                dictionary[pr] = [H0[:i]]
             else:
-                dictionary[pr].append(ls[:i])
+                dictionary[pr].append(H0[:i])
 
-        ls.remove(ls[0])
+        H0.remove(H0[0])
 
     result = dictionary.get(min(dictionary.keys()))
     if len(result) == 1:
@@ -1168,47 +1169,45 @@ def min_product_subarray(ls):
     return result
 
 
-#86) A python function takes a circular integer array as input. It should return a contiguous subarray with a product equal to a given number.
-# If there is more than one of such subarrays, the function should return the list of all of them.
-def product_subarray_equal_n(ls, n):
+#86) A python function takes H0_int and a circular integer list H1_list_int as input. It should return a contiguous sublist with a product equal to H0_int.
+# If there is more than one such sublist, the function should return the list of all of them.
+def product_subarray_equal_n(H1, H0):
     import math
 
-    if len(ls) < 2:
-        return ls
-    dictionary = {}
-    dictionary[math.prod(ls)] = [ls]
-
-    while len(ls) > 0:
-        for i in range(1, len(ls) + 1):
-            pr = math.prod(ls[:i])
-            if pr not in dictionary:
-                dictionary[pr] = [ls[:i]]
-            else:
-                dictionary[pr].append(ls[:i])
-
-        ls.remove(ls[0])
+    if len(H1) < 2:
+        return H1
     
-    if n not in dictionary.keys():
+    dictionary = {}
+    while len(H1) > 0:
+        for i in range(1, len(H1) + 1):
+            pr = math.prod(H1[:i])
+            if pr not in dictionary:
+                dictionary[pr] = [H1[:i]]
+            else:
+                dictionary[pr].append(H1[:i])
+        H1.remove(H1[0])
+
+    if H0 not in dictionary.keys():
         return []
-    result = dictionary.get(n)
+    result = dictionary.get(H0)
     if len(result) == 1:
         return result[0]
 
     return result
 
 
-#87) A Python function takes as input an integer array with distinct elements.
-# The function should find the surpasser count for each array element, that is,
+#87) A Python function takes an integer list with distinct elements H0_list_int_distinct as input.
+# The function should find the surpasser count for each list element, that is,
 # the number of elements to the right that are greater than that element.
-# For example, if the given array is [6, 3, 5, 7], the function should return [1, 2, 1, 0]
-def surpasser_count(ls):
+# For example, if the input is [6, 3, 5, 7], the function should return [1, 2, 1, 0]
+def surpasser_count(H0):
     result = []
-    if len(ls) <= 1 or len(ls)!=len(set(ls)):
+    if len(H0) <= 1 or len(H0) != len(set(H0)):
         return result
     c = 0
-    for i in range(0, len(ls) - 1):
-        for j in range(i + 1, len(ls)):
-            if ls[j] > ls[i]:
+    for i in range(0, len(H0) - 1):
+        for j in range(i + 1, len(H0)):
+            if H0[j] > H0[i]:
                 c += 1
         result.append(c)
         c = 0
@@ -1217,33 +1216,33 @@ def surpasser_count(ls):
     return result
 
 
-#88) A python function takes an integer array, It should return the list of all inversions of the given array.
-def find_inversions(ls):
+#88) A python function takes H0_list_int. THe function should return the list of all inversions of H0_list_int.
+def find_inversions(H0):
     result = []
-    if len(ls) <= 1:
+    if len(H0) <= 1:
         return result
-    for i in range(0, len(ls)):
-        for j in range(i + 1, len(ls)):
-            if ls[j] < ls[i]:
-                result.append([ls[i], ls[j]])
+    for i in range(0, len(H0)):
+        for j in range(i + 1, len(H0)):
+            if H0[j] < H0[i]:
+                result.append([H0[i], H0[j]])
 
     return result
 
 
-#89) A python function takes a binary array as input. The function should return the index of
-# the first occurrence of 0 to be replaced with 1 to get the maximum length sequence of continuous ones.
-def first_zero_index(ls):
+#89) A python function takes a binary array H0_list_int_binary as input. The function should return the index of
+# the first occurrence of 0 to be replaced with 1 to get the maximum length sequence of continuous 1's.
+def first_zero_index(H0):
     # https://www.techiedelight.com/find-index-0-replaced-get-maximum-length-sequence-of-continuous-ones/
-    if not ls or ls.count(0) == 0:
+    if not H0 or H0.count(0) == 0:
         return None
-    if len(ls) == 1:
-        return ls[0]
+    if len(H0) == 1:
+        return H0[0]
     max_count = 0
     max_index = -1
     prev_zero_index = -1
     count = 0
-    for i in range(len(ls)):
-        if ls[i] == 1:
+    for i in range(len(H0)):
+        if H0[i] == 1:
             count = count + 1
         else:
             count = i - prev_zero_index
@@ -1256,40 +1255,28 @@ def first_zero_index(ls):
     return max_index
 
 
-#90) A python function takes a matrix as input. The function should return an element with the maximum number of occurrences in the given matrix. If more than one such element exists, then the function should return all of them.
-def element_with_max_occurrences(mat):
+#90) A python function takes a matrix H0_matrix_obj as input. The function should return an element with the maximum number of occurrences in H0_matrix_obj. If more than one such element exists, then the function should return all of them.
+def element_with_max_occurrences(H0):
     import itertools
     from collections import Counter
 
-    ocurrence = Counter(itertools.chain.from_iterable(mat))
-    return [k for k, v in ocurrence.items() if v == max(ocurrence.values())]
+    occurrence = Counter(itertools.chain.from_iterable(H0))
+    return [k for k, v in occurrence.items() if v == max(occurrence.values())]
 
 
-#91) A python function takes an unsorted array X of size n, whose elements lie in the range 0 to n-1 as input.
-# The function should return a new array in which X[X[i]] is set to i for every given array's element A[i].
-#  For example, if [3, 1, 0, 2] is given to the function, then [2, 1, 3, 0] should be returned.
-def new_list_rearrangement(ls):
-    import copy
-
-    ls_copy = copy.deepcopy(ls)
-    for i in range(len(ls)):
-        ls_copy[ls[i]] = i
-    return ls_copy
-
-
-#92) A python function takes two arrays of the same size as inputs.
-# The function should return the longest subarrays from both arrays that start and end at the same index in both arrays and have the same sum.
+#91) A python function takes H0_list_int and H1_list_int_sizeH0 the same size as inputs.
+# The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same sum.
 # For example, if [7, 13, 1, 6] and [0, 2, 12, 0] are passed to the function then it should return ([13, 1], [2, 12]).
 # For example, if [1, 1, 1, 6] and [1, 2, 12, 6] are passed to the function then it should return [([1], [1]), ([6], [6])].
-def longest_subarrays_same_sum(X, Y):
-    if not X or not Y or len(X) != len(Y):
+def longest_sublists_same_sum(H0, H1):
+    if not H0 or not H1 or len(H0) != len(H1):
         return None
     d = []
     flag = False
     i_j_diff = 0
-    for i in range(len(X)):
-        for j in range(i + 1, len(X) + 1):
-            if sum(X[i:j]) == sum(Y[i:j]):
+    for i in range(len(H0)):
+        for j in range(i + 1, len(H0) + 1):
+            if sum(H0[i:j]) == sum(H1[i:j]):
                 if i_j_diff == j - i:
                     flag = True
                 i_j_diff = j - i
@@ -1300,12 +1287,12 @@ def longest_subarrays_same_sum(X, Y):
     result = (-1, -1)
 
     if flag:
-        subarrays = []
+        sublists = []
         for tup in d:
             ii = tup[0]
             jj = tup[1]
-            subarrays.append((X[ii:jj], Y[ii:jj]))
-        return subarrays
+            sublists.append((H0[ii:jj], H1[ii:jj]))
+        return sublists
 
     for tup in d:
         diff = tup[1] - tup[0]
@@ -1315,21 +1302,21 @@ def longest_subarrays_same_sum(X, Y):
 
     i = result[0]
     j = result[1]
-    return X[i:j], Y[i:j]
+    return H0[i:j], H1[i:j]
 
 
-#93) A python function takes two arrays of the same size as inputs.
-# The function should return the longest subarrays from both arrays that start and end at the same index in both arrays and have the same product.
+#92) A python function takes H0_list_int and H1_list_int_sizeH0 the same size as inputs.
+# The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same product.
 # For example, if [2, 5, 1, 6] and [0, 1, 30, 1] are passed to the function then it should return ([5, 1, 6], [1, 30, 1]).
-def longest_subarrays_same_product(X, Y):
+def longest_subarrays_same_product(H0, H1):
     from math import prod
 
-    if not X or not Y or len(X) != len(Y):
+    if not H0 or not H1 or len(H0) != len(H1):
         return None
     d = []
-    for i in range(len(X)):
-        for j in range(i + 1, len(X) + 1):
-            if prod(X[i:j]) == prod(Y[i:j]):
+    for i in range(len(H0)):
+        for j in range(i + 1, len(H0) + 1):
+            if prod(H0[i:j]) == prod(H1[i:j]):
                 d.append((i, j))
 
     if not d:
@@ -1343,40 +1330,12 @@ def longest_subarrays_same_product(X, Y):
             result = tup
     i = result[0]
     j = result[1]
-    return X[i:j], Y[i:j]
+    return H0[i:j], H1[i:j]
 
 
-#94) A python function takes an array of only positive integers as input. The function should return the list of all possible combination of "k" distinct disjoint lists which completely cover the given array and have the same sum.
-# For example, if the given array is []
-def subarrays_equal_sum(l):
-    from itertools import combinations
-
-    if len(l) < 2 or sum(l) % 2 != 0:
-        return []
-    l = sorted(l)
-    list_sum = sum(l)
-    all_combinations = []
-    for i in range(1, len(l)):
-        all_combinations += (list(combinations(l, i)))
-
-    combinations_list = [i for i in all_combinations if sum(i) == list_sum / 2]
-    if not combinations_list:
-        return []
-    final_result = []
-    for i in range(len(combinations_list)):
-        for j in range(i + 1, len(combinations_list)):
-            first = combinations_list[i]
-            second = combinations_list[j]
-            concat = sorted(first + second)
-            if concat == l and [list(first), list(second)] not in final_result:
-                final_result.append([list(first), list(second)])
-
-    return final_result
-
-
-#95) A python function takes an array of possitive integers and a number as inputs.
-# The function should return all distinc lists of which elements are from the given array and each of which sum equals the given number. Repeat elements in the returned lists are allowed.
-# For example, if the given array and number are [1,2,3] and 4, respectively the function should return [[1,1,1,1],[1,1,2],[2,2],[1,3]].
+#93) A python function takes H0_int_>1 and H0_list_int_>0 as inputs.
+# The function should return all distinc lists of which elements are from H0_list_int_>0 and each of which sum equals H0_int_>1. Repeat elements in the returned lists are allowed.
+# For example, if the inputs are 4 and [1,2,3], then the function should return [[1,1,1,1],[1,1,2],[2,2],[1,3]].
 from collections import namedtuple
 class AbsComparator(int):
     def __lt__(self, other):
@@ -1510,37 +1469,37 @@ def elements_split(elements, target, k, bound=None):
                 yield answer
 
 
-def list_of_equal_sum_split(raw_elements, k):
-    if k < 1 or not raw_elements:
+def list_of_equal_sum_split(H1, H0):
+    if H0 < 1 or not H1:
         return None
-    for i in raw_elements:
+    for i in H1:
         if i < 1:
             return None
-    total = sum(raw_elements)
-    if (total % k) != 0:
+    total = sum(H1)
+    if (total % H0) != 0:
         return None
     else:
-        target = total // k
+        target = total // H0
         counts = {}
-        for e in sorted(raw_elements, key=AbsComparator, reverse=True):
+        for e in sorted(H1, key=AbsComparator, reverse=True):
             counts[e] = 1 + counts.get(e, 0)
         elements = list(counts.items())
-        result = elements_split(elements, target, k)
+        result = elements_split(elements, target, H0)
         return [i for i in result]
 
 
-#96) A python function takes a circular integer array as input. It should return a new array containing the next greater element for each element in the original array.
-# If there is no next greater element for an element, then the function should insert None in the corresponding index of the returned array.
-# The next greater element of an element "x" in the array is the first larger number to the right side of "x".
-def next_greater_element(arr):
+#94) A python function takes a circular integer list H0_list_int as input. The function should return a new list containing the next greater element for each element in H0_list_int.
+# If there is no next greater element for an element, then the function should insert None in the corresponding index of the returned list.
+# The next greater element of an element "x" in a list is the first larger number to the right side of "x".
+def next_greater_element(H0):
     result = []
-    if not arr:
+    if not H0:
         return result
-    if len(arr) == 1:
+    if len(H0) == 1:
         return [None]
 
-    for i in range(len(arr)):
-        temp_ls = arr[i:] + arr[:i]
+    for i in range(len(H0)):
+        temp_ls = H0[i:] + H0[:i]
         first_element = temp_ls[0]
         for j in range(1, len(temp_ls)):
             next_element = temp_ls[j]
@@ -1553,21 +1512,21 @@ def next_greater_element(arr):
     return result
 
 
-#97) A python function takes a matrix of real numbers. It should return a submatrix of size "n" by "n" in the given matrix that has the largest sum.
-def submatrix_size_n_with_max_sum(mat, n):
+#95) A python function takes H0_matrix_float and number H1_int_>0 as inputs. The function should return a submatrix of size H1_int_>0 by H1_int_>0 in H0_matrix_float that has the largest sum.
+def submatrix_size_n_with_max_sum(H0, H1):
     import math
     import numpy as np
 
-    if not mat or n < 1:
+    if not H0 or H1 < 1:
         return None
-    if type(mat).__module__ != np.__name__:
-        mat = np.asmatrix(mat)
+    if type(H0).__module__ != np.__name__:
+        H0 = np.asmatrix(H0)
     max_sum = -math.inf
-    submat = mat[:0, :0]
-    height, width = mat.shape[0], mat.shape[1]
-    for i in range(height - (n - 1)):
-        for j in range(width - (n - 1)):
-            square = mat[i:i + n, j:j + n]
+    submat = H0[:0, :0]
+    height, width = H0.shape[0], H0.shape[1]
+    for i in range(height - (H1 - 1)):
+        for j in range(width - (H1 - 1)):
+            square = H0[i:i + H1, j:j + H1]
             submat_sum = np.sum(square, dtype=np.float32)
             if submat_sum > max_sum:
                 max_sum = submat_sum
@@ -1576,69 +1535,68 @@ def submatrix_size_n_with_max_sum(mat, n):
     return submat
 
 
-#98) A python function takes a matrix of real numbers. It should return a square submatrix of in the given matrix that has the largest sum.
-def square_submatrix_with_max_sum(mat):
+#96) A python function takes H0_matrix_float as input. The function should return a square submatrix of in the given matrix that has the largest sum.
+def square_submatrix_with_max_sum(H0):
     import math
     import numpy as np
 
-    if not mat:
+    if not H0:
         return None
-    if type(mat).__module__ != np.__name__:
-        mat = np.asmatrix(mat)
+    if type(H0).__module__ != np.__name__:
+        H0 = np.asmatrix(H0)
     max_sum = -math.inf
-    submat = mat[:0, :0]
-    height, width = mat.shape[0], mat.shape[1]
+    submat = H0[:0, :0]
+    height, width = H0.shape[0], H0.shape[1]
 
     boundary = max(height, width)
     for k in range(1, boundary + 1):
         for i in range(height - (k - 1)):
             for j in range(width - (k - 1)):
-                square = mat[i:i + k, j:j + k]
+                square = H0[i:i + k, j:j + k]
                 submat_sum = np.sum(square, dtype=np.float32)
                 if submat_sum > max_sum:
                     max_sum = submat_sum
                     submat = square
 
-    return submat  
+    return submat
 
 
-#99) A python function takes a matrix of real numbers. It should return a submatrix of in the given matrix that has the largest sum.
-def submatrix_with_max_sum(mat):
+#97) A python function takes H0_matrix_float as input. The function should return a submatrix of H0_matrix_float which has the largest sum.
+def submatrix_with_max_sum(H0):
+    import math
     import numpy as np
 
-    if not mat:
+    if not H0:
         return None
-    if type(mat).__module__ != np.__name__:
-        mat = np.asmatrix(mat)
+    if type(H0).__module__ != np.__name__:
+        H0 = np.asmatrix(H0)
     max_sum = -math.inf
-    submatrix = mat[:0, :0]
-    rows, columns = mat.shape[0], mat.shape[1]
+    submatrix = H0[:0, :0]
+    rows, columns = H0.shape[0], H0.shape[1]
     for c in range(rows):
         for i in range(columns):
             for j in range(1, columns + 1 - i):
-                temp_submatrix = (mat[c:c + 1, i:i + j])
+                temp_submatrix = (H0[c:c + 1, i:i + j])
                 submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
                 if submatrix_sum > max_sum:
                     max_sum = submatrix_sum
                     submatrix = temp_submatrix
-
 
     for c in range(columns):
         for i in range(rows):
             for j in range(2, rows + 1 - i):
-                temp_submatrix = (mat[i:i + j, c:c + 1])
+                temp_submatrix = (H0[i:i + j, c:c + 1])
                 submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
                 if submatrix_sum > max_sum:
                     max_sum = submatrix_sum
                     submatrix = temp_submatrix
-
 
     boundary = min(rows, columns)
     for k in range(2, boundary + 1):
         for c in range(rows - (k - 1)):
             for i in range((columns // k) + 1):
                 for j in range(i + k, columns + 1):
-                    temp_submatrix = (mat[c:c + k, i:j])
+                    temp_submatrix = (H0[c:c + k, i:j])
                     submatrix_sum = np.sum(temp_submatrix, dtype=np.float32)
                     if submatrix_sum > max_sum:
                         max_sum = submatrix_sum
@@ -1647,16 +1605,16 @@ def submatrix_with_max_sum(mat):
     return submatrix
 
 
-#100) A python function takes a matrix. It should return the count of all submatrices in the given matrix.
-def count_all_submatrices(mat):
+#98) A python function takes H0_matrix_obj. The function should return the count of all submatrices in H0_matrix_obj.
+def count_all_submatrices(H0):
     import numpy as np
 
-    if not mat:
+    if not H0:
         return None
-    if type(mat).__module__ != np.__name__:
-        mat = np.asmatrix(mat)
+    if type(H0).__module__ != np.__name__:
+        H0 = np.asmatrix(H0)
 
-    rows, columns = mat.shape[0], mat.shape[1]
+    rows, columns = H0.shape[0], H0.shape[1]
     submatrix_count = 0
 
     for c in range(rows):
@@ -1679,32 +1637,32 @@ def count_all_submatrices(mat):
     return submatrix_count
 
 
-#101) A python function takes a matrix. Among all submatrices in the given matrix, the function should return the count of submatrices that each has "k" elements.
-def count_submatrices_of_size_n(mat, n):
+#99) A python function takes H0_matrix_obj and H1_int>0. Among all submatrices in H0_matrix_obj, the function should return the count of submatrices that each has H1_int>0 elements.
+def count_submatrices_of_size_n(H0, H1):
     import numpy as np
 
-    if not mat or n < 1:
+    if not H0 or H1 < 1:
         return None
-    if type(mat).__module__ != np.__name__:
-        mat = np.asmatrix(mat)
+    if type(H0).__module__ != np.__name__:
+        H0 = np.asmatrix(H0)
 
-    rows, columns = mat.shape[0], mat.shape[1]
+    rows, columns = H0.shape[0], H0.shape[1]
     submatrix_of_size_n = 0
 
     for c in range(rows):
         for i in range(columns):
             for j in range(1, columns + 1 - i):
-                temp_submatrix = (mat[c:c + 1, i:i + j])
+                temp_submatrix = (H0[c:c + 1, i:i + j])
                 ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
-                if ro * co == n:
+                if ro * co == H1:
                     submatrix_of_size_n += 1
 
     for c in range(columns):
         for i in range(rows):
             for j in range(2, rows + 1 - i):
-                temp_submatrix = (mat[i:i + j, c:c + 1])
+                temp_submatrix = (H0[i:i + j, c:c + 1])
                 ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
-                if ro * co == n:
+                if ro * co == H1:
                     submatrix_of_size_n += 1
 
     boundary = min(rows, columns)
@@ -1712,22 +1670,22 @@ def count_submatrices_of_size_n(mat, n):
         for c in range(rows - (k - 1)):
             for i in range((columns // k) + 1):
                 for j in range(i + k, columns + 1):
-                    temp_submatrix = (mat[c:c + k, i:j])
+                    temp_submatrix = (H0[c:c + k, i:j])
                     ro, co = temp_submatrix.shape[0], temp_submatrix.shape[1]
-                    if ro * co == n:
+                    if ro * co == H1:
                         submatrix_of_size_n += 1
 
     return submatrix_of_size_n
 
 
-#102) A python function takes two integers "m" and "n" and a list of integers as input. The function should return the sum of all elements from the given list that lie in the range m to n inclusive.
-def sum_in_range(ls, m, n):
-    if not ls or m >= n:
+#100) A python function takes H0_int and H1_int and H2_list_int as inputs. The function should return the sum of all elements from the given list that lie in the range H0_int to H1_int inclusive.
+def sum_in_range(H2, H0, H1):
+    if not H2 or H0 >= H1:
         return None
 
     result = 0
-    for i in ls:
-        if m <= i <= n:
+    for i in H2:
+        if H0 <= i <= H1:
             result += i
-    
+
     return result
