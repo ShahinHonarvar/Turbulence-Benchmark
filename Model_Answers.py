@@ -945,7 +945,7 @@ def words_with_duplicate_chars(H0: str) -> List[str]:
     return result
 
 
-#(78) A python function takes {H0,T:str} as input. The function should return the list of all longest substrings of {H0,T:str} with no duplicate letters.
+#(78) A python function takes {H0,T:str} as input. The function should return the list of all longest substrings of {H0,T:str} with no duplicate characters.
 def longest_no_duplicate(H0: str) -> List[str]:
     from itertools import combinations
 
@@ -968,12 +968,11 @@ def longest_no_duplicate(H0: str) -> List[str]:
             dict[length] = [i]
         else:
             dict[length].append(i)
-    print(dict)
     return list(set(dict[max(dict.keys())]))
 
 
 #(79) A python function takes {H0,T:str} and {H1,T:int} as input. The function should return the list of all substrings of the length {H1,T:int} that do not contain any duplicate characters.
-# For examle if the inputs are "Imperial" and 3 then the output should be ['Imp', 'mpe', 'per', 'eri', 'ria', 'ial'].
+# For example if the inputs are "Imperial" and 3 then the output should be ['Imp', 'mpe', 'per', 'eri', 'ria', 'ial'].
 def length_x_no_duplicate(H0: str, H1: int) -> List[str]:
     from itertools import combinations
 
@@ -1252,7 +1251,7 @@ def element_with_max_occurrences(H0):
     return [k for k, v in occurrence.items() if v == max(occurrence.values())]
 
 
-#(93) A python function takes {H0,S:list,T:int} and {H1,S:list,T:int,R:sizeH0} the same size as inputs. The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same sum.
+#(93) A python function takes {H0,S:list,T:int,R:samesize} and {H1,S:list,T:int,R:samesize} the same size as inputs. The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same sum.
 # For example, if the inputs are [7, 13, 1, 6] and [0, 2, 12, 0] then the function should return ([13, 1], [2, 12]).
 def longest_sublists_same_sum(H0, H1):
     if not H0 or not H1 or len(H0) != len(H1):
@@ -1291,7 +1290,7 @@ def longest_sublists_same_sum(H0, H1):
     return H0[i:j], H1[i:j]
 
 
-#(94) A python function takes {H0,S:list,T:int} and {H1,S:list,T:int,R:sizeH0} the same size as inputs. The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same product.
+#(94) A python function takes {H0,S:list,T:int,R:samesize} and {H1,S:list,T:int,R:samesize} the same size as inputs. The function should return the longest sublists from both lists that start and end at the same index in both lists and have the same product.
 # For example, if [2, 5, 1, 6] and [0, 1, 30, 1] are passed to the function then it should return ([5, 1, 6], [1, 30, 1]).
 def longest_subarrays_same_product(H0, H1):
     from math import prod
