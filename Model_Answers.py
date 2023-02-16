@@ -48,7 +48,7 @@ def all_odd_ints_exclusive(H0, H1):
     return [i for i in range(H0 + 1, H1) if H0 < H1 and i % 2 != 0]
 
 
-#(11) A python function takes {H0,S:list,T:obj} as input. It should return the largest element of {H0,S:list,T:obj}.
+#(11) A python function takes {H0,S:list,T:float} as input. It should return the largest element of {H0,S:list,T:float}.
 def largest_element(H0):
     if not H0:
         return None
