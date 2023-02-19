@@ -1339,7 +1339,7 @@ def longest_subarrays_same_product(H0, H1):
     return H0[i:j], H1[i:j]
 
 
-#(95) A python function takes {H0,T:int,R:>1} and {H1,S:list,T:int,R:>0} as inputs. The function should return all distinc lists of which elements are from {H1,S:list,T:int,R:>0} and each of which sum equals {H0,T:int,R:>1}. Repeat elements in the returned lists are allowed.
+#(95) A python function takes {H0,T:int,R:>1} and {H1,S:list,T:int,R:>0} as inputs. The function should return all distinct lists of which elements are from {H1,S:list,T:int,R:>0} and each of which sum equals {H0,T:int,R:>1}. Repeat elements in the returned lists are allowed.
 # For example, if the inputs are 4 and [1,2,3], then the function should return [[1,1,1,1],[1,1,2],[2,2],[1,3]].
 from collections import namedtuple
 class AbsComparator(int):
