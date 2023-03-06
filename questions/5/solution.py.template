@@ -1,0 +1,23 @@
+from typing import List
+
+
+def find_primes(l: List[int]) -> List[int]:
+    result = []
+    n = $
+    if not l or n < 3:
+        return result
+    
+    flag = False
+    for i in l:
+        if i <= 1:
+            continue
+        for j in range(2, i):
+            if i % j == 0:
+                flag = True
+                break
+        if flag:
+            flag = False
+        else:
+            if i < n:
+                result.append(i)
+    return result

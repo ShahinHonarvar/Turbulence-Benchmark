@@ -50,7 +50,7 @@ python3 1/test_suite_generator.py 10 100 > /data/temp/tests.py
 To generate the sample solution for a particular question instantiation, do:
 
 ```
-python3 instantiate.py [question-number]/solution.py.template [parameter-values] > /path/to/instantiated/solution.txt
+python3 instantiate.py [question-number]/solution.py.template [parameter-values] > /path/to/instantiated/solution.py
 ```
 
 For example, to instantiate the solution for question 1 with parameter values 10 and 100, storing the result in `/data/temp/solution.py`, do:

@@ -1,15 +1,9 @@
+import re
 import sys
 
 def instantiate(template, args):
-    result = ""
-    args_index = 0
-    for i in range(0, len(template)):
-        if template[i] == "$":
-            result += args[args_index]
-            args_index += 1
-        else:
-            result += template[i]
-    return result
+
+    return re.sub(r'\$', lambda i: str(args.pop(0)), template)
 
 template = open(sys.argv[1], "r").read()
 
