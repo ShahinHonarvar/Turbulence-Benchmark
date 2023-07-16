@@ -1,0 +1,80 @@
+from Q58.$3_results_$4.Folder_$1.generated_answer import $2
+import random
+import numpy as np
+from numpy import matrix
+import warnings
+from functools import wraps
+
+
+def ignore_warnings(f):
+    @wraps(f)
+    def inner(*args, **kwargs):
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("ignore")
+            response = f(*args, **kwargs)
+        return response
+    return inner
+
+
+@ignore_warnings
+def test_matrix_of_one_integer():
+    input_matrix = [[$0]]
+    input_matrix = np.asmatrix(input_matrix)
+    if $0 == 1:
+        assert $2(input_matrix) == 1
+    else:
+        assert not $2(input_matrix)
+
+
+@ignore_warnings
+def test_matrix_of_having_$0_integers():
+    if $0 % 2 == 0:
+        input_matrix = [[random.randint(-100, 100) for _ in range(2)] for _ in range($0 // 2)]
+        input_matrix = np.asmatrix(input_matrix)
+    else:
+        input_matrix = [[random.randint(-100, 100) for _ in range($0)]]
+        input_matrix = np.asmatrix(input_matrix)
+
+    assert $2(input_matrix) == 1
+
+
+@ignore_warnings
+def test_horizontal_matrix():
+    mat = [[random.randint(-10, 10) for _ in range($0)]]
+    mat = np.asmatrix(mat)
+    m = np.concatenate((mat, mat), axis=1)
+    if $0 < 30:
+        num = 4
+    elif 30 <= $0 < 70:
+        num = 3
+    elif 70 <= $0 < 150:
+        num = 2
+    else:
+        num = 1
+    for i in range(num):
+        m = np.concatenate((m, mat), axis=1)
+        output = $2(m)
+        expected_result = ((i + 2) * $0) + 1
+        assert output == expected_result
+
+
+@ignore_warnings
+def test_vertical_matrix():
+    m = '1 ;' * $0
+    m = m[:-1]
+    m = np.matrix(m)
+    mat = np.concatenate((m, m), axis=0)
+    if $0 < 30:
+        num = 4
+    elif 30 <= $0 < 70:
+        num = 3
+    elif 70 <= $0 < 150:
+        num = 2
+    else:
+        num = 1
+    for i in range(num):
+        mat = np.concatenate((m, mat), axis=0)
+        output = $2(mat)
+        expected_result = ((i + 2) * $0) + 1
+        assert output == expected_result
+        

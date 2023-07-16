@@ -1,0 +1,39 @@
+from Q49.$3_results_$4.Folder_$1.generated_answer import $2
+
+
+def test_binary_of_zero():
+    assert $2('0')
+
+
+def test_binary_of_one():
+    assert not $2('1')
+
+
+def test_binary_of_two():
+    if $0 == 4:
+        assert $2('10')
+    else:
+        assert not $2('10')
+
+
+def test_binary_of_three():
+    if $0 == 5:
+        assert $2('11')
+    else:
+        assert not $2('11')
+
+
+def test_binary_of_twenty_five_prime_numbers():
+    prime_nums = [7, 11, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 97]
+    for n in prime_nums:
+        s = ''
+        while n >= 2:
+            r = n % 2
+            n = n // 2
+            s += str(r)
+        s += str(n)
+        binary_string = s[::-1]
+        if n == $0:
+            assert $2(binary_string)
+        else:
+            assert not $2(binary_string)
