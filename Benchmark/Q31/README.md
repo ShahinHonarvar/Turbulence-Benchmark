@@ -1,1 +1,1 @@
-This question requires a non-negative integer parameters i.
+This question requires a non-negative integer parameter i.
