@@ -6,10 +6,10 @@ def gen_params(q_no, seed):
     if seed != 'default':
         random.seed(seed)
     params = []
-    selected_range = [(4, 10)] * 5 + [(10, 100)] * 75 + [(100, 1000)] * 20
+    selected_range = [(4, 10)] * 5 + [(10, 100)] * 45 + [(100, 200)] * 50
     p = 0
     for a_range in selected_range:
-        while p in params or p == 0:
+        while p in params or p == 0 or (p > 14 and 1 <= p % 10 <= 3):
             p = random.randint(a_range[0], a_range[1])
         params.append(p)
 

@@ -9,7 +9,7 @@ def gen_params(q_no, seed):
     with open(f'Q{q_no}/manually_chosen_params.txt', 'r') as f:
         params = [(int(l.strip('\n').split()[0]), int(l.strip('\n').split()[1])) for l in f.readlines()]
 
-    selected_range = [range(0, 10)] * 10 + [range(10, 100)] * 60 + [range(100, 1000)] * 10
+    selected_range = [range(0, 10)] * 10 + [range(10, 100)] * 65 + [range(100, 1000)] * 5
     p0, p1 = 0, 0
     for a_range in selected_range:
         while (p0, p1) in params or p1 <= p0 + 1:

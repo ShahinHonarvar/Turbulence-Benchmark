@@ -6,7 +6,7 @@ def gen_params(q_no, seed):
     if seed != 'default':
         random.seed(seed)
     params = []
-    selected_range = [(3, 10)] * 6 + [(10, 100)] * 64 + [(100, 1000)] * 30
+    selected_range = [(3, 10)] * 6 + [(10, 100)] * 64 + [(100, 500)] * 30
     p = 0
     for a_range in selected_range:
         while p in params or p == 0:

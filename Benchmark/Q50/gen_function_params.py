@@ -12,8 +12,8 @@ def input_generator(l, seed):
     n = int(l[0])
     option = random.randint(0, 3)
     if option == 0:
-        for i in range(2 * (n + 1)):
-            length = random.randint(2, 20)
+        for _ in range(2 * (n + 1)):
+            length = random.randint(3, 5)
             result.append(''.join(random.choices(string.ascii_letters, k=length)))
     else:
         if n > 276:
@@ -25,8 +25,8 @@ def input_generator(l, seed):
         else:
             s = ''.join(random.choices(string.ascii_letters, k=3))
             result = [''.join(i) for i in itertools.permutations(s)]
-        for i in range(n // 5):
-            length = random.randint(2, 20)
+        for _ in range(n // 5):
+            length = random.randint(3, 5)
             result.append(''.join(random.choices(string.ascii_letters, k=length)))
 
     random.shuffle(result)

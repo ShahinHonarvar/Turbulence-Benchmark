@@ -8,9 +8,10 @@ import string
 def input_generator(l, seed):
     if seed != 'default':
         random.seed(seed)
+    x = l[1]
     length = random.randint(100, 200)
     return ''.join(
         random.choices(
-            string.ascii_letters + string.digits + ' ' * (length // 20), k=length
+            (x * 5) + string.ascii_letters + (x * 5) + string.digits + ' ' * (length // 20) + (x * 5), k=length
         )
     )

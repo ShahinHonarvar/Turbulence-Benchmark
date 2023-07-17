@@ -1,17 +1,31 @@
+# This scrip generates a random list. The output generated will be passed to the generated code by the large language model and the model solution.
+
 import random
+import string
 
 
-# This function generates a list of random integers. The output of this function will be passed to the generated code
-# by the large language model and the model solution.
 def input_generator(l, seed):
-    if seed != 'default':
+    if seed != "default":
         random.seed(seed)
+    element, idx = l[0], int(l[1]) 
+    length = idx + 10
     result = []
-    random_selection = random.randint(0, 1)
-    random_k = random.randint(2, 10)
-    if random_selection:
-        result = random.choices(list(range(-1000, 1000)) + list(range(-10, 10)) + list(range(-100, 100)), k=random_k)
-    else:
-        result = random.sample(list(range(-1000, 1000)) + list(range(-10, 10)) + list(range(-100, 100)), k=random_k)
-    
+    for i in range(length):
+        option = random.randint(0, 4)
+        if option == 0:
+            i = random.choice(string.ascii_letters)
+        elif option == 1:
+            i = random.choice(range(0, 100))
+        elif option == 2:
+            i = round(random.uniform(0, 1000), 2)
+        elif option == 3:
+            i = random.choices(string.ascii_letters + string.digits, k=2)
+        else:
+            i = {random.choice(string.ascii_letters): random.choice(range(0, 1000))}
+
+        result.append(i)
+        result.append(element)
+
+    random.shuffle(result)
+
     return result
