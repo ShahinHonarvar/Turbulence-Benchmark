@@ -10,17 +10,13 @@ def input_generator(l, seed):
     x = int(l[1]) + 2
     result0 = []
     result1 = []
-    random_num = random.randint(1, 3)
-    for _ in range(random_num):
-        result0 += list(''.join(random.choice(string.ascii_letters) for _ in range(x)))
-        result0 += random.choices(range(-1000, 1000), k=(x))
-        result0 += list(''.join(random.choice('$%&*+<=>@') for _ in range(x)))
-
-        result1 += list(''.join(random.choice(string.ascii_letters) for _ in range(x)))
-        result1 += random.choices(range(-1000, 1000), k=(x))
-        result1 += list(''.join(random.choice('$%&*+<=>@') for _ in range(x)))
-
-            
+    result0 += list(''.join(random.choice(string.ascii_letters) for _ in range(x)))
+    result0 += random.choices(range(-1000, 1000), k=(x))
+    result0 += list(''.join(random.choice('$%&*+<=>@') for _ in range(x)))
+    result1 += list(''.join(random.choice(string.ascii_letters) for _ in range(x)))
+    result1 += random.choices(range(-1000, 1000), k=(x))
+    result1 += list(''.join(random.choice('$%&*+<=>@') for _ in range(x)))
+      
     random.shuffle(result0)
     random.shuffle(result1)
 

@@ -9,7 +9,7 @@ def input_generator(l, seed):
         random.seed(seed)
     x = int(l[1])
     result = []
-    if x // 10 < 2:
+    if (x // 10) < 2:
         n = 2
     else:
         n = x // 10

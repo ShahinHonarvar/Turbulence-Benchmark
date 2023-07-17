@@ -10,7 +10,7 @@ def input_generator(l, seed):
     x = int(l[0])
     result = []
     for _ in range(x):
-        length = random.randint(2, 100)
+        length = random.randint(2, 20)
         result.append(set(random.sample(range(-100, 100), length)))
 
     random.shuffle(result)

@@ -6,16 +6,11 @@ import random
 def input_generator(l, seed):
     if seed != 'default':
         random.seed(seed)
-
     x = int(l[0]) + 2
-    result = []
-    random_num = random.randint(2, 5)
-    for _ in range(random_num):
-        random_selection = random.randint(0, 1)
-        if random_selection:
-            result += random.choices(range(1, 1000), k=x)
-        else:
-            result += random.sample(range(1, 1000), k=x)
+    random_selection = random.randint(0, 1)
+    if random_selection:
+        result = random.choices(range(1, 1020), k=x)
+    else:
+        result = random.sample(range(1, 1020), k=x)
 
-    random.shuffle(result)
     return result
