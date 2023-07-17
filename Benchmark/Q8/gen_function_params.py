@@ -7,14 +7,11 @@ def input_generator(l, seed):
     if seed != 'default':
         random.seed(seed)
     x = int(l[1]) + 2
-    result = []
-    random_num = random.randint(2, 5)
-    for _ in range(random_num):
-        random_selection = random.randint(0, 1)
-        if random_selection:
-            result += random.choices(range(-1000, 1000), k=x)
-        else:
-            result += random.sample(range(-1000, 1000), k=x)
-            
+    random_selection = random.randint(0, 1)
+    if random_selection:
+        result = random.choices(range(-550, 550), k=x)
+    else:
+        result = random.sample(range(-550, 550), k=x)
+
     random.shuffle(result)
     return result

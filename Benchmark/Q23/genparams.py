@@ -8,13 +8,8 @@ def gen_params(q_no, seed):
         random.seed(seed)
     params = []
     selected_range = (
-        [range(-10, 10)] * 5
-        + [range(1, 10)] * 25
-        + [range(-100, -10)] * 5
-        + [range(-100, 100)] * 5
-        + [range(10, 100)] * 30
-        + [range(-1000, -100)] * 5
-        + [range(-1000, 1000)] * 5
+        [range(1, 10)] * 30
+        + [range(10, 100)] * 50
         + [range(100, 1000)] * 20
     )
     p0, p1 = 0, 0

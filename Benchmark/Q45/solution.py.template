@@ -4,11 +4,11 @@ from itertools import permutations
 
 def palindromes_between_indices(s: str) -> set[str]:
     s = s[$1: $2 + 1]
-    if len(s) < $0:
-        return set()
     s = s.translate(str.maketrans('', '', string.punctuation))
     s = s.translate(str.maketrans('', '', string.digits))
     s = s.replace(' ', '')
+    if len(s) < $0 or len(list(s)) == len(set(s)):
+        return set()
     all_palindrome = set()
     result = []
     if len(s) < $0:

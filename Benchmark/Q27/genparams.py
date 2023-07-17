@@ -4,25 +4,15 @@ import random
 # This function generates 100 unique random pairs of suitable parameter values for the question and writes them to
 # all_params.txt.
 def gen_params(q_no, seed):
-    if seed != "default":
+    if seed != 'default':
         random.seed(seed)
-    selected_range = (
-        [range(0, 10)] * 10 + [range(10, 100)] * 60 + [range(100, 1000)] * 30
-    )
-    i, j = None, 0
     params = []
+    selected_range = [range(-10, 10)] * 5 + [range(1, 10)] * 25 + [range(-100, -10)] * 5 + [range(-100, 100)] * 5 + [
+        range(10, 100)] * 30 + [range(-1000, -100)] * 5 + [range(-1000, 1000)] * 5 + [range(100, 1000)] * 20
+    p0, p1 = 0, 0
     for a_range in selected_range:
-        while (i, j) in params or i is None:
-            option = random.randint(1, 3)
-            if option == 1:
-                i = random.choice(a_range)
-            elif option == 2:
-                i = round(random.uniform(0, 1000), 2)
-            else:
-                i = [random.choice(a_range), random.choice(a_range)]
-
-            j = random.choice(a_range)
-
-        params.append((i, j))
+        while (p0, p1) in params or p1 <= p0:
+            p0, p1 = random.sample(a_range, 2)
+        params.append((p0, p1))
 
     return params

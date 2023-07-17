@@ -3,14 +3,16 @@ from Q45.$5_results_$6.Folder_$3.generated_answer import $4
 
 def test_string_of_similar_chars():
     s = ''.join('a' for _ in range($2 * 2))
-    min_ = min($2 - $1 + 1, $0)
-    max_ = max($2 - $1 + 1, $0)
-    assert $4(s) == {'a' * i for i in range(min_, max_ + 1)}
+    if $2 - $1 + 1 < $0:
+        assert not $4(s)
+    else:
+        max_ = max($2 - $1 + 1, $0)
+        assert $4(s) == {'a' * i for i in range($0, max_ + 1)}
 
 
 def test_string_of_distinct_chars():
     s = 'abcdefghijkl'
-    assert $4(s) == set()
+    assert not $4(s)
 
 
 def test_string_of_spaces():

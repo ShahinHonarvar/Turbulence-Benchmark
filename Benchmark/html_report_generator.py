@@ -18,10 +18,10 @@ def write_html_report(path, model_params, seed, questions_req, q_test_result, ex
     results = ""
 
     if not get_generation_time:
-        get_generation_time = [0 for _ in len(questions)]
+        get_generation_time = [0 for _ in range(len(questions))]
 
     if not test_time:
-        test_time = [0 for _ in len(questions)]
+        test_time = [0 for _ in range(len(questions))]
 
     if model == "fake":
         model_path = "fake"

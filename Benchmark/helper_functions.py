@@ -315,27 +315,6 @@ def if_two_lists_are_equal_order_irrelevant(l1, l2):
     return True
 
 
-# def if_two_matrices_are_equal(m1, m2):
-#     if len(m1) != len(m2):
-#         return False
-#     if len(m1[0]) != len(m2[0]):
-#         return False
-#     list_m1 = []
-#     list_m2 = []
-#     if type(m1[0]) != list:
-#         for i in m1:
-#             list_m1.append(i.tolist())
-#     if type(m2[0]) != list:
-#         for i in m2:
-#             list_m2.append(i.tolist())
-#     for i in range(len(list_m1)):
-#         row = list_m1[i]
-#         for j in range(len(row)):
-#             if list_m1[i][j] != list_m2[i][j]:
-#                 return False
-#     return True
-
-
 def if_two_matrices_are_equal(m1, m2):
     if len(m1) != len(m2):
         return False
@@ -670,18 +649,6 @@ def param_report_file_writer(
         with open(f"Q{q_no}/{api_name}_results_{no}/wrong_params.html", "w") as f:
             f.write(content_header + concat)
 
-    # if counter_examples:
-    #     with open(f"Q{q_no}/{api_name}_results_{no}/wrong_fuzzy_inputs.txt", "w") as f:
-    #         f.write("Fuzzy Counter Examples:\n")
-    #         for ce in counter_examples:
-    #             f.write(f'{str(ce)}\n\n')
-
-    # if correct_random_inputs:
-    #     with open(f"Q{q_no}/{api_name}_results_{no}/correct_fuzzy_inputs.txt", "w") as f:
-    #         f.write("Correct Fuzzy Inputs:\n")
-    #         for cr in correct_random_inputs:
-    #             f.write(f'{str(cr)}\n\n')
-
 
 def read_file(q_no, api_name, c, file_name, no, extention):
     with open(
@@ -702,10 +669,10 @@ def trim_answer(s):
         s = s.replace("python", "")
     if "Python" in s:
         s = s.replace("Python", "")
-    backtiks_idx = s.find("```")
-    s = s[backtiks_idx + 3 :]
-    if s[-3:] == "```":
-        return s[0:-3]
+    first_backtiks_idx = s.find("```")
+    s = s[first_backtiks_idx + 3 :]
+    if "```" in s:
+        return s[0: s.rfind("```")]
     return s
 
 

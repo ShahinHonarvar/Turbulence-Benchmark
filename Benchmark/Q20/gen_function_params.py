@@ -7,8 +7,6 @@ def input_generator(l, seed):
     if seed != 'default':
         random.seed(seed)
     x = int(l[-1]) + 2
-    random_num = random.randint(2, 5)
-    result = random.sample(range(-10000, 10000), k=x * random_num)
+    result = random.sample(range(-1000, 1000), k=x)
 
-    random.shuffle(result)
     return result

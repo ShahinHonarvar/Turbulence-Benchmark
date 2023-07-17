@@ -33,11 +33,7 @@ def run_test(path, q, r, model_params, seed):
     OpenAI = ["gpt-3.5-turbo", "gpt-4"]
     cohere = ["command", "command-light"]
     model_name = model_params["model"]
-    model = ""
-    if model_name == "fake":
-        model = "fake"
-    else:
-        model = rename_model(model_name)
+    model = rename_model(model_name)
 
     correct_answers = []
     last_number = find_last_folder_number(path + f"/Q{q}", model, False)
@@ -61,7 +57,7 @@ def run_test(path, q, r, model_params, seed):
         parameterize_model_answer(q, c, params, model, last_number)
         generated_answer = ""
 
-        if model_name in OpenAI or model_name == "fake":
+        if model_name in OpenAI:
             response_dict = read_file(
                 q, model, c, "response", last_number, "json")
             generated_answer = response_dict["choices"][0]["message"]["content"]
@@ -148,15 +144,15 @@ def run_test(path, q, r, model_params, seed):
                         equality_of_answers = (
                             generated_answer_result == model_answer_result
                         )
-                    elif q == 48:  # correct number
+                    elif q == 48:
                         equality_of_answers = (
                             generated_answer_result.upper() == model_answer_result
                         )
-                    elif q == 57:  # correct number
+                    elif q == 57:
                         equality_of_answers = if_two_matrices_are_equal(
                             generated_answer_result, model_answer_result
                         )
-                    elif q == 55 or q == 56:  # correct number
+                    elif q == 55 or q == 56:
                         equality_of_answers = if_two_lists_are_equal_order_irrelevant(
                             generated_answer_result, model_answer_result
                         )

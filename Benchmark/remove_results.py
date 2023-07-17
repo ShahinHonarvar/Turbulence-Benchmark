@@ -21,4 +21,4 @@ def remove_results(model):
             shutil.rmtree(parent_directory + "__pycache__")
 
 
-remove_results("gpt_3_5_turbo")
+remove_results("fake")

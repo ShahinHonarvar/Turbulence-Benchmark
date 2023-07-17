@@ -8,12 +8,7 @@ def input_generator(l, seed):
     if seed != "default":
         random.seed(seed)
     n = int(l[1])
-    if n < 100:
-        coef = random.randint(1, 10)
-    else:
-        coef = random.randint(1, 3)
-
-    length = (n + 1) * coef
+    length = n + 10
     result = []
     for i in range(length):
         option = random.randint(0, 4)

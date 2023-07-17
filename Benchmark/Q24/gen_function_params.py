@@ -6,9 +6,6 @@ import random
 def input_generator(l, seed):
     if seed != 'default':
         random.seed(seed)
-    x = int(l[-1]) + 2
-    if x == 0:
-        x = 1
-    elif x < 0:
-        x = -x
-    return random.randint(1, x * 10)
+    n = int(l[-1])
+    x = (n + 1) * 5 if n < 100 else (n + 1) * 2
+    return random.randint(1, x)

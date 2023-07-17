@@ -7,7 +7,7 @@ def gen_params(q_no, seed):
     if seed != "default":
         random.seed(seed)
     selected_range = (
-        [range(0, 10)] * 10 + [range(10, 100)] * 60 + [range(100, 1000)] * 30
+        [range(0, 10)] * 10 + [range(10, 100)] * 70 + [range(100, 1000)] * 20
     )
     i, j = None, 0
     params = []
