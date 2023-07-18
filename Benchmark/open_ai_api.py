@@ -98,7 +98,7 @@ def get_code(model_params, prompt):
 
 def run_open_ai_model(model_params, text):
 
-    prompt = f'Here is a text specification delimited by angle brackets. Create Python code according to the text specification. The Python code should not contain any comments. The Python code should be delimited only by triple backticks. <{text}>'
+    prompt = f'Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <{text}> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.'
     response = get_code(model_params, prompt)
 
     return response, prompt
