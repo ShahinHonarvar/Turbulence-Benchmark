@@ -81,36 +81,40 @@ def send_prompt_recieve_response(path, q, r, model_params, seed):
             attrs=["bold"],
         )
         cprint(
-            f"{c}{suffix} parameters" + (" " * ((int(columns) // 3) - takes_space)),
+            f"{c}{suffix} parameters" +
+            (" " * ((int(columns) // 3) - takes_space)),
             "black",
             "on_light_grey",
             attrs=["bold"],
         )
         print(f"Waiting for {model_name} to respond...")
         sleep_duration = 1
+        timeout = 4
         start_time = 0.0
         response, prompt = "", ""
         while True:
             try:
+                set_timeout(timeout)
+                print(timeout)
                 start_time = time.time()
-                while time.time() - start_time < 5:
-                    if model_name in OpenAI:
-                        response, prompt = run_open_ai_model(model_params, question)
-                    elif model_name in cohere:
-                        start_time = time.time()
-                        response, prompt = run_cohere_model(model_params, question)
-                    break
+                if model_name in OpenAI:
+                    response, prompt = run_open_ai_model(model_params, question)
+                elif model_name in cohere:
+                    response, prompt = run_cohere_model(model_params, question)
+                break
+        
             except Exception as e:
-                print(e)
+                cprint(e, "light_red")
                 cprint(
                     f"{model_name} model did not respond. Retrying in {sleep_duration}(s)...",
                     "light_red",
                 )
                 time.sleep(sleep_duration)
                 sleep_duration *= 2
-
-            else:
-                break
+                timeout *= 2
+            finally:
+                signal.alarm(0)
+            
 
         duration = time.time() - start_time
         cprint(f"The {model_name} response was received.", "light_green")
