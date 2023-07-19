@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(lst):\n    count = 0\n    for i in range(len(lst)):\n        for j in range(i+1, len(lst)):\n            if len(lst[i]) >= 3 and len(lst[j]) >= 3 and sorted(lst[i].lower()) == sorted(lst[j].lower()):\n                count += 1\n                if count > 81:\n                    return False\n    return True\n```\nNote: This code assumes that the given list 'lst' contains only strings.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689778721,
+  "id": "chatcmpl-7e2vRVFd7kjXC8AEM770CGy5nsQFY",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 139,
+    "total_tokens": 244
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef all_substring_of_size_n(string):\n    substrings = []\n    \n    if len(string) < 54:\n        return substrings\n    \n    for i in range(len(string) - 53):  # Start index of substring\n        substring = string[i:i+54]  # Extract substring of length 54\n        \n        if len(set(substring)) == 54:  # Check for no duplicate characters\n            substrings.append(substring)\n    \n    return substrings\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797785,
+  "id": "chatcmpl-7e7svsLOYh0QvGOdtFT6tqLYvWGpt",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 126,
+    "total_tokens": 227
+  }
+}

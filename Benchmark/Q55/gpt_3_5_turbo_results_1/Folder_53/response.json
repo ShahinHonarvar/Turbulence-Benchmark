@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    def get_contiguous_sublists(arr):\n        sublists = []\n        for i in range(len(arr)):\n            for j in range(i, len(arr)):\n                sublists.append(arr[i:j+1])\n        return sublists\n\n    def product_of_list(arr):\n        product = 1\n        for num in arr:\n            product *= num\n        return product\n\n    result = []\n    sublists = get_contiguous_sublists(nums)\n    for sublist in sublists:\n        if product_of_list(sublist) == -87:\n            result.append(sublist)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797340,
+  "id": "chatcmpl-7e7lkdu581nasZ5weTkkWtuWkHBJJ",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 131,
+    "prompt_tokens": 193,
+    "total_tokens": 324
+  }
+}

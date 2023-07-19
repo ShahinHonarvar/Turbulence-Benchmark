@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_right_truncatable_prime(nums):\n    x = nums[89]\n    result = []\n    for num in range(x - 1, 0, -1):\n        if is_prime(num):\n            str_num = str(num)\n            is_truncatable_prime = True\n            for i in range(len(str_num) - 1):\n                trunc_num = int(str_num[:i+1])\n                if not is_prime(trunc_num):\n                    is_truncatable_prime = False\n                    break\n            if is_truncatable_prime:\n                result.append(num)\n    return sorted(result, reverse=True)\n```\nNote: The code assumes the index 89 is valid in the given tuple. If the tuple does not contain at least 90 elements, an error may occur.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689780809,
+  "id": "chatcmpl-7e3T721C3m9YWZEmaqbMQQVtg1IoU",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 215,
+    "prompt_tokens": 157,
+    "total_tokens": 372
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    product = 1\n    for i in range(n):\n        product *= lst[i]\n    \n    result = []\n    if product == -17:\n        result.append(lst)\n    \n    for i in range(n):\n        temp = lst.copy()\n        temp.append(temp[0])\n        temp.pop(0)\n        product //= lst[i]\n        product *= temp[i]\n        if product == -17:\n            result.append(temp[:i+1])\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797345,
+  "id": "chatcmpl-7e7lplla7PDZMfMN7vMDfFD3zXohk",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 114,
+    "prompt_tokens": 193,
+    "total_tokens": 307
+  }
+}

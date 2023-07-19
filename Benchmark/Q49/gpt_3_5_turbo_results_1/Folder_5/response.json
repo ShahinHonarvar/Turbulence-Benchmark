@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_decimal_is_divisible(binary):\n    fib_sequence = [0, 1]\n    while fib_sequence[-1] < 10**18:  # 85th Fibonacci number is within range\n        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])\n    \n    decimal = 0\n    for bit in binary:\n        decimal = decimal * 2 + int(bit)\n    \n    return decimal % fib_sequence[84] == 0\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689777708,
+  "id": "chatcmpl-7e2f6Xzna2Dvy2x3j2BZTx5psVzho",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 137,
+    "total_tokens": 237
+  }
+}

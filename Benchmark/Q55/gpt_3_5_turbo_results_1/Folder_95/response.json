@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    sublists = []\n    for i in range(len(lst)):\n        product = 1\n        for j in range(i, len(lst) + i):\n            product *= lst[j % len(lst)]\n            if product == 28:\n                sublists.append(lst[i:j % len(lst) + 1])\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797500,
+  "id": "chatcmpl-7e7oKau1vrLq7NxVVvKO24eqhEXOY",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 80,
+    "prompt_tokens": 193,
+    "total_tokens": 273
+  }
+}

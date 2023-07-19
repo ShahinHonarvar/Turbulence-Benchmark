@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    result = []\n    for i in range(len(nums)):\n        product = 1\n        for j in range(i, len(nums) + i):\n            product *= nums[j % len(nums)]\n            if product == 990:\n                result.append(nums[i:j+1])\n    return result\n```\nNote: Since the text specification does not mention whether the given list can have negative numbers or not, the above code assumes that the given list contains only positive integers. If the given list can have negative numbers, the code needs to be modified accordingly.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797314,
+  "id": "chatcmpl-7e7lKFrFjbbbYhtYzKxbuRdygKkai",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 123,
+    "prompt_tokens": 193,
+    "total_tokens": 316
+  }
+}

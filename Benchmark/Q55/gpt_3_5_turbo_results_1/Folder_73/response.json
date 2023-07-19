@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n\n    for i in range(n):\n        curr_product = 1\n\n        for j in range(i, i + n):\n            curr_product *= nums[j % n]\n\n            if curr_product == 40:\n                result.append(nums[i:j % n + 1])\n                break\n\n    return result\n```\nNote: In the given specification, it is not specified whether the sublist should be contiguous or not, so I have assumed that the sublist should be contiguous. If the sublist does not need to be contiguous, the code needs to be modified accordingly.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797415,
+  "id": "chatcmpl-7e7mxJflSJO82f3sDC7ABdqQvlAgk",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 193,
+    "total_tokens": 326
+  }
+}

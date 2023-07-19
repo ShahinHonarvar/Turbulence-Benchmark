@@ -47,7 +47,8 @@ def send_prompt_recieve_response(path, q, r, model_params, seed):
     c = 1
 
     params_list = params_list[:number_of_parameters]
-
+    real_latency = []
+    total_latency = []
     for params in params_list:
         create_result_folder(path + f"/Q{q}", c, model, last_number)
         if type(params) != tuple:
@@ -89,20 +90,21 @@ def send_prompt_recieve_response(path, q, r, model_params, seed):
         )
         print(f"Waiting for {model_name} to respond...")
         sleep_duration = 1
-        timeout = 4
-        start_time = 0.0
+        timeout = 5
         response, prompt = "", ""
+        start_time_total = time.time()
         while True:
             try:
                 set_timeout(timeout)
-                print(timeout)
-                start_time = time.time()
+                start_time_real = time.time()
                 if model_name in OpenAI:
-                    response, prompt = run_open_ai_model(model_params, question)
+                    response, prompt = run_open_ai_model(
+                        model_params, question)
                 elif model_name in cohere:
                     response, prompt = run_cohere_model(model_params, question)
+                real_latency.append(time.time() - start_time_real)
                 break
-        
+
             except Exception as e:
                 cprint(e, "light_red")
                 cprint(
@@ -114,11 +116,11 @@ def send_prompt_recieve_response(path, q, r, model_params, seed):
                 timeout *= 2
             finally:
                 signal.alarm(0)
-            
 
-        duration = time.time() - start_time
+        total_latency.append(time.time() - start_time_total)
         cprint(f"The {model_name} response was received.", "light_green")
-        cprint(f"Time taken: {round(duration, 3)}(s)\n", "light_blue")
+        cprint(f"Real time taken: {round(real_latency[c-1], 3)}(s)\n", "light_blue")
+        cprint(f"Total time taken: {round(total_latency[c-1], 3)}(s)\n", "light_blue")
 
         if model_name in OpenAI:
             extention = "json"
@@ -130,3 +132,5 @@ def send_prompt_recieve_response(path, q, r, model_params, seed):
         model_params["complete_prompt"] = prompt
         write_prompt_and_model_args(q, c, model, model_params, last_number)
         c += 1
+        
+    return real_latency, total_latency

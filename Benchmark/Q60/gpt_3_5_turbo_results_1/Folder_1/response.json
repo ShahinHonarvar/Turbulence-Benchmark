@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[20]\n    result = []\n    for num in range(2, x + 1):\n        if '0' not in str(num) and is_prime(num):\n            truncated_num = str(num)\n            while len(truncated_num) > 1:\n                truncated_num = truncated_num[1:-1]\n                if not is_prime(int(truncated_num)):\n                    break\n            else:\n                result.append(num)\n    return sorted(result, reverse=True)\n```\nNote: The code assumes that the input tuple contains at least 21 elements.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689799862,
+  "id": "chatcmpl-7e8QQ9YMQIu2tWEWJh0Pw6ssAryfS",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 179,
+    "prompt_tokens": 187,
+    "total_tokens": 366
+  }
+}

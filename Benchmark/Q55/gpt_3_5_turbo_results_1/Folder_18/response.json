@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(circular_list):\n    result = []\n    size = len(circular_list)\n    \n    for i in range(size):\n        num = circular_list[i]\n        if num == 1 or 36 % num != 0:\n            continue\n        \n        product = num\n        sublist = [num]\n        j = i + 1\n        \n        while product != 36:\n            if j == size:\n                j = 0\n            \n            if size == 1:\n                break\n            \n            next_num = circular_list[j]\n            if next_num == 1 or 36 % next_num != 0:\n                break\n            \n            sublist.append(next_num)\n            product *= next_num\n            j += 1\n        \n        if product == 36:\n            result.append(sublist)\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797182,
+  "id": "chatcmpl-7e7jCIUvQk4xX4PkIznY1o1emWpar",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 193,
+    "total_tokens": 363
+  }
+}

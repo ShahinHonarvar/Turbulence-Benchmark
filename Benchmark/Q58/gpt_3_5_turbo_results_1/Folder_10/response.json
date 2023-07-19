@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for r in range(rows):\n        for c in range(cols):\n            if r <= rows - 8 and c <= cols - 7:\n                submatrix = matrix[r:r+8, c:c+7]\n                if np.count_nonzero(submatrix == 56) == 56:\n                    count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798267,
+  "id": "chatcmpl-7e80hZksnXbwfTSme6S4OGsvrOgbt",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 111,
+    "total_tokens": 213
+  }
+}

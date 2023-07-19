@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    row, col = matrix.shape\n    count = 0\n    \n    for i in range(row - 1):\n        for j in range(col - 1):\n            if matrix[i:i + 2, j:j + 2].size == 4 and np.sum(matrix[i:i + 2, j:j + 2] == 15) == 4:\n                count += 1\n                \n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798236,
+  "id": "chatcmpl-7e80CISfg8Pl9j176hD0G5r0GWd1m",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 111,
+    "total_tokens": 215
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef count_submatrices(matrix):\n    count = 0\n    rows = len(matrix)\n    cols = len(matrix[0])\n\n    for i in range(rows - 1):\n        for j in range(cols - 1):\n            for m in range(i + 1, rows):\n                for n in range(j + 1, cols):\n                    submatrix = matrix[i:m+1, j:n+1].flatten()\n                    if np.count_nonzero(submatrix == 43) == 43:\n                        count += 1\n\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798508,
+  "id": "chatcmpl-7e84aWsGySXKganNk4lkpEVvevUlg",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 123,
+    "prompt_tokens": 111,
+    "total_tokens": 234
+  }
+}

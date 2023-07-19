@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(num_tuple):\n    a = num_tuple[20]\n    b = num_tuple[43]\n    unique_nums = set(num_tuple[21:43])\n    result = 0\n    for num in range(a+1, b):\n        if num not in unique_nums:\n            result += num\n    if result % 2 == 1:\n        return bin(result)[2:]\n    else:\n        return hex(result)[2:]\n\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689777581,
+  "id": "chatcmpl-7e2d3nkZqDwmc4D3nwUQa1aWcpHQa",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 263,
+    "total_tokens": 361
+  }
+}

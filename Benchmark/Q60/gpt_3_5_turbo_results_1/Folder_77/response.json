@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import sqrt\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef truncate_left(n):\n    return int(str(n)[1:])\n\ndef truncate_right(n):\n    return n // 10\n\ndef all_left_right_truncatable_prime(numbers):\n    result = []\n    for x in numbers:\n        if x < 23:\n            continue\n        if '0' in str(x):\n            continue\n        if is_prime(x):\n            left_truncatable = True\n            right_truncatable = True\n            left = truncate_left(x)\n            right = truncate_right(x)\n            while left > 0:\n                if not is_prime(left):\n                    left_truncatable = False\n                    break\n                left = truncate_left(left)\n            while right > 0:\n                if not is_prime(right):\n                    right_truncatable = False\n                    break\n                right = truncate_right(right)\n            if left_truncatable and right_truncatable:\n                result.append(x)\n\n    return sorted(result, reverse=True)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689800855,
+  "id": "chatcmpl-7e8gRsbGIcD8oROCUdQa5BtdPPojT",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 251,
+    "prompt_tokens": 187,
+    "total_tokens": 438
+  }
+}
