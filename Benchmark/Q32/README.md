@@ -1,1 +1,0 @@
-This question requires two string parameters.

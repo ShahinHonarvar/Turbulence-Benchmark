@@ -1,1 +1,0 @@
-This question requires a positive integer parameter i and a string parameter j with j in {'descending', 'ascending'}.

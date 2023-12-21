@@ -1,1 +1,0 @@
-This question requires four integer parameters i, j, m, and n, with 0 <= i < j and 3 <= m < n.

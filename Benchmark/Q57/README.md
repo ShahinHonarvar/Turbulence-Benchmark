@@ -1,1 +1,0 @@
-This question requires an integer parameters i.
