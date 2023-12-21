@@ -1,0 +1,15 @@
+
+def return_binary_or_hexa(numbers):
+    a = numbers[0] + 1
+    b = numbers[3] - 1
+    if all([x in range(a, b+1) for x in numbers]):
+        return ""
+    else:
+        sum = 0
+        for i in range(a, b+1):
+            if i not in numbers:
+                sum += i
+        if sum % 2 == 1:
+            return str(bin(sum)[2:])
+        else:
+            return str(hex(sum))

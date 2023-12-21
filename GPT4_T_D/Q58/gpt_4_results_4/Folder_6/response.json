@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for sub_x in range(1, rows + 1):\n        for sub_y in range(1, cols + 1):\n            for i in range(rows - sub_x + 1):\n                for j in range(cols - sub_y + 1):\n                    submatrix = matrix[i:i + sub_x, j:j + sub_y]\n                    if np.size(submatrix) == 122:\n                        count += 1\n    return count\n```\nThis function goes through all possible submatrix sizes (with all width and height combinations) and positions within the given matrix. When it encounters a submatrix of size 122 (the total number of elements is counted, not the dimensions), it increments a counter that keeps track of these submatrices. In the end, it returns this counter.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691095388,
+  "id": "chatcmpl-7jZS0CFJ3RaFLn5NMdLydoujKUJzO",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 203,
+    "prompt_tokens": 111,
+    "total_tokens": 314
+  }
+}

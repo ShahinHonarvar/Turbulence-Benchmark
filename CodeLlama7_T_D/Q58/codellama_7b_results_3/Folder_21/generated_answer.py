@@ -1,0 +1,21 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Check if matrix is valid
+    if not isinstance(matrix, np.ndarray) or matrix.size == 0:
+        raise ValueError("Invalid matrix")
+
+    # Initialize result to 0
+    result = 0
+
+    # Iterate over rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if current element is equal to 139
+            if matrix[i, j] == 139:
+                # Increment result by 1
+                result += 1
+
+    # Return the count of all submatrices containing 139 integers
+    return result

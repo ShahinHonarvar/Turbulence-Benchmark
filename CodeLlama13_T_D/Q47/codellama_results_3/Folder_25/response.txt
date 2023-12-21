@@ -1,0 +1,7 @@
+```
+def palindromes_of_specific_lengths(string):
+    return {palindrome for i in range(26, 84)
+                         for j in range(i+30, i+46)
+                         if string[i:j] == string[j-1::-1]
+                         and all(char.isalpha() for char in string[i:j])}
+```

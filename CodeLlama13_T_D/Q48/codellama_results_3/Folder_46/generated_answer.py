@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(nums):
+    a = nums[10] + 1
+    b = nums[79] - 1
+    sum = 0
+    for i in range(a, b+1):
+        if not i in nums:
+            sum += 1
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+    else:
+        return bin(sum)[2:]

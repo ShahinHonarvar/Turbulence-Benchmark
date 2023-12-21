@@ -1,0 +1,11 @@
+
+def find_subset_of_length_n(my_set):
+    subset_count = 0
+    for i in range(1 << len(my_set)):
+        current_subset = set()
+        for j in range(len(my_set)):
+            if i & (1 << j):
+                current_subset.add(my_set[j])
+        if len(current_subset) == 48:
+            subset_count += 1
+    return subset_count

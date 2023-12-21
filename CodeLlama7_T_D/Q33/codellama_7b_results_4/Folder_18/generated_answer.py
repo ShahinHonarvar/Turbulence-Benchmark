@@ -1,0 +1,15 @@
+ def return_vowels(my_string):
+    vowels = ["A", "E", "I", "O", "U"]
+    start_index = 528
+    end_index = 606
+    result = []
+    for i in range(start_index, end_index + 1):
+        current_char = my_string[i]
+        if current_char.isalpha() and current_char not in vowels:
+            continue
+
+        elif current_char.isalpha() and current_char in vowels:
+            if current_char > "M" and current_char <= "X":
+                result.append(current_char)
+
+    return result

@@ -1,0 +1,14 @@
+```python
+def all_substring_of_size_n(s):
+    return [''.join(x) for x in zip(*[iter(s)]*53)]
+```
+This function uses list comprehension to generate the substrings of length 53. It first creates an iterator over the characters of `s` using `iter()`, then it uses `zip()` to create a list of tuples, where each tuple contains consecutive characters from the string. Finally, it uses another list comprehension to convert the tuples into strings.
+
+For example:
+```python
+>>> all_substring_of_size_n("abcdef")
+['a', 'b', 'c', 'd', 'e', 'f']
+>>> all_substring_of_size_n("hello world")
+['h', 'he', 'hel', 'hell', 'hello', 'o', 'ow', 'wor', 'world']
+```
+Note that this function assumes that the input string is non-empty and contains at least 53 distinct characters. If either of these conditions is not met, the function may raise an error or produce incorrect results.

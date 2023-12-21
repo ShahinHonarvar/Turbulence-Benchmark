@@ -1,0 +1,7 @@
+
+def sum_in_range(my_list):
+    result = 0
+    for num in my_list:
+        if -64 <= num <= 42:
+            result += num
+    return result

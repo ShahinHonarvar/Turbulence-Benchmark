@@ -1,0 +1,22 @@
+ ```
+def filter_chars(string):
+    # Create a new string with all characters removed
+    filtered_string = ""
+
+    # Iterate over each character in the given string
+    for char in string:
+
+        # If the current character is between indices 35 and 40, both inclusive
+        if 35 <= len(filtered_string) <= 40 and ord(char) >= ord(')') and ord(char) <= ord('l'):
+
+            # Remove all occurrences of this character from the filtered string
+            while char in filtered_string:
+                filtered_string = filtered_string.replace(char, "")
+        else:
+
+            # Add the current character to the filtered string
+            filtered_string += char
+
+    # Return the filtered string
+    return filtered_string
+```

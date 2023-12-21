@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(string):\n    char_counts = {}\n    for i in range(len(string)):\n        if 70 < i < 98:\n            if string[i] in char_counts:\n                char_counts[string[i]] += 1\n            else:\n                char_counts[string[i]] = 1\n    \n    new_string = \"\"\n    for char in string:\n        if char not in char_counts or (70 <= string.index(char) < 98 and char_counts[char] < 2):\n            new_string += char\n    \n    return new_string\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689834915,
+  "id": "chatcmpl-7eHXnqlbuVVM9VcgtEvwgqiQjsTaz",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 114,
+    "prompt_tokens": 122,
+    "total_tokens": 236
+  }
+}

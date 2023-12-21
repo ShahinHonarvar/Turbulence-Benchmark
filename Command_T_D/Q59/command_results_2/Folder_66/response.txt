@@ -1,0 +1,44 @@
+[cohere.Generation {
+	id: 4d9d611d-9393-43ab-b6ae-04c01d9c9496
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 25. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in descending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def all_left_truncatable_prime(n):
+    primes = []
+    x = n[25]
+    for i in range(2, x):
+        if is_left_truncatable_prime(i):
+            primes.append(i)
+    return primes
+
+def is_left_truncatable_prime(n):
+    for i in range(1, len(str(n))):
+        if str(n)[i] == '0':
+            return False
+        elif str(n)[i] == '1':
+            break
+        elif str(n)[i] == '2':
+            for j in range(2, 10):
+                if str(n)[i+j] == '0':
+                    return False
+        elif str(n)[i] == '3':
+            for j in range(2, 10):
+                if str(n)[i+j] == '0':
+                    return False
+        elif str(n)[i] == '5':
+            for j in range(2, 10):
+                if str(n)[i+j] == '0':
+                    return False
+        elif str(n)[i] == '7':
+            for j in range(2, 10):
+                if str(n)[i+j] == '0':
+                    return False
+        elif str(n)[i] == '9':
+            for j in range(2, 10):
+                if str(n)[i+j] == '0':
+                    return False
+    return True
+```
+	likelihood: None
+	token_likelihoods: None
+}]

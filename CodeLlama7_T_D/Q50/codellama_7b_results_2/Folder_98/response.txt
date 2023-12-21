@@ -1,0 +1,32 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a counter for the number of anagrams found
+    num_anagrams = 0
+
+    # Iterate over the list of strings
+    for string1 in my_list:
+        # Ignore strings that are less than three characters long
+        if len(string1) < 3:
+            continue
+
+        # Create a case-insensitive version of the string
+        string1_lower = string1.lower()
+
+        # Iterate over the list of strings again
+        for string2 in my_list:
+            # Ignore strings that are less than three characters long or are equal to the first string
+            if len(string2) < 3 or string2 == string1:
+                continue
+
+            # Create a case-insensitive version of the second string
+            string2_lower = string2.lower()
+
+            # Check if the two strings are anagrams
+            if sorted(string1_lower) == sorted(string2_lower):
+                # Increment the counter for the number of anagrams found
+                num_anagrams += 1
+
+    # Return True if there are at least seven pairs of anagrams in the list, otherwise return False
+    return num_anagrams >= 7
+```

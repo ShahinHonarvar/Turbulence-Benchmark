@@ -1,0 +1,12 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[28]
+list_of_numbers = []
+for i in range(2, x):
+if is_prime(i) and is_right_truncatable_prime(i):
+list_of_numbers.append(i)
+return sorted(list_of_numbers)
+else:
+return []
+```
+This code uses a list comprehension to generate a list of all right-truncatable prime numbers less than `x`, which is the 28th element in the input tuple. The function first checks if the number is prime and then checks if it is right-truncatable prime by repeatedly removing the last rightmost digit until the number becomes 1. If the number is a right-truncatable prime, it is added to the list of numbers. Finally, the list of numbers is sorted in ascending order and returned as the output.

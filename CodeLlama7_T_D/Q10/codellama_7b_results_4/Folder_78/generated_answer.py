@@ -1,0 +1,6 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Get the range of odd integers from index 20 to index 35, both exclusive
+    odd_ints = my_list[20:35:2]
+    # Return an empty list if no odd integers exist in the specified range
+    return odd_ints or []

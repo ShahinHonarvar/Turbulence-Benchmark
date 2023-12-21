@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ''
+    for i, c in enumerate(string):
+        if 42 <= i < 67 and 'g' > c > '6':
+            continue
+        result += c
+    return result

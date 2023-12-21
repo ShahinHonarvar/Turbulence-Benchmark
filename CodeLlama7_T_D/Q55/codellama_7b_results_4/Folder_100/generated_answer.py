@@ -1,0 +1,20 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and calculate the product of the contiguous integers
+    for i in range(len(circular_list)) :
+        product = 1
+
+        # Calculate the product of the contiguous integers from the current position to the end of the list
+        for j in range(i, len(circular_list)) :
+            product *= circular_list[j]
+
+        # If the product is equal to 48, add the sublist to the returned list
+        if product == 48 :
+            sublists.append(circular_list[i:])
+
+    # Return the list of sublists
+
+    return sublists

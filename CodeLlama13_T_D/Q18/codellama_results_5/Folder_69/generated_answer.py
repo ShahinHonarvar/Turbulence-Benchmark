@@ -1,0 +1,3 @@
+
+def sum_ints_div_by_either_nums(numbers):
+    return sum(number for number in numbers[61:89] if number % 31 == 0 or number % 11 == 0)

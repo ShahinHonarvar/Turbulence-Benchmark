@@ -1,0 +1,16 @@
+
+def all_left_truncatable_prime(tuple):
+    x = tuple[55] # Get the 56th element of the tuple
+    prime_numbers = [] # Initialize an empty list to store prime numbers
+
+    for i in range(2, x): # Iterate from 2 to x-1
+        is_prime = True # Initialize a flag to indicate whether the number is prime or not
+        for j in range(2, int(i ** 0.5) + 1): # Iterate from 2 to the square root of i
+            if i % j == 0: # If i is divisible by j, then it is not prime
+                is_prime = False # Set the flag to False
+                break # Break out of the inner loop
+
+        if is_prime: # If the flag is True, then the number is prime
+            prime_numbers.append(i) # Add the prime number to the list
+
+    return sorted(prime_numbers, reverse=True) # Return the sorted list of prime numbers in descending order

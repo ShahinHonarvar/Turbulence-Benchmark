@@ -1,0 +1,34 @@
+ ```
+def all_right_truncatable_prime(x):
+	# create a list of all prime numbers less than x
+	prime_numbers = []
+	for i in range(2, x+1):
+		if is_prime(i):
+			prime_numbers.append(i)
+	# return the sorted list of right-truncatable prime numbers
+	return sorted([p for p in prime_numbers if is_right_truncatable_prime(p)], reverse=False))
+def is_prime(n):
+	# check if n is a prime number using the Sieve of Eratosthenes
+	if n < 2:
+		return False
+
+	for i in range(2, int(n ** 0.5) + 1):
+		if n % i == 0:
+			return False
+
+	return True
+
+def is_right_truncatable_prime(n):
+	# check if n is a right-truncatable prime number by comparing its digits to the last digit of itself
+	digits = [int(d) for d in str(n)]
+	if len(digits) == 1:
+		return True
+
+	last_digit = int(str(n)[-1]))
+
+	for i in range(len(digits) - 1):
+		if digits[i] != last_digit:
+			return False
+
+	return True
+```

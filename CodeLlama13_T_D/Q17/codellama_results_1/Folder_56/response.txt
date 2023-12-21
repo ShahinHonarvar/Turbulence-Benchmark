@@ -1,0 +1,9 @@
+```python
+def all_ints_div_by_both_two_nums(my_list):
+    return [i for i in my_list[7:9+1] if i % -9 == 0 and i % -7 == 0]
+```
+This code defines a function called `all_ints_div_by_both_two_nums` that takes a list of integers as its argument. The function returns the list of all integers in the specified range that are divisible by both `-9` and `-7`, both inclusive. If no such integers exist, the function returns an empty list.
+
+Note that the `i % -9 == 0` condition checks if `i` is divisible by `-9`. Similarly, `i % -7 == 0` checks if `i` is divisible by `-7`. The two conditions are combined using the `and` operator to ensure that an integer must be divisible by both `-9` and `-7` for it to be included in the output list.
+
+The function uses a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) to generate the output list. The `i for i in my_list[7:9+1]` part of the list comprehension iterates over the elements of `my_list` from index 7 to index 9, both inclusive. The `if` clause is used to filter out any elements that do not satisfy the divisibility conditions. The resulting output list is returned by the function.

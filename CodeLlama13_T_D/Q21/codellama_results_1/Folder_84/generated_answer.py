@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(nums):
+    return [i for i in nums[52:53+1] if i % 93 == 0] or []

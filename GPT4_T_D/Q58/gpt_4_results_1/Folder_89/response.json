@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    \n    rows, cols = matrix.shape\n    for sub_rows in range(1, rows + 1):\n        for sub_cols in range(1, cols + 1):\n            if sub_rows * sub_cols == 18:\n                count += (rows - sub_rows + 1) * (cols - sub_cols + 1)  \n    \n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083206,
+  "id": "chatcmpl-7fK8UVr6N2PJxuvAx2Cd4QRgLt8q8",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 97,
+    "prompt_tokens": 111,
+    "total_tokens": 208
+  }
+}

@@ -1,0 +1,15 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the string
+    for i in range(5, len(string)):
+        # Check if the current character is a vowel
+        if string[i] in "aeiou":
+            # Check if the previous two characters are also vowels
+            if string[i - 1] in "aeiou" and string[i - 2] in "aeiou":
+                # Form the palindrome by reversing the order of the vowels
+                palindrome = string[i - 2] + string[i - 1] + string[i]
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    return palindromes

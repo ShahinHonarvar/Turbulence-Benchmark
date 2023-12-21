@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {p for p in set(re.findall('(?i)[a-z]{131}', string)) if p == p[::-1]}

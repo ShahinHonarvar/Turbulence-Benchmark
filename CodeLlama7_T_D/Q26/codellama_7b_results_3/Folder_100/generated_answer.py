@@ -1,0 +1,14 @@
+
+def sum_in_range(my_list):
+    # Initialize a variable to store the sum
+    total = 0
+
+    # Loop through the list of integers
+    for num in my_list:
+        # Check if the current integer is between 19 and 32, both inclusive
+        if 19 <= num <= 32:
+            # If it is, add it to the total sum
+            total += num
+
+    # Return the total sum of all integers in the given list that are between 19 and 32, both inclusive
+    return total

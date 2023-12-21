@@ -1,0 +1,16 @@
+
+def find_original_set(sets):
+    # Check if all sets are distinct
+    if len(set(map(tuple, sets))) < len(sets):
+        return None
+
+    # Initialize the smallest set to the first set in the list
+    smallest_set = sets[0]
+
+    # Loop through each set and compare it to the smallest set so far
+    for i in range(1, len(sets)):
+        if len(smallest_set) > len(sets[i]):
+            smallest_set = sets[i]
+
+    # Return the smallest set
+    return smallest_set

@@ -1,0 +1,5 @@
+
+def return_n_smallest_chars(string):
+    sorted_chars = sorted(string, key=ord)
+    n_smallest_chars = sorted_chars[:7]
+    return n_smallest_chars

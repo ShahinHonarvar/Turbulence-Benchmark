@@ -1,0 +1,3 @@
+
+def find_subset_of_length_n(set):
+    return (2**len(set)) - (len(set) + 1)

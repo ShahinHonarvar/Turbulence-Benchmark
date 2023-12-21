@@ -1,0 +1,41 @@
+[cohere.Generation {
+	id: 064bc381-b294-4ee8-aba1-9f10a085ddd4
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 645. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+import sys
+
+def all_left_right_truncatable_prime(tup):
+    res = []
+    for i in range(1, int(tup[0]) + 1):
+        s = str(i)
+        l = len(s)
+        cnt = 1
+        while l > 1:
+            if s[l - 1] == '0':
+                break
+            cnt += 1
+            s = s[1:-1]
+            l = len(s)
+        if s == '1' or s == '2':
+            res += [int(s)]
+        elif re.match(r'(11|2[0-9])$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2]0|2[0-9])$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2][0-9]0|2[0-9][0-9]0|2[0-9]0[0-9]0)$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2]00|2[0-9]00)$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2][0-9]00|2[0-9][0-9]00|2[0-9]00[0-9]00)$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2]000|2[0-9]000)$', s):
+            res += [int(s)]
+        elif re.match(r'(1[0-2][0-9]000|2[0-9][0-9]000|2[0-9]000[0-9]000)$', s):
+            res += [int(s)]
+    return sorted(res)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,5 @@
+
+def insert_after_index(mylist):
+    mylist = list(mylist)
+    mylist.insert(10, 1)
+    return mylist

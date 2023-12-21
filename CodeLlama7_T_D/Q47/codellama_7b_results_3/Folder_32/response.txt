@@ -1,0 +1,21 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the range of lengths for palindromes
+    min_len = 43
+    max_len = 47
+    # Initialize an empty set to store palindromes
+    palindromes = set()
+    # Iterate over each character in the string
+    for i in range(16, len(string)):
+        # Define the substring starting at index i
+        substr = string[i:]
+        # Iterate over each length in the range
+        for len in range(min_len, max_len + 1):
+            # Define the palindrome of length len
+            palindrome = substr[:len]
+            # Check if the palindrome is a valid palindrome
+            if palindrome == palindrome[::-1] and all(c in 'abcdefghijklmnopqrstuvwxyz' for c in palindrome):
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    return palindromes
+```

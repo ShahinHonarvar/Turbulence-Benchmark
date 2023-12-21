@@ -1,0 +1,14 @@
+
+def all_neg_ints_exclusive(my_list):
+    # Define the range of indices to check
+    start_index = 276
+    end_index = 376
+    # Initialize an empty list to store the negative integers
+    neg_ints = []
+    # Iterate over the specified range of indices
+    for i in range(start_index, end_index):
+        # Check if the current element is a negative integer
+        if my_list[i] < 0:
+            # Add the negative integer to the list
+            neg_ints.append(my_list[i])
+    return neg_ints

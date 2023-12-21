@@ -1,0 +1,15 @@
+
+def filter_chars(string):
+    # Initialize a list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the string
+    for char in string:
+        # If the character is between indices 82 and 89 (both exclusive)
+        if 82 < ord(char) < 89:
+            # And it is not '*' or '<', add it to the filtered characters list
+            if char != '*' and char != '<':
+                filtered_chars.append(char)
+
+    # Join the filtered characters into a string and return it
+    return "".join(filtered_chars)

@@ -1,0 +1,7 @@
+
+def find_second_largest_num(num_list):
+    if len(num_list) < 6:
+        return None
+    sub_list = num_list[3:6]
+    sub_list.sort()
+    return sub_list[-2]

@@ -1,0 +1,26 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list of positive integers
+    for i in range(len(my_list)):
+        # Check if the current number is a prime number
+        if my_list[i] > 1:
+            # Initialize a flag to indicate whether the current number is composite or not
+            is_composite = False
+
+            # Iterate over the list of positive integers starting from the next number after the current number
+            for j in range(i + 1, len(my_list)):
+                # Check if the current number is divisible by any number between the next number and the end of the list
+                if my_list[i] % my_list[j] == 0:
+                    # If the current number is divisible by any number between the next number and the end of the list, set the flag to True
+                    is_composite = True
+                    break
+
+            # If the flag is False, add the current number to the set of composite numbers
+            if not is_composite:
+                composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers in the given list that are between index 0 to index 6, both inclusive
+    return composite_nums

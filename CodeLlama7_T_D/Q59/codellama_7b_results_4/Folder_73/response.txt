@@ -1,0 +1,57 @@
+ ```
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all numbers less than x
+    for num in range(2, x):
+
+        # Check if the number is a prime number
+        if is_prime(num):
+
+            # Check if the number is left-truncatable prime number
+            if is_left_truncatable_prime(num):
+
+                # Add the number to the list of prime numbers
+                prime_numbers.append(num)
+
+    # Return the sorted list of all left-truncatable prime numbers less than x
+    return sorted(prime_numbers)
+
+def is_prime(num):
+
+    # Check if num is an integer greater than 1
+    if num > 1:
+
+        # Loop through all numbers less than or equal to the square root of num
+        for i in range(2, int(num ** 0.5) + 1):
+
+            # Check if i divides num without a remainder
+            if num % i == 0:
+
+                # Return False if i is a factor of num
+                return False
+
+    # Return True if num is a prime number
+    return True
+
+def is_left_truncatable_prime(num):
+
+    # Check if num contains no 0
+    if "0" in str(num):
+
+        # Return False if num contains 0
+        return False
+
+    # Loop through all numbers less than or equal to the square root of num
+    for i in range(2, int(num ** 0.5) + 1):
+
+        # Check if i divides num without a remainder
+        if num % i == 0:
+
+            # Return False if i is a factor of num
+            return False
+
+    # Return True if num is a left-truncatable prime number
+    return True
+```

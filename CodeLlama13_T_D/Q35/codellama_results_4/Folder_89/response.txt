@@ -1,0 +1,16 @@
+```python
+def remove_repeat_chars(s):
+    chars = {}
+    for i in range(55, 84):
+        if s[i] in chars:
+            chars[s[i]] += 1
+        else:
+            chars[s[i]] = 1
+    
+    new_string = ""
+    for c in s:
+        if not (c in chars and chars[c] > 1):
+            new_string += c
+    
+    return new_string
+```

@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(len(matrix)):
+        # Loop over each column of the matrix
+        for j in range(len(matrix[0])):
+            # Find all submatrices that have a sum equal to 245
+            if np.sum(matrix[i:, j]) == 245:
+                # Add the found submatrix to the list of submatrices
+                submatrices.append(matrix[i:, j])
+
+    # Return the list of all submatrices that have a sum equal to 245
+    return submatrices

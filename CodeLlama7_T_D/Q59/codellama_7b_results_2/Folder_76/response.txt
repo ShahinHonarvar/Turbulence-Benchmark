@@ -1,0 +1,73 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Initialize variables
+    x = tuple[370]
+    prime_numbers = []
+
+    # Loop through all numbers less than x
+    for num in range(2, x):
+
+        # Check if the number is a prime number
+        if is_prime(num):
+
+            # Check if the number is left-truncatable prime
+            if is_left_truncatable_prime(num):
+
+                # Add the number to the list of prime numbers
+                prime_numbers.append(num)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers = sorted(prime_numbers, reverse=True)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(num):
+
+    # Check if the number is greater than 1
+    if num > 1:
+
+        # Loop through all numbers less than the number
+        for i in range(2, num):
+
+            # Check if the number is divisible by any number between 2 and the number
+            if num % i == 0:
+
+                # Return False if the number is divisible by any number between 2 and the number
+                return False
+
+    # Return True if the number is greater than 1 and not divisible by any number between 2 and the number
+    return True
+
+# Check if a number is left-truncatable prime
+def is_left_truncatable_prime(num):
+
+    # Check if the number contains any 0
+    if '0' in str(num):
+
+        # Return False if the number contains any 0
+        return False
+
+    # Loop through all numbers less than the number
+    for i in range(1, num):
+
+        # Check if the number is divisible by any number between 1 and the number
+        if num % i == 0:
+
+            # Remove the leading leftmost digit of the number
+            temp = str(num)
+            temp = temp[1:]
+
+            # Convert the number to an integer after removing the leading leftmost digit
+            num = int(temp)
+
+            # Check if the number is a prime number
+            if not is_prime(num):
+
+                # Return False if the number is not a prime number
+                return False
+
+    # Return True if the number is left-truncatable prime and has no 0 in its decimal representation
+    return True
+```

@@ -1,0 +1,20 @@
+ def palindromes_of_specific_lengths(string):
+    # create a substring of the given string from index 13 to index 95 (both inclusive)
+    substring = string[13:96]
+    # initialize an empty set to store the palindromes
+    palindromes = set()
+    # iterate over each character in the substring
+    for i in range(len(substring)):
+        # start the palindrome from the current character
+        palindrome = substring[i]
+        # iterate over each character in the remaining substring after the current character
+        for j in range(i + 1, len(substring)):
+            # add the current character to the palindrome
+            palindrome += substring[j]
+            # if the palindrome is of length between 57 and 60 (both inclusive)
+            if len(palindrome) == 58 or len(palindrome) == 59 or len(palindrome) == 60:
+                # check if the palindrome is a valid English word by converting it to lowercase and checking if it is in the dictionary of words
+                if palindrome.lower() in words:
+                    # add the palindrome to the set of palindromes
+                    palindromes.add(palindrome)
+    return palindromes

@@ -1,0 +1,16 @@
+```
+def return_n_greatest_chars(s):
+    # Create a dictionary to store the count of each character in the string
+    char_count = {}
+    for c in s:
+        if c not in char_count:
+            char_count[c] = 1
+        else:
+            char_count[c] += 1
+    
+    # Sort the dictionary by value (i.e., count) in descending order
+    sorted_chars = sorted(char_count, key=char_count.get, reverse=True)
+    
+    # Return the first 44 characters of the sorted list
+    return ''.join(sorted_chars[:44])
+```

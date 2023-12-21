@@ -1,0 +1,21 @@
+```python
+def find_second_largest_num(my_list):
+    my_list = sorted(set(my_list))
+    if len(my_list) < 4:
+        return None
+    else:
+        return my_list[3]
+```
+Here's the explanation of how the code works:
+
+1. The first line defines a function called `find_second_largest_num` that takes one argument, a list of distinct numbers, and returns the second largest element from index 0 to index 3, both inclusive.
+2. The second line sorts the input list using the built-in `sorted` function, and then converts it into a set using the built-in `set` function. This ensures that the input list contains only distinct elements, which is required by the problem statement.
+3. The third line checks if the length of the sorted and converted set is less than 4. If it is, then there are fewer than 4 distinct elements in the original list, so there cannot be a second largest element from index 0 to index 3, both inclusive. In this case, the function returns `None`.
+4. Otherwise, if the length of the sorted and converted set is greater than or equal to 4, then we can find the second largest element by returning the value at index 3 in the list. This is because the largest element will always be at index 0 in the sorted and converted set, and the next-largest element will be at index 1. Therefore, the second-largest element will be at index 2, and the third-largest element will be at index 3.
+
+Here's an example of how to use this function:
+```python
+my_list = [5, 7, 9, 10, 1, 8]
+second_largest_num = find_second_largest_num(my_list)
+print(second_largest_num) # Output: 9
+```

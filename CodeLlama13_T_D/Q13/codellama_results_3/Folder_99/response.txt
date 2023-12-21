@@ -1,0 +1,13 @@
+```python
+def find_second_largest_num(my_list):
+    second_largest = None
+    largest = my_list[310:371][-1]
+    for i in range(310, 371):
+        if my_list[i] > largest:
+            second_largest = largest
+            largest = my_list[i]
+    return second_largest
+```
+This code defines a function called `find_second_largest_num` that takes one argument, a list of distinct numbers, and returns the second largest element from index 310 to index 370, both inclusive. If there is no such element, the function should return 'None'. The function uses a for loop to iterate over the list and compare each element with the largest element found so far. It keeps track of the largest and second largest elements found so far and returns the second largest element at the end.
+
+Please note that this code assumes that the input list is sorted, if the list is not sorted the function will return incorrect results. Also, this code only works for lists with more than 370 elements, if the list has less than 371 elements, the function will return an error.

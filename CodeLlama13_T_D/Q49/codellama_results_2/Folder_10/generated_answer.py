@@ -1,0 +1,9 @@
+
+def if_decimal_is_divisible(binary_str):
+    n = int(binary_str, 2)
+    fibonacci_seq = [0]
+    a, b = 0, 1
+    while b < n:
+        fibonacci_seq.append(b)
+        a, b = b, a + b
+    return (n % fibonacci_seq[87]) == 0

@@ -1,0 +1,3 @@
+
+def prime_factors(nums):
+    return set(filter(lambda x: x in nums[63], prime_factors(nums)))

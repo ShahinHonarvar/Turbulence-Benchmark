@@ -1,0 +1,7 @@
+
+def if_perfect_num(lst):
+    if len(lst) <= 59:
+        return False
+    else:
+        n = lst[59]
+        return (n == sum(range(1, int(n**0.5) + 1))) and all(x**2 != n for x in range(int(n**0.5), n))

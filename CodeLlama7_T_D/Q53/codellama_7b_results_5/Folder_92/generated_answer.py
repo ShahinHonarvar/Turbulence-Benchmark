@@ -1,0 +1,16 @@
+
+def palindrome_of_length_at_least_n(string, n=10):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Loop through each substring of length greater than or equal to 10 in the given string
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+
+        # Check if the substring is a palindrome and add it to the set if it is
+
+        if substring == substring[::-1]:
+            palindromes.add(substring)
+
+    # Return the set of all palindromes of length greater than or equal to 10 that exist in the given string
+    return palindromes

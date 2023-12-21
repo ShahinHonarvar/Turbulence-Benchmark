@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(list_of_ints):
+    return [int for int in list_of_ints if 389 < int < 748 and int > 0]

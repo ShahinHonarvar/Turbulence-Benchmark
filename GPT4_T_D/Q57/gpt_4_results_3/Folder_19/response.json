@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code as per your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices = []\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(i + 1, rows + 1):\n                for l in range(j + 1, cols + 1):\n                    submatrix = matrix[i:k, j:l]\n                    if np.sum(submatrix) == -97:\n                        submatrices.append(submatrix)\n    return submatrices\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690982319,
+  "id": "chatcmpl-7j62Ji4cNWsgswLDuH1fo0p5WjPIF",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 122,
+    "prompt_tokens": 121,
+    "total_tokens": 243
+  }
+}

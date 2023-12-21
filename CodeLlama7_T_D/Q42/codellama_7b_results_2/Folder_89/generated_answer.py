@@ -1,0 +1,14 @@
+
+def prime_factors(my_list):
+    # Get the number at index 18
+    num = my_list[18]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Loop through all numbers less than or equal to the number at index 18
+    for i in range(2, num + 1):
+        # If the number is divisible by i, it is a prime factor
+        if num % i == 0:
+            # Add the prime factor to the set
+            prime_factors.add(i)
+    # Return the set of all prime factors
+    return prime_factors

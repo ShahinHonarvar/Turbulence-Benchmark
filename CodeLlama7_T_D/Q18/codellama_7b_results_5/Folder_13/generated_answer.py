@@ -1,0 +1,13 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    sum = 0
+    num1 = 45
+    num2 = 20
+
+    # Iterate through the list and calculate the sum of all integers divisible by either num1 or num2 from index 13 to index 18, both inclusive.
+    for i in range(len(my_list)):
+        if my_list[i] % num1 == 0 or my_list[i] % num2 == 0:
+            sum += my_list[i]
+
+    return sum

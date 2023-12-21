@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(78, 81):
+        if string[i] > 'S' and string[i] < '[':
+            string = string.replace(string[i], '')
+    return string

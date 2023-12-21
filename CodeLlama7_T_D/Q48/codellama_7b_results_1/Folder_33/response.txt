@@ -1,0 +1,29 @@
+ Here is a Python implementation of the function:
+def return_binary_or_hexa(tuple):
+# Get the values at indices 13 and 35
+a = tuple[13]
+b = tuple[35]
+# Initialize an empty list to store the integers between a + 1 and b - 1 (both inclusive) that are not present in the tuple
+between_indices = []
+# Loop through all the integers between a + 1 and b - 1 (both inclusive)
+for i in range(a + 1, b):
+# If the integer is not present in the tuple between indices 13 and 35, add it to the list
+if i not in tuple[13:35]:
+between_indices.append(i)
+# Calculate the sum of all integers in the list
+sum = 0
+for integer in between_indices:
+sum += integer
+# Return an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+if not sum:
+return ''
+# If the sum is an odd number, return its binary representation string; otherwise, return its hexadecimal representation string.
+elif sum % 2 == 1:
+binary_representation = bin(sum)[2:]
+hexadecimal_representation = hex(sum)[2:]
+return binary_representation if len(binary_representation) > 1 else '0' + binary_representation if len(binary_representation) == 1 else hexadecimal_representation.upper()
+# If the sum is an even number, return its binary representation string with no leading zeros; otherwise, return its hexadecimal representation string with no leading zeros.
+else:
+binary_representation = bin(sum)[3:]
+hexadecimal_representation = hex(sum)[2:]
+return binary_representation if len(binary_representation) > 1 else '0' + binary_representation if len(binary_representation) == 1 else hexadecimal_representation.upper()

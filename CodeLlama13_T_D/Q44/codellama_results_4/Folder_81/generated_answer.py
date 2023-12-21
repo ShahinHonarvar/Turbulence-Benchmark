@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(num_list):
+    return {num for i, num in enumerate(num_list) if 20 <= i <= 200 and not is_prime(num)}

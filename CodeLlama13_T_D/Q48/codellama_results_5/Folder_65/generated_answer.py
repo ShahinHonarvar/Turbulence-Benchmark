@@ -1,0 +1,17 @@
+
+def return_binary_or_hexa(numbers):
+    a = numbers[51] + 1
+    b = numbers[76] - 1
+    result = []
+    for i in range(a, b+1):
+        if not (i in numbers):
+            result.append(i)
+    
+    sum = 0
+    for i in result:
+        sum += i
+    
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+    else:
+        return bin(sum)[2:]

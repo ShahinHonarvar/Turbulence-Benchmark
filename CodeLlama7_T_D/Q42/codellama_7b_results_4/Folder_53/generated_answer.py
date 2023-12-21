@@ -1,0 +1,26 @@
+
+def prime_factors(my_list):
+    # Get the integer at index 73 from the list
+    num = my_list[73]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Loop through all the divisors of the number
+    for i in range(1, num + 1):
+        # Check if the divisor is prime
+        if num % i == 0 and is_prime(i):
+            # Add the prime factor to the set
+            prime_factors.add(i)
+    return prime_factors
+
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all the numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # If i divides n, then n is not prime
+                return False
+
+    # If n is greater than 1 and it is not divisible by any number between 2 and the square root of n, then it is prime
+    return True

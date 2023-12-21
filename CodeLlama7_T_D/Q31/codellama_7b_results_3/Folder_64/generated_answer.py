@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least two elements
+    if len(my_list) < 2:
+        return False
+
+    # Get the integer at index 1
+    num = my_list[1]
+
+    # Check if 'num' is a perfect number
+    sum = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum += i
+
+    return sum == num

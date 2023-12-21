@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    result = ''
+    for i in range(len(s)):
+        if s[i] >= '*' and s[i] <= 'b':
+            continue
+        else:
+            result += s[i]
+    return result

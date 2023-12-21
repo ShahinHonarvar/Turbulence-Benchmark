@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    chars = []
+    for i in range(18, 81):
+        if string[i].isalpha() and 'W' <= string[i] <= '[':
+            chars.append(string[i])
+    for char in chars:
+        string = string.replace(char, '')
+    return string

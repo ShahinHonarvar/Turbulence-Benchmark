@@ -1,0 +1,9 @@
+
+def if_perfect_num(my_list):
+    # Check if the element at index 74 is a perfect number
+    if my_list[74] == 6:
+        return True
+
+    else:
+
+        return False

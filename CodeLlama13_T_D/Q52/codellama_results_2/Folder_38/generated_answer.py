@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return {pal for i in range(len(s) - 37) if s[i:i + 38].islower() and s[i:i + 38] == s[i:i + 38][::-1]}

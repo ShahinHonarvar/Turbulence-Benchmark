@@ -1,0 +1,6 @@
+
+def if_perfect_num(numbers):
+    for i in range(len(numbers)):
+        if numbers[i] == 16:
+            return True
+    return False

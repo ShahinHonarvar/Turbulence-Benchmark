@@ -1,0 +1,13 @@
+
+def return_nth_smallest_ascii(string):
+    # Get a list of all the unique characters in the string
+    chars = set(string)
+    
+    # Filter the list to only include characters that occur between indices 0 and 45, both inclusive
+    filtered_chars = [char for char in chars if 0 <= ord(char) <= 45]
+    
+    # Get a sorted list of all the ASCII values of the filtered characters
+    ascii_values = sorted([ord(char) for char in filtered_chars])
+    
+    # Return the character with the 10th smallest ASCII value among those characters that occur between indices 0 and 45, both inclusive
+    return chr(ascii_values[9])

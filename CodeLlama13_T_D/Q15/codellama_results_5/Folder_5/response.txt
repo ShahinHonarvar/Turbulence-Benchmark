@@ -1,0 +1,14 @@
+```python
+def sum_odd_ints_inclusive(my_list):
+    return sum(i for i in my_list[8:9+1] if i % 2 != 0) or 0
+```
+This code defines a function called `sum_odd_ints_inclusive` that takes a list of integers as its argument. The function returns the sum of all odd integers from index 8 to index 9, both inclusive, if any such odd integers exist in the specified range. If no odd integers exist in the specified range, the function returns 0 instead.
+
+To explain how this code works, let's consider a few examples:
+
+* If `my_list` is `[1, 2, 3, 4, 5, 6, 7, 8, 9]`, then `sum(i for i in my_list[8:9+1] if i % 2 != 0)` returns the sum of all odd integers from index 8 to index 9, both inclusive, which is equal to `9`.
+* If `my_list` is `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`, then `sum(i for i in my_list[8:9+1] if i % 2 != 0)` returns the sum of all odd integers from index 8 to index 9, both inclusive, which is equal to `9 + 1 = 10`.
+* If `my_list` is `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]`, then `sum(i for i in my_list[8:9+1] if i % 2 != 0)` returns the sum of all odd integers from index 8 to index 9, both inclusive, which is equal to `9 + 1 = 10`.
+* If `my_list` is `[1, 2, 3, 4, 5, 6, 7, 8]`, then `sum(i for i in my_list[8:9+1] if i % 2 != 0)` returns the sum of all odd integers from index 8 to index 9, both inclusive, which is equal to `0` because there are no odd integers in the specified range.
+
+Overall, this code uses a list comprehension and the modulo operator to iterate over the elements of `my_list` and check if each element is an odd integer. If an odd integer exists in the specified range, the function returns its sum; otherwise, it returns 0.

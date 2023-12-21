@@ -1,0 +1,16 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Convert the matrix to a 1D array
+    flat = matrix.flatten()
+    
+    # Find all possible combinations of indices that add up to 35
+    combos = []
+    for i in range(len(flat)):
+        for j in range(i+1, len(flat)+1):
+            if sum(flat[i:j]) == 35:
+                combos.append((i, j))
+    
+    # Return the list of submatrices corresponding to each combination
+    return [matrix[i:j, :] for (i, j) in combos]

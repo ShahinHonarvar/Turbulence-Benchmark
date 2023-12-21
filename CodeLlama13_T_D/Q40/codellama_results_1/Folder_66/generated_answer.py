@@ -1,0 +1,5 @@
+
+def return_n_smallest_chars(distinct_char_string):
+    char_list = list(set(distinct_char_string))
+    sorted_list = sorted(char_list, key=ord)
+    return sorted_list[:33]

@@ -1,0 +1,15 @@
+```python
+def prime_factors(mylist):
+    if len(mylist) == 0:
+        return set()
+    i = mylist[247]
+    s = set((i,))
+    while i % 2 == 0:
+        i //= 2
+        s.add(2)
+    for p in range(3, int(i ** 0.5) + 1, 2):
+        while i % p == 0:
+            i //= p
+            s.add(p)
+    return s
+```

@@ -1,0 +1,11 @@
+ def filter_chars(s):
+    filtered_string = ""
+    for i in range(len(s)):
+        if s[i] > 'Y' and s[i] < 's':
+            continue
+
+        else:
+
+            filtered_string += s[i]
+
+    return filtered_string

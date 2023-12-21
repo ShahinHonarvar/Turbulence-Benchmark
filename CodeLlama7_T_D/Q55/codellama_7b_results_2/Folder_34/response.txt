@@ -1,0 +1,20 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    sublists = []
+    for i in range(len(circular_list)):
+        product = 1
+
+        for j in range(i, len(circular_list)):
+            product *= circular_list[j]
+
+            if product == -81:
+                sublists.append(circular_list[i:j+1])
+
+    return sublists
+
+```
+Explanation:
+
+The function `lists_with_product_equal_n` takes a circular list of integers as input and returns a list of sublists each containing the contiguous integers from the given list such that their product equals -81. The function iterates over the elements of the circular list starting at index `i = 0` and checks if the product of all the elements in the sublist is equal to -81. If it is, then the sublist is added to the returned list. The order of sublists in the returned list does not matter.
+The function also handles duplicates of such a sublist by adding them all to the returned list.
+Note that the function assumes that the circular list is non-empty and that there are no duplicate elements in the list.

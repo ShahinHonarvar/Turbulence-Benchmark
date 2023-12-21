@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[94] == sum(range(1, int(lst[94]) ** 0.5 + 1))

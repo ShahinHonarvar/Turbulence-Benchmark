@@ -1,0 +1,12 @@
+
+def gcf_three_nums(lst):
+    gcf = 1
+    for i in range(404, 517 + 1):
+        if lst[i] % gcf == 0:
+            continue
+
+        else:
+
+            gcf = lst[i]
+
+    return gcf

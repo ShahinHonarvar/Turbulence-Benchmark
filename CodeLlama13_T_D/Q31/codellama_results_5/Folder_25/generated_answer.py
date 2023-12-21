@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[90] % 2 == 1:
+        return True
+    else:
+        return False

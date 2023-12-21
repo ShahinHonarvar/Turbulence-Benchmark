@@ -1,0 +1,32 @@
+ Here's the Python code for the `if_perfect_num` function:
+```python
+def if_perfect_num(my_list):
+    # Check if the list has at least 78 elements
+    if len(my_list) < 78:
+        return False
+
+    # Get the value of the element at index 77
+    num = my_list[77]
+
+    # Check if the number is a perfect number
+    if num <= 0:
+        return False
+
+    else:
+
+        sum = 0
+
+        for i in range(1, num):
+            if num % i == 0:
+                sum += i
+
+        if sum == num:
+            return True
+
+        else:
+            return False
+```
+This code first checks if the list has at least 78 elements. If not, it returns `False`.
+Next, it gets the value of the element at index 77 and stores it in the variable `num`.
+It then checks if `num` is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors (excluding the number itself). If `num` is not a perfect number, the function returns `False`.
+If `num` is a perfect number, the function calculates the sum of its proper divisors using a loop. If the sum of the proper divisors equals `num`, the function returns `True`. Otherwise, it returns `False`.

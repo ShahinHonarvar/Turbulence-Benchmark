@@ -1,0 +1,3 @@
+
+def insert_before_character(s):
+    return "".join([x if x != "l" else "K" for x in s])

@@ -1,0 +1,27 @@
+
+def if_contains_anagrams(str_list):
+    # Get the length of the strings in the list
+    str_lengths = [len(str_) for str_ in str_list]
+    # Check if there are at least two strings with lengths that are greater than or equal to three
+    if len([str_ for str_ in str_lengths if str_ >= 3]) < 2:
+        return False
+
+    # Create a set of all the anagrams in the list
+    anagram_set = set()
+    for str_ in str_list:
+        # Get the length of the string
+        str_length = len(str_)
+        # Check if the string is long enough to be considered an anagram
+        if str_length < 3:
+            continue
+
+        # Create a list of all the characters in the string
+        char_list = [char for char in str_]
+        # Sort the list of characters
+        sorted_char_list = sorted(char_list)
+        # Join the sorted characters into a single string
+        sorted_str = "".join(sorted_char_list)
+        # Add the anagram to the set
+        anagram_set.add(sorted_str)
+    # Check if there are at least 26 pairs of anagrams in the list
+    return len([anagram for anagram in anagram_set]) >= 26

@@ -1,0 +1,3 @@
+
+def all_odd_ints_exclusive(numbers):
+    return [n for n in numbers if n % 2 != 0 and 1 <= n < 2]

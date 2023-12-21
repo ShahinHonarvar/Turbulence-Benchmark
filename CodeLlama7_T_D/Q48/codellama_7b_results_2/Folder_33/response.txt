@@ -1,0 +1,23 @@
+ ```
+def return_binary_or_hexa(tuple):
+# check if all integers from a + 1 to b - 1 are present in the specified range in the tuple
+if all([num in tuple for num in range(tuple[13] + 1, tuple[35] - 1)])):
+return ''
+
+# calculate sum of all integers from a + 1 to b - 1 that are not present in the tuple between indices 13 and 35
+sum = 0
+for num in range(tuple[13] + 1, tuple[35] - 1):
+if num not in tuple:
+sum += num
+
+# return binary or hexadecimal representation string of sum
+
+if sum % 2 == 1:
+return bin(sum)[2:]
+else:
+return hex(sum)[2:]
+```
+Explanation:
+The function `return_binary_or_hexa` takes a single argument, a tuple of distinct nonnegative integers sorted in ascending order. The function first checks if all integers from the 14th element to the 36th element are present in the specified range in the tuple. If so, it returns an empty string.
+Next, the function calculates the sum of all integers from the 14th element to the 36th element that are not present in the tuple between indices 13 and 35. The function then checks if the sum is an odd number. If it is, the function returns the binary representation string of the sum without prefixing with '0b'. Otherwise, the function returns the hexadecimal representation string of the sum without prefixing with '0x'.
+Finally, the function starts with the most significant digit and has no leading zeros in both the binary and hexadecimal representations. The letters in the hexadecimal representation can be either in lowercase or uppercase.

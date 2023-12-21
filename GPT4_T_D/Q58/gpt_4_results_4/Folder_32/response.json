@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    m,n = np.shape(matrix)\n    submatrices_count = 0\n  \n    # Calculating size of submatrices\n    for size in range(1, min(m,n)+1): \n        for i in range(m-size+1): \n            for j in range(n-size+1): \n                submatrix = matrix[i:(i+size), j:(j+size)]\n                if submatrix.size == 103:\n                    submatrices_count += 1\n                  \n    return submatrices_count \n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691096070,
+  "id": "chatcmpl-7jZd0QZliHcz0DCCCnxUeUDyATiAY",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 111,
+    "total_tokens": 236
+  }
+}

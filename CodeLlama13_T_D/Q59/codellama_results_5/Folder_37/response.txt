@@ -1,0 +1,16 @@
+```python
+def all_left_truncatable_prime(nums):
+    x = nums[35]
+    primes = []
+    for i in range(x+1, 0, -1):
+        if is_prime(i) and '0' not in str(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+This function defines a function called `all_left_truncatable_prime` that takes a tuple of positive integers as its argument. The function returns the list of all left-truncatable prime numbers less than the integer at index 35 in the input tuple, sorted in descending order.
+
+The function first extracts the integer at index 35 from the input tuple and stores it in a variable called `x`. It then initializes an empty list called `primes` to store all left-truncatable prime numbers less than `x`.
+
+The function then uses a for loop to iterate over the integers from `x+1` down to 0, using a step size of -1. For each integer in this range, it checks whether it is a prime number and does not contain any zeros. If both conditions are satisfied, the integer is appended to the `primes` list.
+
+Finally, the function returns the sorted `primes` list, with the largest elements first.

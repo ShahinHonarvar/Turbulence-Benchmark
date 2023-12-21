@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(string):\n    count = {}\n    for i in range(len(string)):\n        if i < 4 and string[i] not in count:\n            count[string[i]] = 1\n        elif i < 4:\n            count[string[i]] += 1\n        elif count.get(string[i]) is not None and count[string[i]] > 1:\n            string = string.replace(string[i], '')\n    return string\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689857274,
+  "id": "chatcmpl-7eNMQ5HOREE1gghL8T9WA2M1GvWE5",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 122,
+    "total_tokens": 215
+  }
+}

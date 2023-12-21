@@ -1,0 +1,21 @@
+```python
+def return_nth_smallest_ascii(s):
+    # Return the character with the 7th smallest ASCII value among those characters in the string that occur between indices 50 to 75, both inclusive
+    
+    # Get a list of the characters in the string
+    chars = list(s)
+    
+    # Extract the characters between indices 50 to 75, both inclusive
+    sub_chars = chars[50:76]
+    
+    # Create a dictionary to keep track of the ASCII values and their corresponding characters
+    ascii_dict = {}
+    for c in sub_chars:
+        ascii_dict[ord(c)] = c
+        
+    # Sort the dictionary by its keys (i.e., the ASCII values)
+    sorted_ascii_dict = {k: v for k, v in sorted(ascii_dict.items(), key=lambda item: item[0])}
+    
+    # Return the 7th smallest ASCII value from the dictionary
+    return sorted_ascii_dict[list(sorted_ascii_dict.keys())[6]]
+```

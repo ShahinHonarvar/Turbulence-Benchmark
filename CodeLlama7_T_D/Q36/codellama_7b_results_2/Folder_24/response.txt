@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `filter_chars` function:
+```
+def filter_chars(s):
+    # Create a new string that is the same length as the original string
+    new_string = ""
+    for i in range(len(s)):
+        # If the current character is between indices 10 and 15 (exclusive), and it is greater than 't' and smaller than 'v', remove all occurrences of that character from the string
+        if (i >= 10 and i < 15) and s[i] > 't' and s[i] < 'v':
+            # Replace all occurrences of the current character with an empty string
+            new_string += s[i].replace(s[i], "")
+        # Otherwise, just append the current character to the new string
+        else:
+            new_string += s[i]
+    return new_string
+```

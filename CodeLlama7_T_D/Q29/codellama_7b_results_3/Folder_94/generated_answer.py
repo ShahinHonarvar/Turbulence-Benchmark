@@ -1,0 +1,9 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the integers at indices 91 and 45
+    i = 1
+    while i <= my_list[91]:
+        if my_list[91] % i == 0 and my_list[45] % i == 0:
+            gcf = i
+
+    return gcf

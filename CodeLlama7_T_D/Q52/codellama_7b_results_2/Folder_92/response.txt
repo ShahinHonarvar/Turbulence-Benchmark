@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `palindrome_of_length_n` function in Python:
+```python
+import re
+
+def palindrome_of_length_n(string):
+    # Remove any non-letter characters from the string
+    string = re.sub(r'\W', '', string)
+    # Find all palindromes of length 10 in the string
+    palindromes = []
+    for i in range(len(string) - 9):
+        substr = string[i:i+10]
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+    return set(palindromes)
+```
+The function takes a single argument, which is a string, and returns the set of all palindromes of length 10 where each palindrome is a substring of the given string. Each palindrome should only consist of English letters. If there is no palindrome of the specified length as a substring of the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.

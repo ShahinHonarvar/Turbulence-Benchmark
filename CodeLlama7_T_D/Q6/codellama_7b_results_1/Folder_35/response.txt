@@ -1,0 +1,18 @@
+ ```
+def all_neg_ints_exclusive(my_list):
+    # Find the first negative integer in the list
+    first_negative = next((i for i in my_list if i < 0), None)
+    # If there are no negative integers in the list, return an empty list
+    if first_negative is None:
+        return []
+
+    # Find the last negative integer in the list
+    last_negative = next((i for i in my_list[::-1] if i < 0), None)
+    # If there are no negative integers in the list, return an empty list
+    if last_negative is None:
+        return []
+
+    # Return the list of all negative integers from index 10 to index 79, both exclusive
+    return my_list[first_negative + 10 : last_negative - 10]
+```
+This code uses a combination of slicing and the `next()` function to find the first and last negative integers in the list, and then returns the list of all negative integers from index 10 to index 79, both exclusive. If there are no negative integers in the specified range, the function returns an empty list.

@@ -1,0 +1,13 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Find all substrings of length greater than or equal to n in the given string
+    substrings = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if len(substring) >= n and is_palindrome(substring):
+            substrings.append(substring)
+    return set(substrings)
+
+def is_palindrome(string):
+    # Check if the given string is a palindrome (i.e., whether it reads the same backwards as it does forwards)
+    return string == string[::-1]

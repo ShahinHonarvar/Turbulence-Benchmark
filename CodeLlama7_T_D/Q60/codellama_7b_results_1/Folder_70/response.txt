@@ -1,0 +1,104 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Define a function to check if a number is prime or not
+    def is_prime(n):
+        if n == 1 or n == 0:
+            return False
+
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        return True
+
+    # Define a function to check if a number is left-and-right-truncatable prime or not
+    def is_left_right_truncatable_prime(n):
+        # Check if the number contains any 0s
+        if '0' in str(n):
+            return False
+
+        # Check if the number is a prime number
+        if not is_prime(n):
+            return False
+
+        # Check if the number is left-truncatable prime
+        if not is_left_truncatable_prime(n):
+            return False
+
+        # Check if the number is right-truncatable prime
+        if not is_right_truncatable_prime(n):
+            return False
+
+        # If all the above conditions are satisfied, then the number is a left-and-right-truncatable prime number
+        return True
+
+    # Define a function to check if a number is left-truncatable prime or not
+    def is_left_truncatable_prime(n):
+        # Check if the number contains any 0s
+        if '0' in str(n):
+            return False
+
+        # Check if the number is a prime number
+        if not is_prime(n):
+            return False
+
+        # Check if the number is left-truncatable prime
+        for i in range(1, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        return True
+
+    # Define a function to check if a number is right-truncatable prime or not
+    def is_right_truncatable_prime(n):
+        # Check if the number contains any 0s
+        if '0' in str(n):
+            return False
+
+        # Check if the number is a prime number
+        if not is_prime(n):
+            return False
+
+        # Check if the number is right-truncatable prime
+        for i in range(1, int(n ** 0.5) + 1):
+            if n % (n - i) == 0:
+                return False
+
+        return True
+
+    # Initialize an empty list to store the left-and-right-truncatable prime numbers
+    lst = []
+
+    # Iterate through all the numbers less than or equal to x
+    for i in range(1, x + 1):
+        # Check if the number is a left-and-right-truncatable prime number
+        if is_left_right_truncatable_prime(i):
+            # If it is, then add it to the list of left-and-right-truncatable prime numbers
+            lst.append(i)
+
+    # Return the sorted list of left-and-right-truncatable prime numbers less than or equal to x
+    return sorted(lst, reverse=True)
+
+# Driver code
+if __name__ == "__main__":
+    # Test the function with a range of values
+#    print("Left-and-right-truncatable prime numbers less than or equal to 10:")
+#    print(all_left_right_truncatable_prime(10))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 20:")
+#    print(all_left_right_truncatable_prime(20))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 30:")
+#    print(all_left_right_truncatable_prime(30))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 40:")
+#    print(all_left_right_truncatable_prime(40))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 50:")
+#    print(all_left_right_truncatable_prime(50))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 60:")
+#    print(all_left_right_truncatable_prime(60))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 70:")
+#    print(all_left_right_truncatable_prime(70))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 80:")
+#    print(all_left_right_truncatable_prime(80))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 90:")
+#    print(all_left_right_truncatable_prime(90))
+#    print("\nLeft-and-right-truncatable prime numbers less than or equal to 100:")
+#    print(all_left_right_truncatable_prime(100))

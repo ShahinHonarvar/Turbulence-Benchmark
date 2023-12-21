@@ -1,0 +1,48 @@
+ Here's a possible implementation of the `find_second_largest_num` function:
+```python
+def find_second_largest_num(my_list):
+    # Check if the input is a list
+    if not isinstance(my_list, list):
+        raise ValueError("Input must be a list")
+    # Check if the input list is empty
+    if len(my_list) == 0:
+        return None
+
+    # Initialize variables to keep track of the second largest number and its index
+    second_largest = None
+    second_largest_index = None
+
+    # Iterate over the input list
+    for i, num in enumerate(my_list):
+
+        # Check if the current number is larger than the current second largest number
+        if num > second_largest or second_largest is None:
+            # Update the second largest number and its index
+            second_largest = num
+            second_largest_index = i
+
+    # Return the second largest number and its index, or 'None' if there is no such element
+    return (second_largest, second_largest_index) if second_largest_index else None
+#(modified)
+"""
+
+Here's a possible test case for the `find_second_largest_num` function:
+python
+# Test case 1:
+input_list = [3, 2, 1, 5, 4]
+output = find_second_largest_num(input_list)
+expected_output = (4, 4)
+assert output == expected_output
+
+# Test case 2:
+input_list = [3, 2, 1, 5, 4, 6]
+output = find_second_largest_num(input_list)
+expected_output = (6, 7)
+assert output == expected_output
+
+# Test case 3:
+input_list = [3, 2, 1, 5, 4, 6, 8]
+output = find_second_largest_num(input_list)
+expected_output = (8, 9)
+assert output == expected_output
+"""

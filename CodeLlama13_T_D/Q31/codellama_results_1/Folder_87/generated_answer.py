@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[96] == sum(filter(lambda x: x != 0 and x % numbers[96] == 0, range(1, numbers[96])))

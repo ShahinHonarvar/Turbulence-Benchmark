@@ -1,0 +1,8 @@
+
+def return_n_smallest_chars(s):
+    chars = []
+    for c in s:
+        if c not in chars:
+            chars.append(c)
+    sorted_chars = sorted(chars, key=ord)
+    return sorted_chars[:14]

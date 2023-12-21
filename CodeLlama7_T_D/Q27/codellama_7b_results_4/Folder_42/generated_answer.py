@@ -1,0 +1,8 @@
+
+def insert_after_index(my_list):
+    # Find the index of the element after which we want to insert the new element
+    for i in range(len(my_list)):
+        if my_list[i] == 44:
+            return my_list[:i+1] + [40, 27]
+    # If the element is not found, return the original list
+    return my_list

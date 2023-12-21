@@ -1,0 +1,22 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize a counter for the number of pairs of anagrams
+    num_pairs = 0
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_str = my_list[i]
+        # Check if the current string is a palindrome
+        if is_palindrome(curr_str):
+            # If it is, then get its anagrams
+            anagrams = get_anagrams(curr_str)
+            # Iterate over the list of anagrams
+            for j in range(len(anagrams)):
+                # Get the current anagram
+                curr_anagram = anagrams[j]
+                # Check if the current anagram is in the list of strings
+                if curr_anagram in my_list:
+                    # If it is, then increment the counter for the number of pairs of anagrams
+                    num_pairs += 1
+    # Return the counter for the number of pairs of anagrams
+    return num_pairs <= 5

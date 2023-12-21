@@ -1,0 +1,24 @@
+ Here is a possible implementation of the `all_substring_of_size_n` function:
+```python
+def all_substring_of_size_n(s, n):
+    # Check if the input string and size are valid
+    if len(s) < n or n <= 0:
+        return []
+
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate over the length of the input string
+    for i in range(len(s) - n + 1):
+
+        # Check if the current substring is already in the list
+        if s[i:i+n] not in substrings:
+            substrings.append(s[i:i+n])
+
+    # Return the list of all distinct substrings
+    return substrings
+```
+This function takes two arguments: `s`, a string, and `n`, an integer representing the length of the substrings to be returned. The function first checks if the input string is valid by checking that it has at least `n` characters and that `n` is greater than 0. If the input string is not valid, the function returns an empty list.
+The function then initializes an empty list called `substrings` to store all the substrings of length `n`. It iterates over the length of the input string by using a loop with a range starting from 0 and ending at `len(s) - n + 1`, which is the number of possible starting positions for a substring of length `n`.
+For each iteration, the function checks if the current substring is already in the list called `substrings`. If it is not already in the list, the function adds it to the list.
+After iterating over all possible starting positions, the function returns the list of all distinct substrings. The order of the substrings in the returned list does not matter.

@@ -1,0 +1,49 @@
+
+def if_contains_anagrams(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Initialize variables
+    anagram_count = 0
+    anagram_length = 0
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Get the length of the string
+        string_length = len(string)
+
+        # Check if the string is at least three characters long
+        if string_length >= 3:
+            # Initialize a variable to store the anagram count for this string
+            anagram_count_for_string = 0
+
+            # Iterate over the list of strings again
+            for other_string in my_list:
+                # Check if the current string is not the same as the other string
+                if string != other_string:
+                    # Check if the current string and the other string are anagrams
+                    if sorted(string) == sorted(other_string):
+                        # Increment the anagram count for this string
+                        anagram_count_for_string += 1
+
+            # Set the maximum anagram length based on the length of the current string
+            max_anagram_length = min(3, string_length)
+
+            # Iterate over the possible anagram lengths
+            for anagram_length in range(max_anagram_length, 0, -1):
+                # Check if the number of anagrams for this length is greater than or equal to 136
+                if anagram_count_for_string >= 136:
+                    # Set the anagram count and length variables based on the current string and anagram length
+                    anagram_count += anagram_count_for_string
+                    anagram_length = max_anagram_length
+
+                    # Break out of the inner for loop
+                    break
+
+            # If the anagram count and length are greater than or equal to 136, return True
+            if anagram_count >= 136:
+                return True
+
+    # Return False if no anagrams were found in the list of strings
+    return False

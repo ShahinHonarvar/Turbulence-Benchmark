@@ -1,0 +1,14 @@
+
+def sum_in_range(my_list):
+    # Initialize the sum to 0
+    total = 0
+
+    # Iterate over the elements of the list
+    for element in my_list:
+        # Check if the element is between 3 and 8, inclusive
+        if 3 <= element <= 8:
+            # If it is, add it to the sum
+            total += element
+
+    # Return the sum
+    return total

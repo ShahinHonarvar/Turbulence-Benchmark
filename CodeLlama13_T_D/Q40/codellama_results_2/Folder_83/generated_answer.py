@@ -1,0 +1,3 @@
+
+def return_n_smallest_chars(distinct_characters):
+    return sorted(list(set(distinct_characters)), key=ord, reverse=True)[:38]

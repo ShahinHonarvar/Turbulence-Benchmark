@@ -1,0 +1,48 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the range of numbers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers = sorted(prime_numbers)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through the range of numbers from 2 to n - 1
+        for i in range(2, n):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if i divides n
+                return False
+
+    # Return True if n is greater than 1
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Initialize an empty list to store the digits of the number
+    digits = []
+
+    # Loop through the range of numbers from 1 to n - 1
+    for i in range(1, n):
+        # Append the current digit to the list of digits
+        digits.append(i)
+
+    # Check if the number contains no 0
+    if not any(map(lambda x: x == '0', digits)):
+        # Return True if the number is left-and-right-truncatable prime number
+        return True

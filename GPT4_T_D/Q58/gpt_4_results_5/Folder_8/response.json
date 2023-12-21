@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(1, rows+1):\n        for j in range(1, cols+1):\n            for row in range(rows - i + 1):\n                for col in range(cols - j + 1):\n                    submatrix = matrix[row:row+i, col:col+j]\n                    if submatrix.size == 29:\n                        count += 1\n    return count\n```\nThis function works by scanning the matrix for all possible submatrices and checking their size. If the size is equal to 29, it increments the count. The ranges for 'i' and 'j' start from '1' to '+1' of the number of rows and columns respectively, to account for all possible sizes of submatrices. The ranges for 'row' and 'col' depend on the current submatrix size in order to avoid out of bounds errors. Finally, it returns the count.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691017231,
+  "id": "chatcmpl-7jF7PjU1ah1nqFmPR7gv4UueRnEIL",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 228,
+    "prompt_tokens": 111,
+    "total_tokens": 339
+  }
+}

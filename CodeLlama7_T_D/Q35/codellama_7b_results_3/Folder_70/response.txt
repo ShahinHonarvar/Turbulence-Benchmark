@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(s):
+    # Create a dictionary to store the frequency of each character in the string
+    freq = {}
+    for c in s:
+        if c not in freq:
+            freq[c] = 0
+        freq[c] += 1
+    # Iterate over the characters in the string and remove any character that appears more than once between indices 43 and 70
+    for i, c in enumerate(s):
+        if freq[c] > 1 and (i < 43 or i >= 70):
+            s = s.replace(c, '', 1)
+    return s
+```

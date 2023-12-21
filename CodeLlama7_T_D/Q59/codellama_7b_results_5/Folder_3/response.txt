@@ -1,0 +1,12 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[100]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_left_truncatable_prime(i):
+list.append(i)
+return list
+```
+This function takes a tuple of positive integers as input. It then extracts the 100th element of the tuple, which we will call x.
+The function uses a for loop to iterate over all prime numbers less than x. For each prime number p, it checks if p is a left-truncatable prime number by first checking if it is a prime number (using the `is_prime` function), and then checking if removing the leading leftmost digit successively from p results in all resulting numbers being prime (using the `is_left_truncatable_prime` function). If both checks are true, then p is added to the list of left-truncatable prime numbers.
+Finally, the function returns the sorted list of all left-truncatable prime numbers less than x.

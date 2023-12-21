@@ -1,0 +1,19 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+# Convert the binary string to an integer
+decimal_int = int(binary_string, 2)
+# Initialize the variables for the Fibonacci sequence
+f1 = 0
+f2 = 1
+f3 = f1 + f2
+while f3 < decimal_int:
+f1 = f2
+f2 = f3
+f3 = f1 + f2
+# Check if the integer is divisible by the current Fibonacci number
+if decimal_int % f3 == 0:
+return True
+
+return False
+
+```

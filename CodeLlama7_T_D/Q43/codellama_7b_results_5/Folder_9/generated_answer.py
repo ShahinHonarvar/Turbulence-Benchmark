@@ -1,0 +1,13 @@
+
+def find_primes_between_indices(my_list):
+    # Create an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the list from index 22 to index 69, both inclusive
+    for i in range(22, 70):
+        # Check if the current element is a prime number using the Sieve of Eratosthenes algorithm
+        if my_list[i] == 1:
+            # If the current element is a prime number, add it to the list of prime numbers
+            prime_numbers.append(my_list[i])
+    # Return the sorted list of all prime numbers from index 22 to index 69, both inclusive
+    return sorted(prime_numbers)

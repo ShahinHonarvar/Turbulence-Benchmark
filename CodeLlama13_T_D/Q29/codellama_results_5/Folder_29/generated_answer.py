@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return numbers[96] if numbers[57] % numbers[96] == 0 else numbers[57] // numbers[96] * numbers[96]

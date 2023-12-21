@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 135th number in the Fibonacci sequence
+    fibonacci_number = (((1 + math.sqrt(5)) / 2) ** 135 - ((1 - math.sqrt(5)) / 2) ** 135) / math.sqrt(5)
+    
+    # Return true if the decimal integer is divisible by the Fibonacci number
+    return decimal % fibonacci_number == 0

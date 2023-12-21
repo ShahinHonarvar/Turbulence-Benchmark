@@ -1,0 +1,13 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between 63 and 76
+    start = string.index('<') + 1
+    end = string.index('>') - 1
+    # Get the list of characters in the string between these indices
+    char_list = string[start:end]
+    # Sort the list of characters by their ASCII values
+    sorted_list = sorted(char_list, key=ord)
+    # Return the character with the 14th smallest ASCII value
+    return sorted_list[13]
+```
+This code uses the `index` method to find the indices of the angle brackets in the input string. It then uses these indices to extract the substring that contains the characters between the angles. The `ord` function is used to get the ASCII value of each character, and the list is sorted by ASCII value using the `sorted` function. Finally, the 14th smallest ASCII value is returned as a character.

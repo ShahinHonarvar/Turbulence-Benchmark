@@ -1,0 +1,38 @@
+[cohere.Generation {
+	id: cb0578e3-1221-4e41-a962-1ceddc80cfa0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 39. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import heapq as hq
+
+def all_left_right_truncatable_prime(x):
+    if x <= 1:
+        return []
+    res = []
+    for i in range(2, int(str(x)[0])+1):
+        for j in range(2, str(x)[-1]+1):
+            if is_left_right_truncatable_prime(i, j):
+                res.append(i**10+j)
+                break
+    return sorted(res)
+
+def is_left_right_truncatable_prime(i, j):
+    return (i > 1 and i ** 10 + j > 9 ** 9) or (i == 1 and j > 9)
+
+if __name__ == '__main__':
+    input = sys.stdin.readline
+else:
+    input = lambda: sys.stdin.readline().rstrip()
+
+def solve():
+    test_cases = int(input())
+    for _ in range(test_cases):
+        x = int(input())
+        print(*all_left_right_truncatable_prime(x))
+
+solve()
+```
+	likelihood: None
+	token_likelihoods: None
+}]

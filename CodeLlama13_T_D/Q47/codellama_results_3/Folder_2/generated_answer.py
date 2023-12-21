@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    # find all possible palindromes in the substring from index 10 to index 59, both inclusive
+    sub_string = string[10:60]
+    palindromes = set()
+    for i in range(len(sub_string)):
+        for j in range(i+18, min(i+37, len(sub_string))):
+            if sub_string[i:j] == sub_string[i:j][::-1]:
+                palindromes.add(sub_string[i:j])
+    return palindromes

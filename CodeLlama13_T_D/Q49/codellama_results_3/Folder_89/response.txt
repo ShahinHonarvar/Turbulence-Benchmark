@@ -1,0 +1,13 @@
+```python
+def if_decimal_is_divisible(binary_str):
+    fibonacci_sequence = (0, 1)
+    for i in range(2, 100):
+        fibonacci_sequence += (fibonacci_sequence[-2] + fibonacci_sequence[-1],)
+    decimal = int(binary_str, 2)
+    return decimal % fibonacci_sequence[126] == 0
+```
+This code defines a function `if_decimal_is_divisible` that takes a binary representation string of a non-negative decimal integer as its argument. The function returns `True` if the corresponding decimal integer is divisible by the 126th number in the Fibonacci sequence, and `False` otherwise.
+
+The code first defines a tuple `fibonacci_sequence` containing the first two numbers of the Fibonacci sequence (0 and 1). It then iterates from 2 to 99, adding the sum of the last two elements in `fibonacci_sequence` to the end of the tuple. This generates all the numbers in the Fibonacci sequence up to 126.
+
+Next, the code converts the binary representation string into a decimal integer using `int(binary_str, 2)`. It then modulos this value with the 126th number in the Fibonacci sequence, which is obtained from `fibonacci_sequence[126]`. If the result is 0, the function returns `True`, otherwise it returns `False`.

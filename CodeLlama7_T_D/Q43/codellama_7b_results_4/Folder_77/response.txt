@@ -1,0 +1,23 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the list and check if each element is a prime number
+    for i in range(287, 928 + 1):
+        if my_list[i] > 1:
+            is_prime = True
+
+            # Check if the current element is divisible by any number between 2 and the square root of the current element
+            for j in range(2, int(my_list[i]) ** 0.5 + 1):
+                if my_list[i] % j == 0:
+                    is_prime = False
+                    break
+
+        # If the current element is a prime number, add it to the list of prime numbers
+        if is_prime:
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers)
+```

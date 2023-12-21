@@ -1,0 +1,10 @@
+
+def composite_nums_between_indices(list_of_ints):
+    # find the indices of all composite numbers in the list
+    indices = []
+    for i, num in enumerate(list_of_ints):
+        if len(str(num)) > 1 and num % 2 != 0:
+            indices.append(i)
+    
+    # return the set of all composite numbers between indices 14 to 64, both inclusive
+    return set([list_of_ints[i] for i in indices if 14 <= i <= 64])

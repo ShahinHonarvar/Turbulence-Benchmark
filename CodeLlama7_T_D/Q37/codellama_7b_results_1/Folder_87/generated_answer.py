@@ -1,0 +1,17 @@
+
+def filter_chars(string):
+    # Initialize an empty string to store the filtered characters
+    filtered_string = ""
+
+    # Iterate over each character in the given string
+    for char in string:
+        # If the current character is between indices 18 and 81, both inclusive, and is greater than or equal to character 'W' and smaller than or equal to character '[', then remove all occurrences of that character from the string
+        if 18 <= char <= 81 and ord(char) >= ord('W') and ord(char) <= ord('['):
+            continue
+
+        # Otherwise, append the current character to the filtered string
+        else:
+            filtered_string += char
+
+    # Return the altered string with all occurrences of characters between indices 18 and 81, both inclusive, and is greater than or equal to character 'W' and smaller than or equal to character '[' removed while preserving the order of all characters in the string.
+    return filtered_string

@@ -1,0 +1,13 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Find the substring from index 30 to index 95, both inclusive
+sub_string = string[30:95+1]
+# Create a set to store all palindromes of lengths between 34 and 55
+palindromes = set()
+# Iterate through each character in the substring
+for i in range(len(sub_string)):
+# Check if the current character is a palindrome of length between 34 and 55
+if sub_string[i-1:i+1] == sub_string[i-1:i+1][::-1]:
+palindromes.add(sub_string[i-1:i+1])
+return palindromes
+```

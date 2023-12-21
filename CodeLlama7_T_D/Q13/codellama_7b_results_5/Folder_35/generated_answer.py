@@ -1,0 +1,36 @@
+
+def find_second_largest_num(my_list):
+    # Check if the input is a list
+    if not isinstance(my_list, list):
+        return None
+
+    # Get the length of the list
+    list_len = len(my_list)
+
+    # Check if the list has at least 3 elements
+    if list_len < 3:
+        return None
+
+    # Initialize variables for the largest and second-largest elements
+    largest = my_list[0]
+    second_largest = my_list[1]
+
+    # Iterate through the list starting from index 30 to index 48, both inclusive
+    for i in range(30, 49):
+        # Check if the current element is larger than the largest element
+        if my_list[i] > largest:
+            # If it is, then update the second-largest element and continue to the next iteration
+            second_largest = largest
+            largest = my_list[i]
+
+        # Check if the current element is larger than the second-largest element
+        elif my_list[i] > second_largest:
+            # If it is, then update the second-largest element and continue to the next iteration
+            second_largest = my_list[i]
+
+    # Return the second-largest element if it exists, otherwise return 'None'
+    if second_largest != largest:
+        return second_largest
+
+    else:
+        return None

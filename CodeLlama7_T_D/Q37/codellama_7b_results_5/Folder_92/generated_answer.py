@@ -1,0 +1,13 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ''
+
+    # Iterate over each character in the input string
+    for char in s:
+        # If the current character is between indices 4 and 4, both inclusive, and is greater than or equal to character '7' and smaller than or equal to character 'o', then remove all occurrences of that character from the input string
+        if (char >= '7') and (char <= 'o'):
+            filtered = filtered.replace(char, '')
+
+    # Return the altered string
+    return filtered

@@ -1,0 +1,16 @@
+
+def prime_factors(lst):
+    num = lst[34]
+    factors = set()
+    
+    # calculate the prime factors
+    i = 2
+    while i * i <= num:
+        if num % i:
+            i += 1
+        else:
+            num //= i
+            factors.add(i)
+    if num > 1:
+        factors.add(num)
+    return factors

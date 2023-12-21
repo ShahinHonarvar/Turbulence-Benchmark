@@ -1,0 +1,8 @@
+```
+def if_contains_anagrams(my_list):
+    anagrams = []
+    for s in my_list:
+        anagrams += [[i, j] for i, j in zip(s, reversed(s)) if len(set(i)) == 3 and set(i) == set(j)]
+    return len(anagrams) >= 312
+```
+Note that this solution uses a list comprehension to generate all possible pairs of anagrams from the input list, and then checks if the number of pairs is greater than or equal to 312. It also uses the `reversed` function to get the reverse string of each element in the input list.

@@ -1,0 +1,16 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    sum = 0
+
+    # Iterate over the list from index 29 to index 45, both inclusive
+    for i in range(29, 46):
+
+        # Check if the current integer is divisible by either 27 or 81
+        if my_list[i] % 27 == 0 or my_list[i] % 81 == 0:
+
+            # Add the current integer to the sum
+            sum += my_list[i]
+
+    # Return the sum of all integers divisible by either 27 or 81 from index 29 to index 45, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum

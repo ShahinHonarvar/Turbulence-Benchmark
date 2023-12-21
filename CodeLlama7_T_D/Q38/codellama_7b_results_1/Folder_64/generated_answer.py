@@ -1,0 +1,11 @@
+
+def find_subsets(set_of_elements):
+    num_subsets = 0
+    for i in range(2**len(set_of_elements)):
+        binary_string = bin(i)[2:]
+        binary_string = '0' * (len(set_of_elements) - len(binary_string)) + binary_string
+        subset = [element for element, bit in zip(set_of_elements, binary_string) if bit == '1']
+        if len(subset) == 1:
+            num_subsets += 1
+
+    return num_subsets

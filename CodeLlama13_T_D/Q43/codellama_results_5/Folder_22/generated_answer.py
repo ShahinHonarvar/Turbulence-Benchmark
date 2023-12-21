@@ -1,0 +1,7 @@
+
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(75, 86):
+        if my_list[i] not in prime_numbers:
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers)

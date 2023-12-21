@@ -1,0 +1,11 @@
+```python
+def find_original_set(s1, s2, ..., s25):
+    original_set = set()
+    for i in range(len(s1)):
+        for j in range(i+1, len(s1)):
+            if not s1[j].issubset(s1[i]):
+                break
+        else:
+            original_set.add(s1[i])
+    return original_set
+```

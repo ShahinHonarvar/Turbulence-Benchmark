@@ -1,0 +1,3 @@
+
+def find_original_set(arg1, arg2, arg3, ..., arg53):
+    return set(range(min(map(min, (arg1, arg2, arg3, ..., arg53))), max(map(max, (arg1, arg2, arg3, ..., arg53))))))

@@ -1,0 +1,10 @@
+ def palindromes_of_specific_lengths(string):
+    # create a list of all palindromes in the string
+    palindromes = []
+    for i in range(14, 90 + 1):
+        substring = string[i - 14:i]
+        for j in range(55, 72 + 1):
+            palindrome = substring[:j]
+            if palindrome == palindrome[::-1] and all(char.isalpha() for char in palindrome):
+                palindromes.append(palindrome)
+    return set(palindromes)

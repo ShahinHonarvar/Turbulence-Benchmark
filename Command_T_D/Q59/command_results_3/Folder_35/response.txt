@@ -1,0 +1,135 @@
+[cohere.Generation {
+	id: 6dfd9648-9ffe-4fe2-8a33-2c66f589d642
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 177. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_truncatable_prime(n):
+    primes = []
+    for i in range(2, n[1] + 1):
+        if i not in n:
+            continue
+        if is_prime(i):
+            if not any(int(str(i)[0: j]) == 0 for j in range(1, len(str(i)) + 1)):
+                primes.append(i)
+    return sorted(primes)
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    maxDivisor = int(n ** .5) + 1
+    if n % 2 == 0 or n % 3 == 0:
+        maxDivisor = int(n ** .5)
+    if n % 5 == 0 or n % 7 == 0:
+        maxDivisor = int(n ** .5) - 1
+    if n % 11 == 0 or n % 13 == 0:
+        maxDivisor = int(n ** .5) - 2
+    if n % 17 == 0 or n % 19 == 0:
+        maxDivisor = int(n ** .5) - 3
+    if n % 23 == 0 or n % 29 == 0:
+        maxDivisor = int(n ** .5) - 4
+    if n % 31 == 0 or n % 37 == 0:
+        maxDivisor = int(n ** .5) - 5
+    if n % 41 == 0 or n % 43 == 0:
+        maxDivisor = int(n ** .5) - 6
+    if n % 47 == 0 or n % 53 == 0:
+        maxDivisor = int(n ** .5) - 7
+    if n % 59 == 0 or n % 61 == 0:
+        maxDivisor = int(n ** .5) - 8
+    if n % 67 == 0 or n % 71 == 0:
+        maxDivisor = int(n ** .5) - 9
+    if n % 73 == 0 or n % 79 == 0:
+        maxDivisor = int(n ** .5) - 10
+    if n % 83 == 0 or n % 89 == 0:
+        maxDivisor = int(n ** .5) - 11
+    if n % 97 == 0 or n % 101 == 0:
+        maxDivisor = int(n ** .5) - 12
+    if n % 103 == 0 or n % 107 == 0:
+        maxDivisor = int(n ** .5) - 13
+    if n % 109 == 0 or n % 113 == 0:
+        maxDivisor = int(n ** .5) - 14
+    if n % 127 == 0 or n % 131 == 0:
+        maxDivisor = int(n ** .5) - 15
+    if n % 521 == 0:
+        maxDivisor = 500
+    if n % 607 == 0:
+        maxDivisor = 505
+    if n % 1279 == 0:
+        maxDivisor = 508
+    if n % 2203 == 0:
+        maxDivisor = 521
+    if n % 2281 == 0:
+        maxDivisor = 522
+    if n % 3217 == 0:
+        maxDivisor = 523
+    if n % 4253 == 0:
+        maxDivisor = 524
+    if n % 4423 == 0:
+        maxDivisor = 525
+    if n % 9689 == 0:
+        maxDivisor = 526
+    if n % 11213 == 0:
+        maxDivisor = 527
+    if n % 19937 == 0:
+        maxDivisor = 528
+    if n % 21701 == 0:
+        maxDivisor = 529
+    if n % 23209 == 0:
+        maxDivisor = 530
+    if n % 4 389 == 0:
+        maxDivisor = 531
+    if n % 44497 == 0:
+        maxDivisor = 532
+    if n % 90683 == 0:
+        maxDivisor = 533
+    if n % 116917 == 0:
+        maxDivisor = 534
+    if n % 152603 == 0:
+        maxDivisor = 535
+    if n % 209960 == 0:
+        maxDivisor = 536
+    if n % 240365 == 0:
+        maxDivisor = 537
+    if n % 262145 == 0:
+        maxDivisor = 538
+    if n % 304953 == 0:
+        maxDivisor = 539
+    if n % 368633 == 0:
+        maxDivisor = 540
+    if n % 482873 == 0:
+        maxDivisor = 541
+    if n % 2203 == 0:
+        maxDivisor = 500
+    if n % 2281 == 0:
+        maxDivisor = 505
+    if n % 3217 == 0:
+        maxDivisor = 521
+    if n % 4253 == 0:
+        maxDivisor = 524
+    if n % 4423 == 0:
+        maxDivisor = 525
+    if n % 9689 == 0:
+        maxDivisor = 526
+    if n % 11213 == 0:
+        maxDivisor = 527
+    if n % 19937 == 0:
+        maxDivisor = 528
+    if n % 21701 == 0:
+        maxDivisor = 529
+    if n % 23209 == 0:
+        maxDivisor = 530
+    if n % 4 389 == 0:
+        maxDivisor = 531
+    if n % 44497 == 0:
+        maxDivisor = 532
+    if n % 90683 == 0:
+        maxDivisor = 533
+    if n % 116917 == 0:
+        maxDivisor = 534
+    if n % 152603
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,7 @@
+```
+def composite_nums_between_indices(lst):
+    return {x for i, x in enumerate(lst) if 62 <= i <= 92 and len([d for d in range(2, int(x**0.5)) if x % d == 0]) > 1}
+```
+This code defines a function called `composite_nums_between_indices` that takes a list of positive integers as input. The function uses a set comprehension to iterate over the indices in the range from 62 to 92, both inclusive, and checks if the corresponding element in the input list is composite (i.e., has more than one divisor). If it is, the element is added to the set of results; otherwise, it is not included. Finally, the function returns the resulting set or an empty set if no composite numbers were found in the specified range.
+
+Note that the `int(x**0.5)` part of the code ensures that the square root of the element is computed only once for each iteration, which can improve performance by avoiding redundant calculations.

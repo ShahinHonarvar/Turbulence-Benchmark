@@ -1,0 +1,25 @@
+
+def prime_factors(my_list):
+    # Get the integer at index 45 from the list
+    num = my_list[45]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Loop through all the divisors of the number
+    for i in range(1, num + 1):
+        if num % i == 0:
+            # If the divisor is a prime number, add it to the set of prime factors
+            if is_prime(i):
+                prime_factors.add(i)
+    return prime_factors
+
+def is_prime(num):
+    # Check if the number is greater than 1
+    if num > 1:
+        # Loop through all the numbers from 2 to the square root of the number
+        for i in range(2, int(num ** 0.5) + 1):
+            # If the number is divisible by any number between 2 and the square root of the number, it is not prime
+            if num % i == 0:
+                return False
+
+    # If the number is greater than 1 and it is not divisible by any number between 2 and the square root of the number, it is prime
+    return True

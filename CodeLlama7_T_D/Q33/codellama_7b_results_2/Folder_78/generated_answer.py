@@ -1,0 +1,8 @@
+
+def return_vowels(my_string):
+    vowels = []
+    for i in range(46, 90 + 1):
+        char = my_string[i]
+        if char > '@' and char <= ']':
+            vowels.append(char)
+    return vowels

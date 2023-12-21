@@ -1,0 +1,11 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a set of all anagrams in the list
+    anagram_set = {i for i in my_list if ''.join(sorted(i)) == ''.join(sorted(j))) for j in my_list}
+    # Check if there are at most 8 pairs of anagrams in the set
+    num_pairs = len(anagram_set) - len(my_list) + 1
+    return num_pairs <= 8
+```
+This function takes a list of strings as input and returns true if there are at most 8 pairs of anagrams in the list, and false otherwise.
+The function first creates a set of all anagrams in the list by iterating over the list and checking for each string whether it is an anagram of any other string in the list. It then checks the number of pairs of anagrams in the set using the len() method, and returns true if there are at most 8 pairs of anagrams, and false otherwise.
+The function only considers anagrams of English letters and only considers anagrams of lengths of at least three. It also compares the strings in a case-insensitive manner.

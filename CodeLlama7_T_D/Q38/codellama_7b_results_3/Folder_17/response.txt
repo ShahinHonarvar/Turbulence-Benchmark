@@ -1,0 +1,12 @@
+ ```
+def find_subset_of_length_n(s):
+# Initialize an empty list to store the subsets
+subsets = []
+# Iterate over all possible combinations of elements in the set
+for i in range(1 << len(s))):
+# Check if the current combination is a subset of size 76
+if len(set(s[i:i+76])) == 76:
+# If it is, add it to the list of subsets
+subsets.append(s[i:i+76])
+return len(subsets)
+```

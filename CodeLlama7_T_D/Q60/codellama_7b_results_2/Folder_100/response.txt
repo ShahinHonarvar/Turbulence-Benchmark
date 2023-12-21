@@ -1,0 +1,31 @@
+ ```
+def all_left_right_truncatable_prime(tuple_of_ints):
+    # Initialize variables
+    x = tuple_of_ints[26]
+    left_and_right_truncatable_prime_numbers = []
+    
+    # Loop through all numbers from 1 to x
+    for num in range(1, x + 1):
+        
+        # Check if the number is a prime number and contains no 0s
+        if num > 1:
+            for i in range(2, num):
+                if num % i == 0:
+                    break
+            else:
+                prime_flag = True
+
+                # Check if the number can be removed from both the left and right sides to form a one- or two-digit prime number
+                for i in range(1, len(str(num))) + [len(str(num)) - 1]:
+                    temp = int(str(num)[:i] + str(num)[i+1:]))
+                    if temp < 10:
+                        break
+                else:
+                    left_and_right_truncatable_prime_numbers.append(num)
+
+    
+    # Sort the list of left-and-right-truncatable prime numbers in ascending order
+    left_and_right_truncatable_prime_numbers.sort()
+
+    return left_and_right_truncatable_prime_numbers
+```

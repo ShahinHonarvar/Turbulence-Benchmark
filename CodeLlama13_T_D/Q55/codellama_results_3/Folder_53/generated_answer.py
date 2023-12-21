@@ -1,0 +1,16 @@
+
+def lists_with_product_equal_n(myList):
+    result = []
+    for i in range(len(myList)):
+        product = 1
+        sublist = [myList[i]]
+        for j in range(i+1, len(myList)):
+            if product * myList[j] == -87:
+                result.append(sublist)
+                break
+            elif product * myList[j] > -87:
+                break
+            else:
+                sublist.append(myList[j])
+                product *= myList[j]
+    return result

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef prime_factors(nums):\n    import math\n    def factors(n):\n        result = []\n        for i in range(2, int(math.sqrt(n)) + 1):\n            if n % i:\n                continue\n            while n % i == 0:\n                n //= i\n            result.append(i)\n        if n > 1:\n            result.append(n)\n        return result\n\n    num = nums[6]\n    return set(factors(num))\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690129286,
+  "id": "chatcmpl-7fW7iSb2qxn61yDq1pOixlkjZed0S",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 97,
+    "prompt_tokens": 84,
+    "total_tokens": 181
+  }
+}

@@ -1,0 +1,24 @@
+ ```
+def find_subset_of_length_n(s):
+    n = len(s)
+    # Initialize a list to store all subsets of size 86
+    subsets = []
+
+    # Loop through each element in the set
+    for element in s:
+
+        # If the current element is not already in the subset, add it
+        if element not in subsets:
+            subsets.append(element)
+
+        # Loop through each possible combination of 85 elements from the current subset
+        for i in range(len(subsets)):
+            combination = subsets[i]
+            for j in range(len(combination)-1):
+                new_combination = combination[:j+1] + [element] + combination[j+1:]
+                if new_combination not in subsets:
+                    subsets.append(new_combination)
+
+    # Return the number of all its subsets of size 86
+    return len(subsets)
+```

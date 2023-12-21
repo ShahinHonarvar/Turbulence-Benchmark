@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Create a list of all the characters in the string
+char_list = list(string)
+# Filter out any duplicates
+unique_chars = set(char_list)
+# Sort the characters by ASCII value
+sorted_chars = sorted(unique_chars, key=ord)
+# Return the 12th smallest ASCII value
+return sorted_chars[11]
+```
+This code defines a function `return_nth_smallest_ascii` that takes a string of distinct characters as input. The function first creates a list of all the characters in the string using the `list()` constructor. It then filters out any duplicates using the `set()` constructor and the `in` operator to check if each character is already present in the set. Finally, it sorts the remaining unique characters by their ASCII value using the `sorted()` function and the `key=ord` argument to specify that the sorting should be done based on the ASCII value of each character. The function then returns the 12th smallest ASCII value by indexing into the sorted list of unique characters at position 11.

@@ -1,0 +1,92 @@
+from Q53.$3_results_$4.Folder_$1.generated_answer import $2
+import string
+import random
+
+
+def test_string_of_similar_chars_of_length_$0():
+    s = ''.join('a' for _ in range($0))
+    assert $2(s) == {s}
+
+
+def test_string_of_similar_chars_of_length_greater_than_$0():
+    ss = ''.join('a' for _ in range($0 * 2))
+    s = ss[:$0]
+    result = []
+    for i in range(0, $0 + 1):
+        result.append(s + ('a' * i))
+    assert $2(ss) == set(result)
+
+
+def test_string_of_many_chars():
+    s = 'abcdef'
+    r = ''
+    for _ in range($0):
+        r += s
+    assert not $2(r)
+
+
+def test_string_of_spaces():
+    s = ' ' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_spaces_and_letters():
+    s = ' a ' * $0 * 2
+    ss = s.replace(' ','')
+    sss = ss[:$0]
+    result = []
+    for i in range(0, $0 + 1):
+        result.append(sss + ('a' * i))
+    assert not $2(s)
+
+
+def test_string_of_punctuations():
+    s = ''.join(random.choice(string.punctuation) for _ in range($0))
+    assert not $2(s)
+
+
+def test_string_of_punctuations_and_letters():
+    s = 'a%' * $0
+    assert not $2(s)
+
+
+def test_string_of_many_punctuations_and_letters():
+    s = 'a%' * $0 * 2
+    assert not $2(s)
+
+
+def test_string_of_many_punctuations_and_letters_and_spaces():
+    s = 'a% ' * $0 * 2
+    assert not $2(s)
+
+
+def test_length_of_palindrome():
+    n = random.randint(5,10)
+    s = 'a' * ($0 * n)
+    returned_result = $2(s)
+    for i in returned_result:
+        assert $0 <= len(i)
+
+
+def test_string_of_similar_nums():
+    s = ''.join('0' for _ in range($0))
+    assert not $2(s)
+
+
+def test_string_of_many_similar_nums():
+    ss = ''.join('0' for _ in range($0 * 2))
+    s = ss[:$0]
+    result = []
+    for i in range(0, $0 + 1):
+        result.append(s + ('0' * i))
+    assert not $2(ss)
+
+
+def test_numeric_string():
+    s = ''.join(random.choice(string.digits) for _ in range($0 // 2))
+    if $0 % 2 == 0:
+        s += s[::-1]
+    else:
+        s += (random.choice(string.digits) + s[::-1])
+    assert not $2(s)
+    

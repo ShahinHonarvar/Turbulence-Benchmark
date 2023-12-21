@@ -1,0 +1,8 @@
+
+def filter_chars(my_string):
+    filtered_string = ''
+    for char in my_string:
+        if ord(char) < 32 or ord(char) > 61:
+            filtered_string += char
+
+    return filtered_string

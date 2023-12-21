@@ -1,0 +1,19 @@
+ ```
+def sum_of_divisors_in_range(n):
+if n <= 0:
+return 0
+
+sum = 0
+for i in range(1, int(n ** 0.5) + 1):
+if n % i == 0:
+sum += i
+if i * i < n:
+sum += n // i
+
+return sum
+```
+This code first checks if the input `n` is positive and non-zero using a simple inequality check. If `n` is not positive, the function returns zero immediately.
+Next, the code calculates the square root of `n` to optimize the loop that iterates over the divisors. The `int()` function is used to round the result of the square root operation to the nearest integer. This is done because the loop condition requires the divisor to be less than or equal to the square root of `n`.
+The main part of the code starts with an outer loop that iterates over the range of numbers from 1 to the square root of `n`. The inner loop iterates over the range of numbers from 1 to the number being tested for divisibility.
+In each iteration of the inner loop, the function checks if the current number in the inner loop is a factor (or divisor) of the number being tested. If it is, the function adds that factor to the running total of factors found so far.
+Once all numbers from 1 to the square root of `n` have been tested for divisibility, the function returns the sum of all factors found in the specified range.

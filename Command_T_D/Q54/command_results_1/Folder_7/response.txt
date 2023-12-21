@@ -1,0 +1,42 @@
+[cohere.Generation {
+	id: 9e5e955c-1beb-46fd-9621-2bf2cafcf14b
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 803. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in ascending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_right_truncatable_prime(n):
+    # sort the primes less than the given number
+    primes = sorted(range(2, n[0] + 1), key=lambda x: -is_prime(x))
+    # return the right-truncatable primes in the list
+    return [p for p in primes if is_right_truncatable_prime(p)]
+
+def is_prime(n):
+    # if the number is 0 or 1, it is not prime
+    if n <= 1:
+        return False
+    # if the number is even, it is not prime
+    if n % 2 == 0:
+        return False
+    # if the number is divisible by any of the primes from 2 to sqrt(n), it is not prime
+    for i in range(2, int(n ** .5) + 1):
+        if n % i == 0:
+            return False
+    # if none of the above tests failed, the number is prime
+    return True
+
+def is_right_truncatable_prime(n):
+    # if the number is 0 or 1, it is not prime
+    if n <= 1:
+        return False
+    # if the number is even, it is not prime
+    if n % 2 == 0:
+        return False
+    # if the number is divisible by any of the primes from 2 to sqrt(n), it is not prime
+    for i in range(2, int(n ** .5) + 1):
+        if n % i == 0:
+            return False
+    # if none of the above tests failed, the number is prime
+    return True
+```
+	likelihood: None
+	token_likelihoods: None
+}]

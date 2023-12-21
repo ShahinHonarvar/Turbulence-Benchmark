@@ -1,0 +1,73 @@
+from Q52.$3_results_$4.Folder_$1.generated_answer import $2
+import string
+import random
+
+
+
+def test_string_of_many_chars():
+    s = 'abcdef'
+    assert not $2(s)
+
+
+def test_string_of_spaces():
+    s = ' ' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_spaces_and_letters():
+    s = 'a a' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_punctuations_and_letters():
+    s = 'a&a' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_identical_nums():
+    s = '0' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_numbers_and_letters():
+    s = 'a1a' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_length_of_palindrome():
+    n = random.randint(5, 10)
+    s = 'a' * ($0 * n)
+    returned_result = $2(s)
+    for i in returned_result:
+        assert len(i) == $0
+
+
+def test_length_less_than_$0():
+    s = ''.join('a' for _ in range($0 - 1))
+    assert not $2(s)
+    
+
+def test_length_equal_to_$0():
+    s = 'a' * $0
+    assert $2(s) == {s}
+
+
+def test_string_of_identical_punctuations():
+    s = '@' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_punctuations_and_nums():
+    s = '1&' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_spaces_and_punctuations():
+    s = '@ @' * ($0 * 2)
+    assert not $2(s)
+
+
+def test_string_of_spaces_and_punctuations_nums_letters():
+    s = '0 @ a a @ 0' * ($0 * 2)
+    assert not $2(s)
+    

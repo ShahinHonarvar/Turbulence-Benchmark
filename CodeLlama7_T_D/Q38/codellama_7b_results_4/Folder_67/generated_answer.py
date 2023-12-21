@@ -1,0 +1,10 @@
+
+def find_subset_of_length_n(set):
+    # Calculate the number of subsets of size n
+    num_subsets = 2 ** len(set)
+    # Filter out subsets of size n
+    filtered_subsets = []
+    for subset in num_subsets:
+        if len(subset) == n:
+            filtered_subsets.append(subset)
+    return len(filtered_subsets)

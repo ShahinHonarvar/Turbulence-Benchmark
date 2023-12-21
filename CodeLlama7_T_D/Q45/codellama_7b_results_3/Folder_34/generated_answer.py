@@ -1,0 +1,12 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each possible length of palindrome
+    for length in range(4, len(string) + 1):
+        # Generate all possible combinations of letters from the string that occur between indices 5 and 7 (inclusive)
+        for i in range(5, len(string) - length + 2):
+            # Check if the current combination is a palindrome
+            if string[i:i + length] == string[i:i + length][::-1]:
+                # Add the palindrome to the set
+                palindromes.add(string[i:i + length])
+    return palindromes

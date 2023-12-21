@@ -1,0 +1,13 @@
+ ```
+def return_n_greatest_chars(my_string, n):
+    # Convert the string to a list of characters
+    char_list = list(my_string)
+    # Sort the list of characters by their ASCII values in descending order
+    sorted_char_list = sorted(char_list, key=ord, reverse=True)
+    # Return the first n elements of the sorted list
+    return sorted_char_list[:n]
+```
+This function takes two arguments: `my_string`, which is a string of distinct characters, and `n`, which is an integer representing the number of greatest ASCII values to be returned.
+The function first converts the input string into a list of individual characters using the built-in `list()` function.
+Next, the function uses the built-in `sorted()` function with the `key` parameter set to the `ord()` function, which returns the integer Unicode code point for each character in the sorted list. The `reverse=True` parameter is used to sort the list in descending order based on the ASCII values of the characters.
+Finally, the function returns the first `n` elements of the sorted list using slicing notation.

@@ -1,0 +1,75 @@
+[cohere.Generation {
+	id: 8aa2379f-dbdb-4644-bb3a-ba2d2ff0a558
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 77. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(x):
+    # lru_cache doesn't cache if the arguments are tuples, so we'll pass
+    # the range as a string instead
+    # see https://github.com/python/cpython/pull/10405
+    # get_left_right_truncatable_primes doesn't need the range as a
+    # string, so we'll pass it as a tuple
+    # see https://github.com/python/cpython/pull/10405
+    return sorted(get_left_right_truncatable_primes(str(x)), reverse=True)
+
+def get_left_right_truncatable_primes(range_str):
+    # we need to generate all the numbers in the range
+    # for this, we'll use range() and str.format
+    # we also need to use a 'step' because range() is inclusive
+    # but we need to be exclusive
+    # for the same reason, we'll use start=False
+    # we don't need to use end=False because we want the end value
+    # which we can find by taking range() - 1
+    # we use slice() instead of range() because we need to use slice()
+    # to get the first element (the left-most digit)
+    # we only need to slice() once, so we can just do
+    #     str(x)[i:j]
+    # which is much faster than
+    #     str(x)[i:j][:1]
+    # str.format is much faster than str.format(str(x))
+    # see https://github.com/python/cpython/pull/10405
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use list(str(x)) because it's very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x))) because
+    # str(x).zfill(len(str(x))) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 1) because
+    # str(x).zfill(len(str(x)) + 1) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 2) because
+    # str(x).zfill(len(str(x)) + 2) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 3) because
+    # str(x).zfill(len(str(x)) + 3) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 4) because
+    # str(x).zfill(len(str(x)) + 4) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 5) because
+    # str(x).zfill(len(str(x)) + 5) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 6) because
+    # str(x).zfill(len(str(x)) + 6) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 7) because
+    # str(x).zfill(len(str(x)) + 7) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 8) because
+    # str(x).zfill(len(str(x)) + 8) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 9) because
+    # str(x).zfill(len(str(x)) + 9) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 10) because
+    # str(x).zfill(len(str(x)) + 10) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 11) because
+    # str(x).zfill(len(str(x)) + 11) is very slow
+    # see https://github.com/python/cpython/pull/10405
+    # we can't use str(x).zfill(len(str(x)) + 12) because
+    # str(x).zfill(len(str(x)) + 12) is very slow
+    # see
+	likelihood: None
+	token_likelihoods: None
+}]

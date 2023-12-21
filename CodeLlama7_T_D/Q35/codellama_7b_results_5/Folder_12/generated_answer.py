@@ -1,0 +1,13 @@
+ def remove_repeat_chars(s):
+    # Create a new string with the characters from the original string
+    # that do not occur more than once between indices 16 and 87, exclusive
+    new_str = ""
+    # Iterate over the characters in the original string
+    for i in range(len(s)):
+        # If the character is not in the repeated characters list
+        if s[i] not in repeated_chars:
+            # Add it to the new string
+            new_str += s[i]
+            # Add it to the repeated characters list
+            repeated_chars.append(s[i])
+    return new_str

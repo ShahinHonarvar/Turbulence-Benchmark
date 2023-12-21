@@ -1,0 +1,16 @@
+
+def find_subset_of_length_n(my_set):
+    # Initialize a counter for the number of subsets
+    subset_count = 0
+
+    # Iterate over all possible combinations of elements in the set
+    for element1 in my_set:
+        for element2 in my_set:
+            for element3 in my_set:
+                for element4 in my_set:
+                    # If the current combination has a length of 47, increment the counter
+                    if len({element1, element2, element3, element4}) == 47:
+                        subset_count += 1
+
+    # Return the total number of subsets of size 47
+    return subset_count

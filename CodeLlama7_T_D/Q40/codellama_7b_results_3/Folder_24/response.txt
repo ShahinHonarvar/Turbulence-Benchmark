@@ -1,0 +1,10 @@
+ ```
+def return_n_smallest_chars(string):
+    # sort the string in descending order based on ASCII values
+    sorted_string = sorted(string, key=ord, reverse=True)
+    # create a list of exactly 32 characters from the sorted string
+    n_smallest_chars = sorted_string[:32]
+    return n_smallest_chars
+```
+This code defines a function called `return_n_smallest_chars` that takes a single argument, a string of distinct characters. The function sorts the string in descending order based on ASCII values using the built-in `sorted()` function with the `key` and `reverse` parameters set to `ord`, which returns the integer code for each character in the string, and `True`, respectively.
+The sorted string is then sliced to extract exactly 32 characters from it, as requested by the problem statement. The resulting list of 32 characters is returned by the function.

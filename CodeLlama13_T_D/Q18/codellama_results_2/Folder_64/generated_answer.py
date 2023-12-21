@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(numbers):
+    result = 0
+    for i in range(4):
+        if numbers[i] % 11 == 0 or numbers[i] % -7 == 0:
+            result += numbers[i]
+    return result

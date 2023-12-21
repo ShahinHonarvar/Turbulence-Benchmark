@@ -1,0 +1,14 @@
+```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Flatten the matrix and calculate the sum of all elements
+    flat_matrix = matrix.flatten()
+    total_sum = flat_matrix.sum()
+    
+    # Find the indices of the submatrices with a particular sum
+    inds = np.where(flat_matrix == (-37 - total_sum))[0]
+    
+    # Return the list of submatrices
+    return [matrix[i:i+2, j:j+2] for i, j in zip(inds[:-1:2], inds[1::2])]
+```

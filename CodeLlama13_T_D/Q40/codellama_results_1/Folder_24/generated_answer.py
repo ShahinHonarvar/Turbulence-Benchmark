@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(s):
+    chars = list(set(s))  # create a set of unique characters in s
+    sorted_chars = sorted(chars, key=ord)  # sort the characters by their ASCII value
+    smallest_chars = sorted_chars[:32]  # select only the first 32 characters with the smallest ASCII values
+    return smallest_chars

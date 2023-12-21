@@ -1,0 +1,3 @@
+
+def sum_even_ints_inclusive(numbers):
+    return sum(number for i, number in enumerate(numbers[12:93]) if i % 2 == 0)

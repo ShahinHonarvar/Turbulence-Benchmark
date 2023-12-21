@@ -1,0 +1,5 @@
+
+def return_n_greatest_chars(string):
+    char_list = list(set(string)) # create a set of distinct characters in the string and convert it to a list
+    sorted_list = sorted(char_list, key=ord) # sort the list by the ASCII value of each character using the ord() function
+    return sorted_list[-3:] # return the last 3 elements of the sorted list

@@ -1,0 +1,9 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes of the given string, case-insensitively
+    palindromes = re.findall(r'(?i)(\w{3,5}).*\1', string)
+    
+    # Filter palindromes to only those that occur in index 0 to 9 (inclusive)
+    filtered_palindromes = [p for p in palindromes if len(p) >= 3 and len(p) <= 5]
+    
+    return set(filtered_palindromes)

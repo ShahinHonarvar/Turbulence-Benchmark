@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(s):
+# Check if the input string is empty or None
+if not s:
+return None
+
+# Get the list of characters in the input string
+characters = [c for c in s]
+
+# Get the list of ASCII values of the characters in the input string
+ascii_values = [ord(c) for c in s]
+
+# Find the 15th smallest ASCII value among those characters in the string that occur between indices 17 to 86, both inclusive.
+smallest_ascii_value = min(ascii_values[17:86+1])
+
+# Return the character with the smallest ASCII value
+return chr(smallest_ascii_value)
+```

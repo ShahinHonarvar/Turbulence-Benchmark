@@ -1,0 +1,37 @@
+ ```
+def all_right_truncatable_prime(x):
+    # create a list of prime numbers less than x
+    prime_list = [p for p in range(2, x) if is_prime(p)]
+    # loop through the prime numbers and check if they are right-truncatable prime numbers
+    result_list = []
+    for p in prime_list:
+        if is_right_truncatable_prime(p):
+            result_list.append(p)
+    return sorted(result_list)
+
+# helper function to check if a number is prime
+def is_prime(n):
+    # check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        return False
+
+    # check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+# helper function to check if a right-truncatable prime number remains prime when the last rightmost digit is successively removed
+def is_right_truncatable_prime(n):
+    # check if n is a prime number
+    if not is_prime(n):
+        return False
+
+    # check if n is divisible by any number between 10 and the square root of n
+    for i in range(10, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+```

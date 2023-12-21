@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(string):
+    char_list = sorted([char for char in string], reverse=True)[:60]
+    return char_list

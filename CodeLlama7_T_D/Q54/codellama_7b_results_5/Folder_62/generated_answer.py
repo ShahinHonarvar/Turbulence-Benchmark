@@ -1,0 +1,51 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the tuple elements
+    for element in tuple:
+        if is_prime(element) and is_right_truncatable_prime(element):
+            prime_numbers.append(element)
+
+    return sorted(prime_numbers)
+
+def is_prime(n):
+
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("Invalid input")
+
+    # Check if n is an odd number
+    if not (n % 2 != 0):
+        return False
+
+    # Use the Sieve of Eratosthenes to find all prime numbers up to n
+    sieve = [True] * (n + 1)
+    for p in range(3, int(n ** 0.5) + 1, 2):
+        if sieve[p]:
+            for i in range(p * p, n + 1, p):
+                sieve[i] = False
+
+    # Return True if n is a prime number
+    return sieve[n]
+
+def is_right_truncatable_prime(n):
+
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("Invalid input")
+
+    # Check if n is an odd number
+    if not (n % 2 != 0):
+        return False
+
+    # Use the Sieve of Eratosthenes to find all prime numbers up to n
+    sieve = [True] * (n + 1)
+    for p in range(3, int(n ** 0.5) + 1, 2):
+        if sieve[p]:
+            for i in range(p * p, n + 1, p):
+                sieve[i] = False
+
+    # Return True if n is a prime number and it remains prime when the last rightmost digit is successively removed
+    return sieve[n] and all(sieve[n // 10**i] for i in range(1, int(log10(n)) + 1))))```

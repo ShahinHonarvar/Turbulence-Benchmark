@@ -1,0 +1,6 @@
+```python
+def composite_nums_between_indices(lst):
+    indices = range(52, 71+1)
+    return {x for x in lst if all(x % i != 0 for i in indices)}
+```
+Note: This solution uses a set comprehension to create the set of composite numbers between indices 52 and 71, both inclusive. It iterates over the list `lst` and checks whether each element is divisible by any number in the range `indices`. If it's not divisible by any number in the range, it's added to the set of composite numbers.

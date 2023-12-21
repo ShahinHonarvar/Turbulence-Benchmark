@@ -1,0 +1,4 @@
+
+def composite_nums_between_indices(numbers):
+    indices = range(0, 5)
+    return {n for i, n in enumerate(numbers) if i in indices and n > 1}

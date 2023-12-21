@@ -1,0 +1,41 @@
+ def all_left_truncatable_prime(tuple):
+    # Initialize variables
+    x = tuple[61]
+    prime_numbers = []
+
+    # Check if the number is prime
+    def is_prime(n):
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        return True
+
+
+    # Remove leading digits and check if the resulting number is prime
+    def remove_leading_digits(n):
+        while len(str(n)) > 1 and str(n)[0] != '1':
+            n = int(str(n)[1:])
+
+        return n
+
+
+    # Check if the number contains no 0
+    def has_no_zeroes(n):
+        while len(str(n)) > 1 and str(n)[0] != '1':
+            n = int(str(n)[1:])
+
+        return not any('0' in str(i) for i in range(2, int(n ** 0.5) + 1)))
+
+
+    # Add left-truncatable prime numbers to the list
+    for n in range(2, x):
+        if is_prime(n) and has_no_zeroes(n):
+            prime_numbers.append(remove_leading_digits(n))
+
+
+    # Sort the list in ascending order
+    prime_numbers.sort()
+
+
+    return prime_numbers

@@ -1,0 +1,12 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 53, 23 and 45
+    return gcf(my_list[53], my_list[23], my_list[45])
+# Utility function to calculate the greatest common factor of two or more numbers
+def gcf(a, b):
+    if a == 0:
+        return b
+
+    else:
+
+        return gcf(b % a, a)

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given text specification:\n\n```python\nfrom collections import Counter\n\ndef if_contains_anagrams(strings):\n    anagram_count = 0\n    \n    for i in range(len(strings)):\n        for j in range(i + 1, len(strings)):\n            if len(strings[i]) >= 3 and len(strings[j]) >= 3:\n                if Counter(strings[i].lower()) == Counter(strings[j].lower()):\n                    anagram_count += 1\n    \n    return anagram_count <= 61\n```\n\nNote: This solution uses the `Counter()` function from the `collections` module to efficiently compare the character frequencies of two strings.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689863634,
+  "id": "chatcmpl-7eP10wPCVL725wl2caTyYrYpAxlbt",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 134,
+    "prompt_tokens": 139,
+    "total_tokens": 273
+  }
+}

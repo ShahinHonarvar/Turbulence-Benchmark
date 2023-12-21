@@ -1,0 +1,18 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and calculate the product of each contiguous sublist
+    for i in range(len(circular_list)):
+        product = 1
+
+        # Calculate the product of each contiguous sublist
+        for j in range(i, len(circular_list)):
+            product *= circular_list[j]
+
+            # If the product equals 15, add the sublist to the list of sublists
+            if product == 15:
+                sublists.append(circular_list[i:j+1])
+
+    return sublists

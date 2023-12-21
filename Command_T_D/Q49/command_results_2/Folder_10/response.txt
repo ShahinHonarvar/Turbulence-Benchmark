@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: fab3444a-af37-4e7a-a381-f8093862f03f
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_decimal_is_divisible' that takes one argument, a binary representation string of a non-negative decimal integer. In the given binary representation the most significant digit appears first. The function should return true if the decimal integer corresponding to the given string is divisible by the 88th number that occurs in the Fibonacci sequence; otherwise, it should return false. The first number that occurs in the Fibonacci sequence is 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+FIBONACCI_LIST = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]
+
+
+def if_decimal_is_divisible(binary_str):
+    return bool(re.match(r'0*' + binary_str, str(FIBONACCI_LIST[-88])))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

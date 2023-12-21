@@ -1,0 +1,16 @@
+ def palindromes_of_specific_lengths(string, lower_bound=34, upper_bound=55):
+    # Define a function to check if a string is a palindrome
+    def is_palindrome(my_string):
+        return my_string == my_string[::-1]
+    # Get the substring of the input string between indices 30 and 95, both inclusive
+    substring = string[30:96]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Check if the current character is a palindrome
+        if is_palindrome(substring[i:]):
+            # If it is, add it to the set of palindromes
+            palindromes.add(substring[i:])
+    # Return the set of palindromes that meet the length requirements
+    return {p for p in palindromes if lower_bound <= len(p) <= upper_bound}

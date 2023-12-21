@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(L):
+    return [x for x in L if x % -6 == 0 and x % 4 == 0]

@@ -1,0 +1,7 @@
+```python
+def palindrome_of_length_at_least_n(string):
+    return set(word for word in string.split() if len(word) >= 44 and word == word[::-1])
+```
+This function uses a list comprehension to iterate over the words in the input string, checking each word against the condition of being a palindrome with length greater than or equal to 44. If the word is a palindrome, it is added to the set returned by the function. The `word == word[::-1]` checks that the word is a palindrome by comparing it to its reversed version.
+
+Note: This function only works for English letters because it uses the `in` operator to check if each letter in the word is an English letter. If you want to use this function with other types of letters, you'll need to modify it accordingly.

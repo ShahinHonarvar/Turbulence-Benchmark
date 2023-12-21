@@ -1,0 +1,20 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Loop over all possible rows and columns
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of the elements in the current submatrix
+            submatrix_sum = np.sum(matrix[i:, j])
+
+            # Check if the sum is equal to -83
+            if submatrix_sum == -83:
+                # Append the submatrix to the list of submatrices
+                submatrices.append(matrix[i:, j])
+
+    # Return the list of submatrices that have a sum of -83
+    return submatrices
+```

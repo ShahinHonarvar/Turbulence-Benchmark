@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(18, 82):
+        if string[i].isalpha() and string[i] >= "W" and string[i] <= "[":
+            result += string[i]
+    return result

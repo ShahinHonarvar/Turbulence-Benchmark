@@ -1,0 +1,11 @@
+```
+def prime_factors(nums):
+    return set(reduce(operator.mul, (prime_factor(n) for n in nums[54:60]), 1))
+```
+This function takes a list of positive integers as input and returns the set of all prime factors of the integer at index 54. It does this by using the `reduce` function from the `functools` module to multiply together the prime factors of each number in the list, starting with an initial value of 1. The `prime_factor` function is called on each number in the list and its result is used as input for the `reduce` function.
+
+Here's an example usage of this function:
+```
+nums = [2, 4, 6, 8, 10, 12]
+print(prime_factors(nums)) # prints {2, 3}
+```

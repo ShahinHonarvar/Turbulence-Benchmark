@@ -1,0 +1,33 @@
+ ```
+def prime_factors(my_list):
+    # Find the integer at index 453 in the list
+    num = my_list[453]
+    # Initialize an empty set to store the prime factors
+
+    prime_factors = set()
+
+    # Check if the number is prime itself
+
+    if num > 1:
+
+        for i in range(2, int(num ** 0.5) + 1):
+
+            if num % i == 0:
+
+                prime_factors.add(i)
+
+                while num % i == 0:
+
+                    num //= i
+
+        if num > 1:
+
+            prime_factors.add(num)
+
+    return prime_factors
+
+# Test the function with a list of integers
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#print(prime_factors(my_list))
+```

@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set([p for p in range(2, numbers[537]) if numbers[537] % p == 0 and all(numbers[i] % p != 0 for i in range(len(numbers)))])

@@ -1,0 +1,20 @@
+[cohere.Generation {
+	id: 357c947d-a5a8-4b33-aa54-869dc24171cc
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'sum_of_divisors_in_range' that takes a positive integer as its argument, and returns the sum of all positive divisors of the given integer that are between 16 and 53, both inclusive. If no such divisors exist in the specified range, the function should return 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def sum_of_divisors_in_range(n):
+    for i in range(16, 54):
+        if n % i == 0:
+            n /= i
+            continue
+    if n > 1:
+        n = int(n ** .5)
+        for i in range(1, n + 1):
+            if n % i == 0:
+                n /= i
+    return n
+```
+	likelihood: None
+	token_likelihoods: None
+}]

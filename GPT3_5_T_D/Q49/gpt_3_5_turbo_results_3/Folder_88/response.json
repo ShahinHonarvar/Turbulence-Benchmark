@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_decimal_is_divisible(binary_repr):\n    fibonacci = [0, 1]  # Initialize the Fibonacci sequence\n\n    # Generate the Fibonacci sequence until the 49th number\n    for i in range(2, 50):\n        fibonacci.append(fibonacci[i-1] + fibonacci[i-2])\n\n    decimal_number = 0\n    for digit in binary_repr:\n        decimal_number = decimal_number * 2 + int(digit)  # Convert binary to decimal\n\n    if decimal_number % fibonacci[48] == 0:\n        return True\n    else:\n        return False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689840674,
+  "id": "chatcmpl-7eJ2g6lGiu3vA1KXMVtt3daGhpE7B",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 127,
+    "prompt_tokens": 137,
+    "total_tokens": 264
+  }
+}

@@ -1,0 +1,20 @@
+ ```
+def find_original_set(sets):
+    # create a set of all elements in the input sets
+    all_elements = set()
+    for s in sets:
+        all_elements |= s
+
+    # initialize the smallest set as the first element in the input sets
+
+    smallest_set = sets[0]
+
+    # loop through each set and find the smallest set that contains all elements
+
+    for s in sets[1:]:
+
+        if len(s) < len(smallest_set):
+            smallest_set = s
+
+    return smallest_set
+```

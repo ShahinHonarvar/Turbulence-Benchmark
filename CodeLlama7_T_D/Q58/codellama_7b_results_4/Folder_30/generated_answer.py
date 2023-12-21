@@ -1,0 +1,16 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix: np.ndarray, n: int) -> int:
+    # Initialize the count of submatrices with 94 integers each
+    count = 0
+
+    # Iterate over all possible rows and columns in the matrix
+    for row in range(matrix.shape[0] - n + 1):
+        for col in range(matrix.shape[1] - n + 1):
+            # Check if the submatrix has 94 integers each
+            if np.all(matrix[row:row+n, col:col+n] == 94)):
+                # Increment the count of submatrices with 94 integers each
+                count += 1
+
+    return count

@@ -1,0 +1,15 @@
+```
+def sum_of_divisors_in_range(n):
+    if n <= 0:
+        return 0
+    
+    divisors = []
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            if n // i != i:
+                divisors.append(n // i)
+    
+    return sum(filter(lambda x: 48 <= x <= 60, divisors))
+```
+Note: This code uses the filter function to remove any elements from the list of divisors that are not between 48 and 60, both inclusive. Then it uses the sum function to calculate the total of these remaining elements.

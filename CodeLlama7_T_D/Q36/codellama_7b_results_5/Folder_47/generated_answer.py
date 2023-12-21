@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(45, 57):
+        if string[i] > 'F' and string[i] < 'n':
+            string = string[:i] + string[i+1:]
+    return string

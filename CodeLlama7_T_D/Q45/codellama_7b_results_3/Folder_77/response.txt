@@ -1,0 +1,18 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible length of palindrome between indices 4 and 6 (inclusive)
+    for i in range(5, len(string)-3):
+        # Check if the current length of palindrome is at least 4
+        if i < 4:
+            continue
+
+        # Get the sub-string from the given string that occurs between indices 4 and 6 (inclusive)
+        sub_string = string[4:i+1]
+        # Check if the sub-string is a palindrome in a case-insensitive manner
+        if sub_string == sub_string[::-1]:
+            # Add the sub-string to the set of palindromes
+            palindromes.add(sub_string)
+    return palindromes
+```

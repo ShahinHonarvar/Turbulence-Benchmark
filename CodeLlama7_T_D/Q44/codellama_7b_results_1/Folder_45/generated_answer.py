@@ -1,0 +1,30 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list of positive integers
+    for i in range(len(my_list)):
+        # Check if the current number is between index 40 and index 200
+        if 40 <= i <= 200:
+            # Check if the current number is composite using the 'is_composite' function
+            if is_composite(my_list[i]):
+                # Add the current number to the set of composite numbers
+                composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers in the specified range
+    return composite_nums
+
+# Define a function to check if a number is composite
+def is_composite(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if i divides n
+                return False
+
+    # If the number is greater than 1 and has no factors other than 1 and itself, it is composite
+    return True

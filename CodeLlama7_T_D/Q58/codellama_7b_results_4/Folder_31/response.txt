@@ -1,0 +1,21 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 45 integers each
+    count = 0
+    # Iterate over all rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Extract a submatrix with size (3, 3) from the current row and column
+            submatrix = matrix[i:i+3, j:j+3]
+            # Check if the submatrix contains 45 integers each
+            if np.all(submatrix == 1):
+                count += 1
+
+    return count
+
+# Test the function with a sample input
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#print(submatrix_with_n_numbers(matrix))
+```

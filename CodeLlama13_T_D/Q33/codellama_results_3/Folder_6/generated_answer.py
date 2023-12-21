@@ -1,0 +1,8 @@
+
+def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    result = []
+    for i in range(20, 34):
+        if string[i].upper() in vowels and string[i] <= 'i':
+            result.append(string[i])
+    return result

@@ -1,0 +1,23 @@
+
+def find_original_set(sets):
+    # Sort the sets in increasing order of their sizes
+    sorted_sets = sorted(sets, key=len)
+    # Initialize the smallest set as the first element in the sorted list
+    smallest_set = sorted_sets[0]
+    for i in range(1, len(sorted_sets)):
+        # If the current set is a subset of the smallest set, then we don't need to do anything
+        if sorted_sets[i].issubset(smallest_set):
+            continue
+
+        # Otherwise, we need to check if the current set is a subset of any of the previously found sets
+        for j in range(i - 1, -1, -1):
+            # If the current set is a subset of one of the previously found sets, then we don't need to do anything
+            if sorted_sets[i].issubset(sorted_sets[j]):
+                break
+
+            # Otherwise, we have found a new smallest set
+            else:
+                smallest_set = sorted_sets[i]
+                break
+
+    return smallest_set

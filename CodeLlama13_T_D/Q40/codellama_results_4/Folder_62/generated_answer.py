@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(my_string):
+    char_list = []
+    for i in range(0, 84):
+        char_list.append(min(my_string))
+    return char_list

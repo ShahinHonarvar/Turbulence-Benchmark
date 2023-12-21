@@ -1,0 +1,12 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in list1 between indices 52 and 71
+    element_set = set()
+    for i in range(52, 72):
+        element_set.add(list1[i])
+    # Iterate through list2 and check if any elements are also in the set of all elements from list1
+    identical_elements = set()
+    for j in range(len(list2)):
+        if list2[j] in element_set:
+            identical_elements.add(list2[j])
+    return identical_elements

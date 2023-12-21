@@ -1,0 +1,20 @@
+
+def sum_of_divisors_in_range(n):
+    if n < 48 or n > 92:
+        return 0
+
+    divisors = []
+
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+
+    divisors.sort()
+
+    sum_of_divisors = 0
+
+    for divisor in divisors:
+        if divisor >= 48 and divisor <= 92:
+            sum_of_divisors += divisor
+
+    return sum_of_divisors

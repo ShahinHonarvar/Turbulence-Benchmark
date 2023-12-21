@@ -1,0 +1,7 @@
+```python
+def palindrome_of_length_n(s):
+    n = 54
+    s = s.lower()
+    return {p for p in (s[i:j+1] for i in range(len(s)) for j in range(i, len(s))) if p == p[::-1]}
+```
+This function uses a set comprehension to iterate over the substrings of `s` with length equal to 54 and checks whether each substring is a palindrome or not. The `p[::-1]` notation reverses the string `p` and checks for equality with itself, which is only true if the string is a palindrome. The resulting set contains all palindromes of length equal to 54 that are substrings of `s`. If there are no such palindromes, the function returns an empty set.

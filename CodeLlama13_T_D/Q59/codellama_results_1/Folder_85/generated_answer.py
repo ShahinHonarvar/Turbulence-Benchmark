@@ -1,0 +1,4 @@
+
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[94]
+    return sorted([int(''.join(str(i) for i in range(x)))])

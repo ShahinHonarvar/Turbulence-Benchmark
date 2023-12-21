@@ -1,0 +1,15 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the two numbers
+    num1 = my_list[91]
+    num2 = my_list[45]
+    gcf = 1
+
+    while num1 > 0 and num2 > 0:
+        if num1 > num2:
+            num1 = num1 % num2
+
+        else:
+            num2 = num2 % num1
+
+    return gcf

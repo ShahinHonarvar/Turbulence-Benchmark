@@ -1,0 +1,14 @@
+ ```
+def filter_chars(s):
+    # Define the range of characters to remove
+    start = ord('(') + 1
+    end = ord('O') - 1
+    # Create a new string with the removed characters
+    result = ''
+    for char in s:
+        if not (start <= ord(char) < end):
+            result += char
+
+    return result
+```
+Note that this code uses the `ord` function to convert character strings into integers representing their Unicode code points. This allows us to compare characters based on their position in the alphabet, rather than their literal value.

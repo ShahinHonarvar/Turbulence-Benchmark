@@ -1,0 +1,36 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(lst):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the given list
+    for i in range(len(lst)):
+
+        # Compute the product of the elements from the current element up to the end of the list
+        prod_up = 1
+        for j in range(i, len(lst)):
+            prod_up *= lst[j]
+
+        # Compute the product of the elements from the beginning of the list up to the current element
+        prod_down = 1
+        for j in range(len(lst) - 1, -1, -1):
+            if j >= i:
+                break
+
+            prod_down *= lst[j]
+
+        # If the product of the elements from the current element up to the end of the list equals -906, add the sublist to the returned list
+        if prod_up == -906:
+            sublists.append(lst[i:])
+
+        # If the product of the elements from the beginning of the list up to the current element equals -906, add the sublist to the returned list
+        if prod_down == -906:
+            sublists.append(lst[:i + 1])
+
+    # Return the list of sublists that satisfy the condition
+    return sublists
+```
+This implementation first initializes an empty list `sublists` to store the sublists that have a product equal to -906. Then, it iterates over the elements of the given list using a nested loop. For each element `i` in the list, it computes the product of all elements from the current element up to the end of the list using the formula `prod_up = 1 * lst[i] * lst[i + 1] * ... * lst[len(lst) - 1]`. If this product is equal to -906, it adds the sublist `[lst[i], lst[i + 1], ..., lst[len(lst) - 1]]` to `sublists`.
+Next, it computes the product of all elements from the beginning of the list up to the current element using the formula `prod_down = 1 * lst[0] * lst[1] * ... * lst[i]`. If this product is equal to -906, it adds the sublist `[lst[0], lst[1], ..., lst[i]]` to `sublists`.
+Finally, it returns the list of sublists that have a product equal to -906.

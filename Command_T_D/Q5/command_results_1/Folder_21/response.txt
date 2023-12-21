@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: ecabf476-d288-4181-8ae2-e314e4de49fb
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_neg_ints_inclusive' that takes one argument, a list of integers, and returns the list of all negative integers from index 639 to index 975, both inclusive. If no negative integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_neg_ints_inclusive(lst):
+    neg = [x for x in lst if x < 0]
+    if len(neg) > 0:
+        return neg[list(range(len(neg) - 1, -1, -1)) + [0]]
+    else:
+        return []
+```
+	likelihood: None
+	token_likelihoods: None
+}]

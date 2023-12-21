@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    if matrix.size < 80:\n        return 0\n    count = 0\n    for rows in range(matrix.shape[0]):\n        for cols in range(matrix.shape[1]):\n            for drows in range(rows, matrix.shape[0]):\n                for dcols in range(cols, matrix.shape[1]):\n                    if (drows-rows+1)*(dcols-cols+1) == 80:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691018688,
+  "id": "chatcmpl-7jFUuDlohsaTHgU5WltSUb9Xl9fvi",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 111,
+    "total_tokens": 223
+  }
+}

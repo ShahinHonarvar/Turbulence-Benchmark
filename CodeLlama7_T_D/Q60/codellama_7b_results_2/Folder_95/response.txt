@@ -1,0 +1,20 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Initialize an empty list to store the results
+results = []
+# Iterate over the range of prime numbers less than or equal to x
+for i in range(2, x + 1):
+# Check if i is a prime number
+if is_prime(i):
+# Check if i is left-and-right-truncatable prime number
+if is_left_right_truncatable_prime(i):
+results.append(i)
+return results
+```
+Here's an explanation of the code:
+1. The function `all_left_right_truncatable_prime` takes a tuple of positive integers as input, and returns a list of all left-and-right-truncatable prime numbers less than or equal to the last element in the tuple.
+2. The function first initializes an empty list `results` to store the results.
+3. Next, the function iterates over the range of prime numbers less than or equal to the last element in the tuple using a `for` loop.
+4. For each prime number `i`, the function checks if it is a left-and-right-truncatable prime number by calling the function `is_left_right_truncatable_prime`.
+5. If the current prime number `i` is a left-and-right-truncatable prime number, the function adds it to the list of results.
+6. Finally, the function returns the list of all left-and-right-truncatable prime numbers less than or equal to the last element in the tuple.

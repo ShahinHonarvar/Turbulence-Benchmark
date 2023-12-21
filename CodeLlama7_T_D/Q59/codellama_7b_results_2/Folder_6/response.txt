@@ -1,0 +1,22 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[74]
+return sorted([p for p in range(2, x) if is_prime(p) and is_left_truncatable_prime(p)], key=lambda x: x))
+def is_prime(n):
+if n == 1 or n == 0:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def is_left_truncatable_prime(p):
+s = str(p)
+for i in range(len(s)):
+if not is_prime(int(s[:i] + s[i+1:])):
+return False
+
+return True
+```

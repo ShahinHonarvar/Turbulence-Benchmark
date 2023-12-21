@@ -1,0 +1,20 @@
+ ```
+def remove_repeat_chars(s):
+# Split the string into a list of characters
+char_list = list(s)
+# Create a dictionary to keep track of the characters and their indices
+char_dict = {}
+# Iterate over the list of characters
+for i, char in enumerate(char_list):
+# If the character is already in the dictionary, add its index to the list
+if char in char_dict:
+char_dict[char].append(i)
+# Otherwise, create a new list with the current index
+else:
+char_dict[char] = [i]
+# Iterate over the dictionary and remove all occurrences of characters that occur more than once between the specified indices
+for char, indices in char_dict.items():
+if len(indices) > 1:
+new_str = "".join([char for i, char in enumerate(char_list) if i not in indices])
+return new_str
+```

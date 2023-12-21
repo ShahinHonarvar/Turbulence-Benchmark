@@ -1,0 +1,13 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    result = []
+    for i in range(len(circular_list)):
+        current_sum = 1
+        temp_list = []
+
+        while current_sum <= circular_list[i]:
+            temp_list.append(circular_list[i] // current_sum)
+            current_sum *= circular_list[i] // current_sum
+        result.extend(temp_list)
+    return list(dict.fromkeys(result))
+```

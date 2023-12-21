@@ -1,0 +1,23 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor (GCF) of the elements at indices 24, 25 and 80
+    return gcf(my_list[24], my_list[25], my_list[80])
+def gcf(a, b, c):
+    # Calculate the least common multiple (LCM) of a, b and c
+    lcm = (a * b * c) / gcd(a, b, c)
+    return lcm
+
+def gcd(a, b, c):
+    # Calculate the greatest common divisor (GCD) of a, b and c
+    gcd = max(a, b, c)
+    while True:
+        if gcd == 0:
+            break
+        else:
+            if a % gcd == 0 and b % gcd == 0 and c % gcd == 0:
+                break
+            else:
+                gcd -= 1
+
+    return gcd
+```

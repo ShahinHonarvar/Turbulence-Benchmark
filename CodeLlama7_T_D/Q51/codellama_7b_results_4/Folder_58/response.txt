@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(strings):
+    # Convert all strings to lowercase
+    strings = [s.lower() for s in strings]
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+    # Iterate over the strings and count the anagrams
+    for string in strings:
+        # Get the letters of the current string
+        letters = [c for c in string if c.isalpha()]
+        # Sort the letters to create the anagram key
+        sorted_letters = "".join(sorted(letters))
+        # Increment the count for the anagram key
+        anagram_counts[sorted_letters] = anagram_counts.get(sorted_letters, 0) + 1
+    # Check if there are at most 60 pairs of anagrams in the list
+    return all(count <= 60 for count in anagram_counts.values())
+```

@@ -1,0 +1,67 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+	# Initialize empty list for storing result
+	result = []
+
+	# Iterate through each element in the tuple
+	for x in tuple:
+		# Check if x is a prime number
+		if is_prime(x):
+			# Check if x is left-and-right-truncatable prime number
+			if is_left_right_truncatable_prime(x):
+				# Add x to result list
+				result.append(x)
+
+	# Sort result list in descending order
+	result = sorted(result, reverse=True)
+
+	# Return result list
+	return result
+
+
+def is_prime(n):
+	# Check if n is a positive integer
+	if not (isinstance(n, int) and n > 0):
+		raise ValueError("n must be a positive integer")
+
+	# Check if n is equal to 2 or 3
+	if n == 2 or n == 3:
+		return True
+
+	# Check if n is not divisible by 2 or 3
+	if n % 2 == 0 or n % 3 == 0:
+		return False
+
+	# Check if n has a prime factor greater than the square root of n
+	for i in range(5, int(n ** 0.5) + 1, 6):
+		if n % i == 0:
+			return False
+
+	# If n is a positive integer and it is not equal to 1 and it is not divisible by 2 or 3 and it does not have a prime factor greater than the square root of n, then it is a prime number
+	return True
+
+
+def is_left_right_truncatable_prime(n):
+	# Check if n is a positive integer
+	if not (isinstance(n, int) and n > 0):
+		raise ValueError("n must be a positive integer")
+
+	# Check if n contains any 0 digits
+	if "0" in str(n):
+		return False
+
+	# Check if n is not equal to 1
+	if n == 1:
+		return False
+
+	# Check if n is not divisible by its leading leftmost digit
+	if n % (n // 10) != 0:
+		return False
+
+	# Check if n is not divisible by its last rightmost digit
+	if n % 10 != 0:
+		return False
+
+	# If n is a positive integer and it does not contain any 0 digits and it is not equal to 1 and it is divisible by its leading leftmost digit and it is divisible by its last rightmost digit, then it is a left-and-right-truncatable prime number
+	return True
+```

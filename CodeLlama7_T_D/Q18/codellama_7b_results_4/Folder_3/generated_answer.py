@@ -1,0 +1,12 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    total = 0
+    start_index = 38
+    end_index = 52
+    # Iterate through the list and calculate the sum of all integers divisible by either -41 or -47
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % (-41) == 0 or my_list[i] % (-47) == 0:
+            total += my_list[i]
+    # Return the sum of all integers divisible by either -41 or -47 from index 38 to index 52, both inclusive
+    return total

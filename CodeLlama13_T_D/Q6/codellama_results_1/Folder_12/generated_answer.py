@@ -1,0 +1,3 @@
+
+def all_neg_ints_exclusive(numbers):
+    return [x for x in numbers[23:45] if x < 0] or []

@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set([i for i in range(2, numbers[478]) if numbers[478] % i == 0 and is_prime(i)])

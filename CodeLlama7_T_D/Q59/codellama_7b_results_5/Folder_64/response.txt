@@ -1,0 +1,32 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[4]
+list = []
+for i in range(10**10, x + 1):
+if is_prime(i) and is_left_truncatable_prime(i):
+list.append(i)
+return sorted(list)
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def is_left_truncatable_prime(n):
+s = str(n)
+if '0' in s:
+return False
+
+for i in range(len(s)):
+if int(s[:i]) != int(s[i:]):
+return False
+
+return True
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as input. The function returns the list of all left-truncatable prime numbers less than the integer at index 4 of the tuple, sorted in ascending order.
+The function uses two helper functions: `is_prime` and `is_left_truncatable_prime`. These functions determine whether a number is prime and whether it can be obtained by repeatedly removing the leftmost digit from a given number while preserving its primality.
+This code should produce the correct solution for the input provided in the question, which consists of a tuple with 5 positive integers.

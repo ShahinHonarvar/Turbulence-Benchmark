@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string
+    start = string.find('34')
+    end = string.rfind('81')
+    # Get a list of all the characters between the indices
+    chars = string[start:end+1]
+    # Sort the list of characters by their ASCII values
+    sorted_chars = sorted(chars, key=ord)
+    # Return the 12th character in the sorted list
+    return sorted_chars[11]

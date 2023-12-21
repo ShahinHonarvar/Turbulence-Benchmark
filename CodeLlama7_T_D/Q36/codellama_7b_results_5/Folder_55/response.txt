@@ -1,0 +1,16 @@
+ ```
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+
+    # Iterate over the characters in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between indices 3 and 5 (both exclusive)
+        if 3 <= i < 5:
+            # Check if the current character is greater than 'Y' and smaller than 's'
+            if char_list[i] > 'Y' and char_list[i] < 's':
+                # Remove all occurrences of the current character from the string
+                char_list = [c for c in char_list if c != char_list[i]]
+    return ''.join(char_list)
+```
+This code defines a function called `filter_chars` that takes one argument, a string. The function creates a list of characters in the given string and iterates over the list using a for loop. For each character, the function checks if it is between indices 3 and 5 (both exclusive) and if it is greater than 'Y' and smaller than 's'. If these conditions are true, the function removes all occurrences of the current character from the string using a list comprehension. Finally, the function returns the altered string as a single string by joining the list of characters with an empty string.

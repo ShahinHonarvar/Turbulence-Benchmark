@@ -1,0 +1,10 @@
+
+def gcf_two_nums(my_list):
+    # Get the greatest common factor of two numbers
+    def gcf(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    # Calculate the greatest common factor of the two specified indices in the list
+    return gcf(my_list[43], my_list[99])

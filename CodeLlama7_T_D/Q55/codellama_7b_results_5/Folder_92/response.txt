@@ -1,0 +1,24 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Check if the input is a list
+    if not isinstance(circular_list, list):
+        raise ValueError("The input must be a list")
+    # Initialize an empty list to store the sublists
+    sublists = []
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Get the current element and its neighbors
+        current_element = circular_list[i]
+        previous_element = None
+        if i > 0:
+            previous_element = circular_list[i - 1]
+        next_element = None
+        if i < len(circular_list) - 1:
+            next_element = circular_list[i + 1]
+        # Check if the current element and its neighbors form a sublist with product equal to 5
+        if current_element * previous_element * next_element == 5:
+            # Add the sublist to the list of sublists
+            sublists.append([current_element, previous_element, next_element])
+    # Return the list of sublists
+    return sublists
+```

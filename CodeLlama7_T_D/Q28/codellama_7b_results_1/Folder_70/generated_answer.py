@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters between indices 28 and 54
+    chars = string[28:54+1]
+    # Sort the characters by their ASCII values
+    sorted_chars = sorted(chars, key=ord)
+    # Return the character with the 14th smallest ASCII value
+    return sorted_chars[13]

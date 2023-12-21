@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n  n, m = mat.shape\n  res = []\n\n  for submatrix_dim in range(1, min(n, m) + 1):\n    for i in range(0, n - submatrix_dim + 1):\n      for j in range(0, m - submatrix_dim + 1):\n        submatrix = mat[i: i + submatrix_dim, j: j + submatrix_dim]\n        if np.sum(submatrix) == 830:\n          res.append(submatrix)\n  return res\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093361,
+  "id": "chatcmpl-7jYvJ7GPdjrCo2WYi2Ru7radnmKhn",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 121,
+    "total_tokens": 247
+  }
+}

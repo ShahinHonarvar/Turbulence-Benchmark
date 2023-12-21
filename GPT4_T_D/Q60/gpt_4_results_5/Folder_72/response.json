@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(nums):\n    x = nums[31]\n    \n    def is_truncatable(n):\n        str_n = str(n)\n        for x in range(len(str_n)):\n            if not isprime(int(str_n[x:])) or not isprime(int(str_n[:x+1])):\n                return False\n        return True\n\n    truncatable_primes_lst = [p for p in range(10, x+1) if '0' not in str(p) and is_truncatable(p)]\n    truncatable_primes_lst.sort(reverse=True)\n\n    return truncatable_primes_lst\n```\nPlease note that this function uses the sympy.isprime function for prime number checking, hence it is necessary to install the sympy Python library, which can be installed via pip install sympy if not already installed.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691025101,
+  "id": "chatcmpl-7jHALYz7LoNqtx3bYwdSxT4dvwDwd",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 187,
+    "total_tokens": 369
+  }
+}

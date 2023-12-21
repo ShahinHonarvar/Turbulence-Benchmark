@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef all_substring_of_size_n(string):\n    substrings = []\n    if len(string) < 96:\n        return substrings\n    for i in range(len(string) - 95):\n        substring = string[i:i+96]\n        if len(substring) == len(set(substring)):\n            substrings.append(substring)\n    return substrings\n```\nNote: The code assumes that if the length of the string is less than 96, there are no substrings of length 96 with no duplicate characters in the given string.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822315,
+  "id": "chatcmpl-7eEGZtrAkqtmCpTktcq3GeK926jSV",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 113,
+    "prompt_tokens": 126,
+    "total_tokens": 239
+  }
+}

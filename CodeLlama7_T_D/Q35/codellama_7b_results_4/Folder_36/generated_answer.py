@@ -1,0 +1,20 @@
+
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of characters
+    char_dict = {}
+
+    # Iterate over the string and update the dictionary
+    for i in range(len(s)):
+        if s[i] not in char_dict:
+            char_dict[s[i]] = 1
+
+        else:
+
+            char_dict[s[i]] += 1
+
+    # Iterate over the dictionary and remove characters that occur more than once between the indices 476 and 709, both exclusive
+    for i in range(475, -1):
+        if char_dict[s[i]] > 1:
+            s = s.replace(s[i], '', 1)
+
+    return s

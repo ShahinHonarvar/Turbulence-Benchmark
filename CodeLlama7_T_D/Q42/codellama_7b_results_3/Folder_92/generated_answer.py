@@ -1,0 +1,12 @@
+
+def prime_factors(my_list):
+    if len(my_list) == 0:
+        return set()
+    else:
+        first_element = my_list[0]
+        prime_factors_set = set()
+        for i in range(2, int(first_element ** 0.5) + 1):
+            if first_element % i == 0:
+                prime_factors_set.add(i)
+                prime_factors_set |= prime_factors(my_list[1:])
+        return prime_factors_set

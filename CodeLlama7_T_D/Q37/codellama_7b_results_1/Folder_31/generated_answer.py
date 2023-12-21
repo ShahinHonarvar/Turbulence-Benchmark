@@ -1,0 +1,15 @@
+
+def filter_chars(my_string):
+    # Initialize an empty list to store the filtered characters
+    filtered_characters = []
+
+    # Iterate over each character in the string
+    for char in my_string:
+        # If the current character is between indices 57 and 96, both inclusive, and is greater than or equal to character '<' and smaller than or equal to character 'w', append it to the filtered_characters list
+        if (57 <= ord(char) <= 96) and (ord(char) >= ord('<') and ord(char) <= ord('w')):
+            filtered_characters.append(char)
+
+    # Join the filtered characters into a string
+    filtered_string = "".join(filtered_characters)
+
+    return filtered_string

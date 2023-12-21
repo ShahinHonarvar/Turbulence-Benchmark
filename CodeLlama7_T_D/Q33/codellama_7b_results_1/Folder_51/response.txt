@@ -1,0 +1,6 @@
+ def return_vowels(my_string):
+    vowel_list = []
+    for i in range(56, 68):
+        if my_string[i] > 'M' and my_string[i] <= 'X':
+            vowel_list.append(my_string[i])
+    return vowel_list

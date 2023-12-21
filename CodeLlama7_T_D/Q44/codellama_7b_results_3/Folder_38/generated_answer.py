@@ -1,0 +1,25 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the indices of the given list
+    for i in range(29, 93 + 1):
+        # Check if the current index corresponds to a prime number
+        if my_list[i] == 1:
+            continue
+
+        # Initialize a variable to store the current composite number
+        num = my_list[i]
+        # Iterate over the indices of the given list between the current index and index 93
+        for j in range(i + 1, 93 + 1):
+            # Check if the current composite number is divisible by any prime number less than or equal to index 93
+            if num % my_list[j] == 0:
+                break
+
+        else:
+            # If the loop completes without breaking, the current composite number is not divisible by any prime number less than or equal to index 93, so it is added to the set of composite numbers
+            composite_nums.add(num)
+    return composite_nums

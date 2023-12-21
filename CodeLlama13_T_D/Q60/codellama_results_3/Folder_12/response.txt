@@ -1,0 +1,20 @@
+```
+def all_left_right_truncatable_prime(x):
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i) and has_no_zero(i) and is_left_and_right_truncatable(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+Here's how the function works:
+
+* It defines a list `primes` to store the prime numbers that meet the conditions.
+* It loops through each integer `i` from 2 to `x`, inclusive.
+* For each `i`, it checks if the following three conditions are met:
+	1. If `i` is prime using the `is_prime()` function.
+	2. If `i` has no zero in its decimal representation using the `has_no_zero()` function.
+	3. If `i` is left-and-right-truncatable using the `is_left_and_right_truncatable()` function.
+* If all three conditions are met, it adds `i` to the list `primes`.
+* Finally, it returns a sorted version of `primes`, with the primes in descending order.
+
+Note that this solution assumes that you have already implemented the `is_prime()`, `has_no_zero()`, and `is_left_and_right_truncatable()` functions. If not, you will need to define them separately before using them in the code above.

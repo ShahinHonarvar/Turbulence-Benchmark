@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(input_tuple):\n    a = input_tuple[36]\n    b = input_tuple[85]\n\n    total = sum(set(range(a+1, b)) - set(input_tuple[36:86]))\n\n    if total == 0:\n        return \"\"\n    elif total%2 == 0:\n        return hex(total)[2:]\n    else:\n        return bin(total)[2:]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690134135,
+  "id": "chatcmpl-7fXNv4ohff6WLeTl3SrMBkrxTqCLt",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 86,
+    "prompt_tokens": 263,
+    "total_tokens": 349
+  }
+}

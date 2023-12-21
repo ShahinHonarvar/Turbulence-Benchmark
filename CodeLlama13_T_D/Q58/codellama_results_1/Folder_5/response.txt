@@ -1,0 +1,23 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows-n+1):
+        for j in range(cols-n+1):
+            submat = matrix[i:i+n,j:j+n]
+            if np.allclose(submat.sum(), n*63):
+                count += 1
+    return count
+```
+This code defines a function `submatrix_with_n_numbers` that takes two arguments:
+
+* `matrix`: a two-dimensional numpy matrix of integers
+* `n`: an integer representing the size of each submatrix to search for
+
+The function returns the number of submatrices in `matrix` that contain `63` integers each, or `0` if no such submatrix is found.
+
+To find the submatrices, we iterate over all possible starting rows and columns using nested loops. For each iteration, we define a `submat` variable as a slice of the original matrix with dimensions `n` by `n`, with the upper-left corner at the current row and column indices. We then check if the sum of all elements in `submat` is equal to `63*n`, using the `np.allclose` function from NumPy. If this condition is met, we increment the counter variable `count`.
+
+Finally, we return the value of `count`.

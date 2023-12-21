@@ -1,0 +1,18 @@
+
+def return_binary_or_hexa(my_tuple):
+    # Get the integers at indices 15 and 57 in the tuple
+    a = my_tuple[15]
+    b = my_tuple[57]
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 15 and 57
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in my_tuple[15:57]:
+            sum += i
+
+    # Return the binary or hexadecimal representation string of the sum
+
+    if sum % 2 == 1:
+        return f'{sum:b}'[:-2]
+    else:
+        return f'{sum:x}'[:-2].lower()

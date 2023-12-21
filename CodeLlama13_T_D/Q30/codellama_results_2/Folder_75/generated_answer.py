@@ -1,0 +1,3 @@
+
+def insert_before_character(s, c):
+    return "".join([f"q{c}" if x == c else x for x in s])

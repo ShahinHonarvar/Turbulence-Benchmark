@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: d2a6578a-0f9c-45d2-9dfe-f7193bd6ecab
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_nth_smallest_ascii' that takes one argument, a string of distinct characters. The function should return the character with the 5th smallest ASCII value among those characters in the string that occur between indices 29 to 33, both inclusive.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+
+def return_nth_smallest_ascii(s):
+    ascii_str = re.sub(r'[^A-Za-z0-9]','',s)
+    ascii_list = list(re.findall(r'[A-Za-z0-9]','',s))
+    ascii_list = sorted(set(ascii_list))
+    return ascii_list[4]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

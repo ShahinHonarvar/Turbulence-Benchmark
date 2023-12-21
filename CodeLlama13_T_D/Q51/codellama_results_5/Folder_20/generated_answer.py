@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        if len(s) >= 3 and all(c.isalpha() for c in s):
+            anagram = ''.join(sorted(s))
+            if anagram not in anagrams:
+                anagrams.append(anagram)
+    return len(anagrams) <= 131

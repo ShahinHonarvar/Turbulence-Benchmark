@@ -1,0 +1,8 @@
+
+def return_n_greatest_chars(input_string):
+    # Sort the characters in the string based on their ASCII values
+    sorted_list = sorted(input_string, key=ord)
+    # Reverse the list to get the greatest ASCII values first
+    reversed_list = sorted_list[::-1]
+    # Return the top 60 characters of the input string
+    return reversed_list[:60]

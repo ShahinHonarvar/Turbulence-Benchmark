@@ -1,0 +1,3 @@
+
+def gcf_two_nums(my_list):
+    return my_list[96] // my_list[32] * my_list[32]

@@ -1,0 +1,12 @@
+```python
+def prime_factors(mylist):
+    return set(prime_factorization(mylist[47]))
+
+def prime_factorization(n):
+    if n == 1:
+        return []
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            yield i
+            yield from prime_factorization(n // i)
+```

@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return {s[i:i+206] for i in range(len(s) - 205) if s[i:i+206].lower() == s[i:i+206][::-1].lower()}

@@ -1,0 +1,12 @@
+```
+def submatrix_with_particular_sum(matrix):
+    rows, cols = matrix.shape
+    for i in range(rows):
+        for j in range(cols):
+            sum = 0
+            for k in range(i, rows):
+                for l in range(j, cols):
+                    sum += matrix[k, l]
+                if sum == -44:
+                    yield (i, j, k, l)
+```

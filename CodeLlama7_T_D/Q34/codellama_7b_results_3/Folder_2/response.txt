@@ -1,0 +1,12 @@
+ ```
+def find_original_set(sets):
+	# Get the smallest set from the given sets
+	smallest_set = min(sets, key=len)
+	# Check if the smallest set is already a subset of each of the given sets
+	for set in sets:
+		if set != smallest_set and not set.issubset(smallest_set):
+			return False
+
+	# If all the checks are passed, return the smallest set
+	return smallest_set
+```

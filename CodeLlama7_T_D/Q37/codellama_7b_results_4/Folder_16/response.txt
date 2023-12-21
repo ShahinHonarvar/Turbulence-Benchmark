@@ -1,0 +1,11 @@
+ def filter_chars(s):
+    start = 225
+    end = 381
+    filtered_chars = []
+    for i in range(start, end + 1):
+        if s[i] >= 'D' and s[i] <= 'Y':
+            continue
+        else:
+            filtered_chars.append(s[i])
+    filtered_string = "".join(filtered_chars)
+    return filtered_string

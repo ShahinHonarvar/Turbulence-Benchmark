@@ -1,0 +1,14 @@
+```python
+def find_subset_of_length_n(elements, n):
+    # Base case: If the set is empty, return 0
+    if not elements:
+        return 0
+    
+    # Recursive case: If the set has only one element, return 1 if its size is equal to n, otherwise return 0
+    if len(elements) == 1:
+        return int(len(elements[0]) == n)
+    
+    # Recursive case: If the set has more than one element, return the sum of the number of subsets of size n in each subset and the number of subsets of size n in the remaining elements
+    return find_subset_of_length_n(elements[:-1], n) + find_subset_of_length_n(elements[1:], n)
+```
+Note that this solution uses recursion to solve the problem. The base case is when the set is empty, and the recursive case is when the set has more than one element. In each recursive call, we divide the set into two subsets: the subset with the first element, and the remaining elements. We then find the number of subsets of size n in each subset and add them together to get the total number of subsets of size n in the original set.

@@ -1,0 +1,8 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    palindromes = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if substring == substring[::-1]:
+            palindromes.append(substring)
+    return set(palindromes)

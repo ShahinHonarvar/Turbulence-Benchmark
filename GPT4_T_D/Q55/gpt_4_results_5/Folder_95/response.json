@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    sublists = []\n    size = len(lst)\n    \n    for sublist_length in range(1, size + 1):\n        for i in range(size):\n            # Create circular sublists\n            sublist = lst[i:i+sublist_length] + lst[:max(0, (i+sublist_length)-size)]\n            \n            # Check product equals 28\n            product = 1\n            for num in sublist:\n                product *= num\n            \n            if product == 28:\n                sublists.append(sublist)\n    \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691012478,
+  "id": "chatcmpl-7jDskHWlOtxzwkZ75iYYup4yB9bV9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 193,
+    "total_tokens": 318
+  }
+}

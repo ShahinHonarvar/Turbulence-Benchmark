@@ -1,0 +1,25 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Find the index of the 94th occurrence of 1 in the binary representation of the integer
+    ones_index = [i for i, char in enumerate(str(decimal_integer)) if char == "1"][-94]
+    # Get the value of the 94th Fibonacci number
+    fib_94 = fibonacci(94)
+    # Check if the integer is divisible by the 94th Fibonacci number
+    if decimal_integer % fib_94 == 0:
+        return True
+
+    else:
+
+        return False
+
+# Define a function to calculate the nth Fibonacci number
+def fibonacci(n):
+    if n <= 1:
+        return n
+
+    else:
+
+        return fibonacci(n-1) + fibonacci(n-2)
+```

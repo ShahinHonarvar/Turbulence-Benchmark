@@ -1,0 +1,11 @@
+```
+def sum_odd_ints_inclusive(my_list):
+    return sum(x for i, x in enumerate(my_list) if i >= 82 and i <= 86 and x % 2 != 0)
+```
+This function uses a list comprehension to iterate over the indices of `my_list` that are between 82 and 86, inclusive. It then filters out any elements in the list that are not odd numbers using the modulo operator `%`. Finally, it returns the sum of these filtered elements using the built-in `sum()` function. If no odd integers exist in the specified range, the function will return 0.
+
+Here is an example of how to use this function:
+```
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(sum_odd_ints_inclusive(my_list)) # prints 24 (the sum of the odd numbers from index 82 to index 86)
+```

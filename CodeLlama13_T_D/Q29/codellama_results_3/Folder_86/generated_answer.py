@@ -1,0 +1,3 @@
+
+def gcf_two_nums(lst):
+    return lst[793] * lst[449] // gcd(lst[793], lst[449])

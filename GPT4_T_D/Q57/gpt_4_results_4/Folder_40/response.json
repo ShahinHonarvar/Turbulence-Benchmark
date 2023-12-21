@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that implements the 'submatrix_with_particular_sum' function:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(m):\n    rows, cols = m.shape\n    submatrices = []\n    \n    for row in range(rows):\n        for col in range(cols):\n            for size in range(1, min(rows-row, cols-col)+1):\n                submatrix = m[row:row+size, col:col+size]\n                if np.sum(submatrix) == -10:\n                    submatrices.append(submatrix)\n                    \n    return submatrices\n```\nThis function will iterate over all possible starting points (row, col) for a submatrix and create submatrices of all possible sizes from that starting point. It will then sum the elements in each submatrix and, if the sum is -10, it will add the submatrix to the list of submatrices to be returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093226,
+  "id": "chatcmpl-7jYt8Z1YbpoDpOh50oPuQ30e9Mmye",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 194,
+    "prompt_tokens": 121,
+    "total_tokens": 315
+  }
+}

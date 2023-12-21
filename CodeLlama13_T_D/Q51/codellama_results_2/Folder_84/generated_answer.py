@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(string_list):
+    anagram_pairs = 0
+    for s in string_list:
+        letters = set(s.lower())
+        if len(letters) < 3: continue
+        for c in letters:
+            if letters.count(c) > 1 and letters.count(c) % 2 == 0: anagram_pairs += 1
+    return anagram_pairs <= 16

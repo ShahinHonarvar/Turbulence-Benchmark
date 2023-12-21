@@ -1,0 +1,26 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_pairs = 0
+    anagram_threshold = 188
+    # Iterate through the list and check for anagrams
+    for i in range(len(my_list)):
+        # Get the current string
+        s = my_list[i]
+        # Get a list of all possible anagrams of the current string
+        anagram_list = [s]
+        for j in range(len(s) - 1):
+            # Generate all possible substrings of the current string
+            subs = s[j:]
+            # Check if any of these substrings are also a substring of the current string
+            if any(sub in s for sub in subs):
+                # If so, add it to the list of anagrams
+                anagram_list.append(sub)
+        # Get the length of the list of anagrams
+        anagram_length = len(anagram_list)
+        # Check if there are at most 188 pairs of anagrams in the list
+        if anagram_length <= anagram_threshold:
+            # If so, add the number of pairs to the total
+            anagram_pairs += (anagram_length * (anagram_length - 1)) // 2
+    # Return whether there are at most 188 pairs of anagrams in the list
+    return anagram_pairs <= anagram_threshold

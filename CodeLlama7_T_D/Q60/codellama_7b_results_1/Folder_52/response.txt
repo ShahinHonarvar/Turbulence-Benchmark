@@ -1,0 +1,22 @@
+ Here is the Python code for the function `all_left_right_truncatable_prime` that you specified:
+```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Check if x is a prime number
+    if is_prime(x):
+        # If x is a prime number, add it to the list of prime numbers
+        prime_numbers.append(x)
+
+    # Loop through all the prime numbers less than or equal to x
+    for i in range(2, int(math.sqrt(x)) + 1)):
+        # Check if i is a left-and-right-truncatable prime number
+        if is_left_right_truncatable_prime(i):
+            # If i is a left-and-right-truncatable prime number, add it to the list of prime numbers
+            prime_numbers.append(i)
+
+    # Return the sorted list of all left-and-right-truncatable prime numbers less than or equal to x
+    return sorted(prime_numbers)
+```
+This code uses the `is_prime` function to check if a number is a prime number, and the `is_left_right_truncatable_prime` function to check if a number is a left-and-right-truncatable prime number. It then loops through all the prime numbers less than or equal to x, and checks each one to see if it is a left-and-right-truncatable prime number. If it is, it adds it to the list of prime numbers. Finally, it returns the sorted list of all left-and-right-truncatable prime numbers less than or equal to x.

@@ -1,0 +1,10 @@
+
+def filter_chars(string):
+    # Create a new string with all occurrences of the filtered characters removed
+    new_string = ""
+    # Iterate through each character in the original string
+    for char in string:
+        # If the current character is not in the filtered range, add it to the new string
+        if ord(char) < 114 or ord(char) > 639:
+            new_string += char
+    return new_string

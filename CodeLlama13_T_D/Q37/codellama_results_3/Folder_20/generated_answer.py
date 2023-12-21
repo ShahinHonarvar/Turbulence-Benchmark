@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i, c in enumerate(string):
+        if 25 <= i < 97 and ord('m') <= ord(c) <= ord('w'):
+            continue
+        result += c
+    return result

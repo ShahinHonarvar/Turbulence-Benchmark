@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices found
+    count = 0
+    
+    # Loop through each row in the matrix
+    for i in range(len(matrix)):
+        # Loop through each column in the current row
+        for j in range(len(matrix[i])):
+            # Check if the element at the current position is equal to 49
+            if matrix[i][j] == 49:
+                # If it is, increment the counter by one
+                count += 1
+    
+    # Return the final count of submatrices found
+    return count

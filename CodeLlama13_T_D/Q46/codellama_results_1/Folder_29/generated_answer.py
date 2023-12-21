@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return max([a for a in range(1, numbers[22]) if all([not numbers[97] % a, not numbers[64] % a])])

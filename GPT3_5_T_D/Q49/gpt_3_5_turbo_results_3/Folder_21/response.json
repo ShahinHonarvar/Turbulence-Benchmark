@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_decimal_is_divisible(binary):\n    fib = [0, 1]\n    while len(fib) < 195:\n        fib.append(fib[-1] + fib[-2])\n    \n    decimal = 0\n    for i, b in enumerate(binary[::-1]):\n        decimal += int(b) * (2 ** i)\n    \n    return decimal % fib[194] == 0\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689840372,
+  "id": "chatcmpl-7eIxo5L6TY04SiG7Uitz1snVDL4RN",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 86,
+    "prompt_tokens": 137,
+    "total_tokens": 223
+  }
+}

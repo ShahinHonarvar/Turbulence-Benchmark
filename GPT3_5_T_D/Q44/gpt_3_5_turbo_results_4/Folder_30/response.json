@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef composite_nums_between_indices(lst):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n    \n    def is_composite(n):\n        return not is_prime(n)\n    \n    composite_set = set()\n    for num in lst[19:93]:\n        if is_composite(num):\n            composite_set.add(num)\n    \n    return composite_set\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689860227,
+  "id": "chatcmpl-7eO83ACxP6OAya6yoWviStcEBqras",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 113,
+    "prompt_tokens": 116,
+    "total_tokens": 229
+  }
+}

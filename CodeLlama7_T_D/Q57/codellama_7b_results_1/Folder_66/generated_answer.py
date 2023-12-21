@@ -1,0 +1,14 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the output list
+    output = []
+    # Loop over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the sum of all integers in the submatrix is equal to 99
+            if np.sum(matrix[i:, j]) == 99:
+                # If it is, append the submatrix to the output list
+                output.append(matrix[i:, j])
+    # Return the output list
+    return output

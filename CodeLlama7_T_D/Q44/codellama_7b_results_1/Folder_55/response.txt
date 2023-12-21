@@ -1,0 +1,33 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the input list and check if each element is composite
+    for i, num in enumerate(my_list):
+        # If the current number is composite and its index is between 10 and 100 (inclusive), add it to the set of composite numbers
+        if is_composite(num) and 10 <= i <= 100:
+            composite_nums.add(num)
+    # Return the set of all composite numbers between indices 10 and 100 (inclusive), or an empty set if no such number exists in the input list
+    return composite_nums
+
+# Check if a number is composite by dividing it by all prime numbers less than or equal to its square root
+def is_composite(n):
+    # If n is 1, it is neither prime nor composite
+    if n == 1:
+        return False
+
+    # If n is a perfect square, it is not composite
+    if math.sqrt(n) % 1 == 0:
+        return False
+
+    # Iterate over the prime numbers less than or equal to the square root of n and check if any of them divides n
+    for i in range(2, int(math.sqrt(n)) + 1)):
+        if n % i == 0:
+            return True
+
+    # If no prime number divides n, it is composite
+    return False
+```

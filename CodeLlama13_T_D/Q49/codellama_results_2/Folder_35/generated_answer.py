@@ -1,0 +1,15 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 187th number in the Fibonacci sequence
+    fib187 = 0
+    for i in range(187):
+        fib187 += (pow(-1, i + 1) * pow((5 ** (2 * i + 1)) / 11, 3) / 640)
+    
+    # Check if the decimal integer is divisible by the 187th number in the Fibonacci sequence
+    if decimal % fib187 == 0:
+        return True
+    else:
+        return False

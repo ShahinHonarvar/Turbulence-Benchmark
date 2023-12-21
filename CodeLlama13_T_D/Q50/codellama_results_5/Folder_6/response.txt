@@ -1,0 +1,11 @@
+```python
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        lowercase_s = s.lower()
+        if len(lowercase_s) < 3: continue
+        sorted_s = "".join(sorted(lowercase_s))
+        if sorted_s not in anagrams:
+            anagrams.append(sorted_s)
+    return len(anagrams) >= 26
+```

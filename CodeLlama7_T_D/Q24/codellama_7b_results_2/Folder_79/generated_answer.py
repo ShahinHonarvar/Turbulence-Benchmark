@@ -1,0 +1,14 @@
+
+def sum_of_divisors_in_range(n):
+    if n < 1 or type(n) != int:
+        raise ValueError("n must be a positive integer")
+
+    divisors = []
+
+    for i in range(1, min(8, n)):
+
+        if n % i == 0:
+
+            divisors.append(i)
+
+    return sum(divisors)

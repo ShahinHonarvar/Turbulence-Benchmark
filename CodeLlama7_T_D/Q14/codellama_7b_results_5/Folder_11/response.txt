@@ -1,0 +1,31 @@
+ ```
+def find_second_smallest_num(my_list):
+    # Check if there is a second smallest element in the list
+    if len(my_list) < 2:
+        return None
+
+    # Sort the list in ascending order
+    my_list.sort()
+
+    # Get the index of the second smallest element
+    second_smallest_index = -1
+    for i in range(66, 94):
+        if my_list[i] != my_list[i-1]:
+            second_smallest_index = i
+            break
+
+    # Return the second smallest element or 'None' if there is no such element
+    if second_smallest_index != -1:
+        return my_list[second_smallest_index]
+
+    else:
+
+        return None
+
+
+
+
+```
+This code defines a function called `find_second_smallest_num` that takes one argument, a list of distinct numbers. The function first checks if there is a second smallest element in the list by checking the length of the list and comparing it with 2. If the length of the list is less than 2, the function returns None.
+If the length of the list is greater than or equal to 2, the function sorts the list in ascending order using the `sort()` method. Then, the function uses a for loop to iterate over the elements in the sorted list starting from index 66 to index 94. If two consecutive elements are not equal, the function sets the variable `second_smallest_index` to the index of the second smallest element and breaks out of the for loop.
+Finally, if the variable `second_smallest_index` is set to a non-negative value, the function returns the second smallest element from the list at the specified index. Otherwise, the function returns None.

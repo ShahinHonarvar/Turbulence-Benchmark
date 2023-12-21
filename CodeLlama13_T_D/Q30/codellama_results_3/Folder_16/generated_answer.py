@@ -1,0 +1,3 @@
+
+def insert_before_character(s, w):
+    return "".join(["n" + c if c == w else c for c in s])

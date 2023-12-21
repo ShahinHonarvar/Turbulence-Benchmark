@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 966c77a0-1eef-43a2-8845-d119224e9599
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'insert_after_index' that takes one argument, a list, and returns a list that is identical except that 709.87 has been inserted at the index immediately succeeding index 92 and, as a result, the returned list should have one more element than the given list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import bisect
+
+def insert_after_index(num_list):
+    idx = bisect.bisect_left(num_list, 709.87)
+    return num_list[:idx] + [709.87] + num_list[idx+1:]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

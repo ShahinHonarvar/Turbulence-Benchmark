@@ -1,0 +1,14 @@
+```python
+def palindromes_between_indices(string):
+    indices = range(0, 6)
+    letters = set("abcdefghijklmnopqrstuvwxyz")
+    palindromes = []
+
+    for i in indices:
+        for j in indices[i + 1 :]:
+            sub_string = string[i:j]
+            if len(sub_string) >= 3 and set(sub_string).issubset(letters):
+                palindromes.append("".join(reversed(sub_string)))
+
+    return set(palindromes)
+```

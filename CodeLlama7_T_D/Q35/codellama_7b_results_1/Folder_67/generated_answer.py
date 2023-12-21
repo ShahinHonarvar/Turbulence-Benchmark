@@ -1,0 +1,10 @@
+ def remove_repeat_chars(s):
+    start = 44
+    end = 67
+    seen = set()
+    res = ""
+    for i in range(start, end):
+        if s[i] not in seen:
+            res += s[i]
+            seen.add(s[i])
+    return res

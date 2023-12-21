@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(strings):\n    def count_occurrences(string):\n        occurrences = [0] * 26\n        for char in string.lower():\n            if char.isalpha():\n                occurrences[ord(char) - ord('a')] += 1\n        return occurrences\n\n    anagram_count = 0\n    for i in range(len(strings)):\n        for j in range(i + 1, len(strings)):\n            occurrences1 = count_occurrences(strings[i])\n            occurrences2 = count_occurrences(strings[j])\n            if occurrences1 == occurrences2:\n                anagram_count += 1\n                if anagram_count > 75:\n                    return False\n    return True\n```\nNote: The code assumes that all the strings in the given list contain only English letters and have a length of at least three.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689841676,
+  "id": "chatcmpl-7eJIqcrOoPcDIjyl4o0mGvff2ydsY",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 169,
+    "prompt_tokens": 139,
+    "total_tokens": 308
+  }
+}

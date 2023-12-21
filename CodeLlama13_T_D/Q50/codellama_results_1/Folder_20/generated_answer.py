@@ -1,0 +1,12 @@
+
+def if_contains_anagrams(strings):
+    anagrams = {}
+    for string in strings:
+        key = tuple(sorted(string.lower()))
+        if len(key) < 3:
+            continue
+        if key not in anagrams:
+            anagrams[key] = [string]
+        else:
+            anagrams[key].append(string)
+    return len(anagrams) >= 64

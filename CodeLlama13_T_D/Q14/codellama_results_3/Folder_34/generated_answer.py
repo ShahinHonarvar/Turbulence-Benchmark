@@ -1,0 +1,11 @@
+
+def find_second_smallest_num(numbers):
+    if len(numbers) < 2:
+        return None
+    
+    second_smallest = sorted(numbers)[1]
+    for i in range(59, 199):
+        if numbers[i] == second_smallest:
+            return second_smallest
+    
+    return None

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(lst):\n    from collections import defaultdict\n    # Initialize the counter\n    count = 0\n    # Initialize the dictionary\n    dict_words = defaultdict(list)\n    \n    for curr in lst:\n        # if the length of the word is at least 3\n        if len(curr) >= 3:\n            # Make all letters lowercase and sort them\n            sorted_word = \"\".join(sorted(curr.lower()))\n            # If more than one string has the same ordered letters\n            if sorted_word in dict_words:\n                # Increment the count for each pair\n                count += len(dict_words[sorted_word])\n                # Return false if count exceeds 94\n                if count > 94:\n                    return False\n            # Append the current string to the list\n            dict_words[sorted_word].append(curr)\n\n    return True\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690140871,
+  "id": "chatcmpl-7fZ8ZT5f9EDLr0JVTSxRwkI5DYkSh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 139,
+    "total_tokens": 317
+  }
+}

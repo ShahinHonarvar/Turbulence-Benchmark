@@ -1,0 +1,25 @@
+
+def return_nth_smallest_ascii(string):
+    # Initialize a dictionary to keep track of the ASCII values
+    ascii_values = {}
+
+    # Iterate over the characters in the string
+    for char in string:
+        # Get the ASCII value of the character
+        ascii_value = ord(char)
+
+        # If the ASCII value is not already in the dictionary, add it with a count of 1
+        if ascii_value not in ascii_values:
+            ascii_values[ascii_value] = 1
+
+        # Otherwise, increment the count for the ASCII value
+        else:
+            ascii_values[ascii_value] += 1
+
+    # Sort the dictionary by key (ASCII value)
+    sorted_values = sorted(ascii_values.items(), key=lambda x: x[0])
+
+    # Get the 17th element from the sorted list
+    nth_smallest_ascii = sorted_values[16][0]
+
+    return chr(nth_smallest_ascii)

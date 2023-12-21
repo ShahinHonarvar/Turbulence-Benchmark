@@ -1,0 +1,10 @@
+
+def return_n_smallest_chars(my_string):
+    char_list = []
+    for char in my_string:
+        if len(char_list) == 44:
+            break
+        if char not in char_list:
+            char_list.append(char)
+    
+    return sorted(char_list)

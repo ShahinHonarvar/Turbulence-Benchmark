@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary):
+    binary = binary[::-1] # Reverse the binary string
+    decimal = 0
+    for i, digit in enumerate(binary):
+        decimal += int(digit) * (2**i)
+    fibonacci = [0, 1]
+    for i in range(2, 100): # Generate the first 99 numbers of the Fibonacci sequence
+        fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+    return decimal % fibonacci[99] == 0

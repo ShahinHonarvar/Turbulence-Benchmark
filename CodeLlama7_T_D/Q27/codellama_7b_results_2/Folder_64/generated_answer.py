@@ -1,0 +1,7 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:] # Create a copy of the original list
+    for i in range(len(my_list)): # Iterate over the elements of the list
+        if my_list[i] == 8: # If the current element is 8, insert [3, 8] at the next index
+            new_list.insert(i + 1, [3, 8]) # Insert [3, 8] at the next index
+    return new_list # Return the modified list

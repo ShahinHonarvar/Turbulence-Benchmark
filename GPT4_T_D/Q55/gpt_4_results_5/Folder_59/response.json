@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    all_sublists = []\n    len_list = len(lst)\n\n    # get all possible sublists\n    for sublist_len in range(2, len_list+1):\n        for i in range(len_list):\n            sublist = lst[i: i+sublist_len]\n            if len(sublist) < sublist_len:\n                sublist = sublist + lst[0: sublist_len - len(sublist)]\n            all_sublists.append(sublist)\n\n    # filter sublists where the product of its elements equals -3\n    result = []\n    for sublist in all_sublists:\n        product = 1\n        for num in sublist:\n            product *= num\n        if product == -3:\n            result.append(sublist)\n\n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691011478,
+  "id": "chatcmpl-7jDcchp16IJ36kqTO1CgBMjNmFHpI",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 163,
+    "prompt_tokens": 193,
+    "total_tokens": 356
+  }
+}

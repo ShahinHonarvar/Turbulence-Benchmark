@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_str = ""
+    for i, char in enumerate(string):
+        if i < 42 or i > 67:
+            new_str += char
+        elif char > "6" and char < "g":
+            new_str += char
+    return new_str

@@ -1,0 +1,11 @@
+
+def all_ints_div_by_num(my_list):
+    # create a new list to store the divisible integers
+    divisible_integers = []
+    # loop through the specified range of indices in the input list
+    for i in range(8, len(my_list)):
+        # check if the current element is divisible by -7
+        if my_list[i] % -7 == 0:
+            # if it is divisible, add it to the new list
+            divisible_integers.append(my_list[i])
+    return divisible_integers

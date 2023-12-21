@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(tup):\n    if len(tup) <= 67:\n        return \"Tuple is less than 68 elements\"\n    x = tup[67]\n    left_truncatable_primes = []\n    \n    for num in range(2, x):\n        if '0' in str(num): \n            continue\n        else:\n            num_str = str(num)\n            count = len(num_str)\n            for i in range(len(num_str)):\n                if isprime(int(num_str[i:])):\n                    count -= 1\n            if count == 0:\n                left_truncatable_primes.append(num)\n\n    left_truncatable_primes.sort(reverse=True)\n    return left_truncatable_primes\n```\nPlease note that for large values of x it can take quite a long time to calculate.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690989076,
+  "id": "chatcmpl-7j7nI3DiiTUoj8mynswaPWBs9Rmwp",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 179,
+    "prompt_tokens": 146,
+    "total_tokens": 325
+  }
+}

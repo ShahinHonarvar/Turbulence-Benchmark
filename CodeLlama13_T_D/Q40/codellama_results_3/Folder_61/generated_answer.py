@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(distinct_characters: str) -> list[str]:
+    """Return a list of exactly 66 characters of the given string with the smallest ASCII values, sorted in descending order."""
+    return sorted(distinct_characters, reverse=True)[:66]

@@ -1,0 +1,27 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[50]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_right_truncatable_prime(i):
+list.append(i)
+return sorted(list, reverse=True)
+def is_prime(n):
+for i in range(2, n):
+if n % i == 0:
+return False
+return True
+
+def is_right_truncatable_prime(n):
+while len(str(n)) > 1:
+if str(n)[-1] == '0':
+break
+n = int(str(n)[:-1])
+if not is_prime(n):
+return False
+return True
+```
+This code defines a function `all_right_truncatable_prime` that takes a tuple of positive integers as input. The function then extracts the integer at index 50 in the tuple, which we will call `x`.
+The function first checks if there is any such right-truncatable prime number less than `x`, and returns an empty list if not. If there is a such right-truncatable prime number, it then appends it to a list called `list`.
+After appending all the right-truncatable prime numbers less than `x` to the list, the function sorts the list in descending order and returns it.
+The function also defines two additional functions: `is_prime`, which checks if a number is prime or not, and `is_right_truncatable_prime`, which checks if a number is right-truncatable prime or not.

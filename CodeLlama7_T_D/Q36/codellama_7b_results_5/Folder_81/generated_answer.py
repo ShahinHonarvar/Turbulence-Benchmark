@@ -1,0 +1,12 @@
+ def filter_chars(s):
+    start = 51
+    end = 76
+    result = []
+    for i in range(len(s)):
+        if start <= i < end:
+            if s[i].isalpha() and (s[i] >= '5' and s[i] < 'f'):
+                continue
+
+        result.append(s[i])
+
+    return "".join(result)

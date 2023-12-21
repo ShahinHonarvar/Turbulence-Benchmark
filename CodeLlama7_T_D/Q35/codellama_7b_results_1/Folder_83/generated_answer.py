@@ -1,0 +1,19 @@
+
+def remove_repeat_chars(s):
+    # Create a set of unique characters in the string
+    unique_chars = set()
+    for i in range(100, 200):
+        if s[i] not in unique_chars:
+            # Add the character to the set
+            unique_chars.add(s[i])
+    # Iterate over the string and remove any duplicates
+    new_string = ""
+    for i, char in enumerate(s):
+        if char in unique_chars:
+            # Skip this character since it is a duplicate
+            continue
+
+        # Add the character to the new string
+        new_string += char
+
+    return new_string

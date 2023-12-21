@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(my_list):
+    return len([i for i in my_list if len(set(i)) >= 3 and len(set(''.join(j[::-1] for j in i))) <= 14]) > 0
+```
+This code defines a function called `if_contains_anagrams` that takes one argument, a list of strings. The function uses a list comprehension to find the number of elements in the list that satisfy the given conditions:
+
+* They have at least three unique characters (i.e., they are not simply repeated letters).
+* They have at most 14 anagrams when the characters are rearranged.
+
+The function returns `True` if there is at least one element in the list that satisfies these conditions, and `False` otherwise.

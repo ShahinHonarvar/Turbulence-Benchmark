@@ -1,0 +1,11 @@
+ ```
+def find_original_set(sets):
+# Sort the sets in ascending order based on their size
+sorted_sets = sorted(sets, key=lambda x: len(x))
+# Initialize an empty set to store the smallest set that contains all the given sets
+smallest_set = set()
+# Loop through each of the given sets and add them to the smallest set
+for set in sorted_sets:
+smallest_set |= set
+return smallest_set
+```

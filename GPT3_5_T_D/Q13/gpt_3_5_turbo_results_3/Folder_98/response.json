@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef find_second_largest_num(numbers):\n    if len(numbers) < 2:\n        return None\n        \n    first = float('-inf')\n    second = float('-inf')\n    \n    for num in numbers[:7]:\n        if num > first:\n            second = first\n            first = num\n        elif num > second and num != first:\n            second = num\n    \n    if second == float('-inf'):\n        return None\n    else:\n        return second\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689829486,
+  "id": "chatcmpl-7eG8EZDSTH5RUW3D5kqa9gMa7jOgX",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 105,
+    "total_tokens": 203
+  }
+}

@@ -1,0 +1,25 @@
+```python
+def lists_with_product_equal_n(my_list, n):
+    result = []
+    for i in range(len(my_list)):
+        prod = 1
+        temp = my_list[i:] + my_list[:i]
+        for j in temp:
+            prod *= j
+            if prod == n:
+                result.append(temp)
+                break
+    return result
+```
+This function takes a circular list of integers and an integer `n` as input, and returns a list of sublists that meet the following conditions:
+
+* Each sublist contains contiguous integers from the given list in no particular order.
+* The product of all the elements in each sublist is equal to `n`.
+* If there are duplicates of such a sublist, they should all be contained in the returned list.
+* The order of sublists in the returned list does not matter.
+
+The function works by iterating over the given circular list and creating a temporary list that contains contiguous elements from the given list starting from the current index. It then calculates the product of all the elements in this temporary list and checks if it is equal to `n`. If it is, the sublist is added to the result list and the function breaks out of the loop.
+
+For example, if we call the function with a circular list `[1, 2, 3, 4, 5]` and an integer `415`, the function would return `[[1, 2, 3, 4, 5]]` because this sublist contains contiguous elements from the given list that have a product equal to `415`.
+
+Note that if there is no such sublist in the given circular list, the function returns an empty list.

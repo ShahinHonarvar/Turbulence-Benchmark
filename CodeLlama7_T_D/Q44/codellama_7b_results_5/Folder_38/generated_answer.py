@@ -1,0 +1,26 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input list is valid
+    if not my_list or len(my_list) < 30:
+        return set()
+    # Initialize an empty set to store the composite numbers
+    composite_numbers = set()
+
+    # Iterate through the list and check for composite numbers between index 29 to 93, both inclusive
+    for i in range(29, 94):
+        if is_composite(my_list[i]):
+            composite_numbers.add(my_list[i])
+
+    # Return the set of all composite numbers between index 29 to 93, both inclusive
+    return composite_numbers
+
+# Define a function to check if a number is composite or not
+def is_composite(n):
+    if n == 1:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return True
+
+    return False

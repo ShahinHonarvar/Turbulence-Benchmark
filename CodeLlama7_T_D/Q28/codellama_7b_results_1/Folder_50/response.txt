@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(s):
+# Check if the input string is valid
+if len(s) < 25 or len(s) > 88:
+raise ValueError("Invalid input string")
+
+# Get a list of all characters in the input string
+characters = [c for c in s]
+
+# Sort the list of characters by ASCII value
+sorted_characters = sorted(characters, key=ord)
+
+# Return the 11th smallest character
+return sorted_characters[10]
+```
+This code defines a function `return_nth_smallest_ascii` that takes a single argument of type `str`. The function first checks if the input string is valid by checking its length. If the length is not within the expected range, the function raises a `ValueError`.
+Once the input string is validated, the function extracts all the characters from the input string and stores them in a list of characters. It then sorts this list of characters by their ASCII value using the `sorted()` function with a custom key function that returns the ASCII value of each character.
+Finally, the function returns the 11th smallest character in the sorted list of characters by accessing its index at position 10.

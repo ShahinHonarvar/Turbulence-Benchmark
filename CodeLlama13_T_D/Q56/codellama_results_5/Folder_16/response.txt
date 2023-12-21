@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)+1):
+            substring = s[i:j]
+            if len(substring) == 124 and not any(c in substring for c in substrings):
+                substrings.append(substring)
+    return substrings
+```
+This code uses two nested loops to iterate over all possible starting indices i and ending indices j of the substrings. For each pair of indices, it extracts a substring from the input string s using the slice notation s[i:j]. If the length of the substring is equal to 124 and it does not contain any duplicate characters, it appends it to the list of substrings. Finally, the function returns the list of all distinct substrings.

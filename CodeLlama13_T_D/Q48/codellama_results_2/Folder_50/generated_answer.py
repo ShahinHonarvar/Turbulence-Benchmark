@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(tuple):
+    a, b = tuple[13], tuple[76]
+    sum = 0
+    for i in range(a+1, b-1):
+        if not (i in tuple):
+            sum += 1
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+    else:
+        return bin(sum)[2:]

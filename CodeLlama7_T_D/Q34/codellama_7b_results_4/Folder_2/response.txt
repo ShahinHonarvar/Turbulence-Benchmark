@@ -1,0 +1,17 @@
+ Here's the Python code for the `find_original_set` function:
+```
+def find_original_set(sets):
+    # Initialize the smallest set as the first element in the list of sets
+    smallest_set = sets[0]
+
+    # Loop through each element in the list of sets and compare it with the smallest set found so far
+
+    for i in range(1, len(sets)):
+        if issubset(smallest_set, sets[i]):
+            smallest_set = sets[i]
+
+    return smallest_set
+```
+This code defines a function `find_original_set` that takes a list of sets as input. The function returns the smallest set in the list such that each element is a subset of it.
+The code first initializes the smallest set to be the first element in the list of sets. It then loops through each element in the list of sets and compares it with the smallest set found so far using the `issubset()` function. If an element is a subset of the smallest set, it updates the smallest set to that element.
+The code finally returns the smallest set found in the loop.

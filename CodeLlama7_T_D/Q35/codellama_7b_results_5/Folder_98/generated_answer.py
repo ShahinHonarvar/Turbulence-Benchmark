@@ -1,0 +1,17 @@
+ def remove_repeat_chars(s):
+    # Create a dictionary to keep track of characters
+    char_dict = {}
+    # Loop through each character in the string
+    for char in s:
+        # If the character is already in the dictionary, increment its count
+        if char in char_dict:
+            char_dict[char] += 1
+        # Otherwise, add it to the dictionary with a count of 1
+        else:
+            char_dict[char] = 1
+    # Loop through each character in the string again, this time checking its count in the dictionary
+    for i, char in enumerate(s):
+        # If the character's count is greater than 1, remove all occurrences of that character from the string
+        if char_dict[char] > 1:
+            s = s[:i] + s[i+1:]
+    return s

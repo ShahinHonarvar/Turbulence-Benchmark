@@ -1,0 +1,3 @@
+
+def insert_after_character(string):
+    return "".join([char if char != "S" else "2S" for char in string])

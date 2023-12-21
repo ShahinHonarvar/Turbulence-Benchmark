@@ -1,0 +1,15 @@
+ def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over the characters of the given string
+    for char in s:
+        # If the character is between indices 19 and 22 (both inclusive) and is greater than or equal to ']' and smaller than or equal to 't', add it to the filtered_chars list
+        if (19 <= s.index(char)) and (s.index(char) <= 22) and (ord(']') <= ord(char)) and (ord(char) <= ord('t')):
+            filtered_chars.append(char)
+
+    # Join the filtered characters back into a string
+    filtered_string = "".join(filtered_chars)
+
+    # Return the altered string
+    return filtered_string

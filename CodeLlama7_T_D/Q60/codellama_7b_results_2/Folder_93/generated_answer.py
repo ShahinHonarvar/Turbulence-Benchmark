@@ -1,0 +1,51 @@
+ def all_left_right_truncatable_prime(x):
+    # create a list of all prime numbers less than or equal to x
+    prime_list = []
+    for i in range(2, x + 1):
+        if is_prime(i):
+            prime_list.append(i)
+    # create an empty list to store the final output
+    final_output = []
+    # loop through each number in the prime_list and check if it is a left-and-right-truncatable prime number
+    for i in range(len(prime_list)):
+        current_number = prime_list[i]
+        # check if the current number is a left-and-right-truncatable prime number
+        if is_left_right_truncatable_prime(current_number):
+            final_output.append(current_number)
+    # sort the final output list in ascending order
+    final_output = sorted(final_output)
+    return final_output
+
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # check if the number contains any zeroes
+    if '0' in str(n):
+        return False
+
+    # check if the number is a prime number
+    if not is_prime(n):
+        return False
+
+    # loop through each digit of the number from left to right
+    for i in range(len(str(n)))):
+        current_digit = str(n)[i]
+        # check if the current digit is a 0
+        if current_digit == '0':
+            return False
+
+        # remove the leading leftmost and last rightmost digits from the number
+        new_number = n // (10 ** i) * (10 ** (len(str(n)) - 1)))
+        # check if the number is still a prime number after removing the leading leftmost and last rightmost digits
+        if not is_prime(new_number):
+            return False
+
+    return True

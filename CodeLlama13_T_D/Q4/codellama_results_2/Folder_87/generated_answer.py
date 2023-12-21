@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(arr):
+    return [x for x in arr if 32 < x < 99 and x > 0]

@@ -1,0 +1,23 @@
+ ```
+def remove_repeat_chars(input_string):
+# Split the input string into a list of characters
+characters = list(input_string)
+# Create a dictionary to keep track of the unique characters and their indices in the original string
+unique_chars = {}
+# Iterate over the characters in the input string
+for i, char in enumerate(characters):
+# If the character is not already in the dictionary, add it and its index to the dictionary
+if char not in unique_chars:
+unique_chars[char] = [i]
+# Otherwise, if the character is already in the dictionary, append its new index to the list of indices for that character
+else:
+unique_chars[char].append(i)
+# Create a new string with the characters in the input string, but without any duplicates
+new_string = ""
+# Iterate over the unique characters in the input string
+for char in unique_chars:
+# Add the character to the new string, but only if it is not a duplicate
+if len(unique_chars[char]) == 1:
+new_string += char
+return new_string
+```

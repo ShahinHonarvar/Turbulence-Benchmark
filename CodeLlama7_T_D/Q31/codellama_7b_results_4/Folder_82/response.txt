@@ -1,0 +1,25 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has enough elements
+    if len(my_list) < 83:
+        return False
+
+    # Check if the element at index 83 is a perfect number
+    element = my_list[83]
+    if not isinstance(element, int):
+        return False
+
+    # Calculate the sum of the factors of the element at index 83
+    factor_sum = 0
+    for i in range(1, element // 2 + 1):
+        if element % i == 0:
+            factor_sum += i
+
+    # Check if the sum of the factors is equal to the element at index 83
+    if factor_sum == element:
+        return True
+
+    else:
+        return False
+
+```

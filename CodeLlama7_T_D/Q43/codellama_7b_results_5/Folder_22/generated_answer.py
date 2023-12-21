@@ -1,0 +1,21 @@
+
+def find_primes_between_indices(my_list):
+    # Find the first prime number in the list
+    first_prime = None
+    for i in range(33, len(my_list)):
+        if is_prime(my_list[i]):
+            first_prime = my_list[i]
+            break
+
+    # Find all prime numbers between indices 33 and 96 (inclusive)
+    prime_numbers = []
+
+    for i in range(33, 97):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the sorted list of prime numbers, or an empty list if no prime number exists in the specified range
+    return prime_numbers if first_prime else []

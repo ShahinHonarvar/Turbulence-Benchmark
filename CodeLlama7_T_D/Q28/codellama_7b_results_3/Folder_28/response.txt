@@ -1,0 +1,15 @@
+ ```
+def return_nth_smallest_ascii(string):
+# convert string to list of characters
+characters = list(string)
+# create a dictionary with the ASCII value of each character as key and the character as value
+ascii_dict = {}
+for char in characters:
+ascii_value = ord(char)
+if ascii_value not in ascii_dict:
+ascii_dict[ascii_value] = char
+# sort the dictionary by key (ASCII value)
+sorted_dict = sorted(ascii_dict.items(), key=lambda x: x[0])
+# return the character with the 16th smallest ASCII value
+return ascii_dict[list(sorted_dict)[15]]]
+```

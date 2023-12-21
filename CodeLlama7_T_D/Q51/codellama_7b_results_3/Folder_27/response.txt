@@ -1,0 +1,39 @@
+ ```
+def if_contains_anagrams(words):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    for i in range(len(words)):
+        # Get the current word
+        word = words[i]
+
+        # Check if the word is an anagram of any other word in the list
+        for j in range(len(words)):
+            # Skip checking with itself
+            if i == j:
+                continue
+
+            # Get the other word
+            other_word = words[j]
+
+            # Check if the two words are anagrams of each other
+            if is_anagram(word, other_word):
+                # If they are anagrams, add them to the dictionary
+                anagram_pairs[(word, other_word)] = 1
+                break
+
+    # Check if there are more than 113 pairs of anagrams in the list
+    return len(anagram_pairs) <= 113
+
+def is_anagram(word1, word2):
+    # Convert both words to lowercase
+    word1 = word1.lower()
+    word2 = word2.lower()
+
+    # Sort the letters of each word
+    sorted_word1 = "".join(sorted(word1))
+    sorted_word2 = "".join(sorted(word2))
+
+    # Check if the two words are anagrams of each other
+    return sorted_word1 == sorted_word2
+```

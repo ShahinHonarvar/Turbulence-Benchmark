@@ -1,0 +1,3 @@
+
+def all_odd_ints_inclusive(my_list):
+    return [x for x in my_list if 1 <= x % 2 == 1 and x <= 5]

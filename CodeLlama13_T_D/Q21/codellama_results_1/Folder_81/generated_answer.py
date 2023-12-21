@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(arr):
+    return [i for i in arr if i % 5 == 0][:3]

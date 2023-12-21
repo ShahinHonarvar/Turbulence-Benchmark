@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return ''.join(['u' + char if char == 'u' else char for char in string])

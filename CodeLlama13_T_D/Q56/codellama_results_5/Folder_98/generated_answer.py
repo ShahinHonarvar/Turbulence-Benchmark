@@ -1,0 +1,9 @@
+
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i, len(s) - 9):
+            substring = s[j:j+10]
+            if len(set(substring)) == 10 and all(c != '.' for c in substring):
+                substrings.append(substring)
+    return substrings

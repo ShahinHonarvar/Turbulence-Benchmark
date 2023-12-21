@@ -1,0 +1,17 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    total = 0
+    divisible_ints = []
+
+    # Loop through the list and check if each integer is divisible by either -2 or 3
+    for i in range(len(my_list)):
+        if my_list[i] % -2 == 0 or my_list[i] % 3 == 0:
+            divisible_ints.append(my_list[i])
+
+    # Sum the integers that are divisible by either -2 or 3
+    for i in range(len(divisible_ints)):
+        total += divisible_ints[i]
+
+    # Return the sum of the divisible integers, or 0 if no such integers exist in the specified range
+    return total

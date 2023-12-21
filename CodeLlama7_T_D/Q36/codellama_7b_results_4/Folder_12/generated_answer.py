@@ -1,0 +1,18 @@
+
+def filter_chars(string):
+    # Create a list of characters between indices 32 and 84 (exclusive)
+    char_list = string[32:84]
+    # Initialize an empty list to store the filtered characters
+    filtered_char_list = []
+    # Iterate over the character list
+    for char in char_list:
+        # If the character is greater than 'm' and smaller than 'w', remove it from the string
+        if char > 'm' and char < 'w':
+            continue
+
+        # Otherwise, add the character to the filtered character list
+        else:
+            filtered_char_list.append(char)
+    # Join the filtered character list into a single string
+    filtered_string = "".join(filtered_char_list)
+    return filtered_string

@@ -1,0 +1,13 @@
+
+def return_n_greatest_chars(string):
+    # Split the string into a list of characters
+    char_list = list(string)
+
+    # Create a dictionary with character as key and ASCII value as value
+    char_ascii = {char: ord(char) for char in char_list}
+
+    # Sort the dictionary by value in descending order (greatest to least)
+    sorted_chars = sorted(char_ascii.items(), key=lambda x: x[1], reverse=True)
+
+    # Return a list of exactly 82 characters with the greatest ASCII values
+    return [char for char, _ in sorted_chars[:82]]

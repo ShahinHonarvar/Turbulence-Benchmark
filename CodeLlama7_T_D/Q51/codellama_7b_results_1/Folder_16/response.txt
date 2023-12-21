@@ -1,0 +1,14 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+                if anagram_pairs > 24:
+                    return False
+
+    return True
+```
+This code first loops through the list of strings and counts the number of anagram pairs. It then checks if there are more than 24 anagram pairs in the list, and returns false if so. Otherwise, it returns true.

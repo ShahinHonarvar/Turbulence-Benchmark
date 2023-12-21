@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nimport numpy as np\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    result = []\n    for x in range(rows):\n        for y in range(cols):\n            for xend in range(x, rows):\n                for yend in range(y, cols):\n                    submatrix = matrix[x:xend+1, y:yend+1]\n                    if np.sum(submatrix) == 616:\n                        result.append(submatrix)\n    return result\n```\nPlease note, this code could be slow for large size matrices as its time complexity is quadratic. A more efficient way could be using a prefix sum matrix but that would also increase the space complexity.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690904613,
+  "id": "chatcmpl-7ilozOmNtSMKe9qxdfUANdf8C0MKC",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 152,
+    "prompt_tokens": 121,
+    "total_tokens": 273
+  }
+}

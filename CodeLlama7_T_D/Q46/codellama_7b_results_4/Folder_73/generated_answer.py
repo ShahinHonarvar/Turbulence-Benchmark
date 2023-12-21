@@ -1,0 +1,26 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor (gcf) of three numbers using Euclid's algorithm
+    # Initialize variables
+    a = my_list[90]
+    b = my_list[84]
+    c = my_list[47]
+    # Find the greatest common divisor (gcd) of a and b
+    while b != 0:
+        temp = b
+        b = a % b
+        a = temp
+
+    # Initialize the gcf as the product of a and b
+    gcf = a * b
+
+    # Find the greatest common divisor (gcd) of c and the gcf
+    while c != 0:
+        if c % gcf == 0:
+            break
+
+        temp = gcf
+        gcf = c % gcf
+        c = temp
+
+    return gcf

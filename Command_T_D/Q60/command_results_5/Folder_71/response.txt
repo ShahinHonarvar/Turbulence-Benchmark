@@ -1,0 +1,47 @@
+[cohere.Generation {
+	id: 4902f643-4881-46f3-9d2d-7551ea009b55
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 22. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import re
+import itertools
+
+sys.setrecursionlimit(10**6)
+
+import bisect
+
+def all_left_right_truncatable_prime(x_range):
+    if x_range[0] <= 1:
+        return []
+    # inhabitants of x_range
+    # we need to check that a number is prime and left-right-truncatable
+    numbers = list(range(2, x_range[0]))
+    for n in numbers:
+        if not is_left_right_truncatable_prime(n):
+            break
+    # we need to check that a number is prime and left-right-truncatable
+    numbers = list(range(x_range[1] + 1, x_range[0] + 1))
+    for n in numbers:
+        if not is_left_right_truncatable_prime(n):
+            break
+    return sorted(set(numbers))
+
+def is_left_right_truncatable_prime(n):
+    if n < 2:
+        return False
+    if n < 10:
+        return True
+    if n < 100:
+        return True
+    if n < 1000:
+        return True
+    if n < 10000:
+        return True
+    if n < 100000:
+        return True
+    return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

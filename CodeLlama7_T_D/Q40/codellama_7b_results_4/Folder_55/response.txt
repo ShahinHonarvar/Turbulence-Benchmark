@@ -1,0 +1,9 @@
+ ```
+def return_n_smallest_chars(string, n=75):
+    # Create a list of tuples containing the ASCII value and character for each character in the string
+    char_tuples = [(ord(c), c) for c in string]
+    # Sort the list by the first element (ASCII value) in descending order
+    sorted_char_tuples = sorted(char_tuples, key=lambda x: x[0], reverse=True)
+    # Return the top n characters from the sorted list
+    return [c for a, c in sorted_char_tuples[:n]]
+```

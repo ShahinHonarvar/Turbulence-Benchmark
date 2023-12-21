@@ -1,0 +1,13 @@
+```
+def prime_factors(list):
+    return set(prime_factorize(list[459]))
+
+def prime_factorize(n):
+    if n <= 1:
+        return []
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            yield i
+            for j in prime_factorize(n // i):
+                yield j
+```

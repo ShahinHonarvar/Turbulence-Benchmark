@@ -1,0 +1,7 @@
+
+def all_ints_div_by_both_two_nums(arr):
+    result = []
+    for i in range(46, 92):
+        if arr[i] % 67 == 0 and arr[i] % 15 == 0:
+            result.append(arr[i])
+    return result

@@ -1,0 +1,12 @@
+```python
+def all_left_truncatable_prime(numbers):
+    x = numbers[81]
+    primes = []
+    for i in range(2, x):
+        if is_prime(i) and not contains_zero(str(i)):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as an argument. The function returns a list of all left-truncatable prime numbers less than the integer at index 81 in the input tuple, sorted in descending order.
+
+The `is_prime` function is used to check if a number is prime, and the `contains_zero` function is used to check if a string contains any zeros. The `sorted` function is used to sort the list of prime numbers in descending order.

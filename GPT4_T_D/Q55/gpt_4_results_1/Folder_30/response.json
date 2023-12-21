@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(nums):\n    def find_sublists(nums, target):\n        left = 0\n        product = 1\n        result = []\n        for right in range(len(nums)):\n            product *= nums[right]\n            while product > target and left < right:\n                product /= nums[left]\n                left += 1\n            if product == target:\n                result.append(nums[left:right+1])\n        return result\n    \n    result = []\n    circular_nums = deque(nums)\n    for _ in range(len(nums)):\n        result.extend(find_sublists(list(circular_nums), 99))\n        circular_nums.rotate(1)\n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690079181,
+  "id": "chatcmpl-7fJ5ZUwDyKoTsBzxdBvUPxkt7aUae",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 142,
+    "prompt_tokens": 193,
+    "total_tokens": 335
+  }
+}

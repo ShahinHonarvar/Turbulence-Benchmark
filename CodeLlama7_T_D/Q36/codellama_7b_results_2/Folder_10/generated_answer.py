@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(35, 60):
+        if s[i] > '!' and s[i] < 'B':
+            s = s[:i] + s[i+1:]
+    return s

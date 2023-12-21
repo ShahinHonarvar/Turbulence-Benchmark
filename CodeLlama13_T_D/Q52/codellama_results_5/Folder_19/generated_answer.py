@@ -1,0 +1,11 @@
+
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string)):
+        if len(string[i:]) < 67:
+            continue
+        substr = string[i:i+67]
+        rev_substr = reversed(substr)
+        if ''.join(rev_substr) == substr and all(c.isalpha() for c in substr):
+            palindromes.add(substr)
+    return palindromes

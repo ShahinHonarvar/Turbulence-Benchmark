@@ -1,0 +1,22 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ""
+
+    # Iterate over the characters in the input string
+    for char in s:
+
+        # Check if the character is between 32 and 84 (exclusive)
+        if ord(char) >= 32 and ord(char) < 85:
+
+            # Check if the character is greater than 'm' and smaller than 'w'
+            if char > 'm' and char < 'w':
+
+                # Skip this character in the new string
+                continue
+
+        # Add the character to the new string
+        new_str += char
+
+    # Return the filtered string
+    return new_str

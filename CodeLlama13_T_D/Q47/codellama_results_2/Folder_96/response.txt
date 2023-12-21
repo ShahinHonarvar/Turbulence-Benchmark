@@ -1,0 +1,22 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 100 to index 300, both inclusive
+    palindromes = []
+    for i in range(100, 300 + 1):
+        substr = string[i:i+1]
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+    
+    # Filter palindromes by length and only consider English letters
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if 50 <= len(palindrome) <= 100 and all(c.isalpha() for c in palindrome):
+            filtered_palindromes.append(palindrome)
+    
+    # Return empty set if no palindrome with the length specified occurs in the specified index range
+    if not filtered_palindromes:
+        return set()
+    
+    # Otherwise, return the set of all found palindromes
+    return set(filtered_palindromes)
+```

@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([char for char in string if char not in set('Y', 's') or char < 'Y' or char > 's'])

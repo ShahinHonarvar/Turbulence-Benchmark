@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {palindrome for palindrome in re.findall('[a-zA-Z]{92}', string) if palindrome == palindrome[::-1]}

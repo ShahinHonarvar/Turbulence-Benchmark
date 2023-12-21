@@ -1,0 +1,23 @@
+ Here is a function that takes a list of positive integers as an argument and returns the set of all prime factors of the integer at index 459:
+```python
+def prime_factors(my_list):
+    # Calculate the product of all elements in the list
+    product = 1
+    for i in my_list:
+        product *= i
+
+    # Check if the product is a prime number
+    if isprime(product):
+        return {product}
+
+    # Otherwise, find the prime factors of the product
+    else:
+        prime_factors = set()
+        for i in range(2, int(math.sqrt(product)) + 1)):
+            while product % i == 0:
+                prime_factors.add(i)
+                product /= i
+
+        return prime_factors
+```
+This function first calculates the product of all elements in the list using a nested loop. It then checks if this product is a prime number using the `isprime` function. If it is not, the function finds the prime factors of the product by iterating over the range of numbers from 2 to the square root of the product and checking if each number divides into the product without leaving a remainder. The function returns the set of all prime factors of the integer at index 459.

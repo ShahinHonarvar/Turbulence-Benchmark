@@ -1,0 +1,14 @@
+ ```
+def find_n_th_smallest_num(numbers):
+    # Check if the input is a list of distinct numbers
+    if not all(x != y for x in numbers for y in numbers[:x]):
+        raise ValueError("Input must be a list of distinct numbers")
+
+    # Find the 6th smallest number from index 42 to index 67, both inclusive
+    return sorted(numbers[42:67+1])[5]
+```
+Explanation:
+
+The function `find_n_th_smallest_num` takes a list of distinct numbers as input and returns the 6th smallest number from index 42 to index 67, both inclusive.
+To achieve this, we first check if the input is a list of distinct numbers using a generator expression with two loops (`x != y for x in numbers for y in numbers[:x]`). If the input is not a list of distinct numbers, we raise a `ValueError` to indicate that the input must be a list of distinct numbers.
+Once we have verified that the input is a list of distinct numbers, we sort the list using the `sorted()` function and then return the 6th smallest number from index 42 to index 67, both inclusive, by indexing into the sorted list (`[5]`) after applying the slice notation (`[42:67+1]`).

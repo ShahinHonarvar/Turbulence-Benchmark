@@ -1,0 +1,14 @@
+
+def sum_in_range(my_list):
+    # Initialize a variable to store the sum
+    total = 0
+
+    # Loop through the given list of integers
+    for num in my_list:
+        # Check if the current number is between -616 and -205, both inclusive
+        if -616 <= num <= -205:
+            # If it is, add it to the total sum
+            total += num
+
+    # Return the total sum of all integers from the given list that are between -616 and -205, both inclusive. If there are no such integers, return 0.
+    return total

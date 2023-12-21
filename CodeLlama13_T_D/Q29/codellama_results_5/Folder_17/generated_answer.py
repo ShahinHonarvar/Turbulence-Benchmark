@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return max([x for x in range(1, numbers[69]) if numbers[40] % x == 0], default=1)

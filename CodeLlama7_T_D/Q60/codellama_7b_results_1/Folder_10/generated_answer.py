@@ -1,0 +1,58 @@
+ def all_left_right_truncatable_prime(tuple):
+    x = tuple[38]
+    left_truncatable_prime_numbers = []
+    right_truncatable_prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i) and has_no_zeroes(i) and is_left_right_truncatable_prime(i)):
+            left_truncatable_prime_numbers.append(i)
+    for i in range(2, x + 1):
+        if is_prime(i) and has_no_zeroes(i) and is_right_left_truncatable_prime(i)):
+            right_truncatable_prime_numbers.append(i)
+    return left_truncatable_prime_numbers + right_truncatable_prime_numbers
+def has_no_zeroes(number):
+    while number > 0:
+        if number % 10 == 0:
+            return False
+
+        number = number // 10
+
+    return True
+
+
+def is_left_right_truncatable_prime(number):
+    if not is_prime(number):
+        return False
+
+    for i in range(2, number + 1):
+        if is_prime(i) and has_no_zeroes(i) and is_left_right_truncatable_prime(i)):
+            return True
+
+    return False
+
+
+def is_right_left_truncatable_prime(number):
+    if not is_prime(number):
+        return False
+
+    for i in range(2, number + 1):
+        if is_prime(i) and has_no_zeroes(i) and is_right_left_truncatable_prime(i)):
+            return True
+
+    return False
+
+
+def is_prime(number):
+
+    if number < 2:
+
+        return False
+
+
+    for i in range(2, int(number ** 0.5) + 1):
+
+        if number % i == 0:
+
+            return False
+
+
+    return True

@@ -1,0 +1,8 @@
+
+def find_second_smallest_num(distinct_numbers):
+    sorted_nums = sorted(distinct_numbers)
+    second_smallest = None
+    for i in range(62, 64):
+        if i < len(sorted_nums):
+            second_smallest = sorted_nums[i]
+    return second_smallest

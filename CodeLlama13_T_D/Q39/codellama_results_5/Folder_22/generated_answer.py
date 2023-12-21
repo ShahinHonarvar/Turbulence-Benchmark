@@ -1,0 +1,7 @@
+
+def return_n_greatest_chars(string):
+    # sort the string in ascending order based on ASCII value
+    sorted_list = sorted(string, key=ord)
+    
+    # return the last 76 characters of the sorted list
+    return sorted_list[-76:]

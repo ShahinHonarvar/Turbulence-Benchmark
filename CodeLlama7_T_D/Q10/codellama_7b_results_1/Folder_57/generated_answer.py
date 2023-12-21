@@ -1,0 +1,14 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Check if the input is a list of integers
+    if not all(isinstance(x, int) for x in my_list)):
+        raise ValueError("Input must be a list of integers")
+    # Find the first and last odd indices in the list
+    first_odd_index = next((i for i, x in enumerate(my_list) if x % 2 == 1), None)
+    last_odd_index = next((i for i, x in enumerate(my_list) if x % 2 == 1), None)
+    # Return an empty list if no odd integers exist in the specified range
+    if first_odd_index is None or last_odd_index is None:
+        return []
+
+    # Return the list of all odd integers from index 18 to index 37, both exclusive
+    return [my_list[i] for i in range(first_odd_index + 1, last_odd_index)]

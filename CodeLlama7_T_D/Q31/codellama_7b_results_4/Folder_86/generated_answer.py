@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 194 elements
+    if len(my_list) < 194:
+        return False
+
+    # Check if the element at index 194 is a perfect number
+    else:
+        perfect_number = my_list[194]
+        for i in range(1, perfect_number // 2 + 1):
+            if perfect_number % i == 0:
+                # Check if the sum of the divisors is equal to the number itself
+                if sum(i for i in range(1, perfect_number // 2 + 1) if perfect_number % i == 0) == perfect_number:
+                    return True
+
+        return False

@@ -1,0 +1,11 @@
+
+def find_second_largest_num(distinct_nums):
+    if len(distinct_nums) <= 9:
+        return None
+    sorted_nums = sorted(distinct_nums, reverse=True)
+    second_largest = sorted_nums[8]
+    for i in range(9, len(sorted_nums)):
+        if sorted_nums[i] < second_largest:
+            return None
+        else:
+            return second_largest

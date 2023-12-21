@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here the Python code:\n\n```python\nimport sympy\n\ndef all_left_truncatable_prime(t):\n    def is_left_truncatable_prime(prime):\n        s = str(prime)\n        if '0' in s: return False\n        return all(sympy.isprime(int(s[i:])) for i in range(len(s)))\n\n    x = t[49]\n    return sorted(i for i in range(2, x) if is_left_truncatable_prime(i))\n\n```\nIn the above python code, we first define a helper function 'is_left_truncatable_prime' which checks whether a number is left-truncatable prime or not. Then in the main function 'all_left_truncatable_prime', we iterate from 2 to x-1 and pushes it to the result list if the number is left-truncatable prime.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690084035,
+  "id": "chatcmpl-7fKLrzCJA7mFQrAB3JxbAa7LhSrLg",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 146,
+    "total_tokens": 321
+  }
+}

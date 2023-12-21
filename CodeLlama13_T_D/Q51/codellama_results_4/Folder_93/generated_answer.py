@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(my_list):
+    for i in range(len(my_list)):
+        for j in range(i+1, len(my_list)):
+            if anagram_checker(my_list[i], my_list[j]):
+                return True
+    return False
+
+def anagram_checker(str1, str2):
+    if len(str1) < 3 or len(str2) < 3:
+        return False
+    
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    s1 = ""
+    for c in str1.lower():
+        if c in letters:
+            s1 += c
+    s2 = ""
+    for c in str2.lower():
+        if c in letters:
+            s2 += c
+    
+    if len(s1) != len(s2):
+        return False
+    
+    for i in range(len(s1)):
+        if s1[i] not in s2:
+            return False
+    
+    return True

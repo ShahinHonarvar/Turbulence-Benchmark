@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    num_anagrams = 0
+    for s1 in my_list:
+        for s2 in my_list:
+            if len(s1) < 3 or len(s2) < 3:
+                continue
+
+            if sorted(s1.lower()) == sorted(s2.lower()):
+                num_anagrams += 1
+    # Check if there are at most 21 pairs of anagrams in the list
+    return num_anagrams <= 21

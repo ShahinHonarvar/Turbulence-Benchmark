@@ -1,0 +1,13 @@
+ ```
+def all_even_ints_exclusive(my_list):
+    # Get the range of even integers in the list
+    start = next((i for i, x in enumerate(my_list) if x % 2 == 0), None)
+    end = next((i for i, x in enumerate(my_list[90:]) if x % 2 == 0), None)
+    # Return an empty list if no even integers exist in the range
+    if start is None or end is None:
+        return []
+
+    # Return the list of all even integers from index 90 to index 200, both exclusive
+
+    return [x for x in my_list[start + 90:end + 90] if x % 2 == 0]
+```

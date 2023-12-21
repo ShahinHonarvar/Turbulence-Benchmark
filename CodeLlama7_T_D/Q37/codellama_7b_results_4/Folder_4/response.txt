@@ -1,0 +1,17 @@
+ ```
+def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate through each character in the string
+    for char in s:
+        # Check if the current character is between indices 19 and 33, both inclusive
+        if 19 <= len(filtered_chars) + 1 <= 33:
+            # Check if the current character is greater than or equal to 'S' and smaller than or equal to '{', both inclusive
+            if char >= 'S' and char <= '{':
+                # If the above conditions are true, remove all occurrences of the current character from the string
+                filtered_chars = filtered_chars[:filtered_chars.index(char)] + filtered_chars[filtered_chars.index(char) + 1:]
+
+    # Return the altered string with all filtered characters removed
+    return "".join(filtered_chars)
+```

@@ -1,0 +1,31 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the string is already a key in the dictionary
+        if lowercase_string not in anagram_pairs:
+            # If it's not, add it as a new key with a value of 1
+            anagram_pairs[lowercase_string] = 1
+
+        else:
+            # If it is, increment the value by 1
+            anagram_pairs[lowercase_string] += 1
+
+    # Iterate over the dictionary and check if there are at least 48 pairs of anagrams with a length of at least three
+    for key in anagram_pairs:
+        if len(key) >= 3 and anagram_pairs[key] >= 48:
+            return True
+
+    # If no pairs of anagrams were found, return False
+    return False
+```

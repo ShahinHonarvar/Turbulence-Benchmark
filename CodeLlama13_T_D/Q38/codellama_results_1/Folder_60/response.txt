@@ -1,0 +1,12 @@
+```python
+def find_subset_of_length_n(elements):
+    return len(subsets(elements)) == 88
+
+def subsets(elements, size=None):
+    if not elements:
+        yield []
+    else:
+        for i in range(1, len(elements)):
+            for subset in subsets(elements[i:]):
+                yield [elements[0]] + subset
+```

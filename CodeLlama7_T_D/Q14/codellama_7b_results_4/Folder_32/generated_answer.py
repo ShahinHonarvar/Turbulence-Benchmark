@@ -1,0 +1,23 @@
+
+def find_second_smallest_num(my_list):
+    # Check if list is empty or has fewer than two elements
+    if len(my_list) < 2:
+        return None
+
+    # Sort the list in ascending order
+    my_list.sort()
+
+    # Initialize variables to keep track of the second smallest element
+    second_smallest = None
+    smallest = my_list[0]
+
+    # Iterate through the list from index 32 to index 35, both inclusive
+    for i in range(32, 36):
+        # Check if the current element is smaller than the smallest element so far
+        if my_list[i] < smallest:
+            # If it is, update the variables to keep track of the new second smallest element
+            second_smallest = smallest
+            smallest = my_list[i]
+
+    # Return the second smallest element from index 32 to index 35, both inclusive, or None if there is no such element
+    return second_smallest

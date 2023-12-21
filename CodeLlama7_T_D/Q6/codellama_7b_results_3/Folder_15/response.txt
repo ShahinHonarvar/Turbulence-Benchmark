@@ -1,0 +1,12 @@
+ ```
+def all_neg_ints_exclusive(my_list):
+    # Find the first negative integer in the list
+    first_negative_index = next((i for i, x in enumerate(my_list) if x < 0)), None)
+    # If no negative integers exist in the specified range, return an empty list
+    if first_negative_index is None:
+        return []
+
+    # Return the list of all negative integers from index 0 to index 3, both exclusive
+    return my_list[first_negative_index:]
+```
+This code defines a function called `all_neg_ints_exclusive` that takes a list of integers as input and returns a new list containing all the negative integers in the original list, except for the first one. The function uses the built-in `enumerate()` function to iterate over the elements of the list and find the first negative integer. If no negative integers exist in the specified range, the function returns an empty list.

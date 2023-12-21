@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    result = []\n    \n    for rdimension in range(rows+1):\n        for cdimension in range(cols+1):\n            for x in range(rows-rdimension+1):\n                for y in range(cols-cdimension+1):\n                    submatrix = matrix[x:xdimension+x, y:y+cdimension]\n                    sum_submatrix = np.sum(submatrix)\n                    if sum_submatrix == -261:\n                        result.append(submatrix)\n                    \n    return result\n```\nPlease note that this code works under the assumption that submatrices of size 1x1 are also considered and since nothing was mentioned about the maximum or minimum size of submatrices, it will consider all possible submatrices of all sizes. Also, it will return submatrices, not indices. Fine tuning will be necessary according to needs and specifications not mentioned in the problem. This solution also may be suboptimal for very large matrices due to its time complexity.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093495,
+  "id": "chatcmpl-7jYxT3topFu3i6mcmxIAsjTxbgbZP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 217,
+    "prompt_tokens": 121,
+    "total_tokens": 338
+  }
+}

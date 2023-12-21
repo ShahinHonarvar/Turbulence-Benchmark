@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    s = list(s)
+    for i in range(23, 83):
+        if s[i].isalpha() and 'f' < s[i] < 'o':
+            s[i:] = [c for c in s[i:] if c != s[i]]
+    return ''.join(s)

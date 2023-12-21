@@ -1,0 +1,9 @@
+ def filter_chars(s):
+    result = ""
+    for i in range(3, len(s)):
+        if s[i] > "*" and s[i] < "E":
+            continue
+
+        result += s[i]
+
+    return result

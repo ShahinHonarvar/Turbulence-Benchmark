@@ -1,0 +1,18 @@
+ ```
+def all_odd_ints_inclusive(my_list):
+    # find the index of the first odd integer
+    for i in range(43, len(my_list)):
+        if my_list[i] % 2 != 0:
+            break
+
+    # find the index of the last odd integer
+    for j in range(len(my_list)-1, -1, -1):
+        if my_list[j] % 2 != 0:
+            break
+
+    # return the list of all odd integers from the specified range
+    return [my_list[i] for i in range(43, j+1)]
+```
+This code defines a function `all_odd_ints_inclusive` that takes a single argument, a list of integers. The function returns the list of all odd integers from index 43 to index 86, both inclusive. If no odd integers exist in the specified range, the function will return an empty list.
+The code first loops through the indices of the input list to find the index of the first odd integer, starting at index 43 and moving forward. Once the index of the first odd integer is found, the code then loops backwards through the indices of the input list to find the index of the last odd integer, stopping when it finds an odd integer or reaches the end of the list.
+Once the indices of the first and last odd integers have been found, the code uses slicing to extract the sublist of odd integers from the specified range. The resulting sublist is then returned by the function.

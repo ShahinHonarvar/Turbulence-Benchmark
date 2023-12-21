@@ -1,0 +1,15 @@
+ ```
+def filter_chars(s):
+    # Create a list of characters from the given string
+    char_list = list(s)
+    # Iterate over the characters in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between indices 19 and 22, both inclusive
+        if (i >= 19 and i <= 22):
+            # Check if the current character is greater than or equal to ']' and smaller than or equal to 't'
+            if (char_list[i] >= ']' and char_list[i] <= 't'):
+                # Remove all occurrences of the current character from the string
+                char_list = [c for c in s if c != char_list[i]]
+    # Join the list of characters back into a string
+    return ''.join(char_list)
+```

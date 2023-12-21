@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(string):
+    return {pal for pal in set(string.split()) if len(pal) >= 41 and pal == pal[::-1]}

@@ -1,0 +1,14 @@
+ Here's a function that meets the requirements:
+```python
+def lists_with_product_equal_n(lst):
+    # Find all sublists with product equal to n
+    sublists = []
+    for i in range(len(lst)):
+        for j in range(i, len(lst)):
+            if lst[i] * lst[j] == n:
+                sublists.append(lst[i:j+1])
+    return sublists
+```
+This function takes a list of integers as input and returns all contiguous sublists with product equal to `n`. The returned list can be empty if no such sublist exists in the input list.
+For example, if we pass the list `[3, 4, 5, 6]` to this function with `n = 12`, it will return the sublists `[3, 4, 5]`, `[4, 5, 6]`, and `[5, 6]`.
+Note that we use the slicing notation to extract sublists from the input list. The syntax is as follows: `lst[i:j+1]`, where `i` and `j` are indices of elements in the list, and `+1` indicates that the slice includes the element at index `j`.

@@ -1,0 +1,11 @@
+[cohere.Generation {
+	id: f8f267f2-f1aa-4050-85fe-6219b0ae42c4
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_subset_of_length_n' that takes one argument, a set of elements, and returns the number of all its subsets of size 91.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_subset_of_length_n(s):
+    return {*s} | {x: 1 for x in s} | {k: v for k, v in s.items() if len(v) == 91} | {k: v for k, v in s.items() if len(v) == 91 and len(v) % 2 == 0} | {k: v for k, v in s.items() if len(v) == 91 and len(v) % 3 == 0} | {k: v for k, v in s.items() if len(v) == 91 and len(v) % 4 == 0}
+```
+	likelihood: None
+	token_likelihoods: None
+}]

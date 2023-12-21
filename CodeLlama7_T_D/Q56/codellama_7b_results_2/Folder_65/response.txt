@@ -1,0 +1,18 @@
+ ```
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - 80):
+
+        # Check if the substring of length 81 exists in the current position of the loop
+        if string[i:i+81] in substrings:
+            continue
+
+        # Add the substring to the list of substrings
+        substrings.append(string[i:i+81])
+
+    # Return the list of all distinct substrings of length 81 with no duplicate characters, or an empty list if such substrings do not exist in the given string.
+    return substrings
+```

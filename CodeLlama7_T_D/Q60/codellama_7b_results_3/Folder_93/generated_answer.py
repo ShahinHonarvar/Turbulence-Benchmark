@@ -1,0 +1,25 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x, checking if each number is a prime number and left-and-right-truncatable prime number
+    for i in range(1, x + 1):
+
+        # Check if i is a prime number using the Sieve of Eratosthenes algorithm
+        is_prime = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        # If i is a prime number and left-and-right-truncatable prime number, add it to the list of prime numbers
+        if is_prime:
+            for j in range(len(str(i)) - 1):
+                if str(i)[0] == "0" or str(i)[-1] == "0":
+                    break
+            else:
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order and return it
+    return sorted(prime_numbers)

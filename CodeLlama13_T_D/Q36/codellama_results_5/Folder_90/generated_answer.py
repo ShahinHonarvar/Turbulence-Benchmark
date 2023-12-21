@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_string = ''
+    for i, char in enumerate(string):
+        if 344 <= ord(char) <= 874 and char != 'f' and char != '~':
+            continue
+        else:
+            new_string += char
+    return new_string

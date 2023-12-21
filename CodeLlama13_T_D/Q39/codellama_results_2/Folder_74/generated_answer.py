@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string):
+    # create a list of tuples containing the character and its ASCII value
+    char_ascii = [(char, ord(char)) for char in set(string)]
+
+    # sort the list by the second element (ASCII value) in descending order
+    sorted_chars = sorted(char_ascii, key=lambda x: -x[1])[:5]
+
+    # return the first 5 elements of the sorted list
+    return [char for char, ascii_val in sorted_chars]

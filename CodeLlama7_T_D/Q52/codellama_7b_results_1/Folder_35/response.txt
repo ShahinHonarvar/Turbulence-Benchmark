@@ -1,0 +1,11 @@
+ ```
+def palindrome_of_length_n(string):
+# Case-insensitive comparison of the string and its reversed version
+if string == string[::-1]:
+# Find all substrings of length n in the string
+substrings = [s for s in re.findall(r"[a-zA-Z]{n}", string)]
+# Return only palindromes
+return {s for s in substrings if s == s[::-1]}
+else:
+return set()
+```

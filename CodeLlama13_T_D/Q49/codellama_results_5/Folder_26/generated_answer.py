@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string to an integer
+    decimal = int(binary, 2)
+    
+    # Initialize a variable to keep track of the current Fibonacci number
+    fibonacci = 0
+    
+    # Iterate through each digit in the binary representation string
+    for i in range(len(binary)):
+        # Check if the current digit is '1'
+        if binary[i] == '1':
+            # If it is, add the corresponding power of two to the Fibonacci number
+            fibonacci += 2 ** (len(binary) - i - 1)
+    
+    # Return true if the decimal integer is divisible by the 138th Fibonacci number
+    return fibonacci % 138 == 0

@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(mylist):
+    s = 0
+    for i in range(30,201):
+        if mylist[i] % -115 == 0 or mylist[i] % 115 == 0:
+            s += mylist[i]
+    return s

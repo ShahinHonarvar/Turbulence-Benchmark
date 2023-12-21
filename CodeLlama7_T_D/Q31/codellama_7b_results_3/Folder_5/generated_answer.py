@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the element at index 67 is a perfect number
+    for i in range(len(my_list)):
+        if my_list[i] == 67:
+            sum = 0
+            for j in range(1, my_list[i]):
+                if my_list[i] % j == 0:
+                    sum += j
+
+            if sum == my_list[i]:
+                return True
+
+    return False

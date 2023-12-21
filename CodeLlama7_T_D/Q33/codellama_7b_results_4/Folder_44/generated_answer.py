@@ -1,0 +1,10 @@
+ def return_vowels(my_string):
+    vowels = ["a", "e", "i", "o", "u"]
+    start_index = 46
+    end_index = 49
+    result = []
+    for i in range(start_index, end_index + 1):
+        char = my_string[i]
+        if char in vowels and char > "[" and char <= "p":
+            result.append(char)
+    return result

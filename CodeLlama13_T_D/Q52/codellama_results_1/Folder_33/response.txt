@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_n(string, n):
+    return set(s for s in re.findall("[a-zA-Z]{" + str(n) + "}", string) if s == s[::-1])
+```
+Note: This solution uses regular expressions to find all substrings of the given length and then checks each substring to see if it is a palindrome using the `==` operator. The `re` module is used to define the regular expression pattern for matching English letters, and the `findall()` method is used to extract all matching substrings from the input string. The `set()` constructor is used to create a set of all palindromes found in the string.

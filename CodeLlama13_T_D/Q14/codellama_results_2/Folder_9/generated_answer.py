@@ -1,0 +1,3 @@
+
+def find_second_smallest_num(numbers):
+    return sorted(numbers)[70:201][1] if len(sorted(numbers)[70:201]) > 1 else None

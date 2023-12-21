@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(strings):\n    def count_frequency(s):\n        freq = [0] * 26\n        for c in s.lower():\n            if c.isalpha():\n                freq[ord(c) - ord('a')] += 1\n        return tuple(freq)\n\n    count = 0\n    for i in range(len(strings)):\n        for j in range(i + 1, len(strings)):\n            if count_frequency(strings[i]) == count_frequency(strings[j]):\n                count += 1\n                if count > 84:\n                    return False\n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689863350,
+  "id": "chatcmpl-7eOwQBLoLPwoG3IZYu4o8Rtwt4WCH",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 139,
+    "total_tokens": 259
+  }
+}

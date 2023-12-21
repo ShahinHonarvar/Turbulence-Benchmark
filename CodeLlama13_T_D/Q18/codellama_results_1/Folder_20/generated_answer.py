@@ -1,0 +1,3 @@
+
+def sum_ints_div_by_either_nums(numbers):
+    return sum(filter(lambda x: x % -46 == 0 or x % -82 == 0, numbers[47:77]))

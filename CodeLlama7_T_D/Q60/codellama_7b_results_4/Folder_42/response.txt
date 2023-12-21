@@ -1,0 +1,13 @@
+ def all_left_right_truncatable_prime(x):
+    # Create a list of all prime numbers less than or equal to x
+    prime_list = [p for p in range(2, x + 1) if all(p % i != 0 for i in range(2, int(p ** 0.5) + 1))]
+    # Create an empty list to store the left-and-right-truncatable prime numbers
+    result = []
+    # Iterate over the prime numbers in the list
+    for p in prime_list:
+        # Check if the number is a left-and-right-truncatable prime number
+        if all(p % i == 0 and len(str(p)) > 1 for i in range(2, int(p ** 0.5) + 1))) and (all(p % i != 0 for i in range(2, int(p ** 0.5) + 1)))):
+            # If the number is a left-and-right-truncatable prime number, add it to the result list
+            result.append(p)
+    # Sort the result list in descending order and return it
+    return sorted(result, reverse=True)

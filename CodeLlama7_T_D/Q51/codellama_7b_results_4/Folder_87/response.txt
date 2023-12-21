@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Set of all anagram pairs in the list
+    pair_set = set()
+    for word1 in my_list:
+        for word2 in my_list:
+            if len(word1) < 3 or len(word2) < 3:
+                continue
+
+            if sorted(word1.lower()) == sorted(word2.lower()):
+                pair_set.add((word1, word2))
+    return len(pair_set) <= 392
+```
+Explanation:
+
+The function `if_contains_anagrams` takes a list of strings as its argument. The function checks if there are at most 392 pairs of anagrams in the given list, where each pair consists of two strings that have the same letters but may be in different positions.
+The function first initializes an empty set to store all the anagram pairs in the list. Then it iterates over each string in the list and checks if there are any other strings in the list that have the same letters as the current string, but may be in a different position. If such a pair is found, it adds the two strings to the set of anagram pairs.
+After iterating over all the strings in the list, the function returns `True` if there are at most 392 pairs of anagrams in the given list, or `False` otherwise.

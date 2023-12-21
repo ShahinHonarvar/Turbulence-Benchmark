@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[34] % 2 == 0 and all(n for n in range(1, numbers[34]) if numbers[34] % n == 0)

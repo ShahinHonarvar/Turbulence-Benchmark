@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    filtered = ""
+    for char in string:
+        if 13 < ord(char) < 40 and char != ":":
+            filtered += char
+    return filtered

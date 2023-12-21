@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if 1 <= ord(char) <= 7 and 'L' <= char <= 'a':
+            continue
+        result += char
+    return result

@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a list of characters in the string
+    char_list = list(string)
+    # Create a dictionary to store the ASCII values and their corresponding indices
+    ascii_dict = {}
+    # Iterate over the characters in the string
+    for i, char in enumerate(char_list):
+        # Get the ASCII value of the character
+        ascii_value = ord(char)
+        # Check if the ASCII value is already present in the dictionary
+        if ascii_value not in ascii_dict:
+            # If it is not present, add it to the dictionary with its corresponding index
+            ascii_dict[ascii_value] = i
+    # Get the list of ASCII values from the dictionary
+    ascii_values = list(ascii_dict.keys())
+    # Sort the list of ASCII values in ascending order
+    ascii_values.sort()
+    # Get the 8th smallest ASCII value from the sorted list
+    nth_smallest_ascii = ascii_values[7]
+    # Return the character with the 8th smallest ASCII value
+    return char_list[ascii_dict[nth_smallest_ascii]]
+```

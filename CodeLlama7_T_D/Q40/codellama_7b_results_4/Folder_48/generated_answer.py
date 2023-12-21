@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(my_string, n=12):
+    # Sort the string in ascending order based on ASCII value
+    sorted_string = sorted(my_string, key=lambda x: ord(x))
+    # Return the first n characters of the sorted string
+    return sorted_string[:n]

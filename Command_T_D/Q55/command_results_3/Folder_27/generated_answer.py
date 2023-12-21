@@ -1,0 +1,15 @@
+def lists_with_product_equal_n(nums):
+    if not nums:
+        yield []
+    curr_prod = nums[0]
+    yield [nums[0]]
+    curr_prod = nums[1]
+    yield [nums[0], nums[1]]
+    curr_prod = nums[2]
+    yield [nums[0], nums[1], nums[2]]
+    curr_prod = nums[3]
+    yield [nums[0], nums[1], nums[2], nums[3]]
+    curr_prod = nums[4]
+    yield [nums[0], nums[1], nums[2], nums[3], nums[4]]
+    curr_prod = nums[5]
+    yield [nums[0], nums[1], nums[2], nums[3], nums[4], nums[5]]

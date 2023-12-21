@@ -1,0 +1,22 @@
+
+def find_primes_between_indices(my_list):
+    # Find the first prime number in the range
+    first_prime = None
+    for i in range(31, 92 + 1):
+        if is_prime(my_list[i]):
+            first_prime = my_list[i]
+            break
+
+    # Find all prime numbers in the range
+
+    primes = []
+
+    for i in range(31, 92 + 1):
+        if is_prime(my_list[i]) and my_list[i] >= first_prime:
+            primes.append(my_list[i])
+
+    # Sort the prime numbers in descending order
+
+    primes.sort(reverse=True)
+
+    return primes

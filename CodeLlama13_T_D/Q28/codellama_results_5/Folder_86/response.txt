@@ -1,0 +1,9 @@
+```python
+def return_nth_smallest_ascii(string):
+    ascii_values = [ord(c) for c in string if ord(c) >= 44 and ord(c) <= 69]
+    sorted_ascii_values = sorted(ascii_values)
+    return chr(sorted_ascii_values[14])
+```
+This function takes a string as input and returns the character with the 15th smallest ASCII value among those characters in the string that occur between indices 44 to 69, both inclusive. The function first extracts all the distinct ASCII values from the given string that fall within the specified range of indices. It then sorts the extracted values and returns the character corresponding to the 15th smallest ASCII value.
+
+Note: The `ord()` function is used to get the ASCII value of a character, and `chr()` function is used to convert the integer representation back to a character.

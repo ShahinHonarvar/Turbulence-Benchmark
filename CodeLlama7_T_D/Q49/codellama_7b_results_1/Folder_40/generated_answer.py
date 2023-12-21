@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_int = int(binary_string, 2)
+    # Calculate the Fibonacci number that occurs in the 4th position of the Fibonacci sequence
+    fib_num = (5 * pow(1.618, 3)) % 10
+    # Check if the decimal integer is divisible by the Fibonacci number
+    if decimal_int % fib_num == 0:
+        return True
+
+    else:
+
+        return False

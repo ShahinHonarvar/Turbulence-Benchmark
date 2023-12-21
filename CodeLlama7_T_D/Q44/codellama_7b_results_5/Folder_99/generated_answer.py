@@ -1,0 +1,20 @@
+
+def composite_nums_between_indices(my_list):
+    # Check that the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the elements in the input list between index 246 and index 750 (both inclusive)
+    for i in range(246, 751):
+        # Check if the current element is a prime number
+        if my_list[i] == 1:
+            continue
+
+        # Iterate over the factors of the current element
+        for j in range(1, int(my_list[i]) + 1):
+            # If the factor is greater than 1 and is a divisor of the current element, then it is a composite number
+            if my_list[i] % j == 0 and j > 1:
+                composite_nums.add(my_list[i])
+    # Return the set of all composite numbers in the given list that are between index 246 to index 750 (both inclusive)
+    return composite_nums

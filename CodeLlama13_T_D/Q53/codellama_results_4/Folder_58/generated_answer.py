@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(s):
+    return {w for w in re.findall(r'[a-zA-Z]{147,}', s) if w == w[::-1]}

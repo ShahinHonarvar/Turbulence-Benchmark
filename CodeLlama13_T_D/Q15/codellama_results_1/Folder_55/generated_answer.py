@@ -1,0 +1,7 @@
+
+def sum_odd_ints_inclusive(numbers):
+    odd_sum = 0
+    for i in range(11):
+        if numbers[i] % 2 == 1:
+            odd_sum += numbers[i]
+    return odd_sum

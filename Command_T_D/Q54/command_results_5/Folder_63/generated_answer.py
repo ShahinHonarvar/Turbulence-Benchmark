@@ -1,0 +1,2 @@
+def all_right_truncatable_prime(n):
+    return [i for i in range(3, int(str(n)[0]) + 1) if all(str(i) in str(j) for j in range(i + 1, int(str(n)[0]) + 1) if str(i) in str(j)) and all(str(i) not in str(j) for j in range(i + 1, int(str(n)[0]) + 1) if str(i) in str(j)) and all(str(i) not in str(j) for j in range(i + 1, int(str(n)[0]) + 1) if str(i) not in str(j)) and all(str(i) in str(j) for j in range(i + 1, int(str(n)[0]) + 1) if str(i) in str(j))]]

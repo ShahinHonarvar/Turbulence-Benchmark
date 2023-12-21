@@ -1,0 +1,12 @@
+
+def find_second_smallest_num(numbers):
+    # create a copy of the list
+    nums = numbers[:]
+    # sort the list in ascending order
+    nums.sort()
+    # find the second smallest element from index 29 to index 93, both inclusive
+    for i in range(29, 94):
+        if nums[i] != nums[i-1]:
+            return nums[i]
+    # if there is no such an element, return None
+    return None

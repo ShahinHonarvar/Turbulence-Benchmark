@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string):
+    # create a list of tuples, each containing the character and its ASCII value
+    char_ascii = [(c, ord(c)) for c in string]
+    
+    # sort the list by the second element (ASCII value) in descending order
+    char_ascii.sort(key=lambda x: x[1], reverse=True)
+    
+    # return the first 48 characters of the sorted list
+    return [c for c, _ in char_ascii[:48]]

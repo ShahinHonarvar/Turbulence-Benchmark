@@ -1,0 +1,3 @@
+
+def if_perfect_num(arr):
+    return arr[59] == sum([x for x in range(1, int(arr[59]) // 2 + 1) if arr[59] % x == 0])

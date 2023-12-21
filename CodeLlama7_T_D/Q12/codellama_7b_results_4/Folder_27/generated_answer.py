@@ -1,0 +1,5 @@
+ def find_smallest_num(numbers):
+    # Extract the sublist from index 62 to index 92, both inclusive
+    sublist = numbers[62:93]
+    # Return the smallest element in the sublist
+    return min(sublist)

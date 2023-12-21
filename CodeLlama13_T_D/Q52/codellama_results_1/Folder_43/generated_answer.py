@@ -1,0 +1,9 @@
+
+def palindrome_of_length_n(string):
+    return set([substring for substring in substrings(string) if is_palindrome(substring)])
+
+def substrings(string):
+    return [''.join(string[i:j]) for i in range(len(string)) for j in range(i + 1, len(string) + 1)]
+
+def is_palindrome(string):
+    return string == string[::-1]

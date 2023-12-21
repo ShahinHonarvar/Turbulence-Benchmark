@@ -1,0 +1,14 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate through the list and check if each element is divisible by both 858 and 952
+    for i in range(299, 382 + 1):
+        if my_list[i] % 858 == 0 and my_list[i] % 952 == 0:
+            # If the element is divisible by both numbers, add it to the result list
+            result.append(my_list[i])
+
+    # Return the result list
+
+    return result

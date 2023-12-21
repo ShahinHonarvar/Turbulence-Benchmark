@@ -1,0 +1,30 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to store the product of the current element and its previous element
+        product = 1
+
+        # Initialize a variable to store the sum of the elements in the sublist
+        sum = 0
+
+        # Iterate over the remaining elements in the circular list
+        for j in range(i+1, len(circular_list)):
+
+            # Multiply the current element by its previous element and add it to the product variable
+            product *= circular_list[j]
+
+            # Add the current element to the sum variable
+            sum += circular_list[j]
+
+        # If the product of the elements in the sublist is equal to -87, add the sublist to the returned list
+        if product == -87:
+            sublists.append([circular_list[i], circular_list[i+1]])
+
+    # Return the list of sublists containing the contiguous integers from the given list such that their product equals -87
+    return sublists
+```

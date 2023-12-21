@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(s):
+    return set((x for x in s if len(x) >= 4 and x == x[::-1]))

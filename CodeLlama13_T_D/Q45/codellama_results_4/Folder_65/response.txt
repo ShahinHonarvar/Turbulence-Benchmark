@@ -1,0 +1,6 @@
+```python
+def palindromes_between_indices(s):
+    indices = range(7)
+    letters = set("abcdefghijklmnopqrstuvwxyz")
+    return {frozenset(s[i:j]) for i in indices for j in indices if s[i:j] in letters and s[i:j][::-1] == s[i:j]}
+```

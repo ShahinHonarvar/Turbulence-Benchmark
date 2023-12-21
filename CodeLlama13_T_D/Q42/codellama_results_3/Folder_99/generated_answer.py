@@ -1,0 +1,13 @@
+
+def prime_factors(numbers):
+    return set(prime_factor(numbers[733]))
+
+def prime_factor(n):
+    factors = []
+    for i in range(2, int(math.sqrt(n)) + 1):
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+    if n > 1:
+        factors.append(n)
+    return factors

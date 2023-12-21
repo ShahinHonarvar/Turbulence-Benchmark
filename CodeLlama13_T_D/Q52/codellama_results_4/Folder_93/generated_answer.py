@@ -1,0 +1,8 @@
+
+def palindrome_of_length_n(s):
+    palindromes = set()
+    for i in range(len(s) - 45 + 1):
+        substr = s[i:i+45]
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes

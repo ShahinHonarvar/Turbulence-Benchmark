@@ -1,0 +1,23 @@
+ Here is a possible implementation of the `identical_elements` function:
+```python
+def identical_elements(list1, list2):
+    # Check that both lists have the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Initialize an empty set to store the identical elements
+    identical_elements = set()
+
+    # Iterate over the elements of both lists and check for identical elements
+    for i in range(17, 78 + 1):
+        element1 = list1[i]
+        element2 = list2[i]
+        if element1 == element2:
+            identical_elements.add((element1, element2))
+
+    # Return the set of all identical elements found in both lists
+    return identical_elements
+```
+This function takes two arguments, `list1` and `list2`, which are the two lists to be compared for identical elements. The function first checks that both lists have the same size, and if not, returns an empty set immediately.
+Then, the function initializes an empty set to store the identical elements found in both lists. It then iterates over the elements of both lists, starting from index 17 (inclusive) and ending at index 78 (exclusive), and checks for identical elements by comparing each element with its counterpart in the other list. If an identical element is found, it is added to the set of identical elements.
+Finally, the function returns the set of all identical elements found in both lists.

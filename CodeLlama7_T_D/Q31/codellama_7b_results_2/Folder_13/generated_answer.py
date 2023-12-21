@@ -1,0 +1,22 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 126 elements
+    if len(my_list) < 126:
+        return False
+
+    # Get the element at index 126
+    perfect_number = my_list[126]
+
+    # Check if the element is a perfect number
+    if perfect_number == 0 or perfect_number % 2 != 0:
+        return False
+
+    sum = 0
+
+    # Sum up all the factors of the perfect number except for the number itself
+    for i in range(1, perfect_number // 2 + 1):
+        if perfect_number % i == 0:
+            sum += i
+
+    # If the sum is equal to the perfect number, then it is a perfect number
+    return sum == perfect_number

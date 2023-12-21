@@ -1,0 +1,3 @@
+
+def all_odd_ints_inclusive(numbers):
+    return [n for n in numbers if n % 2 != 0 and n >= 0 and n <= 4]

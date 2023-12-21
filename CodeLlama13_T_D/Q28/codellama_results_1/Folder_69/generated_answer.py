@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    char_list = []
+    for i in range(67, 78):
+        if string[i].isalpha():
+            char_list.append(string[i])
+    
+    return sorted(char_list)[6]

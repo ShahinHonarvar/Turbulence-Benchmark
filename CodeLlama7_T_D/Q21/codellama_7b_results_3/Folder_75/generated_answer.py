@@ -1,0 +1,18 @@
+
+def all_ints_div_by_num(my_list):
+    # create a new list to store the divisible integers
+    divisible_ints = []
+
+    # loop through each integer in the specified range
+
+    for i in range(12, 34):
+
+        # check if the current integer is divisible by -91
+
+        if my_list[i] % -91 == 0:
+
+            # if it is, add it to the list of divisible integers
+
+            divisible_ints.append(my_list[i])
+
+    return divisible_ints

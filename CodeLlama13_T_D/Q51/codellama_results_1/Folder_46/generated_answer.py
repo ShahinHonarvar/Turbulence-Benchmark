@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(strings):
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    anagrams = set()
+    for string in strings:
+        lowercase_string = string.lower()
+        if len(lowercase_string) < 3:
+            continue
+        for letter in english_letters:
+            anagram = "".join(sorted(letter))
+            if anagram not in anagrams:
+                anagrams.add(anagram)
+    return len(anagrams) <= 61

@@ -1,0 +1,12 @@
+
+def all_pos_ints_inclusive(my_list):
+    # Find the start and end indices of the range
+    start = 74
+    end = 95
+    # Initialize an empty list to store the positive integers
+    pos_ints = []
+    # Iterate through the range and append any positive integers to the list
+    for i in range(start, end + 1):
+        if my_list[i] > 0:
+            pos_ints.append(my_list[i])
+    return pos_ints

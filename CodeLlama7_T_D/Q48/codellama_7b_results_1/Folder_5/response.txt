@@ -1,0 +1,21 @@
+ def return_binary_or_hexa(my_tuple):
+    # Check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if len(set(range(my_tuple[2], my_tuple[8] + 1))) == len(range(my_tuple[2], my_tuple[8] + 1))):
+        return ""
+    else:
+
+        # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 2 and 8
+
+        sum = 0
+        for i in range(my_tuple[2], my_tuple[8] + 1):
+            if i not in set(range(my_tuple[2], my_tuple[8] + 1)):
+                sum += i
+
+        # Check if the sum is an odd number and return the binary representation string of the sum, prefixed with '0b'
+
+        if sum % 2 == 1:
+            return "0b" + bin(sum)[2:]
+
+        # Return the hexadecimal representation string of the sum, prefixed with '0x', and with no leading zeros.
+
+        return "0x" + hex(sum)[2:].upper().lstrip("0")

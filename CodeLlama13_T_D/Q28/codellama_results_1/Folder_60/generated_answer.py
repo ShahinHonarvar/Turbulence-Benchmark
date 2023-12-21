@@ -1,0 +1,4 @@
+
+def return_nth_smallest_ascii(string):
+    characters = sorted(set(string[36:79]))
+    return chr(characters[12])

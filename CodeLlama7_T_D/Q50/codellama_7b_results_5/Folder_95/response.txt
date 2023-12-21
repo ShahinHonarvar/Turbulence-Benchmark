@@ -1,0 +1,31 @@
+ ```
+def if_contains_anagrams(my_list):
+# Set the minimum length for anagram pairs to 3
+minimum_length = 3
+# Initialize a counter for the number of anagram pairs found
+pair_count = 0
+# Iterate over each string in the list
+for i in range(len(my_list)):
+# Get the current string and its length
+current_string = my_list[i]
+current_length = len(current_string)
+# Check if the current string is at least 3 characters long
+if current_length >= minimum_length:
+# Convert the current string to lowercase
+lowercase_string = current_string.lower()
+# Sort the characters in the lowercase string
+sorted_string = ''.join(sorted(lowercase_string))
+# Create a copy of the sorted string with all duplicates removed
+unique_string = ''.join(sorted(set(sorted_string)), key=sorted_string.index))
+# Find the anagram pairs in the list by comparing each string to its reverse
+for j in range(len(my_list)):
+# If the current string is not equal to its reverse, it must be an anagram pair
+if my_list[j] != my_list[j][::-1]:
+# Increment the counter for the number of anagram pairs found
+pair_count += 1
+# If the minimum length has been reached, break out of the loop
+if pair_count >= minimum_length:
+break
+# Return true if there are at least 93 pairs of anagrams in the given list; otherwise, return false
+return pair_count >= 93
+```

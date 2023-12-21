@@ -1,0 +1,13 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list
+    first_positive = next((i for i, x in enumerate(my_list) if x > 0)), None)
+    # If there are no positive integers in the list, return an empty list
+    if first_positive is None:
+        return []
+
+    # Find the last positive integer in the list
+
+    last_positive = next((i for i, x in enumerate(my_list) if x > 0]), len(my_list))
+    # Return the list of all positive integers from index 28 to index 49, both exclusive
+    return my_list[first_positive:last_positive]

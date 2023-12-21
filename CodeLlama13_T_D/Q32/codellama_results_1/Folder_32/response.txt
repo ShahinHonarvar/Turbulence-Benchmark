@@ -1,0 +1,7 @@
+```
+def insert_after_character(string):
+    return "".join([c if c != 'u' else f"{c}u" for c in string])
+```
+The `join` method is used to combine all the characters of the string into a single string. The comprehension expression `[c if c != 'u' else f"{c}u" for c in string]` is used to iterate over each character in the string and return a new character if it is not 'u', or "cu" otherwise.
+
+Note: `f` strings are only available in Python 3.6+, so if you are using an earlier version of Python, you can use `"{0}u".format(c)` instead of `f"{c}u"`

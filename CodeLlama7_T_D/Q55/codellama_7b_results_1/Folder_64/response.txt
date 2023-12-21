@@ -1,0 +1,13 @@
+ ```
+def lists_with_product_equal_n(my_list):
+# Initialize an empty list to store the sublists
+sublists = []
+# Iterate over the elements of the given list
+for i in range(len(my_list)):
+# Check if the product of the elements from the current index to the end of the list is equal to 3
+if (my_list[i] * my_list[(i+1)%len(my_list)]) == 3:
+# If it is, add the sublist to the returned list
+sublists.append(my_list[i:(i+2)%len(my_list)]))
+return sublists
+```
+This function takes a circular list of integers as input and returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 3. The order of sublists in the returned list does not matter.

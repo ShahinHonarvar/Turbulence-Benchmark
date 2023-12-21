@@ -1,0 +1,41 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the right-truncatable prime numbers
+    right_truncatable_primes = []
+
+    # Loop through each integer in the tuple
+
+    for integer in tuple:
+
+        # Check if the current integer is a prime number
+
+        if is_prime(integer):
+
+            # Initialize a variable to store the current integer's last rightmost digit
+
+            last_digit = integer % 10
+
+            # Initialize a variable to store the current integer's last two digits
+
+            last_two_digits = (integer // 10) % 100
+
+            # Loop through each integer in the tuple from the current integer's index to the end of the tuple
+
+            for i in range(tuple.index(integer), len(tuple))):
+
+                # Check if the current integer is a prime number and has the same last two digits as the original integer
+
+                if is_prime(tuple[i]) and (tuple[i] % 100) == last_two_digits:
+
+                    # Add the current integer to the list of right-truncatable prime numbers
+
+                    right_truncatable_primes.append(tuple[i])
+
+    # Sort the list of right-truncatable prime numbers in descending order
+
+    sorted_right_truncatable_primes = sorted(right_truncatable_primes, reverse=True)
+
+    # Return the sorted list of right-truncatable prime numbers
+
+    return sorted_right_truncatable_primes
+```

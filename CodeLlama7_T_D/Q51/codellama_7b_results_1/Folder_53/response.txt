@@ -1,0 +1,27 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables to keep track of anagram pairs
+    pair_count = 0
+    anagram_length = 3
+
+    for i in range(len(my_list) - 1):
+        # Check if the current string is a valid English word
+        if my_list[i] in english_words:
+            # Get the letters of the current string
+            letters = [char.lower() for char in my_list[i]]
+
+            # Check if there are any anagrams of the current string
+            for j in range(i + 1, len(my_list)):
+                # Get the letters of the next string
+                other_letters = [char.lower() for char in my_list[j]]
+
+                # Check if the letters of the next string are anagrams of the current string
+                if sorted(other_letters) == sorted(letters):
+                    # Increment the pair count if the lengths of the two strings are at least three and the strings are not equal
+                    if len(my_list[i]) >= anagram_length and len(my_list[j]) >= anagram_length and my_list[i] != my_list[j]:
+                        pair_count += 1
+
+                    # Break out of the inner loop if the pair count exceeds the maximum number of pairs allowed
+                    if pair_count > 8:
+                        break
+```

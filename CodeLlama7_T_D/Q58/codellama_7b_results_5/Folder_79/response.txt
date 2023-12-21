@@ -1,0 +1,14 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 59):
+        for j in range(matrix.shape[1] - 59):
+            if (matrix[i:i+60, j:j+60] == np.ones((60, 60)) * 60).all():
+                count += 1
+
+    return count
+
+```
+This function takes a two-dimensional numpy matrix of integers as an argument. It then iterates over each submatrix of the given matrix that is 60x60 in size and checks if all elements in the submatrix are equal to 60. If such a submatrix exists, the function increments a count variable by 1. Finally, the function returns the value of the count variable.

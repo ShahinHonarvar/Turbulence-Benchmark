@@ -1,0 +1,11 @@
+ ```
+def return_n_greatest_chars(s):
+    # sort the string in descending order based on ASCII values
+    sorted_list = sorted(s, key=ord, reverse=True)
+    # return the top 37 characters from the sorted list
+    return sorted_list[:37]
+```
+Explanation:
+The function `return_n_greatest_chars` takes a single argument `s`, which is a string of distinct characters. The function first sorts the string in descending order based on ASCII values using the `sorted()` function with the `key` parameter set to `ord`. This ensures that the sorted list is based on the ASCII values of each character.
+Next, the function slices the sorted list to return the top 37 characters from the list. This is done by calling the `[:]` operator on the sorted list and passing in the slice indices `[0:37]`. This will return a new list containing only the first 37 elements of the original sorted list.
+Finally, the function returns the sliced list to the caller.

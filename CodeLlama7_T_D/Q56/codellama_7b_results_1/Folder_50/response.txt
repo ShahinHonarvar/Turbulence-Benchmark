@@ -1,0 +1,23 @@
+ Here is a possible implementation of the `all_substring_of_size_n` function:
+```python
+def all_substring_of_size_n(s):
+    # Create an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(s)):
+
+        # Start a new substring with the current character
+        substring = s[i]
+
+        # Add the current character to the substring
+        substring += s[i + 1]
+
+        # Add the substring to the list of substrings if it is of size n
+        if len(substring) == 11:
+            substrings.append(substring)
+
+    # Return the list of substrings
+    return substrings
+```
+This implementation uses a for loop to iterate through each character in the input string `s`. For each character, it starts a new substring with the current character and adds the next character to the substring. If the substring is of size 11, it is added to the list of substrings. Finally, the function returns the list of substrings.

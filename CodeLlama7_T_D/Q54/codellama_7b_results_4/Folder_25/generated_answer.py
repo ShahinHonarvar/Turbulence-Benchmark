@@ -1,0 +1,55 @@
+
+def all_right_truncatable_prime(n):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all the numbers less than x
+    for i in range(2, n + 1):
+
+        # Check if the number is a prime number
+        if is_prime(i):
+
+            # Check if the number is right-truncatable prime number
+            if is_right_truncatable_prime(i):
+
+                # Add the prime number to the list
+                prime_numbers.append(i)
+
+    # Sort the list in ascending order
+    prime_numbers.sort()
+
+    # Return the sorted list of all right-truncatable prime numbers less than x
+    return prime_numbers
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+
+    # Check if the number is greater than 1
+    if n > 1:
+
+        # Loop through all the numbers less than the number to be checked
+        for i in range(2, n + 1):
+
+            # If the number is divisible by any number except 1 and itself, it is not a prime number
+            if n % i == 0:
+                return False
+
+    # If the number is greater than 1 and it is divisible only by 1 and itself, it is a prime number
+    return True
+
+# Define a function to check if a number is a right-truncatable prime number
+def is_right_truncatable_prime(n):
+
+    # Check if the number is a prime number
+    if not is_prime(n):
+        return False
+
+    # Loop through all the numbers less than the number to be checked
+    for i in range(2, n + 1):
+
+        # If the number is divisible by any number except 1 and itself, it is not a right-truncatable prime number
+        if n % i == 0:
+            return False
+
+    # If the number is greater than 1 and it is divisible only by 1 and itself, it is a right-truncatable prime number
+    return True

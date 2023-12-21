@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(tup):
+    a, b = tup[0], tup[-1]
+    missing = set(range(a + 1, b)) - set(tup)
+    if not missing:
+        return ""
+    sum = sum(missing)
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:].upper()

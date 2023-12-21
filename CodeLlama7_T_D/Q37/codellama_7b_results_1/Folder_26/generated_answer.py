@@ -1,0 +1,13 @@
+
+def filter_chars(string):
+    # Create a list of all characters in the string
+    char_list = list(string)
+    # Iterate over each character in the list
+    for i, char in enumerate(char_list):
+        # Check if the current character is between indices 20 and 62, both inclusive
+        if 19 < i < 63:
+            # Check if the current character is greater than or equal to 'i' and smaller than or equal to 'k'
+            if char >= 'i' and char <= 'k':
+                # Remove all occurrences of the current character from the string
+                char_list = [c for c in char_list if c != char]
+    return "".join(char_list)

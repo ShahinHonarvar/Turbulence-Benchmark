@@ -1,0 +1,20 @@
+```
+def find_second_largest_num(numbers):
+    largest = numbers[0]
+    second_largest = None
+    for num in numbers:
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif second_largest is None or num > second_largest:
+            second_largest = num
+    return second_largest
+```
+This function uses a simple algorithm to find the largest and second largest elements in the list. It starts by setting the first element as the largest, and sets the second largest element as `None`. Then it iterates through the rest of the elements in the list and checks if each element is larger than the current largest or second largest element. If an element is larger than the largest, it becomes the new largest element and the old largest element becomes the new second largest element. If an element is larger than the second largest but smaller than the largest, it becomes the new second largest element. Finally, if there is no second largest element, it sets `None` as the second largest element.
+
+This function can be called like this:
+```
+numbers = [10, 20, 30, 40, 50]
+second_largest = find_second_largest_num(numbers)
+print(second_largest) # Output: 40
+```

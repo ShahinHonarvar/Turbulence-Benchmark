@@ -1,0 +1,13 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 20 elements
+    if len(my_list) < 20:
+        return False
+
+    # Calculate the sum of the factors of the number at index 19
+    factor_sum = 0
+    for i in range(1, int(my_list[19]) ** 0.5 + 1):
+        if my_list[19] % i == 0:
+            factor_sum += i + my_list[19] / i
+    # Check if the sum of the factors is equal to the number at index 19
+    return factor_sum == my_list[19]

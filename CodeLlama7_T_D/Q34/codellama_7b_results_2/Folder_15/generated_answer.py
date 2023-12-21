@@ -1,0 +1,16 @@
+
+def find_original_set(s1, s2):
+    # Get the union of both sets
+    union = s1 | s2
+    # Initialize the smallest set as the union
+    smallest_set = union
+
+    # Loop through each element in the union
+    for element in union:
+        # Check if the element is in both sets
+        if element in s1 and element in s2:
+            # If it is, add it to the smallest set
+            smallest_set.add(element)
+
+    # Return the smallest set
+    return smallest_set

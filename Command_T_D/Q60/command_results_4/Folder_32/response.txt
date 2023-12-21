@@ -1,0 +1,28 @@
+[cohere.Generation {
+	id: 3e3f2b18-2c84-403c-b52c-4ec652233ff9
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 42. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import sys
+import itertools
+
+def all_left_right_truncatable_prime(n):
+    if not n:
+        yield
+    n = str(n[0])
+    for i in range(len(n)):
+        for p in range(10):
+            for j in range(len(n)-i-1):
+                if n[i] == str(p):
+                    if n[i][:i] == '1' and n[-j-1] == '1':
+                        yield int(n[:i]+n[i+1:j+2]+n[j+1:])
+                    elif n[i][:i] == '1' and n[-j-1] == '2':
+                        yield int(n[:i]+n[i+1:j+3])
+                    elif n[i][:i] == '2' and n[-j-1] == '1':
+                        yield int(n[:i]+n[i+1:j+3])
+                    elif n[i][:i] == '2' and n[-j-1] == '2':
+                        yield int(n[:i]+n[i+1:j+4])
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,16 @@
+
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[992]
+    sorted_list_of_all_right_truncatable_primes = []
+    for i in range(10, x):
+        if is_prime(i) and all_right_truncatable_prime_helper(i):
+            sorted_list_of_all_right_truncatable_primes.append(i)
+    return sorted_list_of_all_right_truncatable_primes
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

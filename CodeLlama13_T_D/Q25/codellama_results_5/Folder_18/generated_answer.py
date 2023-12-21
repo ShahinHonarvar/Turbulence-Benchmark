@@ -1,0 +1,4 @@
+
+def insert_at_index(my_list):
+    my_list = my_list[:695] + [477] + my_list[695:]
+    return my_list

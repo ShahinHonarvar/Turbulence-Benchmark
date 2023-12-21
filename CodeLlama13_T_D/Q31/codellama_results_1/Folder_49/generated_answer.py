@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[68] == sum(filter(lambda x: x % lst[68] == 0, range(1, lst[68])))

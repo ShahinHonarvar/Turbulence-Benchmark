@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(my_string):
+    # Sort the characters in ascending order based on their ASCII values
+    sorted_characters = sorted(my_string, key=ord)
+    # Return the first 79 characters of the sorted list
+    return sorted_characters[:79]

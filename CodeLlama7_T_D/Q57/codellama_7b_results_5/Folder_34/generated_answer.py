@@ -1,0 +1,22 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+
+        # Iterate over each column of the row
+        for j in range(row.size):
+            # Get the current element of the row
+            element = row[j]
+
+            # If the element is -13, add it to the list of submatrices
+            if element == -13:
+                submatrices.append(matrix[:i+1, :j+1])
+
+    # Return the list of submatrices
+    return submatrices

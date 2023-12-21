@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```
+def palindromes_between_indices(s):
+    # Create a list of all possible palindromes of length at least 3
+    palindromes = []
+    for i in range(len(s) - 2):
+        # Create a substring that starts at index i and ends at index i + 2
+        substr = s[i:i+3]
+        # Check if the substring is a palindrome
+        if substr == substr[::-1]:
+            # Add the palindrome to the list
+            palindromes.append(substr)
+    return set(palindromes)
+```
+This implementation uses a loop to iterate over all possible starting indices of a 3-character substring in the input string `s`. For each starting index, it creates a 3-character substring by slicing the input string from that starting index to one character after that starting index. It then checks if the created substring is a palindrome and adds it to a list of palindromes if it is. Finally, it returns the set of all palindromes found in the input string.

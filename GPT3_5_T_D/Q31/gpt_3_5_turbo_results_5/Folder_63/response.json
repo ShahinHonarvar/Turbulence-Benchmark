@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(lst):\n    def is_perfect(num):\n        if num <= 1:\n            return False\n        divisors_sum = 1\n        for i in range(2, int(num**0.5) + 1):\n            if num % i == 0:\n                divisors_sum += i\n                if i != num // i:\n                    divisors_sum += num // i\n        return divisors_sum == num\n\n    return is_perfect(lst[57]) if len(lst) > 57 else False\n```\nNote: The code assumes that perfect numbers are positive integers whose proper divisors sum up to the number itself.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689877822,
+  "id": "chatcmpl-7eShqQzBXsTM7ItV4GeO9xqW0N7Ec",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 139,
+    "prompt_tokens": 91,
+    "total_tokens": 230
+  }
+}

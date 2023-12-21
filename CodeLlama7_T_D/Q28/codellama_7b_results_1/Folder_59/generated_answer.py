@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters that occur between indices 0 to 11
+    chars = [char for char in string if char not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+    # Sort the characters by their ASCII value
+    sorted_chars = sorted(chars, key=lambda x: ord(x))
+    # Return the character with the 12th smallest ASCII value
+    return sorted_chars[11]

@@ -1,0 +1,15 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the number of times that the number 160 appears in the Fibonacci sequence
+    num_times_160_appears = (decimal_integer - 1) // 159 + 1
+    # Check if the decimal integer is divisible by the 160th number that occurs in the Fibonacci sequence
+    return decimal_integer % fibonacci(num_times_160_appears) == 0
+def fibonacci(n):
+    if n <= 1:
+        return n
+
+    else:
+
+        return fibonacci(n - 1) + fibonacci(n - 2)

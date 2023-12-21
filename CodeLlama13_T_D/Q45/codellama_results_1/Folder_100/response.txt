@@ -1,0 +1,14 @@
+```python
+def palindromes_between_indices(string):
+    indices = list(range(6))
+    letters = set("abcdefghijklmnopqrstuvwxyz")
+    palindromes = set()
+    for i in indices:
+        for j in indices[i:]:
+            substring = string[i:j+1]
+            if len(substring) >= 6 and all(letter in letters for letter in substring):
+                palindrome = "".join(reversed(substring))
+                if palindrome in letters and palindrome != substring:
+                    palindromes.add(palindrome)
+    return palindromes
+```

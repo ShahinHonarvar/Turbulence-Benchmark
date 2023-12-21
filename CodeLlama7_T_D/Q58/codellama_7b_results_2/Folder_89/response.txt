@@ -1,0 +1,17 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0] - 18 + 1):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1] - 18 + 1):
+            # Check if the submatrix contains 18 integers
+            if np.count_nonzero(matrix[i:i+18, j:j+18]) == 18:
+                # Increment the count variable
+                count += 1
+
+    # Return the count of all submatrices that contain 18 integers each
+    return count
+```

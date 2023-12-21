@@ -1,0 +1,25 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # create a set to store the palindromes
+    palindromes = set()
+    # loop through each character in the string
+    for i in range(len(string)):
+        # check if the current character is a palindrome of length at least n
+        if is_palindrome(string, i, n):
+            # add the palindrome to the set
+            palindromes.add(string[i:i+n])
+    return palindromes
+
+# function to check if a string is a palindrome of length at least n
+def is_palindrome(string, start_index, n):
+    # get the length of the string
+    length = len(string)
+    # loop through each character in the string
+    for i in range(start_index, length - n + 1):
+        # check if the current character is a palindrome of length at least n
+        if string[i] == string[i+n-1]:
+            # return true if the current character is a palindrome of length at least n
+            return True
+
+    # return false if no palindromes are found
+    return False

@@ -1,0 +1,5 @@
+
+def insert_after_index(my_list):
+    # Create a new list with an extra element
+    new_list = my_list[:92] + [709.87] + my_list[92:]
+    return new_list

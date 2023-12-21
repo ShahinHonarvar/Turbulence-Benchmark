@@ -1,0 +1,14 @@
+ Here's a possible implementation of the `all_right_truncatable_prime` function:
+```python
+def all_right_truncatable_prime(nums):
+    # Get the last rightmost digit of each number
+    digits = [int(str(n)[-1])) for n in nums]
+    # Find the prime numbers with the same last rightmost digit as the original number
+    prime_digits = []
+    for i, d in enumerate(digits):
+        if is_prime(nums[i] // 10**(len(str(nums[i])) - 1)) and nums[i] % d == 0:
+            prime_digits.append(d)
+    # Return the sorted list of all right-truncatable prime numbers less than x
+    return sorted(prime_digits)
+```
+This implementation first gets the last rightmost digit of each number in the tuple using the `str` function to convert the number to a string, and then slices the string to get only the last character. It then uses a list comprehension to create a new list with the same last rightmost digit as the original number, if the number is prime. Finally, it returns the sorted list of all right-truncatable prime numbers less than x.

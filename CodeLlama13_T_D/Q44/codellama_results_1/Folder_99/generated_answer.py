@@ -1,0 +1,16 @@
+
+def composite_nums_between_indices(my_list):
+    # find the indices of 246 and 750 in the list
+    idx_246 = my_list.index(246)
+    idx_750 = my_list.index(750)
+    
+    # create a set to store all composite numbers between these indices
+    composite_nums = set()
+    
+    # iterate over the list from index 246 to index 750, both inclusive
+    for i in range(idx_246, idx_750 + 1):
+        if my_list[i] > 1 and my_list[i] not in composite_nums:
+            # add the number to the set of composite numbers
+            composite_nums.add(my_list[i])
+    
+    return composite_nums

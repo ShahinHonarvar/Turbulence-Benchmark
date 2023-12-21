@@ -1,0 +1,18 @@
+ ```
+def return_n_greatest_chars(string, n):
+    # Initialize an empty list to store the sorted characters
+    sorted_chars = []
+
+    # Iterate through each character in the string
+    for char in string:
+
+        # Add the character to the sorted list if it has a greater ASCII value than any other character already in the list
+        if not any(char > x for x in sorted_chars):
+            sorted_chars.append(char)
+
+    # Sort the list of characters in ascending order by their ASCII values
+    sorted_chars.sort()
+
+    # Return the top 60 characters from the sorted list, which are the greatest ASCII values
+    return sorted_chars[:n]
+```

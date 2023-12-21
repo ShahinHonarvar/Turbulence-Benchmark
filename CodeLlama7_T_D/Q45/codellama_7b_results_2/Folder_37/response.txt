@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(s):
+    # Define a set to store all palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(s)):
+        # Get the substring that starts at index i and ends at index len(s) - 1
+        substr = s[i:len(s)]
+        # Check if the substring is a palindrome
+        if substr == substr[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substr)
+    return palindromes
+```
+This function first defines an empty set `palindromes` to store all the palindromes found in the string. It then loops through each character in the string using a for loop, and for each character it gets the substring that starts at index i and ends at index len(s) - 1 (the length of the string minus one). Then it checks if the substring is a palindrome by comparing it with its reverse. If it is a palindrome, it adds it to the set of palindromes. Finally, the function returns the set of all palindromes found in the given string that occur between indices 1 and 4 inclusive.

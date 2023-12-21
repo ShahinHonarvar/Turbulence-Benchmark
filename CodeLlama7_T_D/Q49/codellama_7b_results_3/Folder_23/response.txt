@@ -1,0 +1,10 @@
+ def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation to an integer
+    decimal_int = int(binary_repr, 2)
+    # Find the position of the 48th Fibonacci number in the binary representation
+    fib_pos = (decimal_int.bit_length() - 1) // 6
+    # Get the value of the 48th Fibonacci number
+    fib_val = (5 ** (fib_pos + 2)) % 10
+    # Check if the decimal integer is divisible by the 48th Fibonacci number
+    return decimal_int % fib_val == 0
+```

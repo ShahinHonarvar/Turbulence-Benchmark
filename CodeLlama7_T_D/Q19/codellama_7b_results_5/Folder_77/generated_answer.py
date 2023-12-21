@@ -1,0 +1,12 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate through the input list and check if each element is not divisible by -172
+    for i in range(len(my_list)):
+        if my_list[i] % -172 != 0:
+            result.append(my_list[i])
+
+    # Return the final list of all integers not divisible by -172 from index 668 to index 739, both exclusive
+    return result

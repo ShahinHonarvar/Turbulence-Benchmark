@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(strings):
+    # Count the number of anagrams in each string
+    anagram_counts = {}
+    for string in strings:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Sort the characters in the string
+        sorted_characters = "".join(sorted(lowercase_string))
+        # If the anagram does not exist in the dictionary, add it with a count of 1
+        if sorted_characters not in anagram_counts:
+            anagram_counts[sorted_characters] = 1
+        # Otherwise, increment the count for the anagram
+        else:
+            anagram_counts[sorted_characters] += 1
+    # Check if there are at most 89 pairs of anagrams in the list
+    return len(anagram_counts) <= 89
+```

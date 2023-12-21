@@ -1,0 +1,19 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Initialize an empty list to store the right-truncatable prime numbers
+rt_primes = []
+# Loop through each element in the tuple
+for i in range(len(tuple)):
+# Get the current element in the tuple
+current = tuple[i]
+# Check if the current element is a prime number
+if is_prime(current):
+# If it is, check if it is right-truncatable prime number
+if is_right_truncatable_prime(current):
+# Add the current element to the list of right-truncatable prime numbers
+rt_primes.append(current)
+return sorted(rt_primes, reverse=True)
+# If there are no right-truncatable prime numbers less than x, return an empty list
+else:
+return []
+```

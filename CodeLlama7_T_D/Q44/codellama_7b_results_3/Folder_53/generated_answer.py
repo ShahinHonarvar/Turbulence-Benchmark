@@ -1,0 +1,25 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list and check if each number is composite
+    for i, num in enumerate(my_list):
+        # Check if the number is greater than 1
+        if num > 1:
+            # Initialize a flag to indicate if the number is prime
+            is_prime = True
+            # Iterate from 2 to the square root of the number
+            for j in range(2, int(num ** 0.5) + 1):
+                # Check if the number is divisible by any number between 2 and the square root of the number
+                if num % j == 0:
+                    # If the number is divisible, set the flag to False
+                    is_prime = False
+                    break
+            # If the flag is True, the number is prime. Add it to the set of composite numbers
+            if is_prime:
+                composite_nums.add(num)
+    # Return the set of composite numbers between the specified indices
+    return composite_nums

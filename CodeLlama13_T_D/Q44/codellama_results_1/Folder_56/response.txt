@@ -1,0 +1,5 @@
+```
+def composite_nums_between_indices(lst):
+    return {x for i, x in enumerate(lst) if i > 0 and i < len(lst) - 1 and x > 1}
+```
+Note: This solution uses a set comprehension to create the set of all composite numbers between indices 0 and 0 (both inclusive). The condition `i > 0` ensures that only numbers at indices greater than 0 are considered, while `i < len(lst) - 1` ensures that only numbers at indices less than the length of the list minus 1 (the last index) are considered. Finally, the condition `x > 1` checks if the number is composite by checking if it has more than one factor (besides itself and 1).

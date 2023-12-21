@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(filter(lambda x: all(i % x for i in numbers), range(2, int(max(numbers))**0.5+1)))

@@ -1,0 +1,26 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the current character is between index 2 and index 5
+        if 2 <= i <= 5:
+            # Append the current character to a list
+            chars = [string[i]]
+            # Loop through each character in the string again
+            for j in range(len(string)):
+                # Check if the current character is between index 2 and index 5 and not equal to the current character
+                if 2 <= j <= 5 and string[j] != chars[-1]:
+                    # Append the current character to the list of characters
+                    chars.append(string[j])
+            # Check if the length of the list of characters is at least 4
+            if len(chars) >= 4:
+                # Loop through each pair of characters in the list of characters
+                for i in range(len(chars) - 1):
+                    # Check if the current character is equal to the next character
+                    if chars[i] == chars[i + 1]:
+                        # Add the palindrome to the set of palindromes
+                        palindromes.add(''.join(chars))
+    # Return the set of palindromes
+    return palindromes

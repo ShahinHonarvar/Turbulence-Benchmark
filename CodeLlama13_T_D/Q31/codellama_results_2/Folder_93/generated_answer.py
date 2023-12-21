@@ -1,0 +1,4 @@
+
+def if_perfect_num(lst):
+    n = lst[45]
+    return (n * (n + 1)) % 2 == 0

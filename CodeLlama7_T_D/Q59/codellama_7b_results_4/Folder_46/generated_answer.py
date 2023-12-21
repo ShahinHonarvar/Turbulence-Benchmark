@@ -1,0 +1,67 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize an empty list for the results
+    result = []
+
+    # Iterate over the elements in the tuple
+    for i in range(len(tuple)):
+
+        # Extract the current element from the tuple
+        x = tuple[i]
+
+        # Check if x is a prime number
+        if is_prime(x):
+
+            # If x is a prime number, check if it is left-truncatable prime
+            if is_left_truncatable_prime(x):
+
+                # If x is a left-truncatable prime, add it to the result list
+                result.append(x)
+
+    # Return the sorted result list
+    return sorted(result)
+
+# Define a function to check if a number is prime
+def is_prime(n):
+
+    # Check if n is greater than 1
+    if n > 1:
+
+        # Iterate from 2 to n-1
+        for i in range(2, n):
+
+            # If i divides n, return False
+            if n % i == 0:
+                return False
+
+    # If n is a prime number, return True
+    return True
+
+# Define a function to check if a number is left-truncatable prime
+def is_left_truncatable_prime(n):
+
+    # Check if n is greater than 1
+    if n > 1:
+
+        # Iterate from 2 to n-1
+        for i in range(2, n):
+
+            # If i divides n, return False
+            if n % i == 0:
+                return False
+
+    # If n is a prime number, check if it satisfies the left-truncatable prime condition
+    if is_prime(n):
+
+        # Extract the digits of n in reverse order
+        digits = list(str(n))[::-1]
+
+        # Iterate over the digits of n
+        for i in range(len(digits)):
+
+            # If the digit at position i is 0, return False
+            if digits[i] == '0':
+                return False
+
+    # If n satisfies all conditions, return True
+    return True

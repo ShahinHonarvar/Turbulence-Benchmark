@@ -1,0 +1,17 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the output list
+    output = []
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Create a copy of the matrix with only the current submatrix
+            submatrix = matrix[i:, j:]
+            # Check if the sum of all integers in the submatrix is equal to 69
+            if np.sum(submatrix) == 69:
+                # Add the submatrix to the output list
+                output.append(submatrix)
+    # Return the output list
+    return output

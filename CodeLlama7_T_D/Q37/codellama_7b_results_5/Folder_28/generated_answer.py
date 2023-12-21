@@ -1,0 +1,13 @@
+
+def filter_chars(s):
+    # Get the indices of characters between 20 and 79, inclusive
+    start = 20
+    end = 79
+    indices = []
+    for i in range(start, end + 1):
+        if s[i] >= '!' and s[i] <= 'T':
+            indices.append(i)
+    # Remove all occurrences of the filtered characters from the string
+    for i in reversed(indices):
+        s = s[:i] + s[i+1:]
+    return s

@@ -1,0 +1,19 @@
+
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the given string
+    for char in string:
+        # Check if the current character is between indices 1 and 7, both inclusive, and is greater than or equal to character 'L' and smaller than or equal to character 'a'
+        if (char >= 'L') and (char <= 'a'):
+            # If the current character meets the criteria, skip adding it to the filtered_chars list
+            continue
+
+        # Add the current character to the filtered_chars list
+        filtered_chars.append(char)
+
+    # Join the filtered characters together into a single string
+    filtered_string = ''.join(filtered_chars)
+
+    return filtered_string

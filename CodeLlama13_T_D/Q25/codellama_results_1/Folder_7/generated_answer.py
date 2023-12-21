@@ -1,0 +1,4 @@
+
+def insert_at_index(lst):
+    lst = lst[:323] + [389, 303] + lst[323:]
+    return lst

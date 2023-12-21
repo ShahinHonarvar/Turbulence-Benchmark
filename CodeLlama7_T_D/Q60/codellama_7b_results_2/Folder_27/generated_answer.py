@@ -1,0 +1,49 @@
+
+def all_left_right_truncatable_prime(tuple):
+    # define a function to check if a number is prime
+    def is_prime(n):
+        if n < 2:
+            return False
+
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        return True
+
+    # define a function to check if a number is left-and-right-truncatable prime
+    def is_left_right_truncatable_prime(n):
+        # check if the number is prime
+        if not is_prime(n):
+            return False
+
+        # check if the number contains any 0 digits
+        for i in range(len(str(n)))):
+            if str(n)[i] == "0":
+                return False
+
+        # check if the number remains prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+        for i in range(len(str(n)))):
+            # remove the leading leftmost digit
+            temp = n % (10 ** (i + 1)))
+            # check if the number remains prime
+            if is_prime(temp):
+                # remove the last rightmost digit
+                temp = n // (10 ** i))
+                # check if the number remains prime
+                if is_prime(temp):
+                    return True
+
+        return False
+
+    # define a list to store all left-and-right-truncatable prime numbers less than or equal to x
+    prime_numbers = []
+
+    # loop through all numbers less than or equal to x and check if each number is left-and-right-truncatable prime
+    for i in range(len(tuple)))):
+        n = tuple[i]
+        if is_left_right_truncatable_prime(n):
+            prime_numbers.append(n)
+
+    # return the list of all left-and-right-truncatable prime numbers less than or equal to x sorted in descending order
+    return sorted(prime_numbers, reverse=True))

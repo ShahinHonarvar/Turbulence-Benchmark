@@ -1,0 +1,12 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Initialize an empty list to store the positive integers
+    pos_ints = []
+    # Iterate through the specified range of indices in my_list
+    for i in range(69, 97):
+        # Check if the current index in my_list contains a positive integer
+        if my_list[i] > 0:
+            # If it does, add it to the pos_ints list
+            pos_ints.append(my_list[i])
+    # Return the pos_ints list
+    return pos_ints

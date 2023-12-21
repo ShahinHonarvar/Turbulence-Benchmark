@@ -1,0 +1,27 @@
+
+def if_contains_anagrams(word_list):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    # Loop through each word in the list
+    for word in word_list:
+        # Get the length of the word
+        word_length = len(word)
+
+        # If the word is not at least three characters long, ignore it
+        if word_length < 3:
+            continue
+
+        # Create a copy of the word without any letter repeated
+        anagram = ''.join(sorted(set(word))))
+
+        # If there are no other words in the list with the same anagram, add it to the dictionary
+        if anagram not in anagram_pairs:
+            anagram_pairs[anagram] = 1
+
+        # Otherwise, increment the count for that anagram by one
+        else:
+            anagram_pairs[anagram] += 1
+
+    # Return true if there are at least 29 pairs of anagrams in the list, and false otherwise
+    return sum(count >= 3 for _, count in anagram_pairs.items()) >= 29

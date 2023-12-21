@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_string):
+    num = int(binary_string, 2)
+    fibonacci_sequence = []
+    a, b = 0, 1
+    while True:
+        fibonacci_sequence.append(a)
+        a, b = b, a + b
+        if a == num:
+            return True
+        elif a > num:
+            return False

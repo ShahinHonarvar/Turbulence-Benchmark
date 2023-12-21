@@ -1,0 +1,6 @@
+
+def if_perfect_num(numbers):
+    if numbers[3] == sum(set(numbers)):
+        return True
+    else:
+        return False

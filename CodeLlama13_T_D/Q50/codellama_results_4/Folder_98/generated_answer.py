@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        if len(s) >= 3 and s.lower() not in anagrams:
+            anagrams.append(s.lower())
+    
+    pairs = [(a, b) for a in anagrams for b in anagrams if a != b and sorted(a) == sorted(b)]
+    return len(pairs) >= 7

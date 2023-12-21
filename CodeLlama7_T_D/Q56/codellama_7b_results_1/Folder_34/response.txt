@@ -1,0 +1,12 @@
+ ```
+def all_substring_of_size_n(s):
+    n = 84
+    substrings = []
+    for i in range(len(s) - n + 1):
+        substring = s[i:i+n]
+        if len(substring) == n and not any(c in substrings for c in substring):
+            substrings.append(substring)
+
+    return substrings
+```
+Note that this code assumes that the input string is a valid Python string, meaning it only contains characters from the ASCII character set. If you need to handle strings with Unicode characters, you will need to modify the code accordingly.

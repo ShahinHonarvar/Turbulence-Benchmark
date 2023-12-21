@@ -1,0 +1,21 @@
+
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the given list
+    for i in range(len(my_list)):
+        # Initialize a variable to store the product of the current element and its successors
+        product = my_list[i]
+
+        # Iterate over the successors of the current element
+        for j in range(i + 1, len(my_list)):
+            # Update the product with the next successor
+            product *= my_list[j]
+
+            # If the product is equal to n, add the sublist to the list of sublists
+            if product == n:
+                sublists.append(my_list[i:j + 1])
+
+    # Return the list of sublists
+    return sublists

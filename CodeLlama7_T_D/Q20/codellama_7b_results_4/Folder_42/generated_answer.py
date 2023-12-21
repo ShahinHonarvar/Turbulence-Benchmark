@@ -1,0 +1,7 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Get the index of the 6th smallest number
+    sixth_smallest = my_list[58:82+1].index(my_list[58:82+1][5]])
+    return my_list[sixth_smallest]

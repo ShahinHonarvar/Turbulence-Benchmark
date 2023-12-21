@@ -1,0 +1,8 @@
+
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(10, 74+1):
+        for j in range(i+6, i+8+1):
+            if string[i:j] == string[i:j][::-1]:
+                palindromes.add(string[i:j])
+    return palindromes

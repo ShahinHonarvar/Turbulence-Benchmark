@@ -1,0 +1,17 @@
+ ```
+def if_perfect_num(my_list):
+if len(my_list) < 23:
+return False
+
+perfect_number = my_list[23]
+# Check if the number is a perfect number by dividing it by all of its proper divisors and checking if the result is equal to the number itself.
+divisors = []
+for i in range(1, perfect_number // 2 + 1):
+if perfect_number % i == 0:
+divisors.append(i)
+if sum(divisors) == perfect_number:
+return True
+
+return False
+
+```

@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(numbers):
+    return [x for x in numbers[20:98] if x % 46 == 0]

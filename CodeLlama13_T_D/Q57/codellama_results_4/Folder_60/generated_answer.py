@@ -1,0 +1,20 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Convert the matrix into a 1D array for easier processing
+    arr = np.reshape(matrix, -1)
+
+    # Initialize an empty list to store the submatrices with sum equal to 94
+    submatrices = []
+
+    # Loop through all possible starting indices of each submatrix
+    for i in range(len(arr)):
+        # Calculate the sum of integers in the current submatrix
+        curr_sum = np.sum(arr[i:])
+
+        # Check if the current submatrix has a sum equal to 94
+        if curr_sum == 94:
+            # If so, append the submatrix to the list of submatrices with sum equal to 94
+            submatrices.append(np.reshape(arr[i:], matrix.shape))
+
+    return submatrices

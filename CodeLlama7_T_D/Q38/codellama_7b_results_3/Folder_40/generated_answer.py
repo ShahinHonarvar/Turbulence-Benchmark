@@ -1,0 +1,16 @@
+
+def find_subset_of_length_n(elements):
+    # Initialize a list to store all subsets of size n
+    subsets = []
+
+    # Iterate over all possible combinations of elements
+    for i in range(2**len(elements)):
+        # Convert the binary representation of the combination to a list of booleans
+        combination = [int(digit) for digit in bin(i)[2:]]
+        # Create a subset by selecting the elements that correspond to 1 in the binary representation
+        subset = [element for element, selected in zip(elements, combination) if selected]
+        # Add the subset to the list of subsets
+        subsets.append(subset)
+
+    # Return the number of all subsets of size n
+    return len(subsets)

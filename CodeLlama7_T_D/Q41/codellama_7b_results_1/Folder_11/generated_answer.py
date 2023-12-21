@@ -1,0 +1,23 @@
+
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Initialize a set to store the common elements
+    common_elements = set()
+
+    # Iterate over both lists and check for common elements between index 37 and 51 (inclusive)
+    for i in range(37, 52):
+        if list1[i] in common_elements:
+            continue
+
+        if list2[i] in common_elements:
+            continue
+
+        # If the current element is not already in the set, add it
+        common_elements.add(list1[i])
+        common_elements.add(list2[i])
+
+    # Return the set of common elements between index 37 and 51 (inclusive)
+    return common_elements

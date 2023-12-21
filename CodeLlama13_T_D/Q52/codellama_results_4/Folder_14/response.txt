@@ -1,0 +1,5 @@
+```
+def palindrome_of_length_n(s):
+    return {p for p in re.findall("([a-zA-Z]{63})", s) if p == p[::-1]}
+```
+Note that this solution uses the `re` module to search for all substrings of length 63, and then checks each substring to see if it is a palindrome. The `p == p[::-1]` check ensures that only palindromes are returned in the set.

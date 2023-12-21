@@ -1,0 +1,6 @@
+
+def find_second_smallest_num(numbers):
+    if len(numbers) < 50 or len(numbers) < 54:
+        return None
+    second_smallest = sorted(numbers[49:55])[1]
+    return second_smallest

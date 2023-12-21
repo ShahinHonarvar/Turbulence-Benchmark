@@ -1,0 +1,13 @@
+
+def sum_in_range(my_list):
+    # Initialize the sum variable to 0
+    sum = 0
+    # Iterate over the list of integers
+    for num in my_list:
+        # Check if the current integer is between 3 and 7, both inclusive
+        if 3 <= num <= 7:
+            # If it is, add it to the sum
+            sum += num
+
+    # Return the sum of all integers between 3 and 7, both inclusive
+    return sum

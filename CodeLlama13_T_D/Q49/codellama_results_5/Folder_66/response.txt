@@ -1,0 +1,9 @@
+```python
+def if_decimal_is_divisible(binary_string):
+    binary_list = list(reversed([int(i) for i in binary_string]))
+    fibonacci_seq = [0, 1]
+    while len(fibonacci_seq) <= 120:
+        fibonacci_seq.append(fibonacci_seq[-1] + fibonacci_seq[-2])
+    decimal = sum([pow(2, i) * binary_list[i] for i in range(len(binary_list))])
+    return decimal % 120 == 0
+```

@@ -1,0 +1,11 @@
+```
+def if_contains_anagrams(str_list):
+    anagram_pairs = 0
+    for str1 in str_list:
+        for str2 in str_list[str_list.index(str1) + 1:]:
+            if sorted(str1.lower()) == sorted(str2.lower()):
+                anagram_pairs += 1
+                if anagram_pairs > 40:
+                    return False
+    return True
+```

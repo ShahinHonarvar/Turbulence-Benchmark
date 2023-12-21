@@ -1,0 +1,5 @@
+
+def return_nth_smallest_ascii(string):
+    sorted_characters = sorted(set(string))
+    nth_smallest_character = sorted_characters[4]
+    return nth_smallest_character

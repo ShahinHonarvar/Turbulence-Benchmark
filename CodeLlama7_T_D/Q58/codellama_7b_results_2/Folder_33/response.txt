@@ -1,0 +1,29 @@
+ Here is a possible implementation of the `submatrix_with_n_numbers` function:
+```python
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == n:
+                count += 1
+
+    return count
+```
+The function takes two arguments: a two-dimensional numpy matrix of integers, and an integer `n` representing the number of elements in each submatrix.
+It first initializes the `count` variable to 0.
+Then it iterates over each row `i` of the input matrix.
+For each row `i`, it then iterates over each column `j` within that row.
+For each column `j`, it checks if the element at position `(i, j)` in the input matrix is equal to the number `n`. If it is, it increments the `count` variable by 1.
+Finally, the function returns the value of the `count` variable.
+Here's an example usage of this function:
+```python
+matrix = np.array([[1, 2], [3, 4]])
+submatrix_with_n_numbers(matrix, 2) # Output: 1
+submatrix_with_n_numbers(matrix, 3) # Output: 0
+submatrix_with_n_numbers(matrix, 4) # Output: 1
+```
+In the first example, we pass a 2x2 numpy matrix with elements `1`, `2`, `3`, and `4`. The function returns `1` because there is one submatrix in this matrix that contains 2 integers (`1` and `2`) each.
+In the second example, we pass the same matrix as before, but ask for a submatrix with 3 integers each. Since such a submatrix does not exist in this matrix, the function returns `0`.
+In the third example, we ask for a submatrix with 4 integers each, which is possible because there is at least one submatrix in this matrix that contains 4 integers (`1`, `2`, `3`, and `4`) each. The function returns `1` to indicate that such a submatrix exists in the input matrix.

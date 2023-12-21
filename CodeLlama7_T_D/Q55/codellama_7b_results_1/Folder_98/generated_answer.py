@@ -1,0 +1,18 @@
+
+def lists_with_product_equal_n(my_list):
+    # create a dictionary to store the sublists with product -1
+    sublists = {}
+
+    # iterate over the elements of the given list
+    for i in range(len(my_list)):
+        # get the current element and its next element
+        current_element = my_list[i]
+        next_element = my_list[(i+1)%len(my_list)]
+
+        # check if the product of the current element and its next element is equal to -1
+        if current_element * next_element == -1:
+            # add the current sublist to the dictionary
+            sublists[f'{i}-{(i+1)%len(my_list)}'] = my_list[i:(i+2)%len(my_list)]
+
+    # return the list of sublists with product -1
+    return list(sublists.values())

@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```
+def palindrome_of_length_at_least_n(s, n):
+    # Find all substrings that are at least n characters long
+    subs = [s[i:i+n] for i in range(len(s)-n+1)]
+    # Filter out any substrings that are not palindromes
+    palindromes = []
+    for sub in subs:
+        if sub == sub[::-1]:
+            palindromes.append(sub)
+    return set(palindromes)
+```
+This function takes two arguments: `s`, a string, and `n`, an integer representing the minimum length of the palindromes to be found in `s`. The function first finds all substrings that are at least `n` characters long. It then filters out any substrings that are not palindromes, and returns the set of remaining palindromes as a result.
+Note that this implementation uses list comprehensions to find all substrings that are at least `n` characters long, and to filter out any substrings that are not palindromes. This can make the code more concise and easier to read than an equivalent implementation that uses loops instead of list comprehensions.

@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(arr):
+    result = 0
+    for i in range(1, 8+1):
+        if arr[i] % -9 == 0 or arr[i] % -3 == 0:
+            result += arr[i]
+    return result

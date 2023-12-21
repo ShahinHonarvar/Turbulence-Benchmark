@@ -1,0 +1,18 @@
+```python
+def composite_nums_between_indices(lst):
+    # initialize a new set to store the results
+    result = set()
+    
+    # iterate through the list and check if each element is composite
+    for i, num in enumerate(lst):
+        # check if the current index is between 64 and 66 (inclusive)
+        if 64 <= i <= 66:
+            # check if the current number is composite by dividing it by all numbers up to its square root
+            for j in range(2, int(num**0.5) + 1):
+                if num % j == 0:
+                    result.add(num)
+                    break
+    
+    # return the resulting set of composite numbers
+    return result
+```

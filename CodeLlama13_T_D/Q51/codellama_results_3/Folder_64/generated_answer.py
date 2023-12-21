@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(mylist):
+    return len([x for x in mylist if len(set(x)) == 26]) <= 59

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specifications:\n\n```python\nfrom itertools import product\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(nums):\n    x = nums[96]\n    nums = [''.join(p) for i in range(2, len(str(x))+1) for p in product(\"123456789\", repeat=i)]\n    nums = sorted([int(num) for num in nums if isprime(int(num))], reverse=True)\n    trunc_primes = []\n    for num in nums:\n        if num less than or equal to x:\n            num = str(num)\n            for i in range(len(num)):\n                if not isprime(int(num[i:])) or not isprime(int(num[:len(num)-i])):\n                    break\n            else:\n                trunc_primes.append(int(num))\n    return trunc_primes\n```\nPlease note that due to the complextity of these operations, this function may take considerable time when 'x' is a large number.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691022185,
+  "id": "chatcmpl-7jGPJ7TrVXX1aZqaXw2o8kQgdbak7",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 205,
+    "prompt_tokens": 187,
+    "total_tokens": 392
+  }
+}

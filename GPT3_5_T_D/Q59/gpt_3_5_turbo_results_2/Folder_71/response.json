@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import isqrt\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, isqrt(n) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef left_truncatable_prime(n):\n    if n == 0:\n        return []\n    primes = []\n    for i in range(1, 10):\n        if is_prime(i):\n            primes.append(i)\n    for i in range(len(primes)):\n        if primes[i] < n:\n            for j in range(10):\n                new_num = 10 * primes[i] + j\n                if is_prime(new_num):\n                    primes.append(new_num)\n    return sorted(primes, reverse=True)\n\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[22]\n    return left_truncatable_prime(x)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689824413,
+  "id": "chatcmpl-7eEoPH4A07F7Pnp1517mfQdjfjcCE",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 146,
+    "total_tokens": 335
+  }
+}

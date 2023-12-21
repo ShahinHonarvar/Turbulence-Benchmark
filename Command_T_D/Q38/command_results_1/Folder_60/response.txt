@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: be556600-76af-47fa-87f8-fe19ed9287a0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_subset_of_length_n' that takes one argument, a set of elements, and returns the number of all its subsets of size 88.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import functools
+
+sys.setrecursionlimit(10**7)
+
+@functools.lru_cache(maxsize=10**6)
+def find_subset_of_length_n(s):
+    if len(s) < 88:
+        return 0
+    return sum(find_subset_of_length_n(x) for x in s)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

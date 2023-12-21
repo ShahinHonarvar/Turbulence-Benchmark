@@ -1,0 +1,65 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+x = tuple[100]
+if x > 1:
+return []
+
+else:
+
+list = []
+
+for i in range(2, x + 1):
+if is_prime(i) and left_right_truncatable_prime(i):
+list.append(i)
+
+return list
+
+
+def is_prime(n):
+
+if n == 1 or n % 2 == 0:
+return False
+
+for i in range(3, int(math.sqrt(n)) + 1, 2):
+if n % i == 0:
+return False
+
+return True
+
+
+def left_right_truncatable_prime(n):
+
+if not is_prime(n):
+return False
+
+for i in range(len(str(n)))):
+
+if int(str(n)[i]) == 0:
+break
+
+if n % (10 ** i) != 0:
+return False
+
+if n // (10 ** (i - 2))) * (10 ** (i - 2))) != n:
+return False
+
+if n % ((10 ** (i + 2))) * (10 ** (i + 2)))) != 0:
+return False
+
+return True
+```
+Note: This code uses the `math` module to calculate the square root of a number. If you are using an older version of Python that does not have this module, you can replace it with the following definition:
+```
+def math_sqrt(x):
+
+if x < 0:
+return -math_sqrt(-x)
+
+while True:
+y = (x + 1) / 2
+if y == x or y == int(y):
+return y
+
+x = y
+
+```

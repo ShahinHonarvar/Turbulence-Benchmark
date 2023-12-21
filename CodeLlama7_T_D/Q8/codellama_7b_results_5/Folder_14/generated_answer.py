@@ -1,0 +1,12 @@
+
+def all_even_ints_exclusive(my_list):
+    # Create a new list to store the even integers
+    even_ints = []
+
+    # Iterate through the list of integers and check if each integer is even
+
+    for i in range(1, 8):
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+
+    return even_ints

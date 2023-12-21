@@ -1,0 +1,15 @@
+ Here is a function that satisfies the text specification:
+```
+def all_left_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(2, x+1):
+        if is_prime(i) and left_and_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+Here is the explanation of how this code works:
+* The function takes an integer argument `x` that represents the maximum value to be checked for left-and-right-truncatable prime numbers.
+* The function initializes an empty list called `prime_numbers`. This list will store all the left-and-right-truncatable prime numbers found in the specified range.
+* The function uses a loop to iterate over all the integers from 2 to `x+1`. For each integer `i`, the function checks if it is a prime number and also if it is a left-and-right-truncatable prime number using the `is_prime` and `left_and_right_truncatable_prime` functions.
+* If the integer `i` is both a prime number and a left-and-right-truncatable prime number, the function adds it to the `prime_numbers` list.
+* After all the integers from 2 to `x+1` have been processed, the function returns the sorted list of left-and-right-truncatable prime numbers found in the specified range. If no left-and-right-truncatable prime number exists in the specified range, the function returns an empty list.

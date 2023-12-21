@@ -1,0 +1,18 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[35]
+b = tuple[64]
+sum = 0
+for i in range(a + 1, b - 1 + 1):
+if not (i in tuple[35:64]):
+sum += i
+if sum % 2 == 0:
+return hex(sum)[2:]
+else:
+return bin(sum)[3:]
+
+```
+This code is written in Python and solves the problem described by the text specification. The function takes a single argument, a tuple of distinct nonnegative integers sorted in ascending order. Let 'a' denote the integer stored at index 35, and 'b' the integer stored at index 64.
+The function first calculates the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 35 and 64. The for loop iterates over the range of integers from a + 1 to b - 1, and the if condition checks if the current integer is not present in the specified range of the tuple. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum.
+In addition to the for loop iterating over the range of integers from a + 1 to b - 1, there are two if conditions that check if the current integer is not present in the specified range of the tuple between indices 35 and 64. The first if condition checks if the current integer is not equal to the integer stored at index 35, which denotes the start of the specified range. The second if condition checks if the current integer is not equal to the integer stored at index 64, which denotes the end of the specified range.
+Overall, this code solves the problem by calculating the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 35 and 64, and returning either the binary or hexadecimal representation string of the sum depending on whether it is an odd number or not.

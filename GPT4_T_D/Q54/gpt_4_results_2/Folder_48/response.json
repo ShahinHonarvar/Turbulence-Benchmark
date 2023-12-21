@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_right_truncatable_prime(t):\n    import sympy\n    x = t[835]\n    def check_truncatable(p):\n        while p > 0:\n            if not sympy.isprime(p):\n                return False\n            p //= 10\n        return True\n    truncatables = []\n    for i in range(2, x):\n        if check_truncatable(i):\n            truncatables.append(i)\n    return sorted(truncatables)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690896474,
+  "id": "chatcmpl-7ijhiDQe9ca0hiEa0iWyMcuTn1MBm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 157,
+    "total_tokens": 257
+  }
+}

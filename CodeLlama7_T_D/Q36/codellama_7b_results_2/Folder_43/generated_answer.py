@@ -1,0 +1,6 @@
+
+def filter_chars(my_string):
+    for i in range(27, 75):
+        if my_string[i] > 'A' and my_string[i] < 'i':
+            my_string = my_string[:i] + my_string[i+1:]
+    return my_string

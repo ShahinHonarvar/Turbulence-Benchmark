@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n    for i in range(n):\n        product = 1\n        for j in range(n):\n            idx = (i + j) % n\n            product *= nums[idx]\n            if product == 0:\n                result.append(nums[i:i+j+1])\n                break\n    return result\n```\nNote: To create a circular list, you can duplicate the input list and append it at the end.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689844784,
+  "id": "chatcmpl-7eK6yzDuTWCmSumTrA3kNXroOrteu",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 193,
+    "total_tokens": 298
+  }
+}

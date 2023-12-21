@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(word_list):
+    # Create a dictionary to keep track of the anagrams
+    anagram_dict = {}
+
+    # Loop through each word in the list
+    for word in word_list:
+        # Convert the word to lowercase
+        word = word.lower()
+
+        # Check if the word is already in the dictionary as a key
+        if word in anagram_dict:
+            # If it is, increment the value associated with that key by 1
+            anagram_dict[word] += 1
+
+        else:
+            # If it's not, add it to the dictionary with a value of 1
+            anagram_dict[word] = 1
+
+    # Loop through each word in the dictionary
+    for word in anagram_dict:
+        # Check if the word has at least three letters
+        if len(word) >= 3:
+            # If it does, check if there are more than 84 pairs of anagrams in the dictionary
+            if sum(anagram_dict[word]) > 84:
+                # If there are, return False
+                return False
+
+    # If there are no more than 84 pairs of anagrams in the dictionary, return True
+    return True

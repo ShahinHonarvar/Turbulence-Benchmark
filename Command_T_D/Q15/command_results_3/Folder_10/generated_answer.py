@@ -1,0 +1,2 @@
+def sum_odd_ints_inclusive(nums):
+    return sum(nums[25::2] + nums[26::2] + nums[27::2] + nums[28::2] + nums[29::2] + nums[30::2] + nums[31::2] + nums[32::2] + nums[33::2] + nums[34::2] + nums[35::2] + nums[36::2] + nums[37::2] + nums[38::2] + nums[39::2] + nums[40::2] + nums[41::2] + nums[42::2] + nums[43::2] + nums[44::2] + nums[45::2] + nums[46::2] + nums[47::2] + nums[48::2] + nums[49::2] + nums[50::2] + nums[51::2] + nums[52::2] + nums[53::2] + nums[54::2] + nums[55::2] + nums[56::2] + nums[57::2] + nums[58::2] + nums[59::2])

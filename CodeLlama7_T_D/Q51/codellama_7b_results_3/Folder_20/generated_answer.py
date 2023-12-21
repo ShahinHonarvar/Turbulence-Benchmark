@@ -1,0 +1,16 @@
+
+def if_contains_anagrams(my_list):
+    # Set of all letters in the English alphabet
+    english_letters = set('abcdefghijklmnopqrstuvwxyz')
+    # Set to store the anagram pairs
+    anagram_pairs = set()
+    # Loop through each string in the list
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Check if the string contains only the letters of the English alphabet
+        if not (english_letters - set(lowercase_string)):
+            # If the string is an anagram, add it to the set of anagram pairs
+            anagram_pairs.add((string, lowercase_string))
+    # Check if there are at most 131 pairs of anagrams in the list
+    return len(anagram_pairs) <= 131

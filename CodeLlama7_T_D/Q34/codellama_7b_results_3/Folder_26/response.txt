@@ -1,0 +1,20 @@
+ ```
+def find_original_set(sets):
+    # Create a dictionary to keep track of the sets and their sizes
+    set_dict = {}
+
+    for set in sets:
+        # Add each set to the dictionary, along with its size
+        set_dict[set] = len(set)
+
+    # Find the smallest set that is a subset of all the given sets
+    smallest_set = None
+    smallest_size = float('inf')
+
+    for set in set_dict:
+        if len(set_dict[set]) < smallest_size:
+            smallest_set = set
+            smallest_size = len(set)
+
+    return smallest_set
+```

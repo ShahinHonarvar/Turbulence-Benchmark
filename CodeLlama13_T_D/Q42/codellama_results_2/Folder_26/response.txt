@@ -1,0 +1,18 @@
+```
+def prime_factors(numbers):
+    if len(numbers) <= 2:
+        return set()
+    
+    i = 0
+    while i < len(numbers):
+        number = numbers[i]
+        factors = []
+        
+        for j in range(2, int(number ** 0.5) + 1):
+            if number % j == 0:
+                factors.append(j)
+                
+        i += 1
+    
+    return set(factors)
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(circular_list):\n    def find_sublists_with_product_equal_n(lst, n):\n        sublists = []\n        for i in range(len(lst)):\n            product = 1\n            for j in range(i, len(lst)):\n                product *= lst[j]\n                if product == n:\n                    sublists.append(lst[i:j+1])\n        return sublists\n\n    circular_list += circular_list[:-1]\n    return find_sublists_with_product_equal_n(circular_list, -30)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797496,
+  "id": "chatcmpl-7e7oGcwov3UevUPZcikTGUT7VJiI9",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 193,
+    "total_tokens": 300
+  }
+}

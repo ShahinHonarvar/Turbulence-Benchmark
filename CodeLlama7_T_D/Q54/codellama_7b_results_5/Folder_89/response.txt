@@ -1,0 +1,32 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[97]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_right_truncatable_prime(i):
+list.append(i)
+return sorted(list, reverse=True)
+else:
+return []
+
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+
+def is_right_truncatable_prime(n):
+while len(str(n)) > 1:
+n = int(str(n)[0:-1]))
+if not is_prime(n):
+return False
+
+return True
+```
+This code defines a function `all_right_truncatable_prime` that takes a tuple of positive integers as input. The function returns the sorted list of all right-truncatable prime numbers less than the integer at index 97 in the input tuple. If there is no such right-truncatable prime number, the function returns an empty list.
+The code uses a few helper functions to check if a number is prime and if it remains prime when successively removing its last rightmost digit. The `is_prime` function takes a positive integer as input and returns whether it is prime or not. The `is_right_truncatable_prime` function takes a positive integer as input and returns whether it is a right-truncatable prime number or not.
+The main function `all_right_truncatable_prime` uses these helper functions to generate the list of all right-truncatable prime numbers less than the integer at index 97 in the input tuple. The function first checks if the input tuple has an element at index 97, and if not, it returns an empty list.
+If the input tuple has an element at index 97, the main function sets `x` to this element. It then uses a loop to iterate through all positive integers less than `x`, and checks each integer using the helper functions `is_prime` and `is_right_truncatable_prime`. If an integer is both prime and right-truncatable prime, it is added to the list of output.
+After the loop finishes, the function returns the sorted list of all right-truncatable prime numbers less than `x`, in descending order. If there is no such right-truncatable prime number, the function returns an empty list.

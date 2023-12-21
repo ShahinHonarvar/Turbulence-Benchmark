@@ -1,0 +1,23 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize counter for pairs of anagrams
+    pair_counter = 0
+
+    # Iterate over each string in the list
+    for i in range(len(my_list)):
+        # Get current string
+        curr_string = my_list[i]
+
+        # Iterate over each string after the current one
+        for j in range(i + 1, len(my_list)):
+            # Get other string
+            other_string = my_list[j]
+
+            # Check if strings are anagrams (case-insensitive)
+            if sorted(curr_string.lower()) == sorted(other_string.lower()):
+                # Increment pair counter
+                pair_counter += 1
+
+    # Return result of whether there are at most 98 pairs of anagrams in the list
+    return pair_counter <= 98
+```

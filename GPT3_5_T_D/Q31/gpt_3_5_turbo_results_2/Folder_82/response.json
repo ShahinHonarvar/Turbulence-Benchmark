@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(nums):\n    def is_perfect_num(n):\n        if n <= 1:\n            return False\n        divisors_sum = 1\n        for i in range(2, int(n ** 0.5) + 1):\n            if n % i == 0:\n                divisors_sum += i\n                if n // i != i:\n                    divisors_sum += n // i\n        return divisors_sum == n\n    \n    return is_perfect_num(nums[83])\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689812610,
+  "id": "chatcmpl-7eBk24EyhjB6lnMzGgccX3EBT7bxK",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 91,
+    "total_tokens": 200
+  }
+}

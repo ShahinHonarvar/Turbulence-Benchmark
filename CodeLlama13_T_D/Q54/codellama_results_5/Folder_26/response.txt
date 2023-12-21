@@ -1,0 +1,11 @@
+```python
+def all_right_truncatable_prime(x):
+    primes = []
+    for i in range(10**8, x+1):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+This function takes a tuple of positive integers as input, and returns the sorted list of all right-truncatable prime numbers less than `x` in descending order. If there is no such right-truncatable prime number, it will return an empty list. The function uses the `is_prime` and `is_right_truncatable_prime` functions to check if a given integer is prime and a right-truncatable prime, respectively.
+
+The function starts by initializing an empty list called `primes`. It then loops through all positive integers from 10^8 to `x`, and checks if each integer is prime and a right-truncatable prime using the `is_prime` and `is_right_truncatable_prime` functions. If both conditions are met, the integer is added to the list called `primes`. Finally, the function returns the sorted list of all right-truncatable prime numbers less than `x` in descending order using the built-in `sorted()` function with the `reverse=True` parameter.

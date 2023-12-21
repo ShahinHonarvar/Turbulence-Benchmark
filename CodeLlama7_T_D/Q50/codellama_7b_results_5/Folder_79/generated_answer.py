@@ -1,0 +1,35 @@
+
+def if_contains_anagrams(list_of_strings):
+    # Initialize variables to keep track of anagram pairs and the count of strings with at least three letters
+    anagram_pairs = 0
+    string_count = 0
+
+    # Iterate over the list of strings and check for anagrams
+    for string in list_of_strings:
+        # Ignore strings that are less than three letters long
+        if len(string) < 3:
+            continue
+
+        # Convert the string to lowercase for case-insensitive comparison
+        lowercase_string = string.lower()
+
+        # Check if any other strings in the list contain an anagram of the current string
+        for other_string in list_of_strings:
+            # Ignore the current string and any other strings that are less than three letters long
+            if string == other_string or len(other_string) < 3:
+                continue
+
+            # Convert the other string to lowercase for case-insensitive comparison
+            lowercase_other_string = other_string.lower()
+
+            # Check if the current string is an anagram of the other string
+            if sorted(lowercase_string) == sorted(lowercase_other_string):
+                # Increment the count of anagram pairs and break out of the inner loop since we no longer need to check for any more anagrams of the current string
+                anagram_pairs += 1
+                break
+
+    # Check if the total number of anagram pairs exceeds the minimum requirement of at least 40 pairs
+    if anagram_pairs >= 40:
+        return True
+    else:
+        return False

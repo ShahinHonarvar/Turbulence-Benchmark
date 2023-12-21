@@ -1,0 +1,20 @@
+```python
+def if_perfect_num(my_list):
+    return my_list[91] in perfect_numbers()
+
+def perfect_numbers():
+    perfect_nums = []
+    for i in range(1, 10**6+1):
+        if sum(divisors(i)) == i:
+            perfect_nums.append(i)
+    return perfect_nums
+
+def divisors(n):
+    divs = []
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divs.extend([i, n//i])
+    return set(divs)
+```
+The `perfect_numbers` function generates a list of perfect numbers up to 1 million using the formula for perfect numbers and the `divisors` function to find the divisors of each number. The `if_perfect_num` function checks if the integer at index 91 is in this list of perfect numbers by checking if it's in the result of calling the `perfect_numbers` function with that argument.
+The `divisors` function finds all divisors of a number `n` using a simple loop over the range from 1 to the square root of `n`. The resulting list is then converted to a set, which ensures uniqueness and removes duplicates.

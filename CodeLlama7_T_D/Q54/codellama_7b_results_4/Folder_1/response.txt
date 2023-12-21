@@ -1,0 +1,26 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    x = tuple[20]
+    prime_numbers = []
+    for i in range(1, x + 1):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+def is_right_truncatable_prime(n):
+    digits = [int(digit) for digit in str(n)]
+    for i in range(len(digits) - 1, -1, -1):
+        if not is_prime(int(str(digits[:i]) + str(digits[i+1:]))) :
+            return False
+    return True
+```
+This function takes a tuple of positive integers as an argument. The `x` variable in the code represents the integer at index 20 in the tuple. The function returns a sorted list of all right-truncatable prime numbers less than `x`. If there are no such prime numbers, the function returns an empty list.
+The `is_prime` function takes an integer as an argument and returns whether it is a prime number or not. The function checks if the input number is less than 2 and if it is not divisible by any of the prime numbers smaller than its square root. If the number is not a prime, the function returns `False`.
+The `is_right_truncatable_prime` function takes an integer as an argument and returns whether it is a right-truncatable prime number or not. The function first converts the input integer to a list of its digits using a list comprehension. It then iterates over the list in reverse order (i.e., starting from the last digit) and checks if each consecutive subset of digits can be formed into a prime number using the `is_prime` function. If any such subset cannot be formed into a prime number, the function returns `False`.
+In summary, the `all_right_truncatable_prime` function first converts the input tuple to an integer and then iterates over all right-truncatable prime numbers less than that integer using the `is_prime` and `is_right_truncatable_prime` functions. It returns a sorted list of all such prime numbers, or an empty list if there are no such prime numbers.

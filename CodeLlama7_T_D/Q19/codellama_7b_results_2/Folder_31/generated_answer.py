@@ -1,0 +1,15 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Define the range of indices to consider
+    start_idx = 18
+    end_idx = 37
+    # Initialize an empty list to store the results
+    result_list = []
+    # Iterate over the specified range of indices in the input list
+    for i in range(start_idx, end_idx):
+        # Check if the current element is not divisible by -67
+        if my_list[i] % -67 != 0:
+            # If it is not divisible, add it to the result list
+            result_list.append(my_list[i])
+    # Return the result list
+    return result_list

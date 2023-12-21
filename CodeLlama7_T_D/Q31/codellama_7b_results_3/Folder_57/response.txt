@@ -1,0 +1,25 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list is empty or if the index is out of range
+    if len(my_list) == 0 or 92 >= len(my_list):
+        return False
+
+    else:
+
+        # Calculate the sum of the divisors of the number at index 92
+
+        sum_divisors = 1
+
+        for i in range(2, int(math.sqrt(my_list[92])) + 1)):
+            if my_list[92] % i == 0:
+                sum_divisors += i + my_list[92] / i
+
+        # Check if the sum of the divisors is equal to the number at index 92
+
+        if sum_divisors == my_list[92]:
+            return True
+
+        else:
+
+            return False
+```

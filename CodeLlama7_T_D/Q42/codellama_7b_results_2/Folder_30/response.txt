@@ -1,0 +1,26 @@
+ ```
+def prime_factors(my_list):
+    # Find the prime factorization of the number at index 94
+    num = my_list[94]
+    factors = set()
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            factors.add(i)
+
+            while num % i == 0:
+                num /= i
+
+    factors.add(num)
+
+    return factors
+
+```
+
+This function takes a list of positive integers as input and returns the set of all prime factors of the integer at index 94 in the list.
+The function first finds the number at index 94 in the list and assigns it to the variable `num`.
+It then initializes an empty set called `factors` to store the prime factors of `num`.
+Next, the function uses a loop to iterate over the numbers from 2 to the square root of `num`, which is calculated using the formula `int(num ** 0.5) + 1`.
+Inside the loop, the function checks if `num` is divisible by the current number `i`. If it is, the function adds `i` to the set `factors` and updates `num` by dividing it by `i`.
+The function continues iterating over the numbers in the range until `num` reaches 1. At this point, all prime factors of `num` have been found and stored in the set `factors`.
+Finally, the function returns the set `factors`, which contains all prime factors of the integer at index 94 in the list.

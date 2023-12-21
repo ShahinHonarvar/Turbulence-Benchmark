@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string that occur between 6 and 58 (inclusive)
+    start_index = min(max(0, 6 - 1), len(string)))
+    end_index = min(max(0, 58 - 1), len(string)))
+    # Create a list of the characters that occur between the indices and their corresponding ASCII values
+    char_list = [char for char in string[start_index:end_index] if char.isalpha()]
+    # Sort the list by ASCII value
+    char_list.sort(key=lambda x: ord(x))
+    # Return the 19th smallest ASCII value from the sorted list
+    return char_list[18]

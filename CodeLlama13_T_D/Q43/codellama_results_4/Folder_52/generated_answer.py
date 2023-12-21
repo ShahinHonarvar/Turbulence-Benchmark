@@ -1,0 +1,13 @@
+
+def find_primes_between_indices(numbers):
+    primes = []
+    for i in range(33, 60):
+        if numbers[i] % 2 == 0 and numbers[i] != 2:
+            continue
+        elif numbers[i] % 3 == 0 and numbers[i] != 3:
+            continue
+        elif numbers[i] % 5 == 0 and numbers[i] != 5:
+            continue
+        else:
+            primes.append(numbers[i])
+    return sorted(primes, reverse=True)

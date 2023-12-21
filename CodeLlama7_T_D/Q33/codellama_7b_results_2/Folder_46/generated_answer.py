@@ -1,0 +1,11 @@
+ def return_vowels(string):
+    # Initialize an empty list to store the vowel characters
+    vowels = []
+    # Loop through each character in the string
+    for i in range(10, 84):
+        # Check if the current character is a vowel and its ASCII value is greater than % and smaller than or equal to e
+        if (string[i] == 'a' or string[i] == 'e' or string[i] == 'i' or string[i] == 'o' or string[i] == 'u') and (ord(string[i]) > ord('%') and ord(string[i]) <= ord('e')):
+            # If the current character is a vowel, add it to the list of vowel characters
+            vowels.append(string[i])
+    # Return the list of vowel characters
+    return vowels

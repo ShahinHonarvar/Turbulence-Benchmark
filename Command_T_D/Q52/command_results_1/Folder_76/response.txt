@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: 05ed89bb-a7b7-459f-b1b7-7378f9c311ab
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'palindrome_of_length_n' that takes one argument, a string, and returns the set of all palindromes of the length equal to 257, where each palindrome is a substring of the given string. Each palindrome should only consist of English letters. If there is no palindrome of the specified length as a substring of the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+re_pal = re.compile(r'[a-z]+')
+
+def palindrome_of_length_n(s):
+    for i in range(len(s)):
+        if i == len(s) // 2:
+            continue
+        if s[i:i + 257] == s[i + 256:]:
+            yield re_pal.sub(r'\d', '', s[i:i + 257])
+```
+	likelihood: None
+	token_likelihoods: None
+}]

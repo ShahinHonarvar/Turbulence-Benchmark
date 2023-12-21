@@ -1,0 +1,3 @@
+
+def find_sum_of_multiples(num):
+    return sum(range(1, 16) if i % num == 0 else [] for i in range(1, 15))

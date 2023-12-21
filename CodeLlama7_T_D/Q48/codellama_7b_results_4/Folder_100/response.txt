@@ -1,0 +1,17 @@
+ def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the length of the tuple
+    sum = 0
+    length = len(tuple)
+    # Check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if all(i >= 44 and i <= 78 for i in range(length)):
+        # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 44 and 78
+        for i in range(44, length):
+            if tuple[i] not in range(tuple[44] + 1, tuple[78] - 1):
+                sum += tuple[i]
+    # Check if the sum is an odd number
+    if sum % 2 == 1:
+        # Return the binary representation string of the sum
+        return bin(sum)[2:]
+    else:
+        # Return the hexadecimal representation string of the sum
+        return hex(sum)[2:]

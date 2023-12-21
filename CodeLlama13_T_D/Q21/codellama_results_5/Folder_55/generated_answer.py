@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(list_of_integers):
+    return [x for x in list_of_integers if x % 2 == 0]

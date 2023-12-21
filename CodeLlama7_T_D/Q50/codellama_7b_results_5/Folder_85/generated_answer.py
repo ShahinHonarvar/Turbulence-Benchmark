@@ -1,0 +1,25 @@
+
+def if_contains_anagrams(words):
+    # Create a set to store all anagram pairs
+    anagram_pairs = set()
+    # Loop through each word in the list
+    for word in words:
+        # Get the length of the word
+        word_length = len(word)
+        # If the word is at least three characters long, continue
+        if word_length >= 3:
+            # Create a list to store all anagrams of the word
+            anagrams = []
+            # Loop through each letter in the word
+            for letter in word:
+                # Get the index of the letter in the word
+                index = word.index(letter)
+                # If the letter is not the first letter, add it to the list of anagrams
+                if index != 0:
+                    anagrams.append(letter)
+            # If there are at least seven pairs of anagrams in the list, return True
+            if len(anagram_pairs) >= 7:
+                return True
+
+    # If there are no anagram pairs in the list, return False
+    return False

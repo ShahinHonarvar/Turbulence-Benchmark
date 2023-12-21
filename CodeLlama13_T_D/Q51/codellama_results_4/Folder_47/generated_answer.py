@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(str_list):
+    anagram_pairs = 0
+    for s in str_list:
+        if len(s) < 3:
+            continue
+        for i in range(len(s)):
+            for j in range(i+1, len(s)):
+                anagram = ''.join(sorted(s[i:j]))
+                if anagram in s[:i] + s[j:]:
+                    anagram_pairs += 1
+                    if anagram_pairs > 366:
+                        return False
+    return True

@@ -1,0 +1,81 @@
+ Here's a possible implementation of the `all_right_truncatable_prime` function in Python:
+```python
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list for the output
+    result = []
+
+    # Iterate over the elements in the tuple
+    for element in tuple:
+        # Check if the current element is a prime number
+        if is_prime(element):
+            # If it is, check if it is also right-truncatable
+            if is_right_truncatable_prime(element):
+                # If it is, add it to the output list
+                result.append(element)
+
+    # Sort the output list in descending order
+    result.sort(reverse=True)
+
+    # Return the sorted output list
+    return result
+
+# Define a function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Initialize a variable to store the smallest factor of n
+        i = 2
+
+        # Loop until the square root of n is reached
+        while i * i <= n:
+            # Check if i is a factor of n
+            if n % i == 0:
+                # If it is, return False (n is not prime)
+                return False
+
+            # Increment i by 1
+            i += 1
+
+        # If n has been fully factored without finding any factors other than 1 and itself, it must be prime
+        return True
+
+# Define a function to check if a number is right-truncatable
+def is_right_truncatable_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Initialize a variable to store the remainder of n when divided by 10
+        rem = n % 10
+
+        # Loop while the remainder is not equal to 0 or 1
+        while rem != 0 and rem != 1:
+            # Check if the current remainder is a factor of n
+            if n % rem == 0:
+                # If it is, return False (n is not right-truncatable)
+                return False
+
+            # Decrement the remainder by 1
+            rem -= 1
+
+        # If the remainder is equal to 0 or 1, n is right-truncatable
+        return True
+
+# Define a function to generate a tuple of positive integers less than a given number
+def generate_tuple(upper_bound):
+    # Initialize an empty list for the output tuple
+    result = []
+
+    # Iterate from 1 to the upper bound
+    for i in range(1, upper_bound + 1):
+        # Add the current integer to the output list
+        result.append(i)
+
+    # Return the output tuple
+    return tuple(result)
+```
+To use this code, you can call the `all_right_truncatable_prime` function with a tuple of positive integers as an argument. For example:
+```python
+tuple = generate_tuple(100)
+#print(all_right_truncatable_prime(tuple))
+# Output: [23, 29]
+```
+This will return the sorted list of all right-truncatable prime numbers less than 100.

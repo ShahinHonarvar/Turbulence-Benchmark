@@ -1,0 +1,20 @@
+ Here's a possible implementation of the `all_left_truncatable_prime` function:
+```python
+def all_left_truncatable_prime(tuple):
+    x = tuple[26]
+    prime_numbers = []
+
+    for i in range(2, x):
+        if is_prime(i) and is_left_truncatable_prime(i):
+            prime_numbers.append(i)
+
+    return sorted(prime_numbers)
+```
+Here's an explanation of the code:
+1. The function takes a tuple as input, which contains positive integers.
+2. The `x` variable is initialized with the integer at index 26 in the input tuple.
+3. An empty list named `prime_numbers` is created to store all left-truncatable prime numbers less than `x`.
+4. A for loop iterates from 2 to `x`, which contains all possible prime numbers.
+5. For each prime number `i`, the function checks if it is a prime number using the `is_prime` function. If `i` is not a prime number, the function skips to the next iteration of the loop.
+6. The function also checks if the prime number `i` is a left-truncatable prime number by using the `is_left_truncatable_prime` function. If `i` is not a left-truncatable prime number, the function skips to the next iteration of the loop.
+7. If the prime number `i` is both a prime number and a left-truncatable prime number, it is added to the list `prime_numbers`. The list `prime_numbers` is sorted in ascending order using the `sorted` function before being returned by the function.

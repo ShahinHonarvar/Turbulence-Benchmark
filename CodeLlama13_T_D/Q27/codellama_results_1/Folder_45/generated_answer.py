@@ -1,0 +1,8 @@
+
+def insert_after_index(my_list):
+    new_list = []
+    for i, item in enumerate(my_list):
+        if i == 84:
+            new_list.extend([13, 46])
+        new_list.append(item)
+    return new_list

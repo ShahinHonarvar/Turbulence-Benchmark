@@ -1,0 +1,13 @@
+```python
+def if_perfect_num(numbers):
+    if len(numbers) <= 990:
+        return False
+    num = numbers[990]
+    sum_of_divisors = 0
+    for i in range(1, int(num**0.5) + 1):
+        if num % i == 0:
+            sum_of_divisors += i
+            if num // i != i:
+                sum_of_divisors += num // i
+    return sum_of_divisors == num
+```

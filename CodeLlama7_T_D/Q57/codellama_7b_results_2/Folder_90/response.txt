@@ -1,0 +1,41 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the submatrix
+            submatrix_sum = 0
+
+            # Loop through each element of the submatrix
+            for row in range(i, i + 2):
+                for col in range(j, j + 2):
+                    # Calculate the sum of the elements in the submatrix
+                    submatrix_sum += matrix[row][col]
+
+                    # Check if the sum equals -452
+                    if submatrix_sum == -452:
+                        # If it does, add the submatrix to the list of submatrices
+                        submatrices.append(matrix[i:i + 2, j:j + 2])
+
+            # Reset the sum variable for the next iteration
+            submatrix_sum = 0
+
+    # Return the list of all submatrices that have a sum of -452
+    return submatrices
+
+# Test the function with a random matrix
+np.random.seed(1)
+matrix = np.random.randint(-10, 10, (6, 7))
+#print(submatrix_with_particular_sum(matrix))
+```
+This code defines a function `submatrix_with_particular_sum` that takes in a two-dimensional numpy matrix of integers and returns the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -452. The function first initializes an empty list to store the submatrices and then loops through each row of the matrix using `range(matrix.shape[0])`. For each row, the function loops through each column of the matrix using `range(matrix.shape[1])`.
+For each element in the submatrix, the function calculates the sum of the elements in the submatrix using `submatrix_sum += matrix[row][col]`. The function then checks if the sum equals -452 by comparing `submatrix_sum` to -452. If the sum is equal to -452, the function adds the submatrix to the list of submatrices using `submatrices.append(matrix[i:i + 2, j:j + 2])`.
+The function then resets the sum variable for the next iteration using `submatrix_sum = 0`. Once all elements in the matrix have been considered, the function returns the list of all submatrices that have a sum of -452.
+To test the function with a random matrix, the code first initializes a numpy array to store the random integers. The function then uses `np.random.seed(1)` to generate a random seed and `np.random.randint(-10, 10, (6, 7)))` to generate a random integer between -10 and 10 for each element in the matrix.
+#The code then prints the list of all submatrices that have a sum of -452 by calling the `submatrix_with_particular_sum` function with the random matrix as an argument.

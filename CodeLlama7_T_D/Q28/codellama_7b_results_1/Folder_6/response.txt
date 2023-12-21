@@ -1,0 +1,14 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # find the indices of the characters in the string
+    start = s.index('<')
+    end = s.index('>')
+    # get the substring containing the characters between the indices
+    substr = s[start:end+1]
+    # create a list of the ASCII values for each character in the substring
+    ascii_list = [ord(c) for c in substr]
+    # sort the list in ascending order
+    sorted_list = sorted(ascii_list)
+    # get the 11th element of the sorted list, which is the ASCII value of the 11th smallest character in the string
+    return chr(sorted_list[10])
+```

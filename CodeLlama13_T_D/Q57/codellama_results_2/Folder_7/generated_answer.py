@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary matrix to store the current submatrix
+            temp_matrix = np.zeros((i, j), dtype=int)
+
+            # Add the elements of the current submatrix to the temporary matrix
+            for k in range(i):
+                for l in range(j):
+                    temp_matrix[k, l] += matrix[k + i, l + j]
+
+            # Check if the sum of all integers in the current submatrix is equal to -128
+            if np.sum(temp_matrix) == -128:
+                # Add the current submatrix to the result list
+                result.append(temp_matrix)
+
+    # Return the result list
+    return result

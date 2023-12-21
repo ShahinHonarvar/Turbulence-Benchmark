@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation to a decimal integer
+    decimal_int = int(binary_repr, 2)
+    # Calculate the 47th number in the Fibonacci sequence
+    fib47 = calculate_fibonacci(46)
+    # Check if the decimal integer is divisible by the 47th number in the Fibonacci sequence
+    return decimal_int % fib47 == 0
+def calculate_fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return calculate_fibonacci(n - 1) + calculate_fibonacci(n - 2)

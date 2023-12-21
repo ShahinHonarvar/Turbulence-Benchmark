@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    total = 0
+    start_index = 315
+    end_index = 934
+    # Iterate over the list in the specified range
+    for i in range(start_index, end_index + 1):
+        # Check if the current index is divisible by either -897 or -556
+        if my_list[i] % -897 == 0 or my_list[i] % -556 == 0:
+            # If it is, add it to the total
+            total += my_list[i]
+    # Return the total
+    return total

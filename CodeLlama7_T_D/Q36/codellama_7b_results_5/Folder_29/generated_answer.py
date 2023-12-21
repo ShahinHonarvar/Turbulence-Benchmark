@@ -1,0 +1,15 @@
+ def filter_chars(s):
+    # create a new string with the filtered characters
+    new_string = ""
+
+    # loop through each character in the input string
+    for char in s:
+
+        # check if the current character is between 46 and 68 (exclusive)
+        if 46 < ord(char) < 68:
+
+            # if the current character is greater than 'H' and smaller than 's', remove all occurrences of that character within the string
+            new_string = new_string.replace(char, "")
+
+    # return the altered string
+    return new_string

@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(strings):
+    # Initialize variables
+    anagram_count = 0
+    threshold = 52
+
+    # Iterate over the strings in the list
+    for string in strings:
+        # Convert the string to lowercase
+        string = string.lower()
+
+        # Check if the string is an anagram of another string in the list
+        for other_string in strings:
+            # Skip the same string and strings that are already checked
+            if string == other_string or string in other_string:
+                continue
+
+            # Convert the other string to lowercase
+            other_string = other_string.lower()
+
+            # Check if the two strings are anagrams of each other
+            if sorted(string) == sorted(other_string):
+                anagram_count += 1
+
+        # If the number of anagrams exceeds the threshold, return False
+        if anagram_count > threshold:
+            return False
+
+    # If no anagrams were found, return True
+    return True

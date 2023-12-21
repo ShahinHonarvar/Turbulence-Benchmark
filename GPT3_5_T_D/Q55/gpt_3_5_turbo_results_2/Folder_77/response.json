@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    result = []\n    product = 1\n    start = 0\n    \n    for end in range(len(nums) + 1):\n        while product > 632 and start < end:\n            product /= nums[start]\n            start += 1\n        \n        if product == 632:\n            result.append(nums[start:end])\n        \n        if end < len(nums):\n            product *= nums[end]\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822056,
+  "id": "chatcmpl-7eECOVPsaV15gUUbumgkaBvnuhd35",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 193,
+    "total_tokens": 289
+  }
+}

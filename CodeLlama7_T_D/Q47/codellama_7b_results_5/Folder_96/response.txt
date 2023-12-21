@@ -1,0 +1,13 @@
+ def palindromes_of_specific_lengths(string):
+    # Split the string into substrings of length 100
+    substrings = []
+    for i in range(100, len(string), 100):
+        substrings.append(string[i:i+100])
+    # Find all palindromes of lengths between 50 and 100 (both inclusive) in the substrings
+    palindromes = []
+    for substring in substrings:
+        for i in range(len(substring)-50, len(substring)):
+            if substring[i:i+50] == substring[i:i+50][::-1]:
+                palindromes.append(substring[i:i+50])
+    # Return the set of all palindromes found in the substrings, case-insensitive
+    return set([palindrome for palindrome in palindromes if palindrome.lower() == palindrome.lower()])

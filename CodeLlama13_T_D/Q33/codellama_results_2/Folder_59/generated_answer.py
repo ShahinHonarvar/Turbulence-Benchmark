@@ -1,0 +1,10 @@
+
+def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    start = 8
+    end = 9
+    result = []
+    for char in string[start:end]:
+        if char.lower() in vowels and char <= 's':
+            result.append(char)
+    return result

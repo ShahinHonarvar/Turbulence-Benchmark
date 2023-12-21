@@ -1,0 +1,5 @@
+
+def insert_at_index(my_list):
+    my_list.insert(38, 27)
+    my_list.insert(39, 34)
+    return my_list

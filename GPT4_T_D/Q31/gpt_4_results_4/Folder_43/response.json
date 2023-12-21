@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(numbers):\n    if len(numbers) > 29:\n        num = numbers[29]\n        sum = 1\n        for i in range(2, int(num**0.5)+1):\n            if num % i == 0:\n                if i == (num / i):\n                    sum = sum + i\n                else:\n                    sum = sum + (i + num/i)\n        return sum == num\n    else:\n        return False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691041372,
+  "id": "chatcmpl-7jLOm4tWqgcbiahlsElp7TyWUYuXx",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 91,
+    "total_tokens": 193
+  }
+}

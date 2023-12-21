@@ -1,0 +1,12 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 165):
+        for j in range(matrix.shape[1] - 165):
+            if matrix[i:i+165, j:j+165].sum() == 176:
+                count += 1
+    return count
+```
+This code uses a nested loop to iterate over the rows and columns of the input matrix. For each row and column, it checks if the submatrix starting from that point has 176 integers in it by calling the `sum()` method on the submatrix. If the sum is equal to 176, it means that the submatrix contains exactly 176 integers, so the function increments a counter. Finally, the function returns the value of the counter as the number of submatrices containing 176 integers each.

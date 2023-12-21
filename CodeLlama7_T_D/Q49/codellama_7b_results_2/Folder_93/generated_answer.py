@@ -1,0 +1,16 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the index of the 59th Fibonacci number that occurs in the Fibonacci sequence
+    index_of_59th_fib_number = (59 * (59 - 1)) // 2
+    # Check if the decimal integer is divisible by the 59th Fibonacci number
+    return decimal_integer % fib(index_of_59th_fib_number) == 0
+# Define a function to calculate the nth Fibonacci number
+def fib(n):
+    if n <= 1:
+        return n
+
+    else:
+
+        return fib(n-1) + fib(n-2)

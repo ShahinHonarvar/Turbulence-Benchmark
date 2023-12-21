@@ -1,0 +1,20 @@
+ ```
+def if_contains_anagrams(string_list):
+    # Initialize variables
+    anagram_count = 0
+    string_length = len(string_list)
+    
+    # Check for at least 9 pairs of anagrams in the given list
+    if string_length >= 9:
+        for i in range(string_length - 2):
+            for j in range(i + 1, string_length - 1):
+                if sorted(string_list[i]) == sorted(string_list[j]):
+                    anagram_count += 1
+                    if anagram_count >= 9:
+                        return True
+
+    # If there are not at least 9 pairs of anagrams in the given list, return False
+    else:
+        return False
+
+```

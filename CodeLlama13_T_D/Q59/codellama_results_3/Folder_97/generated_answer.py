@@ -1,0 +1,9 @@
+
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    left_truncatable_primes = []
+    for num in tuple_of_positive_integers:
+        if isinstance(num, int) and num > 0:
+            str_num = str(num)
+            if '0' not in str_num and all([isprime(int(str_num[:i])) for i in range(1, len(str_num)+1)]):
+                left_truncatable_primes.append(num)
+    return sorted(left_truncatable_primes)

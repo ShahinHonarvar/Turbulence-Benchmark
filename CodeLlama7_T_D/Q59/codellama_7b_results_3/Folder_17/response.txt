@@ -1,0 +1,40 @@
+ def all_left_truncatable_prime(tuple):
+    # Get the integer at index 36 in the tuple
+    x = tuple[36]
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate from 2 to x - 1
+    for i in range(2, x - 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i can be obtained by repeatedly removing the leftmost digit of its decimal representation
+            if is_left_truncatable_prime(i):
+                # Add i to the result list
+                result.append(i)
+
+    # Sort the result list in descending order
+    result.sort(reverse=True)
+
+    # Return the result list
+    return result
+
+# Check if a number is prime by iterating from 2 to its square root
+def is_prime(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+# Check if a number can be obtained by repeatedly removing the leftmost digit of its decimal representation
+def is_left_truncatable_prime(n):
+    while n > 0:
+        # If any of the remaining digits is not a prime number, return False
+        if not is_prime(n % 10):
+            return False
+
+        # Remove the leftmost digit and continue iterating
+        n = int(str(n)[:-1])
+
+    return True

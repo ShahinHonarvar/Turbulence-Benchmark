@@ -1,0 +1,6 @@
+
+def find_second_largest_num(my_list):
+    if len(my_list) < 73:
+        return None
+    my_list = sorted(my_list)[31:72+1]
+    return my_list[1] if len(my_list) > 1 else None

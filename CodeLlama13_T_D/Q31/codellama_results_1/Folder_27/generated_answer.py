@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[56] == sum(set(range(1, numbers[56])))

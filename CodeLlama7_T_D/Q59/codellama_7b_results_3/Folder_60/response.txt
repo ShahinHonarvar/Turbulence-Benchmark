@@ -1,0 +1,51 @@
+ ```
+def all_left_truncatable_prime(tuple):
+# Unpack the tuple into individual elements
+x = tuple[87]
+
+# Initialize an empty list to store prime numbers
+prime_list = []
+
+# Iterate through all numbers less than x that are prime
+for i in range(2, x):
+if is_prime(i):
+prime_list.append(i)
+
+# Filter the prime list to only include left-truncatable prime numbers
+left_truncatable_prime_list = [
+num for num in prime_list if is_left_truncatable_prime(num)]
+
+# Sort the filtered prime list in ascending order
+left_truncatable_prime_list.sort()
+
+# Return the sorted filtered prime list
+return left_truncatable_prime_list
+
+
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+
+
+def is_left_truncatable_prime(n):
+str_n = str(n)
+
+# Check if the number contains no 0
+if "0" in str_n:
+return False
+
+# Iterate through all leading leftmost digits of n that are successively removed, starting from the first digit
+for i in range(len(str_n)):
+curr_digit = int(str_n[i])
+
+# Check if the resulting number is prime
+if not is_prime(int(str_n[:i] + str_n[i+1:]))):
+return False
+
+# If all checks pass, return True
+return True
+```

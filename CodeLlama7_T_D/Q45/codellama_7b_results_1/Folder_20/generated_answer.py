@@ -1,0 +1,26 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible starting index in the given string
+    for i in range(2, len(string) - 8 + 1):
+        # Initialize a variable to store the current palindrome
+        current_palindrome = ""
+        # Loop through each character in the given string
+        for char in string:
+            # If the character is between index 2 and index 8 (inclusive)
+            if i <= 8:
+                # Add the character to the current palindrome
+                current_palindrome += char
+            # If the character is not between index 2 and index 8 (inclusive)
+            else:
+                # Break out of the loop
+                break
+
+        # Check if the current palindrome has at least four letters
+
+        if len(current_palindrome) >= 4:
+            # Add the current palindrome to the set of palindromes
+            palindromes.add(current_palindrome)
+    # Return the set of palindromes
+    return palindromes

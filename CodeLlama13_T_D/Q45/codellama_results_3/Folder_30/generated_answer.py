@@ -1,0 +1,9 @@
+
+def palindromes_between_indices(string):
+    palindromes = set()
+    for i in range(len(string) - 4 + 1):
+        for j in range(i, len(string) - 3 + 1):
+            substr = string[i:j+1]
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes

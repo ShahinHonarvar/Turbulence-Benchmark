@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(numbers):\n    a = numbers[50]\n    b = numbers[200]\n\n    missing_numbers = set(range(a + 1, b)) - set(numbers[50:201])\n\n    sum_result = sum(missing_numbers)\n\n    if sum_result == 0:\n        return \"\"\n    elif sum_result % 2 == 0:\n        return hex(sum_result)[2:].upper()\n    else:\n        return bin(sum_result)[2:]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691068341,
+  "id": "chatcmpl-7jSPlnuvlf4KpKYmhk2TGj3rlqJRh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 99,
+    "prompt_tokens": 263,
+    "total_tokens": 362
+  }
+}

@@ -1,0 +1,3 @@
+
+def gcf_two_nums(positive_integers):
+    return gcf(positive_integers[84], positive_integers[21])

@@ -1,0 +1,12 @@
+ def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_string = ""
+
+    # Iterate over each character in the original string
+    for char in s:
+        # If the current character is between indices 27 and 85, both inclusive, and is greater than or equal to '!' and smaller than or equal to 'B', then remove all occurrences of that character from the new string
+        if (char >= '!') and (char <= 'B') and (27 <= s.index(char) <= 85):
+            new_string = new_string[:new_string.rfind(char)]
+
+    # Return the altered string
+    return new_string

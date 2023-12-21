@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation to a decimal integer
+    decimal_int = int(binary_rep, 2)
+    # Calculate the 40th Fibonacci number
+    fib_40 = (5 ** .5 + 1) / 2
+    # Check if the decimal integer is divisible by the 40th Fibonacci number
+    return decimal_int % fib_40 == 0

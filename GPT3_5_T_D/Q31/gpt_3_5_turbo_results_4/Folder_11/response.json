@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(nums):\n    def is_perfect(num):\n        factors_sum = 1\n        for i in range(2, int(num**0.5)+1):\n            if num % i == 0:\n                factors_sum += i\n                factors_sum += num // i\n        if num != 1 and num**0.5 == int(num**0.5):\n            factors_sum -= int(num**0.5)\n        return factors_sum == num\n\n    return is_perfect(nums[77])\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689856249,
+  "id": "chatcmpl-7eN5tDt064RsGKdlwl5g5ds0H2GGL",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 91,
+    "total_tokens": 203
+  }
+}

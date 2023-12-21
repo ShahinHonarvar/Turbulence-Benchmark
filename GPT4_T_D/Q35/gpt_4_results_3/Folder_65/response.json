@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(s):\n    s_list = list(s)\n    char_dict = {}\n    for i in range(52, 76):\n        if i < len(s_list):\n            if s_list[i] in char_dict:\n                char_dict[s_list[i]] += 1\n            else:\n                char_dict[s_list[i]] = 1\n\n    to_remove = [char for char, count in char_dict.items() if count > 1]\n\n    return ''.join([char for char in s_list if char not in to_remove])\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690943052,
+  "id": "chatcmpl-7ivoyf3sdVGsAmYxoQSkwOudml2FO",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 122,
+    "total_tokens": 238
+  }
+}

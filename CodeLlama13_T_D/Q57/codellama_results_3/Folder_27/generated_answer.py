@@ -1,0 +1,25 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate over all possible starting indices for the submatrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            # Initialize a temporary matrix to store the current submatrix
+            temp_matrix = np.zeros((3, 3), dtype=int)
+
+            # Copy the elements of the original matrix into the temporary matrix
+            for k in range(3):
+                for l in range(3):
+                    temp_matrix[k, l] = matrix[i + k][j + l]
+
+            # Check if the sum of all integers in the current submatrix is 77
+            if np.sum(temp_matrix) == 77:
+                # If it is, add the submatrix to the result list
+                result.append(temp_matrix)
+
+    # Return the result list
+    return result

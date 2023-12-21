@@ -1,0 +1,85 @@
+ ```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+	# Initialize an empty list to store the right-truncatable prime numbers
+	right_truncatable_primes = []
+
+	# Iterate over the tuple of positive integers
+
+	for i in range(len(tuple_of_positive_integers)):
+		# Get the current number being checked
+
+		current_number = tuple_of_positive_integers[i]
+
+		# Check if the current number is a prime number
+
+		if current_number > 1:
+			for j in range(2, current_number):
+				if current_number % j == 0:
+					break
+
+			else:
+				# If the loop completes without breaking, then the current number is a prime number
+
+				prime = True
+
+		else:
+			# If the current number is less than or equal to 1, then it is not a prime number
+
+			prime = False
+
+
+		if prime:
+			# Initialize an empty string to store the rightmost digit of the current number
+
+			rightmost_digit = ""
+
+			# Get the rightmost digit of the current number
+
+			for k in range(len(str(current_number)))):
+				if k == len(str(current_number))) - 1:
+					rightmost_digit = str(current_number[k]
+
+			# Remove the rightmost digit of the current number and check if it is still a prime number
+
+			while True:
+				new_number = int(str(current_number)[:-1])
+
+				if new_number > 1:
+					for l in range(2, new_number):
+						if new_number % l == 0:
+							break
+
+					else:
+						# If the loop completes without breaking, then the new number is a prime number
+
+						prime = True
+
+				else:
+					# If the new number is less than or equal to 1, then it is not a prime number
+
+					prime = False
+
+
+				if prime:
+					# Add the current number to the list of right-truncatable prime numbers
+
+					right_truncatable_primes.append(current_number)
+
+					break
+
+
+				else:
+					# If the new number is not a prime number, then remove one more digit from the rightmost side and repeat the process
+
+					rightmost_digit = str(current_number[k]
+
+					break
+
+
+			else:
+				# If the loop completes without breaking, then the current number is a prime number that remains prime when the last rightmost digit is successively removed.
+
+				right_truncatable_primes.append(current_number)
+
+	return sorted(right_truncatable_primes))
+```

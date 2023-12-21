@@ -1,0 +1,13 @@
+```python
+def palindromes_between_indices(string):
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    palindromes = set()
+    
+    for i in range(1, 4):
+        for j in range(i + 2, len(string)):
+            substring = string[i:j]
+            if substring.lower() == substring[::-1].lower():
+                palindromes.add(substring)
+    
+    return palindromes
+```

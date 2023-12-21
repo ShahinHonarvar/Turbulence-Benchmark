@@ -1,0 +1,46 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at position i
+        char = string[i]
+        # Check if the character is a letter (lowercase or uppercase)
+        if char.isalpha():
+            # Convert the character to lowercase
+            char = char.lower()
+            # Loop through each character in the remaining part of the string, starting from position i + 1
+            for j in range(i + 1, len(string)):
+                # Get the character at position j
+                other_char = string[j]
+                # Check if the character is a letter (lowercase or uppercase)
+                if other_char.isalpha():
+                    # Convert the character to lowercase
+                    other_char = other_char.lower()
+                    # Check if the current character and the other character are the same, in which case we have found a palindrome of length 2
+                    if char == other_char:
+                        # Add the palindrome to the set of palindromes
+                        palindromes.add(char + other_char)
+            # Loop through each character in the remaining part of the string, starting from position i + 1
+            for j in range(i + 1, len(string)):
+                # Get the character at position j
+                other_char = string[j]
+                # Check if the character is a letter (lowercase or uppercase)
+                if other_char.isalpha():
+                    # Convert the character to lowercase
+                    other_char = other_char.lower()
+                    # Loop through each character in the remaining part of the string, starting from position j + 1
+                    for k in range(j + 1, len(string)):
+                        # Get the character at position k
+                        third_char = string[k]
+                        # Check if the character is a letter (lowercase or uppercase)
+                        if third_char.isalpha():
+                            # Convert the character to lowercase
+                            third_char = third_char.lower()
+                            # Check if the current character and the other character are the same, in which case we have found a palindrome of length 3
+                            if char == other_char:
+                                # Add the palindrome to the set of palindromes
+                                palindromes.add(char + other_char + third_char)
+    # Return the set of palindromes
+    return palindromes

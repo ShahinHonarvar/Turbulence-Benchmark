@@ -1,0 +1,36 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[38]
+list = []
+for i in range(2, x):
+if is_prime(i) and left_truncatable_prime(i):
+list.append(i)
+return list
+
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def left_truncatable_prime(n):
+string = str(n)
+for i in range(len(string)):
+temp = string[:i] + string[i+1:]
+if int(temp) != 0 and is_prime(int(temp)) == True:
+return False
+
+return True
+
+tuple = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37)
+#print(all_left_truncatable_prime(tuple))
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as input. The function first extracts the integer at index 38 from the tuple and assigns it to the variable `x`. Then, the function creates an empty list `list` to store all left-truncatable prime numbers less than `x`.
+The inner loop iterates over the range of positive integers from 2 to `x - 1`. For each integer `i` in this range, the function first checks if `i` is a prime number using the function `is_prime`. If `i` is not a prime number, the function skips to the next iteration of the loop.
+If `i` is a prime number, the function then checks if it is left-truncatable prime by calling the function `left_truncatable_prime`. This function takes the string representation of the integer `i` and iterates over its characters from left to right. If the character at position `i` is not a 0, the function checks if removing the leading leftmost digit results in a prime number using the function `is_prime`. If all resulting numbers are prime, then the function returns `True`, indicating that the integer `i` is a left-truncatable prime.
+Once the function has checked if the integer `i` is a left-truncatable prime, it adds it to the list `list` if it is indeed a left-truncatable prime. The list `list` is then sorted in descending order using the built-in `sorted` function with the keyword argument `reverse=True`.
+#Finally, the function prints the sorted list of all left-truncatable prime numbers less than `x`, which is the value at index 38 of the input tuple.

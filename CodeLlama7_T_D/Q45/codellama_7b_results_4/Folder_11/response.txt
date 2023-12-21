@@ -1,0 +1,14 @@
+ def palindromes_between_indices(input_string):
+    # Define the range of indices to consider
+    start_index = 3
+    end_index = 7
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring between the start and end indices
+    for i in range(start_index, end_index + 1):
+        # Check if the substring is a palindrome of length 4 or more
+        if input_string[i - 3:i] == input_string[i - 3:i][::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(input_string[i - 3:i])
+    # Return the set of palindromes
+    return palindromes

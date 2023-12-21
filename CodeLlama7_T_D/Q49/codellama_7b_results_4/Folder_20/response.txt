@@ -1,0 +1,14 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the 100th number that occurs in the Fibonacci sequence
+    fibonacci_sequence = [0, 1, 1]
+    for i in range(3, len(fibonacci_sequence)):
+        fibonacci_sequence.append(fibonacci_sequence[i - 2] + fibonacci_sequence[i - 1])
+    # Check if the decimal integer is divisible by the 100th number in the Fibonacci sequence
+    return decimal_integer % fibonacci_sequence[-1] == 0
+```
+This code defines a function `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function first converts the binary representation to a decimal integer using the built-in `int()` function with the appropriate base (2 in this case).
+Next, the function calculates the 100th number in the Fibonacci sequence using a loop that starts at index 3 and goes up to the length of the `fibonacci_sequence` list. The loop calculates each term of the sequence by adding the previous two terms together, until it reaches the desired index.
+Once the 100th number in the Fibonacci sequence has been calculated, the function checks if the decimal integer is divisible by that number. If it is, the function returns `True`. Otherwise, it returns `False`.

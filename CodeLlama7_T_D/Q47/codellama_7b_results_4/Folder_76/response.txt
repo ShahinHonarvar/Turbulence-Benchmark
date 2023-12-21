@@ -1,0 +1,19 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find the indices of the substring to consider
+    start_index = 101
+    end_index = 292
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Iterate through each character in the string within the specified index range
+    for i in range(start_index, end_index + 1):
+        # Check if the current character is a palindrome with the desired length
+        if string[i - 1:i] == string[i - 1:i][::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(string[i - 1:i])
+    return palindromes
+```
+This function takes a single argument, `string`, which represents the input string that may contain any character. The function returns a set of all palindromes with the desired lengths within the specified index range.
+The function first finds the indices of the substring to consider by using the start and end indices provided in the text specification. It then creates an empty set, `palindromes`, to store the palindromes found within the specified index range.
+Next, the function iterates through each character in the input string within the specified index range, using a nested loop to check for palindromes of the desired lengths. If a palindrome is found, it is added to the set of palindromes, `palindromes`.
+Finally, the function returns the set of palindromes found within the specified index range and with the desired lengths.

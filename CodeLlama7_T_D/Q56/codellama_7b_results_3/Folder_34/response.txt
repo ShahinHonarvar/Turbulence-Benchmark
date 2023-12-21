@@ -1,0 +1,18 @@
+ ```
+def all_substring_of_size_n(string):
+# Initialize an empty list to store the substrings
+substrings = []
+
+# Loop through each character in the string
+for i in range(len(string) - 84 + 1):
+
+# Extract a substring of length 84 from the current position
+substring = string[i:i+84]
+
+# If the substring is not already in the list, add it to the list
+if substring not in substrings:
+substrings.append(substring)
+
+return substrings
+```
+This code uses a loop to iterate through each character in the input string and extracts substrings of length 84 starting from each position. The extracted substrings are then checked for duplicates by adding them to a list and returning it at the end.

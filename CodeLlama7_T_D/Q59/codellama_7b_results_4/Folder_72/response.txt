@@ -1,0 +1,22 @@
+ def all_left_truncatable_prime(tuple):
+    # Initialize the list of left-truncatable prime numbers
+    ltprimes = []
+    # Iterate over the elements in the tuple
+    for x in tuple:
+        # Check if the number is a prime number
+        if is_prime(x):
+            # Add the prime number to the list of left-truncatable prime numbers
+            ltprimes.append(x)
+    return sorted(ltprimes, reverse=True)
+def is_prime(n):
+    # Check if n is less than 2
+    if n < 2:
+        return False
+
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If the number passes all the checks, it is a prime number
+    return True

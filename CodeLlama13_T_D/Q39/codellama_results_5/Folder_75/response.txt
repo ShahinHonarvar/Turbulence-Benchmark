@@ -1,0 +1,7 @@
+```
+def return_n_greatest_chars(string):
+    char_list = list(set(string))
+    sorted_char_list = sorted(char_list, key=lambda x: ord(x), reverse=True)[:2]
+    return sorted_char_list
+```
+Note that the `ord` function returns the ASCII value of a character. The `reverse=True` argument to the `sorted` function sorts the list in descending order instead of ascending, so we need to slice it to get the first two elements.

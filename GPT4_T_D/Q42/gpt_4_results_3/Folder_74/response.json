@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport math\n\ndef prime_factors(numbers):\n    def factors(n):\n        i = 2\n        factors_set = set()\n        while i <= n:\n            if n % i:\n                i += 1\n            else:\n                n //= i\n                factors_set.add(i)\n        return factors_set\n\n    try:\n        return factors(numbers[48])\n    except IndexError:\n        return \"List is shorter than 49 elements.\"\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690949389,
+  "id": "chatcmpl-7ixTBRNrx9lKlQGsphBusYBxkeEgl",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 84,
+    "total_tokens": 176
+  }
+}

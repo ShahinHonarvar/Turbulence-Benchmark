@@ -1,0 +1,46 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Iterate from 1 to x, where x is the last element of the tuple
+    for i in range(1, x + 1):
+        # Check if the current number is a prime number
+        if is_prime(i):
+            # If the current number is a prime number, then check if it is left-truncatable
+            if is_left_truncatable(i):
+                # If the current number is a left-truncatable prime number, then add it to the list of prime numbers
+                prime_list.append(i)
+    # Return the sorted list of prime numbers that are left-truncatable prime numbers
+    return sorted(prime_list, reverse=True)
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is equal to 1 or itself
+    if n == 1 or n == 2:
+        return True
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    # If the number is not divisible by any number between 2 and the square root of n, then it must be a prime number
+    return True
+
+# Define a function to check if a number is left-truncatable
+def is_left_truncatable(n):
+    # Check if the number contains no 0
+    if '0' in str(n):
+        return False
+
+    # Iterate from the rightmost digit of the number to the leftmost digit
+    for i in range(len(str(n)))[::-1]:
+        # Check if the current digit is equal to 0
+        if str(n)[i] == '0':
+            return False
+
+        # If the current digit is not equal to 0, then check if it is a prime number
+        elif not is_prime(int(str(n)[:i + 1]))):
+            return False
+
+    # If all digits are checked and they are all prime numbers, then the number is left-truncatable
+    return True

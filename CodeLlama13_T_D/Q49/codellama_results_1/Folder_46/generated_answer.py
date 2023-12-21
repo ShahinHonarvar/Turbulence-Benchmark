@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string into a decimal integer
+    decimal = int(binary_representation, 2)
+    
+    # Find the Fibonacci sequence up to the 139th number
+    fib = [0]
+    for i in range(138):
+        fib.append((fib[i-1] + fib[i]) % (10**9 + 7))
+    
+    # Check if the decimal integer is divisible by the 139th Fibonacci number
+    return bool(decimal % fib[138])

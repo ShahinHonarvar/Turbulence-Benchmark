@@ -1,0 +1,144 @@
+[cohere.Generation {
+	id: a1f556d7-0874-4f22-b2c2-46bad07d3c22
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 803. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_left_right_truncatable_prime(test_args):
+    left_right_truncatable_primes = []
+    for i in range(test_args[0][0], test_args[0][1] + 1):
+        if is_left_right_truncatable_prime(i):
+            left_right_truncatable_primes.append(i)
+    return left_right_truncatable_primes
+
+
+def is_left_right_truncatable_prime(n):
+    if n < 2:
+        return False
+    if n == 2 or n == 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    if n % 5 == 0 or n % 7 == 0:
+        return False
+    if n % 11 == 0 or n % 13 == 0:
+        return False
+    if n % 17 == 0 or n % 19 == 0:
+        return False
+    if n % 23 == 0 or n % 29 == 0:
+        return False
+    if n % 31 == 0 or n % 37 == 0:
+        return False
+    if n % 41 == 0 or n % 43 == 0:
+        return False
+    if n % 47 == 0 or n % 53 == 0:
+        return False
+    if n % 59 == 0 or n % 61 == 0:
+        return False
+    if n % 67 == 0 or n % 71 == 0:
+        return False
+    if n % 73 == 0 or n % 79 == 0:
+        return False
+    if n % 83 == 0 or n % 89 == 0:
+        return False
+    if n % 97 == 0 or n % 101 == 0:
+        return False
+    if n % 103 == 0 or n % 107 == 0:
+        return False
+    if n % 113 == 0 or n % 127 == 0:
+        return False
+    if n % 131 == 0 or n % 137 == 0:
+        return False
+    if n % 139 == 0 or n % 149 == 0:
+        return False
+    if n % 151 == 0 or n % 157 == 0:
+        return False
+    if n % 163 == 0 or n % 167 == 0:
+        return False
+    if n % 173 == 0 or n % 179 == 0:
+        return False
+    if n % 181 == 0 or n % 191 == 0:
+        return False
+    if n % 193 == 0 or n % 197 == 0:
+        return False
+    if n % 199 == 0 or n % 211 == 0:
+        return False
+    if n % 223 == 0 or n % 227 == 0:
+        return False
+    if n % 229 == 0 or n % 233 == 0:
+        return False
+    if n % 239 == 0 or n % 241 == 0:
+        return False
+    if n % 251 == 0 or n % 257 == 0:
+        return False
+    if n % 263 == 0 or n % 269 == 0:
+        return False
+    if n % 271 == 0 or n % 277 == 0:
+        return False
+    if n % 281 == 0 or n % 283 == 0:
+        return False
+    if n % 293 == 0 or n % 307 == 0:
+        return False
+    if n % 311 == 0 or n % 313 == 0:
+        return False
+    if n % 317 == 0 or n % 331 == 0:
+        return False
+    if n % 337 == 0 or n % 347 == 0:
+        return False
+    if n % 349 == 0 or n % 351 == 0:
+        return False
+    if n % 353 == 0 or n % 359 == 0:
+        return False
+    if n % 367 == 0 or n % 373 == 0:
+        return False
+    if n % 379 == 0 or n % 383 == 0:
+        return False
+    if n % 389 == 0 or n % 397 == 0:
+        return False
+    if n % 399 == 0 or n % 409 == 0:
+        return False
+    if n % 419 == 0 or n % 431 == 0:
+        return False
+    if n % 433 == 0 or n % 439 == 0:
+        return False
+    if n % 443 == 0 or n % 449 == 0:
+        return False
+    if n % 457 == 0 or n % 461 == 0:
+        return False
+    if n % 463 == 0 or n % 467 == 0:
+        return False
+    if n % 479 == 0 or n % 487 == 0:
+        return False
+    if n % 491 == 0 or n % 499 == 0:
+        return False
+    if n % 503 == 0 or n % 509 == 0:
+        return False
+    if n % 521 == 0 or n % 607 == 0:
+        return False
+    if n % 613 == 0 or n % 617 == 0:
+        return False
+    if n % 619 == 0 or n % 631 == 0:
+        return False
+    if n % 641 == 0 or n % 643 == 0:
+        return False
+    if n % 647 == 0 or n % 653 == 0:
+        return False
+    if n % 659 == 0 or n % 661 == 0:
+        return False
+    if n % 673 == 0 or n % 691 == 0:
+        return False
+    if n % 733 == 0 or n % 739 == 0:
+        return False
+    if n % 743 == 0 or n % 749 == 0:
+        return False
+    if n % 753 == 0 or n % 757 == 0:
+        return False
+    if n % 761 == 0 or n % 763 == 0:
+        return False
+    if n % 769 == 0 or n % 773 == 0:
+        return False
+    if n % 787 == 0 or
+	likelihood: None
+	token_likelihoods: None
+}]

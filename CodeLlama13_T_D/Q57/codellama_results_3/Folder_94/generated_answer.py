@@ -1,0 +1,25 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with sum 92
+    submatrices = []
+    
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary matrix to store the submatrix
+            temp_mat = np.zeros((matrix.shape[0], matrix.shape[1]))
+            
+            # Fill the temporary matrix with the submatrix starting from (i, j)
+            for k in range(matrix.shape[0]):
+                for l in range(matrix.shape[1]):
+                    temp_mat[k][l] = matrix[k+i][l+j]
+            
+            # Check if the sum of all integers in the temporary matrix equals 92
+            if np.sum(temp_mat) == 92:
+                # If yes, add the submatrix to the list of submatrices with sum 92
+                submatrices.append(temp_mat)
+    
+    # Return the list of submatrices with sum 92
+    return submatrices

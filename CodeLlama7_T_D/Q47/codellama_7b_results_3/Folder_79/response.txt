@@ -1,0 +1,16 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Convert the input string to lowercase for case-insensitive comparison
+lowercase_string = string.lower()
+# Define the substring range for which we want to find palindromes
+substring_range = (1, 8)
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Iterate over each character in the substring range
+for i in range(*substring_range):
+# Check if the current character is a palindrome with length between 3 and 4 (both inclusive)
+if lowercase_string[i:i+1] == lowercase_string[i:i+1][::-1] and len(lowercase_string[i:i+1]) in range(3, 5):
+# Add the palindrome to the set of palindromes
+palindromes.add(lowercase_string[i:i+1])
+return palindromes
+```

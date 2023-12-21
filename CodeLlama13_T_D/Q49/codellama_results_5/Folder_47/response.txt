@@ -1,0 +1,13 @@
+```
+def if_decimal_is_divisible(binary):
+    n = int(binary, 2)
+    fibonacci = [0, 1]
+    for i in range(n):
+        fibonacci.append(fibonacci[i-1] + fibonacci[i])
+    return n % fibonacci[93] == 0
+```
+This code defines a function called `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function returns true if the decimal integer corresponding to the given string is divisible by the 94th number that occurs in the Fibonacci sequence, and false otherwise.
+
+The code first converts the binary string into an integer using `int` with base 2. It then initializes a list called `fibonacci` with the first two numbers of the Fibonacci sequence (0 and 1). Then it uses a for loop to compute the next `n` numbers of the Fibonacci sequence by adding the previous two numbers, where `n` is the given integer. Finally, it returns true if the remainder of dividing the given number by the 94th number in the Fibonacci sequence (i.e., `fibonacci[93]`) is zero, and false otherwise.
+
+Note that this code assumes that the input string is a binary representation of an integer, and it raises an error if the string is not valid binary format.

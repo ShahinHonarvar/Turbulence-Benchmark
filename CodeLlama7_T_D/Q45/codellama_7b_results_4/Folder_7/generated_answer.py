@@ -1,0 +1,16 @@
+
+def palindromes_between_indices(string):
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at index i
+        char = string[i]
+        # If the character is a letter, add it to the palindrome
+        if char.isalpha():
+            # Add the character to the palindrome
+            palindrome += char
+            # If the length of the palindrome is at least 7, add it to the set
+            if len(palindrome) >= 7:
+                palindromes.add(palindrome)
+    return palindromes

@@ -1,0 +1,35 @@
+ Here is a possible implementation of the function `lists_with_product_equal_n` in Python:
+```python
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Loop through each element in the circular list
+    for i in range(len(circular_list)):
+        # Set the current element as the starting point of the sublist
+        start = i
+
+        # Initialize a product variable to store the product of elements in the sublist
+        product = 1
+
+        # Loop through each element in the circular list from the starting point to the end of the list
+        for j in range(start, len(circular_list)):
+            # Multiply the current element by the product variable
+            product *= circular_list[j]
+
+            # If the product is equal to -46, add the sublist to the list of sublists
+            if product == -46:
+                sublists.append(circular_list[start:j+1])
+
+    # Return the list of sublists
+    return sublists
+```
+This implementation first initializes an empty list `sublists` to store the sublists that have a product equal to -46. It then loops through each element in the circular list using a `for` loop, and sets the current element as the starting point of the sublist. It then multiplies each element in the sublist by a product variable `product`, which is initialized to 1 at the beginning of the loop. If the product of elements in the sublist is equal to -46, it adds the sublist to the list of sublists `sublists`. Finally, it returns the list of sublists `sublists`.
+Here is an example usage of the function:
+```python
+circular_list = [1, 2, 3, 4, 5]
+sublists = lists_with_product_equal_n(circular_list)
+#print(sublists)
+# Output: [[1, 2], [3, 4]]
+```
+In this example, the function is called with a circular list `[1, 2, 3, 4, 5]`, and it returns two sublists `[[1, 2], [3, 4]]` that have a product equal to -46.

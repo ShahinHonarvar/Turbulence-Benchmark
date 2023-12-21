@@ -1,0 +1,20 @@
+ ```
+def remove_repeat_chars(s):
+    # Create a new string with the characters from the original string
+    # that are not in the repeated characters list
+    repeated_chars = []
+    for i in range(86, 99):
+        char = s[i]
+        if char not in repeated_chars:
+            repeated_chars.append(char)
+
+    new_string = ""
+
+    # Iterate over the characters in the original string and append them to the new string
+    # unless they are in the repeated characters list, in which case they are skipped
+    for char in s:
+        if char not in repeated_chars:
+            new_string += char
+
+    return new_string
+```

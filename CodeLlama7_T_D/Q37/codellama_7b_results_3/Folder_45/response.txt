@@ -1,0 +1,24 @@
+ ```
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ''
+
+    # Iterate over each character in the original string
+    for char in s:
+
+        # If the character is between indices 72 and 94, both inclusive, and is greater than or equal to character '.' and smaller than or equal to character 'b', then add it to the new string
+        if (char >= '.' and char <= 'b') and (72 <= ord(char) <= 94):
+            new_str += char
+
+    # Return the altered string
+    return new_str
+
+# Test the function with a sample input
+#print(filter_chars('Hello World!'))
+```
+This code defines a function `filter_chars` that takes a single argument of type `str`. The function iterates over each character in the original string using the `for char in s:` loop. For each character, if it meets the criteria specified in the problem statement (i.e., it is between indices 72 and 94, both inclusive, and is greater than or equal to character '.' and smaller than or equal to character 'b'), then it is added to a new string `new_str`. The function returns the altered string `new_str` after completing all iterations.
+In the code, we first define the `filter_chars` function with the signature `def filter_chars(s):`. This function takes a single argument of type `str` and returns an altered version of the original string.
+The main logic of the function is implemented in the `for char in s:` loop. Here, we iterate over each character in the original string `s`. For each character, we check if it meets the criteria specified in the problem statement (i.e., it is between indices 72 and 94, both inclusive, and is greater than or equal to character '.' and smaller than or equal to character 'b') using the following conditions:
+* `if (char >= '.' and char <= 'b') and (72 <= ord(char) <= 94):` This condition checks if the current character `char` is between indices 72 and 94, both inclusive, and is greater than or equal to character '.' and smaller than or equal to character 'b'. The `ord()` function returns the integer value of a given character.
+If the current character meets the criteria specified in the problem statement, then we add it to the new string `new_str`. Here, we use the `+=` operator to concatenate the current character with the existing characters in `new_str`.
+After completing all iterations over each character in the original string, we return the altered string `new_str` at the end of the function.

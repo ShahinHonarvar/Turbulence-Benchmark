@@ -1,0 +1,28 @@
+ def palindrome_of_length_at_least_n(string, n):
+    # Convert the input string to lowercase
+    string = string.lower()
+    # Create an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(len(string)):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Check if the current character is part of a palindrome
+            if is_palindrome(string, i - 1, i + 1):
+                # Add the palindrome to the set of palindromes
+                palindromes.add(string[i - 1:i + 1])
+    return palindromes
+def is_palindrome(string, start, end):
+    # Check if the string is empty or has only one character
+    if len(string) - 2 <= 0:
+        # Return True if the string is empty or has only one character
+        return True
+
+    # Check if the current character is equal to the previous character
+    elif string[start] == string[end]:
+        # Recursively check if the substring starting from the previous character and ending at the current character is a palindrome
+        return is_palindrome(string, start - 1, end + 1)
+
+    # Return False if the current character is not equal to the previous character
+    else:
+        return False

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef gcf_two_nums(lst):\n    def find_factors(num):\n        factors = []\n        for i in range(1, num + 1):\n            if num % i == 0:\n                factors.append(i)\n        return factors\n\n    factors_279 = find_factors(lst[279])\n    factors_812 = find_factors(lst[812])\n    common_factors = list(set(factors_279).intersection(factors_812))\n    gcf = max(common_factors)\n    return gcf\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689855997,
+  "id": "chatcmpl-7eN1pAWBMwiHoKZ5lSfOBVzwgOOLk",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 87,
+    "total_tokens": 191
+  }
+}

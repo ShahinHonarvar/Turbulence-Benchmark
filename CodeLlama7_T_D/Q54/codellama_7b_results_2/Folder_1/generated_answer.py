@@ -1,0 +1,16 @@
+
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    # Extract the integer at index 20 from the tuple
+    x = tuple_of_positive_integers[20]
+    # Initialize an empty list to store the right-truncatable prime numbers less than x
+    right_truncatable_prime_numbers = []
+    # Iterate over all prime numbers less than x
+    for i in range(2, x):
+        # Check if i is a right-truncatable prime number
+        if is_right_truncatable_prime(i) == True:
+            # Add i to the list of right-truncatable prime numbers less than x
+            right_truncatable_prime_numbers.append(i)
+    # Sort the list of right-truncatable prime numbers in descending order
+    right_truncatable_prime_numbers.sort(reverse=True)
+    # Return the sorted list of right-truncatable prime numbers less than x
+    return right_truncatable_prime_numbers

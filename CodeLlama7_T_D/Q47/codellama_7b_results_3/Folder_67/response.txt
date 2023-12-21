@@ -1,0 +1,24 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Define the range of indices for which we want to find palindromes
+index_range = range(65, 99 + 1)
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Iterate over the characters in the string within the defined index range
+for i in index_range:
+# Check if the character at index i is a letter
+if (string[i].isalpha()):
+# Get the lowercase version of the character
+lowercase_char = string[i].lower()
+# Check if the character is a palindrome
+if (lowercase_char == lowercase_char[::-1]):
+# Add the palindrome to the set
+palindromes.add(lowercase_char)
+# Check if there are any palindromes with lengths between 26 and 33, inclusive
+if (len(palindromes) > 0):
+# Return the set of palindromes
+return palindromes
+# If no such palindrome exists, return an empty set
+else:
+return set()
+```

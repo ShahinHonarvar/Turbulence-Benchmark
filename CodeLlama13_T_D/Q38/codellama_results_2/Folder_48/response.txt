@@ -1,0 +1,14 @@
+```
+def find_subset_of_length_n(elements, n):
+    return len([s for s in subsets(elements) if len(s) == n])
+
+def subsets(elements):
+    if not elements:
+        yield []
+    else:
+        e = elements[0]
+        for s in subsets(elements[1:]):
+            yield [e] + s
+            yield s
+```
+Please note that this code is not optimized and has time complexity of O(2^n), where n is the size of the input set.

@@ -1,0 +1,25 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the remainder of the decimal integer divided by the 6th Fibonacci number
+    remainder = decimal_integer % (fibonacci(6))
+    # If the remainder is 0, then the decimal integer is divisible by the 6th Fibonacci number, otherwise it's not
+    if remainder == 0:
+        return True
+
+    else:
+
+        return False
+
+# Calculate the nth Fibonacci number using the recursive formula
+def fibonacci(n):
+
+    # Base case: If n is 1 or 2, then the result is 1
+    if n == 1 or n == 2:
+        return 1
+
+    # Recursive case: Calculate the result for the previous two Fibonacci numbers and add them together
+    else:
+
+        return fibonacci(n-1) + fibonacci(n-2)

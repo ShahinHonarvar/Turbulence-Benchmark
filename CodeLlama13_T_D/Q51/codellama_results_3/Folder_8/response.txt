@@ -1,0 +1,19 @@
+```python
+def if_contains_anagrams(strs):
+    # Initialize a set to store the anagram pairs
+    anagram_pairs = set()
+    
+    # Iterate through each string in the list
+    for str1 in strs:
+        # Convert the current string to lowercase
+        str1 = str1.lower()
+        
+        # Check if the current string is an anagram of any other string in the list
+        for str2 in strs:
+            if len(str1) >= 3 and len(str2) >= 3 and sorted(str1) == sorted(str2):
+                # If it is an anagram, add the pair to the set
+                anagram_pairs.add((str1, str2))
+    
+    # Return true if there are at most 68 pairs of anagrams in the list
+    return len(anagram_pairs) <= 68
+```

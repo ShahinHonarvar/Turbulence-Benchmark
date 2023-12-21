@@ -1,0 +1,19 @@
+
+def gcf_three_nums(my_list):
+    # Get the elements at indices 944, 814 and 865
+    elem_944 = my_list[944]
+    elem_814 = my_list[814]
+    elem_865 = my_list[865]
+
+    # Calculate the greatest common factor of these elements
+
+    gcf = 1
+
+    while True:
+
+        if elem_944 % gcf == 0 and elem_814 % gcf == 0 and elem_865 % gcf == 0:
+            break
+
+        gcf += 1
+
+    return gcf

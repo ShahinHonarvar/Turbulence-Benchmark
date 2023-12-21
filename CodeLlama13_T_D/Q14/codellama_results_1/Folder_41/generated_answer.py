@@ -1,0 +1,10 @@
+
+def find_second_smallest_num(numbers):
+    if len(numbers) < 5:
+        return None
+    
+    sorted_numbers = sorted(numbers[4:6])
+    if len(sorted_numbers) == 0:
+        return None
+    else:
+        return sorted_numbers[1]

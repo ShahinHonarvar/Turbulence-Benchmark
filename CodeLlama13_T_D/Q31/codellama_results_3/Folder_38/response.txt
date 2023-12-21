@@ -1,0 +1,17 @@
+```
+def if_perfect_num(my_list):
+    if my_list[38] == sum(filter(lambda x: x % my_list[38] == 0, range(1, my_list[38]))) and all(map(lambda x: x < my_list[38], my_list)):
+        return True
+    else:
+        return False
+```
+This code defines a function `if_perfect_num` that takes in a list of positive integers as an argument. The function returns `True` if the integer at index 38 is a perfect number, otherwise it returns `False`.
+
+The function uses the fact that a number is a perfect number if and only if it is equal to the sum of its proper divisors, excluding itself. To calculate the proper divisors of a number `n`, we can use the filter function with a lambda expression that checks whether each number from 1 to `n` divides `n` evenly without leaving a remainder.
+```
+filter(lambda x: x % n == 0, range(1, n))
+```
+The list comprehension `[x for x in my_list if x < my_list[38]]` is used to generate a new list of numbers that are less than the number at index 38. The `all` function is then used to check whether all elements in this list satisfy the condition that they are less than the number at index 38.
+```
+all(map(lambda x: x < my_list[38], my_list))
+```

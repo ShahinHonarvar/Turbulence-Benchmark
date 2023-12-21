@@ -1,0 +1,32 @@
+ def return_binary_or_hexa(my_tuple):
+    a = my_tuple[10]
+    b = my_tuple[100]
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in my_tuple:
+            sum += i
+
+    if sum % 2 == 0:
+
+        return hex(sum)[2:]
+
+    else:
+
+        return bin(sum)[3:]
+
+# Test case 1:
+assert return_binary_or_hexa((1, 2, 3, 4, 5)) == "1A"
+# Test case 2:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6)) == "28"
+# Test case 3:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7)) == "3E"
+# Test case 4:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8)) == "50"
+# Test case 5:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8, 9)) == "66"
+# Test case 6:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) == "7C"
+# Test case 7:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)) == "8A"
+# Test case 8:
+assert return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)) == "91"

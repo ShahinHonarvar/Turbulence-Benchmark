@@ -1,0 +1,23 @@
+
+def filter_chars(s):
+    # Create a new string with the same characters as s
+    new_string = ""
+
+    # Iterate over the characters in s
+    for char in s:
+
+        # If the character is between 90 and 97 (exclusive) and is greater than 'j' and smaller than 'w', remove all occurrences of that character within new_string while keeping the order of all characters intact.
+        if ((ord(char) >= 90) and (ord(char) <= 97)) and ((ord(char) > ord('j')) and (ord(char) < ord('w'))):
+            # Remove all occurrences of this character from new_string
+            while True:
+                try:
+                    i = new_string.index(char)
+                    new_string = new_string[:i] + new_string[i+1:]
+                except ValueError:
+                    break
+
+        # Add this character to the new string
+        new_string += char
+
+    # Return the altered string
+    return new_string

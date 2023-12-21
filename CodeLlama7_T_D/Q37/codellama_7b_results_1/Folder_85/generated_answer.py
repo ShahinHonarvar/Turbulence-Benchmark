@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Create an empty string for the filtered output
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for c in s:
+        # Check if the current character is within the specified range
+        if (ord(c) >= ord('O')) and (ord(c) <= ord('d')):
+            # If it is, do not include it in the filtered output
+            continue
+
+        else:
+            # Otherwise, add the current character to the filtered output
+            filtered += c
+
+    return filtered

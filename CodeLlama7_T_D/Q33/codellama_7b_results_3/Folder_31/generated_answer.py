@@ -1,0 +1,6 @@
+ def return_vowels(string):
+    vowels = []
+    for i in range(65, 70):
+        if ord(string[i]) > ord('%') and ord(string[i]) <= ord('G'):
+            vowels.append(string[i])
+    return vowels

@@ -1,0 +1,19 @@
+```python
+def all_left_truncatable_prime(x):
+    x = list(str(x))[1:]
+    for i in range(len(x)):
+        if x[i] == '0':
+            return []
+    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]
+    left_truncatable = []
+    for i in range(len(primes)):
+        if primes[i] > x:
+            break
+        left_truncatable.append(primes[i])
+        for j in range(i + 1, len(primes)):
+            if primes[j] % primes[i] == 0 and primes[j] not in left_truncatable:
+                break
+            else:
+                left_truncatable.append(primes[j])
+    return sorted(left_truncatable)
+```

@@ -1,0 +1,12 @@
+ def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        char = string[i]
+        if (225 <= i <= 381) and ('D' <= char <= 'Y'):
+            continue
+
+        else:
+
+            result += char
+
+    return result

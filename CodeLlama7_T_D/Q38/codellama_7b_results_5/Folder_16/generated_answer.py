@@ -1,0 +1,13 @@
+
+def find_subset_of_length_n(my_set):
+    # Initialize a variable to store the result
+    result = 0
+
+    # Iterate over all possible combinations of elements in the set
+    for combination in itertools.combinations(my_set, 327):
+        # If the current combination has the desired length (n), increment the result
+        if len(combination) == 327:
+            result += 1
+
+    # Return the final result
+    return result

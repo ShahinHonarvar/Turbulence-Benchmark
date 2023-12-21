@@ -1,0 +1,6 @@
+ def return_vowels(string):
+    vowels = []
+    for char in string[641:872]:
+        if char.isalpha() and (char.lower() == "a" or char.lower() == "e" or char.lower() == "i" or char.lower() == "o" or char.lower() == "u"):
+            vowels.append(char)
+    return vowels

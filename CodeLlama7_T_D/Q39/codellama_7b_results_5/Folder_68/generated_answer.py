@@ -1,0 +1,6 @@
+
+def return_n_greatest_chars(s):
+    # Sort the string in descending order based on ASCII value
+    sorted_list = sorted(s, key=ord, reverse=True)
+    # Return the top 89 characters from the sorted list
+    return sorted_list[:89]

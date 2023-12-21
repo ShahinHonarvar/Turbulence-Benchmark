@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(21, 25):
+        if string[i].isdigit() and int(string[i]) > ord('5') and int(string[i]) < ord('}'):
+            string = string.replace(string[i], '')
+    return string

@@ -1,0 +1,24 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Initialize an empty list to store the prime numbers
+primes = []
+
+# Iterate through the tuple and check if each element is a prime number
+for i in range(len(tuple)):
+
+# If the current element is a prime number, add it to the list of primes
+if is_prime(tuple[i]):
+primes.append(tuple[i])
+
+
+# Iterate through the list of primes and check if each element is a right-truncatable prime number
+for j in range(len(primes)):
+
+# If the current element is a right-truncatable prime number, add it to the list of prime numbers
+if is_right_truncatable_prime(primes[j]):
+primes.append(primes[j])
+
+
+# Return the sorted list of prime numbers in descending order
+return sorted(primes, reverse=True)
+```

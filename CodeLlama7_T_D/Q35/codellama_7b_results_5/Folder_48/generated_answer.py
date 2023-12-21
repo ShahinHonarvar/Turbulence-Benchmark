@@ -1,0 +1,14 @@
+
+def remove_repeat_chars(s):
+    # Find the first and last indices of the substring
+    first_idx = s.find('<', 409)
+    last_idx = s.rfind('>', 502)
+    # Create a new string without the repeated characters
+    new_str = ''
+    for i in range(first_idx):
+        if s[i] not in new_str:
+            new_str += s[i]
+    for i in range(last_idx, len(s)):
+        if s[i] not in new_str:
+            new_str += s[i]
+    return new_str

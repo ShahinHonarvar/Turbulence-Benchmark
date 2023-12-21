@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    all_products = deque(maxlen = n + 1)\n    results = []\n\n    for count in range(len(lst)):\n        running_list = []\n        running_product = 1\n        for idx in range(count, count + n):\n            val = lst[idx % n]\n            running_list.append(val)\n            running_product *= val\n            if running_product == 40:\n                results.append(list(running_list))\n            while running_product > 40 and running_list:\n                running_product /= running_list.pop(0)\n\n    return results\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691089425,
+  "id": "chatcmpl-7jXtpWlVmkn1z66S997rhB1rr8qUm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 131,
+    "prompt_tokens": 193,
+    "total_tokens": 324
+  }
+}

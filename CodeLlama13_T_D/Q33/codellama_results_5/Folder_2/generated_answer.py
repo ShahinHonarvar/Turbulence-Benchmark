@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(170, 645):
+        if string[i].isalpha() and string[i].upper() >= 'E' and string[i].upper() <= '~':
+            vowels.append(string[i])
+    return vowels

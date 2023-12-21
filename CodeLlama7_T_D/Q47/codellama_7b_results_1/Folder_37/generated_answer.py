@@ -1,0 +1,12 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the string
+    for i in range(len(string) - 9):
+        # Check if the substring from index i to index i + 9 is a palindrome
+        substr = string[i:i+10]
+        if substr == substr[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes

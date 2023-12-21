@@ -1,0 +1,23 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and find contiguous integers with a product equal to -69
+    for i in range(len(circular_list)):
+        product = 1
+
+        # Compute the product of the current element and its predecessor
+        if i > 0:
+            product *= circular_list[i - 1]
+
+        # Multiply the current element by the product so far
+        product *= circular_list[i]
+
+        # If the product is equal to -69, add the sublist to the list of sublists
+        if product == -69:
+            sublists.append(circular_list[i - 1:i + 1])
+
+    # Return the list of sublists
+    return sublists
+```

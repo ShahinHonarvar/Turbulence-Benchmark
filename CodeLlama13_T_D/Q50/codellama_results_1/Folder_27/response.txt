@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(list_of_strings):
+    for i in range(len(list_of_strings)):
+        for j in range(i+1, len(list_of_strings)):
+            if list_of_strings[i].lower() == list_of_strings[j].lower():
+                continue
+            elif sorted(list_of_strings[i]) == sorted(list_of_strings[j]):
+                return True
+    return False
+```

@@ -1,0 +1,12 @@
+
+def lists_with_product_equal_n(circular_list, n):
+    sublists = []
+    for i in range(len(circular_list)):
+        prod = 1
+        sublist = []
+        for j in range(i, len(circular_list)):
+            prod *= circular_list[j]
+            sublist.append(circular_list[j])
+            if prod == n:
+                sublists.append(sublist)
+    return sublists

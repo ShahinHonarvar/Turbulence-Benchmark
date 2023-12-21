@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(string_list):
+    return len([x for x in combinations(string_list, 2) if sorted(x[0].lower()) == sorted(x[1].lower())]) >= 96

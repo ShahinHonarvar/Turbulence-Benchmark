@@ -1,0 +1,15 @@
+```python
+def lists_with_product_equal_n(lst):
+    result = []
+    for i in range(len(lst)):
+        product = 1
+        sublist = [lst[i]]
+        j = (i + 1) % len(lst)
+        while j != i and product * lst[j] == n:
+            sublist.append(lst[j])
+            product *= lst[j]
+            j = (j + 1) % len(lst)
+        if product == n:
+            result.append(sublist)
+    return result
+```

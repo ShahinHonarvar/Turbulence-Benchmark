@@ -1,0 +1,12 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Define a lambda function to check if a number is prime or not
+    is_prime = lambda n: (n > 1) and all(n % i for i in range(2, int(n ** 0.5) + 1))
+    # Return the sorted list of all prime numbers from index 69 to index 80, both inclusive
+    return sorted([my_list[i] for i in range(69, 81) if is_prime(my_list[i])], reverse=False)]
+```
+This code defines a lambda function `is_prime` that checks if a number is prime or not. The function takes a single argument `n`, which is the number to be checked for primality.
+The main function `find_primes_between_indices` takes a list of integers as its argument and returns the sorted list of all prime numbers from index 69 to index 80, both inclusive. The function uses the lambda function `is_prime` to check if each number in the specified range is prime or not. If a number is prime, it is added to the result list.
+The code first defines a list comprehension that generates a list of numbers from index 69 to index 80, both inclusive. The lambda function `is_prime` is then used to check if each number in the generated list is prime or not. If a number is prime, it is added to the result list.
+The code then uses the sorted() built-in function to sort the result list in ascending order.
+Note that this solution assumes that the input list is a list of integers and that the indices in the specified range are valid and within the bounds of the input list.

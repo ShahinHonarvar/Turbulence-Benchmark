@@ -1,0 +1,20 @@
+ ```
+def all_odd_ints_exclusive(my_list):
+    # Find the first odd integer in the range
+    for i in range(2, len(my_list)):
+        if my_list[i] % 2 != 0:
+            start = i + 1
+            break
+
+    # Find the last odd integer in the range
+
+    for i in range(len(my_list) - 1, 2, -1):
+        if my_list[i] % 2 != 0:
+            end = i - 1
+            break
+
+    # Return a list of all odd integers in the specified range
+
+    return [my_list[i] for i in range(start, end + 1) if my_list[i] % 2 != 0]
+```
+This function takes a single argument, `my_list`, which is a list of integers. It then finds the first and last odd integers in the specified range using two nested loops. If no odd integers exist in the specified range, the function returns an empty list. Finally, it uses a list comprehension to create a new list containing all the odd integers from the specified range.

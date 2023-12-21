@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the result list
+    result = []
+
+    # Loop over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Create a submatrix with only the current element
+            submatrix = np.array([[matrix[i,j]]]])
+
+            # If the sum of the elements in the submatrix is 3, add it to the result list
+            if np.sum(submatrix) == 3:
+                result.append(submatrix)
+
+    # Return the result list
+    return result

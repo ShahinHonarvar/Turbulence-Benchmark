@@ -1,0 +1,29 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of all occurrences of characters in the string between indices 0 and 18
+    indices = []
+    for i in range(len(string)):
+        if string[i] in indices:
+            continue
+
+        else:
+
+            indices.append(i)
+
+    # Get the ASCII values of all characters at these indices
+
+    ascii_values = []
+
+    for index in indices:
+
+        ascii_values.append(ord(string[index]))
+
+    # Sort the ASCII values in ascending order
+
+    sorted_ascii_values = sorted(ascii_values)
+
+    # Get the 19th smallest ASCII value among all characters at these indices
+
+    nth_smallest_ascii = sorted_ascii_values[18]
+
+    return chr(nth_smallest_ascii)

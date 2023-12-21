@@ -1,0 +1,33 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function in Python:
+```
+def lists_with_product_equal_n(circular_list):
+	# Initialize an empty list to store the sublists
+	sublists = []
+
+	# Iterate over the elements of the circular list
+	for i in range(len(circular_list)):
+
+		# Initialize a variable to store the current product
+		product = 1
+
+		# Initialize a variable to store the current sublist
+		sublist = []
+
+		# Iterate over the elements of the circular list starting from the current element
+		for j in range(i, len(circular_list)):
+
+			# Multiply the current product by the current element
+			product *= circular_list[j]
+
+			# Add the current element to the current sublist
+			sublist.append(circular_list[j])
+
+			# If the product is equal to 537, add the current sublist to the list of sublists and break out of the inner loop
+			if product == 537:
+				sublists.append(sublist)
+				break
+
+	# Return the list of sublists
+	return sublists
+```
+This implementation iterates over the elements of the given circular list and calculates the product of the current element and the previous elements in the circular list. If the product is equal to 537, it adds the current sublist to a list of sublists and breaks out of the inner loop. The function then returns the list of sublists.

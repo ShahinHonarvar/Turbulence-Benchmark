@@ -1,0 +1,15 @@
+
+def return_binary_or_hexa(tuple):
+    # Initialize variables
+    a = tuple[27]
+    b = tuple[96]
+    sum = 0
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 27 and 96
+    for i in range(a + 1, b):
+        if i not in tuple[27:96]:
+            sum += i
+    # Return the binary or hexadecimal representation string of the sum
+    if sum % 2 == 0:
+        return f"{sum:x}"
+    else:
+        return f"{sum:b}"

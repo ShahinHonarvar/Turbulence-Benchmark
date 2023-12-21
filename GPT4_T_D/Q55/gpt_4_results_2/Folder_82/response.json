@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code:\n\n```python\ndef lists_with_product_equal_n(lst):\n    import numpy as np\n    res = []\n    for i in range(len(lst)):\n        for j in range(i+1, len(lst)+1):\n            sublist = lst[i:j]\n            if j==len(lst) and i>0:\n                sublist.append(lst[0])\n            if np.prod(sublist) == 8:\n                res.append(sublist)\n    return res\n```\nThe function uses nested loops to iterate all possible sublists in the circular list. For each sublist, it checks if the product of all members equals to 8. If so, it adds it to the output list. The function also handles the cases when a sublist crosses the head and tail of the circular list. It uses numpy's prod function to calculate the product.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690901635,
+  "id": "chatcmpl-7il2xHhPUb64odALMRmlVA2YXzudh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 172,
+    "prompt_tokens": 193,
+    "total_tokens": 365
+  }
+}

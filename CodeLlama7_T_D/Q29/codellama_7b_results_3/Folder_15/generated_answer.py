@@ -1,0 +1,36 @@
+
+def gcf_two_nums(my_list):
+    a = my_list[0]
+    b = my_list[1]
+    if (a == 0) and (b == 0):
+        return 0
+
+    elif a == 0:
+
+        return b
+
+
+    elif b == 0:
+
+        return a
+
+
+    else:
+
+        while True:
+
+            if (a % 2 == 0) and (b % 2 == 0):
+                a = int(a / 2)
+
+                b = int(b / 2)
+
+            elif (a % 2 != 0) and (b % 2 != 0):
+                a = int(a / 2)
+
+                b = int(b / 2)
+
+            else:
+
+                break
+
+        return a

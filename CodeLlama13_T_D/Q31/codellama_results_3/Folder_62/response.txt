@@ -1,0 +1,9 @@
+```python
+def if_perfect_num(list_of_ints):
+    return list_of_ints[926] == sum(list_of_ints[:int(list_of_ints[926])**0.5 + 1])
+```
+This function takes a single argument `list_of_ints`, which is a list of positive integers, and returns True if the integer at index 926 is a perfect number, otherwise it returns False. The function uses the formula for finding the sum of the proper divisors of an integer, which is given by `sum(list_of_ints[:int(list_of_ints[926])**0.5 + 1])`.
+
+For example, if `list_of_ints = [6, 28, 496, 8128, ...]`, then the integer at index 926 is 496, which is a perfect number because it is equal to the sum of its proper divisors (which are 6 and 3). Therefore, this function will return True for this list.
+
+Note that the function assumes that the input `list_of_ints` is a list of positive integers, and that the index at which we want to check whether a number is a perfect number is provided as an argument to the function. If the input is not a list of positive integers, or if the index is not valid, the function will raise an error.

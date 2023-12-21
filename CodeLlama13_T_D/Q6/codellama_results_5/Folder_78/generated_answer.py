@@ -1,0 +1,3 @@
+
+def all_neg_ints_exclusive(mylist):
+    return [x for x in mylist[20:35] if x < 0]

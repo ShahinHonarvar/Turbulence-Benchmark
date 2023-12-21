@@ -1,0 +1,10 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Create a new list to store the odd integers
+    odd_ints = []
+    # Iterate over the list of integers, starting from index 10
+    for i in range(10, len(my_list)):
+        # If the current element is an odd integer, append it to the list of odd integers
+        if my_list[i] % 2 != 0:
+            odd_ints.append(my_list[i])
+    return odd_ints

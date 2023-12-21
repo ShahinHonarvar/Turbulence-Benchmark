@@ -1,0 +1,17 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the indices
+    sum = 0
+    i = 20
+    j = 200
+
+    # Iterate through the list from index 20 to index 200, both inclusive
+    for k in range(i, j + 1):
+        # Check if the current integer is divisible by either -20 or -200
+        if my_list[k] % (-20) == 0 or my_list[k] % (-200) == 0:
+            # If it is, add it to the sum
+            sum += my_list[k]
+
+    # Return the sum
+
+    return sum

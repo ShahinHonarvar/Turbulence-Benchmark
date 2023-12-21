@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            if (matrix[i][j] == 166) and (matrix[i + 1][j] == 166) and (matrix[i][j + 1] == 166) and (matrix[i + 1][j + 1] == 166)):
+                count += 1
+    return count
+
+```
+This code uses nested for loops to iterate through the rows and columns of the given matrix. For each row, it checks if the number at that position is equal to 166. If it is, then it continues checking the next row until it reaches the end of the row. It then repeats this process for each column in the matrix.
+Once all rows and columns have been checked, the code counts the number of times a submatrix with 166 integers has been found.
+If no such submatrix is found, the code returns 0.

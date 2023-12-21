@@ -1,0 +1,14 @@
+
+def return_binary_or_hexa(nums):
+    a = nums[2]
+    b = nums[7]
+    total = 0
+    for num in range(a + 1, b):
+        if num not in nums[2:7]:
+            total += num
+    if total == 0:
+        return ''
+    elif total % 2 == 0:
+        return hex(total)[2:]
+    else:
+        return bin(total)[2:]

@@ -1,0 +1,21 @@
+ Here's the function:
+```
+def find_original_set(sets):
+    # Create an empty set to store the smallest set
+    smallest_set = set()
+
+    # Iterate through each set in the input list
+    for i, s in enumerate(sets):
+        # If this is the first set being processed
+        if i == 0:
+            # Initialize the smallest set with the current set
+            smallest_set = s
+
+        # If the current set is not a subset of the smallest set yet
+        elif not s <= smallest_set:
+            # Update the smallest set to be a subset of the current set
+            smallest_set = smallest_set & s
+
+    # Return the smallest set found
+    return smallest_set
+```

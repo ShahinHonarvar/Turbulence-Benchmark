@@ -1,0 +1,10 @@
+
+def find_original_set(sets):
+    # Initialize the smallest set as the first set in the input
+    smallest_set = sets[0]
+    # Iterate over each set in the input and find the smallest set that contains all of them
+    for i in range(1, len(sets)):
+        if len(smallest_set.intersection(sets[i])) < len(smallest_set):
+            smallest_set = smallest_set.intersection(sets[i])
+    # Return the smallest set found
+    return smallest_set

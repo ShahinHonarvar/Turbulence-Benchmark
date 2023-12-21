@@ -1,0 +1,14 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count to 0
+    count = 0
+    # Loop over each submatrix of size n x n in the given matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Check if the current submatrix contains 166 integers
+            if sum(matrix[i:i+2, j:j+2]) == 166:
+                # If it does, increment the count by 1
+                count += 1
+    # Return the final count of submatrices with 166 integers each
+    return count

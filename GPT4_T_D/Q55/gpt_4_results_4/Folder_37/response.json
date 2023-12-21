@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    for start_idx in range(len(lst)):\n        multipliers = cycle(lst)\n        for _ in range(start_idx):\n            next(multipliers)\n        product = 1\n        sublist = []\n        for num in multipliers:\n            if abs(product*num) >= abs(76) and product*num != 76:\n                break\n            product *= num\n            sublist.append(num)\n            if product == -76:\n                result.append(list(sublist))\n                break\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691088351,
+  "id": "chatcmpl-7jXcV717q2jtrvv9FV1DxnzmqVPRi",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 193,
+    "total_tokens": 313
+  }
+}

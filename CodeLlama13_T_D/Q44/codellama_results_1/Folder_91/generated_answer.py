@@ -1,0 +1,14 @@
+
+def composite_nums_between_indices(nums):
+    if len(nums) < 5:
+        return set()
+    
+    composites = set()
+    for i in range(5, len(nums)):
+        num = nums[i]
+        for j in range(2, int(num ** 0.5) + 1):
+            if num % j == 0:
+                composites.add(num)
+                break
+    
+    return composites

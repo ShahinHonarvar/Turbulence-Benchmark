@@ -1,0 +1,26 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[760]
+list = []
+for i in range(2, x):
+if is_prime(i) and right_truncatable_prime(i):
+list.append(i)
+return sorted(list, reverse=True)
+else:
+return []
+
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+
+def right_truncatable_prime(n):
+s = str(n)
+for i in range(len(s) - 1):
+if int(s[i:]) != int(s[:-i]):
+return False
+return True
+```

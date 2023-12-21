@@ -1,0 +1,14 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fibonacci_sequence = [0, 1]
+    # Loop through the Fibonacci sequence and check if the current number is divisible by the 188th number
+    for i in range(2, len(fibonacci_sequence)):
+        if decimal_integer % fibonacci_sequence[i - 1] == 0:
+            return True
+
+    # If none of the Fibonacci numbers are divisible by the current number, return False
+
+    return False

@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert binary representation to decimal
+    decimal = int(binary_rep, 2)
+    # Calculate the 88th Fibonacci number
+    a = 0
+    b = 1
+    for i in range(87):
+        a, b = b, a + b
+    # Check if the decimal integer is divisible by the 88th Fibonacci number
+    return decimal % a == 0

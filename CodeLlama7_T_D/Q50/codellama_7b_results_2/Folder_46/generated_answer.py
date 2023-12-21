@@ -1,0 +1,38 @@
+
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Get the length of the string
+        length = len(string)
+
+        # Check if the length is at least three
+        if length >= 3:
+            # Create a copy of the string
+            copy = string
+
+            # Iterate over the characters in the string
+            for char in string:
+                # Get the index of the character in the copy
+                index = copy.index(char)
+
+                # Check if the character is at the end of the copy
+                if index == len(copy) - 1:
+                    # Remove the last character from the copy
+                    copy = copy[:-1]
+
+                    # Add the anagram pair to the dictionary
+                    anagram_pairs[string, copy] = True
+
+                    # Check if there are at least 38 pairs of anagrams in the list
+                    if len(anagram_pairs) >= 38:
+                        # Return true
+                        return True
+
+            # If there are no anagram pairs, return false
+            return False
+
+    # If there are no strings with a length of at least three, return false
+    return False

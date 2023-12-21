@@ -1,0 +1,35 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Define a list to store the prime numbers
+    prime_list = []
+    # Iterate through each element in the tuple
+    for i in range(len(tuple)):
+        # Get the current element
+        current_element = tuple[i]
+        # Check if the current element is a prime number
+        if is_prime(current_element):
+            # If the current element is a prime number, append it to the prime list
+            prime_list.append(current_element)
+    return prime_list
+
+def is_prime(n):
+    # Check if n is less than 2
+    if n < 2:
+        # Return False if n is less than 2
+        return False
+
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # If n is divisible by any number between 2 and the square root of n
+        if n % i == 0:
+            # Return False if n is divisible by any number between 2 and the square root of n
+            return False
+
+    # If n is not divisible by any number between 2 and the square root of n
+    return True
+
+# Test the all_left_truncatable_prime function with a tuple of positive integers
+tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+# Print the list of all left-truncatable prime numbers less than 13
+#print(all_left_truncatable_prime(tuple))
+```

@@ -1,0 +1,30 @@
+ ```
+def if_perfect_num(lst):
+    if len(lst) < 733:
+        return False
+
+    num = lst[733]
+
+    if num <= 0:
+
+        return False
+
+
+    sqrt_num = int(round(math.sqrt(num), 0)))
+
+    sum_of_factors = 0
+
+    for i in range(1, sqrt_num + 1):
+
+        if num % i == 0:
+
+            sum_of_factors += i + (num // i)
+
+    return sum_of_factors == num
+```
+This function takes a list of positive integers as an argument and returns `True` if the integer at index `733` is a perfect number, otherwise it returns `False`.
+The function first checks if the length of the input list is less than or equal to 733. If it is not, then the function immediately returns `False`, because there is no integer at index 733 in the list.
+Next, the function checks if the integer at index 733 is greater than 0. If it is not, then the function also immediately returns `False`, because a perfect number must be greater than 0.
+If the input integer is both greater than 0 and there are at least 734 integers in the list, then the function proceeds to calculate the square root of the input integer using the `math.sqrt()` function from the Python math library. The square root of the input integer is rounded off to the nearest integer using the `round()` function from the Python math library.
+Next, the function calculates the sum of the factors of the input integer using a loop that runs from 1 to the square root of the input integer. If the input integer is divisible by an integer `i` between 1 and the square root of the input integer, then the function adds both `i` and `(input_integer / i)` to the sum of factors.
+Finally, the function returns `True` if the sum of the factors of the input integer is equal to the input integer, otherwise it returns `False`.

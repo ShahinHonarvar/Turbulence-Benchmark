@@ -1,0 +1,22 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a counter for the number of anagrams found
+    anagram_counter = 0
+
+    # Loop through each string in the list
+    for string1 in my_list:
+        # Loop through each other string in the list
+        for string2 in my_list:
+            # If the two strings are not the same, and they are anagrams of each other
+            if string1 != string2 and sorted(string1) == sorted(string2):
+                # Increment the counter
+                anagram_counter += 1
+
+    # If there are more than 55 pairs of anagrams in the list, return False
+    if anagram_counter > 55:
+        return False
+
+    # Otherwise, return True
+    else:
+        return True
+```

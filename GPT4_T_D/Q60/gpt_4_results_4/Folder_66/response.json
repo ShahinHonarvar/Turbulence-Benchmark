@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport math\n\ndef check_prime(num):\n    if num <= 1:\n        return False\n    for i in range(2, math.isqrt(num) + 1):\n        if num % i == 0:\n            return False\n    return True\n\ndef get_left_right_truncations(num):\n    str_num = str(num)\n    truncations = []\n    for i in range(1, len(str_num)):\n        truncations.append(int(str_num[i:]))\n        truncations.append(int(str_num[:-i]))\n    return truncations\n\ndef check_no_zero(num):\n    if '0' in str(num):\n        return False\n    return True\n\ndef check_left_right_truncable_prime(num):\n    if not check_prime(num) or not check_no_zero(num):\n        return False\n    truncations = get_left_right_truncations(num)\n    for trunc in truncations:\n        if not check_prime(trunc):\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(input_tuple):\n    x = input_tuple[25]\n    truncatable_primes = []\n    for num in range(2, x + 1):\n        if check_left_right_truncable_prime(num):\n            truncatable_primes.append(num)\n    truncatable_primes.sort(reverse=True)\n    return truncatable_primes\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691104325,
+  "id": "chatcmpl-7jbm93M4wGvhzadsTRpRlOc3KCUsl",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 275,
+    "prompt_tokens": 187,
+    "total_tokens": 462
+  }
+}

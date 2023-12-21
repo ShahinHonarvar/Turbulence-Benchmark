@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(tup):
+    a, b = 110, 348
+    sum = 0
+    for i in range(a+1, b-1):
+        if tup[i] not in range(a+1, b-1):
+            sum += 1
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+    else:
+        return bin(sum)[2:]

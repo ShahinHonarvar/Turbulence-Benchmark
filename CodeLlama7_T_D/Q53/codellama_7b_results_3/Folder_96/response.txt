@@ -1,0 +1,33 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the string
+    for i in range(len(string)):
+        # Get the character at index i
+        char = string[i]
+
+        # Check if the character is a letter
+        if char.isalpha():
+            # Get the lowercase version of the character
+            lowercase_char = char.lower()
+
+            # Iterate over the characters in the reversed string
+            for j in range(len(string)-1, i, -1):
+                # Get the character at index j
+                rev_char = string[j]
+
+                # Check if the character is a letter
+                if rev_char.isalpha():
+                    # Get the lowercase version of the character
+                    lowercase_rev_char = rev_char.lower()
+
+                    # Check if the character and its reverse are the same
+                    if lowercase_char == lowercase_rev_char:
+                        # Add the palindrome to the set
+                        palindromes.add(string[i:j+1])
+
+    # Return the set of palindromes
+    return palindromes
+```

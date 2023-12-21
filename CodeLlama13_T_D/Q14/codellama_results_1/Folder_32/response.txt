@@ -1,0 +1,17 @@
+```
+def find_second_smallest_num(my_list):
+    # sort the list in ascending order
+    my_list.sort()
+    
+    # check if there is a second smallest element between index 32 to 35, both inclusive
+    if len(my_list) < 35:
+        return None
+    else:
+        for i in range(32, 36):
+            if my_list[i] != my_list[i-1]:
+                return my_list[i-1]
+        return None
+```
+I have added the comments to explain what each line of code does. The function `sort()` sorts the list in ascending order, so that we can find the second smallest element easily. We check if there is a second smallest element between index 32 to 35, both inclusive by checking the length of the list and if the current element is not equal to the previous element then return the previous element.
+
+Please note that this solution assumes that the input list contains distinct numbers. If the input list contains duplicate numbers, then this function will not work correctly.

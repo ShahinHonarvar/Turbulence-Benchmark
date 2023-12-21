@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code:\n\n```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(t):\n    x = t[975]\n    res = []\n    for num in range(0, x):\n        if '0' in str(num):\n            continue\n        temp = str(num)\n        while len(temp) > 0:\n            if not isprime(int(temp)):\n                break\n            else:\n                temp = temp[1:]\n        else:\n            res.append(num)\n    res.sort(reverse=True)\n    return res\n```\n\nThis Python code defines a function called 'all_left_truncatable_prime' that takes a tuple 't' of positive integers as an argument and assigns the 976th integer of this tuple to a variable 'x'. For each number less than 'x', it checks whether it contains '0'. If so, it skips to the next iteration. Otherwise, it drops the leftmost digit and checks if the remaining numbers are prime. If not, it breaks the loop. The function returns the list of all left-truncatable prime numbers less than 'x', sorted in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691099832,
+  "id": "chatcmpl-7jabg27HTv7StraUzY7k1ZQ0IIpWm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 232,
+    "prompt_tokens": 146,
+    "total_tokens": 378
+  }
+}

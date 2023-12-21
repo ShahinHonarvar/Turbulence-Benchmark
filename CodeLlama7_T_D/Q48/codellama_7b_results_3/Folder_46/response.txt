@@ -1,0 +1,20 @@
+ ```
+def return_binary_or_hexa(tuple):
+    a = tuple[10]
+    b = tuple[79]
+    sum = 0
+
+    for i in range(a + 1, b - 1 + 1):
+        if i not in tuple[10:79]:
+            sum += i
+
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+
+    else:
+
+        return bin(sum)[3:]
+```
+The code defines a function `return_binary_or_hexa` that takes one argument, a tuple of distinct nonnegative integers sorted in ascending order. The function calculates the sum of all integers from the 11th to the 79th element (both inclusive) that are not present in the specified range in the tuple between indices 10 and 79. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary representation should not be prefixed with `0b`. The hexadecimal representation should not be prefixed with `0x`. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in hexadecimal representation can be either in lowercase or uppercase. If all integers from the 11th to the 79th element (both inclusive) are present in the specified range in the tuple, the function returns an empty string.
+For example, if `tuple` is `(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)`, then the function returns an empty string because all integers from index 10 to index 79 are present in the specified range.
+On the other hand, if `tuple` is `(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78)`, then the function returns `'a2'` because the sum of all integers from index 10 to index 79 that are not present in the specified range is `12` (i.e., `1 + 2`).

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    from collections import deque\n    results = []\n    product = 1\n    index = 0\n    window = deque()\n    while True:\n        while product < 85 and index < len(lst):\n            window.append(lst[index])\n            product *= lst[index]\n            index += 1\n        while product > 85 and window:\n            product //= window.popleft()\n        if product == 85:\n            results.append(list(window))\n            product //= window.popleft()\n        if index == len(lst) and not window:\n            break\n    return results\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690977800,
+  "id": "chatcmpl-7j4rQj4vZZmGAdv3fOYYF4oh4juId",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 127,
+    "prompt_tokens": 193,
+    "total_tokens": 320
+  }
+}

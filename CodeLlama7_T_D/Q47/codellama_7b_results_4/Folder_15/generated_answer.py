@@ -1,0 +1,22 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the range of palindrome lengths
+    lengths = range(3, 7)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each length in the range
+    for length in lengths:
+        # Get the substring of the specified length
+        substring = string[0:length]
+        # Check if the substring is a palindrome
+        if is_palindrome(substring):
+            # Add the palindrome to the set
+            palindromes.add(substring)
+    return palindromes
+
+def is_palindrome(string):
+    """Check if a string is a palindrome."""
+    # Convert the string to lowercase
+    string = string.lower()
+    # Check if the string is the same backwards and forwards
+    return string == string[::-1]

@@ -1,0 +1,7 @@
+
+def all_ints_div_by_num(my_list):
+    divisible_integers = []
+    for i in range(33, 35 + 1):
+        if my_list[i] % 91 == 0:
+            divisible_integers.append(my_list[i])
+    return divisible_integers

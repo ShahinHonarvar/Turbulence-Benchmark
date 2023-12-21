@@ -1,0 +1,16 @@
+ def palindromes_of_specific_lengths(string):
+    # Find the index range for the substring
+    start_index = max(15, string[:72].find('a'))
+    end_index = min(72, string[start_index:].rfind('a') + start_index)
+    # Get all palindromes within the specified index range
+    palindromes = []
+    for i in range(start_index, end_index+1):
+        for j in range(i+1, end_index+1):
+            if string[i:j].lower() == string[i:j][::-1]:
+                palindromes.append(string[i:j])
+    # Filter the palindromes based on their length
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if len(palindrome) >= 19 and len(palindrome) <= 55:
+            filtered_palindromes.append(palindrome)
+    return set(filtered_palindromes)

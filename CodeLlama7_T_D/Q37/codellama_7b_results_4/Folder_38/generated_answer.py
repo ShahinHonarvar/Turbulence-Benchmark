@@ -1,0 +1,12 @@
+
+def filter_chars(my_string):
+    filtered_string = ""
+    for i in range(24, 79 + 1):
+        if my_string[i].isalpha():
+            if my_string[i].islower():
+                filtered_string += my_string[i].upper()
+            else:
+                filtered_string += my_string[i].lower()
+        else:
+            filtered_string += my_string[i]
+    return filtered_string

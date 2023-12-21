@@ -1,0 +1,14 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate through the list from index 91 to index 99, both inclusive
+    for i in range(91, 100):
+        # Check if the current number is prime or not
+        if my_list[i] == 1:
+            # If the current number is prime, add it to the set of composite numbers
+            composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers between index 91 and index 99, both inclusive
+    return composite_nums

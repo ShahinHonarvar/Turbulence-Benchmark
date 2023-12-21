@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(my_list):
+    return {x for x in my_list[0:9] if len([y for y in range(2, int(x**0.5) + 1) if x % y == 0]) > 1}

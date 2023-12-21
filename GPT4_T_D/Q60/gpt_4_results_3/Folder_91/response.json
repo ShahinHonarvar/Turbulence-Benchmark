@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import sqrt\n\ndef all_left_right_truncatable_prime(numbers):\n    prime_nums = []\n\n    def is_prime(n):\n        if n == 1:\n            return False\n        for i in range(2, int(sqrt(n)) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    def is_truncatable_prime(n):\n        str_n = str(n)\n        if '0' in str_n:\n            return False\n        for i in range(len(str_n)):\n            if not is_prime(int(str_n[i:])):\n                return False\n            if not is_prime(int(str_n[:len(str_n)-i])):\n                return False\n        return True\n\n    for num in range(numbers[0], 1, -1):\n        if is_truncatable_prime(num):\n            prime_nums.append(num)\n\n    return sorted(prime_nums, reverse=True)\n\n```\nThis code first defines a `is_prime` function to check if a number is prime. It then defines `is_truncatable_prime` function to check the left-and-right-truncatable condition. Then we check for all numbers from `numbers[0]` to 1. The reason we count down, instead of counting up, is that`is_prime` works faster for smaller numbers. Once we find a truncatable prime, we append it in `prime_nums` list and return this list in reverse order. If no left-and-right-truncatable prime is found, an empty list is returned (`prime_nums` will be empty).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690997191,
+  "id": "chatcmpl-7j9uBQEf5h1B7hYdq5TVNdchvjI6O",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 321,
+    "prompt_tokens": 187,
+    "total_tokens": 508
+  }
+}

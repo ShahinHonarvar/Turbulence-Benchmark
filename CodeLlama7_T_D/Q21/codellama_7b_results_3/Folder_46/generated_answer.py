@@ -1,0 +1,16 @@
+
+def all_ints_div_by_num(my_list):
+    # Create a new list to store the divisible integers
+    divisible_ints = []
+
+    # Iterate over the specified range of the input list
+    for i in range(21, 97 + 1):
+
+        # Check if the current element is divisible by 46
+        if my_list[i] % 46 == 0:
+
+            # If it is divisible, add it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by 46 from index 21 to index 97, both inclusive
+    return divisible_ints

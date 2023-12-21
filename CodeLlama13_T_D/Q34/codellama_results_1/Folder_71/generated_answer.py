@@ -1,0 +1,3 @@
+
+def find_original_set(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16):
+    return set.union(s1, set.union(s2, set.union(s3, set.union(s4, set.union(s5, set.union(s6, set.union(s7, set.union(s8, set.union(s9, set.union(s10, set.union(s11, set.union(s12, set.union(s13, set.union(s14, set.union(s15, s16))))))))))))))))

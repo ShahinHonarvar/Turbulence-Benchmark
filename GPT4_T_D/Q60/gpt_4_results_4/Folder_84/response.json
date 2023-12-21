@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(nums):\n    #Function to check if a number is prime\n    def is_prime(n):\n        if n < 2:\n            return False\n        for i in range(2,int(n**0.5)+1):\n            if n%i == 0:\n                return False\n        return True\n\n    #Function to check if a number is left- and right-truncatable prime\n    def is_left_right_tprime(n):\n        s = str(n)\n        if '0' in s:\n            return False\n        for i in range(len(s)):\n            if not is_prime(int(s[i:])) or not is_prime(int(s[:len(s)-i])):\n                return False\n        return True\n\n    #Extract x\n    x = nums[630]\n\n    #Return list of left-and-right-truncatable prime numbers\n    prime_list = [i for i in range(x, 1, -1) if is_left_right_tprime(i)]\n    \n    #Return the sorted prime list \n    return sorted(prime_list, reverse = True)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691105098,
+  "id": "chatcmpl-7jbycM2kqfEJAfd29Oz13lx2t6Tv7",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 229,
+    "prompt_tokens": 187,
+    "total_tokens": 416
+  }
+}

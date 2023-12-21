@@ -1,0 +1,16 @@
+ ```
+def if_decimal_is_divisible(binary_repr):
+    # Convert binary representation to decimal integer
+    decimal_int = int(binary_repr, 2)
+    # Calculate the 119th Fibonacci number
+    fib_118 = 0
+    fib_119 = 1
+    for i in range(118):
+        temp = fib_119
+        fib_119 = fib_118 + fib_119
+        fib_118 = temp
+    # Check if the decimal integer is divisible by the 119th Fibonacci number
+    return decimal_int % fib_119 == 0
+```
+This code defines a function `if_decimal_is_divisible` that takes as input a binary representation string of a non-negative decimal integer. The function returns `True` if the decimal integer corresponding to the given string is divisible by the 119th number that occurs in the Fibonacci sequence, and `False` otherwise.
+The code first converts the binary representation string to a decimal integer using the `int()` function with base 2. Then it calculates the 119th Fibonacci number using a for loop. Finally, it checks if the decimal integer is divisible by the 119th Fibonacci number using the modulo operator (`%`). If the result of the modulo operation is zero, then the decimal integer is divisible by the 119th Fibonacci number, and the function returns `True`. Otherwise, the decimal integer is not divisible by the 119th Fibonacci number, and the function returns `False`.

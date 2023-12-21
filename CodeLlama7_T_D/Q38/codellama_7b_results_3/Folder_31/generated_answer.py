@@ -1,0 +1,13 @@
+
+def find_subset_of_length_n(my_set):
+    n = len(my_set)
+    total = 0
+    for i in range(1 << n):
+        count = 0
+        for j in range(n):
+            if (i >> j) & 1:
+                count += 1
+        if count == 66:
+            total += 1
+
+    return total

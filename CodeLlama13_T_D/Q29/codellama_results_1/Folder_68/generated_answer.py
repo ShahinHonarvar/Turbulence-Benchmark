@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return ____.____.____[8:9].____.___()

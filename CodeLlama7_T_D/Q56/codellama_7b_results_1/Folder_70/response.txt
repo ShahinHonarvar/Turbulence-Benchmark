@@ -1,0 +1,17 @@
+ ```
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the input string
+    for i in range(len(input_string)):
+        # Get the substring starting from the current index and with a length of 12
+        substring = input_string[i:i+12]
+        # Check if the substring has a length of 12 and if it contains no duplicate characters
+        if len(substring) == 12 and len(set(substring)) == 12:
+            # Add the substring to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of substrings, sorted alphabetically
+    return sorted(substrings)
+```

@@ -1,0 +1,8 @@
+
+def all_left_truncatable_prime(numbers):
+    x = numbers[6]
+    prime_numbers = []
+    for i in range(x):
+        if is_prime(i) and '0' not in str(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)

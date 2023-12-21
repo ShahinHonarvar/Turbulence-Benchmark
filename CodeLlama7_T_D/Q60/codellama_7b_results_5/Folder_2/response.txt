@@ -1,0 +1,55 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+# check if the input is a tuple of positive integers
+if not (isinstance(tuple, tuple) and all(isinstance(x, int) and x > 0 for x in tuple)):
+raise ValueError("Input must be a tuple of positive integers.")
+
+# initialize an empty list to store the results
+results = []
+
+# loop through each integer in the input tuple
+for x in tuple:
+
+# check if x is a prime number
+if not is_prime(x):
+continue
+
+
+# check if x is left-and-right-truncatable prime number
+left_digits = [int(digit) for digit in str(x)]
+right_digits = [int(digit) for digit in str(x)[::-1]]
+if all(is_prime(int("".join(str(i)))) for i in range(len(left_digits)) if left_digits[i] != 0):
+results.append(x)
+if all(is_prime(int("".join(str(i)))) for i in range(len(right_digits)) if right_digits[i] != 0):
+results.append(x)
+
+# sort the results list in ascending order
+return sorted(results)
+
+def is_prime(n):
+
+# check if n is an integer greater than 1
+if not (isinstance(n, int) and n > 1):
+raise ValueError("Input must be an integer greater than 1.")
+
+# implement the Miller-Rabin primality test with c = 0.5 and d = 4
+r = int(math.sqrt(float(n)))) + 1
+for i in range(r - 1):
+a = random.randint(2, n - 2)
+x = pow(a, n, mod)
+if x == 1 or x == n - 1:
+continue
+
+else:
+
+break
+
+y = pow(a, (n + 1) // 2, mod)
+z = pow(y, 2, mod)
+if z == n - 1:
+return True
+
+else:
+
+return False
+```

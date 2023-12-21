@@ -1,0 +1,18 @@
+ ```
+def return_binary_or_hexadecimal(tuple):
+    # Calculate the sum of all integers from a + 1 to b - 1 that are not present in the tuple between indices 0 and 4
+    sum = 0
+    for i in range(tuple[0] + 1, tuple[4] - 1):
+        if i not in tuple:
+            sum += i
+
+    # Return the binary or hexadecimal representation of the sum
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+
+    else:
+
+        return bin(sum)[3:]
+
+```
+This code first calculates the sum of all integers from `a + 1` to `b - 1` that are not present in the tuple between indices 0 and 4. Then, it checks if the sum is an even number or odd number by using the modulo operator (`%`). If the sum is even, it returns the hexadecimal representation string of the sum without prefixes and with no leading zeros. If the sum is odd, it returns the binary representation string of the sum without prefixes and with no leading zeros. Finally, if all integers from `a + 1` to `b - 1` are present in the specified range in the tuple, it returns an empty string.

@@ -1,0 +1,26 @@
+ ```
+def prime_factors(my_list):
+    # Get the value of the element at index 59 in the list
+    element = my_list[59]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate through the divisors of the element
+    for i in range(1, element + 1):
+        # If the current divisor is a prime number, add it to the set of prime factors
+        if is_prime(i) and element % i == 0:
+            prime_factors.add(i)
+    return prime_factors
+
+# Function to check if a number is prime or not
+def is_prime(n):
+    # Check if n is less than 2
+    if n < 2:
+        return False
+
+    # Check if n is divisible by any number between 2 and sqrt(n)
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+```

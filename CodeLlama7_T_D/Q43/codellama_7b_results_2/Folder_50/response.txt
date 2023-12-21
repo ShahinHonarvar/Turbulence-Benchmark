@@ -1,0 +1,21 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Initialize variables
+    prime_numbers = []
+    for i in range(23, len(my_list)):
+        # Check if the number is divisible by any number between 2 and the square root of the number
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                break
+
+        else:
+
+            # If the number is not divisible by any number between 2 and the square root of the number, it is prime
+
+            prime_numbers.append(i)
+
+    return sorted(prime_numbers, reverse=True)
+
+```
+This code defines a function `find_primes_between_indices` that takes one argument, a list of integers, and returns the sorted list of all prime numbers from index 23 to index 59, both inclusive. The returned list should be in descending order. If no prime number exists in the specified range, the function should return an empty list.
+The code uses a loop to iterate over the list of integers, and for each integer `i`, it checks if the number is divisible by any number between 2 and the square root of the number using another loop. If the number is not divisible by any number between 2 and the square root of the number, it is prime and it is appended to a list of prime numbers. Finally, the list of prime numbers is sorted in descending order and returned as the output of the function.

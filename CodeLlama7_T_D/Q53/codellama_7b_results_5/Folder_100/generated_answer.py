@@ -1,0 +1,24 @@
+
+def palindrome_of_length_at_least_n(s, n):
+    # Convert the input string to lowercase for case-insensitive comparison
+    s = s.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the input string
+    for i in range(len(s)):
+        # Check if the current character is a letter
+        if s[i].isalpha():
+            # Initialize an empty string to store the current palindrome
+            palindrome = ""
+            # Iterate over the characters on both sides of the current character
+            for j in range(i - 1, i + 2):
+                # Check if the index is within the bounds of the input string
+                if 0 <= j < len(s):
+                    # Add the letter to the palindrome
+                    palindrome += s[j]
+            # Check if the palindrome has a length greater than or equal to the specified minimum length
+            if len(palindrome) >= n:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrices = []\n    rows, cols = matrix.shape\n    for sub_rows in range(rows):\n        for sub_cols in range(cols):\n            for size_cols in range(cols - sub_cols + 1):\n                for size_rows in range(rows - sub_rows + 1):\n                    if size_rows and size_cols:\n                        submatrix = matrix[sub_rows:(sub_rows + size_rows),sub_cols:(sub_cols + size_cols)]\n                        if np.sum(submatrix) == 17:\n                            submatrices.append(submatrix.tolist())\n    if not submatrices:\n        return []\n    \n    return submatrices\n```\nThis code defines a Python function as specified. It first determines the shape of the input array ('matrix'). It then iterates over all possible positions (top left corner) of the submatrix, and for each, it iterates over all possible sizes of the submatrix. It checks whether the sum of the elements in the submatrix is 17. If it is, it appends the submatrix to the 'submatrices' list. If the list is empty at the end, it returns an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691016334,
+  "id": "chatcmpl-7jEsw0xw2Fx2ns0uz6zs3aTYl9wvQ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 250,
+    "prompt_tokens": 121,
+    "total_tokens": 371
+  }
+}

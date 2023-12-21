@@ -1,0 +1,11 @@
+```
+def all_substring_of_size_n(string):
+    substrings = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            substring = string[i:j]
+            if len(substring) == 6 and all(char not in substring for char in substring[1:]):
+                substrings.append(substring)
+    return substrings
+```
+This function uses two nested for loops to iterate through the string, with the first loop starting at index 0 and the second loop starting at index i+1. The substring is defined as the slice of the string from index i to index j (exclusive). The condition `len(substring) == 6` checks that the substring has length 6, and `all(char not in substring for char in substring[1:])` checks that there are no duplicate characters in the substring. If both conditions are satisfied, the substring is added to the list of substrings. Finally, the function returns the list of all distinct substrings of size n with no duplicate characters.

@@ -1,0 +1,24 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Extract a submatrix by taking all rows and columns below and to the right of the current row and column
+            submatrix = matrix[i:, j:]
+
+            # Calculate the sum of all integers in the submatrix
+            submatrix_sum = np.sum(submatrix)
+
+            # Check if the sum is equal to -394
+            if submatrix_sum == -394:
+                # If it is, add the submatrix to the list of submatrices
+                submatrices.append(submatrix)
+
+    # Return the list of all submatrices that have a sum of -394
+    return submatrices

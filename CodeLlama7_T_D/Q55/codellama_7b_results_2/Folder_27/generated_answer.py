@@ -1,0 +1,21 @@
+
+def lists_with_product_equal_n(my_list):
+    # initialize an empty list to store the sublists
+    sublists = []
+
+    # loop through each element in the list
+    for i in range(len(my_list)):
+        # initialize a variable to store the product of the current sublist
+        product = 1
+
+        # loop through each element in the remaining part of the list
+        for j in range(i, len(my_list)):
+            # calculate the product of the current sublist
+            product *= my_list[j]
+
+            # if the product equals -82, add the current sublist to the list of sublists
+            if product == -82:
+                sublists.append(my_list[i:j+1])
+
+    # return the list of sublists
+    return sublists

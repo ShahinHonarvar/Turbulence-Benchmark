@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 186 integers
+    count = 0
+    # Loop over all possible submatrices of the given matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Get the current submatrix and its size
+            submatrix = matrix[i:i+3, j:j+3]
+            if len(submatrix) != 3 or len(submatrix[0]) != 3:
+                continue
+
+            # Check if the submatrix contains 186 integers each
+            if np.sum(submatrix == 186) == 9:
+                count += 1
+
+    return count

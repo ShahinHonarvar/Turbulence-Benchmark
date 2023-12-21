@@ -1,0 +1,10 @@
+
+def gcf_three_nums(numbers):
+    num876 = numbers[876]
+    num203 = numbers[203]
+    num100 = numbers[100]
+    gcd = 1
+    for i in range(1, max(num876, num203, num100)):
+        if (num876 % i == 0) and (num203 % i == 0) and (num100 % i == 0):
+            gcd = i
+    return gcd

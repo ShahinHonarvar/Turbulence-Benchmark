@@ -1,0 +1,37 @@
+ ```
+def if_contains_anagrams(words):
+    # Count the number of anagram pairs in the list
+    num_pairs = 0
+    for i in range(len(words) - 1):
+        for j in range(i + 1, len(words)):
+            if sorted(words[i]) == sorted(words[j]):
+                # If two words are anagrams of each other,
+                # then they must have the same length.
+                # Therefore, we can skip to the next iteration of the loop.
+                continue
+
+            else:
+
+                # If the two words are not anagrams of each other,
+                # then we must check if they have a common substring.
+                for k in range(len(words[i])):
+                    if words[j].find(words[i][k]) != -1:
+                        # If the two words share a common substring,
+                        # then they must be anagrams of each other.
+                        # Therefore, we can break out of both loops and return True.
+                        break
+
+                else:
+
+                    # If the two words do not share a common substring,
+                    # then they are not anagrams of each other.
+                    # Therefore, we can continue to the next iteration of the loop.
+                    continue
+
+            if len(words[i]) >= 3:
+                # If the length of one of the words is at least three,
+                # then we must add this pair to the total number of pairs.
+                num_pairs += 1
+
+    return num_pairs >= 144
+```

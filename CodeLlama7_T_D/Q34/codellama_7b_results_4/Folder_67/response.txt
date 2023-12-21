@@ -1,0 +1,16 @@
+ ```
+def find_original_set(sets):
+\# Check if all sets are distinct and contain the same elements
+if len(set(map(lambda x: frozenset(x), sets))) != len(sets):
+return False, "All sets should be distinct"
+
+\# Check if all sets have the same elements
+
+common_elements = set.intersection(*sets)
+if not common_elements:
+return False, "All sets should have the same elements"
+
+\# Return the smallest set that contains all other sets
+smallest_set = min(sets, key=len)
+return True, smallest_set
+```

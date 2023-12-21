@@ -1,0 +1,17 @@
+```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(16, 71):
+        if my_list[i] == '':
+            continue
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers)
+```
+This code defines a function called `find_primes_between_indices` that takes one argument, a list of integers, and returns the sorted list of all prime numbers from index 16 to index 71, both inclusive. The returned list should be in ascending order. If no prime number exists in the specified range, the function should return an empty list.
+
+The `is_prime` function is used to check if a given integer is prime or not. It returns `True` if the integer is prime and `False` otherwise.
+
+The function uses a for loop to iterate over the indices from 16 to 71, and checks if the corresponding element in the list is an empty string or not. If it's not an empty string, then it checks if the number is prime using the `is_prime` function. If it's a prime number, it's added to the `prime_numbers` list.
+
+Finally, the sorted `prime_numbers` list is returned.

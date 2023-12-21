@@ -1,0 +1,19 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(3, len(string)):
+        # Check if the character at position i is a vowel
+        if string[i].lower() in ["a", "e", "i", "o", "u"]:
+            # If it is a vowel, check if there are any consonants before and after it
+            if i - 1 >= 0 and string[i - 1].isalpha():
+                # If there are consonants before and after the vowel, create a palindrome by reversing the order of the characters between position i - 1 and position i + 1
+                palindrome = string[i - 1] + string[i] + string[i + 1]
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+            if i + 2 < len(string) and string[i + 1].isalpha():
+                # If there are consonants before and after the vowel, create a palindrome by reversing the order of the characters between position i - 1 and position i + 1
+                palindrome = string[i - 1] + string[i] + string[i + 2]
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    return palindromes

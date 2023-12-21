@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(input_string, n):
+    # Create a list to store all palindromes found
+    palindromes = []
+    # Loop through each character in the input string
+    for i in range(len(input_string)):
+        # Check if the current character is a letter (not a space or punctuation)
+        if input_string[i].isalpha():
+            # Check if the current character is a palindrome (the same when read backwards and forwards)
+            if input_string[i] == input_string[i][::-1]:
+                # If the current character is a palindrome, add it to the list of palindromes found
+                palindromes.append(input_string[i])
+    # Return the set of all palindromes found in the given string, or an empty set if no such palindromes exist
+    return set(palindromes)
+```
+This function takes two arguments: `input_string`, which is the input string to search for palindromes in, and `n`, which is the minimum length of the palindromes to find. The function returns a set of all the palindromes found in the given string, or an empty set if no such palindromes exist.
+The function first creates an empty list called `palindromes` to store all the palindromes found in the input string. It then loops through each character in the input string using a for loop, and checks if the current character is a letter (not a space or punctuation) using the `isalpha()` method. If the current character is a letter, the function then checks if the current character is a palindrome (the same when read backwards and forwards) using the `==` operator and the `reverse()` method on the string. If the current character is a palindrome, the function adds it to the list of palindromes found by appending it to the `palindromes` list using the `append()` method. Finally, the function returns the set of all palindromes found in the given string, or an empty set if no such palindromes exist.

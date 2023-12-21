@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(set):
+    # Calculate the number of subsets of size n
+    num_subsets = 2**len(set)
+    # Initialize an empty set to store the subsets
+    subsets = set()
+
+    for i in range(num_subsets):
+        # Convert the binary representation of i into a list of 0s and 1s
+        subset = [int(bit) for bit in bin(i)[2:]]
+        # Add the subset to the set if it has length n
+        if len(subset) == n:
+            subsets.add(frozenset(subset))
+
+    return len(subsets)

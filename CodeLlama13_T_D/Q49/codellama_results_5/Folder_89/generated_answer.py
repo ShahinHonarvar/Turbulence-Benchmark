@@ -1,0 +1,15 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string to an integer
+    decimal = int(binary, 2)
+    
+    # Initialize a variable to keep track of the Fibonacci sequence
+    fib = [0, 1]
+    
+    # Iterate through the binary representation string and update the Fibonacci sequence
+    for i in range(len(binary)):
+        if binary[i] == '1':
+            fib.append(fib[-2] + fib[-1])
+        
+    # Check if the decimal integer is divisible by the 126th number that occurs in the Fibonacci sequence
+    return decimal % fib[127] == 0

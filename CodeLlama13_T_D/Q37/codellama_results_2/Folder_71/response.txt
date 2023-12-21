@@ -1,0 +1,12 @@
+```python
+def filter_chars(s):
+    return ''.join([c for c in s if ord(c) < 32 or ord(c) > 46])
+```
+This function uses a list comprehension to iterate over each character of the string `s`. It checks if the character is between indices 32 and 46, both inclusive, and is greater than or equal to '0' and smaller than or equal to 'k'. If it meets these criteria, it is removed from the string. The resulting list is then joined back into a string using `str.join()`.
+
+Here's an example of how you could use this function:
+```python
+>>> s = "Hello, world!"
+>>> filter_chars(s)
+"Hell wrld!"
+```

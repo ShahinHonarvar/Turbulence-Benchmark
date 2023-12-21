@@ -1,0 +1,20 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+
+    # Calculate the Fibonacci sequence up to 177th number
+    fib_seq = [0]
+    current = 0
+    for i in range(177):
+        if i > 0:
+            fib_seq.append(current + fib_seq[i - 1])
+        else:
+            fib_seq.append(current)
+
+    # Check if the decimal integer is divisible by any number in the Fibonacci sequence
+    for num in fib_seq:
+        if decimal % num == 0:
+            return True
+
+    return False

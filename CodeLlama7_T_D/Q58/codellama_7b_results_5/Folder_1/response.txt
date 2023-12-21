@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 1):
+        for j in range(i + 1, len(matrix)):
+            if matrix[i].all() == 23 and matrix[j].all() == 23:
+                count += 1
+
+    return count
+```
+This code first imports the NumPy library. Then it defines a function `submatrix_with_n_numbers` that takes one argument, which is a two-dimensional NumPy array of integers. The function then iterates over each row in the matrix using the `for i in range(len(matrix) - 1):` loop.
+Inside the inner loop, the function checks if the current row (i) contains only the value 23 using the `if matrix[i].all() == 23:` statement. If this condition is true, then the function increments a count variable by 1 using the `count += 1` statement.
+After iterating over all rows in the matrix, the function returns the count variable as the final result. If no submatrix was found that contained only 23 integers, then the count variable will be initialized to 0 when the function is first called, and it will remain at 0 if no matching submatrix is found.

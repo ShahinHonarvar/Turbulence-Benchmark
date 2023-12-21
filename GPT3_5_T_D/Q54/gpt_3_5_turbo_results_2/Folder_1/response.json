@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef is_prime(num):\n    if num <= 1:\n        return False\n    for i in range(2, int(num**0.5) + 1):\n        if num % i == 0:\n            return False\n    return True\n\ndef all_right_truncatable_prime(numbers):\n    x = numbers[20]\n    primes = []\n    for i in range(x - 1, 1, -1):\n        temp = str(i)\n        while len(temp) > 0:\n            if not is_prime(int(temp)):\n                break\n            temp = temp[:-1]\n        else:\n            primes.append(i)\n    return sorted(primes, reverse=True)\n```\nNote: The `is_prime` function is included in the code to check if a number is prime or not. The main function `all_right_truncatable_prime` checks if each number less than `x` is right-truncatable prime or not and adds it to the `primes` list if it is. The list is then sorted in descending order and returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689820453,
+  "id": "chatcmpl-7eDmX6Q4QNUCzCnoBzdSngjCqPgiW",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 218,
+    "prompt_tokens": 157,
+    "total_tokens": 375
+  }
+}

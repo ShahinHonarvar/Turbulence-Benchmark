@@ -1,0 +1,15 @@
+
+def all_left_truncatable_prime(numbers):
+    primes = []
+    for num in numbers:
+        if is_left_truncatable_prime(num):
+            primes.append(num)
+    return sorted(primes)
+
+def is_left_truncatable_prime(num):
+    if num < 2 or num % 2 == 0:
+        return False
+    for i in range(3, int(num ** 0.5) + 1, 2):
+        if num % i == 0:
+            return False
+    return True

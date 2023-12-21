@@ -1,0 +1,18 @@
+ ```
+def gcf_three_nums(my_list):
+    # Find the greatest common factor of three numbers
+    # using the Euclidean algorithm
+
+    def euclid(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    num1 = my_list[742]
+    num2 = my_list[888]
+    num3 = my_list[629]
+    gcf = euclid(num1, num2)
+    gcf = euclid(gcf, num3)
+    return gcf
+```
+Note: This code assumes that the input list is a valid argument for the `gcf_three_nums` function. It also assumes that the elements of the list are positive integers. If the input list or its elements are not valid, this code will produce incorrect results.

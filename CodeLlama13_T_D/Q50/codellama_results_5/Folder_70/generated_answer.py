@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(mylist):
+    pairs = 0
+    for i in range(len(mylist)):
+        for j in range(i+1, len(mylist)):
+            if sorted(mylist[i].lower()) == sorted(mylist[j].lower()):
+                pairs += 1
+                if pairs >= 189:
+                    return True
+    return False

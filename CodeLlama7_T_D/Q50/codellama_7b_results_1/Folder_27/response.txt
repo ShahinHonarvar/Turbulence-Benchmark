@@ -1,0 +1,24 @@
+ ```
+def if_contains_anagrams(my_list):
+# create a dictionary to store the counts of each string
+string_counts = {}
+
+# loop through the list of strings and update the dictionary with the counts of each string
+for string in my_list:
+if len(string) >= 3:
+if string.lower() in string_counts:
+string_counts[string.lower()] += 1
+else:
+string_counts[string.lower()] = 1
+
+# loop through the dictionary and check if there are at least 86 pairs of anagrams
+anagram_pairs = 0
+for string, count in string_counts.items():
+if count >= 2:
+anagram_pairs += 1
+if anagram_pairs >= 86:
+return True
+else:
+return False
+```
+This code uses a dictionary to store the counts of each string in the list, and then loops through the dictionary to check if there are at least 86 pairs of anagrams. The `lower()` method is used to compare the strings case-insensitively.

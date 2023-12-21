@@ -1,0 +1,19 @@
+
+def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the list of unique integers in the tuple
+    sum = 0
+    unique_integers = []
+    # Iterate over the elements of the tuple
+    for element in tuple:
+        # If the element is not already in the list of unique integers, add it to the list
+        if element not in unique_integers:
+            unique_integers.append(element)
+    # Calculate the sum of all the unique integers between indices 43 and 70 (inclusive)
+    for integer in range(unique_integers[42], unique_integers[69] + 1):
+        if integer not in unique_integers:
+            sum += integer
+    # If the sum is an odd number, return its binary representation string; otherwise, return its hexadecimal representation string
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:]

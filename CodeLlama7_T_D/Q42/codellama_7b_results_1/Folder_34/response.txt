@@ -1,0 +1,14 @@
+ ```
+def prime_factors(my_list):
+    prime_factor_set = set()
+    for i in range(len(my_list)):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]) + 1):
+                if my_list[i] % j == 0:
+                    prime_factor_set.add(j)
+    return prime_factor_set
+```
+This code defines a function called `prime_factors` that takes one argument, a list of positive integers. The function returns the set of all prime factors of the integer at index 97 in the input list.
+The function works by iterating over each element in the input list and checking if it is greater than 1. If an element is greater than 1, the function checks if it is a prime number. If an element is not a prime number, the function divides it by all numbers less than or equal to its square root and adds any prime factors found to the set of prime factors.
+The code uses the `set` data structure to store the prime factors as it finds them. This allows the function to efficiently check for duplicates and only add a given number's prime factors once.
+Note that this code assumes that all elements in the input list are positive integers. If there are any negative numbers or non-integer values in the input list, the function will produce incorrect results.

@@ -1,0 +1,12 @@
+
+def gcf_two_nums(my_list):
+    gcf = 1
+    for i in range(28, 49 + 1):
+        if my_list[i] % gcf == 0:
+            continue
+
+        else:
+
+            gcf = my_list[i]
+
+    return gcf

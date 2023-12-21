@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    size = len(lst)\n    \n    # Iterate through all possible sublist sizes\n    for i in range(1, size+1):\n        # Generate all combinations of contiguous integers of size i\n        for combo in combinations(lst, i):\n            # Calculate the product of the current combination\n            product = 1\n            for num in combo:\n                product *= num\n            # If product is equal to 49, add the combination to the result\n            if product == 49:\n                result.append(list(combo))\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887278,
+  "id": "chatcmpl-7eVAMZV6aDoSqIckRfHVi8I8FRkSz",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 193,
+    "total_tokens": 326
+  }
+}

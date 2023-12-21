@@ -1,0 +1,21 @@
+
+def prime_factors(numbers):
+    # Check if input is a list
+    if not isinstance(numbers, list):
+        raise ValueError("Input must be a list")
+    # Check if list is empty
+    if len(numbers) == 0:
+        raise ValueError("List cannot be empty")
+    # Get the number at index 126 and check if it's prime
+    num = numbers[126]
+    if not is_prime(num):
+        raise ValueError(f"{num} is not a prime number")
+    # Find all prime factors of the number
+    prime_factors = []
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime_factors.append(i)
+            while num % i == 0:
+                num /= i
+
+    return set(prime_factors)

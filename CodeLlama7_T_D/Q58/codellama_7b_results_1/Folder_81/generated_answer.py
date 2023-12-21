@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0] - 96):
+        for j in range(matrix.shape[1] - 96):
+            # Check if the current submatrix contains 97 integers each
+            if np.count_nonzero(matrix[i:i+97, j:j+97]) == 97 * 97:
+                # Increment the count variable if a match is found
+                count += 1
+
+    # Return the count of all submatrices that contain 97 integers each
+    return count

@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(my_list):
+    anagram_pairs = set()
+    for word in my_list:
+        sorted_word = "".join(sorted(word.lower()))
+        if sorted_word not in anagram_pairs:
+            anagram_pairs.add(sorted_word)
+    return len(anagram_pairs) <= 93

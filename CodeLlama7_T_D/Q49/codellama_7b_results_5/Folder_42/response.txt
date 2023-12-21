@@ -1,0 +1,12 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the Fibonacci sequence up to the 146th number
+    fibonacci_sequence = [0, 1]
+    for i in range(2, 146):
+        fibonacci_sequence.append(fibonacci_sequence[i - 1] + fibonacci_sequence[i - 2])
+    # Check if the decimal integer is divisible by the 146th number of the Fibonacci sequence
+    return decimal_integer % fibonacci_sequence[145] == 0
+```
+This code defines a function `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function first converts the binary string to an integer using the `int()` function with the base set to 2. It then calculates the Fibonacci sequence up to the 146th number using a for loop and the formula for the nth Fibonacci number, which is fib(n) = fib(n-1) + fib(n-2). The function checks if the decimal integer is divisible by the 146th number of the Fibonacci sequence by computing the modulus of the decimal integer and the 146th number. If the result of the modulus operation is equal to 0, then the decimal integer is divisible by the 146th number of the Fibonacci sequence, otherwise it is not.

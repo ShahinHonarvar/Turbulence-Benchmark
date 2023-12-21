@@ -1,0 +1,33 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(len(matrix)):
+        # Loop over each column of the matrix
+        for j in range(len(matrix[i])):
+            # Initialize a variable to store the sum of the elements in the submatrix
+            submatrix_sum = 0
+
+            # Loop over each element in the submatrix
+            for row in range(i, i + 3):
+                for col in range(j, j + 3):
+                    # Add the element to the sum of the elements in the submatrix
+                    submatrix_sum += matrix[row][col]
+
+            # If the sum of the elements in the submatrix is equal to -25, add the submatrix to the list of submatrices
+            if submatrix_sum == -25:
+                submatrices.append(matrix[i:i + 3][j:j + 3]])
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -25
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+```
+This code will generate a list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -25. If no such submatrix is found, the function will return an empty list.

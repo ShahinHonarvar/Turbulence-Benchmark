@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that meets the given text specification:\n\n```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[784]\n    primes = []\n    for i in range(2, x):\n        if is_prime(i):\n            is_truncatable = True\n            for j in range(len(str(i))):\n                truncated = int(str(i)[j:])\n                if not is_prime(truncated):\n                    is_truncatable = False\n                    break\n            if is_truncatable:\n                primes.append(i)\n    return sorted(primes)\n```\n\nPlease note that the function \"is_prime\" checks if a number is prime and the function \"all_left_truncatable_prime\" generates all left-truncatable prime numbers less than x by iterating from 2 to x and using the \"is_prime\" helper function. The resulting list is then sorted in ascending order and returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689867913,
+  "id": "chatcmpl-7eQ81msMJj69Coa9upCRNvnZzBZfF",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 235,
+    "prompt_tokens": 146,
+    "total_tokens": 381
+  }
+}

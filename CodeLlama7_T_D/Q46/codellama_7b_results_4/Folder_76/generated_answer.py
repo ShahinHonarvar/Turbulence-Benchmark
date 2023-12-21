@@ -1,0 +1,9 @@
+
+def gcf_three_nums(my_list):
+    # Find the greatest common factor of the elements at indices 876, 203 and 100
+    gcf = my_list[876]
+    for i in range(203, 100 + 1):
+        if my_list[i] % gcf == 0:
+            return gcf
+
+    return 1

@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(my_list):
+    anagrams = []
+    for i in range(len(my_list)):
+        s1 = my_list[i].lower()
+        for j in range(len(my_list)):
+            s2 = my_list[j].lower()
+            if len(s1) >= 3 and len(s2) >= 3 and sorted(s1) == sorted(s2):
+                anagrams.append((i, j))
+    return len(anagrams) <= 29

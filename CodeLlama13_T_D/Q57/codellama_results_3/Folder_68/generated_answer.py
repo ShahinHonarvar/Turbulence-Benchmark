@@ -1,0 +1,18 @@
+
+def submatrices_with_particular_sum(matrix):
+    # Initialize a list to store the results
+    result = []
+    
+    # Loop through each row of the matrix
+    for i in range(len(matrix)):
+        # Loop through each column of the matrix
+        for j in range(len(matrix[0])):
+            # Calculate the sum of all integers in the submatrix that starts at (i, j) and ends at (i + 1, j + 1)
+            current_sum = sum(matrix[i][j] for i in range(i, i + 2) for j in range(j, j + 2))
+            
+            # If the sum is equal to 3, add the submatrix to the result list
+            if current_sum == 3:
+                result.append([[matrix[r][c] for c in range(j, j + 2)] for r in range(i, i + 2)])
+    
+    # Return the result list
+    return result

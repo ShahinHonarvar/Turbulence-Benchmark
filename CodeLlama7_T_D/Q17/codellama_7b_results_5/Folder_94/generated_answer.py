@@ -1,0 +1,18 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Find the first index where -53 and -91 are divisible by both
+    first_index = next((i for i, x in enumerate(my_list) if x % -53 == 0 and x % -91 == 0), None)
+    # If no such indices exist, return an empty list
+    if first_index is None:
+        return []
+
+    # Find the last index where -53 and -91 are divisible by both
+
+    last_index = next((i for i, x in enumerate(my_list) if x % -53 == 0 and x % -91 == 0), None)
+    # If no such indices exist, return an empty list
+    if last_index is None:
+        return []
+
+    # Return the list of all integers divisible by both -53 and -91 from index first_index to index last_index, both inclusive
+
+    return [my_list[i] for i in range(first_index, last_index + 1)]

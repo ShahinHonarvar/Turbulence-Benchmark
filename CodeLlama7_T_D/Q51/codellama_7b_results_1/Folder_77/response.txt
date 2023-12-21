@@ -1,0 +1,16 @@
+ ```
+def if_contains_anagrams(my_list):
+# Count the number of anagrams in the list
+anagram_count = 0
+for i in range(len(my_list) - 1)):
+# Check if the current string is an anagram of the next string
+if sorted(my_list[i]) == sorted(my_list[i + 1])):
+# Increment the anagram count
+anagram_count += 1
+# If there are more than 17 pairs of anagrams in the list, return False
+if anagram_count > 17:
+return False
+
+# Return True if there are at most 17 pairs of anagrams in the list
+return True
+```

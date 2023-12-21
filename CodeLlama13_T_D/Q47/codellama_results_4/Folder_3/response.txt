@@ -1,0 +1,11 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 27 to index 95, both inclusive
+    substr = string[27:96]
+    palindromes = set()
+    for i in range(49, 52):
+        for j in range(len(substr) - i + 1):
+            if substr[j:j+i] == substr[j+i-1::-1]:
+                palindromes.add(substr[j:j+i])
+    return palindromes
+```

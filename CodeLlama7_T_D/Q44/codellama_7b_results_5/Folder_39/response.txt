@@ -1,0 +1,24 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list of positive integers
+    for i in range(len(my_list)):
+        # Check if the current number is composite by dividing it by all the prime factors less than or equal to its square root
+        is_composite = False
+        for j in range(i):
+            if my_list[j] > math.sqrt(my_list[i]):
+                break
+
+            if my_list[i] % my_list[j] == 0:
+                is_composite = True
+                break
+
+        # If the current number is composite, add it to the set of composite numbers
+        if is_composite:
+            composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers in the given list that are between index 62 and index 92, both inclusive
+    return composite_nums
+```

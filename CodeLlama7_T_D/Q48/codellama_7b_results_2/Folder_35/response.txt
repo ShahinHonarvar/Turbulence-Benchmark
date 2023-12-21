@@ -1,0 +1,18 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+a = my_tuple[77]
+b = my_tuple[84]
+sum = 0
+for i in range(a + 1, b):
+if i not in my_tuple:
+sum += i
+if sum % 2 == 1:
+return f"{sum:b}"
+else:
+return f"{sum:x}"
+return ""
+```
+The above code defines a function `return_binary_or_hexa` that takes one argument, a tuple of distinct nonnegative integers sorted in ascending order. The function calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices `77` and `84`. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.
+The code first extracts the values `a` and `b` from the tuple at indices `77` and `84`, respectively. Then, it calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices `77` and `84`. The `for` loop iterates over the range of integers from `a + 1` to `b - 1`, and adds each integer that is not present in the tuple to the sum.
+After calculating the sum, the code checks if the sum is an odd number. If it is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The `f"{sum:b}"` and `f"{sum:x}"` are string formatting syntax used to convert the integer value of `sum` to a binary or hexadecimal representation string.
+Finally, the code returns an empty string if all integers from `a + 1` to `b - 1` (both inclusive) are present in the specified range in the tuple.

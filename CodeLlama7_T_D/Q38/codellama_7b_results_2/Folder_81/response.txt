@@ -1,0 +1,13 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize the number of subsets to 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements
+    for i in range(2 ** len(elements)):
+        # Convert the binary representation of the combination to a list of elements
+        subset = [element for element, bit in zip(elements, (bin(i)[3:] + '0' * len(elements)).zfill(len(elements))) if bit == "1"]
+        # Increment the number of subsets if the length of the subset is equal to 20
+        if len(subset) == 20:
+            num_subsets += 1
+    return num_subsets
+```

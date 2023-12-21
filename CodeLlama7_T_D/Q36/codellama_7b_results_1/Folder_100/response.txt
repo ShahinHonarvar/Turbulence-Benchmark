@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `filter_chars` function:
+```
+def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the input string
+    for char in s:
+
+        # If the current character is between 43 and 69 (both exclusive) and is greater than 'B' and smaller than 'r', remove all occurrences of this character from the input string
+        if ((ord(char) > 42 and ord(char) < 70)) and char.isalpha():
+            filtered_chars.append(char)
+    return "".join(filtered_chars)
+```
+This function takes a single argument `s`, which is the input string. It then iterates over each character in the input string using a for loop, and checks if the current character is between 43 and 69 (both exclusive) and is greater than 'B' and smaller than 'r', using the `ord()` function to convert characters to integers. If the current character meets these conditions, it is appended to a list called `filtered_chars`. After iterating over all characters in the input string, the `filtered_chars` list is joined back into a single string and returned by the function.

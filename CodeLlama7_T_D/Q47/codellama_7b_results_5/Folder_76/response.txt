@@ -1,0 +1,19 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the substring of the given string from index 101 to index 292, both inclusive
+    for i in range(101, 293):
+        # Check if the character at position i is a letter (i.e., between 'a' and 'z') or a digit (i.e., between '0' and '9')
+        if string[i].isalpha() or string[i].isdigit():
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Iterate over the characters from position i to position 182 (inclusive) in reverse order
+            for j in range(i, 183, -1):
+                # Append the character at position j to the string storing the palindrome
+                palindrome += string[j]
+            # Check if the palindrome is a valid palindrome (i.e., it consists of English letters only) and its length falls within the specified range
+            if palindrome == palindrome[::-1] and 154 <= len(palindrome) <= 182:
+                # Add the palindrome to the set storing the palindromes
+                palindromes.add(palindrome)
+    # Return the set of all palindromes found in the specified index range that meet the requirements specified above
+    return palindromes

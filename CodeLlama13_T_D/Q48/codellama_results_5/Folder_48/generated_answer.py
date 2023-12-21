@@ -1,0 +1,18 @@
+
+def return_binary_or_hexa(my_tuple):
+    # Check if tuple is sorted and has no duplicate elements
+    if all(my_tuple[i-1] < my_tuple[i] for i in range(1, len(my_tuple))):
+        a = my_tuple[933] + 1
+        b = my_tuple[996] - 1
+        # Calculate sum of integers from a to b that are not present in the tuple
+        sum = 0
+        for i in range(a, b+1):
+            if i not in my_tuple:
+                sum += i
+        # Return binary or hexadecimal representation based on parity of sum
+        if sum % 2 == 0:
+            return format(sum, 'x')
+        else:
+            return bin(sum)[2:]
+    else:
+        return ''

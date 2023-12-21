@@ -1,0 +1,14 @@
+ def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the 80th Fibonacci number
+    fib80 = calculate_fibonacci(80)
+    # Check if the decimal integer is divisible by the 80th Fibonacci number
+    return decimal_integer % fib80 == 0
+def calculate_fibonacci(n):
+    # Initialize the first two Fibonacci numbers
+    a, b = 0, 1
+    # Calculate the nth Fibonacci number using the recursive formula
+    for i in range(n - 2):
+        a, b = b, a + b
+    return b

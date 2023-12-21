@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    target_sum = 13\n    sub_matrices = []\n    rows, cols = matrix.shape\n        \n    for x1 in range(rows):\n        for y1 in range(cols):\n            for x2 in range(rows):\n                for y2 in range(cols):\n                    if x2 >= x1 and y2 >= y1:\n                        sub_matrix = matrix[x1:x2+1, y1:y2+1]\n                        if sub_matrix.sum() == target_sum:\n                            sub_matrices.append(sub_matrix.tolist())\n    return sub_matrices\n```\nThis function scans the input matrix to select all possible submatrices. For each of them, it computes the sum of their elements and compares this sum to the target value 13. If they are equal, the submatrix is stored in a list. If no such submatrix is found, an empty list will be returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691015670,
+  "id": "chatcmpl-7jEiExGs7OuemUoiURU4fFqhsmz6m",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 199,
+    "prompt_tokens": 121,
+    "total_tokens": 320
+  }
+}

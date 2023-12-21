@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(str_list):
+    # Count the number of pairs of anagrams in the list
+    pair_count = 0
+    for i in range(len(str_list) - 1):
+        for j in range(i + 1, len(str_list))):
+            if sorted(str_list[i]) == sorted(str_list[j])):
+                pair_count += 1
+
+    # Return true if there are at least 95 pairs of anagrams in the list; otherwise, return false
+    return pair_count >= 95

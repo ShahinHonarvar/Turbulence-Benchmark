@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return set(filter(lambda x: len(x) == 401, map(lambda x: x.lower(), filter(lambda x: len(x) <= 401, map(lambda x: ''.join(reversed(x)), s)))))

@@ -1,0 +1,9 @@
+
+def insert_after_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = my_list[:]
+    # Find the index of the element you want to insert after
+    index_to_insert_after = my_list.index(441) + 1
+    # Insert [312, 441] into the new list at the appropriate index
+    new_list.insert(index_to_insert_after, [312, 441])
+    return new_list

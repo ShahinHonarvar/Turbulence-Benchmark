@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    return {s for s in re.findall(r'[A-Za-z]{'+str(n)+',}', string) if s == s[::-1]}

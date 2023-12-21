@@ -1,0 +1,23 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the divisibility criteria
+    sum = 0
+    div_10 = False
+    div_100 = False
+
+    # Iterate over the list from index 10 to index 100, both inclusive
+    for i in range(10, 100+1):
+        # Check if the current element is divisible by either 10 or 100
+        if my_list[i] % 10 == 0:
+            div_10 = True
+
+        if my_list[i] % 100 == 0:
+            div_100 = True
+
+    # If either of the divisibility criteria is met, calculate the sum of all integers divisible by either 10 or 100 from index 10 to index 100, both inclusive. Otherwise, return 0.
+    if div_10 or div_100:
+        for i in range(10, 100+1):
+            if my_list[i] % (10 if div_10 else 100) == 0:
+                sum += my_list[i]
+
+    return sum

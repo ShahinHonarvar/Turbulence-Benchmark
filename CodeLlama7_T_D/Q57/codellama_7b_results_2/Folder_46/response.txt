@@ -1,0 +1,41 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the submatrix
+            submatrix_sum = 0
+
+            # Loop over each element of the submatrix
+            for row in range(i, i + 3):
+                for col in range(j, j + 3):
+                    # Add the element to the submatrix sum
+                    submatrix_sum += matrix[row][col]
+
+                    # Check if the submatrix sum is equal to the target sum
+                    if submatrix_sum == 416:
+                        # If the submatrix sum is equal to the target sum, add the submatrix to the list of submatrices
+                        submatrices.append(matrix[i:i + 3][j:j + 3]])
+                        # Break out of the inner loop and continue with the next row
+                        break
+
+    # Return the list of submatrices that have a sum equal to the target sum
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+```
+This code should generate the following output:
+```
+[array([[1, 2],
+       [4, 5]]), array([[3, 6],
+       [7, 8]])]
+```

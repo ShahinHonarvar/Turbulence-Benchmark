@@ -1,0 +1,16 @@
+ ```
+def find_subset_of_length_n(set_of_elements):
+    # Initialize a list to store all subsets of size n
+    all_subsets = []
+    # Iterate over all possible subsets of size n
+    for i in range(2**len(set_of_elements)):
+        # Convert the binary representation of the subset into a set of elements
+        subset = set()
+        for j, bit in enumerate(bin(i)[2:].zfill(len(set_of_elements)))):
+            if bit == "1":
+                subset.add(set_of_elements[j])
+        # Add the subset to the list of all subsets
+        all_subsets.append(subset)
+    # Return the number of all subsets of size n
+    return len(all_subsets)
+```

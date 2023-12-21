@@ -1,0 +1,7 @@
+
+def all_odd_ints_inclusive(mylist):
+    result = []
+    for i in range(64, 67):
+        if mylist[i] % 2 == 1:
+            result.append(mylist[i])
+    return result

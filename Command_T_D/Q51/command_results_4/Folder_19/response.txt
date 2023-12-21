@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: c9db3a06-fa4a-4ad0-9beb-aae65e27cd8c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_contains_anagrams' that takes one argument, a list of strings. The function should return true if there are at most 69 pairs of anagrams in the given list; otherwise, it should return false. The function should only consider the anagrams of the English letters. The function should only consider the anagrams of the length of at least three. The function should compare the strings in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import collections
+
+anagrams = collections.Counter(a[0] for a in ("".join(sorted(set(a))) for a in zip(*sorted(zip(*sorted(zip(*sorted(a)))))))
+
+def if_contains_anagrams(st):
+    return sum(c>1 for c in anagrams.values())<=69
+```
+	likelihood: None
+	token_likelihoods: None
+}]

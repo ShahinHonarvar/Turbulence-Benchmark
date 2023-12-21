@@ -1,0 +1,12 @@
+
+def find_second_smallest_num(my_list):
+    # Find the smallest element in the list
+    smallest = min(my_list)
+
+    # Remove the smallest element from the list
+    my_list.remove(smallest)
+
+    # Find the second smallest element in the list
+    second_smallest = min(my_list)
+
+    return second_smallest

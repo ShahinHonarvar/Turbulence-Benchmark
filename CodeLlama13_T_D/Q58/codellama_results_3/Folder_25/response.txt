@@ -1,0 +1,25 @@
+```python
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices with 66 integers each
+    count = 0
+    
+    # Loop through each row of the matrix
+    for i in range(len(matrix)):
+        # Loop through each column of the matrix
+        for j in range(len(matrix[i])):
+            # Initialize a temporary submatrix with the current cell as its top-left corner
+            temp_submatrix = np.zeros((6, 6), dtype=int)
+            
+            # Fill the temporary submatrix with the values from the original matrix
+            for k in range(6):
+                for l in range(6):
+                    temp_submatrix[k][l] = matrix[i+k][j+l]
+            
+            # Check if the temporary submatrix contains 66 integers each
+            if np.count_nonzero(temp_submatrix) == 66:
+                count += 1
+    
+    return count
+```

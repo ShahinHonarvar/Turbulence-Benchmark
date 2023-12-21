@@ -1,0 +1,26 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 818, 606 and 873
+    gcf = 1
+    for i in range(len(my_list)):
+        if i != 818 and i != 606 and i != 873:
+            continue
+
+        for j in range(i+1, len(my_list)):
+            if my_list[i] % my_list[j] == 0:
+                gcf = max(gcf, my_list[j])
+    return gcf
+```
+This function takes a list of positive integers as an argument. It then calculates the greatest common factor (GCF) of the elements at indices 818, 606 and 873. The GCF is calculated by iterating over the list and finding the largest number that divides each element at one of these three indices without leaving a remainder.
+For example, if we have the following list:
+```
+my_list = [12, 15, 20, 30, 60]
+```
+We can calculate the GCF of the elements at indices 818, 606 and 873 as follows:
+```
+gcf_three_nums(my_list)
+
+# Output: 15
+
+```
+In this case, the GCF of the elements at indices 818, 606 and 873 is 15. This is because 12, 15, 20 and 30 are all divisible by 15 without leaving a remainder.

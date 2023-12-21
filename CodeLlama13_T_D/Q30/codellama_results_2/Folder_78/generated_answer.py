@@ -1,0 +1,3 @@
+
+def insert_before_character(string, char):
+    return ''.join([char if c == char else f'{c}{char}' for c in string])

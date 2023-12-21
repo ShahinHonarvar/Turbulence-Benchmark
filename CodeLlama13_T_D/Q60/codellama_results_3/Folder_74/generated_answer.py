@@ -1,0 +1,7 @@
+
+def all_left_right_truncatable_prime(x):
+    lst = []
+    for i in range(2, x+1):
+        if is_left_right_truncatable_prime(i):
+            lst.append(i)
+    return sorted(lst)

@@ -1,0 +1,13 @@
+
+def composite_nums_between_indices(my_list):
+    if len(my_list) < 1:
+        return set()
+    
+    start, end = 28, 32
+    composite_nums = set()
+    for i in range(start, end+1):
+        num = my_list[i]
+        if len(set(range(1, num)).intersection(my_list[:i])) > 0:
+            composite_nums.add(num)
+    
+    return composite_nums

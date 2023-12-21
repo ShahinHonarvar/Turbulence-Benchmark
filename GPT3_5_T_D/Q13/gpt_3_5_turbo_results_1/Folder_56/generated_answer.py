@@ -1,0 +1,16 @@
+
+def find_second_largest_num(nums):
+    if len(nums) <= 1:
+        return None
+    
+    largest = float('-inf')
+    second_largest = float('-inf')
+    
+    for num in nums:
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif num > second_largest:
+            second_largest = num
+    
+    return second_largest

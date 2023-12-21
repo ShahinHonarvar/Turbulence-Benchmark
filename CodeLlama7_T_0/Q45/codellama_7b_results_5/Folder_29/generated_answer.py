@@ -1,0 +1,18 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string) - 9):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Get the index of the current character in the alphabet
+            index = ord(string[i]) - ord('a')
+            # Check if the current character is between indices 2 and 9 (inclusive)
+            if 2 <= index <= 9:
+                # Create a palindrome by reversing the characters in the string from the current character to the end of the string
+                palindrome = string[i:]
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

@@ -1,0 +1,11 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```
+def return_n_smallest_chars(str):
+    # Convert the string to a list of characters
+    char_list = list(str)
+    # Sort the list of characters in descending order based on their ASCII values
+    sorted_char_list = sorted(char_list, key=ord, reverse=True)
+    # Return the top 28 characters from the sorted list
+    return sorted_char_list[:28]
+```
+This function takes a string of distinct characters as input and returns a list of exactly 28 characters that have the smallest ASCII values. The function first converts the input string to a list of characters using the `list` constructor. It then sorts the list of characters in descending order based on their ASCII values using the `sorted` function with the `key` parameter set to the `ord` function, which returns the ASCII value of each character. Finally, it returns the top 28 characters from the sorted list by slicing the first 28 elements of the list using the `[:28]` slice notation.

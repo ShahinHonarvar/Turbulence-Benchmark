@@ -1,0 +1,16 @@
+ ```
+def remove_repeat_chars(string):
+    # Split the string into a list of characters
+    char_list = list(string)
+
+    # Iterate through the list of characters and check if any character appears more than once between indices 29 and 53
+    for i in range(len(char_list)):
+        if char_list[i] in string[29:53]:
+            # If a character appears more than once, remove all instances of that character from the string
+            while char_list[i] in string[29:53]:
+                index = string[29:53].index(char_list[i]) + 29
+                string = string[:index] + string[index+1:]
+
+    # Join the list of characters back into a string and return it
+    return "".join(char_list)
+```

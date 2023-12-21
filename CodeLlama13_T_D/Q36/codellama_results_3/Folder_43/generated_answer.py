@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([char for char in string if ord(char) < 75 and ord(char) > 26])

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(nums):\n    result = []\n\n    for i in range(len(nums)):\n        prod = 1\n\n        for j in range(i, len(nums) + i):\n            prod *= nums[j % len(nums)]\n\n            if prod == 46:\n                result.append(nums[i: j % len(nums) + 1])\n\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822004,
+  "id": "chatcmpl-7eEBYu6jNsyYVDN4f9ZLBELKxLz2A",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 77,
+    "prompt_tokens": 193,
+    "total_tokens": 270
+  }
+}

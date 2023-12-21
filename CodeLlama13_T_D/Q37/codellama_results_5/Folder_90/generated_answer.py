@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i, c in enumerate(string):
+        if (i >= 348 and i <= 852) and ord(c) >= ord('J') and ord(c) <= ord('b'):
+            continue
+        result += c
+    return result

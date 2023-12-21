@@ -1,0 +1,9 @@
+```python
+def if_decimal_is_divisible(binary_str):
+    fibonacci = [0, 1]
+    for i in range(2, 110):
+        fibonacci.append((fibonacci[i-1] + fibonacci[i-2]) % (1 << 32))
+    
+    decimal_value = int(binary_str, 2)
+    return decimal_value % fibonacci[109] == 0
+```

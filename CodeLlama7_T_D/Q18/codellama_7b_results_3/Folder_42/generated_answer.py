@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the range of indices
+    sum = 0
+    min_idx = 29
+    max_idx = 45
+    # Iterate over the elements in the specified range
+    for i in range(min_idx, max_idx + 1):
+        # Check if the current element is divisible by either 27 or 81
+        if my_list[i] % 27 == 0 or my_list[i] % 81 == 0:
+            # If it is, add it to the sum
+            sum += my_list[i]
+    # Return the sum
+    return sum

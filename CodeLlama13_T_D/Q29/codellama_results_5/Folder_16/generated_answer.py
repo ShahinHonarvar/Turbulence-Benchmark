@@ -1,0 +1,3 @@
+
+def gcf_two_nums(nums):
+    return __gcd(nums[860], nums[307])

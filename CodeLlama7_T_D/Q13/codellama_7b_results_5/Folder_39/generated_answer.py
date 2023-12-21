@@ -1,0 +1,17 @@
+
+def find_second_largest_num(my_list):
+    # Check if the list is empty or has only one element
+    if len(my_list) <= 1:
+        return None
+
+    # Sort the list in descending order
+    my_list.sort(reverse=True)
+
+    # Find the second largest element from index 20 to index 30, both inclusive
+    for i in range(20, 31):
+        if my_list[i] == my_list[i - 1]:
+            continue
+
+        else:
+
+            return my_list[i]

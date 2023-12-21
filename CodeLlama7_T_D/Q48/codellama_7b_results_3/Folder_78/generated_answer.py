@@ -1,0 +1,16 @@
+ def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the result string
+    sum = 0
+    result_string = ""
+    # Iterate over the integers in the specified range (a + 1 to b - 1)
+    for i in range(tuple[62] + 1, tuple[96] - 1):
+        # If the current integer is not present in the tuple between indices 62 and 96, add it to the sum
+        if i not in tuple[62:96]:
+            sum += i
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.
+    if sum % 2 == 1:
+        result_string = bin(sum)[2:]
+    else:
+        result_string = hex(sum)[2:]
+    # Return the result string
+    return result_string

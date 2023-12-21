@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nimport math\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[64]\n    primes = []\n    for num in range(2, x):\n        if '0' in str(num):\n            continue\n        trunc_primes = []\n        for i in range(1, len(str(num))):\n            trunc_num = int(str(num)[i:])\n            if is_prime(trunc_num):\n                trunc_primes.append(trunc_num)\n            else:\n                break\n        if len(trunc_primes) == len(str(num)) - 1:\n            primes.append(num)\n    \n    return sorted(primes, reverse=True)\n```\nNote: Since the text specification does not explicitly state the range of the tuple indices, it is assumed that indices start from 0.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689799150,
+  "id": "chatcmpl-7e8EwBJdmprS6XmriEAiiRm1myBHr",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 209,
+    "prompt_tokens": 146,
+    "total_tokens": 355
+  }
+}

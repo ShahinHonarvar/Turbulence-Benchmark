@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between indices 24 and 71, both inclusive
+    indices = []
+    for i in range(len(string)):
+        if i >= 24 and i <= 71:
+            indices.append(i)
+    # Get the ASCII values of the characters at the indices found above
+
+    ascii_values = []
+
+    for index in indices:
+
+        ascii_values.append(ord(string[index]))
+
+    # Sort the ASCII values in ascending order
+
+    sorted_ascii_values = sorted(ascii_values)
+
+    # Return the 8th smallest ASCII value
+
+    return sorted_ascii_values[7]
+```

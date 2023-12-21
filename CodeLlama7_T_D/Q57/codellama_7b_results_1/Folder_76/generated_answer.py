@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row as a NumPy array
+        row = matrix[i]
+
+        # Loop over each column of the row
+        for j in range(row.size):
+            # Get the current element of the row as an integer
+            element = int(row[j])
+
+            # If the element is -255, add the submatrix to the list of submatrices
+            if element == -255:
+                submatrices.append(matrix[i-1:i+2, j-1:j+2])
+
+    # Return the list of submatrices that have a sum of all integers equal to -255
+    return submatrices

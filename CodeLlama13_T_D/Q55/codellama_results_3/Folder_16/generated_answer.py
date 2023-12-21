@@ -1,0 +1,9 @@
+
+def lists_with_product_equal_n(list):
+    result = []
+    for i in range(len(list)):
+        for j in range(i+1, len(list)+1):
+            sublist = list[i:j]
+            if product(sublist) == -837:
+                result.append(sublist)
+    return result

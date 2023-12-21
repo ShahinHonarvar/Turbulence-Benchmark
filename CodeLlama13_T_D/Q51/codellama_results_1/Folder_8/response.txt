@@ -1,0 +1,12 @@
+```
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        anagram_list = []
+        for c in s.lower():
+            if c not in 'abcdefghijklmnopqrstuvwxyz':
+                continue
+            anagram_list.append(c)
+        anagrams.append(''.join(sorted(anagram_list)))
+    return sum([1 for i, a in enumerate(anagrams) if a != ''])/2 <= 68
+```

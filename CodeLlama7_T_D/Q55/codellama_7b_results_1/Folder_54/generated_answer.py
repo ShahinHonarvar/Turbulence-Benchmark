@@ -1,0 +1,27 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list and find the contiguous sublist whose product is equal to -17
+    for i in range(len(circular_list))):
+        # Initialize variables to keep track of the current sublist and its product
+        current_sublist = []
+        current_product = 1
+
+        # Iterate through the circular list from the current index to the end of the list
+        for j in range(i, len(circular_list))):
+            # Add the current element to the current sublist and update the product variable
+            current_sublist.append(circular_list[j])
+            current_product *= circular_list[j]
+
+            # If the product of the current sublist is equal to -17, add it to the list of sublists and break out of the inner loop
+            if current_product == -17:
+                sublists.append(current_sublist)
+                break
+
+        # If the product of the current sublist is not equal to -17, continue iterating through the circular list from the next index
+        else:
+            continue
+
+    return sublists

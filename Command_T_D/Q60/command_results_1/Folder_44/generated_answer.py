@@ -1,0 +1,204 @@
+
+def all_left_right_truncatable_prime(test_tup):
+    res = []
+    for first in range(2, test_tup[0] + 1):
+        for second in range(2, test_tup[0] + 1):
+            if is_prime(first):
+                for i in range(1, test_tup[0] + 1):
+                    if second * 10**i > test_tup[0]:
+                        break
+                    elif is_prime(second * 10**i):
+                        res.append(second * 10**i)
+    return res
+
+def is_prime(test_val):
+    if test_val <= 1:
+        return False
+    if test_val <= 3:
+        return True
+    if test_val == 2 or test_val == 3:
+        return True
+    if test_val == 1:
+        return False
+    if test_val == 5:
+        return True
+    if test_val == 0:
+        return False
+    if test_val == 4:
+        return True
+    if test_val == 6:
+        return True
+    if test_val == 7:
+        return True
+    if test_val == 8:
+        return True
+    if test_val == 9:
+        return True
+    if test_val == 10:
+        return True
+    if test_val == 11:
+        return True
+    if test_val == 12:
+        return True
+    if test_val == 13:
+        return True
+    if test_val == 14:
+        return True
+    if test_val == 15:
+        return True
+    if test_val == 16:
+        return True
+    if test_val == 17:
+        return True
+    if test_val == 18:
+        return True
+    if test_val == 19:
+        return True
+    if test_val == 20:
+        return True
+    if test_val == 21:
+        return True
+    if test_val == 22:
+        return True
+    if test_val == 23:
+        return True
+    if test_val == 24:
+        return True
+    if test_val == 25:
+        return True
+    if test_val == 26:
+        return True
+    if test_val == 27:
+        return True
+    if test_val == 28:
+        return True
+    if test_val == 29:
+        return True
+    if test_val == 30:
+        return True
+    if test_val == 31:
+        return True
+    if test_val == 32:
+        return True
+    if test_val == 33:
+        return True
+    if test_val == 34:
+        return True
+    if test_val == 35:
+        return True
+    if test_val == 36:
+        return True
+    if test_val == 37:
+        return True
+    if test_val == 38:
+        return True
+    if test_val == 39:
+        return True
+    if test_val == 40:
+        return True
+    if test_val == 41:
+        return True
+    if test_val == 42:
+        return True
+    if test_val == 43:
+        return True
+    if test_val == 44:
+        return True
+    if test_val == 45:
+        return True
+    if test_val == 46:
+        return True
+    if test_val == 47:
+        return True
+    if test_val == 48:
+        return True
+    if test_val == 49:
+        return True
+    if test_val == 50:
+        return True
+    if test_val == 51:
+        return True
+    if test_val == 52:
+        return True
+    if test_val == 53:
+        return True
+    if test_val == 54:
+        return True
+    if test_val == 55:
+        return True
+    if test_val == 56:
+        return True
+    if test_val == 57:
+        return True
+    if test_val == 58:
+        return True
+    if test_val == 59:
+        return True
+    if test_val == 60:
+        return True
+    if test_val == 61:
+        return True
+    if test_val == 62:
+        return True
+    if test_val == 63:
+        return True
+    if test_val == 64:
+        return True
+    if test_val == 65:
+        return True
+    if test_val == 66:
+        return True
+    if test_val == 67:
+        return True
+    if test_val == 68:
+        return True
+    if test_val == 69:
+        return True
+    if test_val == 70:
+        return True
+    if test_val == 71:
+        return True
+    if test_val == 72:
+        return True
+    if test_val == 73:
+        return True
+    if test_val == 74:
+        return True
+    if test_val == 75:
+        return True
+    if test_val == 76:
+        return True
+    if test_val == 77:
+        return True
+    if test_val == 78:
+        return True
+    if test_val == 79:
+        return True
+    if test_val == 80:
+        return True
+    if test_val == 81:
+        return True
+    if test_val == 82:
+        return True
+    if test_val == 83:
+        return True
+    if test_val == 84:
+        return True
+    if test_val == 85:
+        return True
+    if test_val == 86:
+        return True
+    if test_val == 87:
+        return True
+    if test_val == 88:
+        return True
+    if test_val == 89:
+        return True
+    if test_val == 90:
+        return True
+    if test_val == 91:
+        return True
+    if test_val == 92:
+        return True
+    if test_val == 93:
+        return True

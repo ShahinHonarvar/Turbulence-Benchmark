@@ -1,0 +1,12 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 80 + 1):
+        for j in range(matrix.shape[1] - 80 + 1):
+            if np.count_nonzero(matrix[i:i+80,j:j+80]) == 80:
+                count += 1
+    return count
+
+```
+This code uses nested for loops to iterate over the rows and columns of the given matrix. For each element in the matrix, it checks if the number of non-zero elements in the submatrix that starts at that element and has a width and height of 80 is equal to 80. If it is, then the count is incremented by 1. Finally, the function returns the value of the count.

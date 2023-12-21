@@ -1,0 +1,3 @@
+
+def insert_after_character(s, c):
+    return s.replace(c, f'{c}H')

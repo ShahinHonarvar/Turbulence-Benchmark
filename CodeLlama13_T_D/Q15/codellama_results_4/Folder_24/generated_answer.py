@@ -1,0 +1,3 @@
+
+def sum_odd_ints_inclusive(lst):
+    return sum([num for i, num in enumerate(lst) if i >= 74 and i <= 95 and num % 2 != 0])

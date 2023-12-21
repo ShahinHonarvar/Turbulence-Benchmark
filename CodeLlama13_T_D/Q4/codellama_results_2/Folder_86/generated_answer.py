@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(nums):
+    return [n for n in nums if 18 < n < 60 and n > 0]

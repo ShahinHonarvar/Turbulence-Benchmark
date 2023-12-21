@@ -1,0 +1,12 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    n, m = matrix.shape
+    result = []
+    for i in range(n - 1):
+        for j in range(m - 1):
+            curr_sum = sum(matrix[i][j:j + 2])
+            if curr_sum == 34:
+                submatrix = matrix[i][j:j + 2]
+                result.append(submatrix)
+    return result

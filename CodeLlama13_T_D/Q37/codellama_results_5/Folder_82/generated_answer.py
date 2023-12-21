@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    chars = []
+    for i in range(12, 26):
+        if string[i].isalpha() and 'P' <= string[i] <= 'x':
+            chars.append(string[i])
+    for char in chars:
+        string = string.replace(char, '')
+    return string

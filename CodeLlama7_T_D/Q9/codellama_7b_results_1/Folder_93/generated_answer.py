@@ -1,0 +1,13 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Check if list contains any odd integers
+    if len([i for i in my_list if i % 2 == 1]) == 0:
+        return []
+
+    # Get indices of odd integers in the specified range
+    odd_ints = [i for i in my_list if i % 2 == 1]
+    start_idx = odd_ints[75] - 1
+    end_idx = odd_ints[94] + 1
+
+    # Return list of all odd integers from the specified range
+    return [my_list[i] for i in range(start_idx, end_idx) if my_list[i] % 2 == 1]

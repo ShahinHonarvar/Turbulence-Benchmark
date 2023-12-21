@@ -1,0 +1,5 @@
+
+def insert_at_index(my_list):
+    # create a new list with one more element than the given list
+    new_list = my_list[:85] + [27] + my_list[85:]
+    return new_list

@@ -1,0 +1,24 @@
+```python
+def find_primes_between_indices(nums):
+    primes = []
+    for i in range(430, 805 + 1):
+        if is_prime(nums[i]):
+            primes.append(nums[i])
+    return sorted(primes)
+```
+
+You can also use `itertools.islice` to slice the list and then use `filter` with a lambda function to find the prime numbers:
+```python
+from itertools import islice
+
+def find_primes_between_indices(nums):
+    return sorted(filter(lambda x: is_prime(x), islice(nums, 430, 805 + 1)))
+```
+
+You can also use `itertools.takewhile` to take the elements from the list until a non-prime number is found and then use `filter` with a lambda function to find the prime numbers:
+```python
+from itertools import takewhile
+
+def find_primes_between_indices(nums):
+    return sorted(filter(lambda x: is_prime(x), takewhile(lambda x: x <= 805, nums[430:])))
+```

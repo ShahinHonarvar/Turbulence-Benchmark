@@ -1,0 +1,24 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+x = tuple[1]
+list = []
+for i in range(2, x + 1):
+if is_left_right_truncatable_prime(i):
+list.append(i)
+return list
+
+def is_left_right_truncatable_prime(n):
+if n < 3:
+return False
+
+for i in range(2, int(math.sqrt(n)) + 1):
+if n % i == 0:
+return False
+
+s = str(n)
+if s[0] == '0' or s[-1] == '0':
+return False
+
+return True
+
+```

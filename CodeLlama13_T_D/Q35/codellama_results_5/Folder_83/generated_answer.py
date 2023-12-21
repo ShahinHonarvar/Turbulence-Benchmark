@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    chars = []
+    for i in range(100, 200):
+        if s[i] not in chars:
+            chars.append(s[i])
+    for char in chars:
+        s = s.replace(char, "")
+    return s

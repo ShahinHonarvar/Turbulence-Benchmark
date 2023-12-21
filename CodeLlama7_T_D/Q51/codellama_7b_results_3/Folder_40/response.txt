@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(words):
+    # Define a function to check if two strings are anagrams
+    def is_anagram(str1, str2):
+        return sorted(str1) == sorted(str2)
+    # Initialize a counter for the number of pairs of anagrams found
+    num_pairs = 0
+    # Iterate over all possible pairs of strings in the list
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            # Check if the two strings are anagrams
+            if is_anagram(words[i], words[j]):
+                # Increment the counter if a pair of anagrams is found
+                num_pairs += 1
+    # Return False if there are more than 29 pairs of anagrams in the list
+    return num_pairs <= 29
+```

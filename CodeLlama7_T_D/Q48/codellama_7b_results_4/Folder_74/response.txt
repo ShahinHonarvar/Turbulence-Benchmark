@@ -1,0 +1,17 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[69]
+b = tuple[97]
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple:
+sum += i
+if sum % 2 == 1:
+return bin(sum)[2:]
+else:
+return hex(sum)[2:]
+```
+This code defines a function called `return_binary_or_hexa` that takes one argument, a tuple of distinct nonnegative integers sorted in ascending order. The function then uses the values of indices 69 and 97 to determine the range of integers between them.
+The function then iterates over this range of integers using a for loop, checking if each integer is present in the tuple between indices 69 and 97. If it is not present, the function adds its value to the sum variable.
+Once the for loop is complete, the function checks if the sum is an odd number. If it is, the function returns the binary representation of the sum as a string without any leading zeros. If the sum is even, the function returns the hexadecimal representation of the sum as a string without any leading zeros.
+Finally, the function returns an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple.

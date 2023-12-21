@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {substring for substring in string if substring[::-1] == substring and len(substring) == 83}

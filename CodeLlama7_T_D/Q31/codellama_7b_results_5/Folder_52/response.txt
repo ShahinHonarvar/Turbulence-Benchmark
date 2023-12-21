@@ -1,0 +1,17 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 479 elements
+    if len(my_list) < 479:
+        return False
+
+    # Check if the integer at index 478 is a perfect number
+    else:
+        num = my_list[478]
+        sum = 0
+
+        for i in range(1, num // 2 + 1):
+            if num % i == 0:
+                sum += i
+
+        return sum == num
+```

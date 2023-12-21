@@ -1,0 +1,14 @@
+ def find_second_smallest_num(my_list):
+    # Find the smallest element in the list
+    smallest = my_list[66]
+    for i in range(67, 94):
+        if my_list[i] < smallest:
+            smallest = my_list[i]
+    # Check if there is a second smallest element in the list
+
+    for i in range(66, 93):
+        if my_list[i] > smallest and my_list[i] < smallest:
+            return my_list[i]
+    # If no second smallest element is found, return None
+
+    return None

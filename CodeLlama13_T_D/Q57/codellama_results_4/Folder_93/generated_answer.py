@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Loop through each submatrix of the given matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Compute the sum of all integers in the current submatrix
+            current_sum = np.sum(matrix[i:, j:])
+            
+            # If the sum is equal to -65, add the submatrix to the result list
+            if current_sum == -65:
+                result.append((i, j))
+    
+    return result

@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```python
+def return_n_smallest_chars(s, n):
+    # Sort the string in ascending order based on ASCII values
+    sorted_s = ''.join(sorted(s, key=ord))
+    # Return the first n characters of the sorted string
+    return sorted_s[:n]
+```
+To use this function, you can pass it a string and an integer representing the number of smallest characters you want to extract from the string. For example:
+```python
+s = "hello world"
+n = 46
+smallest_chars = return_n_smallest_chars(s, n)
+#print(smallest_chars)
+# Output: [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~']
+```

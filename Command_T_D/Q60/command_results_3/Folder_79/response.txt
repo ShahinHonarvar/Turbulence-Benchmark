@@ -1,0 +1,25 @@
+[cohere.Generation {
+	id: 62e3693c-f6cf-4acd-9926-6f00951be8b0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 91. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+import heapq
+
+def all_left_right_truncatable_prime(test_list):
+    # Check if any number in range is left-and-right-truncatable
+    for i in range(91, test_list[0] + 1):
+        if is_left_and_right_truncatable_prime(str(i)):
+            return [int(i)]
+    return []
+    
+def is_left_and_right_truncatable_prime(s):
+    # Check if number contains 0 and if it's prime
+    if any(map(str.isdigit, s)) and s[0]!='0' and s[-1]!='0' and str(s).isprime():
+        # Remove leftmost and rightmost digits in order
+        return re.sub(r'0+', '', s) == '1' or re.sub(r'0+', '', s) == '11'
+    return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

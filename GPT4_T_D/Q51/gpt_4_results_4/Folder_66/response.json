@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import defaultdict\n\ndef if_contains_anagrams(lst):\n    anagram_pairs = []\n    words_count = defaultdict(list)\n    for string in lst:\n        if len(string) >= 3:\n            sorted_string = ''.join(sorted(string.lower()))\n            words_count[sorted_string].append(string.lower())\n    for key, value in words_count.items():\n        length = len(value)\n        if length >= 2:\n            for i in range(length):\n                for j in range(i+1, length):\n                    anagram_pairs.append((value[i], value[j]))\n    return len(anagram_pairs) <= 64\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691076344,
+  "id": "chatcmpl-7jUUqxdg6TErNaNW7ypBnFL8YyhYD",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 139,
+    "total_tokens": 268
+  }
+}

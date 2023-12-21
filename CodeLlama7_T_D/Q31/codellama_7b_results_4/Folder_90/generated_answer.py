@@ -1,0 +1,22 @@
+
+def if_perfect_num(lst):
+    # Check if the list is empty or has less than 264 elements
+    if len(lst) < 264:
+        return False
+
+    # Check if the element at index 263 is a perfect number
+    if lst[263] == 0:
+        return False
+
+    # Check if the sum of the factors excluding the number itself is equal to the square of the number
+    sum_of_factors = 0
+    for i in range(1, int(lst[263] ** 0.5) + 1):
+        if lst[263] % i == 0:
+            sum_of_factors += i
+
+    if sum_of_factors == lst[263] ** 2:
+        return True
+
+    else:
+
+        return False

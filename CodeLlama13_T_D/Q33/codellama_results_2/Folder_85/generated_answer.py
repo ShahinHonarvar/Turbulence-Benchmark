@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(55, 65):
+        if string[i].isalpha() and ord(string[i]) > 90 and ord(string[i]) <= 122:
+            vowels.append(string[i])
+    return vowels

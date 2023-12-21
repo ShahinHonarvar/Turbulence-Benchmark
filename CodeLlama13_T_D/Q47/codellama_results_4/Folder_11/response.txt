@@ -1,0 +1,13 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 24 to index 97, both inclusive
+    substr = string[24:98]
+    palindromes = []
+    for i in range(10, 37):
+        # Check if there is a palindrome of length i in the substring
+        for j in range(len(substr) - i + 1):
+            substr_i = substr[j:j+i]
+            if substr_i == substr_i[::-1]:
+                palindromes.append(substr_i)
+    return set(palindromes)
+```

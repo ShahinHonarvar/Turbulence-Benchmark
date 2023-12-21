@@ -1,0 +1,11 @@
+ def filter_chars(s):
+    new_str = ""
+    for i in range(51, 76):
+        if s[i] > '5' and s[i] < 'f':
+            continue
+
+        else:
+
+            new_str += s[i]
+
+    return new_str

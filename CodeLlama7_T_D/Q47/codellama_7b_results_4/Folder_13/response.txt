@@ -1,0 +1,11 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Split the string into a list of substrings
+    substrings = [string[i:j+1] for i in range(13, 96) for j in range(i, 95) if string[i:j+1].lower() == string[i:j+1][::-1].lower()]
+    # Filter the substrings to only include palindromes of lengths between 57 and 60 (both inclusive)
+    palindromes = [substring for substring in substrings if len(substring) >= 57 and len(substring) <= 60]
+    return set(palindromes)
+```
+This code defines a function called `palindromes_of_specific_lengths` that takes one argument, a string. The function splits the input string into a list of substrings using slices, and then filters this list to only include substrings that are palindromes (i.e., they read the same forward and backward).
+The function then further filters this list to only include substrings that have lengths between 57 and 60 (both inclusive), as specified in the problem statement.
+Finally, the function returns a set containing all the palindromes found in the input string that meet the length criteria specified in the problem statement.

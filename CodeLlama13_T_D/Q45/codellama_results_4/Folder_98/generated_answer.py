@@ -1,0 +1,13 @@
+
+def palindromes_between_indices(string):
+    # Set of English letters
+    english_letters = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    
+    # Create a list of all possible substrings between indices 3 and 5, inclusive
+    substrs = [string[i:j] for i in range(len(string)-4) for j in range(i+3, len(string)+1)]
+    
+    # Create a set of palindromes from the substrings
+    palindromes = {substr for substr in substrs if substr == substr[::-1]}
+    
+    # Return the palindromes that are at least 4 characters long
+    return {palindrome for palindrome in palindromes if len(palindrome) >= 4}

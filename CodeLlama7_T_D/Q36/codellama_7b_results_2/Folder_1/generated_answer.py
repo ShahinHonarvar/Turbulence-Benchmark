@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate over the characters and remove those that are between indices 69 and 87 (both exclusive)
+    for i, char in enumerate(char_list):
+        if 69 < i < 87:
+            if char > '#' and char < 'L':
+                char_list[i] = ''
+    # Join the list of characters back into a string and return it
+    return ''.join(char_list)

@@ -1,0 +1,23 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers.")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate through the list and check if each number is composite between indices 21 and 97
+    for i in range(len(my_list)):
+        num = my_list[i]
+        if (num > 21 and num < 97) and is_composite(num):
+            composite_nums.add(num)
+    # Return the set of all composite numbers between indices 21 and 97, inclusive
+    return composite_nums
+
+def is_composite(n):
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1)):
+        if n % i == 0:
+            return False
+
+    # If no divisors are found, return True
+    return True

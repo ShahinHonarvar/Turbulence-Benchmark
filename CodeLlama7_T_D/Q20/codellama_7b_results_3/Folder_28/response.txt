@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `find_n_th_smallest_num` function:
+```python
+def find_n_th_smallest_num(numbers, n):
+    # Check if input list is empty or None
+    if not numbers:
+        return None
+
+    # Sort the input list in ascending order
+    numbers.sort()
+
+    # Return the n-th smallest number from the sorted list
+    return numbers[n - 1]
+```
+This function takes two arguments: a list of distinct numbers and an integer `n` that represents the position of the number to be returned in the sorted list. The function first checks if the input list is empty or None, and if it is not empty, it sorts the list in ascending order using the built-in `sort()` method. Then, it returns the `n`-th smallest number from the sorted list by indexing into the list with `n - 1`. If `n` is less than or equal to zero, the function returns `None`.

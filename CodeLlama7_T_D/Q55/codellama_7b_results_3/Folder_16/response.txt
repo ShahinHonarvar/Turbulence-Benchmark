@@ -1,0 +1,18 @@
+ ```
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Loop through the elements of the given list
+    for i in range(len(my_list)):
+
+        # Initialize a variable to store the product of the current element and its predecessor
+        prod = my_list[i] * my_list[i - 1]
+
+        # If the product is equal to -837, add the current sublist to the list of sublists
+        if prod == -837:
+            sublists.append(my_list[i - 1:i + 1])
+
+    # Return the list of sublists
+    return sublists
+```

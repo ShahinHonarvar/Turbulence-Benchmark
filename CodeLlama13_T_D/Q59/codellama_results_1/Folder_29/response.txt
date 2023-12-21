@@ -1,0 +1,13 @@
+```python
+def all_left_truncatable_prime(nums):
+    primes = []
+    for num in nums:
+        if is_prime(num) and no_zero(num):
+            primes.append(num)
+    return sorted(primes, reverse=True)
+```
+This function takes a tuple of positive integers as input and returns a list of all left-truncatable prime numbers less than the integer at index 55 in the tuple. It uses the `is_prime` and `no_zero` functions to determine if a number is prime and has no leading zeroes, respectively.
+
+The resulting list is sorted in descending order using Python's built-in `sorted` function with the `reverse=True` parameter.
+
+Note that this solution assumes that the input tuple contains only positive integers. If there are negative numbers or non-integer values in the tuple, they will be ignored by the `is_prime` and `no_zero` functions.

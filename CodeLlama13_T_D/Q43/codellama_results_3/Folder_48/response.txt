@@ -1,0 +1,12 @@
+```
+def find_primes_between_indices(mylist):
+    prime_nums = []
+    for i in range(261, 459+1):
+        if mylist[i] > 1:
+            for j in range(2, int(mylist[i])**0.5+1):
+                if mylist[i] % j == 0:
+                    break
+            else:
+                prime_nums.append(mylist[i])
+    return sorted(prime_nums)
+```

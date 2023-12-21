@@ -1,0 +1,51 @@
+[cohere.Generation {
+	id: 98f8b994-98b1-431f-a2c7-cb009547876c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 86. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import sys
+import bisect
+import heapq
+
+sys.setrecursionlimit(10**6)
+
+def all_left_right_truncatable_prime(tup):
+    start, end = map(str, (tup[86], tup[0]))
+    s = set(str(p) for p in range(2, end) if all(int(d) for d in str(p) if d!="0"))
+    x = list(s)
+    heapq.heapify(x)
+    heapq.heapify(x)
+    i = len(x)-2
+    while i>=0:
+        p = int(x[i])
+        if p>=start:
+            break
+        q = p
+        while q:
+            q //= 10
+            i -= 1
+        if p!=q:
+            break
+        i -= 1
+    else:
+        return []
+    i = j = len(x)-1
+    while j>=0:
+        p = int(x[j])
+        if p>=end:
+            break
+        q = p
+        while q:
+            q //= 10
+            j -= 1
+        if p!=q:
+            break
+        j -= 1
+        if i!=j:
+            break
+        i -= 1
+    return sorted(set(x))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,11 @@
+ ```
+def palindrome_of_length_n(string):
+    # Remove all non-alphabetical characters from the string
+    string = ''.join([c for c in string if c.isalpha()])
+    # Create a list of all substrings of length n
+    substrings = [string[i:i+n] for i in range(len(string)-n+1)]
+    # Filter the substrings to only include palindromes
+    palindromes = [s for s in substrings if s == s[::-1]]
+    return set(palindromes)
+```
+This function takes a string as input, and returns the set of all palindromes of length n that are substrings of the given string. The function first removes all non-alphabetical characters from the string, then creates a list of all substrings of length n using slicing. Finally, the function filters the substrings to only include those that are palindromes by comparing them to their reversed form.

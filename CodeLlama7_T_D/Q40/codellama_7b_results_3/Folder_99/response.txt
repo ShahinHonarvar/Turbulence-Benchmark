@@ -1,0 +1,14 @@
+ ```
+def return_n_smallest_chars(string):
+    # create a dictionary with the ASCII values of each character in the string as keys and the characters themselves as values
+    ascii_values = {ord(char): char for char in string}
+
+    # sort the dictionary by key (ASCII value) in descending order
+    sorted_ascii_values = sorted(ascii_values.items(), reverse=True)
+
+    # create a list of the top 35 characters with the smallest ASCII values
+    top_35_chars = [value for key, value in sorted_ascii_values[:35]]
+
+    # return the list of top 35 characters
+    return top_35_chars
+```

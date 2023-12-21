@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `if_decimal_is_divisible` function in Python:
+```
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to integer
+    decimal_int = int(binary_string, 2)
+    # Find the 150th number that occurs in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    for i in range(1, 150):
+        fibonacci_sequence.append(fibonacci_sequence[-2] + fibonacci_sequence[-1])
+    # Check if the decimal integer is divisible by the 150th number in the Fibonacci sequence
+    for num in fibonacci_sequence:
+        if decimal_int % num == 0:
+            return True
+
+return False
+```
+This implementation first converts the binary string to an integer using the `int()` function with a base of 2. It then finds the 150th number that occurs in the Fibonacci sequence by generating the first two numbers of the sequence (0 and 1) and then adding the previous two numbers together until the desired number is reached. Finally, it checks if the decimal integer is divisible by any of the numbers in the Fibonacci sequence by iterating over each number and checking if it divides evenly into the decimal integer. If any such number is found, the function returns `True`, otherwise it returns `False`.

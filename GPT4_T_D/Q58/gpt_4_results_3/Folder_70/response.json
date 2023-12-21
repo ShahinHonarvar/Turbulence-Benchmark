@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    num_rows, num_cols = matrix.shape\n    for rows in range(1, num_rows + 1):\n        for cols in range(1, num_cols + 1):\n            for i in range(num_rows - rows + 1):\n                for j in range(num_cols - cols + 1):\n                    submatrix = matrix[i:i+rows, j:j+cols]\n                    if np.product(submatrix.shape) == 173:\n                        count += 1\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690987506,
+  "id": "chatcmpl-7j7NyYC4arlI2Ct3zvFmA1EOR8A4v",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 111,
+    "total_tokens": 236
+  }
+}

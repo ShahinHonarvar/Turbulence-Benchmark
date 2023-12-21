@@ -1,0 +1,14 @@
+
+def all_right_truncatable_prime(numbers):
+    x = numbers[86]
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    
+    right_truncatable_primes = []
+    for p in prime_numbers:
+        if is_right_truncatable_prime(p):
+            right_truncatable_primes.append(p)
+    
+    return sorted(right_truncatable_primes, reverse=True)

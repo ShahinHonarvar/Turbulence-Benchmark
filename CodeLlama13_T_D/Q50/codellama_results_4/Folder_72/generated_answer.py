@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(my_list):
+    pairs = 0
+    for i in range(len(my_list)):
+        for j in range(i+1, len(my_list)):
+            s1 = "".join(sorted(my_list[i].lower()))
+            s2 = "".join(sorted(my_list[j].lower()))
+            if s1 == s2 and len(s1) >= 3:
+                pairs += 1
+    return pairs >= 55

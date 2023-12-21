@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    result = ""
+    for i, c in enumerate(s):
+        if 477 <= i <= 984 and ord(',') <= ord(c) <= ord('V'):
+            continue
+        result += c
+    return result

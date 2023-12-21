@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_string):
+    fibonacci_seq = [0, 1]
+    while True:
+        next_number = fibonacci_seq[-1] + fibonacci_seq[-2]
+        fibonacci_seq.append(next_number)
+        if len(fibonacci_seq) == 6:
+            break
+    
+    decimal_num = int(binary_string, 2)
+    return decimal_num % fibonacci_seq[5] == 0

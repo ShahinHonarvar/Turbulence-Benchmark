@@ -1,0 +1,89 @@
+import sys
+def all_right_truncatable_prime(n):
+    x = n[65]
+    d = str(x)
+    for i in range(1, len(d)):
+        x = int(d[:i] + '0' + d[i:])
+        if x % 2 == 0:
+            continue
+        elif x % 3 == 0:
+            continue
+        elif x % 5 == 0:
+            continue
+        elif x % 7 == 0:
+            continue
+        elif x % 11 == 0:
+            continue
+        elif x % 13 == 0:
+            continue
+        elif x % 17 == 0:
+            continue
+        elif x % 19 == 0:
+            continue
+        elif x % 23 == 0:
+            continue
+        elif x % 29 == 0:
+            continue
+        elif x % 31 == 0:
+            continue
+        elif x % 37 == 0:
+            continue
+        elif x % 41 == 0:
+            continue
+        elif x % 43 == 0:
+            continue
+        elif x % 47 == 0:
+            continue
+        elif x % 53 == 0:
+            continue
+        elif x % 59 == 0:
+            continue
+        elif x % 61 == 0:
+            continue
+        elif x % 67 == 0:
+            continue
+        elif x % 71 == 0:
+            continue
+        elif x % 73 == 0:
+            continue
+        elif x % 79 == 0:
+            continue
+        elif x % 83 == 0:
+            continue
+        elif x % 89 == 0:
+            continue
+        elif x % 97 == 0:
+            continue
+        elif x % 101 == 0:
+            continue
+        elif x % 103 == 0:
+            continue
+        elif x % 107 == 0:
+            continue
+        elif x % 109 == 0:
+            continue
+        elif x % 113 == 0:
+            continue
+        elif x % 127 == 0:
+            continue
+        elif x % 521 == 0:
+            continue
+        elif x % 607 == 0:
+            continue
+        elif x % 1279 == 0:
+            continue
+        elif x % 2203 == 0:
+            continue
+        elif x % 2281 == 0:
+            continue
+        elif x % 3217 == 0:
+            continue
+        elif x % 4253 == 0:
+            continue
+        elif x % 4423 == 0:
+            continue
+        elif x % 9689 == 0:
+            continue
+        else:
+            return []
+    return []

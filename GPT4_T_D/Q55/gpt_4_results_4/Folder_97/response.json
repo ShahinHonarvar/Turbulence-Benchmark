@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\nfrom functools import reduce\nfrom operator import mul\nimport numpy as np\n\ndef lists_with_product_equal_n(circular_list):\n    n = len(circular_list)\n    product_target = -938\n    sublists = []\n\n    for l in range(1, n+1):\n        circular_deque = deque(circular_list)\n        for i in range(n):\n            sublist = list(np.roll(circular_deque, -i)[:l])\n            if reduce(mul, sublist, 1) == product_target:\n                sublists.append(sublist)\n                \n    return sublists\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691090144,
+  "id": "chatcmpl-7jY5QV6tfL83cTm4skxdGTYML0CA0",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 128,
+    "prompt_tokens": 193,
+    "total_tokens": 321
+  }
+}

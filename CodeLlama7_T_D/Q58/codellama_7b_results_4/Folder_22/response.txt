@@ -1,0 +1,13 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 1):
+        for j in range(i + 1, len(matrix)):
+            if (np.count_nonzero(matrix[i] == 21) == matrix[i].size and np.count_nonzero(matrix[j] == 21) == matrix[j].size):
+                count += 1
+
+    return count
+```
+This code uses the NumPy library to handle two-dimensional integer matrices. The `submatrix_with_n_numbers` function takes a single argument, which is a two-dimensional integer matrix. The function then iterates over each row of the matrix, and for each row, it checks if the number of elements in that row that are equal to 21 is equal to the total number of elements in that row. If this condition is true, then the function increments a count variable by one. Finally, the function returns the value of the count variable.

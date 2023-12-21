@@ -1,0 +1,6 @@
+```
+def return_n_greatest_chars(string):
+    ascii_vals = {char: ord(char) for char in string}
+    sorted_ascii_vals = sorted(ascii_vals.items(), key=lambda x: x[1], reverse=True)[:16]
+    return [char for char, _ in sorted_ascii_vals]
+```

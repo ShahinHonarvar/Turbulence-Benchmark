@@ -1,0 +1,12 @@
+
+def filter_chars(my_string):
+    filtered_string = ""
+    for i in range(len(my_string)):
+        if (i >= 770 and i <= 970) and my_string[i].isalpha():
+            continue
+
+        else:
+
+            filtered_string += my_string[i]
+
+    return filtered_string

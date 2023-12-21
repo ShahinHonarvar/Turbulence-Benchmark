@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    s = list(s)
+    for i in range(32, 47):
+        if s[i].isdigit() and '0' <= s[i] <= 'k':
+            s.remove(s[i])
+    return "".join(s)

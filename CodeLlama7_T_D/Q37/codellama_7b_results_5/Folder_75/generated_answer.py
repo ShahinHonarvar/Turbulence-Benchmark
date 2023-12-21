@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(34, 68):
+        if string[i].isalpha() and string[i] >= 'W' and string[i] <= 'x':
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

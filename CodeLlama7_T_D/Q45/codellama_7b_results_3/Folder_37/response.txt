@@ -1,0 +1,22 @@
+ ```
+def palindromes_between_indices(string):
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Loop through each character in the string
+for i in range(1, len(string)):
+# Check if the current character is a vowel
+if string[i] in "aeiou":
+# If it is a vowel, check if there are any consonants before and after it
+before_vowel = string[:i]
+after_vowel = string[i+1:]
+# If there are no consonants before or after the vowel, continue to the next character in the string
+if not before_vowel.isalpha() or not after_vowel.isalpha():
+continue
+
+# Form the palindrome by concatenating the characters before and after the vowel
+palindrome = before_vowel + after_vowel
+# Add the palindrome to the set of palindromes if it has a length of at least 5
+if len(palindrome) >= 5:
+palindromes.add(palindrome)
+return palindromes
+```

@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+    for char in string:
+        if char not in ascii_values:
+            ascii_values[char] = ord(char)
+
+    # Sort the dictionary by the ASCII value of each character
+
+    sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[1])
+
+    # Return the character with the 12th smallest ASCII value among those characters in the string that occur between indices 32 to 67, both inclusive
+
+    return sorted_ascii_values[11][0]
+```

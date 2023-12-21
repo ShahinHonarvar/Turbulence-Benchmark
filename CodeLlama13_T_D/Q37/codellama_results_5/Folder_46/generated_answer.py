@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return "".join([c for c in s if ord("i") <= ord(c) <= ord("v")]).lower()

@@ -1,0 +1,28 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    result = []
+    for number in numbers:
+        if is_left_and_right_truncatable_prime(number):
+            result.append(number)
+    return sorted(result, reverse=True)
+
+def is_left_and_right_truncatable_prime(number):
+    if number < 10:
+        return False
+    for i in range(len(str(number))):
+        left = number // (10 ** i) % 10
+        right = number % (10 ** (len(str(number)) - i)) // 10 ** (len(str(number)) - i - 1)
+        if left == 0 or right == 0:
+            return False
+        if not is_prime(left * 10 + right):
+            return False
+    return True
+
+def is_prime(number):
+    if number < 2:
+        return False
+    for i in range(2, int(math.sqrt(number)) + 1):
+        if number % i == 0:
+            return False
+    return True
+```

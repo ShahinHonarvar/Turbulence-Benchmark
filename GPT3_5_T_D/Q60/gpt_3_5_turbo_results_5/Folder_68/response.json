@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(numbers):\n    primes = []\n    for x in range(numbers[1], 0, -1):\n        if '0' not in str(x) and is_prime(x):\n            x_str = str(x)\n            while len(x_str) > 2:\n                x_str = x_str[1:-1]\n                if not is_prime(int(x_str)):\n                    break\n            else:\n                primes.append(x)\n    return primes\n```\nNote: The code assumes that the input tuple contains at least two elements, and the second element is a positive integer.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689890559,
+  "id": "chatcmpl-7eW1HVXq9sDO2Bwnm68Ba4lmTFf40",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 187,
+    "total_tokens": 364
+  }
+}

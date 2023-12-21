@@ -1,0 +1,28 @@
+ ```
+def if_contains_anagrams(my_list):
+# Define a function to check if two strings are anagrams
+def is_anagram(string1, string2):
+return sorted(string1) == sorted(string2)
+# Initialize a counter for the number of pairs of anagrams found
+num_pairs = 0
+# Loop through each string in the list
+for i in range(len(my_list)):
+# Get the current string
+current_string = my_list[i]
+# Convert the current string to lowercase
+lowercase_string = current_string.lower()
+# Loop through each character in the lowercase string
+for j in range(len(lowercase_string) - 2):
+# Get the current substring of length three starting at index j
+substring = lowercase_string[j:j+3]
+# Check if the substring is a valid anagram
+if is_anagram(substring, substring):
+# Increment the counter for the number of pairs of anagrams found
+num_pairs += 1
+# If the counter reaches 276, return True
+if num_pairs == 276:
+return True
+# Otherwise, return False
+else:
+return False
+```

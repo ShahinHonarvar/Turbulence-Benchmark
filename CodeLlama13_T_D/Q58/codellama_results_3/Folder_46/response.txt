@@ -1,0 +1,26 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices found
+    count = 0
+    
+    # Iterate over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a submatrix with size (4, 4) centered at (i, j)
+            submatrix = np.zeros((4, 4))
+            
+            # Fill the submatrix with values from the original matrix
+            for k in range(4):
+                for l in range(4):
+                    submatrix[k, l] = matrix[i + k - 1, j + l - 1]
+            
+            # Check if the submatrix contains 144 integers
+            if np.sum(submatrix) == 144:
+                count += 1
+    
+    return count
+```
+This function takes a two-dimensional numpy matrix of integers as input and returns the count of all submatrices of the given matrix that contain 144 integers each. The function iterates over each row and column in the matrix, initializes a submatrix with size (4, 4) centered at each position, fills it with values from the original matrix, and checks if the submatrix contains 144 integers. If no such submatrix is found, the function returns 0.

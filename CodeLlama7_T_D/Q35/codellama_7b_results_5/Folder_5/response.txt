@@ -1,0 +1,20 @@
+ Here's a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(s):
+    # Create a set to store all unique characters
+    unique_chars = set()
+
+    # Iterate over each character in the string
+    for char in s:
+        # If the character is already in the set of unique characters
+        if char in unique_chars:
+            # Remove all occurrences of the character from the string
+            s = s.replace(char, "", 1)
+
+        # Add the character to the set of unique characters
+        else:
+            unique_chars.add(char)
+
+    # Return the altered string
+    return s
+```

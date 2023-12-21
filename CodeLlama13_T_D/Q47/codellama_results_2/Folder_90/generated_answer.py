@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the string that meet the specified requirements
+    palindromes = set()
+    for i in range(106, 280 + 1):
+        for j in range(i, min(len(string), i + 151) + 1):
+            substr = string[i:j]
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes

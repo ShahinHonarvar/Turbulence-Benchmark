@@ -1,0 +1,7 @@
+
+def find_largest_num(my_list):
+    largest_num = None
+    for i in range(27, 56):
+        if largest_num is None or my_list[i] > largest_num:
+            largest_num = my_list[i]
+    return largest_num

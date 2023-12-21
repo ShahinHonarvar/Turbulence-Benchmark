@@ -1,0 +1,12 @@
+```python
+def palindrome_of_length_n(s):
+    return {p for p in ("".join(c) for c in zip(*[iter(s)]*96)) if p == p[::-1]}
+```
+This code uses a set comprehension to iterate over all substrings of length 96 in the given string, and checks whether each substring is a palindrome. If it is, then it adds it to the resulting set. The `zip` function is used to create a tuple of 96 characters from the input string. The `"".join(c)` part joins these 96 characters together to form a single string.
+
+For example:
+```python
+print(palindrome_of_length_n("racecar")) # {'racecar'}
+print(palindrome_of_length_n("hello world")) # set()
+print(palindrome_of_length_n("aabbccdd")) # {'aa', 'bb', 'cc', 'dd'}
+```

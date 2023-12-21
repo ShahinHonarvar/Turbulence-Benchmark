@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        if 219 < ord(string[i]) < 403:
+            if string[i] != "*":
+                result += string[i]
+    return result

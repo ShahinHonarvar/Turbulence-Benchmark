@@ -1,0 +1,17 @@
+
+def find_second_largest_num(my_list):
+    # Find the largest element in the list
+    largest = max(my_list)
+
+    # Create a new list that contains all elements from index 10 to index 100, both inclusive
+    sub_list = my_list[9:101]
+
+    # Find the second largest element in the sub-list
+    second_largest = max(sub_list)
+
+    # Check if the second largest element is equal to the largest element
+    if second_largest == largest:
+        return None
+
+    # Return the second largest element
+    return second_largest

@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check if the list is empty
+if not my_list:
+return False
+
+# Initialize variables to keep track of anagram pairs
+anagram_pairs = 0
+
+# Loop through the list and check for anagrams
+for i in range(len(my_list)):
+# Get the current string
+current_string = my_list[i]
+# Check if the current string is an anagram of any other string in the list
+for j in range(i+1, len(my_list))):
+# Get the other string
+other_string = my_list[j]
+# Check if the current string and the other string are anagrams of each other
+if sorted(current_string) == sorted(other_string):
+anagram_pairs += 1
+
+# If there are more than 77 pairs of anagrams in the list, return False
+if anagram_pairs > 77:
+return False
+
+# Otherwise, return True
+else:
+return True
+```

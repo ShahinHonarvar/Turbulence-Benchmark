@@ -1,0 +1,7 @@
+
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(26):
+        char_list.append(chr(i + 97))
+    sorted_char_list = sorted(char_list, key=lambda x: ord(x), reverse=True)
+    return sorted_char_list[:26]

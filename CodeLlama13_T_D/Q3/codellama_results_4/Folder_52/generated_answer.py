@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(list_of_ints):
+    return [i for i in list_of_ints if 28 <= i <= 38 and i > 0]

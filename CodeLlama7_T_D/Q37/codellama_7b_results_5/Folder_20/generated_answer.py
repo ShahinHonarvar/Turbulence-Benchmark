@@ -1,0 +1,10 @@
+ def filter_chars(s):
+    start = 25
+    end = 97
+    chars = ['m', 'w']
+    filtered_string = ''
+    for char in s:
+        if not (start <= ord(char) <= end and char in chars):
+            filtered_string += char
+
+    return filtered_string

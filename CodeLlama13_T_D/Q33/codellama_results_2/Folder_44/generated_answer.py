@@ -1,0 +1,8 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(46, 49):
+        char = string[i]
+        if char >= "[" and char <= "p":
+            vowels.append(char)
+    return vowels

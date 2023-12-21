@@ -1,0 +1,19 @@
+ Here is a possible implementation of the `find_second_largest_num` function:
+```python
+def find_second_largest_num(numbers):
+    # Check if the input list has at least two elements
+    if len(numbers) < 2:
+        return None
+
+    # Get the indices of the largest element
+    max_idx = numbers.index(max(numbers))
+
+    # If there is no second largest element, return None
+    if max_idx == 0 or max_idx == len(numbers) - 1:
+        return None
+
+    # Return the second largest element
+    else:
+        return numbers[max_idx - 1]
+```
+This function takes a list of distinct numbers as input and returns the second largest element from index `533` to index `605`, both inclusive. If there is no such element, the function should return `None`.

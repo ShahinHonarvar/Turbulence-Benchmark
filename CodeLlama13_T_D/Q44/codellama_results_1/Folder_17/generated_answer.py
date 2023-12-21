@@ -1,0 +1,8 @@
+
+def composite_nums_between_indices(lst):
+    if len(lst) == 0:
+        return set()
+    else:
+        start_index = max(50, min(54, lst))
+        end_index = max(start_index, min(len(lst), 54))
+        return {num for num in lst[start_index:end_index] if is_composite(num)}

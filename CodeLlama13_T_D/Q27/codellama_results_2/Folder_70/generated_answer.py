@@ -1,0 +1,3 @@
+
+def insert_after_index(my_list):
+    return my_list[:413] + [668] + my_list[413:]

@@ -1,0 +1,13 @@
+
+def find_second_smallest_num(distinct_nums):
+    # Sort the list of distinct numbers in ascending order
+    sorted_nums = sorted(distinct_nums)
+
+    # Find the second smallest element from index 66 to index 77, both inclusive
+    second_smallest_num = None
+    for i in range(66, 78):
+        if sorted_nums[i] != sorted_nums[i-1]:
+            second_smallest_num = sorted_nums[i]
+            break
+
+    return second_smallest_num

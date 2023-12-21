@@ -1,0 +1,13 @@
+
+def return_nth_smallest_ascii(string):
+    # Extract the characters between indices 14 and 66, both inclusive
+    chars = string[14:67]
+    
+    # Create a list of tuples containing each character and its ASCII value
+    char_ascii_list = [(char, ord(char)) for char in chars if char.isalpha()]
+    
+    # Sort the list by the second element (ASCII value) in ascending order
+    sorted_list = sorted(char_ascii_list, key=lambda x: x[1])
+    
+    # Return the 8th character from the sorted list
+    return sorted_list[7][0]

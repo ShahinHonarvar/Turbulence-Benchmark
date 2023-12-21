@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    chars = set()
+    for i in range(42, 59+1):
+        chars.add(string[i])
+    ascii_values = [(ord(c), c) for c in chars]
+    ascii_values.sort(key=lambda x: x[0])
+    return ascii_values[16][1]

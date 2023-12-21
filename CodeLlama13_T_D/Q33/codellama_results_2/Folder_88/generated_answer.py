@@ -1,0 +1,7 @@
+
+def return_vowels(s):
+    vowels = []
+    for i in range(70, 76):
+        if s[i].lower() in "aeiou" and ord(s[i]) >= 58:
+            vowels.append(s[i])
+    return vowels

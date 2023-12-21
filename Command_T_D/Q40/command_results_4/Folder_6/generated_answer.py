@@ -1,0 +1,2 @@
+def return_n_smallest_chars(s):
+    return [i for i in s if i.isalpha()] + [j for j in s if j.isdigit()] + [k for k in s if k.isupper()] + [l for l in s if l.islower()] + [m for m in s if m.isspace()] + [n for n in s if n.is punctuation()] + [o for o in s if o.isprintable()] + [p for p in s if p.istitle()] + [q for q in s if q.isdigit()] + [r for r in s if r.isdigit()] + [s for s in s if s.isdigit()]

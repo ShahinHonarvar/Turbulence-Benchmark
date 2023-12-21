@@ -1,0 +1,26 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(4, 9 + 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Add the current character to a temporary list
+            temp_list = [string[i]]
+            # Loop through each character in the string starting from the next character after the current one
+            for j in range(i + 1, len(string)):
+                # Check if the current character is a letter
+                if string[j].isalpha():
+                    # Add the current character to the temporary list
+                    temp_list.append(string[j])
+                    # If the length of the temporary list is greater than or equal to 3, check if it forms a palindrome in a case-insensitive manner
+                    if len(temp_list) >= 3:
+                        # Form the string from the temporary list in a case-insensitive manner
+                        temp_string = "".join(temp_list).lower()
+                        # Check if it forms a palindrome in a case-insensitive manner
+                        if temp_string == temp_string[::-1]:
+                            # Add the temporary list to the set of palindromes
+                            palindromes.add(tuple(temp_list))
+    # Return the set of palindromes
+    return palindromes

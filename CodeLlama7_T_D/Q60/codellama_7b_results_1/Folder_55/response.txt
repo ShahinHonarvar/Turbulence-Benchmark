@@ -1,0 +1,38 @@
+ ```
+def all_left_right_truncatable_prime(nums):
+    x = nums[73]
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i) and is_left_and_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_and_right_truncatable_prime(n):
+    if not is_prime(n):
+        return False
+
+    digits = [int(d) for d in str(n)]
+    leftmost_digit = digits[0]
+    rightmost_digit = digits[-1]
+
+    if leftmost_digit == 0 or rightmost_digit == 0:
+        return False
+
+    if leftmost_digit != 1 and rightmost_digit != 1:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % (i * 10) == 0 or n % (i * 100) == 0:
+            return False
+
+    return True
+```

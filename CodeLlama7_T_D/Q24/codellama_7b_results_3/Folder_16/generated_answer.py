@@ -1,0 +1,19 @@
+
+def sum_of_divisors_in_range(n):
+    # Initialize a list to store the divisors
+    divisors = []
+
+    # Iterate from 2 to the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # If i is a factor of n, add it to the list
+        if n % i == 0:
+            divisors.append(i)
+
+    # Iterate from 228 to 846
+    for i in range(228, 847):
+        # If a factor of n is between 228 and 846, add it to the list
+        if n % i == 0 and i >= 228 and i <= 846:
+            divisors.append(i)
+
+    # Return the sum of all divisors in the specified range
+    return sum(divisors)

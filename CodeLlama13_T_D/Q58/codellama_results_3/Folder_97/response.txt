@@ -1,0 +1,18 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    rows = matrix.shape[0]
+    cols = matrix.shape[1]
+    
+    count = 0
+    for i in range(rows-n+1):
+        for j in range(cols-n+1):
+            submatrix = matrix[i:i+n, j:j+n]
+            if np.sum(submatrix) == 120:
+                count += 1
+    
+    return count
+```
+This function first calculates the number of rows and columns in the given matrix using `shape` attribute of numpy array. Then it iterates over all submatrices of size `n x n` (where `n = 120`) and checks if their sum is equal to 120. If a submatrix with the required sum is found, its count is incremented by 1. Finally, the function returns the total number of submatrices found with the required sum.
+Note that this implementation only works for integer matrices and assumes that all elements in the matrix are non-negative.

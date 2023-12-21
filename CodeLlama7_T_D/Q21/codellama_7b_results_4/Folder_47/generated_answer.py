@@ -1,0 +1,14 @@
+
+def all_ints_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    results = []
+
+    # Loop through the list of integers and check if each integer is divisible by -27
+    for i in range(len(my_list)):
+        if my_list[i] % -27 == 0:
+            # If the integer is divisible by -27, add it to the results list
+            results.append(my_list[i])
+
+    # Return the results list
+
+    return results

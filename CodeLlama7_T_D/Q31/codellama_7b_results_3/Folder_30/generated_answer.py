@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if not my_list:
+        return False
+
+    # Check if the number at index 94 is a perfect number
+    if my_list[94] == 0 or my_list[94] % 2 != 0:
+        return False
+
+    # Calculate the sum of the divisors of the number at index 94
+    divisor_sum = 1
+    for i in range(2, int(my_list[94]) ** 0.5 + 1)):
+        if my_list[94] % i == 0:
+            divisor_sum += i
+
+    # Check if the sum of the divisors is equal to the number at index 94
+    return divisor_sum == my_list[94]

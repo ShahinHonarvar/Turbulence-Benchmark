@@ -1,0 +1,10 @@
+
+def sum_even_ints_inclusive(my_list):
+    # Initialize the sum to 0
+    sum = 0
+    # Iterate over the list, starting from index 27
+    for i in range(27, len(my_list)):
+        # If the current element is even, add it to the sum
+        if my_list[i] % 2 == 0:
+            sum += my_list[i]
+    return sum

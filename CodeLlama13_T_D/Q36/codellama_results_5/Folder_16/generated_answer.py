@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_string = ""
+    for i in range(len(string)):
+        if string[i] < 'M' or string[i] > '_':
+            new_string += string[i]
+        else:
+            continue
+    return new_string

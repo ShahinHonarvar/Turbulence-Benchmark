@@ -1,0 +1,16 @@
+```python
+def find_primes_between_indices(lst):
+    prime_numbers = []
+    for i in range(23, 49):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers)
+```
+```python
+def find_primes_between_indices(lst):
+    return sorted([num for num in lst[23:49] if is_prime(num)])
+```
+```python
+def find_primes_between_indices(lst):
+    return sorted(set(filter(is_prime, lst[23:49])))
+```

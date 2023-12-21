@@ -1,0 +1,3 @@
+
+def find_original_set(s1, s2, s3, s4, s5, s6, s7, s8, s9):
+    return {x for x in range(min(map(min, (s1, s2, s3, s4, s5, s6, s7, s8))), max(map(max, (s1, s2, s3, s4, s5, s6, s7, s8)))) if all(x in s for s in (s1, s2, s3, s4, s5, s6, s7, s8))}

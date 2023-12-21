@@ -1,0 +1,35 @@
+ ```
+def lists_with_product_equal_n(circulated_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circulated list
+    for i in range(len(circulated_list)):
+
+        # Initialize a variable to store the product of the elements in the current sublist
+        product = 1
+
+        # Initialize a variable to store the index of the last element in the current sublist
+        last_index = i
+
+        # Iterate over the remaining elements of the circulated list
+        for j in range(i + 1, len(circulated_list)):
+
+            # Update the product of the elements in the current sublist
+            product *= circulated_list[j]
+
+            # Check if the product equals -22
+            if product == -22:
+
+                # Add the current sublist to the list of sublists
+                sublists.append(circulated_list[i:j + 1])
+
+                # Update the index of the last element in the current sublist
+                last_index = j
+
+                # Break out of the inner loop since a sublist has been found
+                break
+
+    # Return the list of sublists
+    return sublists
+```

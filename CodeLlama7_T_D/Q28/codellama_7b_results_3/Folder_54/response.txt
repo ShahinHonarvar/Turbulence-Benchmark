@@ -1,0 +1,20 @@
+ ```
+def return_nth_smallest_ascii(string):
+# convert the string to a list of characters
+char_list = list(string)
+# create a dictionary to keep track of the ASCII values and their frequencies
+ascii_dict = {}
+# iterate through the characters in the string
+for char in char_list:
+# if the character is not already in the dictionary, add it and set its frequency to 1
+if char not in ascii_dict:
+ascii_dict[char] = 1
+# otherwise, increment the frequency of the character
+else:
+ascii_dict[char] += 1
+# sort the dictionary by key (ASCII value)
+sorted_keys = sorted(ascii_dict.keys())
+# get the 17th smallest ASCII value from the sorted keys
+smallest_ascii = sorted_keys[16]
+return smallest_ascii
+```

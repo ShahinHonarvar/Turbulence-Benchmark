@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Calculate the number of times the loop will run
+    num_iterations = int(decimal_int / (a + b)))
+    # Loop through the Fibonacci sequence and check if the decimal integer is divisible by any of the numbers in the sequence
+    for i in range(num_iterations):
+        a, b = b, a + b
+        if decimal_int % a == 0:
+            return True
+
+    # If the loop completes without finding a divisor, return False
+
+    return False

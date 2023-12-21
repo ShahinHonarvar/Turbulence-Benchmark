@@ -1,0 +1,28 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables to keep track of the number of anagrams and their length
+    num_anagrams = 0
+    min_anagram_length = float('inf')
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Split the lowercase string into individual letters
+        letter_list = [letter for letter in lowercase_string]
+        # Sort the letter list alphabetically
+        sorted_letter_list = sorted(letter_list)
+        # Join the sorted letter list back into a string
+        anagram = "".join(sorted_letter_list)
+        # Check if the anagram is already in the set of anagrams
+        if anagram not in my_set:
+            # If it's not, add it to the set and increment the number of anagrams
+            my_set.add(anagram)
+            num_anagrams += 1
+            # Also keep track of the length of the longest anagram
+            if len(anagram) > min_anagram_length:
+                min_anagram_length = len(anagram)
+    # If there are at most 24 pairs of anagrams in the list, return True. Otherwise, return False.
+    if num_anagrams <= 24:
+        return True
+    else:
+        return False

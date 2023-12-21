@@ -1,0 +1,36 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the element at index 37 is a perfect number
+    if my_list[37] in get_perfect_numbers(1, 100):
+        return True
+
+    else:
+
+        return False
+
+
+# Generate a list of perfect numbers between 1 and 100
+def get_perfect_numbers(start, end):
+    perfect_numbers = []
+
+    for i in range(start, end + 1):
+
+        sum = 0
+
+        for j in range(1, i):
+
+            if i % j == 0:
+
+                sum += j
+
+
+        if sum == i:
+
+            perfect_numbers.append(i)
+
+
+    return perfect_numbers

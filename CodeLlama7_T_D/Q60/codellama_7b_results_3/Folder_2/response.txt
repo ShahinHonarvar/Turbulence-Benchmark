@@ -1,0 +1,89 @@
+ ```
+def all_left_right_truncatable_prime(x):
+	# Initialize an empty list to store the prime numbers
+	prime_numbers = []
+
+	# Iterate through the range of integers from 1 to x
+	for i in range(1, x + 1):
+
+		# Check if the current integer is a prime number
+		if is_prime(i):
+
+			# If it is a prime number, check if it is left-and-right-truncatable prime number
+			if is_left_right_truncatable_prime(i):
+
+				# If it is a left-and-right-truncatable prime number, add it to the list of prime numbers
+				prime_numbers.append(i)
+
+	# Return the sorted list of all left-and-right-truncatable prime numbers less than or equal to x
+	return sorted(prime_numbers)
+
+# Check if a given integer is a prime number
+def is_prime(n):
+
+	# If the number is not an integer, return False
+	if not isinstance(n, int):
+		return False
+
+	# If the number is negative or zero, return False
+	if n < 1:
+		return False
+
+	# If the number is one, return True (since 1 is considered a prime number in this context)
+	if n == 1:
+		return True
+
+	# If the number is two, return True (since 2 is considered a prime number in this context)
+	if n == 2:
+		return True
+
+	# If the number is three, return True (since 3 is considered a prime number in this context)
+	if n == 3:
+		return True
+
+	# If the number is even, return False (since all even numbers greater than 2 are not considered prime numbers in this context)
+	if n % 2 == 0:
+		return False
+
+	# If the number is odd, check if it is a prime number by dividing it by all of its positive divisors up to its square root
+	for i in range(3, int(n ** 0.5) + 1, 2):
+		if n % i == 0:
+			return False
+
+	# If the number has not been proven to be a prime number by this point, it must be one (since all odd numbers greater than 3 are considered prime numbers in this context)
+	return True
+
+# Check if a given integer is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+
+	# If the number is not an integer, return False
+	if not isinstance(n, int):
+		return False
+
+	# If the number is negative or zero, return False
+	if n < 1:
+		return False
+
+	# If the number is one, return True (since 1 is considered a prime number in this context)
+	if n == 1:
+		return True
+
+	# If the number is two, return True (since 2 is considered a prime number in this context)
+	if n == 2:
+		return True
+
+	# If the number is three, return True (since 3 is considered a prime number in this context)
+	if n == 3:
+		return True
+
+	# If the number is even, return False (since all even numbers greater than 2 are not considered prime numbers in this context)
+	if n % 2 == 0:
+		return False
+
+	# If the number is odd, check if it is a left-and-right-truncatable prime number by removing the leading leftmost and last rightmost digits and checking if the resulting number remains the same
+	for i in range(1, int(n ** 0.5) + 1):
+		if n - (10 * (i - 1)) == n - (10 * i):
+			return True
+
+	# If the number has not been proven to be a left-and-right-truncatable prime number by this point, it must be one (since all odd numbers greater than 3 are considered prime numbers in this context)
+	return True

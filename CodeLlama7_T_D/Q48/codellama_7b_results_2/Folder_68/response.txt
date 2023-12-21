@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `return_binary_or_hexa` function:
+```
+def return_binary_or_hexa(tuple):
+	# Extract the first and last element of the tuple
+	a = tuple[0]
+	b = tuple[-1]
+	# Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 0 and 9
+	sum = 0
+	for i in range(a + 1, b):
+		if i not in tuple:
+			sum += i
+	# Return the binary or hexadecimal representation of the sum depending on whether it is an odd number or not
+	if sum % 2 == 0:
+		return f"{hex(sum)[2:]}"
+	else:
+		return f"{bin(sum)[3:]}".replace("0b", "")
+```

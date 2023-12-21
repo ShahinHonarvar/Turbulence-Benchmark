@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(71, 81):
+        if string[i].isupper() and string[i] not in "><":
+            vowels.append(string[i])
+    return vowels

@@ -1,0 +1,7 @@
+```
+def find_subset_of_length_n(elements, n):
+    return len([subset for subset in powerset(elements) if len(subset) == n])
+```
+This function uses the `powerset` function from the [`itertools`](https://docs.python.org/3/library/itertools.html#itertools-recipes) module to generate all subsets of a given set, and then filters out only those with size `n`. The length of this filtered list is returned.
+
+Note that this function assumes that the input `elements` is a set, and not a list or any other iterable. If you need to work with lists instead, you can use the [`itertools.combinations`](https://docs.python.org/3/library/itertools.html#itertools.combinations) function instead of `powerset`, which will give you all combinations of size `n` from a list.

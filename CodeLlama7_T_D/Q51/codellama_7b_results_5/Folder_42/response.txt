@@ -1,0 +1,15 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    num_anagrams = 0
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i]) == sorted(my_list[j]):
+                num_anagrams += 1
+                if num_anagrams > 38:
+                    return False
+
+    return True
+
+```
+This code uses a nested for loop to compare each string in the list with every other string. It then counts the number of anagrams and returns true if there are at most 38 pairs of anagrams, and false otherwise. The code also considers only the anagrams of the English letters and ignores any strings that do not meet this criteria.

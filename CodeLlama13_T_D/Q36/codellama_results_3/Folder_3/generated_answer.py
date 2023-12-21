@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ''
+    for i, char in enumerate(string):
+        if 42 <= i < 78 and '!' < char < '?':
+            continue
+        result += char
+    return result

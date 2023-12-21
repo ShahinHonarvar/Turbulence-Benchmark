@@ -1,0 +1,10 @@
+ ```
+def insert_after_index(my_list):
+    new_list = my_list[:] # create a copy of the list
+    index_to_insert = next((i for i, x in enumerate(my_list) if x == 743), None) # find the index of the element to insert after
+    if index_to_insert is not None: # check if the index was found
+        new_list.insert(index_to_insert + 1, 11.04) # insert the element at the next index
+    return new_list
+```
+Explanation:
+The function `insert_after_index` takes a list as an argument and returns a list that is identical to the original except that the element `11.04` has been inserted after the element `743`. The function first creates a copy of the original list using slicing `my_list[:]`. Then, it finds the index of the element `743` in the list using the `next` function with an enumeration. If the element is found, the function inserts the element `11.04` at the next index using the `insert` method. Finally, the function returns the modified list.

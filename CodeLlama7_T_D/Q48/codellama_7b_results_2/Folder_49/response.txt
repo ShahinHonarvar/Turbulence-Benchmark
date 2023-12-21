@@ -1,0 +1,16 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[80] + 1
+b = tuple[200] - 1
+sum = 0
+for i in range(a, b + 1):
+if i not in tuple[80:200]:
+sum += i
+odd_sum = sum % 2 != 0
+binary_repr = bin(sum)[2:] if odd_sum else ''
+hexa_repr = hex(sum)[2:] if odd_sum else ''
+if binary_repr or hexa_repr:
+return binary_repr + ' ' + hexa_repr
+else:
+return ''
+```

@@ -1,0 +1,10 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s) - 73 + 1):
+        substring = s[i:i+73]
+        if len(set(substring)) == 73 and substring not in substrings:
+            substrings.append(substring)
+    return substrings
+```
+This function uses a for loop to iterate over the characters of the input string, and checks each substring of length 73 starting from the beginning of the string. If a substring meets both conditions (has no duplicate characters and is not already in the list), it is added to the list of substrings. The function returns the list of distinct substrings at the end.

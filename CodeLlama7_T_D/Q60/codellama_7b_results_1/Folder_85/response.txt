@@ -1,0 +1,55 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers)
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if i divides n
+                return False
+
+    # Return True if n is a prime number
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Initialize a string representation of the number
+    num_str = str(n)
+
+    # Check if the leading and last digits are both 1 or 2
+    if int(num_str[0]) in [1, 2] and int(num_str[-1]) in [1, 2]:
+        # Initialize a list to store the truncated numbers
+        truncated_numbers = []
+
+        # Truncate the number by removing the leading leftmost digit
+        truncated_numbers.append(int(num_str[1:]))
+
+        # Truncate the number by removing the last rightmost digit
+        truncated_numbers.append(int(num_str[:-1]))
+
+        # Check if all the truncated numbers are prime numbers
+        if all(is_prime(truncated_number) for truncated_number in truncated_numbers)):
+            # Return True if all the truncated numbers are prime numbers
+            return True
+
+    # Return False if any of the conditions is not met
+    return False
+```

@@ -1,0 +1,35 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Check if the input is a list of integers
+    if not all(isinstance(i, int) for i in my_list)):
+        raise ValueError("Input must be a list of integers")
+    # Define the range of indices to search for prime numbers
+    start_index = 20
+    end_index = 54
+    # Initialize an empty list to store the prime numbers found within the specified range
+    prime_numbers = []
+
+    # Iterate through the input list and check if each element is a prime number within the specified range
+    for i in my_list:
+        if start_index <= i <= end_index:
+            if is_prime(i):
+                prime_numbers.append(i)
+    # Sort the list of prime numbers found within the specified range in ascending order
+    prime_numbers.sort()
+    # Return the sorted list of prime numbers found within the specified range, or an empty list if no prime number exists within the specified range
+    return prime_numbers
+
+# Define a function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+            # Check if i divides n
+            if n % i == 0:
+                # If it does, return False
+                return False
+
+    # If no divisor is found, return True
+    return True
+```

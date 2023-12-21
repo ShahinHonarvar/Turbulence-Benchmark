@@ -1,0 +1,2 @@
+def prime_factors(nums):
+    return set(nums[67].split(" ")[::2])

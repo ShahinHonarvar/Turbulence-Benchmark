@@ -1,0 +1,24 @@
+ def palindromes_of_specific_lengths(string):
+    # create a substring of the input string from index 1 to index 9, both inclusive
+    substring = string[1:10]
+    # initialize an empty set to store the palindromes
+    palindromes = set()
+    # loop through each character in the substring
+    for i in range(len(substring)):
+        # get the current character and its index
+        char = substring[i]
+        index = i + 1
+        # loop through each character in the remainder of the substring starting from the current index
+        for j in range(index, len(substring)):
+            # get the next character
+            next_char = substring[j]
+            # check if the next character is the same as the current character
+            if next_char == char:
+                # get the substring starting from the current index and ending at the index of the next occurrence of the current character
+                sub_string = substring[index:j + 1]
+                # check if the substring is a palindrome
+                if sub_string == sub_string[::-1]:
+                    # add the palindrome to the set
+                    palindromes.add(sub_string)
+    # return the set of palindromes that meet the requirements
+    return palindromes

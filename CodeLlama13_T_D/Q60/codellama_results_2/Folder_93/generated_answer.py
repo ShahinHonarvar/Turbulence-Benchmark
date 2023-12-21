@@ -1,0 +1,19 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the left-and-right-truncatable prime numbers
+    l = []
+    
+    # Iterate from 2 to x (inclusive)
+    for i in range(2, x+1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number contains no 0
+            if '0' not in str(i):
+                # Check if the number remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+                if is_left_right_truncatable_prime(i):
+                    l.append(i)
+    
+    # Sort the list in ascending order
+    l.sort()
+    
+    return l

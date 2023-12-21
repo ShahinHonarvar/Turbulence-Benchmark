@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(s):
+    # Create a new string with the characters from the original string, but without any repeated characters
+    new_string = ""
+    for i in range(len(s)):
+        if s[i] not in new_string:
+            new_string += s[i]
+    return new_string
+```
+This function takes a single argument, which is the string that we want to remove repeated characters from.
+The function first creates a new empty string called `new_string`. This variable will hold the altered version of the original string, without any repeated characters.
+Next, the function uses a loop to iterate over each character in the original string. For each character, the function checks if it has already been added to the `new_string` variable. If the character is not yet present in `new_string`, then the function adds it to the end of `new_string`.
+Note that we are using the `+=` operator to add a single character to the end of a string, without creating any intermediate copies of the string. This is an efficient way to build up a new string character by character, without having to create any temporary copies of the original string.

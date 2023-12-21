@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(85):
+        char_list.append(sorted(string, key=ord)[i])
+    return char_list

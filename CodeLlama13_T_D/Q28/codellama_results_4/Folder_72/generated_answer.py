@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(string):
+    ascii_values = {ord(char): char for char in string}
+    sorted_ascii_values = sorted(list(ascii_values))[33:61]
+    nth_smallest_ascii = sorted_ascii_values[17]
+    return ascii_values[nth_smallest_ascii]

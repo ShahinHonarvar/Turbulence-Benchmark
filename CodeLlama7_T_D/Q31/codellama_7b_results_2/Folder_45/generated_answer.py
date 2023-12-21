@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 34 elements
+    if len(my_list) < 34:
+        return False
+
+    # Find the number at index 33 of the list
+    perfect_number = my_list[33]
+
+    # Check if the number is a perfect number
+    if perfect_number == (perfect_number - 1) * (2 * perfect_number - 1) / 2:
+        return True
+
+    else:
+
+        return False

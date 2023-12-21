@@ -1,0 +1,19 @@
+ def palindromes_of_specific_lengths(string):
+    # Define the substring range for palindrome search
+    substr_range = string[100:201]
+    # Initialize an empty set to store palindromes
+    palindromes = set()
+    # Iterate over each character in the substring range
+    for i in range(len(substr_range)):
+        # Define the current character and its opposite
+        curr_char = substr_range[i]
+        opp_char = substr_range[-i - 1]
+        # Check if the current character is a letter and its opposite exists in the substring range
+        if (curr_char.isalpha() and opp_char.isalpha()) and (len(substr_range[i:]) >= 5 and len(substr_range[i:]) <= 10):
+            # Define the current palindrome as a string from index i to index i + len(substr_range[i:]) - 1
+            curr_palindrome = substr_range[i:i+len(substr_range[i:])-1]
+            # Add the current palindrome to the set of palindromes if it is a valid palindrome and its length falls within the specified range
+            if len(curr_palindrome) >= 5 and len(curr_palindrome) <= 10:
+                palindromes.add(curr_palindrome)
+    # Return the set of palindromes found in the substring range
+    return palindromes

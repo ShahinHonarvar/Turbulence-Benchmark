@@ -1,0 +1,12 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # initialize the sum to 0
+    sum = 0
+    # loop through the specified range of the list
+    for i in range(86, 91):
+        # check if the current element is divisible by either -71 or -67
+        if my_list[i] % (-71 or -67) == 0:
+            # if it is, add it to the sum
+            sum += my_list[i]
+    # return the sum
+    return sum

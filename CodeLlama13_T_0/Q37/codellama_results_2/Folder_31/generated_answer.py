@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if ord(char) < 57 or ord(char) > 96 or ord(char) < 123:
+            result += char
+    return result

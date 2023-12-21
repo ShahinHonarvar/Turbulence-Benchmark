@@ -1,0 +1,29 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(lst, n):
+    # Initialize an empty list to store the sublists
+    sublists = []
+    # Iterate over the elements of the given list
+    for i in range(len(lst)):
+        # Compute the product of the elements from the current element to the end of the list
+        prod = 1
+        for j in range(i, len(lst)):
+            prod *= lst[j]
+            # If the product is equal to n, add the sublist to the result list and continue with the next element
+            if prod == n:
+                sublists.append(lst[i:j+1])
+                i = j + 1
+                break
+
+    return sublists
+```
+This function takes two arguments: `lst` is a circular list of integers, and `n` is an integer that represents the product that we are looking for. The function returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals `n`. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.
+Here is an example usage of this function:
+```python
+lst = [5, 10, 2, 4]
+sublists = lists_with_product_equal_n(lst, 46)
+#print(sublists)
+# Output: [[5, 10], [5, 2, 4], [10, 2]]
+```
+This code creates a circular list `lst` and then calls the `lists_with_product_equal_n` function with the given `lst` and `n`. The function returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 46. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.
+In this example usage, the `lists_with_product_equal_n` function returns a list containing three sublists: `[[5, 10], [5, 2, 4], [10, 2]]`. Each of these sublists contains contiguous integers from the given list such that their product equals 46. The order of these sublists in the returned list does not matter.

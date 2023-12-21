@@ -1,0 +1,9 @@
+
+def if_perfect_num(my_list):
+    # Check if the element at index 95 is a perfect number
+    if my_list[95] == find_perfect_number(my_list[95]):
+        return True
+
+    else:
+
+        return False

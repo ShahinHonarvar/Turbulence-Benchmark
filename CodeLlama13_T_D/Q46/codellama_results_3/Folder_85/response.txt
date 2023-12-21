@@ -1,0 +1,13 @@
+```
+def gcf_three_nums(numbers):
+    return __gcf__(numbers[49], numbers[46], numbers[13])
+
+def __gcf__(a, b, c):
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+    if c == 0:
+        return __gcf__(a, b % a, a)
+    return __gcf__(a, b % a, c % a)
+```

@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Create a dictionary to store the frequency of each character
+    freq_dict = {}
+    # Loop through the list of characters and increment the frequency of each character
+    for char in char_list:
+        if char in freq_dict:
+            freq_dict[char] += 1
+        else:
+            freq_dict[char] = 1
+    # Sort the dictionary by value in descending order
+    sorted_freq_dict = sorted(freq_dict.items(), key=lambda x: x[1], reverse=True)
+    # Get the character with the 7th smallest ASCII value
+    nth_smallest_ascii = sorted_freq_dict[6][0]
+    return nth_smallest_ascii
+```

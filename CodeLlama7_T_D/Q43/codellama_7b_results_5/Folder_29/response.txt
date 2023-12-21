@@ -1,0 +1,9 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Find the index of the first prime number in the list
+    start_index = next((i for i, x in enumerate(my_list) if is_prime(x)) or (len(my_list), 0))[1]
+    # Find the index of the last prime number in the list
+    end_index = next((i for i, x in enumerate(my_list) if is_prime(x)))[1]
+    # Return the sorted list of all prime numbers from index 45 to index 83, both inclusive
+    return sorted([my_list[i] for i in range(start_index, end_index + 1)])
+```

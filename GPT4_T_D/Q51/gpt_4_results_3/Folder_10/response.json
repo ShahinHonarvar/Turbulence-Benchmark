@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The following Python code should meet the specifications you've provided:\n\n```python\nfrom collections import defaultdict\n\ndef if_contains_anagrams(lst_of_strings):\n    anagrams = defaultdict(list)\n\n    for s in lst_of_strings:\n        s_lower = s.lower()\n        if len(s_lower) >= 3:\n            anagrams[''.join(sorted(s_lower))].append(s)\n\n    count = sum(len(values) * (len(values) - 1) // 2 for values in anagrams.values())\n\n    return count <= 21\n```\nThis function builds a dictionary of anagrams, with the sorted character tuples as keys and the anagrams as values. Then it counts how many pairs of anagrams there are and returns True if this count is at most 21, otherwise it returns False.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690966552,
+  "id": "chatcmpl-7j1w0t9MA8XZxBy2hyrdPLUxTdXdE",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 161,
+    "prompt_tokens": 139,
+    "total_tokens": 300
+  }
+}

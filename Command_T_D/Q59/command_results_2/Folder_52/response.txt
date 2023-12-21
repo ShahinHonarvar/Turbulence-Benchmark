@@ -1,0 +1,94 @@
+[cohere.Generation {
+	id: 29c5e495-ab87-4c1a-a874-454cb0c2b358
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 52. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in descending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+
+def all_left_truncatable_prime(tup):
+    res = []
+    x = tup[52]
+    for a in range(2, x):
+        if is_left_truncatable_prime(a):
+            res.append(a)
+    return res
+
+def is_left_truncatable_prime(n):
+    for c in str(n):
+        if c == '0':
+            return False
+        elif c == '1':
+            continue
+        elif is_prime(int(c)):
+            continue
+        else:
+            return False
+    return True
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n <= 6:
+        return True
+    elif n <= 20:
+        return True
+    elif n <= 60:
+        return True
+    elif n <= 120:
+        return True
+    elif n <= 200:
+        return True
+    elif n <= 500:
+        return True
+    elif n <= 1000:
+        return True
+    elif n <= 1500:
+        return True
+    elif n <= 2000:
+        return True
+    elif n <= 3000:
+        return True
+    elif n <= 5000:
+        return True
+    elif n <= 10000:
+        return True
+    elif n <= 15000:
+        return True
+    elif n <= 20000:
+        return True
+    elif n <= 30000:
+        return True
+    elif n <= 50000:
+        return True
+    elif n <= 100000:
+        return True
+    elif n <= 200000:
+        return True
+    elif n <= 500000:
+        return True
+    elif n <= 1000000:
+        return True
+    elif n <= 2000000:
+        return True
+    elif n <= 5000000:
+        return True
+    elif n <= 10000000:
+        return True
+    elif n <= 20000000:
+        return True
+    elif n <= 50000000:
+        return True
+    elif n <= 1000000:
+        return True
+    elif n <= 200000000:
+        return True
+    elif n <= 50000000:
+        return True
+    else:
+        return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

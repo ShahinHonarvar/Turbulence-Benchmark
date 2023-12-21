@@ -1,0 +1,11 @@
+
+def find_second_smallest_num(my_list):
+    second_smallest = None
+    if len(my_list) < 30 or len(my_list) > 48:
+        return second_smallest
+
+    for i in range(29, 48 + 1):
+        if my_list[i] < my_list[i - 1]:
+            second_smallest = my_list[i]
+
+    return second_smallest

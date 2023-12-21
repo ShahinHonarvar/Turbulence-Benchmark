@@ -1,0 +1,15 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the remainder when dividing by 125
+    remainder = decimal_integer % 125
+    # Return True if the remainder is 0, otherwise return False
+    return (remainder == 0)
+```
+Here's a breakdown of how this code works:
+1. The function takes in a binary representation string of a non-negative decimal integer as its argument.
+2. The function converts the binary string to an integer using the `int()` function and passing the binary string as the first argument. The second argument is set to 2, which indicates that the input string should be interpreted as a base-2 (binary) number.
+3. The function calculates the remainder when dividing the decimal integer by 125 using the modulo operator (`%`).
+4. The function returns True if the remainder is 0, and False otherwise.
+Note that this code assumes that the input binary string is a valid representation of a non-negative decimal integer. If the input string contains any leading or trailing whitespace characters, or if it contains any invalid characters (such as letters or special symbols), the `int()` function may raise an exception. In such cases, you may want to modify the code to handle these edge cases more gracefully.

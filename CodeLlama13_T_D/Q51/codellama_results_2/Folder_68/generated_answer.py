@@ -1,0 +1,7 @@
+
+def if_contains_anagrams(my_list):
+    # Create a set of all the anagrams in the list
+    anagram_set = { "".join(sorted(word)) for word in my_list }
+    
+    # Check if there are at most 94 pairs of anagrams in the list
+    return len(anagram_set) <= 94

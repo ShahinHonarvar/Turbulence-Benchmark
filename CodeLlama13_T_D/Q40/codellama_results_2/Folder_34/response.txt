@@ -1,0 +1,10 @@
+```
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(9):
+        smallest_char = min(string, key=ord)
+        char_list.append(smallest_char)
+        string = string.replace(smallest_char, "")
+    return char_list[::-1]
+```
+This code uses the built-in `min` function to find the smallest character in the string by comparing their ASCII values using `ord`. It then appends this character to a list and removes it from the original string. Finally, the list is returned in descending order.

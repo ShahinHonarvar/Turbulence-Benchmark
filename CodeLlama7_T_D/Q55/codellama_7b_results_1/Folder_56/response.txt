@@ -1,0 +1,30 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list and find contiguous integers with product equal to -65
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the current product
+        current_product = 1
+
+        # Initialize a variable to store the starting index of the sublist
+        start_index = i
+
+        # Iterate through the remaining elements in the circular list
+        for j in range(i, len(circular_list)):
+            # Update the product with the current element
+            current_product *= circular_list[j]
+
+            # If the product equals -65, add the sublist to the list of sublists and reset the variables
+            if current_product == -65:
+                sublists.append(circular_list[start_index:j+1])
+                start_index = j + 1
+                current_product = 1
+
+                # If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.
+        if len(sublists) > 0:
+            break
+
+    return sublists
+```

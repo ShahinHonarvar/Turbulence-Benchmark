@@ -1,0 +1,15 @@
+ ```
+def filter_chars(my_string):
+    # Find the indices of the first and last characters in the string
+    start = my_string.find('<') + 1
+    end = my_string.rfind('>') - 1
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+    # Iterate over the characters in the string
+    for char in my_string:
+        # If the character is between the indices of the first and last characters, and it is greater than '9' and smaller than 'K', add it to the list of filtered characters
+        if start <= my_string.index(char) < end and char > '9' and char < 'K':
+            filtered_chars.append(char)
+    # Return the altered string with all occurrences of the filtered characters removed
+    return ''.join([my_string[:start], ''.join(filtered_chars), my_string[end+1:]]))
+```

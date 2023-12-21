@@ -1,0 +1,14 @@
+
+def filter_chars(my_string):
+    # Create a list of characters in the given string
+    char_list = list(my_string)
+    # Iterate over the characters in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between 23 and 45 (exclusive)
+        if 23 < ord(char_list[i]) < 45:
+            # If the current character is greater than '3' and smaller than 'I', remove all occurrences of that character in the string
+            if char_list[i] > '3' and char_list[i] < 'I':
+                char_list.remove(char_list[i])
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string

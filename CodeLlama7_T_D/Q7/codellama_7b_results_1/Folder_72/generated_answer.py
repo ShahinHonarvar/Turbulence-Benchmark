@@ -1,0 +1,10 @@
+
+def all_even_ints_inclusive(my_list):
+    # Get the range of even integers from index 29 to index 51, both inclusive
+    even_int_range = my_list[29::2]
+    # Return an empty list if no even integers exist in the specified range
+    if not even_int_range:
+        return []
+
+    # Otherwise, return the list of all even integers from index 29 to index 51, both inclusive
+    return even_int_range

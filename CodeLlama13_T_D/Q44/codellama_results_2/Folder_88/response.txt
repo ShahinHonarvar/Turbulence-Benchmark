@@ -1,0 +1,7 @@
+```
+def composite_nums_between_indices(lst):
+    return {x for x in lst[8:9+1] if len([y for y in range(2, int(x**0.5) + 1) if x % y == 0]) > 1}
+```
+This function uses a set comprehension to create the set of all composite numbers in the given list that are between index 8 and index 9, both inclusive. The condition `len([y for y in range(2, int(x**0.5) + 1) if x % y == 0]) > 1` checks whether a number `x` is composite by counting the number of divisors it has. If the number of divisors is greater than 1, then `x` is composite and is included in the set.
+
+For example, if `lst = [2, 3, 5, 6, 9, 10]`, then the function would return `{6, 9}`.

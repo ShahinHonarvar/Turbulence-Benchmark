@@ -1,0 +1,7 @@
+
+def find_n_th_smallest_num(numbers):
+    # Sort the list of numbers in ascending order
+    sorted_numbers = sorted(numbers)
+    # Find the 19th smallest number from index 40 to index 75, both inclusive
+    nth_smallest_num = sorted_numbers[40:76][18]
+    return nth_smallest_num

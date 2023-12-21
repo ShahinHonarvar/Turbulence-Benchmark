@@ -1,0 +1,17 @@
+```python
+def sum_ints_div_by_either_nums(nums):
+    result = 0
+    for i in range(24, 33):
+        if nums[i] % 35 == 0 or nums[i] % 87 == 0:
+            result += nums[i]
+    return result
+```
+Note that this solution assumes that the input list `nums` is a sequence of integers, and it will raise an exception if any element in the list is not an integer. If you want to handle non-integer inputs, you can modify the function as follows:
+```python
+def sum_ints_div_by_either_nums(nums):
+    result = 0
+    for i in range(24, 33):
+        if isinstance(nums[i], int) and (nums[i] % 35 == 0 or nums[i] % 87 == 0):
+            result += nums[i]
+    return result
+```

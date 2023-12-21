@@ -1,0 +1,37 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the 46th number in the Fibonacci sequence
+    fib_46 = fibonacci_sequence(46)[0]
+    # Check if the decimal integer is divisible by the 46th number in the Fibonacci sequence
+    if (decimal_integer % fib_46) == 0:
+        return True
+
+    else:
+
+        return False
+
+# Function to calculate the first 46 numbers of the Fibonacci sequence
+def fibonacci_sequence(n):
+
+    # Initialize the first two numbers in the Fibonacci sequence
+
+    a = 0
+
+    b = 1
+
+    # Calculate the next n - 2 numbers in the Fibonacci sequence
+
+    for i in range(n - 2):
+
+        c = a + b
+
+        a = b
+
+        b = c
+
+    # Return the first n numbers of the Fibonacci sequence
+
+    return [a, b]
+```

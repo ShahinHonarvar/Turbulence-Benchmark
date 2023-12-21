@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is a Python code using numpy package to do the job.\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    output = []\n    dimensions = matrix.shape\n    for i in range(dimensions[0]):\n        for j in range(dimensions[1]):\n            for k in range(i+1, dimensions[0]+1):\n                for l in range(j+1, dimensions[1]+1):\n                    submatrix = matrix[i:k, j:l].copy()\n                    if np.sum(submatrix) == -64:\n                        output.append(submatrix)\n    return output\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690984860,
+  "id": "chatcmpl-7j6hIzcW683PO5SfPBmDayKLGoO23",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 121,
+    "total_tokens": 246
+  }
+}

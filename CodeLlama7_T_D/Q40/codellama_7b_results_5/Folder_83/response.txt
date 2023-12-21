@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```python
+def return_n_smallest_chars(string, n):
+    # Sort the characters in the string by their ASCII values
+    sorted_chars = sorted(string, key=ord)
+    # Return the top n smallest ASCII values from the sorted list
+    return sorted_chars[:n]
+```
+This function takes two arguments: a string of distinct characters and an integer `n` that indicates how many of the smallest ASCII values should be returned.
+The function first sorts the characters in the string by their ASCII values using the `sorted` function with the `key` parameter set to `ord`. This ensures that the characters are sorted based on their ASCII values.
+Next, the function returns the top `n` smallest ASCII values from the sorted list of characters. It does this by slicing the sorted list and returning only the first `n` elements.
+Here is an example usage of this function:
+```python
+>>> string = "Hello World!"
+>>> return_n_smallest_chars(string, 3)
+[' ', '!', '"']
+```
+In this example, we passed the string `"Hello World!"` to the `return_n_smallest_chars` function and asked it to return the top 3 smallest ASCII values. The function returned the following list of characters: `[' ', '!', '"']`.

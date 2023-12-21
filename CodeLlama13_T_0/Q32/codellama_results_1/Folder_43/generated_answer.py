@@ -1,0 +1,3 @@
+
+def insert_after_character(string):
+    return "".join([char if char != "G" else f"{char}G" for char in string])

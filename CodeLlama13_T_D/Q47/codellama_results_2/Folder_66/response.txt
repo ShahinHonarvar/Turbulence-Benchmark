@@ -1,0 +1,18 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 32 to index 79, both inclusive
+    palindromes = []
+    for i in range(32, 80):
+        for j in range(i+1, 80):
+            if string[i:j] == string[i:j][::-1]:
+                palindromes.append(string[i:j])
+    
+    # Filter the palindromes to only those with lengths between 35 and 41 (both inclusive)
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if len(palindrome) >= 35 and len(palindrome) <= 41:
+            filtered_palindromes.append(palindrome)
+    
+    # Return the set of all found palindromes
+    return set(filtered_palindromes)
+```

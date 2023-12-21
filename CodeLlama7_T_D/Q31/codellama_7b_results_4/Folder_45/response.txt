@@ -1,0 +1,16 @@
+ ```
+def if_perfect_num(my_list):
+    if len(my_list) < 33:
+        return False
+
+    perfect_number = my_list[32]
+
+    if perfect_number == 0 or perfect_number % 2 == 0:
+        return False
+
+    for i in range(3, int(perfect_number ** 0.5) + 1):
+        if perfect_number % i == 0:
+            return False
+
+    return True
+```

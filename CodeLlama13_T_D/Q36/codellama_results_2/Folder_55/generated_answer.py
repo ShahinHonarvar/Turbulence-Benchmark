@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if 3 <= i < 5 and char > "Y" and char < "s":
+            continue
+        result += char
+    return result

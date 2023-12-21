@@ -1,0 +1,9 @@
+ ```
+def return_nth_smallest_ascii(string):
+	# Get the indices of the characters that occur between indices 52 and 79, both inclusive
+	indices = [i for i, c in enumerate(string) if 52 <= i <= 79]
+	# Sort the indices by the ASCII value of the corresponding character
+	sorted_indices = sorted(indices, key=lambda x: ord(string[x]))
+	# Return the 7th smallest ASCII value among the characters at the sorted indices
+	return string[sorted_indices[6]]
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(numbers):\n    a = numbers[10]\n    b = numbers[76]\n    subset = numbers[10:77]\n    numbers_not_in_subset = set(range(a + 1, b)) - set(subset)\n    sum_numbers_not_subset = sum(numbers_not_in_subset)\n    if sum_numbers_not_subset == 0:\n        return ''\n    elif sum_numbers_not_subset % 2 == 0:\n        return hex(sum_numbers_not_subset)[2:]\n    else:\n        return bin(sum_numbers_not_subset)[2:]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690072967,
+  "id": "chatcmpl-7fHTLiyeQG2iM883yxj8LdhhUKfGv",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 263,
+    "total_tokens": 379
+  }
+}

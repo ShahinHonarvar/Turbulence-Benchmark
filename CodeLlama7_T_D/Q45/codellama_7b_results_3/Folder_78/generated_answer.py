@@ -1,0 +1,34 @@
+
+def palindromes_between_indices(string):
+    # Find the indices of the first and last letters in the string
+    first_index = None
+    last_index = None
+    for i in range(len(string)):
+        if string[i].isalpha():
+            if first_index is None:
+                first_index = i
+            last_index = i
+    # If there are no letters in the string, return an empty set
+    if first_index is None:
+        return set()
+    # Initialize a set to store the palindromes
+    palindromes = set()
+    # Iterate over the possible palindrome lengths
+    for length in range(3, len(string) - last_index + 1):
+        # Calculate the starting index of the current palindrome
+        start_index = last_index - length + 1
+        # Iterate over the letters of the current palindrome
+        for i in range(start_index, start_index + length):
+            # If the letter is not a valid palindrome, continue to the next letter
+            if not (string[i].isalpha() and string[i].lower() == string[i].upper()):
+                continue
+
+            # Form the current palindrome in a case-insensitive manner
+            palindrome = ''.join([string[j] for j in range(start_index, start_index + length)])
+
+            # If the current palindrome is valid and not already present in the set of palindromes, add it to the set
+            if palindrome.isalnum() and palindrome.lower() == palindrome.upper():
+                palindromes.add(palindrome)
+
+    # Return the set of all valid palindromes of the specified length that can be created from the English letters of the given string that occur between the specified indices, both inclusive
+    return palindromes

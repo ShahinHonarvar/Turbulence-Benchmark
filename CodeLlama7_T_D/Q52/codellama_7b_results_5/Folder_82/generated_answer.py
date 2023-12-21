@@ -1,0 +1,13 @@
+
+def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Check if the substring starting at the current character and ending at position 28 (the length of the palindrome) is a palindrome
+            if string[i:28].lower() == string[i:28].lower():
+                # Add the palindrome to the set
+                palindromes.add(string[i:28])
+    return palindromes

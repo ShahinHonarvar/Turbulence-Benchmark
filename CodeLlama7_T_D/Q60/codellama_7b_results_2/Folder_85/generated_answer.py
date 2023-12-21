@@ -1,0 +1,61 @@
+
+def all_left_right_truncatable_prime(x):
+    # Create a list of all left-and-right-truncatable prime numbers less than or equal to x
+    lrtp_list = []
+
+    # Iterate through the range of prime numbers less than or equal to x
+    for i in range(2, x + 1):
+
+        # Check if the number is a prime number and is left-and-right-truncatable
+        if isprime(i) and islrtp(i):
+
+            # Add the prime number to the list of left-and-right-truncatable prime numbers
+            lrtp_list.append(i)
+
+    # Sort the list of left-and-right-truncatable prime numbers in ascending order
+    lrtp_list = sorted(lrtp_list)
+
+    # Return the list of left-and-right-truncatable prime numbers
+    return lrtp_list
+
+# Check if a number is prime
+def isprime(n):
+    # Check if n is less than 2
+    if n < 2:
+        # If n is less than 2, it is not prime
+        return False
+
+    # Check if n is divisible by 2 to n - 1
+    for i in range(2, n):
+        # If n is divisible by i, it is not prime
+        if n % i == 0:
+            return False
+
+    # If n is greater than 1 and it is not divisible by 2 to n - 1, it is prime
+    return True
+
+# Check if a number is left-and-right-truncatable
+def islrtp(n):
+    # Check if the number contains any 0s
+    if '0' in str(n):
+        # If the number contains any 0s, it is not left-and-right-truncatable
+        return False
+
+    # Split the number into its individual digits
+    digits = [int(digit) for digit in str(n)]
+
+    # Check if the number remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+    for i in range(len(digits)):
+        # Create a copy of the number with the leading leftmost digit removed
+        num_left = n // 10 ** (i + 1) * 10 ** i
+        # Check if the number is prime
+        if isprime(num_left):
+            # Create a copy of the number with the last rightmost digit removed
+            num_right = n // 10 ** i * 10 ** (i - 1)
+            # Check if the number is prime
+            if isprime(num_right):
+                # If the number remains prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime, it is left-and-right-truncatable
+                return True
+
+    # If the number does not remain prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime, it is not left-and-right-truncatable
+    return False

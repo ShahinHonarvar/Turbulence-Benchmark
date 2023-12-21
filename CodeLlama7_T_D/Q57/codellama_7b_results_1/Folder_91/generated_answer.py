@@ -1,0 +1,19 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the row vector for the current row
+        row_vector = matrix[i]
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Get the column vector for the current column
+            col_vector = matrix[:, j]
+            # Check if the sum of all integers in the current row or column is equal to -6
+            if np.sum(row_vector) == -6 or np.sum(col_vector) == -6:
+                # Add the submatrix to the list of submatrices
+                submatrices.append(matrix[i, j])
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -6
+    return submatrices

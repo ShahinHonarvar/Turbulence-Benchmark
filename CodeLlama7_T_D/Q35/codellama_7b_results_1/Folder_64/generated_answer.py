@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    # Create a list of tuples containing the index and character at that index
+    indices = [(i, c) for i, c in enumerate(s)]
+    # Filter out characters that occur only once
+    filtered_indices = [index for index in indices if index[1] not in s[:5]]
+    # Create a new string with the filtered characters
+    new_string = ''.join([c for i, c in filtered_indices])
+    return new_string

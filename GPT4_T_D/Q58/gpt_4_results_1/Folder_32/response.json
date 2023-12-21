@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    m, n = np.shape(matrix)\n    for a in range(m):\n        for b in range(n):\n            for c in range(a+1, m+1):\n                for d in range(b+1, n+1):\n                    if (c-a)*(d-b) == 103:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082497,
+  "id": "chatcmpl-7fJx3fyHmVxo30QUpAjHAEhRopgCV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 111,
+    "total_tokens": 206
+  }
+}

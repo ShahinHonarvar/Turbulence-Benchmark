@@ -1,0 +1,7 @@
+
+def all_left_right_truncatable_prime(numbers):
+    primes = []
+    for i in range(numbers[0], numbers[1] + 1):
+        if is_prime(i) and not has_zero(str(i)):
+            primes.append(i)
+    return primes

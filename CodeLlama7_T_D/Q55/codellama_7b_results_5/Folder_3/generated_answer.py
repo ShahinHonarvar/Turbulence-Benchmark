@@ -1,0 +1,34 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Find the product of all elements in the list
+    product = 1
+    for element in circular_list:
+        product *= element
+
+    # Initialize an empty list to store the sublists
+
+    sublists = []
+
+    # Iterate over the list and find contiguous sequences of elements whose product is equal to -22
+
+    i = 0
+    while i < len(circular_list):
+        start = i
+        current_product = product
+        while i < len(Circular_list) and current_product == -22:
+            i += 1
+            current_product *= Circular_list[i]
+
+        # If a contiguous sequence of elements was found, add it to the list of sublists
+
+        if start < i:
+            sublists.append(Circular_list[start:i])
+
+        # Update the product and the index to continue searching for contiguous sequences of elements whose product is equal to -22
+
+        product /= Circular_list[start]
+        i += 1
+
+    # Return the list of sublists
+
+    return sublists

@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return "".join([c for c in s if len(c) >= 10 and len(c) <= 52 and ord(c) >= ord("@") and ord(c) <= ord("T")])

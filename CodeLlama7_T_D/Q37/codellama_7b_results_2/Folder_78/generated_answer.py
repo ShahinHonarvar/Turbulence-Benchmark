@@ -1,0 +1,11 @@
+ def filter_chars(string):
+    filtered_string = ""
+    for i in range(len(string)):
+        if (i >= 75 and i <= 99) and (ord(string[i]) >= ord('8') and ord(string[i]) <= ord('e')):
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

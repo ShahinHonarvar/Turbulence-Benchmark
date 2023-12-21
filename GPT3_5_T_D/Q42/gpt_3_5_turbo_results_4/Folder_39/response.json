@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport math\n\ndef prime_factors(lst):\n    def is_prime(n):\n        if n == 1:\n            return False\n        for i in range(2, int(math.sqrt(n)) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    def factorize(n):\n        factors = set()\n        while n % 2 == 0:\n            factors.add(2)\n            n = n // 2\n        for i in range(3, int(math.sqrt(n)) + 1, 2):\n            while n % i == 0:\n                factors.add(i)\n                n = n // i\n        if n > 2:\n            factors.add(n)\n        return factors\n\n    integer = lst[59]\n    return factorize(integer)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689859244,
+  "id": "chatcmpl-7eNsCCcUhD5EL3r6VtgS24umNUkJm",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 168,
+    "prompt_tokens": 84,
+    "total_tokens": 252
+  }
+}

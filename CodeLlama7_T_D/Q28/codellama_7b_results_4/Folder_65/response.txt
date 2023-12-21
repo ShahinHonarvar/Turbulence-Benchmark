@@ -1,0 +1,21 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string that occur between 32 and 67 (inclusive)
+    start_index = string.find(' ', 32)
+    if start_index == -1:
+        return None
+
+    end_index = string.rfind(' ', 67)
+    if end_index == -1:
+        return None
+
+    # Extract the characters between the indices and find their ASCII values
+
+    characters = string[start_index + 1 : end_index]
+    ascii_values = [ord(character) for character in characters]
+
+    # Sort the ASCII values and return the 12th smallest value
+
+    sorted_ascii_values = sorted(ascii_values)
+    return sorted_ascii_values[11]
+```

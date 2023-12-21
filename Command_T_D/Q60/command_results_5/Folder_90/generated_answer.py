@@ -1,0 +1,123 @@
+
+import itertools
+
+def all_left_right_truncatable_prime(tup):
+    left_right_truncatable_primes = []
+    for i in range(tup[0], tup[1]+1):
+        j = str(i)
+        if j[0] == '2':
+            continue
+        if not j[0] == '5':
+            if j[0] != '0':
+                if not j[1] == '5':
+                    if j[1] != '0':
+                        if i % 10 == 0:
+                            continue
+                        elif i % 10 == 1:
+                            continue
+                        elif i % 10 == 2:
+                            continue
+                        elif i % 10 == 3:
+                            continue
+                        elif i % 10 == 4:
+                            continue
+                        elif i % 10 == 5:
+                            continue
+                        elif i % 10 == 6:
+                            continue
+                        elif i % 10 == 7:
+                            continue
+                        elif i % 10 == 8:
+                            continue
+                        elif i % 10 == 9:
+                            continue
+                    if i % 100 == 0:
+                        continue
+                    elif i % 100 == 1:
+                        continue
+                    elif i % 100 == 2:
+                        continue
+                    elif i % 100 == 3:
+                        continue
+                    elif i % 100 == 4:
+                        continue
+                    elif i % 100 == 5:
+                        continue
+                    elif i % 100 == 6:
+                        continue
+                    elif i % 100 == 7:
+                        continue
+                    elif i % 100 == 8:
+                        continue
+                    elif i % 100 == 9:
+                        continue
+        elif j[0] == '0':
+            if j[1] == '5':
+                continue
+            if j[1] != '0':
+                if i % 10 == 0:
+                    continue
+                elif i % 10 == 1:
+                    continue
+                elif i % 10 == 2:
+                    continue
+                elif i % 10 == 3:
+                    continue
+                elif i % 10 == 4:
+                    continue
+                elif i % 10 == 5:
+                    continue
+                elif i % 10 == 6:
+                    continue
+                elif i % 10 == 7:
+                    continue
+                elif i % 10 == 8:
+                    continue
+                elif i % 10 == 9:
+                    continue
+        elif j[1] == '5':
+            continue
+        if i % 10 == 0:
+            continue
+        elif i % 10 == 1:
+            continue
+        elif i == 1:
+            continue
+        elif i == 2:
+            continue
+        elif i == 3:
+            continue
+        elif i == 4:
+            continue
+        elif i == 5:
+            continue
+        elif i == 6:
+            continue
+        elif i == 7:
+            continue
+        elif i == 8:
+            continue
+        elif i == 9:
+            continue
+        elif i % 100 == 0:
+            continue
+        elif i % 100 == 1:
+            continue
+        elif i % 100 == 2:
+            continue
+        elif i % 100 == 3:
+            continue
+        elif i % 100 == 4:
+            continue
+        elif i % 100 == 5:
+            continue
+        elif i % 100 == 6:
+            continue
+        elif i % 100 == 7:
+            continue
+        elif i % 100 == 8:
+            continue
+        elif i % 100 == 9:
+            continue
+        left_right_truncatable_primes.append(i)
+    return left_right_truncatable_primes

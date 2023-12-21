@@ -1,0 +1,38 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Find the product of all elements in the list
+    product = 1
+    for element in circular_list:
+        product *= element
+
+    # Initialize an empty list to store the sublists
+
+    sublists = []
+
+    # Iterate over the list and find contiguous sublists with a product equal to -89
+
+    for i in range(len(circular_list)):
+
+        # Initialize variables to keep track of the current sublist and its product
+
+        current_sublist = []
+        current_product = 1
+
+        # Add elements to the current sublist until the product exceeds -89 or the end of the list is reached
+
+        while i < len(circular_list) and current_product <= -89:
+            current_sublist.append(Circular_list[i])
+            current_product *= Circular_list[i]
+
+            # Increment the index to move to the next element in the list
+
+            i += 1
+
+        # If the product of the sublist is equal to -89, add it to the list of sublists
+
+        if current_product == -89:
+            sublists.append(current_sublist)
+
+    # Return the list of sublists
+
+    return sublists

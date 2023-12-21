@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices with 126 integers
+    count = 0
+    
+    # Loop through each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Check if the current element is equal to 126
+            if matrix[i,j] == 126:
+                # If it is, check if there are 126 integers in a submatrix starting from this element
+                count += np.sum(matrix[i:i+3, j:j+3]) == 126
+    
+    return count

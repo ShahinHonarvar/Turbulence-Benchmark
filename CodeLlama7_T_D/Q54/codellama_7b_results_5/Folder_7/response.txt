@@ -1,0 +1,13 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Initialize an empty list to store the right-truncatable prime numbers
+primes = []
+
+# Iterate over the tuple and check if each element is a prime number and remains prime when the last rightmost digit is successively removed. If it is, add it to the list of right-truncatable prime numbers.
+for x in tuple:
+if is_prime(x) and all(is_prime(int(str(x)[0:-i]) for i in range(1, len(str(x)))):
+primes.append(x)
+return sorted(primes)
+else:
+return []
+```

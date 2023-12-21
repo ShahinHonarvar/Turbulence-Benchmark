@@ -1,0 +1,3 @@
+
+def all_neg_ints_inclusive(nums):
+    return [n for i, n in enumerate(nums) if i >= 5 and i <= 7 and n < 0]

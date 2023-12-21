@@ -1,0 +1,16 @@
+ ```
+def return_binary_or_hexa(tuple):
+    a = tuple[6]
+    b = tuple[9]
+    sum = 0
+    for i in range(a + 1, b - 1 + 1):
+        if i not in tuple[6:9]:
+            sum += i
+
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+
+    else:
+        return bin(sum)[3:]
+```
+Note that the code uses a variable `tuple` which is a reserved word in Python and should not be used as a variable name. The function takes an argument `tuple` of type `tuple` and returns a string representing the sum of the integers between indices 6 and 9 that are not present in the specified range in the tuple.

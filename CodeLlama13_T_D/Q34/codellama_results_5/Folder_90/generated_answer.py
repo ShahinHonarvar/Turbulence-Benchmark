@@ -1,0 +1,13 @@
+
+def find_original_set(args):
+    # Sort the input arguments in ascending order
+    args = sorted(args, key=len)
+
+    # Initialize an empty set to store the result
+    result = set()
+
+    # Iterate over each argument and add its elements to the result set
+    for arg in args:
+        result |= arg
+
+    return result

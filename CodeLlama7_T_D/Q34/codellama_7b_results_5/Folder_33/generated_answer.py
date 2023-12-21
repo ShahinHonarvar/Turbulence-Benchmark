@@ -1,0 +1,19 @@
+
+def find_original_set(sets):
+    # Check if all sets are distinct and have the same size
+    if len(set(map(len, sets))) != 1:
+        raise ValueError("All sets must be of the same size")
+
+    # Sort the sets by their smallest element
+    sorted_sets = sorted(sets, key=lambda x: x[0])
+
+    # Initialize the smallest set to the first set in the list
+    smallest_set = sorted_sets[0]
+
+    # Iterate over the remaining sets and find the smallest set that contains all of them
+    for i in range(1, len(sorted_sets)):
+        if all(x in smallest_set for x in sorted_sets[i]):
+            smallest_set = sorted_sets[i]
+
+    # Return the smallest set
+    return smallest_set

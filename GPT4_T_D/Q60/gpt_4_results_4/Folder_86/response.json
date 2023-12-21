@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(integers):\n    x = integers[126]\n    truncatable_primes = []\n    for num in range(1, x+1):\n        s = str(num)\n        if '0' in s:\n            continue\n        length = len(s)\n        left_truncatable = all(isprime(int(s[i:])) for i in range(length))\n        right_truncatable = all(isprime(int(s[:i+1])) for i in range(length))\n        if left_truncatable and right_truncatable:\n            truncatable_primes.append(num)\n    truncatable_primes.sort(reverse=True)\n    return truncatable_primes\n```\nIn this code, the `isprime` function from the `sympy` package is used to determine if a number is prime. The function begins by checking if the number contains a 0. If it does, it is not a truncatable prime and the loop continues to the next number. If it does not, the function checks if the number is left truncatable (i.e., remains prime if digits are removed from the left) and right truncatable (i.e., remains prime if digits are removed from the right). This is done using list comprehensions and slicing. If the number is both left truncatable and right truncatable, it is added to the list `truncatable_primes`. The function finally returns the sorted list of left-and-right truncatable prime numbers in Descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691105184,
+  "id": "chatcmpl-7jc00oOWuelUtIrzDjoAhR7GkFsdP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 314,
+    "prompt_tokens": 187,
+    "total_tokens": 501
+  }
+}

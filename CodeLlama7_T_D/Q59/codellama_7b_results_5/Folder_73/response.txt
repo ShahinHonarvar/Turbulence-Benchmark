@@ -1,0 +1,23 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[97]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_left_truncatable_prime(i, tuple)):
+list.append(i)
+return sorted(list)
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+def is_left_truncatable_prime(n, tuple):
+str = str(n)
+for i in range(len(tuple)):
+if tuple[i] != int(str[:-i])):
+return False
+return True
+```
+Note that this code uses the `is_prime` and `is_left_truncatable_prime` functions to check if a number is prime and left-truncatable prime, respectively. These functions are defined above the `all_left_truncatable_prime` function in the code snippet.

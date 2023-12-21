@@ -1,0 +1,10 @@
+```
+def all_substring_of_size_n(string, n):
+    substrings = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if len(set(substring)) == n and not any(substring in s for s in substrings):
+            substrings.append(substring)
+    return substrings
+```
+This function uses a list comprehension to iterate over the indices of the input string, and then checks if each substring is distinct (i.e., has no duplicate characters), and appends it to the list of substrings. The `set` constructor is used to check for duplicates, and the `any` function is used to check if the substring is already in the list of substrings. Finally, the returned list is sorted using the `sorted` built-in function.

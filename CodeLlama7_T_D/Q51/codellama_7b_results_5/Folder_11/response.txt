@@ -1,0 +1,63 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Define the set of English letters
+    english_letters = set("abcdefghijklmnopqrstuvwxyz")
+    # Define the minimum length for anagram checking
+    min_length = 3
+
+    # Initialize variables to keep track of anagrams and pairs
+    num_anagrams = 0
+    num_pairs = 0
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the string is at least three characters long
+        if len(lowercase_string) >= min_length:
+            # Initialize a set to keep track of the letters in the string
+            letter_set = set()
+
+            # Iterate over each character in the string
+            for char in lowercase_string:
+                # Add the character to the set if it is an English letter
+                if char in english_letters:
+                    letter_set.add(char)
+
+            # Check if the set of letters is empty, indicating that there are no non-English letters in the string
+            if len(letter_set) == 0:
+                # Increment the number of anagrams
+                num_anagrams += 1
+
+            # Check if the set of letters has at least three elements, indicating that there are at least three letters in the string
+            if len(letter_set) >= min_length:
+                # Initialize a variable to keep track of the number of pairs found so far
+                num_pairs_found = 0
+
+                # Iterate over each pair of elements in the set
+                for i in range(len(letter_set) - 1):
+                    # Get the first element in the current pair
+                    char1 = letter_set[i]
+
+                    # Get the second element in the current pair
+                    char2 = letter_set[i + 1]
+
+                    # Check if the two characters are anagrams of each other
+                    if sorted(char1) == sorted(char2):
+                        # Increment the number of pairs found so far
+                        num_pairs_found += 1
+
+                # Check if there are at most four pairs of anagrams in the string
+                if num_pairs_found <= 4:
+                    # Increment the number of pairs
+                    num_pairs += num_pairs_found
+
+    # Return True if there are at most 41 pairs of anagrams in the list; otherwise, return False
+    if num_pairs <= 41:
+        return True
+
+    else:
+
+        return False
+```

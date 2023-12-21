@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    filtered = ""
+
+    for i in range(13, 40):
+        if s[i] > ':' and s[i] < 'C':
+            continue
+
+        else:
+
+            filtered += s[i]
+
+    return filtered

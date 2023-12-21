@@ -1,0 +1,28 @@
+
+def if_contains_anagrams(string_list):
+    # Create a dictionary to store the frequency of each letter
+    letter_freq = {}
+    for string in string_list:
+        # Convert the string to lowercase
+        string = string.lower()
+        # Iterate through each character in the string
+        for char in string:
+            # If the character is not a letter, skip to the next character
+            if not char.isalpha():
+                continue
+
+            # Otherwise, increment the frequency of the letter
+            else:
+                if char in letter_freq:
+                    letter_freq[char] += 1
+                else:
+                    letter_freq[char] = 1
+    # Iterate through each pair of letters and check for anagrams
+    for pair in combinations(letter_freq, 2):
+        # If the frequency of both letters is at least three, check if they are anagrams
+        if pair[0][1] >= 3 and pair[1][1] >= 3:
+            # Check if the two letters are anagrams by sorting their frequencies
+            sorted_pair = sorted(pair)
+            if sorted_pair[0] == sorted_pair[1]:
+                return True
+    return False

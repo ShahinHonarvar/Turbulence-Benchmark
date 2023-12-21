@@ -1,0 +1,3 @@
+
+def gcf_two_nums(mylist):
+    return mylist[83] * mylist[14] // math.gcd(mylist[83], mylist[14])

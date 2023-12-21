@@ -1,0 +1,9 @@
+
+def if_perfect_num(my_list):
+    if len(my_list) >= 68:
+        num = my_list[68]
+        # Check if number is a perfect number
+        if (num > 0) and all(i % num == 0 for i in range(1, num)):
+            return True
+        else:
+            return False

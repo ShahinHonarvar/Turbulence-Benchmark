@@ -1,0 +1,8 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Check if the list contains any odd integers
+    if not any(i % 2 for i in my_list):
+        return []
+
+    # Return the list of all odd integers from index 19 to index 94, both exclusive
+    return [i for i in my_list[19:94] if i % 2 == 1]

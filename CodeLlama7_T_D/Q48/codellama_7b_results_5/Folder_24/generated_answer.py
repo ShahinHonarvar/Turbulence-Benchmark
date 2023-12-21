@@ -1,0 +1,19 @@
+ def return_binary_or_hexa(tuple):
+    # Initialize variables for sum and missing integers
+    sum = 0
+    missing_integers = []
+    # Get the range of integers from a + 1 to b - 1 (both inclusive)
+    range_of_integers = tuple[13] + 1, tuple[91] - 1
+    # Iterate over the range of integers and check if they are present in the specified range in the tuple
+    for i in range(range_of_integers[0], range_of_integers[1] + 1):
+        # If the integer is not present in the specified range in the tuple, add it to the list of missing integers
+        if i not in tuple:
+            missing_integers.append(i)
+    # Calculate the sum of all missing integers
+    for i in missing_integers:
+        sum += i
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:].upper()

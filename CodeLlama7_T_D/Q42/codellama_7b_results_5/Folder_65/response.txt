@@ -1,0 +1,13 @@
+ ```
+def prime_factors(my_list):
+return {p for p in my_list if all(my_list[i] % p != 0 for i in range(len(my_list)) if i != j)}
+my_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#print(prime_factors(my_list)[35]))
+```
+This code defines a function `prime_factors` that takes a list of positive integers as input and returns the set of all prime factors of the integer at index 35. The function uses a generator expression to iterate over the elements of the input list, and it uses the `all` function to check whether each element is divisible by the current prime factor without remainder. If an element is not divisible by the current prime factor without remainder, then the current prime factor is not a factor of that element, and the function can return early.
+#To test this code, you can call the `prime_factors` function with a list of positive integers as input, and then print the result to see the set of all prime factors at index 35 of the input list. For example:
+```
+my_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#print(prime_factors(my_list)[35]))
+```
+#This code will print the set of all prime factors at index 35 of the input list, which should be `{2, 23}`.

@@ -1,0 +1,21 @@
+
+def find_primes_between_indices(my_list):
+    # Find the indices of the first and last prime numbers in the list
+    first_prime = None
+    last_prime = None
+    for i in range(len(my_list)):
+        if is_prime(my_list[i]):
+            if first_prime == None:
+                first_prime = i
+
+            last_prime = i
+
+
+    # Return the sorted list of prime numbers between the indices, inclusive
+
+    if first_prime != None and last_prime != None:
+        return sorted([my_list[i] for i in range(first_prime, last_prime + 1)], reverse=True)
+
+    else:
+
+        return []

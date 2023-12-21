@@ -1,0 +1,15 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Loop through each substring of length 24 to 33 (both inclusive) in the given string
+    for i in range(35, 89):
+        for j in range(i + 23, i + 34):
+            # Check if the substring is a palindrome and consists of English letters
+            if string[i:j] == string[i:j][::-1] and all(ord('A') <= ord(c) <= ord('Z') or ord('a') <= ord(c) <= ord('z') for c in string[i:j]):
+                # Add the palindrome to the set if it satisfies both conditions
+                palindromes.add(string[i:j])
+
+    return palindromes
+```

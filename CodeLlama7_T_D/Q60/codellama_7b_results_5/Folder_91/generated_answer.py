@@ -1,0 +1,68 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the range of integers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the integer is a prime number
+        if is_prime(i):
+            # If the integer is a prime number, check if it is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # If the integer is a left-and-right-truncatable prime number, add it to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers, reverse=True)
+
+# Define a function to check if an integer is a prime number
+def is_prime(n):
+    # Check if n is equal to 1
+    if n == 1:
+        # If n is equal to 1, it is not a prime number
+        return False
+
+    # Check if any number between 2 and the square root of n is divisible by it
+    for i in range(2, int(n ** 0.5) + 1)):
+        if n % i == 0:
+            # If any number between 2 and the square root of n is divisible by it, it is not a prime number
+            return False
+
+    # If no number between 2 and the square root of n is divisible by it, it is a prime number
+    return True
+
+# Define a function to check if an integer is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if the integer is a prime number
+    if not is_prime(n):
+        # If the integer is not a prime number, it is not a left-and-right-truncatable prime number
+        return False
+
+    # Check if the integer contains any 0 digits
+    for i in range(len(str(n)))):
+        if str(n)[i] == "0":
+            # If the integer contains any 0 digits, it is not a left-and-right-truncatable prime number
+            return False
+
+    # Check if the integer can be divided by any number between 2 and the square root of n without leaving any remainder
+    for i in range(2, int(n ** 0.5) + 1)):
+        if n % i == 0:
+            # If the integer can be divided by any number between 2 and the square root of n without leaving any remainder, it is not a left-and-right-truncatable prime number
+            return False
+
+    # Check if the integer remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+    for i in range(len(str(n)))):
+        if str(n)[i] == "0":
+            continue
+
+        else:
+
+            # Check if the integer remains prime after removing the leading leftmost and last rightmost digits simultaneously successively
+            if is_prime(int(str(n)[1:]))) or (is_prime(int(str(n)[:-1])))):
+                # If the integer remains prime after removing the leading leftmost and last rightmost digits simultaneously successively, it is a left-and-right-truncatable prime number
+                return True
+
+            else:
+
+                # If the integer does not remain prime after removing the leading leftmost and last rightmost digits simultaneously successively, it is not a left-and-right-truncatable prime number
+                return False

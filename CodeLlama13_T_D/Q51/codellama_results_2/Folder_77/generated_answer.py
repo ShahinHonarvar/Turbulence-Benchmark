@@ -1,0 +1,15 @@
+
+def if_contains_anagrams(strings):
+    # Create a dictionary to store the anagram counts for each string
+    anagram_counts = {}
+    
+    # Iterate over the strings and check if they are anagrams of other strings
+    for s in strings:
+        key = "".join(sorted(s.lower()))
+        if key not in anagram_counts:
+            anagram_counts[key] = 1
+        else:
+            anagram_counts[key] += 1
+    
+    # Check if there are at most 17 pairs of anagrams in the list
+    return len(anagram_counts) <= 17

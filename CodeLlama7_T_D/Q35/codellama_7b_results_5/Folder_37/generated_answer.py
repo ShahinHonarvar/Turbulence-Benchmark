@@ -1,0 +1,13 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the characters from s
+    # that occur more than once between indices 2 and 7, exclusive
+    new_str = ""
+    # Loop through the characters in s
+    for i in range(len(s)):
+        # Check if the current character is repeated
+        # more than once between indices 2 and 7, exclusive
+        if s[i] == s[i+1]:
+            # If it is repeated, remove all occurrences of that character from the string
+            new_str += s[:i] + s[i+1:]
+    return new_str

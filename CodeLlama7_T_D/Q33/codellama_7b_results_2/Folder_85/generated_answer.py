@@ -1,0 +1,10 @@
+ def return_vowels(my_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    start_index = 55
+    end_index = 65
+    filtered_list = []
+
+    for i in range(start_index, end_index + 1):
+        if my_string[i] in vowels and my_string[i].isupper() and my_string[i] > 'Z' and my_string[i] <= 'w':
+            filtered_list.append(my_string[i])
+    return filtered_list

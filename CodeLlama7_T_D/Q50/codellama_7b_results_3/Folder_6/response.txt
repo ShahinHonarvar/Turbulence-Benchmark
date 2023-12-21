@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(strings):
+    # check if there are at least 26 pairs of anagrams in the list
+    anagram_count = 0
+    for i in range(len(strings)):
+        for j in range(i + 1, len(strings)):
+            # check if the strings are anagrams
+            if sorted(strings[i]) == sorted(strings[j]):
+                anagram_count += 1
+                if anagram_count >= 26:
+                    return True
+
+    # if there are no pairs of anagrams in the list, return false
+
+    return False
+
+```

@@ -1,0 +1,3 @@
+
+def if_perfect_num(mylist):
+    return mylist[54] == sum(range(1, int(sqrt(mylist[54])) + 1, 2)) * (sum(range(1, int(sqrt(mylist[54])) + 1, 2)))

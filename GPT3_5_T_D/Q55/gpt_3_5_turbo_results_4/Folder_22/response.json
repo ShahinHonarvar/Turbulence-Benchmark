@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(nums):\n    sublists = []\n    for i in range(1, len(nums) + 1):\n        for sublist in combinations(nums, i):\n            if 4 in sublist and all(sublist):\n                product = 1\n                for num in sublist:\n                    product *= num\n                if product == 4:\n                    sublists.append(list(sublist))\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866076,
+  "id": "chatcmpl-7ePeOJkIxFG3Xyx5nJxQMLFgvk5jQ",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 193,
+    "total_tokens": 286
+  }
+}

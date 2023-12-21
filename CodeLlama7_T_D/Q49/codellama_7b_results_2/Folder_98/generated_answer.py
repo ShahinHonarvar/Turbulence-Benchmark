@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Get the last four digits of the integer
+    last_four_digits = str(decimal_int)[-4:]
+    # Check if the last four digits are divisible by 14
+    if int(last_four_digits) % 14 == 0:
+        return True
+    else:
+        return False

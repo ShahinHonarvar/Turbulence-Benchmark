@@ -1,0 +1,7 @@
+
+def all_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(10**x, 10**(x+1)):
+        if is_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)

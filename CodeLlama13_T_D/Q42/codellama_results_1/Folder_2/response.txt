@@ -1,0 +1,13 @@
+```
+def prime_factors(lst):
+    i = 702
+    factors = set()
+    for n in range(2, int(math.sqrt(i)) + 1):
+        if i % n == 0:
+            factors.add(n)
+            while i % n == 0:
+                i //= n
+    if i > 1:
+        factors.add(i)
+    return factors
+```

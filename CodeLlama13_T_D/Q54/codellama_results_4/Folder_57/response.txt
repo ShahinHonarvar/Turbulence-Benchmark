@@ -1,0 +1,14 @@
+```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    right_truncatable_primes = []
+    for i in range(len(tuple_of_positive_integers)):
+        prime_number = tuple_of_positive_integers[i]
+        is_prime = True
+        while is_prime and prime_number > 1:
+            if not is_right_truncatable_prime(prime_number):
+                is_prime = False
+            else:
+                right_truncatable_primes.append(prime_number)
+        sorted(right_truncatable_primes, reverse=True)
+    return right_truncatable_primes
+```

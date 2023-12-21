@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(521, 723):
+        if string[i].isalpha() and string[i] >= '>' and string[i] <= '_':
+            result += string[i]
+    return result

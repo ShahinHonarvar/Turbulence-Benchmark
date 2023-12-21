@@ -1,0 +1,12 @@
+ ```
+def find_original_set(sets):
+# sort the sets by their size in descending order
+sorted_sets = sorted(sets, key=len, reverse=True)
+# initialize the smallest set as the largest set among the given arguments
+smallest_set = sorted_sets[0]
+for i in range(1, len(sorted_sets)):
+if sorted_sets[i] <= smallest_set:
+smallest_set = sorted_sets[i]
+return smallest_set
+```
+This code uses the `sorted` function to sort the input sets by their size in descending order. It then iterates through the sorted sets and finds the smallest set among them that is a subset of all the given arguments. This is done using the `if` statement, which checks if the current set is smaller than or equal to the smallest set found so far. If it is, the smallest set is updated to be the current set. The final return value is the smallest set found among the given arguments.

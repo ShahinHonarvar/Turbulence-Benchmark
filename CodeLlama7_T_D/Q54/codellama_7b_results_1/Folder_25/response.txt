@@ -1,0 +1,66 @@
+ ```
+def all_right_truncatable_prime(tuple):
+	# Initialize an empty list to store the sorted right-truncatable prime numbers
+	list = []
+
+	# Loop through each integer in the tuple
+
+	for x in tuple:
+
+		# Check if the current integer is a prime number
+
+		if is_prime(x):
+
+			# Initialize an empty string to store the rightmost digit of the current integer
+
+			digit = ""
+
+			# Loop through each character in the string representation of the current integer
+
+			for char in str(x):
+
+				# Check if the current character is a digit
+
+				if char.isdigit():
+
+					# Add the current character to the string
+
+					digit += char
+
+					# If the length of the string is greater than 1, remove the last character from the string
+
+					if len(digit) > 1:
+
+						digit = digit[:-1]
+
+					# Check if the current integer is a prime number after removing the rightmost digit
+
+					if is_prime(int(digit)):
+
+						# Add the current integer to the list of sorted right-truncatable prime numbers
+
+						list.append(x)
+
+	# Sort the list in ascending order and return it
+
+	return sorted(list)
+
+
+def is_prime(n):
+
+	# Check if the current integer is a prime number by iterating through all integers less than or equal to its square root
+
+	for i in range(2, int(n ** 0.5) + 1):
+
+		# If the current integer is divisible by any integer other than 1 and itself, it is not a prime number
+
+		if n % i == 0:
+
+			return False
+
+
+	# If the current integer is greater than 1 and has no factors other than 1 and itself, it is a prime number
+
+	return True
+
+```

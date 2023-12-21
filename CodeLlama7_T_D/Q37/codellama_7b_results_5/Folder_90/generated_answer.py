@@ -1,0 +1,20 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for char in s:
+        # If the current character is between indices 348 and 852, both inclusive, and is greater than or equal to 'J' and smaller than or equal to 'b', then remove all occurrences of that character from the filtered string
+        if (348 <= s.index(char) <= 852) and ('J' <= char <= 'b'):
+            # Remove all occurrences of the current character from the input string using the replace() method, while preserving the order of all characters in the string
+            filtered = filtered + s.replace(char, "", s.count(char))
+
+        # Otherwise, append the current character to the filtered string
+
+        else:
+            filtered = filtered + char
+
+    # Return the altered string containing only the filtered characters
+
+    return filtered

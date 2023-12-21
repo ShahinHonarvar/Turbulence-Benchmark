@@ -1,0 +1,16 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Loop through each submatrix of size 51x51
+    for i in range(len(matrix) - 49):
+        for j in range(len(matrix[i]) - 49):
+            # Check if the submatrix contains 51 integers
+            if len(set(matrix[i:i+51, j:j+51].flatten())) == 51:
+                # Increment the count variable
+                count += 1
+
+    return count

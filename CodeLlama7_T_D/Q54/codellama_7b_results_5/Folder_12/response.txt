@@ -1,0 +1,18 @@
+ Here's a possible implementation of the `all_right_truncatable_prime` function:
+```python
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    # Get the integer at index 70 from the tuple
+    x = tuple_of_positive_integers[70]
+    # Initialize an empty list to store the right-truncatable prime numbers less than x
+    list_of_right_truncatable_prime_numbers = []
+    # Iterate over all prime numbers less than x
+    for i in range(2, x):
+        # Check if the current prime number is a right-truncatable prime number
+        if is_right_truncatable_prime(i):
+            # If the current prime number is a right-truncatable prime number, add it to the list of right-truncatable prime numbers less than x
+            list_of_right_truncatable_prime_numbers.append(i)
+    # Sort the list of right-truncatable prime numbers in descending order
+    list_of_right_truncatable_prime_numbers = sorted(list_of_right_truncatable_prime_numbers, reverse=True)
+    return list_of_right_truncatable_prime_numbers
+```
+This code first gets the integer at index 70 from the tuple passed as an argument. It then initializes an empty list to store all the right-truncatable prime numbers less than x. It iterates over all prime numbers less than x and checks if each prime number is a right-truncatable prime number using the `is_right_truncatable_prime` function. If a prime number is a right-truncatable prime number, it adds the prime number to the list of right-truncatable prime numbers less than x. Finally, it sorts the list of right-truncatable prime numbers in descending order and returns the sorted list.

@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        if i < 2 or i > 6:
+            result += string[i]
+        elif string[i] >= '?' and string[i] <= 'f':
+            continue
+        else:
+            result += string[i]
+    return result

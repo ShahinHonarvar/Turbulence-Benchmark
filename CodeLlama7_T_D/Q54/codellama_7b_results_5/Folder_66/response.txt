@@ -1,0 +1,32 @@
+ ```
+def all_right_truncatable_prime(tuple):
+#Extract the integer at index 25 from the tuple
+x = tuple[25]
+#Initialize an empty list to store the right-truncatable prime numbers
+list = []
+#Loop through all the numbers less than x
+
+for i in range (1,x+1):
+
+#Check if the number is a prime number using the Sieve of Eratosthenes algorithm
+isPrime = True
+for j in range(2,int(i**0.5)+1):
+if i%j==0:
+isPrime= False
+break
+
+if isPrime == True and len(str(i))>1:
+#Check if the number remains prime when its rightmost digit is successively removed
+for k in range(1,len(str(i)))):
+newNumber = int(str(i)[:-k])
+if newNumber==1 or not isPrime(newNumber)):
+break
+else:
+continue
+if k==len(str(i))):
+#If the number remains prime when its rightmost digit is successively removed, add it to the list of right-truncatable prime numbers
+list.append(i)
+
+return sorted(list, reverse=True)
+
+```

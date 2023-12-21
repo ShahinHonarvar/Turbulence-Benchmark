@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {palindrome for palindrome in set(string) if len(palindrome) == 15 and all(c in string for c in palindrome)}

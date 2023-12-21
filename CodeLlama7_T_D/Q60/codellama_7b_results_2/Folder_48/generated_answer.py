@@ -1,0 +1,62 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x, checking for each number if it is a left-and-right-truncatable prime number
+    for i in range(1, x + 1):
+        # Check if the current number is a prime number
+        if is_prime(i):
+            # Check if the current number can be trancated by removing the leading leftmost and last rightmost digits
+            if can_be_truncated(i):
+                # Add the current number to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Return the list of prime numbers sorted in ascending order
+    return sorted(prime_numbers)
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if the number is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of the number
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if the number is divisible by any number between 2 and the square root of the number
+            if n % i == 0:
+                # Return False if the number is not a prime number
+                return False
+
+    # Return True if the number is a prime number
+    return True
+
+# Check if a number can be trancated by removing the leading leftmost and last rightmost digits
+def can_be_truncated(n):
+    # Check if the number contains any 0 digit
+    if '0' in str(n):
+        # Return False if the number contains any 0 digit
+        return False
+
+    # Initialize a variable to store the leading leftmost digit of the number
+    leading_digit = ''
+
+    # Initialize a variable to store the last rightmost digit of the number
+    last_digit = ''
+
+    # Iterate from the leading leftmost digit of the number to the last rightmost digit of the number
+    for i in range(len(str(n)))):
+        # Check if the current digit is the leading leftmost digit of the number
+        if str(n)[i] == leading_digit:
+            # Remove the leading leftmost digit of the number from the current number
+            n = int(str(n)[:i] + str(n)[i+1:]))
+
+    # Iterate from the last rightmost digit of the number to the leading leftmost digit of the number
+    for i in range(len(str(n)))-1, -1):
+        # Check if the current digit is the last rightmost digit of the number
+        if str(n)[i] == last_digit:
+            # Remove the last rightmost digit of the number from the current number
+            n = int(str(n)[:i] + str(n)[i+1:]))
+
+    # Check if the current number is a prime number
+    if is_prime(n):
+        # Return True if the current number is a prime number
+        return True

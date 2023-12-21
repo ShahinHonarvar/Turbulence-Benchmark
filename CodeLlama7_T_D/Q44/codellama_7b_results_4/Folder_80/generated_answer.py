@@ -1,0 +1,24 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list and check if each number is a prime number
+    for i in range(62, 78 + 1):
+        num = my_list[i]
+        if is_prime(num):
+            composite_nums.add(num)
+
+    # Return the set of all composite numbers between indices 62 to 78, inclusive
+    return composite_nums
+
+# Check if a number is a prime number using trial division
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True

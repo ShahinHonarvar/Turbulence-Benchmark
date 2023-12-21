@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(i, rows):\n                for l in range(j, cols):\n                    submatrix = matrix[i:k+1, j:l+1]\n                    if np.sum(submatrix) == 39 and submatrix.size == 39:\n                        count += 1\n    return count\n```\nNote: Make sure to install the numpy library before executing the code. You can install it by running `pip install numpy` in your command prompt or terminal.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689845905,
+  "id": "chatcmpl-7eKP301v38vVtiuv5Wln3NjENH7iJ",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 139,
+    "prompt_tokens": 111,
+    "total_tokens": 250
+  }
+}

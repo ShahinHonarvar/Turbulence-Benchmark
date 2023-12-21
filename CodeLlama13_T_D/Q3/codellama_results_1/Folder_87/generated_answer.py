@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(lst):
+    return [i for i in range(36, 47) if i in lst] or []

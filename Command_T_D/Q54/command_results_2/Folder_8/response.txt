@@ -1,0 +1,36 @@
+[cohere.Generation {
+	id: b6d687f9-7ee5-4ce9-8bf9-0e19e984f9cc
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 41. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_right_truncatable_prime(test_case):
+    # sort by number of digits
+    test_case = sorted(test_case, key=lambda x: int(str(x).rstrip("0")))
+    # the last number is always right-truncatable
+    last = test_case[-1]
+    # the next number that is right-truncatable is the last number minus 1
+    next_r_t_p = last - 1
+    # for every number in the test case, check if it is right-truncatable
+    r_t_p = [next_r_t_p]
+    while r_t_p:
+        # check if the number is prime
+        if is_prime(r_t_p[-1]):
+            # check if the number remains prime when the last rightmost digit is removed
+            for _ in range(10):
+                # remove the last digit
+                r_t_p.append(int(str(r_t_p[-1]).rstrip("0") + str(int(str(r_t_p[-1])[0])))
+                # check if the number is prime
+                if not is_prime(r_t_p[-1]):
+                    break
+            else:
+                # the number is right-truncatable
+                r_t_p.append(r_t_p[-1])
+        # remove the last number from the list of right-truncatable primes
+        r_t_p.pop()
+        # find the next right-truncatable prime number
+        next_r_t_p = r_t_p[-1] - 1
+    return r_t_p
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,22 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row as a NumPy array
+        row = np.array(matrix[i])
+
+        # Loop over each column of the row
+        for j in range(row.size):
+            # Check if the element at (i,j) is 16
+            if row[j] == 16:
+                # If it is, increment the count variable
+                count += 1
+
+    # Return the count variable as the result of the function
+    return count
+```

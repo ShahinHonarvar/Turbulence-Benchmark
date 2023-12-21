@@ -1,0 +1,17 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 20 elements
+    if len(my_list) < 20:
+        return False
+
+    # Get the value of the 20th element in the list
+    num = my_list[20]
+
+    # Check if the number is perfect by dividing it by 2 and checking if it is equal to the sum of its proper divisors
+    if num % 2 == 0:
+        sum_divisors = 1 + num // 2
+
+        if sum_divisors == num:
+            return True
+
+    return False

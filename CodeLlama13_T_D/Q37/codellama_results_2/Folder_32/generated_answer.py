@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 23 <= ord(c) <= 89 and ord(c) >= ord('w') and ord(c) <= ord('{')])

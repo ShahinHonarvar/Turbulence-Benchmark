@@ -1,0 +1,11 @@
+```python
+def return_nth_smallest_ascii(s):
+    # Find the 8th smallest ASCII value among the characters in the string
+    ascii_values = []
+    for char in s[17:65]:
+        if char not in ascii_values:
+            ascii_values.append(ord(char))
+    ascii_values.sort()
+    return chr(ascii_values[7])
+```
+Note that this solution uses the `ord()` function to convert a character into its ASCII value, and the `chr()` function to convert an ASCII value back into a character. It also uses list slicing to extract the desired substring from the input string.

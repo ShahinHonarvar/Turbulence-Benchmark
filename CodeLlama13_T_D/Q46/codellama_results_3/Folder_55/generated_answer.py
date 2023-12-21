@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return math.gcd(numbers[9], math.gcd(numbers[6], numbers[2]))

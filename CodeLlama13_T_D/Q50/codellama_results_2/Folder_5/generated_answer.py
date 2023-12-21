@@ -1,0 +1,7 @@
+
+def if_contains_anagrams(str_list):
+    # Count the number of anagrams for each string in the list
+    anagram_counts = {s: len(set([s[i : i + 3] for i in range(len(s) - 2)])) for s in str_list}
+    
+    # Return true if there are at least 21 pairs of anagrams, otherwise false
+    return sum(anagram_counts.values()) >= 21

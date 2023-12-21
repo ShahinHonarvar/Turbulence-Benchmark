@@ -1,0 +1,9 @@
+ ```
+def return_n_smallest_chars(s: str, n: int) -> list[str]:
+    smallest_chars = []
+    for i in range(n):
+        smallest_char = min(s, key=ord)
+        smallest_chars.append(smallest_char)
+        s = s.replace(smallest_char, "", 1)
+    return sorted(smallest_chars)
+```

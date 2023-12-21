@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 20 <= ord(c) <= 79 and '!' <= c <= 'T'])

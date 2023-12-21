@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(set_elements):
+    # Initialize a list to store all subsets of size n
+    subsets = []
+
+    # Iterate over all possible combinations of elements in the set
+    for i in range(2 ** len(set_elements))):
+        # Get the binary representation of the current combination
+        binary_rep = bin(i)[2:]
+
+        # If the binary representation has length n, add it to the list of subsets
+        if len(binary_rep) == n:
+            subsets.append(set_elements & (2 ** i - 1)))
+
+    return len(subsets)

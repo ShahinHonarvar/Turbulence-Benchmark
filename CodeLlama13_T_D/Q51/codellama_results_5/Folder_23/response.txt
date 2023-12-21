@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(my_list):
+    anagrams = set()
+    for word in my_list:
+        lowercase_word = word.lower()
+        sorted_chars = "".join(sorted(lowercase_word))
+        if len(sorted_chars) >= 3 and sorted_chars not in anagrams:
+            anagrams.add(sorted_chars)
+    return len(anagrams) <= 49
+```

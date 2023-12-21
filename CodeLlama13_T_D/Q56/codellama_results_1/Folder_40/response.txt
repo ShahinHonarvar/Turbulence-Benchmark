@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)):
+            substring = s[i:j]
+            if len(set(substring)) == 2 and not any(c in substrings for c in substring):
+                substrings.append(substring)
+    return substrings
+```
+This function uses a nested loop to iterate over all possible start and end indices of the substring, and checks whether the substring is of length 2 with no duplicate characters. If it satisfies these conditions, it is added to the list of substrings. The `set` constructor is used to check for duplicates in the substring, and the `any` function is used to check if the substring is already present in the list.

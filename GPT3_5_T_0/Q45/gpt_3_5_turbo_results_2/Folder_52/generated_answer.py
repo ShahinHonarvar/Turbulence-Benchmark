@@ -1,0 +1,15 @@
+
+def palindromes_between_indices(string):
+    import itertools
+    import string
+    
+    letters = [c.lower() for c in string if c.isalpha()]
+    letters = letters[:8]
+    
+    palindromes = set()
+    for perm in itertools.permutations(letters, len(letters)):
+        word = ''.join(perm)
+        if word == word[::-1] and len(word) >= 6:
+            palindromes.add(word)
+    
+    return palindromes

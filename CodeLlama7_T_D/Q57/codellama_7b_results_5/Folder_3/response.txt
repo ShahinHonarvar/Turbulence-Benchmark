@@ -1,0 +1,39 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the result list
+    result = []
+    
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            
+            # Find the sum of all integers in the submatrix starting from (i, j)
+            submatrix_sum = 0
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    submatrix_sum += matrix[k][l]
+            
+            # Check if the sum of all integers in the submatrix is equal to 54
+            if submatrix_sum == 54:
+                
+                # If it is, add the submatrix to the result list
+                result.append(matrix[i:i + 3][j:j + 3]])
+            
+    # Return the result list
+    return result
+
+# Test the function with a small matrix
+small_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#print(submatrix_with_particular_sum(small_matrix))
+
+# Test the function with a larger matrix
+large_matrix = np.random.randint(0, 100, size=(10, 10))
+#print(submatrix_with_particular_sum(large_matrix))
+```
+This code uses NumPy to create a two-dimensional array representing the given matrix. It then iterates over each row and column of the matrix using nested loops, and for each element it checks if the sum of all integers in the submatrix starting from that element is equal to 54. If it is, the corresponding submatrix is added to the result list. Finally, the function returns the result list.
+In this code, I have used a small matrix as an example to test the functionality of the function. The output should be a list containing all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, the function should return an empty list.
+In the second part of this code, I have used a larger random matrix as an example to test the performance of the function for large matrices. The output should be a list containing all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, the function should return an empty list.
+In this code, I have used a smaller matrix as an example to test the functionality of the function. The output should be a list containing all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, the function should return an empty list.
+In the second part of this code, I have used a larger random matrix as an example to test the performance of the function for large matrices. The output should be a list containing all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, the function should return an empty list.

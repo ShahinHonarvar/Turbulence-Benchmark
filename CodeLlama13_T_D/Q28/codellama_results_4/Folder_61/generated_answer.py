@@ -1,0 +1,4 @@
+
+def return_nth_smallest_ascii(string):
+    chars = sorted(set(string))
+    return min(chars[9:10], key=ord)

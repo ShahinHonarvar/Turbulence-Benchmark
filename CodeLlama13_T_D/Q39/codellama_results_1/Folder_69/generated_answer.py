@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(string):
+    chars = sorted(set(string), key=lambda x: ord(x), reverse=True)[:65]
+    return ''.join(chars)

@@ -1,0 +1,20 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables for keeping track of anagrams
+    num_anagrams = 0
+    num_pairs = 0
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string and its length
+        s = my_list[i]
+        l = len(s)
+        # Check if the current string is a palindrome
+        if s == s[::-1]:
+            # Increment the number of anagrams
+            num_anagrams += 1
+            # Check if the current string is at least three characters long
+            if l >= 3:
+                # Increment the number of pairs of anagrams
+                num_pairs += 1
+    # Return True if there are at most two pairs of anagrams in the given list, and False otherwise.
+    return num_pairs <= 255

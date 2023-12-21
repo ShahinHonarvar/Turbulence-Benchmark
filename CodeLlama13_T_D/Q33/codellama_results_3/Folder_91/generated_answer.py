@@ -1,0 +1,9 @@
+
+def return_vowels(s):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    start, end = 4, 8
+    result = []
+    for i in range(start, len(s)):
+        if s[i] in vowels and ord(s[i]) <= ord('r') and ord(s[i]) > ord('p'):
+            result.append(s[i])
+    return result

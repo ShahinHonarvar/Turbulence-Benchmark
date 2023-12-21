@@ -1,0 +1,15 @@
+
+def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate through each character in the input string
+    for char in s:
+
+        # If the current character is between indices 69 and 97 (both exclusive) and it is greater than 'V' and smaller than 'j', remove all occurrences of that character within the string while keeping the order of all characters intact.
+        if char >= "V" and char <= "j" and char not in filtered_chars:
+            # Add the current character to the list of filtered characters
+            filtered_chars.append(char)
+
+    # Return the altered string with the filtered characters removed
+    return "".join(s for s in s if s not in filtered_chars)

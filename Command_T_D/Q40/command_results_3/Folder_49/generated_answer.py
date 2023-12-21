@@ -1,0 +1,3 @@
+import re
+def return_n_smallest_chars(s):
+    return sorted(re.findall("[A-z]", s), key=lambda x: ord(x))[:76]

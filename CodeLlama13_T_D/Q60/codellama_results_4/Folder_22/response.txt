@@ -1,0 +1,13 @@
+```python
+def all_left_right_truncatable_prime(nums):
+    left_trunc = []
+    right_trunc = []
+    for num in nums:
+        if str(num)[1:-1]:
+            continue
+        if is_prime(num) and is_prime(num[:-1]) and is_prime(num[1:]):
+            left_trunc.append(num)
+            right_trunc.append(num)
+    return sorted(left_trunc + right_trunc)
+```
+This function uses the `is_prime` function to check if a number is prime, and then checks if it remains prime when its leading leftmost and last rightmost digits are simultaneously removed down to a one- or two-digit prime. If both of these conditions are met, the number is added to either the `left_trunc` or `right_trunc` list, depending on whether it was truncated from the left or right side. Finally, the lists are combined and sorted in ascending order to produce the final output.

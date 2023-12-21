@@ -1,0 +1,29 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    minimum_length = 3
+
+    # Check each string in the list
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Count the number of anagrams in the string
+        for i in range(len(lowercase_string) - minimum_length + 1):
+            substring = lowercase_string[i:i+minimum_length]
+            if is_anagram(substring):
+                anagram_count += 1
+
+    # Return the result
+    return anagram_count <= 19
+
+def is_anagram(string):
+    # Convert the string to a list of characters
+    character_list = [char for char in string]
+
+    # Sort the list of characters
+    sorted_character_list = sorted(character_list)
+
+    # Check if the list of characters is an anagram
+    return ''.join(sorted_character_list) == ''.join(character_list)

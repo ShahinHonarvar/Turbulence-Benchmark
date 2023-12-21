@@ -1,0 +1,13 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Check if the input is a list of integers
+    if not (isinstance(my_list, list) and all(isinstance(x, int) for x in my_list))):
+        raise ValueError("Input must be a list of integers")
+    # Initialize an empty list to store the odd integers
+    odd_ints = []
+    # Iterate through the list and append the odd integers to the output list
+    for i in range(100, 201):
+        if my_list[i] % 2 != 0:
+            odd_ints.append(my_list[i])
+    # Return the list of all odd integers from index 100 to index 200, both inclusive
+    return odd_ints

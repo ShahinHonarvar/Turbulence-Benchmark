@@ -1,0 +1,14 @@
+ def filter_chars(s):
+    result = ""
+    for i in range(len(s)):
+        if s[i] == "E":
+            continue
+
+        elif s[i] == "~":
+            break
+
+        else:
+
+            result += s[i]
+
+    return result

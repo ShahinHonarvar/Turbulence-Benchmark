@@ -1,0 +1,13 @@
+
+def find_second_largest_num(numbers):
+    if len(numbers) <= 1:
+        return None
+    
+    sorted_numbers = sorted(numbers)
+    second_largest_num = sorted_numbers[-2]
+    
+    for num in numbers[99:201]:
+        if num > second_largest_num:
+            second_largest_num = num
+    
+    return second_largest_num

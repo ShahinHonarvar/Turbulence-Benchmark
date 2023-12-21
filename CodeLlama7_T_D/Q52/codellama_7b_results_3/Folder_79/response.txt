@@ -1,0 +1,14 @@
+ ```
+def palindrome_of_length_n(string):
+# Case-insensitive search for palindromes of length n
+pattern = r"[a-z][A-Z]*{n}[a-z][A-Z]*"
+# Compile the pattern as a regular expression
+regex = re.compile(pattern, re.IGNORECASE)
+# Find all matches in the input string
+matches = regex.findall(string)
+# Return the set of palindromes found
+return {match for match in matches}
+```
+This code defines a function called `palindrome_of_length_n` that takes one argument, a string, and returns the set of all palindromes of the length equal to 64, where each palindrome is a substring of the given string. Each palindrome should only consist of English letters. If there is no palindrome of the specified length as a substring of the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.
+To achieve this functionality, the code first defines a regular expression pattern that matches any combination of lowercase and uppercase English letters, enclosed in square brackets to indicate a character class. This pattern is then used to compile a regular expression object, which can be used to search for matches in the input string.
+The code then uses the `findall` method of the compiled regular expression object to find all matches in the input string that match the regular expression pattern. These matches are then converted into a set of palindromes by applying the `set` constructor and the `map` function to the list of matches. The resulting set of palindromes is then returned as the value of the `palindrome_of_length_n` function.

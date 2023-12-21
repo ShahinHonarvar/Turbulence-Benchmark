@@ -1,0 +1,13 @@
+
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate over the characters in the list
+    for i in range(299, 418):
+        # Check if the current character is greater than '9' and smaller than 'P'
+        if char_list[i] > '9' and char_list[i] < 'P':
+            # Remove all occurrences of the current character from the string
+            while char_list[i] in string:
+                char_list.remove(char_list[i])
+    # Join the list of characters back into a string
+    return "".join(char_list)

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(input_matrix):\n    if not isinstance(input_matrix, np.ndarray):\n        return \"Input must be a numpy ndarray\"\n    else:\n        num_of_integers = 54\n        num_of_rows, num_of_cols = input_matrix.shape\n        counter = 0\n        for rows in range(num_of_rows):\n            for cols in range(num_of_cols):\n                for sub_rows in range(rows+1, num_of_rows+1):\n                    for sub_cols in range(cols+1, num_of_cols+1):\n                        if input_matrix[rows:sub_rows, cols:sub_cols].size == num_of_integers:\n                            counter += 1\n        return counter\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691095307,
+  "id": "chatcmpl-7jZQhdddPnRgbwC4J26YqI1QOmCE9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 152,
+    "prompt_tokens": 111,
+    "total_tokens": 263
+  }
+}

@@ -1,0 +1,15 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+a = my_tuple[2]
+b = my_tuple[7]
+sum = 0
+for i in range(a + 1, b):
+if i not in my_tuple[2:7]:
+sum += i
+if sum % 2 == 1:
+return bin(sum)[2:]
+else:
+return hex(sum)[2:]
+
+```
+This code will solve the problem and return an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple. The binary representation should not be prefixed with '0b'. The hexadecimal representation should not be prefixed with '0x'. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.

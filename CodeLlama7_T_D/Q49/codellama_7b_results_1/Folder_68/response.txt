@@ -1,0 +1,18 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables for storing the Fibonacci sequence numbers
+    fib_1 = 0
+    fib_2 = 1
+    # Calculate the Fibonacci sequence numbers until the 38th one is reached
+    for i in range(37):
+        fib_1, fib_2 = fib_2, fib_1 + fib_2
+    # Check if the decimal integer is divisible by the 38th Fibonacci number
+    return decimal_integer % fib_2 == 0
+```
+Explanation:
+The function takes a binary representation string of a non-negative decimal integer as input. It converts the binary representation to a decimal integer using the `int` constructor with base 2.
+Next, the function calculates the first 37 numbers of the Fibonacci sequence using a simple recursive formula. The first two elements of the sequence are 0 and 1, respectively. Subsequent elements are calculated by adding the previous two elements.
+Once the first 37 Fibonacci sequence numbers have been calculated, the function checks if the decimal integer is divisible by the 38th number in the sequence (which corresponds to the 38th iteration of the recursive formula). If the decimal integer is divisible by the 38th Fibonacci number, the function returns `True`. Otherwise, it returns `False`.
+The time complexity of this solution is O(log n), where n is the length of the binary representation string. This is because the loop that calculates the Fibonacci sequence numbers only runs for 37 iterations, which is a constant time. The rest of the code has a time complexity of O(1), which means it takes a constant amount of time to execute regardless of the size of the input.

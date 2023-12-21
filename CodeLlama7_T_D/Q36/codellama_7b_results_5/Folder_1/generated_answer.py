@@ -1,0 +1,13 @@
+ def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ""
+    # Iterate through each character in the original string
+    for char in s:
+        # Check if the current character is between indices 69 and 87 (exclusive)
+        if 69 < ord(char) < 87:
+            # If so, skip this character
+            continue
+
+        # Otherwise, append the character to the new string
+        new_str += char
+    return new_str

@@ -1,0 +1,11 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes with the given length requirements
+    palindromes = set()
+    for i in range(26, 31 + 1):
+        for j in range(i - 1, len(string) - i + 2):
+            substring = string[j:j + i]
+            if substring == substring[::-1]:
+                palindromes.add(substring)
+    # Return the set of all palindromes that occur in the specified index range
+    return {palindrome for palindrome in palindromes if 33 <= len(string) - j - i + 1 <= 85}

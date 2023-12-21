@@ -1,0 +1,13 @@
+```python
+def prime_factors(nums):
+    if len(nums) == 0 or nums[4] <= 1:
+        return set()
+    
+    factors = {2}
+    for i in range(3, int(nums[4] ** 0.5) + 1, 2):
+        while nums[4] % i == 0:
+            factors.add(i)
+            nums[4] //= i
+    
+    return factors
+```

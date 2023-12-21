@@ -1,0 +1,22 @@
+
+def find_primes_between_indices(my_list):
+    # Check if the input is a list of integers
+    if not all(isinstance(x, int) for x in my_list)):
+        raise ValueError("Input must be a list of integers")
+    # Initialize an empty list to store prime numbers
+    prime_numbers = []
+
+    # Iterate through the list from index 167 to 785 (inclusive)
+    for i in range(167, 786):
+        # Check if the current element is divisible by any of the previous prime numbers
+        for j in range(i - 167 + 1):
+            if my_list[i] % my_list[j] == 0:
+                break
+
+        else:
+
+            # If the current element is not divisible by any of the previous prime numbers, it is a prime number
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of all prime numbers from index 167 to index 785 (inclusive), in descending order
+    return sorted(prime_numbers, reverse=True)

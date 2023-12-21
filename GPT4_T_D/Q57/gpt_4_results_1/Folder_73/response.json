@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    m, n = matrix.shape\n    submatrix_list = []\n\n    for submatrix_width in range(1, m+1):\n        for submatrix_height in range(1, n+1):\n            for i in range(m - submatrix_width + 1):\n                for j in range(n - submatrix_height + 1):\n                    submatrix = matrix[i:(i+submatrix_width), j:(j+submatrix_height)]\n                    if np.sum(submatrix) == 93:\n                        submatrix_list.append(submatrix)\n\n    return submatrix_list\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081708,
+  "id": "chatcmpl-7fJkKKy4RKdLf4d1NJSVBBrxzKuHt",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 135,
+    "prompt_tokens": 121,
+    "total_tokens": 256
+  }
+}

@@ -1,0 +1,28 @@
+ def remove_repeat_chars(s):
+    # Initialize a new string to store the altered input
+    result = ""
+
+    # Iterate over each character in the input string
+    for i, c in enumerate(s):
+
+        # If the current character is not the same as the previous character
+        if i > 0 and c == s[i - 1]:
+
+            # Continue to the next character
+            continue
+
+
+        # If the current character occurs more than once between indices 20 and 43
+        if s.count(c) > 1 and i < 20 or i > 43:
+
+            # Remove all occurrences of the current character from the input string
+            result += s[i] * (s.count(c) - 1)
+
+        # Otherwise, just append the current character to the output string
+        else:
+
+            result += c
+
+
+    # Return the altered input string
+    return result

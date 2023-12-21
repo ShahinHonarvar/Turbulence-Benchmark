@@ -1,0 +1,14 @@
+ Here's a possible implementation of the `filter_chars` function:
+```python
+def filter_chars(string):
+    # Create a list of characters in the string
+    char_list = list(string)
+    # Loop through each character in the list
+    for i, char in enumerate(char_list):
+        # Check if the character is between 44 and 68 (both exclusive)
+        if 44 < ord(char) < 68:
+            # Remove all occurrences of the character from the list
+            char_list = [c for c in char_list if c != char]
+    return "".join(char_list)
+```
+This code first creates a list of characters in the input string. It then loops through each character in the list and checks if it is between 44 and 68 (both exclusive). If it is, the function removes all occurrences of that character from the list. Finally, the function joins the remaining characters in the list back into a single string and returns it.

@@ -1,0 +1,20 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the required lengths for palindromes
+    min_length = 5
+    max_length = 80
+    # Create a set to store the found palindromes
+    palindromes = set()
+    # Iterate through the characters in the string
+    for i in range(len(string)):
+        # Get the substring starting from index i to index 20
+        substring = string[i:i+21]
+        # Iterate through the characters in the substring
+        for j in range(len(substring) - 1):
+            # Check if the substring is a palindrome
+            if substring[j:j+2] == substring[j+1:j+3]:
+                # If it is, add it to the set of palindromes
+                palindromes.add(substring[j:j+2])
+    # Return the set of found palindromes
+    return palindromes
+```

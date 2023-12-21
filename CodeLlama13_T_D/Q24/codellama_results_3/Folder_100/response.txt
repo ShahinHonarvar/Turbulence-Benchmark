@@ -1,0 +1,9 @@
+```python
+def sum_of_divisors_in_range(n):
+    divisors = []
+    for i in range(1, n+1):
+        if n % i == 0 and 11 <= i <= 41:
+            divisors.append(i)
+    return sum(divisors)
+```
+This function takes a positive integer `n` as its argument, and uses a list comprehension to create a list of all positive divisors of `n` that are between 11 and 41, both inclusive. The list is then passed to the built-in `sum()` function to calculate the sum of the elements in the list. If no such divisors exist in the specified range, the function returns 0.

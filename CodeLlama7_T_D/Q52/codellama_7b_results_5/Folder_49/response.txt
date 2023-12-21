@@ -1,0 +1,21 @@
+ ```
+def palindrome_of_length_n(string):
+    # Define a function to check if a string is a palindrome
+    def is_palindrome(s):
+        return s == s[::-1]
+    
+    # Create a list of all substrings of the given string
+    substrings = [string[i:j+1] for i in range(len(string)) for j in range(i, len(string))]
+    
+    # Filter the substrings to only include palindromes
+    palindromes = [s for s in substrings if is_palindrome(s)]
+    
+    # Return the set of palindromes
+    return set(palindromes)
+
+# Test the function with a sample string and expected output
+string = "abcdedcba"
+expected = {"racecar", "level"}
+# (modified) assert palindrome_of_length_n(string) == expected
+
+```

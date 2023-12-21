@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\ndef lists_with_product_equal_n(circle):\n\n    circle_deque = deque(circle)\n    result = []\n    for n in range(len(circle_deque)):\n        sub_list = []\n        product = 1\n        for m in range(len(circle_deque)):\n            sub_list.append(circle_deque[m])\n            product *= circle_deque[m]\n            if product == 49:\n                result.append(list(sub_list))\n                break\n        circle_deque.rotate(1)\n        \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690079586,
+  "id": "chatcmpl-7fJC6hkuDDuoSozlvbrNADoUWhzuC",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 193,
+    "total_tokens": 300
+  }
+}

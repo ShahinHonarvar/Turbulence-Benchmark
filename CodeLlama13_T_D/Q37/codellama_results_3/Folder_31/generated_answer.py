@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return "".join([c for c in string if not (57 <= ord(c) <= 96 and "<" <= c <= "w")])

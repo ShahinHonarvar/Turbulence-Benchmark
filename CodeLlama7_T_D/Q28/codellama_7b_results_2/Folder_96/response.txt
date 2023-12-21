@@ -1,0 +1,11 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Extract the unique characters from the string
+unique_chars = set(string)
+# Create a list of tuples containing each character and its ASCII value
+char_list = [(char, ord(char)) for char in unique_chars]
+# Sort the list by the ASCII value of each character
+sorted_list = sorted(char_list, key=lambda x: x[1])
+# Return the 18th smallest ASCII value
+return sorted_list[17][0]
+```

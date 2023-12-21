@@ -1,0 +1,19 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    anagram_pairs = []
+    # Iterate through the list of strings
+    for i in range(len(my_list)):
+        # Check if the current string is an anagram of any previous strings
+        for j in range(i):
+            # If the current string is an anagram of a previous string, add it to the list of anagram pairs
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                anagram_pairs.append((i, j)))
+        # Check if there are at least 88 pairs of anagrams in the given list
+        if len(anagram_pairs) >= 88:
+            return True
+    # If there are not at least 88 pairs of anagrams in the given list, return False
+    else:
+        return False
+```

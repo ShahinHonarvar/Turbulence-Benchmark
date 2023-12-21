@@ -1,0 +1,12 @@
+
+def find_second_largest_num(my_list):
+    if len(my_list) < 5:
+        return None
+    else:
+        sorted_list = sorted(my_list, reverse=True)
+        for i in range(4):
+            if sorted_list[i] == sorted_list[0]:
+                continue
+            else:
+                return sorted_list[i]
+        return None

@@ -1,0 +1,17 @@
+ ```
+def find_original_set(sets):
+\# Check if all inputs are sets and have the same size
+if not all([isinstance(s, set) and len(s) == 849 for s in sets])):
+return None
+
+\# Create a new set with the same size as the input sets
+new_set = set()
+
+\# Add each element from each set to the new set
+for s in sets:
+for elem in s:
+new_set.add(elem)
+
+\# Return the smallest set that contains all elements from the input sets
+return new_set
+```

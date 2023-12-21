@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(20, 63):
+        if string[i] >= 'i' and string[i] <= 'k':
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

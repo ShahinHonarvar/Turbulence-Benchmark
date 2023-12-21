@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = 0
+    for s in strings:
+        for t in strings[strings.index(s) + 1:]:
+            if is_anagram(s, t):
+                anagram_pairs += 1
+                if anagram_pairs > 93:
+                    return False
+    return True
+
+def is_anagram(s1, s2):
+    return sorted(s1.lower()) == sorted(s2.lower()) and len(s1) >= 3

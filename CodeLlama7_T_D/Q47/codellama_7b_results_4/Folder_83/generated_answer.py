@@ -1,0 +1,34 @@
+
+def palindromes_of_specific_lengths(string, index_range=(75, 95), lengths=(7, 8, 9)):
+    # check if the input string is a valid  string
+    if not isinstance(string, str):
+        raise TypeError("Input string must be of type 'str'")
+    # check if the index range is valid and convert it to a tuple if necessary
+    if isinstance(index_range, int):
+        index_range = (index_range, index_range)
+    if not (isinstance(index_range[0], int) and isinstance(index_range[1], int))):
+        raise TypeError("Index range must be a tuple of two integers")
+    # check if the lengths are valid and convert them to a tuple if necessary
+    if isinstance(lengths, int):
+        lengths = (lengths, lengths)
+    if not (isinstance(lengths[0], int) and isinstance(lengths[1], int))):
+        raise TypeError("Lengths must be a tuple of two integers")
+    # check if the string is long enough to contain palindromes in the specified index range
+    if len(string) < index_range[1]:
+        return set()
+    # find all palindromes with lengths between 7 and 9 (both inclusive) that occur in the substring from index 75 to index 95, both inclusive
+    palindromes = set()
+    for i in range(index_range[0], index_range[1] + 1):
+        for j in range(i, len(string)):
+            substr = string[i:j+1]
+            if len(substr) < lengths[0]:
+                continue
+
+            if len(substr) > lengths[1]:
+                break
+
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+
+    # return the set of all palindromes with lengths between 7 and 9 (both inclusive) that occur in the substring from index 75 to index 95, both inclusive
+    return palindromes

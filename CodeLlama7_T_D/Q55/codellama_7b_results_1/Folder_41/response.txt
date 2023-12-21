@@ -1,0 +1,20 @@
+ ```
+def lists_with_product_equal_n(my_list):
+# Check if there are any duplicates in the list
+seen = set()
+for i in my_list:
+if i in seen:
+return []
+else:
+seen.add(i)
+# Calculate the product of the elements in the list
+product = 1
+for i in my_list:
+product *= i
+# Check if there are any sublists with a product equal to -20
+if product == -20:
+return [my_list]
+# If no such sublist exists, return an empty list
+else:
+return []
+```

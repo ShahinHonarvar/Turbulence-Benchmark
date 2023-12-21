@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    num_anagram_pairs = 0
+    for i in range(len(my_list)):
+        word1 = my_list[i]
+        for j in range(i + 1, len(my_list))):
+            word2 = my_list[j]
+            # If the words are anagrams of each other, increment the number of anagram pairs
+            if sorted(word1) == sorted(word2):
+                num_anagram_pairs += 1
+    # Return True if there are at most 85 pairs of anagrams in the list; otherwise, return False
+    return num_anagram_pairs <= 85

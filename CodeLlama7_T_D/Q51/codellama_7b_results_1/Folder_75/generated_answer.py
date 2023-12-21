@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(strings):
+    # Define a set of all the anagrammatic strings in the input list
+    anagrammatic_strings = {s for s in strings if len(s) >= 3 and is_anagrammatic(s)}
+    # Check if there are more than 55 pairs of anagrams in the input list
+    return len(anagrammatic_strings) <= 55
+
+def is_anagrammatic(string):
+    # Define a set of all the letters in the input string
+    letters = {letter for letter in string}
+
+    # Check if all the letters in the input string are present in the alphabet
+
+    return len(letters) == 26

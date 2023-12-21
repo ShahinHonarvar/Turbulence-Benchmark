@@ -1,0 +1,7 @@
+
+def find_n_th_smallest_num(arr):
+    n = 6
+    start = 57
+    end = 70
+    arr = sorted(arr)
+    return arr[start + (end - start) * n // len(arr)]

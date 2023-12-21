@@ -1,0 +1,19 @@
+
+def find_second_largest_num(my_list):
+    # Find the largest element in the list
+    largest = max(my_list)
+
+    # Create a copy of the list without the largest element
+    copy_list = my_list.copy()
+    copy_list.remove(largest)
+
+    # Find the second largest element in the modified list
+    second_largest = max(copy_list)
+
+    # Return the second largest element, or None if it doesn't exist
+    if second_largest == largest:
+        return None
+
+    else:
+
+        return second_largest

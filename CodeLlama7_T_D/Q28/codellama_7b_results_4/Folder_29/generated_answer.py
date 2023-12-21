@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # Calculate the ASCII value of each character in the string
+    ascii_values = [ord(char) for char in string]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 6th smallest ASCII value among those that occur between indices 5 to 10, both inclusive
+    return sorted_ascii_values[5:11][5]]

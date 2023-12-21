@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(set):
+    # Initialize a counter for the number of subsets
+    count = 0
+
+    # Iterate over all possible subsets of size 35
+    for i in range(2**35):
+
+        # If the subset is in the given set, increment the counter
+        if set(bin(i)[2:].zfill(35)) & set == set:
+            count += 1
+
+    # Return the number of subsets of size 35 in the given set
+    return count

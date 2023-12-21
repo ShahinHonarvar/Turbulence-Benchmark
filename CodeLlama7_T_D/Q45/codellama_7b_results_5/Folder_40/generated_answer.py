@@ -1,0 +1,13 @@
+
+def palindromes_between_indices(string):
+    # create a list of all possible substrings
+    # between indices 4 and 9 (inclusive)
+    substrings = []
+    for i in range(4, len(string) - 8):
+        substrings.append(string[i:i+9])
+    # filter the substrings to only include those that are palindromes
+    palindromes = [substring for substring in substrings if substring == substring[::-1]]
+    # form each palindrome in a case-insensitive manner
+    for i, palindrome in enumerate(palindromes):
+        palindromes[i] = palindrome.lower()
+    return set(palindromes)

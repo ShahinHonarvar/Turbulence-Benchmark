@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mtrx):\n    output = []\n    rows, cols = mtrx.shape\n    for x in range(rows):\n        for y in range(cols):\n            for width in range(0, cols - y + 1):\n                for height in range(0, rows - x + 1):\n                    submatrix = mtrx[x:x + height, y:y + width]\n                    if np.sum(submatrix) == -863:\n                        output.append(submatrix.tolist())\n    return output\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690080656,
+  "id": "chatcmpl-7fJTMVWCxtv4KIVNvVuV0pteqwZAH",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 121,
+    "total_tokens": 236
+  }
+}

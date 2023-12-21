@@ -1,0 +1,16 @@
+```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the Fibonacci sequence up to 60
+    fibonacci = [0] + [1] + [fibonacci[i-1] + fibonacci[i-2] for i in range(2, 60)]
+    
+    # Check if the decimal is divisible by any of the numbers in the Fibonacci sequence
+    for num in fibonacci:
+        if decimal % num == 0:
+            return True
+    
+    # If none of the numbers divide evenly, return False
+    return False
+```

@@ -1,0 +1,12 @@
+
+def all_neg_ints_inclusive(my_list):
+    # Get the indices of the negative integers in the specified range
+    start_idx = 4
+    end_idx = 8
+    neg_int_indices = [i for i, x in enumerate(my_list[start_idx:end_idx+1]) if x < 0]
+    # Return an empty list if no negative integers exist in the specified range
+    if not neg_int_indices:
+        return []
+
+    # Return the list of all negative integers from index 4 to index 8, both inclusive
+    return [my_list[i] for i in neg_int_indices]

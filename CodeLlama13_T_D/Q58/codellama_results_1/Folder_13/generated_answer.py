@@ -1,0 +1,10 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(mat, n):
+    count = 0
+    for i in range(len(mat) - n + 1):
+        for j in range(len(mat[0]) - n + 1):
+            if np.count_nonzero(mat[i:i+n,j:j+n] == 175) == n**2:
+                count += 1
+    return count

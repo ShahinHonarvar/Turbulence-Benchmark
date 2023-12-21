@@ -1,0 +1,7 @@
+```python
+def palindrome_of_length_at_least_n(s):
+    return {p for p in re.findall(r'[A-Za-z]{137,}', s) if p == p[::-1]}
+```
+This function uses the `re` module to find all palindromes of length greater than or equal to 137 that exist in the given string. It then checks each found palindrome to see if it is also a palindrome when written backwards, and returns the set of all such palindromes. If no such palindromes are found, an empty set is returned.
+
+For example, calling the function with `s = "racecar 123456789"` would return the set `{"racecar"}`.

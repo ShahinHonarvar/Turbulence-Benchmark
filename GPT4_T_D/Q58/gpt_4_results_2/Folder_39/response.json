@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    if not isinstance(matrix, np.ndarray):\n        return 0\n        \n    count = 0\n    rows, columns = matrix.shape\n    \n    for sub_row in range(1, rows+1):\n        for sub_col in range(1, columns+1):\n            if sub_row*sub_col == 59:\n                count += (rows - sub_row + 1) * (columns - sub_col + 1)\n                \n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908775,
+  "id": "chatcmpl-7imu7ukXfAhSYsl1aJYiNyhMSSuQt",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 111,
+    "total_tokens": 220
+  }
+}

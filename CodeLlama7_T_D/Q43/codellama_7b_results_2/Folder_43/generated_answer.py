@@ -1,0 +1,16 @@
+
+def find_primes_between_indices(my_list):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the list of integers in the specified range
+    for i in range(31, 92 + 1):
+
+        # Check if the current number is a prime number
+        if my_list[i] == 1:
+
+            # If it is a prime number, add it to the list of prime numbers
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of all prime numbers from index 31 to index 92, both inclusive
+    return sorted(prime_numbers)

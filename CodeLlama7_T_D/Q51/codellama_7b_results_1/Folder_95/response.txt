@@ -1,0 +1,22 @@
+ ```
+def if_contains_anagrams(words):
+    # Initialize variables
+    anagram_count = 0
+    minimum_length = 3
+
+    # Iterate over the list of words
+    for i in range(len(words)):
+        # Get the current word
+        word1 = words[i]
+        # Compare it to all other words
+        for j in range(i + 1, len(words)):
+            # Get the other word
+            word2 = words[j]
+            # Check if the two words are anagrams
+            if sorted(word1) == sorted(word2):
+                # Increment the anagram count
+                anagram_count += 1
+
+    # Return true if there are at most 6 pairs of anagrams, false otherwise
+    return anagram_count <= 6
+```

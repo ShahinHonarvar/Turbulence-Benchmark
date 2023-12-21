@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_decimal_is_divisible(binary_representation):\n    fibonacci = [0, 1]  # Fibonacci sequence starting from 0, 1\n    n = 2\n    while len(fibonacci) <= 177:  # Generate Fibonacci sequence up to the 177th number\n        fibonacci.append(fibonacci[n-1] + fibonacci[n-2])\n        n += 1\n    \n    decimal_integer = int(binary_representation, 2)  # Convert binary representation to decimal integer\n    \n    return decimal_integer % fibonacci[177] == 0\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689818440,
+  "id": "chatcmpl-7eDG4HWET2X0MtIm1dgEhTKn7QSdr",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 119,
+    "prompt_tokens": 137,
+    "total_tokens": 256
+  }
+}

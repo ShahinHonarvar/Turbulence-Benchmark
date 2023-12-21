@@ -1,0 +1,17 @@
+
+def find_second_largest_num(numbers):
+    if len(numbers) < 2:
+        return None
+    
+    numbers.sort()
+    largest = numbers[-1]
+    second_largest = numbers[-2]
+    
+    for i in range(7, -1, -1):
+        if numbers[i] == largest:
+            continue
+        
+        second_largest = numbers[i]
+        break
+    
+    return second_largest

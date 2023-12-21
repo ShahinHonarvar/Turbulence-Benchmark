@@ -1,0 +1,39 @@
+ def all_left_truncatable_prime(tuple_of_primes):
+    # Unpack the tuple of primes and define x as the 36th element
+    x = tuple_of_primes[35]
+    # Initialize an empty list to store the left-truncatable prime numbers
+    left_truncatable_primes = []
+    # Iterate over all prime numbers less than x
+    for i in range(2, x):
+        # Check if the number is a prime number and it is left-truncatable
+        if is_prime(i) and is_left_truncatable(i):
+            # Add the prime number to the list of left-truncatable prime numbers
+            left_truncatable_primes.append(i)
+    # Sort the list of left-truncatable prime numbers in ascending order
+    left_truncatable_primes.sort()
+    return left_truncatable_primes
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        return False
+
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+# Define a function to check if a number is left-truncatable
+def is_left_truncatable(n):
+    # Check if n contains any 0 digits
+    if '0' in str(n):
+        return False
+
+    # Check if the leading leftmost digit of n is successively removed, then all resulting numbers are prime
+    for i in range(1, len(str(n)))):
+        if not is_prime(int(str(n)[:i])):
+            return False
+
+    return True

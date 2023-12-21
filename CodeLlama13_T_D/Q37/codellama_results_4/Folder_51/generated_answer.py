@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if (not (36 <= ord(c) <= 40) or c < 'H' or c > 'e')])

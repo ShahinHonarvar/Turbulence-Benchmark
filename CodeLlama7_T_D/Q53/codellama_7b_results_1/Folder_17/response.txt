@@ -1,0 +1,24 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+# Check if the input string is empty or None
+if not string: return set()
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Loop through each character in the string
+for i in range(len(string)):
+# Get the character at index i
+char = string[i]
+# If the character is not a letter, skip it
+if not char.isalpha(): continue
+
+# Create a copy of the input string without the character at index i
+copy = string[:i] + string[i+1:]
+
+# Recursively call the function with the copy and n=36
+palindromes |= palindrome_of_length_at_least_n(copy, 36)
+
+# If the length of the input string is greater than or equal to n, add the input string to the set of palindromes
+if len(string) >= n: palindromes.add(string)
+
+return palindromes
+```

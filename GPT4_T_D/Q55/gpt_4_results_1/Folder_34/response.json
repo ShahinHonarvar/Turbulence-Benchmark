@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code for the given specification:\n\n```python\ndef lists_with_product_equal_n(circular_list):\n    length = len(circular_list)\n    circular_list += circular_list\n    results = []\n    for i in range(length):\n        for j in range(i+1, i+length+1):\n            nums = circular_list[i:j]\n            prod = 1\n            for num in nums:\n                prod *= num\n            if prod == -81:\n                results.append(nums)\n    return results\n```\nThis solution duplicates the original list to simulate the circularity, then with two nested loops, it checks every contiguous sublist in the list. If the product of the elements of the sublist is equal to -81, it adds this sublist to the list to be returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690079240,
+  "id": "chatcmpl-7fJ6WbgO74IOAA2zpOV1yLPFFPM2C",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 193,
+    "total_tokens": 353
+  }
+}

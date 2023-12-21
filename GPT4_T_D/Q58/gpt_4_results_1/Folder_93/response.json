@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(matrix.shape[0]):\n        for j in range(matrix.shape[1]):\n            for p in range(i, matrix.shape[0]):\n                for q in range(j, matrix.shape[1]):\n                    if (p - i + 1) * (q - j + 1) == 53:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083246,
+  "id": "chatcmpl-7fK98Y51Sk1QC6kLvRWvfcDCS8yco",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 111,
+    "total_tokens": 211
+  }
+}

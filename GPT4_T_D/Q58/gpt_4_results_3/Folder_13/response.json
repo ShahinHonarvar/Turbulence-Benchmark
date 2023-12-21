@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(mat):\n    count = 0\n    rows, cols = mat.shape[0], mat.shape[1]\n    \n    for r_dim in range(1, rows + 1):\n        for c_dim in range(1, cols + 1):\n            if r_dim * c_dim == 175:\n                for x in range(rows - r_dim + 1):\n                    for y in range(cols - c_dim + 1):\n                        count += 1\n                        \n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690985768,
+  "id": "chatcmpl-7j6vwwtYcIARuOws7r087wZhasHWK",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 114,
+    "prompt_tokens": 111,
+    "total_tokens": 225
+  }
+}

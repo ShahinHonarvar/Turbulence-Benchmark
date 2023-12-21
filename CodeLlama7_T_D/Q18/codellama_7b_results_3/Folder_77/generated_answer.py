@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    start_index = 828
+    end_index = 932
+    divisor_1 = -649
+    divisor_2 = -461
+    total_sum = 0
+    # Iterate through the list and sum up all integers divisible by either -649 or -461 from index 828 to index 932, both inclusive
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % divisor_1 == 0 or my_list[i] % divisor_2 == 0:
+            total_sum += my_list[i]
+    # Return the sum of all integers divisible by either -649 or -461 from index 828 to index 932, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return total_sum

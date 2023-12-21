@@ -1,0 +1,3 @@
+
+def find_original_set(s1, s2, s3):
+    return {x for x in s1 | s2 | s3}

@@ -1,0 +1,10 @@
+
+def gcf_three_nums(my_list):
+    # Find the greatest common factor of three numbers using the Euclidean algorithm
+    def gcf(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    # Return the greatest common factor of the elements at indices 31, 69 and 40
+    return gcf(my_list[31], my_list[69]), gcf(my_list[31], my_list[40])

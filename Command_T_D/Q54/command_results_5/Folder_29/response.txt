@@ -1,0 +1,26 @@
+[cohere.Generation {
+	id: 4a8c0850-9bd8-479a-92dc-9518f7ff34b7
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 55. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+input = sys.stdin.readline
+
+def all_right_truncatable_prime(nums):
+    # your code here
+    primes = []
+    # find all prime numbers less than 55
+    # use n=nums[55] to find the prime numbers less than 55
+    for n in range(2, int(str(nums[55])[0])+1):
+        # check if n is prime
+        if all(n%d!=0 for d in range(2, int(str(n))[0]+1)):
+            # check if n is right truncatable
+            if n%2!=0 and str(n)[-1]!='5' and str(n)[-1]!='0':
+                # if it is, add it to the list of primes
+                primes.append(n)
+    return primes
+```
+	likelihood: None
+	token_likelihoods: None
+}]

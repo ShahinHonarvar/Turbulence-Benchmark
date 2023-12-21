@@ -1,0 +1,24 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of three numbers
+    # using the Euclidean algorithm
+
+    # Initialize the variables for the three numbers
+    num1 = my_list[13]
+    num2 = my_list[76]
+    num3 = my_list[44]
+
+    # Calculate the greatest common factor of the three numbers
+    gcf = 1
+
+    while True:
+        if (num1 % gcf == 0) and (num2 % gcf == 0) and (num3 % gcf == 0):
+            break
+
+        else:
+
+            gcf += 1
+
+
+    # Return the greatest common factor of the three numbers
+    return gcf

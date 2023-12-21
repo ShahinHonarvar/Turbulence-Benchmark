@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[40] == sum(range(1, int(sqrt(numbers[40])) + 1))**2

@@ -1,0 +1,11 @@
+```python
+def if_contains_anagrams(str_list):
+    anagrams = []
+    for i in range(len(str_list)):
+        str1 = str_list[i].lower()
+        for j in range(i + 1, len(str_list)):
+            str2 = str_list[j].lower()
+            if len(str1) >= 3 and len(str2) >= 3:
+                anagrams.append((str1, str2))
+    return len(anagrams) >= 411
+```

@@ -1,0 +1,29 @@
+
+def if_contains_anagrams(word_list):
+    # Initialize a counter for the number of anagram pairs
+    pair_count = 0
+
+    # Iterate over each word in the list
+    for word1 in word_list:
+        # Skip words that are shorter than three letters
+        if len(word1) < 3:
+            continue
+
+        # Convert both words to lowercase for case-insensitive comparison
+        word1 = word1.lower()
+
+        # Iterate over each remaining word in the list
+        for word2 in word_list[word_list.index(word1) + 1:]:
+            # Skip words that are shorter than three letters
+            if len(word2) < 3:
+                continue
+
+            # Convert both words to lowercase for case-insensitive comparison
+            word2 = word2.lower()
+
+            # Check if the two words are anagrams of each other
+            if sorted(word1) == sorted(word2):
+                pair_count += 1
+
+    # Return true if there are at most 88 pairs of anagrams in the given list; otherwise, return false
+    return pair_count <= 88

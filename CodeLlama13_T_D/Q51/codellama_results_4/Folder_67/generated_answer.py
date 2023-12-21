@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for s in strings:
+        if len(s) < 3:
+            continue
+        letters = ''.join([c.lower() for c in s if c.isalpha()])
+        if letters not in anagrams:
+            anagrams.add(letters)
+    return len(anagrams) <= 5

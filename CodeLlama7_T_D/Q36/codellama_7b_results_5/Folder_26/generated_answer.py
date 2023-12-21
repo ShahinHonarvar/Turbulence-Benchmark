@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    # Create a new string with the same characters as s, but without any occurrences of ':' or 'Q'
+    new_str = ""
+    for char in s:
+        if char != ":" and char != "Q":
+            new_str += char
+    return new_str

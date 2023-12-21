@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(string):
+    chars = sorted([c for c in string])
+    return chars[:76]

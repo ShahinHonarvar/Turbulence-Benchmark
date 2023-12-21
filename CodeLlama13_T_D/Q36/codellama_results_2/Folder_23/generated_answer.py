@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(21, 26):
+        if s[i] > '5' and s[i] < '}':
+            s = s.replace(s[i], '')
+    return s

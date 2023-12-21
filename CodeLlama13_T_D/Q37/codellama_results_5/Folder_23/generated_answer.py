@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    new_str = ''
+    for i, c in enumerate(s):
+        if (51 <= i <= 77) and ('V' <= c <= 'Y'):
+            continue
+        else:
+            new_str += c
+    return new_str

@@ -1,0 +1,19 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Calculate the product of all elements in the list
+prod = 1
+for i in circular_list:
+prod *= i
+
+# Initialize an empty list to store the sublists
+sublists = []
+
+# Iterate over the elements in the list
+for i, x in enumerate(circular_list):
+
+# If the product of the elements up to and including the current element is equal to 83, add the sublist to the returned list
+if prod == 83:
+sublists.append(circular_list[i - 1::])
+
+return sublists
+```

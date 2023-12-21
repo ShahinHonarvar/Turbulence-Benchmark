@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(77, 87):
+        if string[i] > ';' and string[i] < 'r':
+            string = string.replace(string[i], '')
+    return string

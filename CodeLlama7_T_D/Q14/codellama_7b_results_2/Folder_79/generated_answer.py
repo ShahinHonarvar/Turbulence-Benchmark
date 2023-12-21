@@ -1,0 +1,23 @@
+ def find_second_smallest_num(numbers):
+    # Check if the input is a list
+    if not isinstance(numbers, list):
+        return None
+
+    # Check if the list has at least two elements
+
+    if len(numbers) < 2:
+        return None
+
+    # Sort the list in ascending order
+
+    numbers.sort()
+
+    # Find the second smallest element
+
+    for i in range(1, len(numbers)):
+        if numbers[i] != numbers[i - 1]:
+            return numbers[i]
+
+    # If there is no such an element, return None
+
+    return None

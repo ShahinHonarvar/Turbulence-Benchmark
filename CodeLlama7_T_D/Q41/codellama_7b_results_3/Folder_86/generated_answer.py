@@ -1,0 +1,8 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    all_elements = set(list1 + list2)
+    # Find the intersection of the two sets
+    identical_elements = all_elements & all_elements
+    # Return the intersection as a set
+    return identical_elements

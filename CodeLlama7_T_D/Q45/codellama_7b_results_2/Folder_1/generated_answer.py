@@ -1,0 +1,11 @@
+
+def palindromes_between_indices(string, start, end):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string between the specified indices
+    for i in range(start, end + 1):
+        # Check if the character at index i is a vowel
+        if string[i].lower() in "aeiou":
+            # If it is a vowel, create a palindrome of length at least 5 using all the English letters in the given string that occur between index 4 to index 7, both inclusive
+            palindromes.add("".join(sorted(string[i - 3:i + 3]))))
+    return palindromes

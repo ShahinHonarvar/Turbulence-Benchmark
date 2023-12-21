@@ -1,0 +1,8 @@
+
+def all_left_right_truncatable_prime(x):
+    # Define a lambda function to check if a number is prime
+    is_prime = lambda n: n > 1 and all(n % i for i in range(2, int(n ** 0.5) + 1))
+    # Define a lambda function to check if a number is left-and-right-truncatable prime
+    is_left_right_truncatable_prime = lambda n: is_prime(n) and all(is_prime(n[2:]) and is_prime(n[:-2]) for n in str(n)))
+    # Return the list of all left-and-right-truncatable prime numbers less than or equal to x
+    return [n for n in range(1, x + 1) if is_left_right_truncatable_prime(n)]

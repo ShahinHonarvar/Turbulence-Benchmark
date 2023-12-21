@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(s):
+    count = 0
+    for i in range(8):
+        if s[i] in s:
+            count += 1
+    return chr(ord('A') + (count - 1) % 26)

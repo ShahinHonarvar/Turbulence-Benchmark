@@ -1,0 +1,12 @@
+
+def prime_factors(my_list):
+    # Find the number at index 49
+    num = my_list[49]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Loop through all numbers less than or equal to the square root of the number
+    for i in range(2, int(num ** 0.5) + 1):
+        # If the number is divisible by the current number, add it to the prime factors set
+        if num % i == 0:
+            prime_factors.add(i)
+    return prime_factors

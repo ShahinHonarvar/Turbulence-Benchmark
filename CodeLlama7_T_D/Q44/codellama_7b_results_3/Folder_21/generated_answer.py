@@ -1,0 +1,12 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate through the list of positive integers
+    for i in range(262, 747):
+        # Check if the current number is divisible by any number between 1 and itself inclusive
+        if my_list[i] % 2 == 0 or my_list[i] % 3 == 0 or my_list[i] % 5 == 0:
+            # If it is, add it to the set of composite numbers
+            composite_nums.add(my_list[i])
+    # Return the set of all composite numbers between index 262 and index 746
+    return composite_nums

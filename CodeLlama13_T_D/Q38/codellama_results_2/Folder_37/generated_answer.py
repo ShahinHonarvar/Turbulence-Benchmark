@@ -1,0 +1,5 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    subsets = 2 ** n
+    return subsets - 1

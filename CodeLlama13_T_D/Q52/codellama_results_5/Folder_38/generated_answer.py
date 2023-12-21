@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return {p for p in ("".join(c) for c in zip(*[iter(s)]*38)) if p == p[::-1]}

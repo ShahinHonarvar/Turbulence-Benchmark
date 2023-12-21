@@ -1,0 +1,23 @@
+[cohere.Generation {
+	id: a9f08192-b837-4b18-a031-8877a1f1b0a8
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_num' that takes one argument, a list of integers, and returns the list of all integers divisible by 885 from index 421 to index 489, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**7)
+
+from bisect import bisect_left as bl
+
+MOD = 885
+
+
+def all_ints_div_by_num(nums):
+    nums = sorted(nums)
+    idx = bl(nums, 421)
+    idx = bl(nums, idx + 1)
+    return [nums[idx] for n in nums[idx:idx + 17] if n % MOD == 0]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

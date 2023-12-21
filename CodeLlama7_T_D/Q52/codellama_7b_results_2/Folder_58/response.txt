@@ -1,0 +1,12 @@
+ ```
+def palindrome_of_length_n(string):
+    # Create a list of all substrings of the given string
+    substrings = []
+    for i in range(len(string)):
+        for j in range(i, len(string) + 1):
+            substrings.append(string[i:j])
+    # Return the set of all palindromes of length n
+    return {substring for substring in substrings if substring == substring[::-1]}
+```
+This code defines a function `palindrome_of_length_n` that takes a string argument and returns a set of all palindromes of length n, where n is the length of the given string. The function first creates a list of all substrings of the given string using two nested for loops. It then filters this list to only contain palindromes by using a list comprehension to create a new list containing only the palindromes. Finally, it returns the set of palindromes using a set comprehension.
+The function is defined in a case-insensitive manner by converting all characters in the given string to lowercase before searching for palindromes. This ensures that both uppercase and lowercase versions of each letter are considered when looking for palindromes.

@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the found submatrices
+    submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary list to store the current submatrix
+            temp_submatrix = []
+            
+            # Add the current element to the temporary submatrix
+            temp_submatrix.append([matrix[i,j]])
+            
+            # Iterate over each remaining row and column of the matrix
+            for k in range(i+1, matrix.shape[0]):
+                for l in range(j+1, matrix.shape[1]):
+                    # If the current element is not zero and the sum of its elements is equal to -863
+                    if (matrix[k,l] != 0) and np.sum(temp_submatrix + [matrix[k,l]]) == -863:
+                        # Add the current submatrix to the list of found submatrices
+                        submatrices.append(temp_submatrix + [matrix[k,l]])
+            
+    return submatrices

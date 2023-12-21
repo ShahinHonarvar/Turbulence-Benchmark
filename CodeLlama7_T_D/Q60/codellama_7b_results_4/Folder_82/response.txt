@@ -1,0 +1,45 @@
+ def all_left_right_truncatable_prime(x):
+    # Create a list of all prime numbers less than or equal to x
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    # Return the list of left-and-right-truncatable prime numbers less than or equal to x
+    return [prime for prime in prime_numbers if is_left_right_truncatable_prime(prime)]
+# Define a function that checks whether a number is prime
+def is_prime(n):
+    # Check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        return False
+
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If the number is not divisible by any number between 2 and the square root of n, it is prime
+    return True
+
+# Define a function that checks whether a number is left-and-right-truncatable prime or not
+def is_left_right_truncatable_prime(n):
+    # Check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        return False
+
+    # Check if the number contains any leading zeroes
+    if str(n).startswith('0'):
+        return False
+
+    # Check if the number is a palindrome in base 10
+    if str(n) == str(n)[::-1]:
+        return True
+
+    # If the number is not a palindrome, check if it is left-and-right-truncatable prime or not
+    i = 2
+    while i ** 2 <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+
+        i += 6
+
+    return True

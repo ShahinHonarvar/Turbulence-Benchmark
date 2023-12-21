@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all integers in the submatrix starting from (i,j) and having size 3x3
+            sum_submatrix = np.sum(matrix[i:i+3, j:j+3])
+            
+            # If the sum is equal to -64, add the submatrix to the result list
+            if sum_submatrix == -64:
+                result.append((i, j))
+    
+    return result

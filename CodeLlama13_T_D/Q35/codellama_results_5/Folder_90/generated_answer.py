@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(s):
+    s = list(s)
+    for i in range(306, 807):
+        if s[i] in s[i+1:]:
+            s.remove(s[i])
+    return ''.join(s)

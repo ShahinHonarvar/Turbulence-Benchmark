@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n    sub_matrix_list = []\n    nrows, ncols = mat.shape\n    for row in range(nrows):\n        for col in range(ncols):\n            for size in range(min(nrows-row, ncols-col)):\n                sub_matrix = mat[row:row+size+1, col:col+size+1]\n                if np.sum(sub_matrix) == 99:\n                    sub_matrix_list.append(sub_matrix.tolist())\n    return sub_matrix_list\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081608,
+  "id": "chatcmpl-7fJiiBcDBTHkoMnd6ZzFUeHibcPEn",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 121,
+    "total_tokens": 230
+  }
+}

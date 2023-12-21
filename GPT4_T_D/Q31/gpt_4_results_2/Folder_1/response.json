@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(lst):\n    if len(lst) > 85:\n        num = lst[85]\n        sum = 1\n        i = 2\n        while i * i <= num:\n            if num % i:\n                i += 1\n            else:\n                if i * (num // i) == num:\n                    sum = sum + i + num//i\n                else:\n                    sum = sum + i\n                i += 1\n        return sum == num and num!=1\n    else:\n        return False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690123646,
+  "id": "chatcmpl-7fUekKIRZj4IUj9V4vJlNnRmFHRP3",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 118,
+    "prompt_tokens": 91,
+    "total_tokens": 209
+  }
+}

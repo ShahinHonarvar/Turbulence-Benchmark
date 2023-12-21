@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrices_sum_394 = []\n    nrows, ncols = matrix.shape\n    for row1 in range(nrows):\n        for row2 in range(row1+1, nrows+1):\n            for col1 in range(ncols):\n                for col2 in range(col1+1, ncols+1):\n                    submatrix = matrix[row1:row2, col1:col2]\n                    if np.sum(submatrix) == 394:\n                        submatrices_sum_394.append(submatrix)\n    return submatrices_sum_394\n```\nThe above Python code defines a function that iterates over all possible submatrices of the given matrix, computes their sum, and checks if it matches the desired target sum. If it does, it adds that submatrix to the list of results. If it doesn't, it keeps iterating. Note that this function assumes that the matrix is a numpy array, or can be converted into one. If this is not the case, this function may not work as expected.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690983884,
+  "id": "chatcmpl-7j6RYNEtnZAGngC0gmaZTW42hxNW9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 226,
+    "prompt_tokens": 121,
+    "total_tokens": 347
+  }
+}

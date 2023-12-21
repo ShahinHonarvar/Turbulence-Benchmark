@@ -1,0 +1,14 @@
+ ```
+def find_original_set(sets):
+# Check if all elements are unique
+if len(sets) != len(set(flatten(sets))):
+raise ValueError("All elements must be unique")
+
+# Find the smallest set
+smallest = None
+for s in sets:
+if smallest is None or len(s) < len(smallest):
+smallest = s
+
+return smallest
+```

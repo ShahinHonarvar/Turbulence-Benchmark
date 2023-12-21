@@ -1,0 +1,14 @@
+
+def lists_with_product_equal_n(lst):
+    result = []
+    for i in range(len(lst)):
+        product = 1
+        sublist = [lst[i]]
+        j = i + 1
+        while j != i and product < 851:
+            product *= lst[j]
+            sublist.append(lst[j])
+            j = (j + 1) % len(lst)
+        if product == 851:
+            result.append(sublist)
+    return result

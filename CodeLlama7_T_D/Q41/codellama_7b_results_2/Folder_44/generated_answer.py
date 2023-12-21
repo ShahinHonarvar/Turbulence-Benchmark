@@ -1,0 +1,28 @@
+
+def identical_elements(list1, list2):
+    # Get the intersection of the two lists
+    intersection = set(list1).intersection(set(list2))
+    # Return an empty set if the intersection is empty
+    if not intersection:
+        return set()
+
+    # Get the indices where each element appears in both lists
+    element_indices = {}
+    for element in intersection:
+        element_indices[element] = []
+        for i, elem in enumerate(list1):
+            if elem == element:
+                element_indices[element].append(i)
+        for i, elem in enumerate(list2):
+            if elem == element:
+                element_indices[element].append(i + len(list1))
+
+    # Get the set of all elements that occur at least once in both lists anywhere between index 13 and index 68, both inclusive
+    identical_elements = []
+    for i in range(13, 69):
+        for element, indices in element_indices.items():
+            if i in indices:
+                identical_elements.append(element)
+
+    # Return the set of all elements that occur at least once in both lists anywhere between index 13 and index 68, both inclusive
+    return set(identical_elements)

@@ -1,0 +1,14 @@
+
+def palindromes_of_specific_lengths(string):
+    # Create a list of all palindromes in the string
+    palindromes = []
+    for i in range(33, 85 + 1):
+        substr = string[i - 1:i]
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+    # Filter out palindromes that are not of the desired lengths
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if 26 <= len(palindrome) <= 31:
+            filtered_palindromes.append(palindrome)
+    return set(filtered_palindromes)

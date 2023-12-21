@@ -1,0 +1,11 @@
+
+def filter_chars(s):
+    filtered = ""
+    for i, c in enumerate(s):
+        if 31 < ord(c) < 73:
+            if c > 'M' and c < 'j':
+                continue
+
+        filtered += c
+
+    return filtered

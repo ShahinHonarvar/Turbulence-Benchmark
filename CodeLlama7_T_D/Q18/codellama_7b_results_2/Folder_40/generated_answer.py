@@ -1,0 +1,10 @@
+ def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sum and the range of indices to iterate over
+    sum = 0
+    for i in range(my_list[0], my_list[1]+1):
+        # Check if the current index is divisible by either 2 or 1 from index 0
+        if i % my_list[0] == 0 or i % 1 == 0:
+            # If it is, add it to the sum
+            sum += i
+
+    return sum

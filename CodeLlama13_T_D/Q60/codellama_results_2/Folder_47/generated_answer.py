@@ -1,0 +1,26 @@
+
+def all_left_right_truncatable_prime(tuple):
+    x = tuple[49]
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i) and not '0' in str(i):
+            prime_list.append(i)
+    truncatable_prime_list = []
+    for j in prime_list:
+        if len(str(j)) >= 3:
+            if is_truncatable_prime(j, tuple[49]):
+                truncatable_prime_list.append(j)
+    return sorted(truncatable_prime_list)
+
+def is_prime(n):
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_truncatable_prime(p, x):
+    while len(str(p)) > 3:
+        p = int(''.join([str(p)[i] for i in range(len(str(p))-1)]))
+        if not is_prime(p) or '0' in str(p):
+            return False
+    return True

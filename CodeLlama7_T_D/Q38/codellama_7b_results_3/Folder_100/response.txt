@@ -1,0 +1,24 @@
+ ```
+def find_subset_of_length_n(set):
+    # Initialize the number of subsets to 0
+    num_subsets = 0
+    # Loop through each element in the set
+    for element in set:
+        # Create a subset with the current element
+        subset = {element}
+
+        # Loop through each element in the set again
+        for element2 in set:
+            # If the element is not equal to the current element
+            if element != element2:
+                # Add the element to the subset
+                subset.add(element2)
+
+        # If the subset has 99 elements
+        if len(subset) == 99:
+            # Increment the number of subsets
+            num_subsets += 1
+
+    # Return the number of subsets
+    return num_subsets
+```

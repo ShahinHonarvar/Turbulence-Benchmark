@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return my_list[29]*my_list[53]*my_list[42]

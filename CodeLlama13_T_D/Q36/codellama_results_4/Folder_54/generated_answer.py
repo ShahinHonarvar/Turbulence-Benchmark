@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 18 < ord(c) < 38 and c not in '))'])

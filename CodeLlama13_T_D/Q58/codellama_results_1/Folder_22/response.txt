@@ -1,0 +1,10 @@
+```
+def submatrix_with_n_numbers(mat):
+    rows, cols = mat.shape
+    count = 0
+    for i in range(rows - 21 + 1):
+        for j in range(cols - 21 + 1):
+            if np.all(np.arange(1, 22) == mat[i:i+21, j:j+21].flatten()):
+                count += 1
+    return count
+```

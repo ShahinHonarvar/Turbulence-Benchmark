@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string, n):
+    return set(s for s in string.split() if s == s[::-1])

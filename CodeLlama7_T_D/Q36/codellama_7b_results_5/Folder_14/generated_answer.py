@@ -1,0 +1,11 @@
+ def filter_chars(string):
+    filtered = ""
+    for i in range(41, 56):
+        if string[i] > 'Z' and string[i] < 'c':
+            continue
+
+        else:
+
+            filtered += string[i]
+
+    return filtered

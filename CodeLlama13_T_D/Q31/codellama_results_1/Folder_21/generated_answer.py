@@ -1,0 +1,12 @@
+
+def if_perfect_num(my_list):
+    return my_list[410] in perfect_numbers
+
+perfect_numbers = []
+for i in range(1, 512):
+    s = sum(divisors(i)) - i
+    if s == i:
+        perfect_numbers.append(i)
+
+def divisors(n):
+    return [d for d in range(1, int(n**0.5)+1) if n % d == 0]

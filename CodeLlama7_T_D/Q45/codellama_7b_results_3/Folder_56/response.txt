@@ -1,0 +1,19 @@
+ ```
+def palindromes_between_indices(string):
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Loop through each index in the specified range
+    for i in range(5, 10):
+        # Check if there are any characters between the current index and the end of the string
+        if i < len(string) - 1:
+            # Create a subsequence of the string starting from the current index and ending at the next character
+            subsequence = string[i:]
+            # Loop through each palindrome in the subsequence
+            for j in range(len(subsequence)):
+                # Check if the current palindrome is at least 5 characters long
+                if len(subsequence[j:]) >= 5:
+                    # Add the current palindrome to the set of palindromes
+                    palindromes.add(subsequence[j:].lower())
+    # Return the set of palindromes in a case-insensitive manner
+    return palindromes
+```

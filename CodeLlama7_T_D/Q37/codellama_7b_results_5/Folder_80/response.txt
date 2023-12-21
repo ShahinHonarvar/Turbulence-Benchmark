@@ -1,0 +1,10 @@
+ def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ""
+    # Iterate over each character in the given string
+    for char in s:
+        # If the character is between indices 36 and 79, both inclusive, and is greater than or equal to 'a' and smaller than or equal to 'i', remove all occurrences of that character from the new string
+        if (36 <= s.index(char) <= 79) and ('a' <= char <= 'i'):
+            new_str = new_str.replace(char, '')
+    # Return the altered string
+    return new_str

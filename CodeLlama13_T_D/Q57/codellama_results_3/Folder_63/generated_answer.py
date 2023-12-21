@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(mat):
+    rows, cols = mat.shape
+    for i in range(rows-1):
+        for j in range(cols-1):
+            submat = mat[i:i+2,j:j+2]
+            if np.sum(submat) == 64:
+                return [submat]
+    return []

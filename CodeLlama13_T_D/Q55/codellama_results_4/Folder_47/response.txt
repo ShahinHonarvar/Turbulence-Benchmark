@@ -1,0 +1,13 @@
+```
+def lists_with_product_equal_n(lst):
+    result = []
+    for i in range(len(lst)):
+        prod = 1
+        temp = lst[i:] + lst[:i]
+        for j in temp:
+            prod *= j
+            if prod == -94:
+                result.append(temp)
+                break
+    return result
+```

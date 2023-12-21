@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return numbers[67], numbers[84], numbers[13]

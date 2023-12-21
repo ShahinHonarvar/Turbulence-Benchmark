@@ -1,0 +1,13 @@
+ def palindrome_of_length_n(string):
+    # Split the string into individual characters
+    chars = list(string)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(chars)):
+        # Check if the current character is a palindrome of length 69
+        if len(chars[i:]) >= 69 and "".join(reversed(chars[i:i+69])) == chars[i:i+69]:
+            # If it is, add it to the set of palindromes
+            palindromes.add("".join(chars[i:i+69]).lower()))
+    # Return the set of palindromes
+    return palindromes

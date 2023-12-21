@@ -1,0 +1,37 @@
+
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the string is at least three characters long
+        if len(lowercase_string) >= 3:
+            # Sort the letters of the string
+            sorted_letters = ''.join(sorted(lowercase_string))
+
+            # Check if there are any other strings in the list that have the same sorted letters
+            for other_string in my_list:
+                # Convert the other string to lowercase
+                lowercase_other_string = other_string.lower()
+
+                # Sort the letters of the other string
+                sorted_letters_other_string = ''.join(sorted(lowercase_other_string)))
+
+                # Check if the sorted letters of the two strings match
+                if sorted_letters == sorted_letters_other_string:
+                    # Increment the anagram count for the first string
+                    if lowercase_string not in anagram_counts:
+                        anagram_counts[lowercase_string] = 1
+                    else:
+                        anagram_counts[lowercase_string] += 1
+
+            # Check if there are at least 50 pairs of anagrams in the list
+            if sum(anagram_counts.values()) >= 50:
+                return True
+
+    # If no anagrams were found, return False
+    return False

@@ -1,0 +1,14 @@
+
+def lists_with_product_equal_n(lst):
+    result = []
+    for i in range(len(lst)):
+        curr_prod = 1
+        sublist = [lst[i]]
+        j = (i + 1) % len(lst)
+        while curr_prod < 10 and j != i:
+            curr_prod *= lst[j]
+            sublist.append(lst[j])
+            j = (j + 1) % len(lst)
+        if curr_prod == 10:
+            result.append(sublist)
+    return result

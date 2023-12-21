@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: 81504d8b-b46a-4310-a488-8de9c1af3c75
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_perfect_num' takes one argument, a list of positive integers, and returns true if the integer at index 20 is a perfect number, otherwise, it should return false.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import heapq
+
+def if_perfect_num(a):
+    if len(a) < 20:
+        return False
+    s = []
+    for i in range(20, len(a)):
+        s.append(a[i])
+        s.append(s[-1] + a[i])
+    s = heapq.nlargest(len(s), s)
+    return s[0] == s[1] == s[2] == a[20]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

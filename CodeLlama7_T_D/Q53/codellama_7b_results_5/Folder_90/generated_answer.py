@@ -1,0 +1,49 @@
+ def palindrome_of_length_at_least_n(string, n=140):
+    """
+    Return the set of all palindromes of length greater than or equal to n that exist in string. Each palindrome should only consist of English letters. If no such palindromes exist in string, return an empty set. The function should find the palindromes in a case-insensitive manner.
+    Args:
+        string (str): The input string.
+        n (int, optional): The minimum length of the palindromes to be returned. Defaults to 140.
+    Returns:
+        set: A set containing all the palindromes of length greater than or equal to n that exist in string.
+    """
+
+    # Define a function to check if a substring is a palindrome
+    def is_palindrome(substring):
+        return substring == substring[::-1]
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the input string
+    for i in range(len(string)):
+
+        # Check if the character is a letter (uppercase or lowercase)
+        if string[i].isalpha():
+
+            # Convert the character to uppercase
+            char_upper = string[i].upper()
+
+            # Find the length of the substring starting from the current character and ending at the end of the input string
+            substr_len = len(string) - i
+
+            # Iterate over the possible lengths of the substring
+            for j in range(substr_len + 1):
+
+                # Check if the substring has length greater than or equal to n
+                if j >= n:
+
+                    # Get the substring
+                    substr = string[i : i + j]
+
+                    # Check if the substring is a palindrome
+                    if is_palindrome(substr):
+
+                        # Add the palindrome to the set
+                        palindromes.add(substr)
+
+            # Break out of the for loop
+            break
+
+    # Return the set containing all the palindromes of length greater than or equal to n that exist in string
+    return palindromes

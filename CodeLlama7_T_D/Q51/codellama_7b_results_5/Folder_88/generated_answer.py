@@ -1,0 +1,23 @@
+
+def if_contains_anagrams(words):
+    # Create a set of all possible anagrams of the English letters
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    all_anagrams = []
+    for i in range(26):
+        for j in range(i+1, 27):
+            anagram = ""
+            for k in range(i, j+1):
+                anagram += english_letters[k]
+            all_anagrams.append(anagram)
+    # Create a set of all anagrams that appear in the given list of words
+    all_appearing_anagrams = []
+    for word in words:
+        word = word.lower()
+        for anagram in all_anagrams:
+            if sorted(word) == sorted(anagram):
+                all_appearing_anagrams.append(anagram)
+    # Return true if there are at most 407 pairs of anagrams in the given list; otherwise, return false
+    if len(all_appearing_anagrams) <= 407:
+        return True
+    else:
+        return False

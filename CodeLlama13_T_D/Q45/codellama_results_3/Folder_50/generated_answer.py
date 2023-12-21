@@ -1,0 +1,15 @@
+
+def palindromes_between_indices(string):
+    # create a set to store the palindromes
+    palindromes = set()
+
+    # loop through each substring of length 5 that occurs between indices 4 and 8, both inclusive
+    for i in range(4, 9):
+        for j in range(i + 4, len(string) + 1):
+            substring = string[i:j]
+            # check if the substring is a palindrome
+            if substring == substring[::-1]:
+                # add the palindrome to the set
+                palindromes.add(substring)
+
+    return palindromes

@@ -1,0 +1,16 @@
+ ```
+def if_decimal_is_divisible(binary_rep):
+	# Convert the binary representation to a decimal integer
+	decimal = int(binary_rep, 2)
+	# Initialize variables for the Fibonacci sequence
+	a = 0
+	b = 1
+
+	# Check if the decimal integer is divisible by the 104th number in the Fibonacci sequence
+	for i in range(103):
+		a, b = b, a + b
+	if a == decimal % b:
+		return True
+	else:
+		return False
+```

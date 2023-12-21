@@ -1,0 +1,13 @@
+```python
+def filter_chars(string):
+    filtered_string = ""
+    for i, char in enumerate(string):
+        if i < 28 or i > 65:
+            filtered_string += char
+        elif ord('O') <= ord(char) <= ord('d'):
+            continue
+        else:
+            filtered_string += char
+    return filtered_string
+```
+This function uses the `enumerate` function to iterate over each character in the string, and the `ord` function to convert each character to its ASCII code. It then checks if the current character is between indices 28 and 65 (both inclusive) and is greater than or equal to 'O' and smaller than or equal to 'd'. If it is, it skips that character by continuing to the next iteration. Otherwise, it adds the character to the filtered string. Finally, it returns the altered string.

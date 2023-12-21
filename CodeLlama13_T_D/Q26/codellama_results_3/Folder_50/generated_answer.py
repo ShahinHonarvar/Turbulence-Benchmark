@@ -1,0 +1,7 @@
+
+def sum_in_range(my_list):
+    result = 0
+    for num in my_list:
+        if 34 <= num <= 69:
+            result += num
+    return result

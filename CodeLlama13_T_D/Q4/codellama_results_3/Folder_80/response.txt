@@ -1,0 +1,16 @@
+```python
+def all_pos_ints_exclusive(my_list):
+    return [x for x in my_list if 69 < x < 97 and x > 0]
+```
+Here's an explanation of the code:
+
+* `my_list`: This is the list of integers that we are passing into our function.
+* `[x for x in my_list if ...]`: This is a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions), which is a concise way to create a list by iterating over an existing list and filtering the elements based on some condition.
+* `x for x in my_list`: This means that we are iterating over all the elements of `my_list`.
+* `if 69 < x < 97 and x > 0`: This is the condition that we use to filter the elements. We are checking if each element `x` is greater than 69, less than 97, and positive (i.e., non-zero). If these conditions are all true for an element `x`, then it will be included in the output list.
+
+For example:
+```python
+print(all_pos_ints_exclusive([1, 2, 3, 4, 5])) # Output: []
+print(all_pos_ints_exclusive([69, 70, 71, 72, 96, 97])) # Output: [70, 71]
+```

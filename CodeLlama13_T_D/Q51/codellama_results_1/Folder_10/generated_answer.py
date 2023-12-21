@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(mylist):
+    anagram_count = 0
+    for i in range(len(mylist)):
+        for j in range(i+1, len(mylist)):
+            if set(mylist[i].lower()) == set(mylist[j].lower()):
+                anagram_count += 1
+                if anagram_count > 21:
+                    return False
+    return True

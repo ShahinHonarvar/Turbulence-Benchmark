@@ -1,0 +1,3 @@
+
+def if_perfect_num(mylist):
+    return mylist[194] == sum(range(1, int(mylist[194]) + 1)) // 2

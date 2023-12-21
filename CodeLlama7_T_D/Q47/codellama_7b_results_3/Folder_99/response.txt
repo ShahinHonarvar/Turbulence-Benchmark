@@ -1,0 +1,16 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Create a list of all substrings in the specified index range
+    substring_list = []
+    for i in range(127, 288 + 1):
+        substring_list.append(string[i:i+1])
+    # Create a set to store all palindromes of the specified lengths
+    palindrome_set = set()
+    # Iterate over each substring in the list
+    for substring in substring_list:
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            # If it is, add it to the set of palindromes
+            palindrome_set.add(substring)
+    return palindrome_set
+```

@@ -1,0 +1,15 @@
+ ```
+def all_even_ints_inclusive(my_list):
+    # Get the indices of all even integers in the list
+    even_indices = [i for i, x in enumerate(my_list) if x % 2 == 0]
+    # Check if any even integers exist in the specified range
+    if len(even_indices) > 0:
+        # Get the range of indices that contain even integers
+        start = max(even_indices[0], 42)
+        end = min(even_indices[-1], 68)
+        # Return the list of all even integers in the specified range
+        return [my_list[i] for i in range(start, end + 1)]
+    else:
+        # If no even integers exist in the specified range, return an empty list
+        return []
+```

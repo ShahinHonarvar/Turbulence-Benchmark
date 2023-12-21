@@ -1,0 +1,9 @@
+
+def all_right_truncatable_prime(nums):
+    x = nums[78]
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_list.append(i)
+    sorted_prime_list = sorted(prime_list, reverse=True)
+    return sorted_prime_list

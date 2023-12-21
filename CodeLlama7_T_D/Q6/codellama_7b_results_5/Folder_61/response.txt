@@ -1,0 +1,23 @@
+ ```
+def all_neg_ints_exclusive(my_list):
+    # Find the first negative integer in the list
+    first_negative_index = next((i for i, x in enumerate(my_list) if x < 0), None)
+    # If there are no negative integers in the list, return an empty list
+    if first_negative_index is None:
+        return []
+
+    # Initialize a new list to store the negative integers
+
+    negative_ints = []
+
+    # Iterate through the list and append any negative integers to the new list
+
+    for i in range(first_negative_index, len(my_list)):
+        if my_list[i] < 0:
+            negative_ints.append(my_list[i])
+
+    # Return the new list of negative integers
+
+    return negative_ints
+
+```

@@ -1,0 +1,12 @@
+```python
+def all_odd_ints_inclusive(my_list):
+    return [x for x in my_list[661:924+1] if x % 2 == 1]
+```
+This code uses a list comprehension to iterate over the specified range of indices and check whether each integer is odd. If an integer is odd, it is included in the output list. The `+1` at the end of the slice notation ensures that index 924 is also included in the range.
+
+Here's another way to write this function using a generator expression:
+```python
+def all_odd_ints_inclusive(my_list):
+    return (x for x in my_list[661:924+1] if x % 2 == 1)
+```
+This code is more concise and easier to read, but it may not be as efficient for very large lists.

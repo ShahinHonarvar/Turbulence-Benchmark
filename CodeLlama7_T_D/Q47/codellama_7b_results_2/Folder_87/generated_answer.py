@@ -1,0 +1,12 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the specified index range
+    palindromes = []
+    for i in range(11, 93 + 1):
+        substring = string[i - 11:i]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            palindromes.append(substring)
+    # Filter out palindromes of lengths outside the specified range
+    palindromes = [palindrome for palindrome in palindromes if 34 <= len(palindrome) <= 54]
+    return set(palindromes)

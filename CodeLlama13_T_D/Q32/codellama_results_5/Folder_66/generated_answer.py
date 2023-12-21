@@ -1,0 +1,3 @@
+
+def insert_after_character(s, k):
+    return "".join([c + (k if c == k else "") for c in s])

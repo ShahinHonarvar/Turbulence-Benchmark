@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(words):
+    word_count = {}
+    for word in words:
+        # convert to lowercase and sort the characters
+        sorted_word = "".join(sorted(word.lower()))
+        # check if the sorted word is already in the dictionary
+        if sorted_word in word_count:
+            # increment the count of the sorted word
+            word_count[sorted_word] += 1
+        else:
+            # add the sorted word to the dictionary with a count of 1
+            word_count[sorted_word] = 1
+    # check if there are at most 43 pairs of anagrams in the given list
+    for i in range(len(words) - 1):
+        for j in range(i + 1, len(words)):
+            if sorted(words[i].lower()) == sorted(words[j].lower()):
+                return True
+
+    return False
+```

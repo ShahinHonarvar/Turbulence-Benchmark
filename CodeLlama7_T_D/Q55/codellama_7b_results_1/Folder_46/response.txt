@@ -1,0 +1,23 @@
+ ```
+def lists_with_product_equal_n(lst):
+# Step 1: Calculate the product of all elements in the list
+prod = 1
+for i in lst:
+prod *= i
+
+# Step 2: Find the indices of the elements that have a product equal to n
+indices = []
+for i, x in enumerate(lst):
+if prod / x == n:
+indices.append(i)
+
+# Step 3: Create sublists by iterating through the list and selecting the adjacent elements at each index
+sublists = []
+for i in indices:
+sublists.append([lst[i], lst[i + 1]])
+if len(lst) - i > 2:
+sublists.append([lst[i], lst[i + 1]], lst[i + 2]])
+
+# Step 4: Return the sublists that have a product equal to n
+return sublists
+```

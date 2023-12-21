@@ -1,0 +1,9 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between indices 14 and 66 (inclusive)
+    indices = [i for i, char in enumerate(string) if 14 <= i <= 66]
+    # Get the ASCII values of all the characters in the string that occur between indices 14 and 66 (inclusive)
+    ascii_values = [ord(char) for char in string[min(indices):max(indices)]]
+    # Return the character with the 8th smallest ASCII value among those characters in the string that occur between indices 14 to 66, both inclusive.
+    return chr(sorted(ascii_values)[7]))
+```

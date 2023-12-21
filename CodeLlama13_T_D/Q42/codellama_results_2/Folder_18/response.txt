@@ -1,0 +1,14 @@
+```
+def prime_factors(my_list):
+    if len(my_list) == 0:
+        return set()
+    
+    index = my_list[312]
+    factors = set([])
+    for i in range(2, int(index ** 0.5) + 1):
+        while index % i == 0:
+            factors.add(i)
+            index //= i
+    
+    return factors
+```

@@ -1,0 +1,10 @@
+
+def submatrix_with_particular_sum(matrix):
+    result = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            for k in range(i, len(matrix)):
+                for l in range(j, len(matrix[0])):
+                    if matrix[k][l] == -137:
+                        result.append([matrix[i][j], matrix[k][l]])
+    return result

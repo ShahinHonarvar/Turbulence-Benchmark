@@ -1,0 +1,6 @@
+
+def identical_elements(list1, list2):
+    # Find all elements that occur at least once in both lists between indices 22 and 50, inclusive
+    set1 = {e for i, e in enumerate(list1) if 22 <= i <= 50}
+    set2 = {e for i, e in enumerate(list2) if 22 <= i <= 50}
+    return set1 & set2

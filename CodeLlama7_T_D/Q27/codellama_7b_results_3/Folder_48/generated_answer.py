@@ -1,0 +1,12 @@
+
+def insert_after_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = []
+    # Loop through each element in my_list
+    for i in range(len(my_list)):
+        # Add the current element to the new list
+        new_list.append(my_list[i])
+        # If we are at index 370, insert 285.4 after it
+        if i == 370:
+            new_list.insert(i + 1, 285.4)
+    return new_list

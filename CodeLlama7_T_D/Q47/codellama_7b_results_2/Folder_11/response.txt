@@ -1,0 +1,22 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function:
+```python
+def palindromes_of_specific_lengths(string):
+    # Create a list of all palindromes in the string
+    palindromes = []
+    for i in range(24, 97 + 1):
+        for j in range(i, len(string) - (97 - i) + 1):
+            substring = string[i:j]
+            if len(substring) < 10 or len(substring) > 36:
+                continue
+
+            if not all(c.isalpha() for c in substring):
+                continue
+
+            if substring == substring[::-1]:
+                palindromes.append(substring)
+
+    return set(palindromes)
+```
+This function takes a single argument, `string`, which is the input string to search for palindromes. The function first creates an empty list called `palindromes` to store all the palindromes found in the string.
+The function then loops over all possible substrings of lengths between 10 and 36 (both inclusive) in the specified index range of indices 24 to 97, both inclusive. For each substring, the function checks if it is a palindrome by comparing its original form with its reversed form using the `==` operator. If the substring is a palindrome and meets all the other requirements mentioned in the specification, the function adds it to the `palindromes` list.
+Finally, the function returns the set of all palindromes found in the input string that meet all the specified criteria.

@@ -1,0 +1,28 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for consideration
+    substring = string[11:83]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Define the length of the palindrome
+        length = 60 - 37 + 1
+        # Initialize a variable to store the palindrome
+        palindrome = ""
+        # Iterate over each character in the substring, starting from the current index
+        for j in range(i, i + length):
+            # Check if the character is an English letter
+            if substring[j].isalpha():
+                # Add the character to the palindrome
+                palindrome += substring[j]
+            else:
+                # Break out of the loop if a non-letter character is encountered
+                break
+
+        # Check if the palindrome is valid and within the desired length range
+        if len(palindrome) >= 37 and len(palindrome) <= 60 and palindrome == palindrome[::-1]:
+            # Add the palindrome to the set of palindromes
+            palindromes.add(palindrome)
+    # Return the set of palindromes found in the specified index range, or an empty set if no such palindromes were found
+    return palindromes

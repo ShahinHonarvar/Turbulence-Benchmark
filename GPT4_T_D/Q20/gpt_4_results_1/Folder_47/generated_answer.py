@@ -1,0 +1,5 @@
+
+def find_n_th_smallest_num(nums):
+    sliced_nums = nums[50:82]
+    sliced_nums.sort()
+    return sliced_nums[5]

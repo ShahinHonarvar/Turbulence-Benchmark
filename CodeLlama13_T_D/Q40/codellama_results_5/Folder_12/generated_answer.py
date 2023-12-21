@@ -1,0 +1,3 @@
+
+def return_n_smallest_chars(my_string):
+    return sorted(list(set(my_string)), key=lambda x: ord(x), reverse=True)[:61]

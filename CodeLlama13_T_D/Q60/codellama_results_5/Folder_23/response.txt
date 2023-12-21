@@ -1,0 +1,23 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    result = []
+    for num in numbers:
+        if is_prime(num) and no_leading_or_trailing_zeroes(num):
+            result.append(num)
+    return sorted(result, reverse=True)
+
+def is_prime(n):
+    if n == 1 or n == 0:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def no_leading_or_trailing_zeroes(n):
+    while n >= 10:
+        if n % 10 == 0:
+            return False
+        n //= 10
+    return True
+```

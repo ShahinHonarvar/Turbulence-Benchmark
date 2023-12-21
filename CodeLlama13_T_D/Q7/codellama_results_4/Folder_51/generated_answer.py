@@ -1,0 +1,3 @@
+
+def all_even_ints_inclusive(my_list):
+    return [x for x in my_list if 2 <= x % 10 <= 8 and x % 10 == 0]

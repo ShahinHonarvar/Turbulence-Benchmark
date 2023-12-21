@@ -1,0 +1,5 @@
+
+def insert_at_index(my_list):
+    new_list = my_list[:] # Make a copy of the original list
+    new_list.insert(2, 8) # Insert the value 8 at index 2
+    return new_list # Return the modified list

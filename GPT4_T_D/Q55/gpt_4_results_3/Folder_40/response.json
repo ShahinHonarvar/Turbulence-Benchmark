@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\nimport itertools\n\ndef lists_with_product_equal_n(n):\n    # Find length of list for iteration purposes\n    len_n = len(n)\n    # Convert list to deque to handle circular rotation\n    n = deque(n)\n    output = []\n\n    # Loop to ensure full circle of list is checked\n    for _ in range(len_n):\n\n        # Start with single pairs and increase range to length of list\n        for i in range(1, len_n + 1):\n            # Create sublist of current range\n            sublist = list(itertools.islice(n, 0, i))\n\n            product = 1\n            for num in sublist:\n                product *= num\n\n            if product == -9:\n                output.append(sublist)\n\n        # Move rotate list one space\n        n.rotate(1)\n    return output\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690978102,
+  "id": "chatcmpl-7j4wIT6iGzOI1SwCTh7Dnkg923wFd",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 193,
+    "total_tokens": 371
+  }
+}

@@ -1,0 +1,5 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([i for i in my_list if "".join(sorted(i.lower())) in map("".join, zip(*[iter(my_list)]*3))]) <= 55
+```
+This code first creates a list of all strings that are anagrams of each other by sorting and joining them. Then it checks if this list is less than or equal to 55 pairs in length.

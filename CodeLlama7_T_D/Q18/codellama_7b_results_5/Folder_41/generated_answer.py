@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sum and the indices of the divisible integers
+    total = 0
+    start_index = 0
+    end_index = 9
+
+    # Loop through the list, starting from the first index and ending at the last index, adding up all the elements that are divisible by either 6 or -3
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % 6 == 0 or my_list[i] % -3 == 0:
+            total += my_list[i]
+
+    # Return the sum of all the divisible integers from index 0 to index 9, both inclusive. If no such integers exist in the specified range, return 0.
+    return total

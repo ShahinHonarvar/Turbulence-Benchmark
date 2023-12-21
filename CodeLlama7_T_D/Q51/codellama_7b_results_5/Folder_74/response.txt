@@ -1,0 +1,61 @@
+ ```
+def if_contains_anagrams(strings):
+    # Initialize variables for counting anagrams
+    anagram_count = 0
+    min_length = 3
+
+    # Loop through each string in the list
+    for i in range(len(strings)):
+        # Get the current string
+        string = strings[i]
+
+        # Check if the string is at least three characters long
+        if len(string) < min_length:
+            continue
+
+        # Convert the string to lowercase
+        string = string.lower()
+
+        # Initialize a list to store anagrams in
+        anagrams = []
+
+        # Loop through each character in the string
+        for char in string:
+            # Check if the current character is already in the anagram list
+            if char in anagrams:
+                continue
+
+            # Add the current character to the anagram list
+            anagrams.append(char)
+
+        # Sort the anagram list alphabetically
+        anagrams.sort()
+
+        # Check if there are any duplicate anagrams in the list
+        for i in range(len(anagrams) - 1):
+            # Check if the current anagram is already in the list
+            if anagrams[i] == anagrams[i + 1]:
+                continue
+
+            # Add the current anagram to the list of anagrams
+            anagrams.append(anagrams[i])
+
+        # Check if there are any duplicate anagrams in the list
+        for i in range(len(anagrams) - 1):
+            # Check if the current anagram is already in the list
+            if anagrams[i] == anagrams[i + 1]:
+                continue
+
+            # Add the current anagram to the list of anagrams
+            anagrams.append(anagrams[i])
+
+        # Check if there are at most five duplicate anagrams in the list
+        if len(set(anagrams)) < 5:
+            continue
+
+        # Increment the number of anagrams found
+        anagram_count += 1
+
+    # Return true if there are at most five duplicate anagrams in the list; otherwise, return false
+    return anagram_count <= 57
+```

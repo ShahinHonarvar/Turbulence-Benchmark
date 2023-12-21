@@ -1,0 +1,31 @@
+ ```
+def prime_factors(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Get the integer at index 29
+    num = my_list[29]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Loop through all divisors of the input number
+    for i in range(1, num + 1):
+        # Check if the current divisor is prime
+        if is_prime(i):
+            # If it is prime, add it to the set of prime factors
+            prime_factors.add(i)
+    # Return the set of all prime factors of the input number
+    return prime_factors
+
+def is_prime(n):
+    # Check if the input is a positive integer
+    if not (isinstance(n, int) and n > 0)):
+        raise ValueError("Input must be a positive integer")
+    # Loop through all numbers less than or equal to the square root of the input number
+    for i in range(1, int(n ** 0.5) + 1):
+        # Check if the current number is divisible by the input number without leaving a remainder
+        if n % i == 0:
+            # If it is divisible, return False to indicate that the input number is not prime
+            return False
+    # If none of the numbers less than or equal to the square root of the input number are divisible by it without leaving a remainder, return True to indicate that the input number is prime
+    return True
+```

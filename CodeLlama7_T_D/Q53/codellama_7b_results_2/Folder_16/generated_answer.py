@@ -1,0 +1,21 @@
+ def palindrome_of_length_at_least_n(string, n=119):
+    # convert the input string to lowercase
+    string = string.lower()
+    # create an empty set to store the palindromes
+    palindromes = set()
+    # loop through each character in the string
+    for i in range(len(string)):
+        # check if the current character is a letter
+        if string[i].isalpha():
+            # create a substring that starts at the current character and ends at the end of the string
+            substr = string[i:]
+            # loop through each character in the substring in reverse order
+            for j in range(len(substr)-1, -1, -1):
+                # check if the current character is a letter
+                if substr[j].isalpha():
+                    # create a palindrome by concatenating the current character and the reverse of the substring
+                    palindrome = substr[i:] + substr[:i]
+                    # add the palindrome to the set of palindromes
+                    palindromes.add(palindrome)
+    # return the set of palindromes
+    return palindromes

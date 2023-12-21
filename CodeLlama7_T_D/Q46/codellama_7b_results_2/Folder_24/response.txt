@@ -1,0 +1,11 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of three numbers using Euclid's algorithm
+    def gcf(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    # Return the greatest common factor of the elements at indices 18, 37 and 43
+    return gcf(gcf(my_list[18], my_list[37]), my_list[43])
+```

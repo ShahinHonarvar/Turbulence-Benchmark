@@ -1,0 +1,12 @@
+
+def return_nth_smallest_ascii(string):
+    # Find the 12th smallest ASCII value among those characters that occur between indices 0 to 11, both inclusive
+    ascii_values = []
+    for i in range(0, 12):
+        ascii_values.append(ord(string[i]))
+    
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    
+    # Return the character with the 12th smallest ASCII value
+    return chr(sorted_ascii_values[11])

@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(words):
+    # Check if there are at least three pairs of anagrams in the list
+    num_pairs = 0
+    for i in range(len(words) - 1):
+        for j in range(i + 1, len(words)):
+            if sorted(words[i]) == sorted(words[j]):
+                num_pairs += 1
+    return num_pairs >= 3

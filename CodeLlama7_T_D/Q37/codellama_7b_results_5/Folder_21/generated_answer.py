@@ -1,0 +1,18 @@
+
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_characters = []
+
+    for character in string:
+        # Check if the current character is between indices 603 and 759, both inclusive, and is greater than or equal to character 'Q' and smaller than or equal to character 'h'
+        if (603 <= string.index(character) <= 759) and ('Q' <= character <= 'h'):
+            # Skip the current character since it meets the criteria for filtering
+            continue
+        else:
+            # Add the current character to the list of filtered characters
+            filtered_characters.append(character)
+
+    # Join the filtered characters into a single string
+    filtered_string = ''.join(filtered_characters)
+
+    return filtered_string

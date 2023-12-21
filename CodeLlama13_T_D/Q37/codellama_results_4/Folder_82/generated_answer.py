@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if not (12 <= ord(c) <= 25 and 'P' <= c <= 'x')])

@@ -1,0 +1,27 @@
+```
+def all_right_truncatable_prime(x):
+    primes = []
+    for i in range(10, x):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+The `is_prime` function is a simple implementation of the Sieve of Eratosthenes that returns `True` if the input number is prime and `False` otherwise:
+```
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+The `is_right_truncatable_prime` function checks if the input number is a right-truncatable prime by iteratively removing the last digit and checking if the resulting number is still prime:
+```
+def is_right_truncatable_prime(n):
+    while n > 0:
+        if not is_prime(n):
+            return False
+        n = n // 10
+    return True
+```

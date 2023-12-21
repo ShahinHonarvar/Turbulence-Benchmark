@@ -1,0 +1,23 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all substrings from index 0 to index 10, both inclusive
+    substrings = []
+    for i in range(0, len(string), 11):
+        substring = string[i:i+11]
+        if not substring:
+            break
+
+        substrings.append(substring)
+
+    # Find all palindromes of lengths between 3 to 5 (both inclusive) in the found substrings
+    palindromes = []
+
+    for substring in substrings:
+
+        for i in range(0, len(substring), 11):
+            for j in range(i+1, len(substring), 11):
+                if substring[i:j].lower() == substring[i:j][::-1].lower():
+                    palindromes.append(substring[i:j])
+
+    # Return the set of all palindromes found in the specified index range and with the length specified
+    return set(palindromes)

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef find_primes_between_indices(lst):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        if n == 2:\n            return True\n        if n % 2 == 0:\n            return False\n        max_div = int(n**0.5) + 1\n        for i in range(3, max_div, 2):\n            if n % i == 0:\n                return False\n        return True\n\n    primes = [i for i in lst[69:81] if is_prime(i)]\n    return sorted(primes)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691053989,
+  "id": "chatcmpl-7jOgHvZ1gKFiP9kcisEbMLdgLC8be",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 118,
+    "total_tokens": 244
+  }
+}

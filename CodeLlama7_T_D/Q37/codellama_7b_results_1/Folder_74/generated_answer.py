@@ -1,0 +1,10 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        if string[i] >= "f" and string[i] <= "o":
+            continue
+
+        result += string[i]
+
+    return result

@@ -1,0 +1,20 @@
+ def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the most significant digit
+    sum = 0
+    msb = ""
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 20 and 35
+    for i in range(tuple[20] + 1, tuple[35]):
+        if i not in tuple[20:35]:
+            sum += i
+    # Check if the sum is an odd number
+    if sum % 2 == 1:
+        # Convert the binary representation of the sum to a string
+        bin_str = bin(sum)
+        # Remove the prefix "0b" from the binary representation string
+        msb = bin_str[3:]
+    else:
+        # Convert the hexadecimal representation of the sum to a string
+        hexa_str = hex(sum)
+        # Remove the prefix "0x" from the hexadecimal representation string
+        msb = hexa_str[2:]
+    return msb

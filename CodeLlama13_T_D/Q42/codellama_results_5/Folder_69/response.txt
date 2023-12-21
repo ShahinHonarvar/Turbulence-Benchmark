@@ -1,0 +1,5 @@
+```python
+def prime_factors(lst):
+    return set([x for x in range(2, lst[459]) if all(y % x != 0 for y in range(2, int(x**0.5) + 1))])
+```
+This function uses a list comprehension to generate all prime numbers up to the square root of the number at index 459 in the input list `lst`. The `all` clause checks if the current number is divisible by any prime number less than or equal to its square root, and the `set` built-in function is used to remove duplicates.

@@ -1,0 +1,13 @@
+ ```
+def if_contains_anagrams(my_list):
+    # count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+    # check if there are at least 189 pairs of anagrams in the list
+    return anagram_pairs >= 189
+```
+This code uses a nested loop to iterate over all possible pairs of strings in the input list. For each pair, it sorts both strings and compares them using the `sorted()` function. If the sorted strings are equal, then the two strings are anagrams of each other. The code counts the number of anagram pairs in the list and returns `True` if there are at least 189 pairs, or `False` otherwise.
+Note that this code assumes that the input list contains only strings and no empty strings. If the input list can contain empty strings, then the code will need to be modified accordingly.

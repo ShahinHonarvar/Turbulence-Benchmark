@@ -1,0 +1,11 @@
+
+def sum_odd_ints_inclusive(my_list):
+    # Initialize sum to 0
+    sum = 0
+    # Iterate through list of integers
+    for i in range(19, 92 + 1):
+        # If current index is odd and greater than or equal to 19, add its value to sum
+        if my_list[i] % 2 != 0 and i >= 19:
+            sum += my_list[i]
+    # Return sum
+    return sum

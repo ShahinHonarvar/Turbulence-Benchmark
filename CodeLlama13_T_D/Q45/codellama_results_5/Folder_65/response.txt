@@ -1,0 +1,21 @@
+```python
+def palindromes_between_indices(string):
+    # Initialize a set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each possible 5-letter arrangement of English letters in the given string
+    for i in range(0, len(string) - 4):
+        for j in range(i + 1, len(string) - 3):
+            for k in range(j + 1, len(string) - 2):
+                for l in range(k + 1, len(string) - 1):
+                    for m in range(l + 1, len(string)):
+                        # Check if the current arrangement forms a palindrome
+                        if string[i] == string[m]:
+                            if string[j] == string[l]:
+                                if string[k] == string[k]:
+                                    # Add the palindrome to the set
+                                    palindromes.add(string[i:m+1])
+    
+    # Return the set of palindromes
+    return palindromes
+```

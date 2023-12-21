@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the 80th number in the Fibonacci sequence
+    fib_80 = fibonacci(80)
+    # Check if the decimal integer is divisible by the 80th number in the Fibonacci sequence
+    return decimal_integer % fib_80 == 0

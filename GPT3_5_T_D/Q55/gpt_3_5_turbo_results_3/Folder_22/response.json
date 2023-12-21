@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    sublists = []\n    size = len(nums)\n    \n    # Iterate through each starting index\n    for i in range(size):\n        product = 1\n        \n        # Iterate through each element in the sublist\n        for j in range(i, size + i):\n            idx = j % size\n            product *= nums[idx]\n            \n            # Check if the product equals 4\n            if product == 4:\n                sublists.append(nums[i:idx+1])\n                break\n    \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689844363,
+  "id": "chatcmpl-7eK0BA74lV7Spbi9pr674j1rE6lEo",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 193,
+    "total_tokens": 309
+  }
+}

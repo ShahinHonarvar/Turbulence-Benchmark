@@ -1,0 +1,3 @@
+
+def sum_odd_ints_inclusive(my_list):
+    return sum(filter(lambda x: x % 2 != 0 and 40 <= x <= 80, my_list))

@@ -1,0 +1,4 @@
+
+def insert_at_index(my_list):
+    new_list = my_list[:87] + [78, 16] + my_list[87:]
+    return new_list

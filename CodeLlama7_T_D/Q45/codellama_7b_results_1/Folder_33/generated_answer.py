@@ -1,0 +1,20 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(7, len(string)):
+        # Check if the current character is a letter (not whitespace or punctuation)
+        if string[i].isalpha():
+            # Create a copy of the string without the first 6 characters
+            temp_str = string[i+1:]
+            # Loop through each character in the temporary string
+            for j in range(len(temp_str)):
+                # Check if the current character is a letter (not whitespace or punctuation)
+                if temp_str[j].isalpha():
+                    # Create a palindrome by concatenating the characters in reverse order
+                    palindrome = string[i+1:][::-1] + temp_str[j] + temp_str[:j][::-1]]
+                    # Check if the palindrome has at least 4 letters and add it to the set of palindromes if it does
+                    if len(palindrome) >= 4:
+                        palindromes.add(palindrome)
+    return palindromes

@@ -1,0 +1,3 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    return sum([x for x in my_list[0:3] if x % -2 == 0 or x % 3 == 0])

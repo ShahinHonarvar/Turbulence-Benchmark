@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_str):
+    # Convert the binary string to an integer
+    num = int(binary_str, 2)
+    
+    # Find the 95th number in the Fibonacci sequence
+    fib = [0] + [1, 1]
+    for i in range(3, 96):
+        fib.append(fib[i-1] + fib[i-2])
+    
+    # Check if the decimal integer is divisible by the Fibonacci number
+    return num % fib[95] == 0

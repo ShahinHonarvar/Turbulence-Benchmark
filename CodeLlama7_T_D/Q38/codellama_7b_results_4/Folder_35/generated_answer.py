@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(my_set):
+    # Initialize a counter variable to keep track of the number of subsets
+    count = 0
+
+    # Loop through all possible combinations of elements in the set
+    for i in range(len(my_set) + 1):
+        for j in range(i + 1, len(my_set) + 1):
+            # If the sum of the two elements is equal to n, then we have found a subset of size 300
+            if my_set[i] + my_set[j] == n:
+                count += 1
+
+    # Return the number of subsets of size 300
+    return count

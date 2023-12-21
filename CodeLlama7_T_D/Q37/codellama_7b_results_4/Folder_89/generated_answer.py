@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for char in s:
+
+        # If the current character is between indices 11 and 32, both inclusive, and is greater than or equal to '!' and smaller than or equal to '@', then remove all occurrences of that character from the input string
+        if (char >= "!" and char <= "@") and (char >= s[11] and char <= s[32])):
+            filtered += char.lower()
+
+    # Return the altered string with the filtered characters removed
+    return filtered

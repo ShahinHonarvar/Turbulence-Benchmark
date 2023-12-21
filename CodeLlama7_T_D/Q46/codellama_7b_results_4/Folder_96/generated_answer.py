@@ -1,0 +1,20 @@
+
+def gcf_three_nums(my_list):
+    gcf = 1
+    for i in range(29, 74):
+        if my_list[i] % gcf == 0:
+            continue
+
+        else:
+
+            gcf = my_list[i]
+
+    for j in range(74, 49, -1):
+        if my_list[j] % gcf == 0:
+            continue
+
+        else:
+
+            gcf = my_list[j]
+
+    return gcf

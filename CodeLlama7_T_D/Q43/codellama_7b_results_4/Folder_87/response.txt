@@ -1,0 +1,29 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Define a list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the indices of the input list
+    for i in range(11, 42):
+        # Check if the current index value is divisible by any other number than itself and 1
+        if my_list[i] % 2 == 0 or my_list[i] % 3 == 0:
+            continue
+
+        # Loop through the remaining indices of the input list
+        for j in range(i + 1, len(my_list)):
+            # Check if the current index value is divisible by any other number than itself and 1
+            if my_list[j] % my_list[i] == 0:
+                break
+
+        # If the current index value is prime, add it to the list of prime numbers
+        else:
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of all prime numbers from index 11 to index 41, both inclusive
+    return sorted(prime_numbers)
+
+# Test the function with a sample input
+#print(find_primes_between_indices([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]))
+```
+This code defines a function called `find_primes_between_indices` that takes one argument, a list of integers. The function returns the sorted list of all prime numbers from index 11 to index 41, both inclusive. If no prime number exists in the specified range, the function returns an empty list.
+The code works by first defining a list to store the prime numbers and then looping through the indices of the input list. For each index, the code checks if the current index value is divisible by any other number than itself and 1. If it is not divisible, the code loops through the remaining indices of the input list to check if the current index value is divisible by any other number than itself and 1. If it is not divisible, the code adds the current index value to the list of prime numbers. Finally, the code returns the sorted list of all prime numbers from index 11 to index 41, both inclusive.

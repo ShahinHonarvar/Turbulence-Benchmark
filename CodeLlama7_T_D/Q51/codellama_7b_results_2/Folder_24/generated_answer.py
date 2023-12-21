@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(my_list):
+    # Check that the list is not empty
+    if len(my_list) == 0:
+        return False
+
+    # Initialize a set to store the anagrams
+    anagrams = set()
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        string = string.lower()
+
+        # Check if the string is an anagram of another string in the list
+        for other_string in my_list:
+            # Skip the current string and the other string we are comparing to
+            if string == other_string:
+                continue
+
+            # Convert the other string to lowercase
+            other_string = other_string.lower()
+
+            # Check if the string is an anagram of the other string
+            if sorted(string) == sorted(other_string):
+                # Add the anagram to the set
+                anagrams.add((string, other_string))
+
+    # Check that there are at most 96 pairs of anagrams in the list
+    return len(anagrams) <= 96

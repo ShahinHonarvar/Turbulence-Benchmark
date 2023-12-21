@@ -1,0 +1,38 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # create a list of all palindromes in the given string
+    palindromes = []
+    for i in range(len(string)):
+        # check if the current character is a letter
+        if string[i].isalpha():
+            # check if the current character is at least n characters away from the end of the string
+            if len(string) - i >= n:
+                # create a substring that starts at the current position and ends at the end of the string
+                substring = string[i:]
+                # check if the substring is a palindrome
+                if is_palindrome(substring):
+                    # add the palindrome to the list of palindromes
+                    palindromes.append(substring)
+    # return the set of all palindromes in the given string that are at least n characters long
+    return set(palindromes)
+
+def is_palindrome(string):
+    # create a list of all characters in the string
+    characters = [c for c in string]
+    # check if the first and last characters are the same
+    if characters[0] == characters[-1]:
+        # remove the first and last characters from the list
+        del characters[0]
+        del characters[-1]
+    else:
+        # return False if the first and last characters are not the same
+        return False
+
+    # check if all other characters in the string are the same as their mirrored counterparts
+    for i in range(len(characters) // 2)):
+        if characters[i] != characters[-i - 1]:
+            # return False if any character is not its mirrored counterpart
+            return False
+
+    # return True if all other characters in the string are the same as their mirrored counterparts
+    return True

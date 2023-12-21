@@ -1,0 +1,10 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) <= 18:
+        return False
+    n = numbers[18]
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            if n // i + i == n:
+                return True
+    return False

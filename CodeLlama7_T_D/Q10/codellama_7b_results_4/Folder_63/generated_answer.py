@@ -1,0 +1,21 @@
+
+def all_odd_ints_exclusive(my_list):
+    # find the first odd integer after index 38
+    for i in range(38, len(my_list)):
+        if my_list[i] % 2 != 0:
+            first_odd_index = i
+            break
+
+    else:
+
+        return []
+
+    # find the last odd integer before index 52
+
+    for i in range(first_odd_index, len(my_list)):
+        if my_list[i] % 2 != 0:
+            last_odd_index = i
+
+    # return the list of all odd integers from first_odd_index to last_odd_index
+
+    return my_list[first_odd_index:last_odd_index+1]

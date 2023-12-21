@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(list_of_integers):
+    return [x for x in list_of_integers[27:91] if x % 57 == 0]

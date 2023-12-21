@@ -1,0 +1,24 @@
+ def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables for the Fibonacci sequence
+    n1 = 0
+    n2 = 1
+    n3 = 1
+    i = 1
+
+    # Calculate the Fibonacci sequence up to the 88th term
+    while i <= 88:
+        n3 = n1 + n2
+        n1 = n2
+        n2 = n3
+        i += 1
+
+    # Check if the decimal integer is divisible by the 88th term of the Fibonacci sequence
+    return decimal_integer % n3 == 0
+
+binary_representation = "10011"
+if if_decimal_is_divisible(binary_representation):
+#    print("The decimal integer is divisible by the 88th term of the Fibonacci sequence.")
+else:
+#    print("The decimal integer is not divisible by the 88th term of the Fibonacci sequence.")

@@ -1,0 +1,8 @@
+ def sum_ints_div_by_either_nums(my_list):
+    start_index = 69
+    end_index = 97
+    sum = 0
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % -90 == 0 or my_list[i] % -67 == 0:
+            sum += my_list[i]
+    return sum

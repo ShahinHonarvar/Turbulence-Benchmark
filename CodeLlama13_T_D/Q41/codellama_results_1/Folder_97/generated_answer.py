@@ -1,0 +1,5 @@
+
+def identical_elements(list1, list2):
+    # create a set of all elements in both lists between indices 40 and 80, inclusive
+    common_set = set(list1[40:81]) & set(list2[40:81])
+    return common_set

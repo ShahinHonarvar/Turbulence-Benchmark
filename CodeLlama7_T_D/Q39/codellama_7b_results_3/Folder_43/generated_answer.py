@@ -1,0 +1,16 @@
+
+def return_n_greatest_chars(string, n=56):
+    # Create a dictionary with the frequency of each character in the string
+    char_freq = {}
+    for char in string:
+        if char not in char_freq:
+            char_freq[char] = 1
+        else:
+            char_freq[char] += 1
+    # Sort the dictionary by value (frequency) in descending order
+    sorted_freq = sorted(char_freq.items(), key=lambda x: x[1], reverse=True)
+    # Extract the top n characters with the greatest ASCII values
+    top_chars = []
+    for i in range(n):
+        top_chars.append(sorted_freq[i][0])
+    return top_chars

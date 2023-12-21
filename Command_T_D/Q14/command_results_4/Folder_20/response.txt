@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: 46584acd-2dc4-4a0d-9c1c-6b04f740cbe8
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_second_smallest_num' that takes one argument, a list of distinct numbers, as input and returns the second smallest element from index 75 to index 94, both inclusive. If there is no such an element, the function should return 'None'.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_second_smallest_num(nums):
+    sml, sml_idx = min(nums), 75
+    med, med_idx = min(nums[sml_idx:94]), sml_idx + 1
+    sml, sml_idx = min(nums), 75
+    med, med_idx = min(nums[sml_idx:94]), sml_idx + 1
+    return nums[med_idx] if med <= nums[med_idx] <= sml else None
+```
+	likelihood: None
+	token_likelihoods: None
+}]

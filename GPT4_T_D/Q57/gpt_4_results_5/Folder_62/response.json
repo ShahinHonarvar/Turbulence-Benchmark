@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n\n    submatrix_list = []\n    \n    for row in range(matrix.shape[0]):\n        for col in range(matrix.shape[1]):\n            for submatrix_row in range(row+1, matrix.shape[0]+1):\n                for submatrix_col in range(col+1, matrix.shape[1]+1):\n                    submatrix = matrix[row:submatrix_row, col:submatrix_col]\n                    if np.sum(submatrix) == 394:\n                        submatrix_list.append(submatrix)\n    \n    return submatrix_list\n```\nThis function will search all possible submatrices for the ones with a sum of 394 and return them in a list.\nYou can use it by simply passing in a numpy matrix as follows:\n\n```python\nnumpy_matrix = np.array([[200, 194], [100, 100], [394, 0]])\nsubmatrix_with_particular_sum(numpy_matrix)\n```\n\nIf the input matrix doesn't have any submatrix with sum equal to 394, the function will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691015811,
+  "id": "chatcmpl-7jEkV2blzFElNZdBqwpGAqflAMxAX",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 236,
+    "prompt_tokens": 121,
+    "total_tokens": 357
+  }
+}

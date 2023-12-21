@@ -1,0 +1,11 @@
+
+def sum_odd_ints_inclusive(my_list):
+    # Initialize a variable to store the sum of odd integers
+    result = 0
+    
+    # Iterate through the list and check if each integer is odd
+    for i in range(25, 88):
+        if my_list[i] % 2 == 1:
+            result += my_list[i]
+            
+    return result

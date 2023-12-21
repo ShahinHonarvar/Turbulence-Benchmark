@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Initialize a dictionary to store the frequency of each character in the string
+    char_freq = {}
+
+    # Iterate through the characters in the string and update the frequency dictionary
+    for char in string:
+        if char in char_freq:
+            char_freq[char] += 1
+
+        else:
+
+            char_freq[char] = 1
+
+    # Sort the dictionary by value (frequency) in descending order
+    sorted_dict = sorted(char_freq.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 9th smallest ASCII value
+    return sorted_dict[8][0]
+```
+This code defines a function called `return_nth_smallest_ascii` that takes one argument, a string of distinct characters. The function returns the character with the 9th smallest ASCII value among those characters in the string that occur between indices 0 to 8, both inclusive.
+The code first initializes a dictionary to store the frequency of each character in the string. It then iterates through the characters in the string and updates the frequency dictionary accordingly.
+Next, the code sorts the dictionary by value (frequency) in descending order using the `sorted` function. The sorted dictionary is then returned as the final result.

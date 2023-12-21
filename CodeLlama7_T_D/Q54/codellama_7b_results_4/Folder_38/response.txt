@@ -1,0 +1,29 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through each number in the tuple
+    for num in tuple:
+
+        # Check if the number is a prime number
+        if is_prime(num):
+
+            # If the number is a prime number, loop through each digit in the number from right to left
+            for i in range(len(str(num))) - 1, -1, -1:
+
+                # Check if the current digit is not equal to zero
+                if str(num)[i] != '0':
+
+                    # If the current digit is not equal to zero, check if the number remains prime when the last rightmost digit is successively removed
+                    if is_prime(int(str(num)[:i] + str(num)[i+1:]))):
+
+                        # Add the number to the list of prime numbers
+                        prime_numbers.append(num)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the sorted list of prime numbers
+    return prime_numbers
+```

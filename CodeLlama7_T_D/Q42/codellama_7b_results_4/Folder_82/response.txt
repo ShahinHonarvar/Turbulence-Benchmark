@@ -1,0 +1,15 @@
+ ```
+def prime_factors(my_list):
+return {p for p in my_list if is_prime(p)}
+def is_prime(n):
+if n < 2: return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0: return False
+return True
+
+my_list = [14, 28, 39]
+#print(prime_factors(my_list))
+```
+This code defines a function `prime_factors` that takes a list of positive integers as input and returns the set of all prime factors of the integer at index 83. The function uses a generator expression to generate the prime factors, and a set comprehension to convert the generator expression into a set.
+The `is_prime` function is also defined within the `prime_factors` function. This function checks whether a number is prime by iterating from 2 to the square root of the number, and checking if the number is divisible by any of these numbers. If the number is not divisible by any of these numbers, it is assumed to be prime.
+#The `my_list` variable is defined outside the `prime_factors` function, and is used to store a list of positive integers that will be passed as input to the `prime_factors` function. The `print` statement is used to print the set of all prime factors of the integer at index 83 in the `my_list`.

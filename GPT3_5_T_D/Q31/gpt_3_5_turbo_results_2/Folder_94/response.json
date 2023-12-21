@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(numbers):\n    def is_perfect(num):\n        if num <= 1:\n            return False\n        div_sum = 1\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                div_sum += i\n                if i != num // i:\n                    div_sum += num // i\n        return div_sum == num\n\n    return is_perfect(numbers[93])\n```\nNote: The above code assumes that the index 93 exists in the list. If the list has fewer than 94 elements, it will raise an IndexError.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689812647,
+  "id": "chatcmpl-7eBkdtox6FXAp1B4NIqA8xD3zsxro",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 136,
+    "prompt_tokens": 91,
+    "total_tokens": 227
+  }
+}

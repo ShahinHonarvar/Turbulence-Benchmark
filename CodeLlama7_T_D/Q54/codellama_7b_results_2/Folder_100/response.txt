@@ -1,0 +1,38 @@
+ ```
+def all_right_truncatable_prime(tuple):
+	# Initialize an empty list for the output
+	output = []
+
+	# Loop through each integer in the tuple
+	for i in range(len(tuple)):
+
+		# Get the current integer and its length
+		current = tuple[i]
+		length = len(str(current))
+
+		# Check if the current integer is a prime number
+		if is_prime(current):
+
+			# Loop through each digit of the current integer
+			for j in range(length - 1, -1, -1):
+
+				# Get the current digit and its index
+				digit = str(current)[j]
+				index = length - 1 - j
+
+				# Check if the current integer is still prime when the last rightmost digit is successively removed
+				if is_prime(int(str(current)[:index] + str(digit)))):
+					output.append(int(str(current)[:index] + str(digit))))
+
+	# Return the sorted list of all right-truncatable prime numbers less than x, or an empty list if there are no such prime numbers
+	return sorted(output)
+
+# Function to check if a number is prime
+def is_prime(n):
+	if n < 2:
+		return False
+	for i in range(2, int(n ** 0.5) + 1):
+		if n % i == 0:
+			return False
+	return True
+```

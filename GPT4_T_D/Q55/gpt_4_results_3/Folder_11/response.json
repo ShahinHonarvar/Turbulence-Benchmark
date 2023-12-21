@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\nfrom functools import reduce\nimport operator\n\ndef lists_with_product_equal_n(lst):\n    if not lst:\n        return []\n\n    results = []\n    q = deque(lst)\n    for _ in range(len(lst)):\n        sublist = []\n        for i in range(len(lst)):\n            sublist.append(q[i])\n            if reduce(operator.mul, sublist, 1) == -15:\n                results.append(sublist.copy())\n        q.rotate(1)\n    return results\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690977284,
+  "id": "chatcmpl-7j4j6RxaNvUKbhPLoIgMiNpRMZX9M",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 193,
+    "total_tokens": 294
+  }
+}

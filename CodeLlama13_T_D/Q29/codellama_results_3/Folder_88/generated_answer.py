@@ -1,0 +1,9 @@
+
+def gcf_two_nums(nums):
+    return _gcd(nums[27], nums[34])
+
+def _gcd(a, b):
+    if a == 0:
+        return b
+    else:
+        return _gcd(b % a, a)

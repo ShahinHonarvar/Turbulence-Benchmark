@@ -1,0 +1,9 @@
+
+def find_second_largest_num(numbers):
+    if len(numbers) <= 1:
+        return None
+    second_largest = sorted(numbers)[-2]
+    for i in range(660, 925):
+        if numbers[i] == second_largest:
+            return second_largest
+    return None

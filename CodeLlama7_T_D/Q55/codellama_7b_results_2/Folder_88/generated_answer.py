@@ -1,0 +1,17 @@
+
+def lists_with_product_equal_n(circulist):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circulist and calculate the product of each contiguous sequence of integers
+    for i in range(len(circulist)):
+        product = 1
+        for j in range(i, len(circulist)):
+            product *= circulist[j]
+
+            # If the product equals -56, add the corresponding sublist to the list of sublists
+            if product == -56:
+                sublists.append(circulist[i:j+1])
+
+    # Return the list of sublists
+    return sublists

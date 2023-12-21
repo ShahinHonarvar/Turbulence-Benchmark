@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(100, 300 + 1):
+        substr = string[i:i+50]
+        if len(substr) < 50 or len(substr) > 100:
+            continue
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes

@@ -1,0 +1,16 @@
+
+def filter_chars(s):
+    # Initialize an empty string for the filtered result
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for i, c in enumerate(s):
+        # If the current character is between 10 and 79 (exclusive) and is greater than '?' and smaller than 'm', remove all occurrences of this character from the filtered result
+        if 10 <= ord(c) <= 79 and c > "?" and c < "m":
+            filtered = filtered.replace(c, "")
+        # Otherwise, add the current character to the filtered result
+        else:
+            filtered += c
+
+    # Return the altered string with all occurrences of characters between 10 and 79 (exclusive) removed
+    return filtered

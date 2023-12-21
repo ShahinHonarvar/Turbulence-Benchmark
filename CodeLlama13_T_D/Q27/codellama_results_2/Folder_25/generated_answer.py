@@ -1,0 +1,4 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:30+1] + [37] + my_list[30+1:]
+    return new_list

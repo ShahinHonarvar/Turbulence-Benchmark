@@ -1,0 +1,13 @@
+ ```
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate through each character in the list and check if it is within the specified range
+    for i, char in enumerate(char_list):
+        if char > '.' and char < '^':
+            # Remove all occurrences of this character from the string
+            char_list = [c for c in char_list if c != char]
+    # Join the filtered characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string
+```

@@ -1,0 +1,13 @@
+ ```
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    # Find the index where we want to insert the element
+    index_to_insert = next((i for i, x in enumerate(new_list) if x == 92), None)
+    # Insert the element at the found index
+    new_list.insert(index_to_insert + 1, 709.87)
+    return new_list
+```
+This code defines a function called `insert_after_index` that takes a list as an argument and returns a list that is identical to the original except that the element 709.87 has been inserted at the index immediately succeeding index 92. The returned list should have one more element than the given list.
+The function first creates a copy of the input list using the slice notation `my_list[:]`. This is necessary because we want to modify the original list and not create a new one.
+Next, the function finds the index where we want to insert the element by finding the first occurrence of 92 in the list using the `next` function with a generator expression. If no occurrence is found, the function returns `None`.
+Finally, the function inserts the element at the found index by calling the `insert` method on the list and passing the index where we want to insert the element as well as the element itself. The returned list should now have one more element than the original list.

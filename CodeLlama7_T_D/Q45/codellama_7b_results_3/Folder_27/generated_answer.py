@@ -1,0 +1,38 @@
+
+def palindromes_between_indices(string):
+    # Find the indices of the first and last letters of the string
+    first_index = 0
+    while first_index < len(string) and string[first_index].isalpha():
+        first_index += 1
+
+    last_index = len(string) - 1
+    while last_index >= 0 and string[last_index].isalpha():
+        last_index -= 1
+
+    # Check if the indices are valid
+    if first_index > last_index:
+        return set()
+
+    # Create a set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the letters in the string between the indices
+    for letter in string[first_index:last_index+1]:
+
+        # Check if the letter is already present in the set
+        if letter not in palindromes:
+
+            # Add the letter to the set
+            palindromes.add(letter)
+
+            # Iterate over the remaining letters in the string between the indices
+            for remaining_letter in string[first_index:last_index+1]:
+
+                # Check if the remaining letter is already present in the set
+                if remaining_letter not in palindromes:
+
+                    # Add the remaining letter to the set
+                    palindromes.add(remaining_letter)
+
+    # Return the set of palindromes
+    return palindromes

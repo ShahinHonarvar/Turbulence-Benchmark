@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 16 + 1):
+        for j in range(len(matrix[0]) - 16 + 1):
+            if sum(matrix[i:i+16, j:j+16].flatten()) == 16:
+                count += 1
+
+    return count

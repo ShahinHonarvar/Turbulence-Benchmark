@@ -1,0 +1,15 @@
+
+def prime_factors(my_list):
+    # Get the value at index 54 from the list
+    num = my_list[54]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate through the range of numbers from 2 to the square root of the number
+    for i in range(2, int(num ** 0.5) + 1):
+        # Check if the current number is a factor of the number
+        if num % i == 0:
+            # If it is a prime factor, add it to the set
+            if i > 1:
+                prime_factors.add(i)
+    # Return the set of all prime factors
+    return prime_factors

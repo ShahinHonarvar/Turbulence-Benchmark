@@ -1,0 +1,12 @@
+ ```
+def filter_chars(string):
+    # Create a list of characters in the string
+    char_list = list(string)
+    # Iterate through the characters and remove any that are between 15 and 85 (exclusive) and greater than 'I' and smaller than 'M'
+    for i in range(len(char_list)):
+        if 15 < char_list[i] < 85 and ord('I') < ord(char_list[i]) < ord('M'):
+            char_list.pop(i)
+    # Join the list of characters back into a string
+    filtered_string = ''.join(char_list)
+    return filtered_string
+```

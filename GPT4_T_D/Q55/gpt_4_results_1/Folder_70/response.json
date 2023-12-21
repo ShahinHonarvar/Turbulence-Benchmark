@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    # the function to find sublists\n    def find_sublists(input_list, n, index=0, path=None, result=None):\n        if result is None:\n            result = []\n        if path is None:\n            path = []\n        if index > len(input_list):\n            return result\n        for i in range(index, len(input_list)):\n            current = path + [input_list[i]]\n            prod = 1\n            for num in current:\n                prod *= num\n            if prod == n:\n                result.append(current)\n            find_sublists(input_list, n, i+1, current, result)\n        return result\n\n    # checking circular list\n    size = len(lst)\n    if size == 0:\n        return []\n    result = []\n    for i, val in enumerate(lst):\n        temp = lst[i:] + lst[0:i]\n        current = find_sublists(temp, 32)\n        for sublist in current:\n            if sublist not in result:\n                result.append(sublist)\n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690079725,
+  "id": "chatcmpl-7fJELIVmwPjiUX6Zi2DGE9KHJBY19",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 225,
+    "prompt_tokens": 193,
+    "total_tokens": 418
+  }
+}

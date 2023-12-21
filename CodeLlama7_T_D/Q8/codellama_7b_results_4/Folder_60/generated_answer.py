@@ -1,0 +1,13 @@
+
+def all_even_ints_exclusive(my_list):
+    # Initialize an empty list to store the even integers
+    even_ints = []
+
+    # Iterate over the list, starting from index 44 and ending at index 91 (exclusive)
+    for i in range(44, 92):
+        # If the current element is an even integer, add it to the 'even_ints' list
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+
+    # Return the 'even_ints' list
+    return even_ints

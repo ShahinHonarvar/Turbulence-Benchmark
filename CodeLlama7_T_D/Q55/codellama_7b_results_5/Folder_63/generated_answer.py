@@ -1,0 +1,19 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the current element and its predecessor
+        product = 1
+
+        # Calculate the product of the current element and its predecessor
+        if i > 0:
+            product *= circular_list[i - 1]
+
+        # Add the current element to the sublist if its product is equal to n
+        if product == n:
+            sublists.append([circular_list[i]])
+
+    return sublists

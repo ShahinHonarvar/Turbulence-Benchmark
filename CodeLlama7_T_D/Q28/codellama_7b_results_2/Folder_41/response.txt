@@ -1,0 +1,13 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string that occur between 58 and 85 (inclusive)
+    indices = []
+    for i, char in enumerate(string):
+        if 58 <= ord(char) <= 85:
+            indices.append(i)
+    # Sort the indices by their corresponding ASCII values
+
+    sorted_indices = sorted(indices, key=lambda x: ord(string[x]))
+    # Return the character with the 19th smallest ASCII value among those characters in the string that occur between indices 58 to 85, both inclusive.
+    return string[sorted_indices[18]]
+```

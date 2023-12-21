@@ -1,0 +1,12 @@
+
+def prime_factors(my_list):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the list of integers
+    for num in my_list:
+        # Check if the number is divisible by any prime number less than or equal to its square root
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                # If it is, add the prime factor to the set of prime factors
+                prime_factors.add(i)
+    return prime_factors

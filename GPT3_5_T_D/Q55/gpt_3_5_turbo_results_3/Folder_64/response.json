@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums: list[int]) -> list[list[int]]:\n    results = []\n    length = len(nums)\n    for i in range(length):\n        product = 1\n        for j in range(i, i + length):\n            product *= nums[j % length]\n            if product == 3:\n                results.append(nums[i:j+1])\n    return results\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689844606,
+  "id": "chatcmpl-7eK465I5ZmYbl1QXutWzpqNcfagu4",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 82,
+    "prompt_tokens": 193,
+    "total_tokens": 275
+  }
+}

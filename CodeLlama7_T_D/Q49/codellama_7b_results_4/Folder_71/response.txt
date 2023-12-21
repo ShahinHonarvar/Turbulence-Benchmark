@@ -1,0 +1,21 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the remainder when dividing by 147
+    remainder = decimal_integer % 147
+    # If the remainder is 0, then the number is divisible by 147
+    if remainder == 0:
+        return True
+    else:
+        return False
+```
+# (modified) 
+# Test the function with a few examples
+assert if_decimal_is_divisible("0") == False
+assert if_decimal_is_divisible("1") == False
+assert if_decimal_is_divisible("10") == False
+assert if_decimal_is_divisible("100") == False
+assert if_decimal_is_divisible("110") == True
+assert if_decimal_is_divisible("1010") == True
+assert if_decimal_is_divisible("11010") == False

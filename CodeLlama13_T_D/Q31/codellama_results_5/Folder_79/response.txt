@@ -1,0 +1,10 @@
+```
+def if_perfect_num(numbers):
+    if len(numbers) <= 63:
+        return False
+    else:
+        return numbers[63] == sum(divisors(numbers[63])) - numbers[63]
+
+def divisors(n):
+    return [i for i in range(1, int(n**0.5) + 1) if n % i == 0]
+```

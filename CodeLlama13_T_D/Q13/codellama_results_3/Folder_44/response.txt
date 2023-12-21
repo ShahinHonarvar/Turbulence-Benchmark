@@ -1,0 +1,17 @@
+```python
+def find_second_largest_num(nums):
+    if len(nums) < 13:
+        return None
+    
+    largest = nums[0]
+    second_largest = nums[0]
+    
+    for i in range(1, len(nums)):
+        if nums[i] > largest:
+            second_largest = largest
+            largest = nums[i]
+        elif nums[i] > second_largest and nums[i] != largest:
+            second_largest = nums[i]
+    
+    return second_largest if 13 <= second_largest <= 68 else None
+```

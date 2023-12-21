@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[685]:
+        return True
+    else:
+        return False

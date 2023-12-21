@@ -1,0 +1,18 @@
+```python
+def prime_factors(numbers):
+    if not isinstance(numbers, list):
+        raise ValueError("Input must be a list")
+    if len(numbers) == 0:
+        return set()
+    prime_factors = set()
+    for number in numbers:
+        if not isinstance(number, int):
+            raise ValueError("Elements of the input list must be integers")
+        if number <= 1:
+            continue
+        for i in range(2, int(number**0.5) + 1):
+            while number % i == 0:
+                prime_factors.add(i)
+                number //= i
+    return prime_factors
+```

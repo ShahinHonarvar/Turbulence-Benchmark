@@ -1,0 +1,18 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Loop through the circular list and find the contiguous integers that have a product equal to -115
+    for i in range(len(circular_list)):
+        current_product = 1
+        current_sum = 0
+        for j in range(i, len(circular_list)):
+            current_product *= circular_list[j]
+            current_sum += circular_list[j]
+            if current_product == -115:
+                sublists.append([current_sum])
+
+    # Return the list of sublists that have a product equal to -115
+    return sublists
+```

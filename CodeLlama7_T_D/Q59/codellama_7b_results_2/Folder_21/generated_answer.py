@@ -1,0 +1,42 @@
+
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    # Initialize a list to store the left-truncatable prime numbers
+    left_truncatable_primes = []
+    # Iterate through the tuple of positive integers
+    for num in tuple_of_positive_integers:
+        # Check if the number is a prime number
+        if is_prime(num):
+            # Initialize a variable to store the leading leftmost digit of the number
+            leading_digit = int(str(num)[0]))
+            # While the leading leftmost digit of the number is not 1, meaning it is still a prime number
+            while leading_digit != 1:
+                # Remove the leading leftmost digit from the number and check if the resulting number is a prime number
+                if is_prime(num % (10 ** leading_digit)))):
+                    # If the resulting number is a prime number, add it to the list of left-truncatable prime numbers
+                    left_truncatable_primes.append(num)
+                    # Break out of the while loop since we have found a left-truncatable prime number
+                    break
+                # If the resulting number is not a prime number, remove the leading leftmost digit and check again
+                else:
+                    num //= (10 ** leading_digit)))))
+                    leading_digit = int(str(num)[0]))
+            # Once we have checked all possible leading leftmost digits of the number, add it to the list of left-truncatable prime numbers if it is a prime number
+            if num != 1:
+                left_truncatable_primes.append(num)
+    # Sort the list of left-truncatable prime numbers in ascending order
+    left_truncatable_primes.sort()
+    return left_truncatable_primes
+# Define a function to check if a number is prime
+def is_prime(num):
+    # Check if the number is less than 2, meaning it is not prime
+    if num < 2:
+        return False
+
+    # Iterate through all numbers up to and including the square root of the number
+    for i in range(2, int(math.sqrt(num)) + 1):
+        # Check if the number is divisible by any number between 2 and the square root of the number
+        if num % i == 0:
+            return False
+
+    # If none of the above conditions are met, the number must be prime
+    return True

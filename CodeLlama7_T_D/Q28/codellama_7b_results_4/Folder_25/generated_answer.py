@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a list of unique characters in the string
+    char_list = list(set(string))
+    # Sort the list of characters by their ASCII values
+    sorted_list = sorted(char_list, key=ord)
+    # Return the 6th smallest ASCII value among the characters that occur between indices 34 to 68, both inclusive
+    return sorted_list[5]

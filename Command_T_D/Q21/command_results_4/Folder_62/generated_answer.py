@@ -1,0 +1,2 @@
+def all_ints_div_by_num(nums):
+    return [i for i in nums[87:89+1] if i % 55 == 0]

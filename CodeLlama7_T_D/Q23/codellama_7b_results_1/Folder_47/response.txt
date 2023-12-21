@@ -1,0 +1,19 @@
+ ```
+def find_divisors_in_range(n):
+    divisors = []
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            if i * i < n:
+                j = i * i
+                while j < n:
+                    if n % j == 0:
+                        divisors.append(j)
+                    j += i
+
+    return [divisor for divisor in divisors if 27 <= divisor <= 44]
+```
+This function takes a positive integer `n` as input, and returns the list of all positive divisors of `n` that are between 27 and 44, both inclusive.
+The function starts by initializing an empty list to store the divisors. It then iterates over the range of integers from 2 to the square root of `n`, which is the largest possible integer for which a divisor might exist. For each integer `i` in this range, the function checks if `n` is divisible by `i`. If it is, the function adds `i` to the list of divisors and continues to the next integer in the range.
+If the current integer `i` is not a factor of `n`, the function moves on to the next integer in the range. This process continues until all integers in the range have been checked for factors.
+Once the entire range has been searched, the function returns the list of divisors that are between 27 and 44, both inclusive. If no such divisors exist in the specified range, the function will return an empty list.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(i, rows):\n                for l in range(j, cols):\n                    submatrix = matrix[i:k+1, j:l+1]\n                    if np.sum(submatrix) == 154 and submatrix.size == 154:\n                        count += 1\n    return count\n```\nNote: This code assumes that the numpy library is already imported and available.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689888226,
+  "id": "chatcmpl-7eVPee7swXP7a4BnthbeCug3Sdfjn",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 122,
+    "prompt_tokens": 111,
+    "total_tokens": 233
+  }
+}

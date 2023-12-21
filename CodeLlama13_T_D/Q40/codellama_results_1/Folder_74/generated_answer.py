@@ -1,0 +1,12 @@
+
+def return_n_smallest_chars(distinct_chars):
+    char_list = []
+    for i in range(5):
+        min_ascii = 128
+        min_char = ''
+        for j in distinct_chars:
+            if ord(j) < min_ascii:
+                min_ascii = ord(j)
+                min_char = j
+        char_list.append(min_char)
+    return sorted(char_list)

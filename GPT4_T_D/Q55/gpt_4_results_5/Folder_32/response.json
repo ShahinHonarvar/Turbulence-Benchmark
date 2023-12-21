@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(circular_list):\n    len_list = len(circular_list)\n    sublists = []\n    for i in range(len_list):\n        for j in range(i+1,len_list+1):\n            for k in range(j+1,len_list+2):\n                if k<=len_list:\n                    sublist = circular_list[i:j]+circular_list[:k]\n                else:\n                    sublist = circular_list[i:j]\n                prod = 1\n                for x in sublist:\n                    prod *= x\n                if prod == 76:\n                    if sublist not in sublists:\n                        sublists.append(sublist)   \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691010687,
+  "id": "chatcmpl-7jDPrjw3qvmnsKzVleXD9gRMpHqQu",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 139,
+    "prompt_tokens": 193,
+    "total_tokens": 332
+  }
+}

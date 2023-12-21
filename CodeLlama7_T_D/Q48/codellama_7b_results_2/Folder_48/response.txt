@@ -1,0 +1,21 @@
+ ```
+def return_binary_or_hexa(tuple):
+# Get the indices of a and b in the tuple
+a = tuple[933]
+b = tuple[996]
+# Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 933 and 996
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple[933:996]:
+sum += i
+# Check if the sum is an odd number
+if sum % 2 == 1:
+return format(sum, 'b')
+else:
+return format(sum, 'x')
+
+# If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, return an empty string
+else:
+return ''
+```
+This code takes a tuple as input and returns a binary or hexadecimal representation of the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 933 and 996. The function first calculates the sum of all such integers, then checks if it is an odd number. If it is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.

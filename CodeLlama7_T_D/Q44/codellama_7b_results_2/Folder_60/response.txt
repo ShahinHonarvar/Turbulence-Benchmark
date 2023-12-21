@@ -1,0 +1,27 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list of positive integers and check if each number is composite
+    for i in range(29, 52):
+        if is_composite(my_list[i]):
+            composite_nums.add(my_list[i])
+
+    return composite_nums
+
+def is_composite(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through the numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # If i divides n with no remainder, it is not prime
+            if n % i == 0:
+                return False
+
+    return True
+
+# Test the function with a list of positive integers
+my_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#print(composite_nums_between_indices(my_list))
+```

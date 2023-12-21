@@ -1,0 +1,38 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the submatrix
+            submatrix_sum = 0
+
+            # Loop over each element of the submatrix
+            for row in range(i, i + 3):
+                for col in range(j, j + 3):
+                    # Add the element to the submatrix sum
+                    submatrix_sum += matrix[row][col]
+
+                    # Check if the submatrix sum equals -863
+                    if submatrix_sum == -863:
+                        # Initialize a list to store the indices of the submatrix
+                        submatrix_indices = []
+
+                        # Loop over each element of the submatrix
+                        for row in range(i, i + 3):
+                            for col in range(j, j + 3):
+                                # Add the index of the element to the list of submatrix indices
+                                submatrix_indices.append((row, col))
+
+                                # Check if the list of submatrix indices is not empty
+                                if len(submatrix_indices) > 0:
+                                    # Add the submatrix to the list of submatrices
+                                    submatrices.append(submatrix_indices)
+
+                        # Return the list of submatrices
+                        return submatrices

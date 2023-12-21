@@ -1,0 +1,34 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Initialize list of prime numbers
+    prime_list = []
+
+    # Loop through tuple elements
+    for element in tuple:
+        # Check if element is prime
+        if is_prime(element):
+            # Add element to prime_list
+            prime_list.append(element)
+
+    # Sort prime_list in descending order
+    prime_list.sort(reverse=True)
+
+    # Return prime_list
+    return prime_list
+
+# Check if number is prime
+def is_prime(number):
+    # Initialize flag to True
+    flag = True
+
+    # Loop through numbers from 2 to the square root of number
+    for i in range(2, int(number ** 0.5) + 1):
+        # Check if number is divisible by i
+        if number % i == 0:
+            # Set flag to False
+            flag = False
+            break
+
+    # Return flag
+    return flag
+```

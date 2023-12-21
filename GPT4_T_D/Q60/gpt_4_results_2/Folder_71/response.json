@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(nums):\n    x = nums[22]\n\n    def is_truncatable(n):\n        str_n = str(n)\n        for i in range(len(str_n)):\n            if (not isprime(int(str_n[i:]))) or (not isprime(int(str_n[:len(str_n) - i]))):\n                return False\n        return True\n\n    res = []\n    for num in range(10, x+1):\n        if '0' not in str(num) and is_truncatable(num):\n            res.append(num)\n\n    return sorted(res, reverse=True)\n```\nThis function checks for truncatable primes within the specified range by checking for each number if it remains prime after left and right truncation. To truncate from the left, slice the string representation of the number from the i-th character to the end, for each i from 0 to the length of the number, and check if that substring is prime. To truncate from the right, slice the string representation of the number from the start to the end minus i, for each i from 0 to the length of the number, and check if that substring is prime. If a number passes all these tests, it is a truncatable prime. The function collects all such primes in a list, and returns it sorted in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690918155,
+  "id": "chatcmpl-7ipLPDi8QnUfruhlM10VA6RDI9m0W",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 282,
+    "prompt_tokens": 187,
+    "total_tokens": 469
+  }
+}

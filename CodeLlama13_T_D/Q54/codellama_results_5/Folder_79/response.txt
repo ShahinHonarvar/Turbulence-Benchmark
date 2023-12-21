@@ -1,0 +1,9 @@
+```
+def all_right_truncatable_prime(x):
+    primes = []
+    for i in range(2, x+1):
+        if is_right_truncatable_prime(i):
+            primes.append(i)
+    return sorted(primes)
+```
+This function uses a list comprehension to generate all prime numbers less than `x` and then filters them using the `is_right_truncatable_prime` function. The resulting list is then sorted in ascending order using the built-in `sorted` function. If no right-truncatable prime numbers are found, an empty list is returned.

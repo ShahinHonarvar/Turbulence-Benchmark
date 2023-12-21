@@ -1,0 +1,20 @@
+ Here is a possible implementation of the function `lists_with_product_equal_n`:
+```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to store the product of the current element and its predecessor
+        product = circular_list[i] * circular_list[i - 1]
+
+        # If the product is equal to -46, add the current sublist to the list of sublists
+        if product == -46:
+            sublists.append(circular_list[i - 1: i + 1])
+
+    # Return the list of sublists
+    return sublists
+```
+This implementation uses a nested loop to iterate over the elements of the circular list and computes the product of each element and its predecessor. If the product is equal to -46, it adds the current sublist to the list of sublists that will be returned by the function. The returned list contains all the sublists from the given circular list that have a product equal to -46, in any order.

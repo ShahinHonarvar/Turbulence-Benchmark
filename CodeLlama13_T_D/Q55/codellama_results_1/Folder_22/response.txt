@@ -1,0 +1,16 @@
+```
+def lists_with_product_equal_n(mylist):
+    result = []
+    for i in range(len(mylist)):
+        temp = mylist[i:i+1]
+        while True:
+            if len(temp) > 0 and temp[-1] * temp[0] == n:
+                result.append(temp[:])
+                break
+            elif len(temp) > 0:
+                temp.pop()
+                continue
+            else:
+                break
+    return result
+```

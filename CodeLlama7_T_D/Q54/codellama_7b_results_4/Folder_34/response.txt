@@ -1,0 +1,24 @@
+ ```
+def all_right_truncatable_prime(tuple_of_integers):
+    x = tuple_of_integers[18]
+    # Initialize an empty list to store the right-truncatable prime numbers less than x
+    right_truncatable_primes = []
+    # Iterate from 2 to x-1
+    for i in range(2, x-1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Initialize an empty string to store the last rightmost digit of i
+            last_digit = ""
+            # Iterate from the end of i's string representation to the beginning
+            for j in range(len(str(i)))-1, -1:
+                # Extract the last rightmost digit of i and append it to the string last_digit
+                last_digit += str(i)[j]
+            # Check if the number obtained by removing the last rightmost digit from i is still a prime number
+            if is_prime(int(last_digit)):
+                # Add i to the list of right-truncatable prime numbers less than x
+                right_truncatable_primes.append(i)
+    # Sort the list of right-truncatable prime numbers in descending order
+    sorted_right_truncatable_primes = sorted(right_truncatable_primes, reverse=True)
+    return sorted_right_truncatable_primes
+```
+Note that this code assumes that the input tuple contains at least 19 elements. If the tuple contains fewer than 19 elements, the code will raise an `IndexError` when it tries to access the element at index 18.

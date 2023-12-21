@@ -1,0 +1,19 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(s, start, end):
+    # create a list of all English letters in the given string
+    letters = []
+    for c in s:
+        if c.isalpha():
+            letters.append(c)
+    # find all palindromes in the specified range
+    palindromes = []
+    for i in range(start, end + 1):
+        for j in range(i + 1, end + 1):
+            if s[i] == s[j]:
+                palindrome = s[i:j+1]
+                if len(palindrome) >= 3 and all(c.isalpha() for c in palindrome)):
+                    palindromes.append(palindrome)
+    # return the set of found palindromes
+    return set(palindromes)
+```

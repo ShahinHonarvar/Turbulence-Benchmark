@@ -1,0 +1,11 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Find the 76th number that occurs in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    while len(fibonacci_sequence) < 76:
+        fibonacci_sequence.append(fibonacci_sequence[-2] + fibonacci_sequence[-1])
+    # Check if the decimal integer is divisible by the 76th Fibonacci number
+    return decimal_integer % fibonacci_sequence[75] == 0
+```

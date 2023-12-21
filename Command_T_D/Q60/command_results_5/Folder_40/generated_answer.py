@@ -1,0 +1,144 @@
+
+def all_left_right_truncatable_prime(x):
+    res = []
+    for i in range(3, x // 2 + 1):
+        if is_left_right_truncatable_prime(i):
+            res.append(i)
+    return res
+
+def is_left_right_truncatable_prime(n):
+    if not is_prime(n):
+        return False
+    s = str(n)
+    while len(s) > 1:
+        if s[0] == '0' or s[-1] == '0':
+            return False
+        elif s[0] == '1' and s[1] == '0':
+            return False
+        elif s[0] == '2' and s[1] == '0':
+            return False
+        elif s[0] == '3' and s[1] == '2':
+            return False
+        elif s[0] == '5' and s[1] == '0':
+            return False
+        elif s[0] == '6' and s[1] == '0':
+            return False
+        elif s[0] == '7' and s[1] == '0':
+            return False
+        elif s[0] == '8' and s[1] == '0':
+            return False
+        elif s[0] == '9' and s[1] == '0':
+            return False
+        elif s[0] == '5' and s[1] == '2':
+            return False
+        elif s[0] == '6' and s[1] == '2':
+            return False
+        elif s[0] == '7' and s[1] == '2':
+            return False
+        elif s[0] == '8' and s[1] == '2':
+            return False
+        elif s[0] == '9' and s[1] == '2':
+            return False
+        elif s[0] == '5' and s[1] == '5':
+            return False
+        elif s[0] == '6' and s[1] == '5':
+            return False
+        elif s[0] == '7' and s[1] == '5':
+            return False
+        elif s[0] == '8' and s[1] == '5':
+            return False
+        elif s[0] == '9' and s[1] == '5':
+            return False
+        elif s[0] == '5' and s[1] == '6':
+            return False
+        elif s[0] == '6' and s[1] == '6':
+            return False
+        elif s[0] == '7' and s[1] == '6':
+            return False
+        elif s[0] == '8' and s[1] == '6':
+            return False
+        elif s[0] == '9' and s[1] == '6':
+            return False
+        elif s[0] == '5' and s[1] == '7':
+            return False
+        elif s[0] == '6' and s[1] == '7':
+            return False
+        elif s[0] == '7' and s[1] == '7':
+            return False
+        elif s[0] == '8' and s[1] == '7':
+            return False
+        elif s[0] == '9' and s[1] == '7':
+            return False
+        elif s[0] == '5' and s[1] == '8':
+            return False
+        elif s[0] == '6' and s[1] == '8':
+            return False
+        elif s[0] == '7' and s[1] == '8':
+            return False
+        elif s[0] == '8' and s[1] == '8':
+            return False
+        elif s[0] == '9' and s[1] == '8':
+            return False
+        elif s[0] == '5' and s[1] == '9':
+            return False
+        elif s[0] == '6' and s[1] == '9':
+            return False
+        elif s[0] == '7' and s[1] == '9':
+            return False
+        elif s[0] == '8' and s[1] == '9':
+            return False
+        elif s[0] == '9' and s[1] == '9':
+            return False
+    return True
+
+def is_prime(n):
+    if n < 2:
+        return False
+    elif n < 3:
+        return True
+    elif n < 5:
+        return False
+    elif n < 7:
+        return True
+    elif n < 11:
+        return False
+    elif n < 13:
+        return True
+    elif n < 17:
+        return False
+    elif n < 19:
+        return True
+    elif n < 23:
+        return False
+    elif n < 29:
+        return True
+    elif n < 31:
+        return False
+    elif n < 37:
+        return True
+    elif n < 41:
+        return False
+    elif n < 43:
+        return True
+    elif n < 47:
+        return False
+    elif n < 53:
+        return True
+    elif n < 59:
+        return False
+    elif n < 61:
+        return True
+    elif n < 67:
+        return False
+    elif n < 71:
+        return True
+    elif n < 73:
+        return False
+    elif n < 79:
+        return True
+    elif n < 83:
+        return False
+    elif n < 89:
+        return True
+    elif n < 97:
+        return False

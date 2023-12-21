@@ -1,0 +1,20 @@
+ ```
+def palindrome_of_length_n(string):
+# case-insensitive comparison
+if not string:
+return set()
+
+palindromes = []
+for i in range(len(string) - 3 + 1):
+substring = string[i:i+7]
+# check if substring is a palindrome
+if substring == substring[::-1]:
+palindromes.append(substring)
+return set(palindromes)
+```
+Explanation:
+
+The function `palindrome_of_length_n` takes a string as input and returns the set of all palindromes of length 7, where each palindrome is a substring of the given string.
+To find the palindromes, we first check if there are any substrings in the original string that have length 7 or more. If there aren't any such substrings, we return an empty set.
+If there are some substrings with length 7 or more, we iterate over them and check if each substring is a palindrome. We use the `==` operator to compare the original string with its reversed version, which gives us the desired result.
+Finally, we add each palindrome to a list called `palindromes` and return it as a set using the `set()` constructor.

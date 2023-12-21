@@ -1,0 +1,25 @@
+ ```
+def prime_factors(my_list):
+    # Find the integer at index 29
+    num = my_list[29]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Iterate from 2 to the square root of the number
+    for i in range(2, int(num ** 0.5) + 1):
+        # If the number is divisible by i, it is not prime
+        if num % i == 0:
+            break
+
+    # If we have reached the end of the loop, then i is a prime factor
+    if i * i > num:
+        prime_factors.add(i)
+
+    return prime_factors
+
+# Test the function with a sample list
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#print(prime_factors(my_list))
+```
+This code defines a function called `prime_factors` that takes a list of positive integers as an argument. The function finds the integer at index 29 in the list and returns all prime factors of that number as a set.
+The function first initializes an empty set to store all prime factors. It then iterates from 2 to the square root of the number, checking if each number is divisible by any smaller numbers. If a number is not divisible by any smaller numbers, it is assumed to be prime and added to the set of prime factors.
+The function returns the set of all prime factors for the integer at index 29 in the list.

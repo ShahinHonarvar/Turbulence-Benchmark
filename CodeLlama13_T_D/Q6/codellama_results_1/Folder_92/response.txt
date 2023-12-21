@@ -1,0 +1,18 @@
+```
+def all_neg_ints_exclusive(my_list):
+    for index, value in enumerate(my_list):
+        if value < 0:
+            return my_list[index+1:]
+    return []
+```
+This code defines a function called `all_neg_ints_exclusive` that takes a list of integers as an argument. It iterates over the list using the built-in `enumerate()` function, and checks each value in the list to see if it is negative. If a negative integer is found, the function returns the sublist of all elements from the index after the current element (exclusive) until the end of the list. If no negative integers exist in the specified range, the function returns an empty list.
+
+Here's some sample input and output:
+```
+>>> my_list = [-1, 2, -3, 4, -5]
+>>> all_neg_ints_exclusive(my_list)
+[-3, -5]
+>>> my_list = [1, 2, 3, 4, 5]
+>>> all_neg_ints_exclusive(my_list)
+[]
+```

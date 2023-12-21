@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert binary representation string to integer
+    decimal_int = int(binary_repr, 2)
+    # Calculate 130th Fibonacci number
+    a, b = 0, 1
+    for _ in range(130):
+        a, b = b, a + b
+    # Check if decimal integer is divisible by 130th Fibonacci number
+    return decimal_int % a == 0

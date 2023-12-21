@@ -1,0 +1,15 @@
+```python
+def find_primes_between_indices(list):
+    primes = []
+    for i in range(29, 100):
+        if list[i] > 1:
+            for j in range(2, int(math.sqrt(list[i])) + 1):
+                if list[i] % j == 0:
+                    break
+            else:
+                primes.append(list[i])
+    return sorted(primes, reverse=True)
+```
+This code defines a function `find_primes_between_indices` that takes a list of integers as an argument and returns the sorted list of all prime numbers from index 29 to index 97 (both inclusive), in descending order. If no prime number exists in the specified range, the function returns an empty list.
+
+The function uses a nested `for` loop to iterate over the indices from 29 to 97 and checks if each integer is a prime number by dividing it by all smaller numbers between 2 and its square root (inclusive). If no divisor is found, the number is appended to a list of primes. Finally, the function returns the sorted list of primes in descending order.

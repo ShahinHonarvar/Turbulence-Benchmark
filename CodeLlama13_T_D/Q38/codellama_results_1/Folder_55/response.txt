@@ -1,0 +1,13 @@
+```python
+def find_subset_of_length_n(elements, n):
+    return len([s for s in powerset(elements) if len(s) == n])
+```
+This function uses the `powerset` function from the itertools module to generate all subsets of a given set and then filters out those with length different than 21. The filtered list is then converted to a set using the built-in `set()` function, which removes duplicates. Finally, the length of the resulting set is returned.
+
+Here's an example usage:
+```python
+>>> find_subset_of_length_n({1, 2, 3}, 2)
+4
+>>> find_subset_of_length_n({1, 2, 3}, 3)
+8
+```

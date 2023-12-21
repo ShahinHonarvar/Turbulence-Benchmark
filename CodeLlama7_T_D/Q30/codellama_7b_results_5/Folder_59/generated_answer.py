@@ -1,0 +1,7 @@
+
+def insert_before_character(string):
+    result = ""
+    for i, char in enumerate(string):
+        if char == "o":
+            result += "0" + string[i:]
+    return result

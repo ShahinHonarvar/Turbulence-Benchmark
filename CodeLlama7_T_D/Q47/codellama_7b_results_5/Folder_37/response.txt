@@ -1,0 +1,22 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Split the string into substrings of length 10
+    substrings = [string[i:i+10] for i in range(len(string)-9)]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring and find all palindromes within it
+    for substring in substrings:
+        # Split the substring into individual characters
+        chars = list(substring)
+
+        # Iterate over each character in the substring and check if it is a palindrome
+        for i in range(len(chars)):
+            # Check if the character at index i is the same as the character at index len(chars)-i-1
+            if chars[i] == chars[len(chars)-i-1]:
+                # If it is a palindrome, add it to the set of palindromes
+                palindromes.add(substring)
+                    break
+
+    return palindromes
+
+```

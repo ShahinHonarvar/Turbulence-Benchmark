@@ -1,0 +1,19 @@
+ Here is a possible implementation of the `all_ints_not_div_by_num` function in Python:
+```
+def all_ints_not_div_by_num(my_list):
+    # Check if the input is a list
+    if not isinstance(my_list, list)):
+        raise ValueError("Input must be a list")
+    # Initialize an empty list to store the results
+    result = []
+    # Iterate through the list of integers
+    for i in my_list:
+        # Check if the current integer is not divisible by 5
+        if i % 5 != 0:
+            # Add the current integer to the results list
+            result.append(i)
+    # Return the results list
+    return result
+```
+This function takes a single argument, `my_list`, which must be a list of integers. The function then iterates through the list of integers and checks if each integer is not divisible by 5. If the current integer is not divisible by 5, it is added to an empty list called `result`. Finally, the function returns the `result` list.
+Note that this implementation assumes that the input list of integers is non-empty and that the index values passed in are valid. If either of these assumptions is not true, the function may raise an error or produce unexpected results.

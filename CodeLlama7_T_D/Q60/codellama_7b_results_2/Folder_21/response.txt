@@ -1,0 +1,54 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+    # Initialize a list to store the left-and-right-truncatable prime numbers
+    left_right_truncatable_prime = []
+    # Iterate through each integer in the tuple
+    for i in range(len(tuple)):
+        # Check if the current integer is a prime number
+        if is_prime(tuple[i]):
+            # Initialize a variable to store the current integer
+            x = tuple[i]
+            # While the current integer is greater than or equal to 10, try removing the leading leftmost and last rightmost digits of the current integer
+            while x >= 10:
+                # If the current integer is still a prime number after removing the leading leftmost and last rightmost digits, add it to the list of left-and-right-truncatable prime numbers
+                if is_prime(x):
+                    left_right_truncatable_prime.append(x)
+                # Remove the leading leftmost and last rightmost digits of the current integer and check if it is still a prime number
+                x = int(str(x)[1:])
+            # If the current integer is a prime number after removing all the leading leftmost and last rightmost digits, add it to the list of left-and-right-truncatable prime numbers
+            if is_prime(tuple[i]):
+                left_right_truncatable_prime.append(tuple[i])
+    # Sort the list of left-and-right-truncatable prime numbers in ascending order
+    left_right_truncatable_prime.sort()
+    # Return the sorted list of left-and-right-truncatable prime numbers
+    return left_right_truncatable_prime
+def is_prime(n):
+    # Check if n is a positive integer
+    if n > 0:
+        # Initialize a variable to store the number of factors of n
+
+        count = 0
+
+        # Iterate through all the numbers less than or equal to the square root of n
+
+        for i in range(int(n ** 0.5) + 1)):
+            # If the current number is a factor of n, increase the count by 1
+
+            if n % i == 0:
+                count += 1
+
+            # If the count is greater than 2, return False, as n is not a prime number
+
+            if count > 2:
+                return False
+
+        # If the count is 2, return True, as n is a prime number
+
+        if count == 2:
+            return True
+
+    # If n is not a positive integer, return False
+
+    else:
+        return False
+```

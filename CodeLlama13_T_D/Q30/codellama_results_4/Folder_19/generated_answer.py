@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join([char if char != "h" else "5h" for char in string])

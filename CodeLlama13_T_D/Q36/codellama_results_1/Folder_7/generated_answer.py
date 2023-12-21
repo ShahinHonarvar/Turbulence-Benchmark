@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    new_string = ""
+    for char in string:
+        if ord(char) < 502 or ord(char) > 946:
+            new_string += char
+        elif ord(char) <= ord('W') or ord(char) >= ord('y'):
+            continue
+        else:
+            new_string += char
+    return new_string

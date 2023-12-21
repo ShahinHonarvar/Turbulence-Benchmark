@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 54275048-f9ba-4df7-b9c7-0274bc6c0f75
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_odd_ints_exclusive' that takes one argument, a list of integers, and returns the list of all odd integers from index 743 to index 867, both exclusive. If no odd integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def all_odd_ints_exclusive(nums):
+    str_nums = re.sub(r'(?<=\d)[13579]0*', '', str(nums))
+    return list(map(int, str_nums[743:-2:2]))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

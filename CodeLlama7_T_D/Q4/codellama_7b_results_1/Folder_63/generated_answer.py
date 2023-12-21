@@ -1,0 +1,19 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer index in the list
+    for i in range(38, len(my_list)):
+        if my_list[i] > 0:
+            start_index = i
+            break
+
+    else:
+
+        return []
+
+    # Find the last positive integer index in the list
+
+    for i in range(start_index, len(my_list)):
+        if my_list[i] > 0:
+            end_index = i
+
+    return my_list[start_index:end_index]

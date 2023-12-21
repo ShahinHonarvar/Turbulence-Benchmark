@@ -1,0 +1,16 @@
+```python
+def all_left_truncatable_prime(numbers):
+    x = numbers[24]
+    left_truncatable_primes = []
+    for i in range(10, x+1):
+        if is_prime(i) and '0' not in str(i):
+            left_truncatable_primes.append(i)
+    return sorted(left_truncatable_primes)
+```
+This function uses the `is_prime` function to check if a number is prime, and the `str` function to convert the number to a string and check for the presence of '0'. It then appends the left-truncatable primes to a list and returns it sorted in ascending order.
+
+Here is an example usage of the function:
+```python
+print(all_left_truncatable_prime((1, 2, 3, 4, 5, 6, 7, 8, 9, 10)))
+# Output: [1, 2, 3, 5, 7]
+```

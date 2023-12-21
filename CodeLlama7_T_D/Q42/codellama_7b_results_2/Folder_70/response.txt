@@ -1,0 +1,29 @@
+ ```
+def prime_factors(my_list):
+    # Get the integer at index 845
+    n = my_list[845]
+    # Initialize an empty set to store the prime factors
+
+    factors = set()
+
+    # Iterate from 2 to the square root of n
+
+    for p in range(2, int(n ** 0.5) + 1):
+        # If p is a factor of n, add it to the set of prime factors
+
+        if n % p == 0:
+            factors.add(p)
+            # If p * p > n, there are no more prime factors
+
+            if p * p > n:
+                break
+
+    return factors
+
+```
+This code defines a function called `prime_factors` that takes a single argument, a list of positive integers. The function returns the set of all prime factors of the integer at index 845 in the input list.
+The function first gets the integer at index 845 from the input list and assigns it to the variable `n`.
+Next, the function initializes an empty set called `factors` to store the prime factors of `n`.
+Then, the function iterates over the range of numbers from 2 to the square root of `n`, inclusive. For each number `p` in this range, the function checks if `p` is a factor of `n` by dividing `n` by `p` and checking if the remainder is zero. If `p` is a factor of `n`, the function adds it to the set of prime factors called `factors`.
+The function continues iterating over numbers in the range until it reaches the square root of `n`. If the product of any two prime factors exceeds `n`, there are no more prime factors. In this case, the function breaks out of the loop and returns the set of prime factors found so far.
+In summary, the `prime_factors` function takes a list of positive integers as input and returns the set of all prime factors of the integer at index 845 in the input list.

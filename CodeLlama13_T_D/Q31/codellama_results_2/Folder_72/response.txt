@@ -1,0 +1,13 @@
+```
+def if_perfect_num(numbers):
+    if len(numbers) <= 16:
+        return False
+    number = numbers[16]
+    divisors = []
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            divisors.append(i)
+            if number // i != i:
+                divisors.append(number // i)
+    return sum(divisors) == number - 1
+```

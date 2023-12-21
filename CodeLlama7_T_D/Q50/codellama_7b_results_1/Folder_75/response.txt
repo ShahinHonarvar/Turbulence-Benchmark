@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    count = 0
+    anagram_pairs = []
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        string1 = my_list[i]
+        # Iterate over the remaining strings
+        for j in range(i + 1, len(my_list)):
+            # Get the other string
+            string2 = my_list[j]
+            # Check if the strings are anagrams of each other
+            if sorted(string1.lower()) == sorted(string2.lower()):
+                # If they are, increment the count and add the pair to the list
+                count += 1
+                anagram_pairs.append((i, j))
+    # Return True if there are at least 70 pairs of anagrams in the list; otherwise, return False
+    return count >= 70
+```

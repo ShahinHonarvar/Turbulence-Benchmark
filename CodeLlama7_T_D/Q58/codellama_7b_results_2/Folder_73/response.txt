@@ -1,0 +1,13 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 1):
+        for j in range(i + 1, len(matrix)):
+            submatrix = matrix[i:j]
+            if np.count_nonzero(submatrix == 41) == 41:
+                count += 1
+
+    return count
+```
+This function takes a two-dimensional numpy matrix of integers as its argument. It then iterates over the rows and columns of the matrix, creating submatrices by slicing the original matrix. The function checks each submatrix to see if it contains 41 integers in total. If a submatrix is found that meets this condition, the function increments a count variable. After completing its iteration over the rows and columns, the function returns the value of the count variable, which will be either 0 or some positive integer representing the number of submatrices with 41 integers each in the original matrix.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    \n    # Get the shape of the input matrix\n    rows, cols = matrix.shape\n    \n    # Loop through the matrix\n    for i in range(rows):\n        for j in range(cols):\n            # Loop through all possible submatrix sizes\n            for size in range(1, min(rows-i, cols-j)+1):\n                # Get the submatrix\n                submatrix = matrix[i:i+size, j:j+size]\n                # Check if it contains 51 elements\n                if np.size(submatrix) == 51:\n                    count += 1\n    return count\n```\nNote: This function supposes that you are looking for square submatrices. If you are interested in rectangular submatrices, then the problem becomes much more complex because you have to consider all possible shapes not just all possible sizes.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691095839,
+  "id": "chatcmpl-7jZZHSeOVbIBlSn6a7DFvqKiCZNpJ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 111,
+    "total_tokens": 301
+  }
+}

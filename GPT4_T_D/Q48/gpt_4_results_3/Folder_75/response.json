@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(tup):\n    if len(tup) < 52:\n        return \"\"\n    a, b = tup[20], tup[51]\n    int_sum = sum(set(range(a + 1, b)) - set(tup[21:51]))\n    if int_sum % 2 == 0:\n        return format(int_sum, 'x')\n    else:\n        return format(int_sum, 'b')\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690960867,
+  "id": "chatcmpl-7j0SJ9ZFgwRN588uAb62FyLtG3APh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 94,
+    "prompt_tokens": 263,
+    "total_tokens": 357
+  }
+}

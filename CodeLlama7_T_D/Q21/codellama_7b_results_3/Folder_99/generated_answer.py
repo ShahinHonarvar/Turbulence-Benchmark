@@ -1,0 +1,12 @@
+
+def all_ints_div_by_num(my_list):
+    # Initialize an empty list to store the divisible integers
+    div_ints = []
+
+    # Loop through the list and check if each integer is divisible by 763
+    for i in range(161, 970 + 1):
+        if my_list[i] % 763 == 0:
+            div_ints.append(my_list[i])
+
+    # Return the list of divisible integers
+    return div_ints

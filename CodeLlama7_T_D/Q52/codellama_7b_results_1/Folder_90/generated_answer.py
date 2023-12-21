@@ -1,0 +1,38 @@
+
+def palindrome_of_length_n(string, n):
+    # Check if the input string is valid
+    if not isinstance(string, str) or len(string) == 0:
+        raise ValueError("Invalid input string")
+
+    # Check if the input length is valid
+
+    if not isinstance(n, int) or n < 1 or n > len(string):
+        raise ValueError("Invalid input length")
+
+    # Initialize an empty set to store the palindromes
+
+    palindromes = set()
+
+    # Iterate over the characters in the string
+
+    for i in range(len(string)):
+
+        # Check if the character is a letter
+
+        if string[i].isalpha():
+
+            # Get the substring starting from the current index to the end of the string
+
+            substr = string[i:len(string)]
+
+            # Check if the substring is a palindrome
+
+            if substr == substr[::-1]:
+
+                # Add the palindrome to the set
+
+                palindromes.add(substr)
+
+    # Return the set of palindromes
+
+    return palindromes

@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if not my_list:
+        return False
+
+    # Check if the element at index 42 is a perfect number
+    try:
+        if is_perfect_number(my_list[42]):
+            return True
+
+        else:
+
+            return False
+
+    except IndexError:
+
+        return False

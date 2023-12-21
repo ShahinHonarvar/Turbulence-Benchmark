@@ -1,0 +1,18 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 87, 20 and 36
+    gcf = 1
+    for i in range(len(my_list)):
+        if i == 87 or i == 20 or i == 36:
+            gcf = __gcf__(gcf, my_list[i])
+    return gcf
+
+def __gcf__(a, b):
+    while b != 0:
+        a, b = b, a % b
+
+    return a
+```
+This code defines a function `gcf_three_nums` that takes one argument, a list of positive integers. The function calculates the greatest common factor (GCF) of the elements at indices 87, 20 and 36 in the input list using the `__gcf__` helper function.
+The `__gcf__` function is defined inside the `gcf_three_nums` function. It takes two arguments, `a` and `b`, which are the two numbers to be compared for GCF. The function uses the Euclidean algorithm to calculate the GCF of the two input numbers.
+The `gcf_three_nums` function returns the GCF of the three input numbers at indices 87, 20 and 36 in the input list.

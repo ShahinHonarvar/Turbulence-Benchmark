@@ -1,0 +1,152 @@
+[cohere.Generation {
+	id: 0bdabd64-3e17-4006-984b-4f26084eb9d9
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 85. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in ascending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import heapq
+from collections import defaultdict, deque
+from bisect import bisect_left as bl, bisect_right as br
+from functools import reduce
+from operator import add, sub
+from heapq import heappush, heappop
+from itertools import permutations, accumulate
+from math import sqrt, log2, factorial
+from collections import Counter
+
+sys.setrecursionlimit(10**6)
+INF = 10**20
+MOD = 998244353
+MOD2 = 1000000007
+# sys.setrecursionlimit(1_000_000)
+
+
+def prime(n):
+    if n < 2:
+        return False
+    if n == 2 or n == 3:
+        return True
+    if n == 1:
+        return False
+    if n == 5:
+        return True
+    if n == 1:
+        return False
+    if n == 5:
+        return True
+    if n == 1:
+        return False
+    if n == 5:
+        return True
+    if n == 1:
+        return False
+    if n == 5:
+        return True
+    if n == 1:
+        return False
+    if n == 5:
+        return True
+    return all(n % d for d in range(2, n // 2))
+
+
+def check_digit(n):
+    return all(d == "0" or d == "5" for d in str(n)[::-1])
+
+
+def prime_ Factors(n):
+    if n < 2:
+        return []
+    if n == 2 or n == 3:
+        return [n]
+    if n == 1:
+        return []
+    if n == 5:
+        return [n]
+    if n == 1:
+        return []
+    if n == 5:
+        return [n]
+    factors = []
+    for i in range(2, sqrt(n) + 1):
+        if n % i == 0:
+            factors.append(i)
+            while n % i == 0:
+                n //= i
+    if n > 1:
+        factors.append(n)
+    return factors
+
+
+def prime_ factors_str(n):
+    return "".join(str(d) for d in prime_Factors(n))
+
+
+def n_digit_string(n):
+    return str(n)[::-1]
+
+
+def n_digit_string_list(n):
+    return [str(n)[i] for i in range(len(str(n)))]
+
+
+def power_set(S):
+    n = len(S)
+    PS = []
+    for s in range(2**n):
+        curr = []
+        for i in range(n):
+            if (1 << i) > s:
+                break
+            if (s >> i) & 1:
+                curr.append(S[i])
+        PS.append(curr)
+    return PS
+
+
+def solve():
+    return list(permutations(list(range(2, int(input()) + 1)), 2))
+
+
+def main():
+    x = int(input())
+    return list(filter(lambda p: check_digit(p), list(range(2, x + 1))))
+
+
+if __name__ == "__main__":
+    # print(solve())
+    # print(main())
+    # print(permutations(list(range(2, int(input()) + 1)), 2))
+    # print(power_set(list(range(10))))
+    # print(list(permutations(list(range(2, int(input()) + 1)), 2)))
+    # print(main())
+    # print(n_digit_string_list(int(input())))
+    # print(n_digit_string(int(input())))
+    # print(prime_Factors_str(int(input())))
+    # print(prime_Factors(int(input())))
+    # print(check_digit(int(input())))
+    # print(prime(int(input())))
+    # print(list(permutations(list(range(2, int(input()) + 1)), 2)))
+    # print(permutations(list(range(2, int(input()) + 1)), 2))
+    # print(power_set(list(range(10))))
+    # print(n_digit_string_list(int(input())))
+    # print(n_digit_string(int(input())))
+    # print(prime_Factors_str(int(input())))
+    # print(prime_Factors(int(input())))
+    # print(check_digit(int(input())))
+    # print(prime(int(input())))
+    # print(list(permutations(list(range(2, int(input()) + 1)), 2)))
+    # print(permutations(list(range(2, int(input()) + 1)), 2))
+    # print(power_set(list(range(10))))
+    # print(n_digit_string_list(int(input())))
+    # print(n_digit_string(int(input())))
+    # print(prime_Factors_str(int(input())))
+    # print(prime_Factors(int(input())))
+    # print(check_digit(int(input())))
+    # print(prime(int(input())))
+    # print(list(permutations(list(range(2, int(input()) + 1)), 2)))
+    # print(permutations(list(range(2, int(input()) + 1)), 2))
+    # print(power_set(list(range(10))))
+    # print
+	likelihood: None
+	token_likelihoods: None
+}]

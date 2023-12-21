@@ -1,0 +1,14 @@
+```
+def prime_factors(my_list):
+    return set(prime_factorization(my_list[990]))
+
+def prime_factorization(n):
+    if n == 1:
+        return []
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            yield i
+            yield from prime_factorization(n // i)
+    else:
+        yield n
+```

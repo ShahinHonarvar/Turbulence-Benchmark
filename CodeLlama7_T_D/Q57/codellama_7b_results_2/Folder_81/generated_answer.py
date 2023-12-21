@@ -1,0 +1,16 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with sum -90
+    submatrices = []
+    # Loop through each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Find all elements in the matrix that have a sum equal to -90
+            if np.sum(matrix[i:, j]) == -90 or np.sum(matrix[i, j:]) == -90:
+                # Add the submatrix to the list of submatrices with sum -90
+                submatrices.append(matrix[i:, j])
+                break
+
+    return submatrices

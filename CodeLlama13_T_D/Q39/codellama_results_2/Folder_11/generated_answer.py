@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string):
+    # create a dictionary with the ASCII values of each character in the string as keys and the characters themselves as values
+    char_dict = {ord(char): char for char in set(string)}
+
+    # sort the dictionary by key in descending order (largest to smallest)
+    sorted_chars = sorted(char_dict, reverse=True)
+
+    # return a list of exactly 17 characters from the sorted dictionary, starting with the largest ASCII value character
+    return [char_dict[key] for key in sorted_chars[:17]]

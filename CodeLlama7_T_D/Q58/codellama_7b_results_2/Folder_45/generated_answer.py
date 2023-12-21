@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices with 28 integers each
+    count = 0
+
+    # Iterate over all possible submatrices in the matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Check if the current submatrix has 28 integers each
+            if np.count_nonzero(matrix[i:i+2, j:j+2]) == 28:
+                # If it does, increment the counter and break out of the inner loop
+                count += 1
+                break
+
+    # Return the number of submatrices with 28 integers each
+    return count

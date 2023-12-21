@@ -1,0 +1,14 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Create a new list to store the result
+    result = []
+
+    # Loop through the specified range of indices
+    for i in range(len(my_list)):
+        # Check if the current element is not divisible by 7
+        if my_list[i] % 7 != 0:
+            # If it is not, add it to the result list
+            result.append(my_list[i])
+
+    # Return the result list
+    return result

@@ -1,0 +1,22 @@
+ ```
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over the characters in the string
+    for char in string:
+        # Check if the character is between indices 15 and 55, inclusive
+        if 15 <= string.index(char) <= 55:
+            # Check if the character is greater than or equal to 'W' and smaller than or equal to '{', inclusive
+            if char >= "W" and char <= "{":
+                # Skip this character since it should be removed
+                continue
+
+        # If we reach this point, the character should be added to the filtered characters list
+        filtered_chars.append(char)
+
+    # Join the filtered characters back into a string
+    filtered_string = "".join(filtered_chars)
+
+    return filtered_string
+```

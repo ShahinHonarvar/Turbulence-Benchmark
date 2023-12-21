@@ -1,0 +1,12 @@
+
+def identical_elements(list1, list2):
+    # Initialize an empty set to store the identical elements
+    identical_set = set()
+
+    # Loop through both lists and check for identical elements between index 14 and index 64 (inclusive)
+    for i in range(14, len(list1)):
+        if list1[i] in list2[i:64]:
+            identical_set.add(list1[i])
+
+    # Return the set of all identical elements found between index 14 and index 64 (inclusive)
+    return identical_set

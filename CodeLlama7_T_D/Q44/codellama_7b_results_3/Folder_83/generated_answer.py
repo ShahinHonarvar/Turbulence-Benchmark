@@ -1,0 +1,14 @@
+
+def composite_nums_between_indices(my_list):
+    # Create a set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate through the list from index 111 to index 111, both inclusive
+    for i in range(111, len(my_list)):
+        # Check if the number is divisible by any number between 1 and the square root of the number
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                composite_nums.add(i)
+                break
+
+    return composite_nums

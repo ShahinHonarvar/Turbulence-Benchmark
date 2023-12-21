@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        if string[i] >= "=" and string[i] <= "E":
+            continue
+        result += string[i]
+    return result

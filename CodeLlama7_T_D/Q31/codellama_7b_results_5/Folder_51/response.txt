@@ -1,0 +1,22 @@
+ Here is a possible implementation of the function:
+```python
+def if_perfect_num(my_list):
+    # Check if the list has enough elements
+    if len(my_list) < 64:
+        return False
+
+    # Check if the number at index 64 is a perfect number
+    if my_list[64] == 0:
+        return False
+
+    else:
+
+        for i in range(1, int(my_list[64]) / 2):
+            if my_list[64] % i == 0:
+                j = my_list[64] / i
+                if j * (j - 1) / 2 == my_list[64]:
+                    return True
+
+        return False
+```
+This function takes a list of positive integers as an argument and returns `True` if the number at index `64` is a perfect number, otherwise it returns `False`.

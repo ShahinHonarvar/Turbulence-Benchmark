@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(s):
+    chars = set()
+    for i in range(50, 92):
+        if s[i] in chars:
+            s = s[:i] + s[i+1:]
+    return s

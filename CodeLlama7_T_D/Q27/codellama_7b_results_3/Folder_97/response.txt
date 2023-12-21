@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `insert_after_index` function:
+```python
+def insert_after_index(my_list, index):
+    if index >= len(my_list) or index < 0:
+        raise ValueError("Index out of bounds")
+
+    new_list = my_list[:index+1] + [912, 170] + my_list[index+1:]
+
+    return new_list
+```
+This function takes a list and an index as input. It then creates a new list that is identical to the given list except that `[912, 170]` has been inserted at the index immediately succeeding `500`. The new list should have one more element than the original list.
+For example, if we call the function with the following inputs:
+```python
+my_list = [1, 2, 3, 4, 5, 6]
+index = 3
+```
+The output of the function would be:
+```python
+[1, 2, 3, 912, 170, 4, 5, 6]
+```
+As we can see, the returned list is identical to the given list except that `[912, 170]` has been inserted at index `4`. The length of the returned list is one more than the length of the original list because we have added two elements to the list.

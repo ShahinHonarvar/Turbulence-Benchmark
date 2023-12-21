@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return "".join([char if char not in range(ord(":"), ord("C")) else "" for char in string[13:40]])

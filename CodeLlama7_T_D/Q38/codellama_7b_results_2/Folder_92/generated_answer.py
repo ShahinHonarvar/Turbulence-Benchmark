@@ -1,0 +1,7 @@
+
+def find_subset_of_length_n(elements):
+    num_subsets = 1
+    for i in range(len(elements)):
+        subset = elements[i:]
+        num_subsets += 1
+    return num_subsets

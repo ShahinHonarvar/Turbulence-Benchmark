@@ -1,0 +1,8 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in list1 between indices 9 and 9 (inclusive)
+    set1 = set(list1[9:10])
+    # Create a set of all elements in list2 between indices 9 and 9 (inclusive)
+    set2 = set(list2[9:10])
+    # Return the intersection of the two sets
+    return set1.intersection(set2)

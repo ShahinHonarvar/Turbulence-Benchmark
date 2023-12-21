@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered = []
+
+    # Iterate over each character in the given string
+    for char in s:
+        # If the current character is between the indices 18 and 38 (both exclusive) and it is greater than character ')' and smaller than character 'P', then remove all occurrences of that character within the string while keeping the order of all characters in the string intact.
+        if char >= ')' and char <= 'P' and s.index(char) > 18 and s.index(char) < 38:
+            # Replace all occurrences of the current character with an empty string
+            filtered.append('')
+
+    # Return the altered string
+    return ''.join(filtered) + s[s.index('P') + 1:]

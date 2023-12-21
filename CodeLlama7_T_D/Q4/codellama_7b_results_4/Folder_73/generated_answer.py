@@ -1,0 +1,9 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Initialize an empty list to store the positive integers
+    pos_ints = []
+    # Loop through the list and check if each element is a positive integer
+    for i in range(36, 85):
+        if my_list[i] > 0:
+            pos_ints.append(my_list[i])
+    return pos_ints

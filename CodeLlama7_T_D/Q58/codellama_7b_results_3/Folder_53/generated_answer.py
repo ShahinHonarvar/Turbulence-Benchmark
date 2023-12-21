@@ -1,0 +1,12 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix: np.ndarray) -> int:
+    count = 0
+    for i in range(matrix.shape[0] - 1):
+        for j in range(i + 1, matrix.shape[0]):
+            submatrix = matrix[i:j + 1, :]
+            if np.count_nonzero(submatrix == 24) == (j + 1 - i) * (submatrix.shape[1] - 1):
+                count += 1
+
+    return count

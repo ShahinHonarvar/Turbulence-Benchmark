@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    res = []\n    length = len(lst)\n    lst += lst\n    for n in range(2, length+1):\n        for i in range(length):\n            sublist = lst[i:i+n]\n            product = 1\n            for item in sublist:\n                product *= item\n            if product == 28:\n                res.append(sublist)\n    return [list(i) for i in set(tuple(i) for i in res)]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690902117,
+  "id": "chatcmpl-7ilAjkRMuNY51enr0IsRVrV0uQbeu",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 193,
+    "total_tokens": 300
+  }
+}

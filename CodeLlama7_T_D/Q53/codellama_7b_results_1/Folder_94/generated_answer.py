@@ -1,0 +1,31 @@
+ def palindrome_of_length_at_least_n(string, n):
+    # Create a dictionary to store the frequency of each letter in the string
+    letter_frequency = {}
+    for char in string:
+        if char in letter_frequency:
+            letter_frequency[char] += 1
+        else:
+            letter_frequency[char] = 1
+
+    # Create a list to store all palindromes of length greater than or equal to n
+    palindromes = []
+
+    # Iterate through the dictionary and find all palindromes of length greater than or equal to n
+    for char, frequency in letter_frequency.items():
+        if frequency >= 2:
+            for i in range(frequency - 1):
+                palindrome = char + str(i) + char
+                if len(palindrome) >= n and is_palindrome(palindrome, case_insensitive=True):
+                    palindromes.append(palindrome)
+
+    # Return the set of all palindromes of length greater than or equal to n that exist in the given string
+    return set(palindromes)
+
+# A function to check if a string is a palindrome
+def is_palindrome(string, case_insensitive=False):
+    # Convert the string to lowercase if the case_insensitive parameter is True
+    if case_insensitive:
+        string = string.lower()
+
+    # Return True if the string is a palindrome and False otherwise
+    return string == string[::-1]

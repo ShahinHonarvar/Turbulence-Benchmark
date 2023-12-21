@@ -1,0 +1,16 @@
+
+def palindrome_of_length_at_least_n(string, n=48):
+    # Convert the input string to lowercase
+    string = string.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each substring of length greater than or equal to 48 in the input string
+    for i in range(len(string) - n + 1):
+        # Extract the current substring
+        substr = string[i:i+n]
+        # Check if the current substring is a palindrome
+        if substr == substr[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes

@@ -1,0 +1,27 @@
+ ```
+def sum_of_divisors_in_range(n):
+    if n < 32 or n > 35:
+        return 0
+
+    divisors = []
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            divisors.append(i)
+
+            if i * i > n:
+
+                break
+
+
+    return sum(divisors)
+
+```
+This function takes a positive integer `n` as its argument, and returns the sum of all positive divisors of `n` that are between 32 and 35, both inclusive.
+The function first checks if `n` is within the specified range. If it is not, the function returns 0 immediately.
+Next, the function initializes an empty list called `divisors`. This list will store all positive divisors of `n` that are between 32 and 35, both inclusive.
+The function then uses a for loop to iterate over all numbers between 2 and the square root of `n`, both inclusive. For each number `i`, the function checks if `n` is divisible by `i`. If it is, the function appends `i` to the `divisors` list.
+If a number `i` is found that makes `n` divisible by `i`, the function also checks if `i * i > n`. This condition is necessary because once `n` has been divided by a number `i`, there is no need to divide it by any larger numbers, as they would have already been included in the list of divisors.
+Once all divisors have been found and added to the `divisors` list, the function returns the sum of all elements in the `divisors` list. This sum is the desired result: the sum of all positive divisors of `n` that are between 32 and 35, both inclusive.

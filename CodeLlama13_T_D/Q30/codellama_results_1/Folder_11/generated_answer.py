@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join([f"{char if char != 'g' else 't' + char}g" for char in string])

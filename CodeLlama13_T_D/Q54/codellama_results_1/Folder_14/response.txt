@@ -1,0 +1,9 @@
+```
+def all_right_truncatable_prime(x):
+    prime_list = []
+    for i in range(10, x):
+        if is_prime(i) and all([is_prime(i // 10 ** j) for j in range(1, len(str(i)))]):
+            prime_list.append(i)
+    return sorted(prime_list, reverse=True)
+```
+This function uses the `is_prime` function to check if a number is prime and then checks that it remains prime when the last rightmost digit is removed by using the `//` operator to divide the number by 10. The `all` function is used to ensure that all the digits of the number are still prime after being truncated.

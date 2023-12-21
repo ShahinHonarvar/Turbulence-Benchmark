@@ -1,0 +1,29 @@
+
+def return_binary_or_hexa(my_tuple):
+    # Initialize variables for the sum and the most significant digit
+    sum = 0
+    msb = 0
+
+    # Check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if my_tuple[27] <= my_tuple[96]:
+
+        # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 27 and 96
+        for i in range(my_tuple[27] + 1, my_tuple[96]):
+            if i not in my_tuple[27:96]:
+                sum += i
+
+        # Check if the sum is an odd number
+        if sum % 2 == 1:
+
+            # Return the binary representation string of the sum
+            return bin(sum)[2:]
+
+        else:
+
+            # Return the hexadecimal representation string of the sum
+            return hex(sum)[2:]
+
+    else:
+
+        # If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, return an empty string
+        return ""

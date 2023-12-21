@@ -1,0 +1,9 @@
+
+def sum_of_divisors_in_range(n):
+    if n < 1:
+        return 0
+    sum = 0
+    for i in range(48, 61):
+        if i % n == 0 and i in range(48, 61):
+            sum += i
+    return sum

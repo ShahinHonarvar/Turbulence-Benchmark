@@ -1,0 +1,38 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[86]
+# create a list of prime numbers less than x
+prime_list = []
+for i in range(2, x):
+if is_prime(i):
+prime_list.append(i)
+# filter the prime list to only include left-truncatable prime numbers
+filtered_list = [i for i in prime_list if no_0s(i) and successively_prime(i)]
+# sort the filtered list in ascending order
+sorted_list = sorted(filtered_list)
+return sorted_list
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def no_0s(n):
+return str(n).find('0') == -1
+
+def successively_prime(n):
+i = 2
+while i * i <= n:
+if n % i == 0:
+return False
+
+i += 1
+
+return True
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as input. The function returns a list of all left-truncatable prime numbers less than the integer at index 86 in the input tuple. The list is sorted in ascending order.
+The function uses three helper functions to check if a number is prime, contains no 0s, and if the leading leftmost digit is successively removed, then all resulting numbers are prime. These functions are defined within the `all_left_truncatable_prime` function.

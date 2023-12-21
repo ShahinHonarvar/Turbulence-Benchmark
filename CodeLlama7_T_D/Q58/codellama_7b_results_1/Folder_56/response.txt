@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 1):
+        for j in range(len(matrix[0]) - 1):
+            submatrix = matrix[i:i + 68, j:j + 68]
+            if all(num == 68 for row in submatrix for num in row):
+                count += 1
+    return count
+```
+This code defines a function called `submatrix_with_n_numbers` that takes one argument which is a two-dimensional numpy matrix of integers. The function returns the count of all submatrices of the given matrix that contain 68 integers each. If no such submatrix is found, the function returns 0.
+The function uses a nested loop to iterate over all rows and columns of the input matrix. For each row, it checks if the next 68 rows have the same value as the current row. Similarly, for each column, it checks if the next 68 columns have the same value as the current column.
+If a submatrix is found that contains 68 integers each, the function increments the count and continues with the next iteration. If no such submatrix is found, the function returns 0.

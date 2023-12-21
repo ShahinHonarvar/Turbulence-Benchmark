@@ -1,0 +1,16 @@
+ ```
+def find_original_set(sets):
+    # Create an empty set to store the original set
+    original_set = set()
+
+    # Iterate through each set in the input list
+    for s in sets:
+        # Add each element of the current set to the original set
+        original_set.update(s)
+
+    # Return the smallest set such that each of the given arguments is a subset of it
+    return min(original_set, key=len)
+```
+This code defines a function called `find_original_set` that takes a list of sets as input and returns the smallest set such that each of the given arguments is a subset of it.
+The function first creates an empty set to store the original set. Then, it iterates through each set in the input list and adds each element of the current set to the original set using the `update()` method.
+After adding all elements from each set in the input list, the function returns the smallest set such that each of the given arguments is a subset of it using the `min()` function with the key parameter set to `len`. This ensures that the smallest set containing all elements is returned.

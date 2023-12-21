@@ -1,0 +1,11 @@
+```python
+def if_contains_anagrams(my_list):
+    anagrams = []
+    for word in my_list:
+        for i in range(len(word) - 2):
+            substring = word[i:i+3]
+            if substring.lower() not in anagrams and any([substring == anagram for anagram in anagrams]):
+                return False
+            anagrams.append(substring.lower())
+    return len(anagrams) <= 4
+```

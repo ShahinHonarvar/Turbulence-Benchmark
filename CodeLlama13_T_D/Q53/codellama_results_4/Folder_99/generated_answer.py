@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(string):
+    return {s for s in string.lower().split() if len(s) >= 115 and s == s[::-1]}

@@ -1,0 +1,7 @@
+
+def return_n_smallest_chars(s, n):
+    # sort the string in ascending order based on ASCII values
+    sorted_s = sorted(s, key=ord)
+    # create a list of exactly n characters from the sorted string
+    smallest_chars = sorted_s[:n]
+    return smallest_chars

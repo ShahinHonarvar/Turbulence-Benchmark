@@ -1,0 +1,54 @@
+ ```
+def all_left_truncatable_prime(tuple):
+# Declare a variable to store the list of prime numbers
+prime_list = []
+# Iterate over each element in the tuple
+for i in range(len(tuple)):
+# Get the current element from the tuple
+current = tuple[i]
+# Check if the current element is a prime number
+if is_prime(current):
+# Add the current element to the list of prime numbers
+prime_list.append(current)
+# Iterate over each digit in the current element
+for j in range(len(str(current)))):
+# Get the current digit from the string representation of the current element
+digit = str(current)[j]
+# Check if the current digit is 0
+if digit == '0':
+# Skip to the next iteration of the loop
+continue
+
+# Remove the leading leftmost digit from the string representation of the current element
+new_str = str(current)[1:]
+
+# Convert the new string back into an integer
+new_int = int(new_str)
+
+# Check if the resulting number is a prime number
+if is_prime(new_int):
+# Add the resulting number to the list of prime numbers
+prime_list.append(new_int)
+
+# Sort the list of prime numbers in descending order
+prime_list.sort(reverse=True)
+
+# Return the list of prime numbers
+return prime_list
+
+# Check if a given integer is a prime number
+def is_prime(n):
+# Check if the input integer is less than or equal to 1
+if n <= 1:
+# Return False if the input integer is less than or equal to 1
+return False
+
+# Check if the input integer is divisible by any number other than itself and 1
+for i in range(2, int(n ** 0.5) + 1):
+# If the input integer is divisible by any number other than itself and 1, return False
+if n % i == 0:
+return False
+
+# Return True if the input integer is not divisible by any number other than itself and 1
+return True
+```

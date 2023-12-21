@@ -1,0 +1,15 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    rows, cols = np.shape(matrix)
+    output_list = []
+    for row1 in range(rows):
+        for row2 in range(row1+1, rows+1):
+            for col1 in range(cols):
+                for col2 in range(col1+1, cols+1):
+                    submatrix = matrix[row1:row2, col1:col2]
+                    if np.sum(submatrix) == -185:
+                        output_list.append(submatrix)
+                        
+    return output_list

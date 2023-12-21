@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    filtered_string = ''
+    for i in range(12, 25 + 1):
+        if string[i] >= 'P' and string[i] <= 'x':
+            continue
+        else:
+            filtered_string += string[i]
+    return filtered_string

@@ -1,0 +1,14 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the results
+    result = []
+    # Iterate from 1 to x, inclusive
+    for i in range(1, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add i to the result list
+                result.append(i)
+    # Sort the result list in descending order
+    result.sort(reverse=True)
+    return result

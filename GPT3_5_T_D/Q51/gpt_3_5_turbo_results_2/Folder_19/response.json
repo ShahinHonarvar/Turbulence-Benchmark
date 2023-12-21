@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(strings):\n    # Count the number of anagram pairs\n    pairs = 0\n    \n    # Loop through each string in the list\n    for i in range(len(strings)):\n        # Convert string to lowercase for case-insensitive comparison\n        lower_string = strings[i].lower()\n        \n        # Check if the current string has at least length 3\n        if len(lower_string) >= 3:\n            # Loop through the remaining strings\n            for j in range(i + 1, len(strings)):\n                # Convert the other string to lowercase\n                lower_other_string = strings[j].lower()\n                \n                # Check if the other string has at least length 3\n                if len(lower_other_string) >= 3:\n                    # Check if the strings are anagrams\n                    if sorted(lower_string) == sorted(lower_other_string):\n                        # Increment the number of anagram pairs\n                        pairs += 1\n                        \n                        # Check if the number of pairs exceeds 69\n                        if pairs > 69:\n                            return False\n                            \n    # If the loop completes without returning False, return True\n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689819131,
+  "id": "chatcmpl-7eDRDYRBdILmj7aKOPWy676dx3GuT",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 236,
+    "prompt_tokens": 139,
+    "total_tokens": 375
+  }
+}

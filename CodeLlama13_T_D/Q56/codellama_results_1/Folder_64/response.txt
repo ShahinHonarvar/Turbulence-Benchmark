@@ -1,0 +1,10 @@
+```python
+def all_substring_of_size_n(s):
+    return ["".join(i) for i in zip(*[iter(s)]*8)]
+```
+This is a generator expression that uses `zip` and `iter` to create a list of substrings with length 8. The `zip` function takes multiple iterators as arguments, in this case the iterator created by `iter` on the input string `s`. Each iteration returns the next element from each iterator, which are then joined together using `"".join()` to form a substring.
+
+For example, if `s = "hello"` and we want all substrings of length 8, the result would be:
+```python
+["h", "he", "hel", "hell", "hello"]
+```

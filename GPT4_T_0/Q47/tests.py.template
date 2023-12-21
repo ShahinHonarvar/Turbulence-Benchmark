@@ -1,0 +1,51 @@
+from Q47.$6_results_$7.Folder_$4.generated_answer import $5
+
+
+def test_string_of_similar_chars():
+    n = max($1, $3)
+    m = min($1 - $0 + 1, $3)
+    s = ''.join('a' for _ in range(n * 2))
+    assert $5(s) == {'a' * i for i in range($2, m + 1)}
+
+
+def test_string_of_similar_nums():
+    n = max($1, $3)
+    m = min($1 - $0 - 1, $3)
+    s = ''.join('0' for _ in range(n * 2))
+    assert not $5(s)
+
+
+def test_string_of_distinct_chars():
+    s = 'abc' * ($1 * 3)
+    assert not $5(s)
+
+
+def test_string_of_spaces():
+    s = ' ' * ($1 * 3)
+    assert $5(s) == set()
+
+
+def test_string_of_spaces_and_letters():
+    s = ' a ' * ($1 * 3)
+    assert not $5(s)
+
+
+def test_length_of_palindrome():
+    s = ''.join('a' for _ in range($1 * 2))
+    returned_result = $5(s)
+    for i in returned_result:
+        assert $2 <= len(i) <= $3
+
+
+def test_location_of_palindrome():
+    s = ''.join('a' for _ in range($1 * 3))
+    returned_result = $5(s)
+    sliced_s = s[$0: $1 + 1]
+    for i in returned_result:
+        assert i in sliced_s
+
+
+def test_string_of_punctuations_and_space():
+    s = '@ %' * ($1 * 3)
+    assert not $5(s)
+    

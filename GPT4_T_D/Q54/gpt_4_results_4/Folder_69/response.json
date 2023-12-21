@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_right_truncatable_prime(nums):\n    x = nums[760]\n    \n    rt_primes = []\n    for i in range(2, x):\n        string_num = str(i)\n        is_rt_prime = True\n        while len(string_num) > 0:\n            if not isprime(int(string_num)):\n                is_rt_prime = False\n                break\n            string_num = string_num[:-1]\n        \n        if is_rt_prime:\n            rt_primes.append(i)\n    \n    return sorted(rt_primes, reverse=True)\n```\nThe sympy library is used for checking if the number is prime or not.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691085713,
+  "id": "chatcmpl-7jWvx2KAXc730Rqm7HIbbGfC009Ed",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 157,
+    "total_tokens": 295
+  }
+}

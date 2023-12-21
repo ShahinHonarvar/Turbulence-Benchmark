@@ -1,0 +1,11 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sum and the range of indices to consider
+    sum = 0
+    start_idx = 58
+    end_idx = 81
+    # Iterate through the list within the specified range, and add up all the integers that are divisible by either 55 or 10
+    for i in range(start_idx, end_idx + 1):
+        if my_list[i] % 55 == 0 or my_list[i] % 10 == 0:
+            sum += my_list[i]
+    return sum

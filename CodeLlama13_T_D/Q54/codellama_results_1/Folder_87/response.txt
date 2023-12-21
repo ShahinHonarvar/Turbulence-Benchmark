@@ -1,0 +1,11 @@
+```
+def all_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(10**x, 10**(x+1)):
+        if is_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+This function takes an argument `x` which is a tuple of positive integers. It returns the sorted list of all right-truncatable prime numbers less than `x`. If there are no such right-truncatable prime numbers, it returns an empty list.
+
+The function first generates a list of all prime numbers between `10**x` and `10**(x+1)`. Then, it checks if each number in the list is a right-truncatable prime number by checking if it remains prime when the last rightmost digit is successively removed. If so, it adds the number to the output list. Finally, it sorts the output list in descending order and returns it.

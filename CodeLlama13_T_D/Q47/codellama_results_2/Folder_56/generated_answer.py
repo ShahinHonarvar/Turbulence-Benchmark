@@ -1,0 +1,9 @@
+
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(1, 9):
+        for j in range(i+2, min(len(string), i+8)):
+            substr = string[i:j]
+            if len(substr) >= 3 and len(substr) <= 7 and substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes

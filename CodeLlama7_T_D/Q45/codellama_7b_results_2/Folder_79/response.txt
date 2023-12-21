@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(string):
+    # create a list of all possible substrings of length at least 3
+    substrings = []
+    for i in range(1, len(string) - 2):
+        substring = string[i:i + 3]
+        if len(substring) >= 3 and substring.islower():
+            substrings.append(substring)
+    # create a set of all palindromes that can be formed from the substrings
+    palindromes = set()
+    for substring in substrings:
+        palindrome = ''
+        for i in range(len(substring)):
+            if substring[i] == substring[-1 - i]:
+                palindrome += substring[i]
+        if len(palindrome) >= 3 and palindrome.islower():
+            palindromes.add(palindrome)
+    return palindromes
+```

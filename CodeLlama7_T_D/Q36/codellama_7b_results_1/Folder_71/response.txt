@@ -1,0 +1,13 @@
+ def filter_chars(s):
+    # Initialize a new string with the same length as the input string
+    new_string = ""
+    # Iterate through each character in the input string
+    for i in range(len(s)):
+        # If the current character is between 82 and 89, and it is not equal to '*' or '[', then remove all occurrences of that character from the input string
+        if s[i] >= 82 and s[i] <= 89 and s[i] != "*" and s[i] != "[":
+            # Replace all occurrences of the current character with an empty string
+            new_string += s[:i] + s[i+1:]
+        # Otherwise, add the current character to the new string
+        else:
+            new_string += s[i]
+    return new_string

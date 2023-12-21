@@ -1,0 +1,15 @@
+ ```
+def find_original_set(sets):
+    # Find the smallest set in the list
+    smallest_set = min(sets, key=len)
+    # Return the smallest set if it is already a subset of all other sets
+    if all(smallest_set.issubset(other_set) for other_set in sets):
+        return smallest_set
+
+    # Otherwise, create a new set that contains all elements from the original sets
+    new_set = set()
+    for s in sets:
+        new_set |= s
+
+    return new_set
+```

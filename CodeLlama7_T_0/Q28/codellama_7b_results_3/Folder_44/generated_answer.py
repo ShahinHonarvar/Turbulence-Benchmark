@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters between indices 20 and 30
+    chars = string[20:31]
+    # Create a list of ASCII values for each character
+    ascii_values = [ord(char) for char in chars]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 8th smallest ASCII value
+    return sorted_ascii_values[7]

@@ -1,0 +1,25 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x, checking if each number is a prime number and if it satisfies the left-and-right-truncatable prime condition
+    for num in range(1, x + 1):
+
+        # Check if num is a prime number
+
+        if num > 1:
+
+            for i in range(2, int(num ** 0.5) + 1):
+
+                if num % i == 0:
+
+                    break
+
+            else:
+
+                # If the loop completes without breaking, num is a prime number
+
+                prime_numbers.append(num)
+
+    return prime_numbers

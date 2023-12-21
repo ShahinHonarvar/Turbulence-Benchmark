@@ -1,0 +1,29 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Get the integer at index 97
+x = tuple[97]
+# Initialize an empty list to store the prime numbers
+prime_numbers = []
+
+
+# Iterate through the numbers less than x and check if they are prime
+for num in range(2, x):
+    is_prime = True
+
+
+    # Iterate through the digits of the number
+    for digit in str(num):
+        # If any of the digits are not 0 or 1, the number is not prime
+        if int(digit) != 0 and int(digit) != 1:
+            is_prime = False
+            break
+
+
+    # If the number is prime, add it to the list
+    if is_prime:
+        prime_numbers.append(num)
+
+
+# Return the sorted list of all right-truncatable prime numbers less than x
+return sorted(prime_numbers, reverse=True)
+```

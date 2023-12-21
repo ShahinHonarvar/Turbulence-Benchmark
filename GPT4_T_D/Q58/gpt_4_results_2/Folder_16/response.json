@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    rows, cols = matrix.shape\n    total = 0\n    for i in range(rows):\n        for j in range(cols):\n            for p in range(i, rows):\n                for q in range(j, cols):\n                    if ((p - i + 1) * (q - j + 1)) == 154:\n                        total += 1\n    return total\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908077,
+  "id": "chatcmpl-7imirJfwJhwYXLZQc7QeD9Z0PKPNg",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 111,
+    "total_tokens": 207
+  }
+}

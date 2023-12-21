@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 39 elements
+    if len(my_list) < 39:
+        return False
+
+    # Get the value of the 38th element in the list
+    perfect_number = my_list[38]
+
+    # Check if the number is a perfect number
+    if (perfect_number % 2 == 0) and (sum(range(1, perfect_number)) == perfect_number):
+        return True
+
+    else:
+
+        return False

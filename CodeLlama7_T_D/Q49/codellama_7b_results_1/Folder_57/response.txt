@@ -1,0 +1,15 @@
+ def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_rep, 2)
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Iterate until the 80th number occurs in the Fibonacci sequence
+    while b < 80:
+        a, b = b, a + b
+    # Check if the decimal integer is divisible by the 80th number
+    return decimal % b == 0
+binary_rep = input("Enter binary representation of a non-negative decimal integer: ")
+if if_decimal_is_divisible(binary_rep):
+#    print("Yes, the decimal integer is divisible by the 80th number in the Fibonacci sequence.")
+else:
+#    print("No, the decimal integer is not divisible by the 80th number in the Fibonacci sequence.")

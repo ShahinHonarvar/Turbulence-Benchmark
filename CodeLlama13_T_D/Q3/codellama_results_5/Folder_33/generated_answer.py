@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(numbers):
+    return [num for num in numbers if 667 <= num <= 774 and num > 0]

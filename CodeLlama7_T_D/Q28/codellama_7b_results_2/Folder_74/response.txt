@@ -1,0 +1,19 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # Create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+
+    # Iterate over each character in the string and add its ASCII value to the dictionary
+    for char in s:
+        ascii_values[char] = ord(char)
+
+    # Sort the dictionary by value in ascending order
+    sorted_values = sorted(ascii_values.items(), key=lambda x: x[1])
+
+    # Return the character with the 6th smallest ASCII value
+    return sorted_values[5][0]
+```
+This code defines a function called `return_nth_smallest_ascii` that takes a string of distinct characters as its only argument. The function returns the character with the 6th smallest ASCII value among those characters in the string that occur between indices 1 to 31, both inclusive.
+The function first creates an empty dictionary called `ascii_values` to store the ASCII values of each character in the string. It then iterates over each character in the string and adds its ASCII value to the dictionary using the key-value pair `char: ascii_value`.
+Next, the function sorts the dictionary by value in ascending order using the `sorted()` function with the `key=lambda x: x[1]` parameter. This sorts the dictionary by the second item (i.e., the ASCII value) of each key-value pair in the dictionary.
+Finally, the function returns the character with the 6th smallest ASCII value among those characters in the string that occur between indices 1 to 31, both inclusive. This is done by accessing the sixth item (i.e., the ASCII value) of the sorted list of key-value pairs and returning the corresponding character using the `chr()` function.

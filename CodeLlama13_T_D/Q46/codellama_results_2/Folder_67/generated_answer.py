@@ -1,0 +1,3 @@
+
+def gcf_three_nums(lst):
+    return gcd(lst[70], gcd(lst[41], lst[20]))

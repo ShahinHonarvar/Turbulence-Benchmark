@@ -1,0 +1,44 @@
+ ```
+def find_original_set(sets):
+\# check if all inputs are sets
+if not all([isinstance(s, set) for s in sets])):
+raise ValueError("All inputs must be sets")
+
+
+\# create a list of all elements in the inputs
+all_elements = []
+for s in sets:
+all_elements.extend(s)
+
+
+\# create a set of all unique elements
+unique_elements = set(all_elements)
+
+
+\# create a dictionary with each element as key and its count as value
+element_counts = {}
+for e in unique_elements:
+element_counts[e] = all_elements.count(e)
+
+
+\# find the smallest set that includes all elements
+smallest_set = None
+for s in sets:
+if len(s) < len(smallest_set) or smallest_set is None:
+smallest_set = s
+
+
+\# check if the smallest set is a subset of each of the inputs
+is_subset = True
+for e in unique_elements:
+if element_counts[e] > smallest_set.count(e):
+is_subset = False
+break
+
+
+\# return the smallest set if it is a subset of all inputs
+if is_subset:
+return smallest_set
+else:
+raise ValueError("The input sets are not all subsets of each other")
+```

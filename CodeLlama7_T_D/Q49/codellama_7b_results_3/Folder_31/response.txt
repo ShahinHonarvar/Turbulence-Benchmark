@@ -1,0 +1,11 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # find the first occurrence of the 69th Fibonacci number in the binary representation
+    first_occurrence = decimal_integer.bit_length() - 1
+    # calculate the position of the 69th Fibonacci number in the binary representation
+    position = (first_occurrence * (first_occurrence + 1)) // 2
+    # check if the decimal integer is divisible by the 69th Fibonacci number
+    return decimal_integer % fibonacci(position) == 0
+```

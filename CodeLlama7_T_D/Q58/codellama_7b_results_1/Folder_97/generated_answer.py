@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter variable to keep track of the number of submatrices with 120 integers each
+    count = 0
+
+    # Iterate over the rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary array to store the submatrix elements
+            temp = np.empty((120, 1))
+
+            # Iterate over the rows and columns of the submatrix
+            for k in range(i, i + 120):
+                for l in range(j, j + 120):
+                    # Add the elements of the submatrix to the temporary array
+                    temp = np.vstack((temp, matrix[k][l]))
+
+            # Check if the temporary array has all 120 integers
+            if len(temp) == 120:
+                # Increment the counter variable
+                count += 1
+
+    # Return the final count of submatrices with 120 integers each
+    return count

@@ -1,0 +1,46 @@
+from Q33.$6_results_$7.Folder_$4.generated_answer import $5
+import string
+import random
+
+
+def test_repeat_consonant_char():
+    s = 'm' * ($1 + 2)
+    assert not $5(s)
+   
+
+def test_distinct_consonant_chars():
+    s = 'BCDFGHJKLMNPQRSTVXZWYbcdfghjklmnpqrstvxzwy'
+    assert not $5(s)
+
+
+def test_compare_lengths_with_large_string():
+    s = ''.join(random.choice(string.ascii_letters) for _ in range($1*100))
+    assert len($5(s)) <= len(s)
+
+
+def test_property_of_function():
+    s = ''.join(random.choice(string.ascii_letters) for _ in range($1*2))
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    returned_s = $5(s)
+    sliced_s = s[$0:$1]
+    for char in sliced_s:
+        if char in vowels and '$2' < char <= '$3':
+            assert char in returned_s
+
+
+def test_no_vowels_in_range():
+    s = ''.join(random.choice(string.ascii_letters) for _ in range($0)) + 'd' * ($1-$0) + ''.join(
+    random.choice(string.ascii_letters) for _ in range(10))
+
+    assert not $5(s)
+
+
+def test_all_vowels_in_range():
+    s = ''.join(random.choice(string.ascii_letters) for _ in range($0)) + 'i' * ($1-$0) + ''.join(
+    random.choice(string.ascii_letters) for _ in range(10))
+    
+    if '$2' < 'i' <= '$3':
+        assert $5(s) == ['i' for _ in range($1-$0)]
+    else:
+        assert not $5(s)
+        

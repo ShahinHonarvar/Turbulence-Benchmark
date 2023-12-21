@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s) - 120 + 1):
+        substring = s[i:i+120]
+        if len(set(substring)) == 120 and all(c.isalpha() for c in substring):
+            substrings.append(substring)
+    return substrings
+```
+This function iterates over the string `s` using a for loop, and checks each substring of length 120 starting from index 0 to the end of the string. The substring is checked if it has no duplicate characters and all characters are letters (using the `set()` method and `isalpha()` method respectively). If these conditions are met, the substring is added to a list called `substrings`. Finally, the function returns the list of substrings found.
+Note: This function assumes that the input string is not empty and has at least 120 characters. Also, it uses a set comprehension to check for duplicate characters in each substring, which might be computationally expensive if the input string is very long.

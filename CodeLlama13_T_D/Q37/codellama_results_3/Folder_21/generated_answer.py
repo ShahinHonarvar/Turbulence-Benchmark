@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return "".join([c for c in s if not (603 <= ord(c) <= 759 and 'Q' <= c <= 'h')])

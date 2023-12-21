@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(list(range(2, int(math.sqrt(851)) + 1)) + [2]) - set(filter(lambda x: not math.gcd(x, 851) == 1, list(range(2, int(math.sqrt(851)) + 1))))

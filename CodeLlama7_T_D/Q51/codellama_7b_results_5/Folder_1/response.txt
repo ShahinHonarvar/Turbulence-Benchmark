@@ -1,0 +1,15 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                anagram_pairs += 1
+    # Return True if the number of anagram pairs is less than or equal to 30
+    return anagram_pairs <= 30
+```
+This code defines a function called `if_contains_anagrams` that takes a single argument, a list of strings. The function returns `True` if there are at most 30 pairs of anagrams in the given list; otherwise, it returns `False`.
+The function first counts the number of anagram pairs in the list by iterating over each pair of adjacent strings and comparing them for anagrammatic equality. If two strings are anagrams of each other, they are considered to be a pair of anagrams and the counter is incremented.
+Once all anagram pairs have been counted, the function compares the number of anagram pairs with 30 using the less than or equal to operator (`<=`). If the number of anagram pairs is less than or equal to 30, the function returns `True`; otherwise, it returns `False`.
+Note that this code assumes that all strings in the input list are non-empty and consist only of uppercase letters A through Z. If this is not the case for your specific use case, you may need to modify the code accordingly.

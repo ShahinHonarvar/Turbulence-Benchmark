@@ -1,0 +1,9 @@
+
+def if_perfect_num(numbers):
+    return numbers[87] in perfect_nums(numbers)
+
+def perfect_nums(numbers):
+    return [n for n in numbers if sum(divisors(n)) == n]
+
+def divisors(n):
+    return [i for i in range(1, int(n**0.5) + 1) if n % i == 0]

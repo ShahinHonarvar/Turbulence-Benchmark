@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return "".join([char for char in string if not (ord("F") <= ord(char) <= ord("h"))])

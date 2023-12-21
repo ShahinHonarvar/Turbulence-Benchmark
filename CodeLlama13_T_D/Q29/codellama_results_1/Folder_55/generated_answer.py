@@ -1,0 +1,3 @@
+
+def gcf_two_nums(nums):
+    return nums[1] // nums[2] * nums[2]

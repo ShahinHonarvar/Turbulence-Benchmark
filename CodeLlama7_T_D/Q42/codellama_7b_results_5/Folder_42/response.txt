@@ -1,0 +1,17 @@
+ ```
+def prime_factors(my_list):
+    prime_factors = set()
+    for i in range(len(my_list)):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]) + 1):
+                if my_list[i] % j == 0:
+                    prime_factors.add(j)
+    return prime_factors
+```
+This code defines a function `prime_factors` that takes a list of positive integers as an argument and returns the set of all prime factors of the integer at index 276.
+The function first initializes an empty set to store the prime factors.
+Then, it loops through each element in the input list using the `for` loop.
+For each element, it checks if it is greater than 1, which indicates that it is a composite number and has at least one prime factor. If the current element is indeed greater than 1, then the function starts checking for its divisors by looping through all numbers between 2 and the square root of the current element (inclusive).
+For each discovered divisor `j`, the function checks if it divides the current element without leaving a remainder. If the check succeeds, then the current divisor is added to the set of prime factors.
+Finally, the function returns the set of all prime factors.
+Note that this code assumes that all input elements are non-negative integers and that the index 276 is a valid index in the input list.

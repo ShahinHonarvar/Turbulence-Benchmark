@@ -1,0 +1,8 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(54, 82):
+        character = string[i]
+        if character == 'a' or character == 'e' or character == 'i' or character == 'o' or character == 'u':
+            vowels.append(character)
+    return vowels

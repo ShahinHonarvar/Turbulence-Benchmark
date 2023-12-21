@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef all_substring_of_size_n(string):\n    substrings = []\n    if len(string) < 120:\n        return substrings\n    \n    for i in range(len(string) - 120):\n        substring = string[i:i+120]\n        if len(set(substring)) == len(substring):  # Check if all characters in substring are unique\n            substrings.append(substring)\n    \n    return substrings\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822299,
+  "id": "chatcmpl-7eEGJ9VaIJsH0z7TcNhrz09nZ3AIs",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 88,
+    "prompt_tokens": 126,
+    "total_tokens": 214
+  }
+}

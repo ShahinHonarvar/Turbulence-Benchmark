@@ -1,0 +1,39 @@
+
+def all_left_right_truncatable_prime(numbers):
+    primes = []
+    for num in numbers:
+        if is_left_and_right_truncatable_prime(num):
+            primes.append(num)
+    return sorted(primes, reverse=True)
+
+def is_left_and_right_truncatable_prime(num):
+    if num < 10 or num % 2 == 0 or num % 5 == 0:
+        return False
+    for i in range(1, int(len(str(num)) / 2) + 1):
+        if not is_left_truncatable_prime(num, i) or not is_right_truncatable_prime(num, i):
+            return False
+    return True
+
+def is_left_truncatable_prime(num, i):
+    prime = num
+    for _ in range(i):
+        if prime % 10 == 0:
+            return False
+        prime //= 10
+    return is_prime(prime)
+
+def is_right_truncatable_prime(num, i):
+    prime = num
+    for _ in range(i):
+        if prime % 10 == 0:
+            return False
+        prime //= 10
+    return is_prime(prime)
+
+def is_prime(num):
+    if num < 2 or num % 2 == 0 or num % 3 == 0 or num % 5 == 0 or num % 7 == 0:
+        return False
+    for i in range(1, int(len(str(num)) / 2) + 1):
+        if not is_prime(num // 10 ** i):
+            return False
+    return True

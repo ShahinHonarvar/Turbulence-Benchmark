@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code as per your request:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for r in range(rows):\n        for c in range(cols):\n            for row in range(r, rows):\n                for col in range(c, cols):\n                    if (row-r+1)*(col-c+1) == 146:\n                        count += 1\n    return count\n```\n\nThis function iterates over all possible submatrices in the matrix and increments a count whenever their size is equal to 146. Note, however, that this function will be quite slow for large input matrices because its time complexity is proportional to the cube of the number of rows and columns in the input matrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083317,
+  "id": "chatcmpl-7fKAHoSqsRhJ48sCoo0t7KecNtruJ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 163,
+    "prompt_tokens": 111,
+    "total_tokens": 274
+  }
+}

@@ -1,0 +1,15 @@
+ def find_primes_between_indices(my_list):
+    # Define a lambda function to check if a number is prime
+    is_prime = lambda x: x > 1 and all(x % i for i in range(2, int(x ** 0.5) + 1))
+    # Find the indices of the starting and ending points
+    start_index = my_list.index(73)
+    end_index = my_list.index(76)
+    # Create an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the list between the start and end indices, and check if each number is prime using the lambda function
+    for i in range(start_index, end_index + 1):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    # Return the sorted list of prime numbers in descending order
+    return sorted(prime_numbers, reverse=True)

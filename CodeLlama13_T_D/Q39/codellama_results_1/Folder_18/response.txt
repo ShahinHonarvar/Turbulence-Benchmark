@@ -1,0 +1,9 @@
+```python
+def return_n_greatest_chars(string):
+    char_list = list(set(string))
+    sorted_char_list = sorted(char_list, key=lambda x: ord(x), reverse=True)[:52]
+    return "".join(sorted_char_list)
+```
+This code defines a function `return_n_greatest_chars` that takes a string of distinct characters as input. The function first creates a list of the unique characters in the string using the `set()` method, and then sorts the list in descending order based on the ASCII values of each character using `sorted()` with a custom key function that returns the result of calling `ord()` on each character. The resulting sorted list is then sliced to keep only the first 52 characters, and finally the resulting string is returned as output.
+
+Note that this code assumes that the input string only contains distinct characters. If the input string may contain duplicate characters, you will need to modify the function accordingly to handle this case.

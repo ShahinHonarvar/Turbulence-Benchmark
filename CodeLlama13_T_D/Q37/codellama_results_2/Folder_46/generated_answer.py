@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if (ord(char) >= ord('i') and ord(char) <= ord('v')) or not (11 <= ord(char) <= 72):
+            result += char
+    return result

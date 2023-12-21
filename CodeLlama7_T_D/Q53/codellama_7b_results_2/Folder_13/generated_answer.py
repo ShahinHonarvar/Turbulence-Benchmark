@@ -1,0 +1,36 @@
+ def palindrome_of_length_at_least_n(string, n):
+    """
+    Returns the set of all palindromes of the length greater than or equal to `n` that exist in the given string. Each palindrome should only consist of English letters. If no such palindromes exist in the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.
+    Args:
+        string (str): The input string.
+        n (int): The minimum length of the palindromes.
+    Returns:
+        set: A set containing all palindromes of the length greater than or equal to `n` that exist in the given string.
+    """
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the input string
+    for i in range(len(string)):
+
+        # Check if the character is a letter (i.e., not a space or punctuation)
+        if string[i].isalpha():
+
+            # Get the length of the substring starting from the current index and ending at the end of the input string
+            substr_len = len(string) - i
+
+            # Iterate over the possible palindromes with lengths greater than or equal to `n`
+            for j in range(substr_len, n-1, -1):
+
+                # Get the substring starting from the current index and having a length of `j`
+                substr = string[i:i+j]
+
+                # Check if the substring is a palindrome
+                if substr == substr[::-1]:
+
+                    # Add the palindrome to the set
+                    palindromes.add(substr)
+
+    # Return the set of all palindromes that exist in the given string
+    return palindromes

@@ -1,0 +1,12 @@
+
+def all_odd_ints_exclusive(my_list):
+    # create a slice of the list from index 36 to index 54, both exclusive
+    slice_ = my_list[36:54]
+    # initialize an empty list to store the odd integers
+    odd_ints = []
+    # iterate over the slice and append any odd integers to the list
+    for i in slice_:
+        if i % 2 != 0:
+            odd_ints.append(i)
+    # return the list of all odd integers from index 36 to index 54, both exclusive
+    return odd_ints

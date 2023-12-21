@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import islice\n\ndef lists_with_product_equal_n(lst):\n    def circular_slice(iterable, start, end):\n        length = len(iterable)\n        if end > start:\n            return iterable[start : end]\n        else:\n            return iterable[start :] + iterable[: end]\n    \n    products_equal_n = []\n    length = len(lst)\n    for size in range(1, length + 1):\n        for start in range(length):\n            sublist = circular_slice(lst, start, start + size)\n            product = 1\n            for n in sublist:\n                product *= n\n            if product == 78:\n                products_equal_n.append(sublist)\n            \n    return products_equal_n\n```\nThis function will return all the possible sublists wherein the product of each sublist equals 78. The substrings are also ordered which means that each substring starts from the beginning and loops through to the end of the given circular list. The function uses the circular_slice function to form sublists that cross the end/start border of the circular list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691011691,
+  "id": "chatcmpl-7jDg3R2Uc3OED1Jt8nn1aWayHUdaU",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 216,
+    "prompt_tokens": 193,
+    "total_tokens": 409
+  }
+}

@@ -1,0 +1,11 @@
+ Here's a possible implementation of the function:
+```python
+def all_left_truncatable_prime(tuple_of_ints):
+    x = tuple_of_ints[85]
+    list_of_left_truncatable_primes = []
+    for i in range(2, x):
+        if is_prime(i) and is_left_truncatable_prime(i, x):
+            list_of_left_truncatable_primes.append(i)
+    return sorted(list_of_left_truncatable_primes)
+```
+This function first extracts the 86th element of the input tuple `tuple_of_ints`, and stores it in the variable `x`. It then initializes an empty list to store all the left-truncatable prime numbers less than `x`, and iterates over the range of numbers from 2 to `x - 1`. For each number `i` in this range, if `i` is a prime number and is also left-truncatable, it is appended to the list of left-truncatable prime numbers. Finally, the sorted list of all left-truncatable prime numbers less than `x` is returned.

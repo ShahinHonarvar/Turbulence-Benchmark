@@ -1,0 +1,27 @@
+ def all_right_truncatable_prime(tuple):
+    # Initialize variables
+    x = tuple[88]
+    prime_numbers = []
+
+    # Check if the number is a prime number
+    for i in range(2, x + 1):
+        if i > 1:
+            for j in range(2, i):
+                if i % j == 0:
+                    break
+            else:
+                prime_numbers.append(i)
+
+    # Check if the number is a right-truncatable prime number
+    right_truncatable_prime_numbers = []
+
+    for prime_number in prime_numbers:
+        last_digit = int(str(prime_number)[-1]))
+
+        while last_digit > 0:
+            if prime_number % 10 == last_digit:
+                right_truncatable_prime_numbers.append(prime_number)
+                break
+            else:
+                last_digit = int(str(prime_number)[-2]))
+    return sorted(right_truncatable_prime_numbers, reverse=True)

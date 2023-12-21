@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle\n\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n    \n    for i in range(n):\n        temp_result = []\n        product = 1\n        for j in range(n):\n            num = nums[(i+j) % n]\n            product *= num\n            temp_result.append(num)\n            \n            if product == 27:\n                result.append(temp_result[:])\n                \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866393,
+  "id": "chatcmpl-7ePjVIcQbnr67u7hz0dIa31YOO1cq",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 193,
+    "total_tokens": 288
+  }
+}

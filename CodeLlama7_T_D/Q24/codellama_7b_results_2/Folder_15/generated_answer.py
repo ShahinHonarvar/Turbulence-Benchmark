@@ -1,0 +1,16 @@
+
+def sum_of_divisors_in_range(n):
+    # check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # initialize the sum to 0
+    sum = 0
+
+    # loop through all divisors of n in the range [7, 9]
+    for i in range(n + 1):
+        if i * n % (i - 1) == 0 and 7 <= i * n % (i - 1) <= 9:
+            sum += i * n % (i - 1)
+
+    # return the sum
+    return sum

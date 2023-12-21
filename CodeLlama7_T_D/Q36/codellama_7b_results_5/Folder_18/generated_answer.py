@@ -1,0 +1,16 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    filtered = ""
+
+    # Iterate over the characters in the input string
+    for c in s:
+
+        # If the character is not between indices 587 and 648 (both exclusive)
+        if not (587 < ord(c) < 648):
+
+            # Add the character to the filtered string
+            filtered += c
+
+    # Return the filtered string
+    return filtered

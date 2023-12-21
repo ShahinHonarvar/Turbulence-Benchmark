@@ -1,0 +1,24 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 20, 51 and 62
+    index_20 = my_list[20]
+    index_51 = my_list[51]
+    index_62 = my_list[62]
+    gcf = _gcf(index_20, index_51, index_62)
+    return gcf
+def _gcf(a, b, c):
+    # Helper function to calculate the greatest common factor of three integers
+
+    if a == 0:
+        return b
+
+    if b == 0:
+        return c
+
+    while True:
+        if a % b == 0 and b % c == 0:
+            return b
+
+        a, b = b, a % b
+```
+The `gcf_three_nums` function takes a list of positive integers as its argument. It calculates the greatest common factor (GCF) of the elements at indices 20, 51 and 62 using the `_gcf` helper function. The `_gcf` function is defined recursively to calculate the GCF of three integers by repeatedly dividing the smallest integer by the next largest integer until the remainder is 0. The resulting greatest common factor is returned by the `gcf_three_nums` function.

@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    chars = []
+    for i, char in enumerate(s):
+        if 57 <= i < 69 and '(' < char < 'W':
+            continue
+        else:
+            chars.append(char)
+    return ''.join(chars)

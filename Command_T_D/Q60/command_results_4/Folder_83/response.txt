@@ -1,0 +1,72 @@
+[cohere.Generation {
+	id: b23c0111-d699-494f-8c7a-f3ae7bd39584
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 24. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(test_n):
+    res = []
+    for n in range(2, test_n[0] + 1):
+        c = 10**(len(str(n)) - 1)
+        while True:
+            if c <= test_n[1] and n % c == 0:
+                break
+            elif c == 1:
+                if n % 10 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 2:
+                if n % 5 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 3:
+                if n % 5 == 0 or n % 10 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 4:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 5:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0 or n % 15 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 6:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0 or n % 15 == 0 or n % 21 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 7:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0 or n % 15 == 0 or n % 21 == 0 or n % 35 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 8:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0 or n % 15 == 0 or n % 21 == 0 or n % 35 == 0 or n % 42 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            elif c == 9:
+                if n % 2 == 0 or n % 5 == 0 or n % 10 == 0 or n % 15 == 0 or n % 21 == 0 or n % 35 == 0 or n % 42 == 0 or n % 63 == 0:
+                    break
+                else:
+                    res.append(n)
+                    break
+            c += 1
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

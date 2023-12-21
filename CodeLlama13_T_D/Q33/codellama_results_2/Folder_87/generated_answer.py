@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(34, 58):
+        if string[i].isalpha() and string[i] not in "aeiou":
+            vowels.append(string[i])
+    return vowels

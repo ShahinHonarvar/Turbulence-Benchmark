@@ -1,0 +1,3 @@
+
+def find_second_largest_num(numbers):
+    return sorted(numbers)[7] if len(numbers) > 7 else None

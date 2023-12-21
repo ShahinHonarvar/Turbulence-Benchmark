@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import chain, combinations\nfrom math import prod\n\ndef lists_with_product_equal_n(integers):\n    def powerset(iterable):\n        s = list(iterable)\n        return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))\n\n    sublists = []\n    for subset in powerset(integers):\n        if prod(subset) == 5:\n            sublists.append(list(subset))\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887402,
+  "id": "chatcmpl-7eVCMvMhFMS0VnghICp5Q1cKXJU1c",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 97,
+    "prompt_tokens": 193,
+    "total_tokens": 290
+  }
+}

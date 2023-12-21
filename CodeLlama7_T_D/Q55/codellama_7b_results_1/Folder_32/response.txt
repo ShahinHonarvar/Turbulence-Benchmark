@@ -1,0 +1,21 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Check if the list is empty
+if not circular_list:
+return []
+
+# Initialize variables
+current = circular_list[0]
+product = 1
+sublists = []
+
+# Iterate through the list and find sublists with product equal to n
+for i in range(len(circular_list)):
+current = current * circular_list[i]
+if current == n:
+sublists.append(circular_list[:i+1])
+elif current > n:
+break
+
+return sublists
+```

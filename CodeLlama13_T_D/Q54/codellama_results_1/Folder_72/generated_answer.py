@@ -1,0 +1,15 @@
+
+def all_right_truncatable_prime(numbers):
+    x = numbers[31]
+    prime_list = []
+    for num in range(2,x):
+        if is_right_truncatable_prime(num):
+            prime_list.append(num)
+    return sorted(prime_list, reverse=True)
+def is_right_truncatable_prime(n):
+    if n%2==0 or n==1:
+        return False
+    for i in range(3,int(math.sqrt(n))+1,2):
+        if n%i==0:
+            return False
+    return True

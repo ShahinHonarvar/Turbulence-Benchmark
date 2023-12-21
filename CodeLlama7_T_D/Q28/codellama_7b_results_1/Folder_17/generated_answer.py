@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a list of characters from the string
+    char_list = list(string)
+    # Calculate the ASCII value of each character in the list
+    ascii_values = [ord(char) for char in char_list]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 4th smallest ASCII value from the sorted list
+    return char_list[sorted_ascii_values.index(sorted_ascii_values[3])]]

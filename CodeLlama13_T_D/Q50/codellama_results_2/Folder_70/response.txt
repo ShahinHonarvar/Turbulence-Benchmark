@@ -1,0 +1,6 @@
+```
+def if_contains_anagrams(lst):
+    return len([s for s in lst if len(set(s)) == 3]) >= 189
+```
+This function first filters the list of strings to only include those with a length of at least three, using a list comprehension. It then checks if there are at least 189 pairs of anagrams by counting the number of strings in the filtered list that have a length equal to three and checking if that value is greater than or equal to 189.
+The function uses the `len` function to get the length of the set of characters in each string, which will be equal to the number of unique characters in the anagram. If the set has a length of three, then there are at least three unique characters in the anagram, making it a pair of anagrams.

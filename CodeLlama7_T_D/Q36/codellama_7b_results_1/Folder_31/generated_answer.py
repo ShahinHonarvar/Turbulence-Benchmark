@@ -1,0 +1,22 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ""
+
+    # Iterate over each character in the string
+    for i in range(len(s)):
+
+        # If the current character is between indices 14 and 75 (exclusive)
+        if 14 < i < 75:
+
+            # Check if the current character is greater than '9' and smaller than 'K'
+            if s[i] > '9' and s[i] < 'K':
+
+                # Skip this character and move on to the next one
+                continue
+
+        # Add the current character to the new string
+        new_str += s[i]
+
+    # Return the filtered string
+    return new_str

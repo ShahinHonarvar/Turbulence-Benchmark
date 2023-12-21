@@ -1,0 +1,10 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the range
+    first_pos_int = next((i for i in my_list[60:200] if i > 0), None)
+    # If no positive integers exist in the range, return an empty list
+    if first_pos_int is None:
+        return []
+
+    # Return the list of all positive integers from index 60 to index 200, both exclusive
+    return [i for i in my_list[60:200] if i > 0]

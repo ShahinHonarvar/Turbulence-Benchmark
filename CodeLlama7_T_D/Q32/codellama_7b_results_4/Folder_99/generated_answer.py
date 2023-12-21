@@ -1,0 +1,7 @@
+
+def insert_after_character(input_string):
+    new_string = ""
+    for i in range(len(input_string)):
+        if input_string[i] == "a":
+            new_string += input_string[:i + 1] + "W"
+    return new_string

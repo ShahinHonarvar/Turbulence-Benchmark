@@ -1,0 +1,11 @@
+```python
+def return_n_greatest_chars(string):
+    # Create a list of tuples containing each character and its ASCII value
+    char_ascii_list = [(char, ord(char)) for char in string]
+
+    # Sort the list in descending order based on ASCII values
+    sorted_list = sorted(char_ascii_list, key=lambda x: x[1], reverse=True)
+
+    # Return the first 21 characters of the sorted list
+    return "".join([char for char, _ in sorted_list[:21]])
+```

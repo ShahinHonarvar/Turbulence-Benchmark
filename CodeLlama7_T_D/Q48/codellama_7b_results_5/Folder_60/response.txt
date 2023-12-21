@@ -1,0 +1,21 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[38]
+b = tuple[52]
+sum = 0
+for i in range(a + 1, b - 1 + 1):
+if not i in tuple[38:52]:
+sum += i
+if sum % 2 == 1:
+return bin(sum)[2:]
+else:
+return hex(sum)[2:].upper()
+else:
+return ""
+```
+The above code defines a function called `return_binary_or_hexa` that takes one argument, which is a tuple of distinct nonnegative integers sorted in ascending order. The function then calculates the sum of all integers from the 38th index to the 52nd index (both inclusive) that are not present in the tuple between indices 38 and 52.
+The `sum` variable is initialized with the value `0`. Then, using a for loop, the function iterates over the range of integers from the sum of the 38th and 52nd indices (which we can calculate as `a + b - 1`) to the sum of the 39th and 53rd indices (which we can calculate as `a + b - 1 + 1`).
+For each integer in this range, if it is not present in the tuple between indices 38 and 52, then the function adds it to the `sum` variable.
+Once the loop has finished iterating over all integers in the specified range, the function checks whether the sum is an odd number or not. If the sum is an odd number, the function returns the binary representation string of the sum, which we can get using the built-in `bin()` function and passing it the sum as an argument. The binary representation should not be prefixed with `'0b'`, so we use slicing to remove the first two characters from the result returned by `bin()`.
+If the sum is an even number, the function returns the hexadecimal representation string of the sum, which we can get using the built-in `hex()` function and passing it the sum as an argument. The hexadecimal representation should not be prefixed with `'0x'`, so we use slicing to remove the first two characters from the result returned by `hex()`.
+Finally, if all integers from the 38th index to the 52nd index (both inclusive) are present in the specified range in the tuple, then the function returns an empty string. This is because there would be no need for the function to return a binary or hexadecimal representation of any number in this case.

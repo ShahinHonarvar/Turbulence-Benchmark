@@ -1,0 +1,14 @@
+```
+def submatrix_with_n_numbers(matrix: np.ndarray) -> int:
+    rows, cols = matrix.shape
+    count = 0
+    
+    for i in range(rows - 138):
+        for j in range(cols - 138):
+            submat = matrix[i:i+139, j:j+139]
+            
+            if (submat == 1).all():
+                count += 1
+                
+    return count
+```

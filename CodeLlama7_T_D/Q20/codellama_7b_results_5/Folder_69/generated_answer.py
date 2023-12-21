@@ -1,0 +1,8 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Get the index of the 17th smallest number
+    index_of_17th_smallest = (len(my_list) - 1) * 0.16
+    # Return the 17th smallest number
+    return my_list[index_of_17th_smallest]

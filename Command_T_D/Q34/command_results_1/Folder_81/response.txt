@@ -1,0 +1,29 @@
+[cohere.Generation {
+	id: ffb253ef-2cad-43e7-be34-0c40dd7643aa
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_original_set' that takes exactly 72 distinct arguments, each of which is a set of integers. The function should return the smallest set such that each of the given arguments is a subset of it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**6)
+
+import heapq
+
+def find_original_set(s):
+    s = sorted(s)
+    q = set(s)
+    h = [(q, len(q))]
+    heapq.heapify(h)
+    while h:
+        q, sz = heapq.heappop(h)
+        if sz == len(s):
+            return q
+        new = set()
+        for i in range(sz):
+            new.update(q[i])
+        heapq.heappush(h, (new, sz + 1))
+    return q
+```
+	likelihood: None
+	token_likelihoods: None
+}]

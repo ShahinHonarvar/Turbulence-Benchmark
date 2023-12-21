@@ -1,0 +1,7 @@
+
+def all_ints_div_by_both_two_nums(mylist):
+    result = []
+    for i in range(10):
+        if mylist[i] % 6 == 0 and mylist[i] % -3 == 0:
+            result.append(mylist[i])
+    return result

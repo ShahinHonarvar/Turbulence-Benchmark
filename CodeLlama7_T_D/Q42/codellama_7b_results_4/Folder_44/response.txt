@@ -1,0 +1,18 @@
+ ```
+def prime_factors(my_list):
+    # Check if input is a list
+    if not isinstance(my_list, list):
+        raise ValueError("Input must be a list")
+    # Get the integer at index 828
+    num = my_list[828]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Iterate through the range of numbers from 2 to the square root of the input number
+    for i in range(2, int(num ** 0.5) + 1):
+        # Check if the current number is a factor of the input number
+        if num % i == 0:
+            # If it is a factor, add it to the set of prime factors
+            prime_factors.add(i)
+    # Return the set of prime factors
+    return prime_factors
+```

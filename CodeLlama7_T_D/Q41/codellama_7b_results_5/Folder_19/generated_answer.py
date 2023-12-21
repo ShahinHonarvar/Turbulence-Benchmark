@@ -1,0 +1,15 @@
+
+def identical_elements(list1, list2):
+    # Check if the lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a set to store the identical elements
+    identical_elements = set()
+
+    # Iterate through the lists and find the identical elements between index 3 and index 5, both inclusive
+    for i in range(3, 6):
+        if list1[i] in list2:
+            identical_elements.add(list1[i])
+
+    return identical_elements

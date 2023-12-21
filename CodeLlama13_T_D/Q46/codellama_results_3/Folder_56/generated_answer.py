@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return __greatest_common_divisor(my_list[59], my_list[93], my_list[84])

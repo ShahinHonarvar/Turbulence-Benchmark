@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate over each character between indices 31 and 50 (both exclusive)
+    for i in range(31, 50):
+        # If the current character is greater than '/' and smaller than 'J', remove all occurrences of that character from the string
+        if char_list[i] > '/' and char_list[i] < 'J':
+            char_list.remove(char_list[i])
+    # Join the list of characters back into a string and return it
+    return "".join(char_list)

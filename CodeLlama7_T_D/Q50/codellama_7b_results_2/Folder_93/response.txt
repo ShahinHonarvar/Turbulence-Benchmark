@@ -1,0 +1,20 @@
+ ```
+def if_contains_anagrams(words):
+    # Convert all words to lowercase
+    words = [word.lower() for word in words]
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+    # Iterate over the words and find their anagrams
+    for i, word in enumerate(words):
+        # Skip words that are too short to have anagrams
+        if len(word) < 3:
+            continue
+
+        # Iterate over the other words and check if they are anagrams of this word
+        for j in range(i + 1, len(words)):
+            # If the current word is an anagram of the other word, add it to the dictionary
+            if sorted(word) == sorted(words[j]):
+                anagram_pairs[(word, words[j])] = (i, j)
+    # Return True if there are at least 18 pairs of anagrams in the given list; otherwise, return False
+    return len(anagram_pairs) >= 18
+```

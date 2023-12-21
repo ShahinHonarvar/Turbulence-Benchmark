@@ -1,0 +1,64 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Get the integer at index 57 from the tuple
+    x = tuple[57]
+
+    # Initialize an empty list to store the prime numbers
+
+    prime_numbers = []
+
+    # Iterate through all numbers less than x
+
+    for i in range(2, x):
+
+        # Check if the number is a prime number
+
+        if is_prime(i):
+
+            # Check if the number contains no 0
+
+            if '0' not in str(i):
+
+                # Remove the leading leftmost digit of the number
+
+                num = int(str(i)[1:]))
+
+                # Check if all numbers resulting from removing the leading leftmost digit are prime
+
+                if is_prime(num):
+
+                    # Add the prime number to the list
+
+                    prime_numbers.append(i)
+
+    # Sort the list in descending order and return it
+
+    return sorted(prime_numbers, reverse=True)
+
+# Check if a number is a prime number using the Sieve of Eratosthenes algorithm
+
+def is_prime(n):
+
+    # If n is less than 2, it is not a prime number
+
+    if n < 2:
+        return False
+
+    # Mark all numbers as potential prime numbers
+
+    is_prime = [True] * (n + 1)
+
+    # Iterate from 2 to the square root of n
+
+    for p in range(2, int(n ** 0.5) + 1):
+
+        # If p is a prime number, mark all its multiples as non-prime numbers
+
+        if is_prime[p]:
+            for i in range(p ** 2, n + 1, p):
+                is_prime[i] = False
+
+    # Return True if n is a prime number
+
+    return is_prime[n]
+```

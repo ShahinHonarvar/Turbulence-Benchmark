@@ -1,0 +1,42 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(s):
+    # Create a list of all English letters in the given string
+    letters = [chr(i) for i in range(97, 123)]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each letter in the given string
+    for letter in s:
+        # If the letter is not in the list of English letters, continue to the next iteration
+        if letter not in letters:
+            continue
+
+        # Create a copy of the given string and remove all occurrences of the current letter
+        temp = s.replace(letter, "")
+
+        # Iterate over each letter in the modified string
+        for letter2 in temp:
+            # If the letter is not in the list of English letters, continue to the next iteration
+            if letter2 not in letters:
+                continue
+
+            # Create a copy of the modified string and remove all occurrences of the current letter
+            temp = temp.replace(letter2, "")
+
+            # If the length of the modified string is at least 4, add it to the set of palindromes
+            if len(temp) >= 4:
+                palindromes.add(temp)
+
+    # Return the set of palindromes in a case-insensitive manner
+    return frozenset(palindrome.lower() for palindrome in palindromes)
+```
+This function takes one argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 4 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 1 to index 3, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.
+Here is how you can use this function:
+```python
+# Test the function with the input string "racecar"
+#print(palindromes_between_indices("racecar"))
+# Output: {"racecar"}
+# Test the function with the input string "abcdefghijklmnopqrstuvwxyz"
+#print(palindromes_between_indices("abcdefghijklmnopqrstuvwxyz"))
+# Output: {civic, civics, civil, civility, civilities, civilian, civilians, civilization, civilizations, civilitys, civilly, civilness, civilnesses, civilship, civilships, civilizations, civilizations, civilizations}
+```

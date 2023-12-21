@@ -1,0 +1,17 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables for the Fibonacci sequence
+    fib1 = 0
+    fib2 = 1
+
+    # Check if the decimal integer is divisible by the 64th number in the Fibonacci sequence
+    for i in range(63):
+        fib_sum = fib1 + fib2
+        fib1 = fib2
+        fib2 = fib_sum
+
+    return decimal_integer % fib2 == 0
+```
+The above code is a solution to the problem statement. It first converts the binary representation string of the non-negative decimal integer to its corresponding decimal integer value using the `int()` function with a base of 2. Then it initializes variables for the Fibonacci sequence, starting with the first two numbers being 0 and 1, respectively. Next, it uses a loop to check if the decimal integer is divisible by the 64th number in the Fibonacci sequence. If the decimal integer is not divisible by the 64th number, the function returns `False`. Otherwise, if the decimal integer is divisible by the 64th number, the function returns `True`.

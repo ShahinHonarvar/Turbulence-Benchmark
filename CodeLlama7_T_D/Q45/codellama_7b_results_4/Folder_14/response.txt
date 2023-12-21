@@ -1,0 +1,22 @@
+ ```
+def palindromes_between_indices(string):
+    # Define the range of indices
+    start_index = 4
+    end_index = 5
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string
+    for i in range(start_index, end_index + 1):
+        # Check if the character is a letter (not a space or punctuation)
+        if string[i].isalpha():
+            # Create a copy of the string with all letters uppercased
+            uppercased_string = string.upper()
+            # Get the index of the current character in the uppercased string
+            uppercase_index = uppercased_string.find(string[i])
+            # Check if the current character is a palindrome
+            if string[i] == uppercased_string[uppercase_index]:
+                # Add the palindrome to the set
+                palindromes.add(string[i])
+    # Return the set of palindromes
+    return palindromes
+```

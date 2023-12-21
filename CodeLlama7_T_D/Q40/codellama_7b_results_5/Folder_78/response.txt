@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```python
+def return_n_smallest_chars(string, n):
+    # Check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+    # Sort the characters of the string in descending order based on their ASCII values
+    sorted_chars = sorted(string, key=ord, reverse=True)
+    # Return the first n characters of the sorted list
+    return sorted_chars[:n]
+```
+This function takes two arguments: `string`, which is a string of distinct characters, and `n`, which is a positive integer representing the number of smallest ASCII values to be returned. The function first checks if `n` is a positive integer using the built-in `isinstance` function. If `n` is not a positive integer, the function raises a `ValueError` exception with an appropriate message.
+If `n` is a positive integer, the function sorts the characters of `string` in descending order based on their ASCII values using the built-in `sorted` function with the `key=ord` argument. The `reverse=True` argument tells `sorted` to sort the list in descending order instead of ascending order.
+Finally, the function returns the first `n` characters of the sorted list using slicing notation (`[:n]`).

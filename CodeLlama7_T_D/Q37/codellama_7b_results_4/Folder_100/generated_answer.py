@@ -1,0 +1,11 @@
+ def filter_chars(s):
+    # Initialize a new empty string
+    res = ""
+    # Iterate over each character in the input string
+    for c in s:
+        # If the current character is not between indices 88 and 90, both inclusive, or if it is not greater than or equal to character 'J' and smaller than or equal to character 'Q', then add it to the new string
+        if (c < "H" or c > "Q") and (c < "J" or c > "I"):
+            res += c
+
+    # Return the altered string
+    return res

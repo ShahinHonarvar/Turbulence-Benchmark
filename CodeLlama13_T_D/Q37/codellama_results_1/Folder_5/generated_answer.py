@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    filtered = ""
+    for i, c in enumerate(string):
+        if 24 <= i <= 82 and '5' <= c <= '<':
+            continue
+        filtered += c
+    return filtered

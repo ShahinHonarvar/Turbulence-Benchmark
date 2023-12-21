@@ -1,0 +1,8 @@
+
+def return_n_smallest_chars(distinct_chars):
+    chars = sorted(list(set(distinct_chars)))
+    n = 27 if len(chars) > 27 else len(chars)
+    smallest_chars = []
+    for i in range(n):
+        smallest_chars.append(chars[i])
+    return smallest_chars

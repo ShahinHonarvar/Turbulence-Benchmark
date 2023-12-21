@@ -1,0 +1,7 @@
+
+def prime_factors(my_list):
+    prime_factor_set = set()
+    for i in my_list:
+        if is_prime(i):
+            prime_factor_set.add(i)
+    return prime_factor_set

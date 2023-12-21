@@ -1,0 +1,13 @@
+
+def find_second_largest_num(my_list):
+    # Sort the list in descending order
+    my_list.sort(reverse=True)
+    # Initialize a variable to store the second largest element
+    second_largest = None
+    # Iterate through the list from index 310 to index 370, both inclusive
+    for i in range(310, 371):
+        # If the current element is greater than the second largest element, update the second largest element
+        if my_list[i] > second_largest:
+            second_largest = my_list[i]
+    # Return the second largest element
+    return second_largest

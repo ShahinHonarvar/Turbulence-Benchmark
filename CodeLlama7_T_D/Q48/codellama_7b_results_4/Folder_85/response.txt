@@ -1,0 +1,24 @@
+ def return_binary_or_hexa(my_tuple):
+    # Initialize variables
+    sum = 0
+    binary = ""
+    hexa = ""
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 1 and 8
+    for i in range(my_tuple[1] + 1, my_tuple[8]):
+        if i not in my_tuple:
+            sum += i
+
+    # Return the binary or hexadecimal representation string of the sum
+    if sum % 2 != 0:
+        for digit in bin(sum)[2:]:
+            binary += digit
+
+        return binary
+
+    else:
+
+        for digit in hex(sum)[2:]:
+            hexa += digit
+
+        return hexa

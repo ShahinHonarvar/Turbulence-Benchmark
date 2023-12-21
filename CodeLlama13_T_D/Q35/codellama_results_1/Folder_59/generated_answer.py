@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(string):
+    seen = set()
+    new_string = ''
+    for char in string[:10]:
+        if char not in seen:
+            new_string += char
+            seen.add(char)
+    return new_string + string[10:]

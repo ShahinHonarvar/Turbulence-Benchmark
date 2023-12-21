@@ -1,0 +1,25 @@
+
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    # Extract the integer at index 93 from the tuple
+    x = tuple_of_positive_integers[93]
+    # Initialize an empty list to store the sorted list of right-truncatable prime numbers less than x
+    right_truncatable_prime_numbers = []
+    # Loop through all prime numbers less than x
+    for i in range(2, x):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Initialize an empty string to store the representation of i without its last rightmost digit
+            no_last_digit = ""
+            # Loop through all digits of i
+            for j in range(len(str(i)))):
+                # If j is not the last rightmost digit of i, append it to no_last_digit
+                if j != len(str(i)) - 1:
+                    no_last_digit += str(i)[j]
+            # Check if the representation of i without its last rightmost digit is a prime number
+            if is_prime(no_last_digit):
+                # Add i to the list of right-truncatable prime numbers
+                right_truncatable_prime_numbers.append(i)
+    # Sort the list of right-truncatable prime numbers in ascending order
+    sorted_right_truncatable_prime_numbers = sorted(right_truncatable_prime_numbers)
+    # Return the sorted list of right-truncatable prime numbers less than x
+    return sorted_right_truncatable_prime_numbers

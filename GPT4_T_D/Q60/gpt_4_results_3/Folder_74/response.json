@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[36]\n\n    def check_prime(n):\n        if n == 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    def check_truncatable(n):\n        if '0' in str(n):\n            return False\n        for i in range(len(str(n))):\n            if not check_prime(int(str(n)[i:])) or not check_prime(int(str(n)[:-i-1])):\n                return False\n        return True\n\n    truncatable_primes = [i for i in range(10, x + 1) if check_prime(i) and check_truncatable(i)]\n    return sorted(truncatable_primes)\n\n```\nIn the code above, 'check_prime' is an internal function that checks whether a number is prime. 'check_truncatable' is another internal function that checks whether a number is both left-and right-truncatable prime. The 'all_left_right_truncatable_prime' function uses these internal functions to determine if numbers in the given range qualify and returns those numbers in ascending order. If none are found, an empty list is returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690996344,
+  "id": "chatcmpl-7j9gWqQR8vL1XudZX9lLTrheNArof",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 268,
+    "prompt_tokens": 187,
+    "total_tokens": 455
+  }
+}

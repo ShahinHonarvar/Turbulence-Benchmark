@@ -1,0 +1,17 @@
+ ```
+def insert_after_character(string):
+    result = ""
+    for i in range(len(string)):
+        if string[i] == "g":
+            result += string[:i] + "M" + string[i:]
+    return result
+
+if __name__ == "__main__":
+#    print(insert_after_character("greeting"))
+#    print(insert_after_character("hello world"))
+#    print(insert_after_character("the big brown fox"))
+```
+This code defines a function `insert_after_character` that takes a single argument, a string, and returns a new string where the character `'M'` has been inserted immediately succeeding any occurrences of character `'g'`.
+The function iterates over each character in the input string using a for loop. For each character, it checks if it is equal to `'g'`, and if so, it adds the previously appended characters plus the new character `'M'` to the result string.
+After all characters have been processed, the function returns the final result string.
+In the example code at the end of the answer, we demonstrate how to call the `insert_after_character` function for several input strings.

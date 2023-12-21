@@ -1,0 +1,14 @@
+```python
+def palindromes_of_specific_lengths(string):
+    indices = range(119, 257)
+    lengths = range(104, 124)
+    result = set()
+
+    for i in indices:
+        for j in lengths:
+            substring = string[i:i+j]
+            if substring == substring[::-1]:
+                result.add(substring)
+
+    return result
+```

@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the found submatrices
+    submatrices = []
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary matrix to store the current submatrix
+            temp_matrix = np.zeros((matrix.shape[0], matrix.shape[1]), dtype=np.int64)
+            
+            # Set the elements of the temporary matrix to the corresponding elements of the input matrix
+            for k in range(temp_matrix.shape[0]):
+                for l in range(temp_matrix.shape[1]):
+                    temp_matrix[k, l] = matrix[i + k, j + l]
+            
+            # Check if the sum of all elements in the temporary matrix is equal to 34
+            if np.sum(temp_matrix) == 34:
+                # If the sum is equal to 34, add the temporary matrix to the list of submatrices
+                submatrices.append(temp_matrix)
+    
+    # Return the list of found submatrices
+    return submatrices

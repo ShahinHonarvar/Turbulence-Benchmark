@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # convert the string to a list of characters
+    char_list = list(string)
+    # create a dictionary to store the character frequencies
+
+    freq_dict = {}
+
+    for char in char_list:
+        if char in freq_dict:
+            freq_dict[char] += 1
+
+        else:
+            freq_dict[char] = 1
+
+    # sort the dictionary by value
+
+    sorted_dict = sorted(freq_dict.items(), key=lambda x: x[1])
+
+    # return the character with the 13th smallest ASCII value
+
+    return sorted_dict[12][0]
+```

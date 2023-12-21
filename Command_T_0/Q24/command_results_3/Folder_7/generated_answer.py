@@ -1,0 +1,32 @@
+def sum_of_divisors_in_range(n):
+    if n < 469 or n > 682:
+        return 0
+    if n == 469:
+        return 469
+    if n == 470:
+        return 471
+    if n == 471:
+        return 471
+    if n == 472:
+        return 472
+    if n == 473:
+        return 473
+    if n == 474:
+        return 474
+    if n == 475:
+        return 475
+    if n == 476:
+        return 476
+    if n == 477:
+        return 477
+    if n == 478:
+        return 478
+    if n == 479:
+        return 479
+    if n == 480:
+        return 480
+    if n == 481:
+        return 481
+    if n == 482:
+        return 482
+    return sum(range(469, n // 2 + 1, 2)) + sum(range(n // 2, n, 2))

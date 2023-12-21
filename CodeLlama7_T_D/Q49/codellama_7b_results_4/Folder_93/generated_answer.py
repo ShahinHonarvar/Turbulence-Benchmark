@@ -1,0 +1,18 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Find the 59th Fibonacci number that is less than or equal to the given decimal integer
+    fib59 = 0
+    for i in range(1, len(str(decimal_int))) :
+        if str(fib59).endswith("1"):
+            fib59 += 34
+        else:
+            fib59 += 21
+
+        if decimal_int >= fib59 and decimal_int <= fib59 + 1:
+            return True
+
+    # If the given decimal integer is not divisible by the 59th Fibonacci number, then return false
+
+    return False

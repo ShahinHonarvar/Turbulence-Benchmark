@@ -1,0 +1,14 @@
+
+def all_left_truncatable_prime(nums):
+    x = nums[46]
+    prime_numbers = []
+    for i in range(10**x-1, 10**x):
+        if str(i).count('0') == 0:
+            is_left_truncatable_prime = True
+            for j in range(len(str(i))):
+                if not is_prime(int(str(i)[:j])):
+                    is_left_truncatable_prime = False
+                    break
+            if is_left_truncatable_prime:
+                prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)

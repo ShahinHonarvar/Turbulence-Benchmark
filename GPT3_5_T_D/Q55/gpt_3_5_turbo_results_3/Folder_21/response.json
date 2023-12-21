@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations, cycle\n\ndef lists_with_product_equal_n(lst):\n    size = len(lst)\n    candidates = []\n    \n    for i in range(1, size+1):\n        for c in combinations(lst, i):\n            if cycle(c) in candidates:\n                continue\n            if cycle(c) in candidates:\n                continue\n            product = 1\n            for num in c:\n                product *= num\n            if product == 851:\n                candidates.append(cycle(c))\n    \n    return [list(sublist) for sublist in candidates]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689844353,
+  "id": "chatcmpl-7eK01IPOWgadQRGBli7aXPqWFIR7U",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 117,
+    "prompt_tokens": 193,
+    "total_tokens": 310
+  }
+}

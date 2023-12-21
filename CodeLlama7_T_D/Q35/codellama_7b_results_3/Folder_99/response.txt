@@ -1,0 +1,25 @@
+ Here's a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(string):
+    # Find the first occurrence of each repeated character
+    # in the given string between indices 450 and 905
+    repeated_chars = []
+    for i in range(450, 905):
+        if string[i] in repeated_chars:
+            continue
+
+        else:
+
+            repeated_chars.append(string[i])
+
+    # Remove all occurrences of each repeated character from the given string
+
+    for char in repeated_chars:
+
+        string = string.replace(char, "")
+
+    return string
+```
+This implementation uses a list called `repeated_chars` to keep track of the first occurrence of each repeated character in the given string between indices 450 and 905. The `for` loop that iterates over the indices of the string checks if each character is already in the `repeated_chars` list, and if it isn't, it adds it to the list.
+Once the `repeated_chars` list is populated with all repeated characters between indices 450 and 905, the function uses a second `for` loop that iterates over each character in the `repeated_chars` list and removes all occurrences of that character from the given string. The `string = string.replace(char, "")` statement replaces all instances of the current character `char` with an empty string, effectively removing all occurrences of that character from the string.
+The function returns the altered string once all repeated characters have been removed.

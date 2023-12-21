@@ -1,0 +1,17 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 17 elements
+    if len(my_list) < 17:
+        return False
+
+    # Get the value of the 16th element of the list
+    num = my_list[16]
+
+    # Check if the number is a perfect number
+    if num == sum(range(1, num)))
+        return True
+
+    else:
+
+        # If the number is not a perfect number, return False
+        return False

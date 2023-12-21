@@ -1,0 +1,23 @@
+```
+def lists_with_product_equal_n(circular_list, n):
+    if len(circular_list) == 0:
+        return []
+
+    result = []
+    product = circular_list[0]
+    start = 0
+    end = 1
+
+    while start < len(circular_list):
+        while end <= len(circular_list) and product * circular_list[end] == n:
+            product *= circular_list[end]
+            end += 1
+
+        if product == n:
+            result.append(circular_list[start:end])
+
+        start = end
+        product = 1
+
+    return result
+```

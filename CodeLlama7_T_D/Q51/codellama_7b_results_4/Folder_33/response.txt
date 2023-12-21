@@ -1,0 +1,30 @@
+ ```
+def if_contains_anagrams(my_list):
+    # check if the list is empty or has less than three elements
+    if len(my_list) < 3:
+        return False
+
+    # create a set to keep track of anagram pairs
+    anagram_pairs = set()
+
+    # loop through each string in the list
+    for i in range(len(my_list)):
+
+        # get the current string
+        s1 = my_list[i]
+
+        # loop through the remaining strings
+        for j in range(i + 1, len(my_list)):
+
+            # get the second string
+            s2 = my_list[j]
+
+            # check if the two strings are anagrams of each other
+            if sorted(s1) == sorted(s2):
+
+                # add the pair to the set
+                anagram_pairs.add((i, j)))
+
+    # return True if there are at most 85 pairs of anagrams in the list
+    return len(anagram_pairs) <= 85
+```

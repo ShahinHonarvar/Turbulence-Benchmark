@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 102):
+        for j in range(matrix.shape[1] - 102):
+            if matrix[i:i+103, j:j+103].all():
+                count += 1
+
+    return count

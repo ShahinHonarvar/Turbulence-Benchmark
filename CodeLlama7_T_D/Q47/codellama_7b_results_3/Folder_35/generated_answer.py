@@ -1,0 +1,23 @@
+
+def palindromes_of_specific_lengths(string, start_index=34, end_index=90, min_length=14, max_length=39):
+    # Define a function to check if a string is a palindrome
+    def is_palindrome(word):
+        return word == word[::-1]
+    
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over the characters in the substring
+    for i in range(start_index, end_index + 1):
+        
+        # Check if the character is a letter (a-z or A-Z)
+        if string[i].isalpha():
+            
+            # Check if the character is a palindrome
+            if is_palindrome(string[i]):
+                
+                # Add the palindrome to the set
+                palindromes.add(string[i])
+    
+    # Return the set of palindromes that meet the requirements
+    return palindromes

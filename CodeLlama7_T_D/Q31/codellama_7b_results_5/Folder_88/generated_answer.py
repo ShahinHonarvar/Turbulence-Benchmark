@@ -1,0 +1,21 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 47 elements
+    if len(my_list) < 47:
+        return False
+
+    # Get the number at index 46
+    num = my_list[46]
+
+    # Check if the number is a perfect square
+    root = int(num ** 0.5)
+    if root ** 2 == num:
+        return True
+
+    # Check if the number is a perfect cube
+    root = int(num ** (1/3))
+    if root ** 3 == num:
+        return True
+
+    # If none of the above conditions are met, return False
+    return False

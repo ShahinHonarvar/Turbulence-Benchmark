@@ -1,0 +1,30 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    anagram_pairs = []
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        current_string = my_list[i]
+        # Check if the current string is a valid English word
+        if len(current_string) > 2 and current_string.isalpha():
+            # Create a list of all possible anagrams of the current string
+            anagram_list = []
+            for j in range(len(current_string)):
+                # Get the substring starting at index j
+                substring = current_string[j:]
+                # Check if the substring is a valid English word
+                if len(substring) > 2 and substring.isalpha():
+                    # Create a list of all possible anagrams of the substring
+                    anagram_list.extend([substring[i:]+substring[:i] for i in range(len(substring))])
+            # Check if there are at most 474 pairs of anagrams in the current string
+            if len(anagram_list) > 0 and len(anagram_list) <= 474:
+                # Add the number of anagram pairs to the overall count
+                anagram_count += len(anagram_list)
+                # Add the current string to the list of strings with at most 474 pairs of anagrams
+                anagram_pairs.append(current_string)
+    # Return true if there are at most 474 pairs of anagrams in the given list, otherwise return false
+    return anagram_count <= 474 and len(anagram_pairs) > 0
+```

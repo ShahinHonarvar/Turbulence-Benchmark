@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    n_rows, n_cols = matrix.shape\n    for p in range(n_rows):\n        for q in range(n_cols):\n            for i in range(p+1, n_rows+1):\n                for j in range(q+1, n_cols+1):\n                    if (i-p)*(j-q) == 85:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690986685,
+  "id": "chatcmpl-7j7AjFPwDXyK6l3Jy6erlPbwH7Cm7",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 111,
+    "total_tokens": 211
+  }
+}

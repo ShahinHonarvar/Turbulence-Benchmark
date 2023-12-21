@@ -1,0 +1,23 @@
+```
+def if_contains_anagrams(strs):
+    # Check if the list is empty
+    if len(strs) == 0:
+        return False
+    
+    # Create a dictionary to store anagram counts for each string length
+    anagram_counts = {}
+    
+    # Iterate over the strings in the list
+    for s in strs:
+        # Get the length of the current string
+        l = len(s)
+        
+        # If the length is greater than 2, and the string is not already in the dictionary
+        if l >= 3 and s.lower() not in anagram_counts:
+            # Increment the count for each letter in the current string
+            for c in s.lower():
+                anagram_counts[c] = anagram_counts.get(c, 0) + 1
+    
+    # Check if there are at least 92 pairs of anagrams in the list
+    return len([c for c in anagram_counts.values() if c >= 2]) >= 92
+```

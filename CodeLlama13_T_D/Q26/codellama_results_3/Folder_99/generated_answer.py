@@ -1,0 +1,3 @@
+
+def sum_in_range(my_list):
+    return sum(filter(lambda x: 782 <= x <= 787, my_list))

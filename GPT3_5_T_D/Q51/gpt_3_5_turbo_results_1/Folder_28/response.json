@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(lst):\n    def count_letters(s):\n        count = [0] * 26\n        for char in s.lower():\n            if char.isalpha():\n                count[ord(char) - ord('a')] += 1\n        return tuple(count)\n\n    anagrams = {}\n    for word in lst:\n        if len(word) < 3:\n            continue\n        count = count_letters(word)\n        if count in anagrams:\n            anagrams[count] += 1\n        else:\n            anagrams[count] = 1\n\n    total_pairs = sum(n // 2 for n in anagrams.values())\n    return total_pairs <= 78\n```\nNote: The triple backticks are not part of the code; they are only used to delimit the code block as per the specification.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689778954,
+  "id": "chatcmpl-7e2zCewMmgdYfoirXRwgoflp4TIuy",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 139,
+    "total_tokens": 310
+  }
+}

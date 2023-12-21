@@ -1,0 +1,3 @@
+
+def insert_before_character(string, character):
+    return "".join([f"j{c}" if c == "N" else c for c in string])

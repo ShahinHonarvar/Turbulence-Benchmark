@@ -1,0 +1,13 @@
+
+def filter_chars(my_string):
+    # Create a list of characters in the given string
+    char_list = list(my_string)
+    # Iterate over each character in the list
+    for i in range(len(char_list)):
+        # Check if the current character is greater than '-' and smaller than 'L'
+        if char_list[i] > '-' and char_list[i] < 'L':
+            # Remove all occurrences of the current character from the string
+            char_list = [char for char in char_list if char != char_list[i]]
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string

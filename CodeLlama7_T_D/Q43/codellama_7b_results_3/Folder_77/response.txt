@@ -1,0 +1,28 @@
+ ```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(287, 928 + 1):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers)
+
+def is_prime(n):
+
+    if n < 2:
+
+        return False
+
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+
+    return True
+```
+This code defines a function called `find_primes_between_indices` that takes one argument, a list of integers, and returns the sorted list of all prime numbers from index 287 to index 928, both inclusive. The returned list should be in ascending order. If no prime number exists in the specified range, the function should return an empty list.
+The code first defines a function called `is_prime` that takes one argument, an integer `n`, and returns `True` if `n` is prime, and `False` otherwise. The function uses the Sieve of Eratosthenes to check whether `n` is prime or not.
+The main function `find_primes_between_indices` first calls the `is_prime` function for each element in the given list from index 287 to index 928, both inclusive. If an element is found to be a prime number, it is appended to the `prime_numbers` list.
+After iterating through all elements of the given list, the `find_primes_between_indices` function returns the sorted `prime_numbers` list in ascending order.

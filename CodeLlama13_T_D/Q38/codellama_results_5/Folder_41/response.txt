@@ -1,0 +1,7 @@
+```python
+def find_subset_of_length_n(elements, n):
+    return len([subset for subset in subsets(elements) if len(subset) == n])
+```
+This is a function that takes two arguments: `elements`, a set of elements, and `n`, an integer. The function returns the number of all its subsets of size `n`.
+
+The function uses the `subsets` function from the itertools module to generate all possible subsets of `elements`, then filters out the ones with length different from `n` using a list comprehension. Finally, it applies the `len` function to get the number of remaining subsets.

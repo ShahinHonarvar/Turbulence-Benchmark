@@ -1,0 +1,28 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Split the string into substrings of length 13 to 99
+substrings = [string[i:i+13] for i in range(len(string)-12, len(string))]
+# Create a set to store all palindromes that meet the requirements
+palindromes = set()
+# Iterate over each substring and check if it is a palindrome
+for substring in substrings:
+# Check if the substring is a palindrome using the 'is_palindrome' function
+if is_palindrome(substring):
+# Add the palindrome to the set of palindromes
+palindromes.add(substring)
+return palindromes
+def is_palindrome(string):
+# Check if the string is empty or has only one character
+if len(string) <= 1:
+return True
+# Check if the first and last characters of the string are the same
+if string[0] == string[-1]:
+# Recursively check if the substring from the second character to the second-to-last character is a palindrome
+return is_palindrome(string[1:-1])
+else:
+return False
+```
+This code defines a function `palindromes_of_specific_lengths` that takes one argument, a string. The function returns the set of all palindromes with lengths between 26 to 29 (both inclusive) and only consisting of English letters that occur in the substring from index 13 to index 99 (both inclusive).
+The code first splits the given string into substrings of length 13 to 99 using list comprehension. It then creates a set to store all palindromes that meet the requirements and iterates over each substring to check if it is a palindrome using an inbuilt function `is_palindrome`. If a substring is a palindrome, it adds the palindrome to the set of palindromes.
+The function `is_palindrome` first checks if the string is empty or has only one character. If the string is empty or has only one character, the function returns True. Otherwise, the function checks if the first and last characters of the string are the same using the `==` operator. If the first and last characters of the string are the same, the function recursively calls itself to check if the substring from the second character to the second-to-last character is a palindrome.
+If the first and last characters of the string are not the same or if the recursive call returns False, the function returns False.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_avagrams(lst):\n    from collections import defaultdict\n    pairs = 0\n    dict_ = defaultdict(int)\n    for word in lst:\n        if len(word) < 3:\n            continue\n        word = ''.join(sorted(word.lower()))\n        dict_[word] += 1\n    for key in dict_:\n        pairs += dict_[key] * (dict_[key] - 1) // 2\n    return pairs >= 72\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690964220,
+  "id": "chatcmpl-7j1KOtazeznQ3ONbD9T6znlEQko0B",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 126,
+    "total_tokens": 228
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    row, col = matrix.shape\n    count = 0\n    for i in range(row):\n        for j in range(col):\n            for x in range(i, row):\n                for y in range(j, col):\n                    if (x+1-i)*(y+1-j) == 64:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690986530,
+  "id": "chatcmpl-7j78EZVNx70wlFuf02CkKaloczlmT",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 90,
+    "prompt_tokens": 111,
+    "total_tokens": 201
+  }
+}

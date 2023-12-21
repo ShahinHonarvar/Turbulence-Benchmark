@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    chars = []
+    for i in range(225, 381+1):
+        if s[i].isalpha() and 'D' <= s[i] <= 'Y':
+            chars.append(s[i])
+    return "".join(c for c in s if c not in set(chars))

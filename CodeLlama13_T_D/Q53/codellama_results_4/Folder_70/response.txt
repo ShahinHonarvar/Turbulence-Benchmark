@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_at_least_n(string, n):
+    return {p for p in findall('[a-zA-Z]{11,}', string) if p == p[::-1]}
+```
+This function uses a set comprehension to iterate over all substrings of the input string that are at least 11 characters long and only contain letters. The `findall` method is used to find all matches for this pattern in the string. If a substring is found, it is checked if it is a palindrome by reversing it with the slice notation `[::-1]` and checking if it is equal to the original substring. If so, the substring is added to the set of palindromes. The resulting set is returned at the end.

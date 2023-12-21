@@ -1,0 +1,18 @@
+ ```
+def find_original_set(sets):
+\# Check if all sets are distinct
+if len(sets) != len(set(tuple(s) for s in sets))):
+\# If any set is empty, return an empty set
+for s in sets:
+if not s:
+return set()
+\# Sort the sets by their smallest element
+sorted_sets = sorted(sets, key=min)
+\# Initialize the smallest set as the first set
+smallest_set = sorted_sets[0]
+\# Iterate over the remaining sets and add them to the smallest set if they are subsets of it
+for s in sorted_sets[1:]:
+if s <= smallest_set:
+smallest_set |= s
+return smallest_set
+```

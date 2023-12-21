@@ -1,0 +1,3 @@
+
+def gcf_two_nums(positive_integers):
+    return positive_integers[95] * positive_integers[73] // gcd(positive_integers[95], positive_integers[73])

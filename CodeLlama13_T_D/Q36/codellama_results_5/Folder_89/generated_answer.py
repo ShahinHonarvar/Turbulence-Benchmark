@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 57 or i > 69:
+            result += char
+        elif char >= '(' and char <= 'W':
+            continue
+        else:
+            result += char
+    return result

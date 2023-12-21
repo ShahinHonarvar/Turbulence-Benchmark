@@ -1,0 +1,15 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the current index
+    total = 0
+    i = 154
+    # Loop through the list, starting from index 154
+    while i <= 798:
+        # If the current element is divisible by either 275 or 580
+        if my_list[i] % 275 == 0 or my_list[i] % 580 == 0:
+            # Add the current element to the sum
+            total += my_list[i]
+        # Increment the current index by 1
+        i += 1
+    # Return the sum of all integers divisible by either 275 or 580 from index 154 to index 798, both inclusive
+    return total

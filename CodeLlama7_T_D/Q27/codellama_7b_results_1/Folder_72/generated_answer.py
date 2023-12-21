@@ -1,0 +1,8 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:] # create a copy of the input list
+    for i in range(len(my_list)):
+        if my_list[i] == 24: # find the index where we want to insert the element
+            new_list.insert(i+1, [98, 22]) # insert the element at the next index
+            break # stop searching once we've found the index we want
+    return new_list # return the modified list with the inserted element

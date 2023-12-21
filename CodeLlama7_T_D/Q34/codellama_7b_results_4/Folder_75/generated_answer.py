@@ -1,0 +1,17 @@
+
+def find_original_set(sets):
+    # Get the smallest set from the input sets
+    smallest_set = min(sets, key=len)
+    # Check if all the given sets are subsets of the smallest set
+    if all(smallest_set.issuperset(s) for s in sets):
+        return smallest_set
+
+    # If not all the given sets are subsets of the smallest set, then we need to find a new smallest set that includes all the given sets
+    else:
+        new_smallest_set = set()
+
+        for s in sets:
+
+            new_smallest_set.update(s)
+
+        return new_smallest_set

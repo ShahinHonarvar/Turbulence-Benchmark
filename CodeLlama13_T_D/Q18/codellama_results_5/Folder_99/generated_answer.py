@@ -1,0 +1,13 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    sum = 0
+
+    # Iterate through the list and check if each integer is divisible by either 275 or 580
+    for i in range(154, 799):
+        if my_list[i] % 275 == 0 or my_list[i] % 580 == 0:
+            # If it is divisible, add it to the sum
+            sum += my_list[i]
+
+    # Return the sum
+    return sum

@@ -1,0 +1,3 @@
+
+def gcf_two_nums(mylist):
+    return mylist[360] if mylist[360] == mylist[722] else 1

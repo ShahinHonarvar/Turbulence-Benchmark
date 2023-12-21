@@ -1,0 +1,24 @@
+
+def all_even_ints_inclusive(my_list):
+    # Find the first even index in the list
+    for i in range(43, len(my_list), 1):
+        if my_list[i] % 2 == 0:
+            start = i
+            break
+
+    # Find the last even index in the list
+
+    for i in range(start, len(my_list), -1):
+        if my_list[i] % 2 == 0:
+            end = i
+            break
+
+    # Create a new list of even integers from start to end
+
+    even_ints = []
+
+    for i in range(start, end + 1):
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+
+    return even_ints

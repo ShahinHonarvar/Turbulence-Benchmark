@@ -1,0 +1,22 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Initialize a dictionary to store the frequency of each character
+    char_freq = {}
+
+    # Iterate over the characters in the string and update the frequency dictionary
+    for char in string:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+
+    # Sort the frequency dictionary based on the value (descending order)
+    sorted_freq = sorted(char_freq.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 19th smallest ASCII value
+    return sorted_freq[18][0]
+```
+This code defines a function called `return_nth_smallest_ascii` that takes a single argument, which is a string of distinct characters. The function returns the character with the 19th smallest ASCII value among those characters in the string that occur between indices 18 to 66, both inclusive.
+The code first initializes a dictionary called `char_freq` to store the frequency of each character in the input string. It then iterates over the characters in the string and updates the frequency dictionary accordingly.
+Once the frequency dictionary is populated, the code sorts it based on the value (descending order) using the `sorted` function with a lambda expression. The sorted dictionary is stored in a new variable called `sorted_freq`.
+The final step is to return the character with the 19th smallest ASCII value from the sorted frequency dictionary. This is done by indexing into the `sorted_freq` dictionary using the index 18 and extracting the first element (character) from the resulting tuple. The resulting character is returned as the output of the function.

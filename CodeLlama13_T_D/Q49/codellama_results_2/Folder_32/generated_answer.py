@@ -1,0 +1,7 @@
+
+def if_decimal_is_divisible(binary_repr):
+    binary_int = int(binary_repr, 2)
+    fibonacci_seq = [0, 1]
+    for i in range(2, binary_int + 1):
+        fibonacci_seq.append((fibonacci_seq[i - 1] + fibonacci_seq[i - 2]) % 100)
+    return (binary_int + 1) % 178 == fibonacci_seq[(binary_int + 1) // 178]

@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 10 elements
+    if len(my_list) < 10:
+        return False
+
+    # Calculate the sum of the factors of the number at index 10
+    perfect_number = my_list[10]
+    factor_sum = 0
+
+    for i in range(1, int(perfect_number ** 0.5) + 1):
+        if perfect_number % i == 0:
+            factor_sum += i
+
+    # Return True if the sum of the factors is equal to the number at index 10
+    return factor_sum == perfect_number

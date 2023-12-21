@@ -1,0 +1,14 @@
+```python
+def gcf_two_nums(nums):
+    return nums[25] if nums[80] % nums[25] == 0 else nums[80] if nums[25] % nums[80] == 0 else find_gcf(nums, 25, 80)
+
+def find_gcf(nums, i, j):
+    while True:
+        if nums[i] % nums[j] == 0:
+            return nums[j]
+        elif nums[j] % nums[i] == 0:
+            return nums[i]
+        else:
+            i += 1
+            j -= 1
+```

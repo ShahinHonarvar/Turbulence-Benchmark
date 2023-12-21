@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_decimal_is_divisible(binary):\n    fibonacci = [0, 1]\n    while len(fibonacci) < 177:\n        fibonacci.append(fibonacci[-1] + fibonacci[-2])\n    decimal = 0\n    for i, bit in enumerate(binary):\n        decimal += int(bit) * 2 ** (len(binary) - i - 1)\n    return decimal % fibonacci[176] == 0\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689840528,
+  "id": "chatcmpl-7eJ0K7aRXd1zf6rVaWkodO9FDOJIR",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 137,
+    "total_tokens": 230
+  }
+}

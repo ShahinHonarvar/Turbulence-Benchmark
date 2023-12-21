@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: 3a5b16f9-d5a9-4fc8-8e61-5f2f801098b4
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_num' that takes one argument, a list of integers, and returns the list of all integers divisible by 9 from index 0 to index 0, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_ints_div_by_num(nums):
+    if not nums:
+        return []
+    div_by_9_set = set(itertools.chain.from_iterable(nums[i:i+9] for i in range(0,len(nums)-8)))
+    return list(div_by_9_set)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

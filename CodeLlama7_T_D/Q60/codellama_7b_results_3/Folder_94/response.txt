@@ -1,0 +1,55 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Initialize an empty list to store the left-and-right-truncatable prime numbers
+all_primes = []
+# Iterate from 2 to x
+for i in range(2, x + 1):
+# Check if i is a prime number
+if is_prime(i):
+# Check if i is a left-and-right-truncatable prime number
+if is_left_right_truncatable_prime(i):
+# Add i to the list of all left-and-right-truncatable prime numbers
+all_primes.append(i)
+return all_primes
+def is_prime(n):
+# Check if n is an integer greater than 1
+if not (isinstance(n, int) and n > 1):
+# Return False if n is not a positive integer
+return False
+
+# Find the smallest factor of n
+
+for i in range(2, int(n ** 0.5) + 1):
+# If i divides n, return False
+if n % i == 0:
+return False
+
+# Return True if n is a prime number
+return True
+
+def is_left_right_truncatable_prime(n):
+# Check if n is an integer greater than 1
+if not (isinstance(n, int) and n > 1):
+# Return False if n is not a positive integer
+return False
+
+# Find the leading leftmost digit of n
+leftmost_digit = int(str(n)[0]))
+# Find the last rightmost digit of n
+last_rightmost_digit = int(str(n)[-1]))
+# Check if the leading leftmost digit and last rightmost digit are both equal to 1 or 2
+if leftmost_digit == 1 or leftmost_digit == 2:
+# If the leading leftmost digit and last rightmost digit are both equal to 1 or 2, return True
+return True
+
+# Return False if the leading leftmost digit and last rightmost digit are not both equal to 1 or 2
+return False
+
+# Test the is_left_right_truncatable_prime function with the following value:
+#print(is_left_right_truncatable_prime(3797))
+# True
+
+# Test the is_left_right_truncatable_prime function with the following value:
+#print(is_left_right_truncatable_prime(3801))
+# False
+```

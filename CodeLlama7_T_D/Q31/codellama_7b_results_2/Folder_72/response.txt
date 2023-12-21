@@ -1,0 +1,20 @@
+ ```
+def if_perfect_num(my_list):
+if len(my_list) < 17:
+return False
+
+perfect_number = my_list[16]
+# Check if the number is a perfect square
+sqrt = int(math.sqrt(perfect_number))
+if sqrt ** 2 == perfect_number:
+# Count the divisors
+divisors = 0
+for i in range(1, sqrt + 1):
+if perfect_number % i == 0:
+divisors += 2
+if divisors == sqrt + 1:
+return True
+
+return False
+
+```

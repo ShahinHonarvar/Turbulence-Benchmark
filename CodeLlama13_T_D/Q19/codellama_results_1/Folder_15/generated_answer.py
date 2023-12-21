@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(lst):
+    return [x for x in lst if x % -2 != 0 and 0 <= x < 3]

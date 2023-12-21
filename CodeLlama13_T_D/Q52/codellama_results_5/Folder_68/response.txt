@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_n(s):
+    return {pal[::-1] for pal in re.findall(r'([A-Za-z]{76})', s)}
+```
+This function uses a regular expression to find all substrings of the given string that are exactly 76 characters long and consist only of English letters. The `re.findall()` method returns a list of all such matches, which is then converted into a set using a comprehension and its reverse.

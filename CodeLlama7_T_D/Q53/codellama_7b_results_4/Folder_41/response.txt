@@ -1,0 +1,22 @@
+ ```
+def palindrome_of_length_at_least_n(string, n=28):
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at index i and its opposite index
+        char = string[i]
+        opp_index = len(string) - 1 - (i - len(string))
+        # Get the character at the opposite index
+        opp_char = string[opp_index]
+        # If the character is an uppercase letter, convert it to lowercase
+        if char.isupper():
+            char = char.lower()
+        # If the opposite character is an uppercase letter, convert it to lowercase
+        if opp_char.isupper():
+            opp_char = opp_char.lower()
+        # If the character and its opposite are the same, add it to the palindromes set
+        if char == opp_char:
+            palindromes.add(char)
+    return palindromes
+```

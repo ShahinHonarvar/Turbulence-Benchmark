@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given specification:\n\n```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(t):\n    x = t[975]\n\n    def is_left_truncatable_prime(n):\n        if '0' in str(n):\n            return False\n        return all(isprime(int(str(n)[i:])) for i in range(len(str(n))))\n\n    return sorted([i for i in range(2, x) if is_left_truncatable_prime(i)], reverse=True)\n```\nThis function firstly checks if the integer contains a zero, as this cannot be in a truncatable prime. It then checks if the integer is prime for every possible truncation from the left side of the number, and only returns True if all truncations result to a prime number. It finally applies this to every integer between 2 and the 975th value in the tuple argument, and returns these in sorted order in a list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690990663,
+  "id": "chatcmpl-7j8Ct0phN3fVDYW3ZIzRwVqfk41DY",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 146,
+    "total_tokens": 341
+  }
+}

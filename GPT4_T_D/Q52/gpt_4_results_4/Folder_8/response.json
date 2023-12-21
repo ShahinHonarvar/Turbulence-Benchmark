@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef palindrome_of_length_n(input_string):\n    res = set()\n    stripped_string = ''.join(e for e in input_string if e.isalnum()).lower()\n    for i in range(len(stripped_string)): \n        for j in range(i, len(stripped_string)): \n            temp_str = stripped_string[i: j + 1] \n            if len(temp_str) == 49:\n                if temp_str == temp_str[::-1]: \n                    res.add(temp_str)\n    return res\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691077743,
+  "id": "chatcmpl-7jUrPK8s2YwKl0abLlEZNID46nQLk",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 147,
+    "total_tokens": 254
+  }
+}

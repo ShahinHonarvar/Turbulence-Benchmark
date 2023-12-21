@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    # Remove all occurrences of '&' and '<='
+    string = string.replace('&', '')
+    string = string.replace('<=', '')
+    # Remove all occurrences of 'v' and '>='
+    string = string.replace('v', '')
+    string = string.replace('>=', '')
+    return string

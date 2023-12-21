@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    char_dict = {}
+    for i in range(19):
+        if string[i] not in char_dict:
+            char_dict[string[i]] = 1
+        else:
+            char_dict[string[i]] += 1
+    nth_smallest = sorted(char_dict.keys(), key=ord)[:13]
+    return "".join([k for k, v in char_dict.items() if v == max(char_dict.values()) and k in nth_smallest])

@@ -1,0 +1,30 @@
+
+def gcf_two_nums(my_list):
+    # Find the greatest common factor of two numbers
+    # by iteratively dividing both numbers by their greatest common divisor
+
+    num1 = my_list[2]
+    num2 = my_list[1]
+
+    if num1 > num2:
+        smaller_num = num2
+        larger_num = num1
+
+    else:
+        smaller_num = num1
+        larger_num = num2
+
+
+    gcf = 1
+
+    while smaller_num != 0:
+        if larger_num % smaller_num == 0:
+            gcf = smaller_num
+            break
+
+        else:
+            temp = smaller_num
+            smaller_num = larger_num % smaller_num
+            larger_num = temp
+
+    return gcf

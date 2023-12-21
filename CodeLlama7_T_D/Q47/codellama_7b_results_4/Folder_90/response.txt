@@ -1,0 +1,46 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the specified index range
+    for i in range(106, 281):
+        # Check if the current character is a letter (A-Z or a-z)
+        if string[i].isalpha():
+            # Get the lowercase version of the current character
+            lowercase = string[i].lower()
+            # Loop through each character in the specified index range again
+            for j in range(i, i + 136):
+                # Check if the current character is a letter (A-Z or a-z)
+                if string[j].isalpha():
+                    # Get the lowercase version of the current character
+                    lowercase2 = string[j].lower()
+                    # Check if the lowercase versions of the current characters are equal
+                    if lowercase == lowercase2:
+                        # Loop through each character in the specified index range again
+                        for k in range(i, i + 151):
+                            # Check if the current character is a letter (A-Z or a-z)
+                            if string[k].isalpha():
+                                # Get the lowercase version of the current character
+                                lowercase3 = string[k].lower()
+                                # Check if the lowercase versions of the current characters are equal
+                                if lowercase == lowercase3:
+                                    # Add the palindrome to the set
+                                    palindromes.add(string[i:k + 1])
+            # Loop through each character in the specified index range again
+            for j in range(i, i + 151):
+                # Check if the current character is a letter (A-Z or a-z)
+                if string[j].isalpha():
+                    # Get the lowercase version of the current character
+                    lowercase2 = string[j].lower()
+                    # Check if the lowercase versions of the current characters are equal
+                    if lowercase == lowercase2:
+                        # Loop through each character in the specified index range again
+                        for k in range(i, i + 151):
+                            # Check if the current character is a letter (A-Z or a-z)
+                            if string[k].isalpha():
+                                # Get the lowercase version of the current character
+                                lowercase3 = string[k].lower()
+                                # Check if the lowercase versions of the current characters are equal
+                                if lowercase == lowercase3:
+                                    # Add the palindrome to the set
+                                    palindromes.add(string[i:k + 1])
+    return palindromes

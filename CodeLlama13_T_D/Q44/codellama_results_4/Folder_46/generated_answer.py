@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(nums):
+    return {n for i, n in enumerate(nums) if 28 <= i <= 38 and n > 1}

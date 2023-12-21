@@ -1,0 +1,11 @@
+
+def if_perfect_num(numbers):
+    return numbers[453] in perfect_numbers(numbers)
+
+def perfect_numbers(numbers):
+    perfect_nums = []
+    for num in numbers:
+        root = int(num ** 0.5)
+        if root ** 2 == num and all([x | 1 for x in range(root + 1)]):
+            perfect_nums.append(num)
+    return perfect_nums

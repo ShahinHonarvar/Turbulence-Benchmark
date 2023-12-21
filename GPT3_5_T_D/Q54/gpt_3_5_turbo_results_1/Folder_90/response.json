@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef is_prime(n):\n    if n<=1:\n        return False\n    if n==2:\n        return True\n    if n%2==0:\n        return False\n    \n    i = 3\n    while i*i <= n:\n        if n%i == 0:\n            return False\n        i += 2\n    return True\n\ndef get_right_truncatables(n):\n    truncatables = []\n    for i in range(2, 10):\n        num = int(str(n) + str(i))\n        if is_prime(num):\n            truncatables.extend(get_right_truncatables(num))\n            truncatables.append(num)\n    return truncatables\n\ndef all_right_truncatable_prime(numbers):\n    x = numbers[466]\n    right_truncatables = []\n    for i in range(2, 10):\n        if is_prime(i):\n            right_truncatables.extend(get_right_truncatables(i))\n            right_truncatables.append(i)\n    right_truncatables = [num for num in right_truncatables if num < x]\n    right_truncatables.sort(reverse=True)\n    return right_truncatables\n\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689781373,
+  "id": "chatcmpl-7e3cDXX6w1c6YRcAIaGuOPrYBenFF",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 236,
+    "prompt_tokens": 157,
+    "total_tokens": 393
+  }
+}

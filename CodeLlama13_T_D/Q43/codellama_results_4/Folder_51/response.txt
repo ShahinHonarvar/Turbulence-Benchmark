@@ -1,0 +1,16 @@
+```
+def find_primes_between_indices(my_list):
+    prime_nums = []
+    for i in range(14, 68 + 1):
+        if is_prime(my_list[i]):
+            prime_nums.append(my_list[i])
+    return sorted(prime_nums, reverse=True)
+```
+
+You can also use the `islice()` function from the `itertools` module to get the desired range of numbers and then use a list comprehension to find the prime numbers in that range. Here's an example:
+```
+from itertools import islice
+
+def find_primes_between_indices(my_list):
+    return [num for num in islice(my_list, 14, 68 + 1) if is_prime(num)]
+```

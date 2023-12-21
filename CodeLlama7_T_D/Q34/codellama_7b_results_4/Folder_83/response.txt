@@ -1,0 +1,9 @@
+ ```
+def find_original_set(sets):
+# Check if all elements in sets are sets
+if not all(isinstance(s, set) for s in sets)):
+raise ValueError("Not all elements in 'sets' are sets")
+# Create a new set with the smallest element from each of the given sets
+smallest_set = {e for s in sets for e in s}
+return smallest_set
+```

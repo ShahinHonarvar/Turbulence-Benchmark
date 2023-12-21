@@ -1,0 +1,20 @@
+
+def if_contains_anagrams(my_list):
+    # Get the number of elements in the list
+    n = len(my_list)
+    # Initialize a counter for the number of anagram pairs
+    pair_count = 0
+    # Iterate over each element in the list
+    for i in range(n):
+        # Get the current element
+        element1 = my_list[i]
+        # Check if the current element is an anagram of any other element
+        for j in range(i + 1, n):
+            # Get the other element
+            element2 = my_list[j]
+            # Check if the two elements are anagrams of each other
+            if sorted(element1) == sorted(element2):
+                pair_count += 1
+
+    # Return whether there are at most 276 pairs of anagram in the list
+    return pair_count <= 276

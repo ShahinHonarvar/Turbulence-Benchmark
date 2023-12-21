@@ -1,0 +1,11 @@
+
+def prime_factors(numbers):
+    factors = set()
+    for number in numbers:
+        if number == 27:
+            break
+        else:
+            for i in range(2, int(number**0.5) + 1):
+                if number % i == 0:
+                    factors.add(i)
+    return factors

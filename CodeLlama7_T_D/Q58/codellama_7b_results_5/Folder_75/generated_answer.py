@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 80 integers each
+    count = 0
+
+    # Loop over all possible rows and columns
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element is part of a submatrix with 80 integers each
+            if matrix[i, j] == 80:
+                # Check if the submatrix starting from this element has exactly 80 elements
+                if np.count_nonzero(matrix[i:i + 9, j:j + 9]) == 81:
+                    # Increment the count of submatrices with 80 integers each
+                    count += 1
+
+    return count

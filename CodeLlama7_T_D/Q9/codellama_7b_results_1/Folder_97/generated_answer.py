@@ -1,0 +1,13 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Get the indices of the first and last odd integers in the list
+    first_odd = next((i for i, x in enumerate(my_list) if x % 2 == 1), None)
+    last_odd = next((i for i, x in enumerate(my_list) if x % 2 == 1)), None)
+    # If there are no odd integers in the list, return an empty list
+    if first_odd is None:
+        return []
+
+    # Get the range of indices that correspond to the odd integers in the list
+    odd_ints = my_list[first_odd:last_odd+1]
+    # Return the list of all odd integers from index 40 to index 80, both inclusive
+    return odd_ints

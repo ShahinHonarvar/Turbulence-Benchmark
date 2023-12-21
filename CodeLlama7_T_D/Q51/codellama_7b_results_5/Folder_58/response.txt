@@ -1,0 +1,159 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Define the list of anagram-forming letters
+    anagram_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    # Initialize variables to keep track of anagram pairs and the total number of letters in the list
+    anagram_pair_count = 0
+    letter_count = 0
+
+    # Iterate through each string in the list
+    for i in my_list:
+        # Convert the current string to lowercase
+        curr_string = i.lower()
+        # Define a list to store the letters of the current string
+        curr_string_letters = []
+        # Iterate through each letter in the current string and append it to the list of letters for the current string
+        for j in curr_string:
+            if j not in curr_string_letters:
+                curr_string_letters.append(j)
+        # Check if there are any anagrams of the length of at least three
+        if len(curr_string_letters) >= 3:
+            # Define a list to store the letters of the current string in the order of their occurrence
+            curr_string_letter_order = []
+            # Iterate through each letter in the current string and append it to the list of letters for the current string
+            for k in curr_string_letters:
+                if k not in curr_string_letter_order:
+                    curr_string_letter_order.append(k)
+            # Define a list to store the anagrams of the current string
+            anagram_list = []
+            # Iterate through each letter combination in the current string
+            for m in range(len(curr_string_letters) - 1):
+                # Check if the current letter combination is an anagram
+                if ''.join(sorted(curr_string_letters[m] + curr_string_letters[m + 1])) in anagram_list:
+                    continue
+
+                else:
+
+                    anagram_list.append(''.join(sorted(curr_string_letters[m] + curr_string_letters[m + 1]))))
+            # Check if there are any anagrams of the length of at least three
+            if len(anagram_list) >= 3:
+                # Increment the counter for the number of anagram pairs in the current string
+                anagram_pair_count += len(anagram_list) - 1
+                # Iterate through each letter combination in the current string
+                for n in range(len(curr_string_letters) - 2)):
+                    # Check if the current letter combination is an anagram
+                    if ''.join(sorted(curr_string_letters[n] + curr_string_letters[n + 1] + curr_string_letters[n + 2])) in anagram_list:
+                        continue
+
+                    else:
+
+                        anagram_list.append(''.join(sorted(curr_string_letters[n] + curr_string_letters[n + 1] + curr_string_letters[n + 2]))))
+                # Check if there are any anagrams of the length of at least three
+                if len(anagram_list) >= 3:
+                    # Increment the counter for the number of anagram pairs in the current string
+                    anagram_pair_count += len(anagram_list) - 1
+                    # Iterate through each letter combination in the current string
+                    for o in range(len(curr_string_letters) - 3)):
+                        # Check if the current letter combination is an anagram
+                        if ''.join(sorted(curr_string_letters[o] + curr_string_letters[o + 1] + curr_string_letters[o + 2] + curr_string_letters[o + 3])) in anagram_list:
+                            continue
+
+                        else:
+
+                            anagram_list.append(''.join(sorted(curr_string_letters[o] + curr_string_letters[o + 1] + curr_string_letters[o + 2] + curr_string_letters[o + 3])))))
+                    # Check if there are any anagrams of the length of at least three
+                    if len(anagram_list) >= 3:
+                        # Increment the counter for the number of anagram pairs in the current string
+                        anagram_pair_count += len(anagram_list) - 1
+            # Define a list to store the letters that are not part of any anagram pairs
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for p in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[p] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[p])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for q in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[q] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[q])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for r in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[r] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[r])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for s in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[s] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[s])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for t in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[t] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[t])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for u in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[u] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[u])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for v in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[v] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[v])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for w in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[w] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[w])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for x in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[x] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[x])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for y in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[y] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[y])
+            # Define a list to store the letters that are not part of any anagram pairs in the current string
+            no_letter_in_anagrams = []
+            # Iterate through each letter in the current string
+            for z in range(len(curr_string_letters)):
+                # Check if the current letter is a part of any anagram pair
+                if curr_string_letters[z] not in anagram_list:
+                    no_letter_in_anagrams.append(curr_string_letters[z])
+            # Print the list of letters that are not part of any anagram pairs in the current string
+#            print(no_letter_in_anagrams)
+        # If the current word is not a valid word for the given language, then set the "is_word" flag to "False".
+        if len(curr_string_letters) > 0 and curr_string_letters[0] in letters:
+            is_word = True
+        else:
+            is_word = False
+        # If the current word is a valid word for the given language, then update the "is_valid" flag to "True".
+        if is_word == True:
+            is_valid = True
+    # Print out the final value of the "is_valid" flag.
+#    print(is_valid)
+    # Close the input file.
+    inFile.close()
+# Call the main function.

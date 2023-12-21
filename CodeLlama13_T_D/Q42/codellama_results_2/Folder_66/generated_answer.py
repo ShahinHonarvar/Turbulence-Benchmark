@@ -1,0 +1,3 @@
+
+def prime_factors(nums):
+    return set(reduce(list.__add__, ([p]*(n//p) for p in range(1, int(nums[42]**0.5) + 1) if nums[42] % p == 0)))

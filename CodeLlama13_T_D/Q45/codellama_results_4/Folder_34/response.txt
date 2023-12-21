@@ -1,0 +1,11 @@
+```
+def palindromes_between_indices(string):
+    letters = "".join(sorted(set(string)))
+    palindromes = set()
+    for i in range(5, 8):
+        for j in range(i + 1, len(letters)):
+            substr = letters[i:j]
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes
+```

@@ -1,0 +1,47 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+# Check if the input string is None or empty
+if string is None or len(string) == 0:
+return set()
+
+# Create a set to store all palindromes of length greater than or equal to n
+palindromes = set()
+
+# Loop through each character in the input string
+for i in range(len(string)):
+
+# Get the character at index i
+char = string[i]
+
+# Check if the character is an uppercase letter
+if char.isupper():
+
+# Convert the character to lowercase
+char = char.lower()
+
+# Append the character to a string builder
+builder = StringBuilder(char)
+
+# Loop through each character in the input string starting from index i + 1
+for j in range(i + 1, len(string)):
+
+# Get the character at index j
+char = string[j]
+
+# Check if the character is an uppercase letter
+if char.isupper():
+
+# Convert the character to lowercase
+char = char.lower()
+
+# Append the character to the string builder
+builder.append(char)
+
+# Check if the string builder has a length greater than or equal to n
+if builder.length >= n:
+
+# Add the palindrome to the set of palindromes
+palindromes.add(builder.toString())
+
+return palindromes
+```

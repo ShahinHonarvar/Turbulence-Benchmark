@@ -1,0 +1,15 @@
+
+def all_even_ints_exclusive(my_list):
+    # Check if the list is empty or has less than 32 elements
+    if len(my_list) < 32:
+        return []
+
+    # Initialize an empty list to store the even integers
+    even_ints = []
+
+    # Iterate over the list and check for even integers
+    for i in range(32, len(my_list)):
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+
+    return even_ints

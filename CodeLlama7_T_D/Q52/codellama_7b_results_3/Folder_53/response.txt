@@ -1,0 +1,12 @@
+ ```
+def palindrome_of_length_n(string):
+# Check if the input string is a palindrome
+if len(string) == len(string[::-1])):
+return set([string])
+
+# Find all substrings of length n in the input string
+substrings = [string[i:i+n] for i in range(len(string)-n+1)]
+# Filter out non-palindromes and duplicates
+filtered_substrings = [substring for substring in substrings if len(substring) == n and len(substring[::-1]) == len(substring)]
+return set(filtered_substrings)
+```

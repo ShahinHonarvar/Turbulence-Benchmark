@@ -1,0 +1,18 @@
+
+def palindrome_of_length_n(string):
+    # Convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the string
+    for i in range(len(string)):
+
+        # Check if the character at position i is a palindrome of length 9
+        if len(string[i:i+9]) == 9 and string[i:i+9] == string[i:i+9][::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(string[i:i+9])
+
+    # Return the set of palindromes
+    return palindromes

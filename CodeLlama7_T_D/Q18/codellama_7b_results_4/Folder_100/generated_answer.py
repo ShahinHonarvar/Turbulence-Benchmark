@@ -1,0 +1,18 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sum and the current index
+    sum = 0
+    i = 72
+
+    # Loop through the list from index 72 to index 93, both inclusive
+    while i <= 93:
+        # Check if the current element is divisible by either 32 or 44
+        if my_list[i] % 32 == 0 or my_list[i] % 44 == 0:
+            # If it is, add it to the sum
+            sum += my_list[i]
+
+        # Increment the current index by 1
+        i += 1
+
+    # Return the sum of all integers divisible by either 32 or 44 from index 72 to index 93, both inclusive
+    return sum

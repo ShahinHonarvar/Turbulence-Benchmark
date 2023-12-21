@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 34 or i > 67:
+            result += char
+        elif char >= "W" and char <= "x":
+            continue
+        else:
+            result += char
+    return result

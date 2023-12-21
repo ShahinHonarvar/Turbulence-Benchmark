@@ -1,0 +1,13 @@
+```python
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    num = int(binary_string, 2)
+    
+    # Calculate the 109th Fibonacci number
+    fib = [0, 1]
+    for i in range(108):
+        fib.append(fib[i] + fib[i-1])
+    
+    # Check if the decimal integer is divisible by the 109th Fibonacci number
+    return num % fib[108] == 0
+```

@@ -1,0 +1,15 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate through each substring of the specified length in the string
+    for i in range(301 - 50):
+        # Extract the substring starting at index i and with length between 50 and 60 (both inclusive)
+        substring = string[i:i + 60]
+        # Iterate through each palindrome of the substring
+        for j in range(len(substring) - 1):
+            # Check if the palindrome is case-insensitive and occurs only in the specified index range
+            if substring[j:j + 2] == substring[j:j + 2].lower() and i <= j < i + 300:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(substring[j:j + 2])
+    # Return the set of palindromes
+    return palindromes

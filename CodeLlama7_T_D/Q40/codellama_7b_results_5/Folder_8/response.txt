@@ -1,0 +1,10 @@
+ ```
+def return_n_smallest_chars(string, n):
+    # Create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+    for char in string:
+        ascii_values[char] = ord(char)
+    # Sort the dictionary by key (ASCII value) and return the top n keys
+    sorted_keys = sorted(ascii_values, key=lambda x: ascii_values[x])[:n]
+    return [string[i] for i in sorted_keys]
+```

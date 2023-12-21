@@ -1,0 +1,17 @@
+```python
+def sum_of_divisors_in_range(n):
+    return sum([i for i in range(59, 89) if i % n == 0]) or 0
+```
+Here's a commented version of the code:
+```python
+# Define a function called 'sum_of_divisors_in_range' that takes a positive integer as its argument
+def sum_of_divisors_in_range(n):
+    # Use list comprehension to generate a list of all positive divisors of the given number n
+    divisors = [i for i in range(59, 89) if i % n == 0]
+    # If there are no divisors in the specified range (59, 88), return 0
+    if not divisors:
+        return 0
+    else:
+        # Otherwise, sum up all the divisors and return the result
+        return sum(divisors)
+```

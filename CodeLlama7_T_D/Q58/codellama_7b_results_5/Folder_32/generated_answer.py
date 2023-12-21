@@ -1,0 +1,28 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices found
+    count = 0
+
+    # Loop over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a counter for the number of integers found in the current submatrix
+            subcount = 0
+
+            # Loop over each element in the current submatrix
+            for row in range(i, i + 103):
+                for col in range(j, j + 103):
+                    if matrix[row][col] == 1:
+                        # Increment the counter for the number of integers found in the current submatrix
+                        subcount += 1
+
+            # Check if the current submatrix contains 103 integers each
+            if subcount == 103 * 103:
+                # Increment the overall counter for the number of submatrices found
+                count += 1
+
+    # Return the number of submatrices containing 103 integers each
+    return count

@@ -1,0 +1,11 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Check if there are at least 44 pairs of anagrams in the given list
+    num_of_pairs = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                num_of_pairs += 1
+    return num_of_pairs >= 44
+```
+This function takes a list of strings as input and returns true if there are at least 44 pairs of anagrams in the given list, otherwise it returns false. The function only considers the anagrams of the length of at least three and compares the strings in a case-insensitive manner.

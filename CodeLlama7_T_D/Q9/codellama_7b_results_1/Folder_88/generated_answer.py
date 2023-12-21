@@ -1,0 +1,9 @@
+
+def all_odd_ints_inclusive(my_list):
+    start_index = 4
+    end_index = 8
+    odd_integers = []
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % 2 != 0:
+            odd_integers.append(my_list[i])
+    return odd_integers

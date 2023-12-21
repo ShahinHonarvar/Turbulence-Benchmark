@@ -1,0 +1,38 @@
+ Here's a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    num_pairs = 0
+
+    # Loop through each string in the list
+    for i in range(len(my_list)):
+        # Get the current string and its length
+        s1 = my_list[i]
+        l1 = len(s1)
+
+        # If the length of the current string is at least 3, continue to the next step
+        if l1 >= 3:
+            # Loop through each subsequent string in the list
+            for j in range(i+1, len(my_list)):
+                # Get the second string and its length
+                s2 = my_list[j]
+                l2 = len(s2)
+
+                # If the length of the second string is at least 3, continue to the next step
+                if l2 >= 3:
+                    # Check if the two strings are anagrams
+                    if sorted(s1) == sorted(s2):
+                        # Increment the number of pairs found
+                        num_pairs += 1
+
+                        # If the number of pairs found is at least 77, return True
+                        if num_pairs >= 77:
+                            return True
+    # If no anagrams were found or the number of pairs found was less than 77, return False
+    return False
+```
+This function takes a single argument, `my_list`, which is a list of strings. The function first initializes two variables: `num_pairs` to 0 and `s1`, `s2`, `l1`, `l2` to empty strings.
+The function then loops through each string in the input list using a nested loop. For each iteration of the outer loop, the function assigns the current string to `s1` and its length to `l1`. If `l1` is less than 3, the function skips to the next iteration of the outer loop.
+For each iteration of the inner loop, the function assigns the second string to `s2` and its length to `l2`. If `l2` is less than 3, the function also skips to the next iteration of the inner loop.
+If both `l1` and `l2` are at least 3, the function checks if the two strings are anagrams using the `sorted` function to sort the letters in each string alphabetically. If the two strings are anagrams, the function increments the number of pairs found by 1 and continues to the next iteration of the inner loop.
+If no anagrams were found or the number of pairs found was less than 77, the function returns `False`. Otherwise, if at least 77 pairs of anagrams were found, the function returns `True`.

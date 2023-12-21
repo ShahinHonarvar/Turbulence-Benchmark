@@ -1,0 +1,33 @@
+
+def if_contains_anagrams(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Initialize a counter for anagram pairs
+    pair_count = 0
+
+    # Loop through each string in the list
+    for i in range(len(my_list)):
+        # Get the current string
+        string1 = my_list[i]
+
+        # Check if the string is at least three characters long
+        if len(string1) < 3:
+            continue
+
+        # Loop through each remaining string in the list
+        for j in range(i + 1, len(my_list)):
+            # Get the second string
+            string2 = my_list[j]
+
+            # Check if the strings are anagrams of each other
+            if sorted(string1) == sorted(string2):
+                pair_count += 1
+
+                # Check if we have at least 49 pairs of anagrams
+                if pair_count >= 49:
+                    return True
+
+    # If we reach this point, then there are no anagram pairs in the list
+    return False

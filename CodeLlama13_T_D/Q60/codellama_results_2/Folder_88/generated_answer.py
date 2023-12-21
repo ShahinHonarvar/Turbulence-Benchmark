@@ -1,0 +1,10 @@
+
+def all_left_right_truncatable_prime(tuple):
+    x = tuple[93]
+    result = []
+    
+    for i in range(1, x+1):
+        if is_left_right_truncatable_prime(i) and i <= x:
+            result.append(i)
+            
+    return sorted(result)

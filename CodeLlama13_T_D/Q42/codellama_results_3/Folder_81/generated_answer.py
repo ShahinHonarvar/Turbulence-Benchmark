@@ -1,0 +1,11 @@
+
+def prime_factors(lst):
+    prime_factors = set()
+    for i in range(20, len(lst)):
+        n = lst[i]
+        if n == 1:
+            continue
+        for j in range(2, int(n**0.5) + 1):
+            if n % j == 0:
+                prime_factors.add(j)
+    return prime_factors

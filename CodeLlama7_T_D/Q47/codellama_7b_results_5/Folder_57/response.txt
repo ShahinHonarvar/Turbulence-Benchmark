@@ -1,0 +1,20 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Find the substring of interest
+substring = string[16:94]
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Iterate over the characters in the substring
+for i in range(len(substring)):
+# Check if the character is a letter
+if substring[i].isalpha():
+# Get the reverse of the substring
+reverse_substring = substring[::-1]
+# Find the first occurrence of the palindrome in the reverse substring
+first_occurrence = reverse_substring.find(substring[i])
+# If the palindrome is found, add it to the set of palindromes
+if first_occurrence != -1:
+palindromes.add(substring[i])
+# If no palindromes are found, return an empty set
+return palindromes
+```

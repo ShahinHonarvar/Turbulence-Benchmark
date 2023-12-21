@@ -1,0 +1,73 @@
+ ```
+def prime_factors(my_list):
+    # Find the integer at index 222
+    target_index = 222
+    if target_index < len(my_list):
+        target_value = my_list[target_index]
+        # Initialize an empty set to store the prime factors
+
+        prime_factors = set()
+
+        # Iterate through the divisors of the target value
+
+        for i in range(1, int(target_value ** 0.5) + 1):
+            if target_value % i == 0:
+                prime_factors.add(i)
+
+                # If the number is not prime, add its prime factors to the set
+
+                if not is_prime(i):
+                    prime_factors = prime_factors.union(set(get_prime_factors(i)) - {i}))
+
+        return prime_factors
+
+    else:
+
+        # If the index is out of bounds, return an empty set
+
+        return set()
+
+# Helper function to check if a number is prime
+
+def is_prime(n):
+
+    if n < 2:
+
+        return False
+
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+
+    return True
+
+
+# Helper function to find the prime factors of a number
+
+def get_prime_factors(n):
+
+    if is_prime(n):
+
+        return [n]
+
+
+    else:
+
+        prime_factors = []
+
+        for i in range(2, int(n ** 0.5) + 1):
+
+            if n % i == 0:
+
+                prime_factors.extend(get_prime_factors(i))
+
+                break
+
+
+        return prime_factors
+
+```

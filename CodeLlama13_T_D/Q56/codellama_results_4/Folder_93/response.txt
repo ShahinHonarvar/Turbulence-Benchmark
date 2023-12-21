@@ -1,0 +1,10 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s) - 54 + 1):
+        substring = s[i:i+54]
+        if len(set(substring)) == 54 and not any(substring.count(c) > 1 for c in substring):
+            substrings.append(substring)
+    return substrings
+```
+Note that this function uses the `len()` function to get the length of the input string, and the `range()` function to iterate over all possible starting indices of a substring of length 54. It also uses the `set()` function to check if a substring contains no duplicate characters. Finally, it uses the `any()` function with a generator expression to check if any character in the substring appears more than once. If both conditions are satisfied, the substring is added to the list of substrings.

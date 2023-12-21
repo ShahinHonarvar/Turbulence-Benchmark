@@ -1,0 +1,14 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result_list = []
+
+    # Iterate over the list of integers
+    for i in my_list:
+        # Check if the current integer is not divisible by -200
+        if i % 200 != 0:
+            # If it is not divisible, add it to the result list
+            result_list.append(i)
+
+    # Return the result list
+    return result_list

@@ -1,0 +1,3 @@
+
+def insert_before_character(string, char_to_insert='a'):
+    return string.replace(char_to_insert, f'{char_to_insert}U')

@@ -1,0 +1,12 @@
+ def find_primes_between_indices(my_list):
+    # Define a lambda function to check if a number is prime or not
+    is_prime = lambda num: num > 1 and all(num % i for i in range(2, int(num ** 0.5) + 1))
+    # Filter the list to get only the prime numbers between the indices
+    prime_numbers = filter(is_prime, my_list[13:29+1])
+    # Sort the filtered list in descending order
+    sorted_prime_numbers = sorted(prime_numbers, reverse=True)
+    return sorted_prime_numbers
+
+# Test the function with a sample list
+sample_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+#print(find_primes_between_indices(sample_list))

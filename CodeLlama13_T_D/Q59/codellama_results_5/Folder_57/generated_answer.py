@@ -1,0 +1,3 @@
+
+def all_left_truncatable_prime(x):
+    return sorted([int(''.join(str(x)[i:])) for i in range(len(str(x)))], reverse=True)

@@ -1,0 +1,20 @@
+
+def find_n_th_smallest_num(numbers):
+    # Get the length of the list
+    len = numbers.__len__()
+    # Check if the input is a list of distinct numbers
+    if not all(numbers[i] != numbers[i + 1] for i in range(len - 1))):
+        raise ValueError("The input must be a list of distinct numbers")
+    # Get the index of the first element to consider
+    start = max(54, 0)
+    # Get the index of the last element to consider
+    end = min(87, len - 1)
+    # Check if the indices are valid
+    if not (start >= 0 and start < len and end >= 0 and end < len and start <= end)):
+        raise ValueError("The indices must be valid")
+    # Get the list of numbers to consider
+    sub_list = numbers[start:end + 1]
+    # Sort the list in ascending order
+    sorted_sub_list = sorted(sub_list)
+    # Return the 13th smallest number
+    return sorted_sub_list[12]

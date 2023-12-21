@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 29 integers each
+    count = 0
+
+    # Loop over all rows and columns in the matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Initialize a submatrix of size 3x3, starting from row i and column j
+            submatrix = matrix[i:i + 3, j:j + 3]
+
+            # Check if the submatrix contains 29 integers each
+            if (submatrix == 29).all():
+                count += 1
+
+    return count

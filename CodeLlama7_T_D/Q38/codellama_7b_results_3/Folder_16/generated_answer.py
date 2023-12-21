@@ -1,0 +1,19 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    # Initialize the number of subsets as 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements
+    for i in range(1 << n):
+        subset = []
+
+        # Add each element to the subset if its corresponding bit is set
+        for j in range(n):
+            if (i & (1 << j)) > 0:
+                subset.append(elements[j])
+
+        # If the subset has size 327, increment the number of subsets
+        if len(subset) == 327:
+            num_subsets += 1
+
+    return num_subsets

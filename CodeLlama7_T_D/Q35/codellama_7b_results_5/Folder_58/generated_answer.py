@@ -1,0 +1,14 @@
+
+def remove_repeat_chars(string):
+    # Create a list of characters from the given string
+    char_list = list(string)
+    # Iterate over each character in the list and check if it occurs more than once between indices 103 and 802
+    for i, char in enumerate(char_list):
+        # Check if the current character is already present in the result string
+        if char in result:
+            # If so, remove all occurrences of that character from the list
+            while char in char_list[i+1:]:
+                char_list.remove(char)
+    # Join the remaining characters in the list to form a new string and return it
+    result = "".join(char_list)
+    return result

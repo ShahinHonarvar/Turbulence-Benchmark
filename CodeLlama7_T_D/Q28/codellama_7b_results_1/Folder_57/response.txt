@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Split the string into a list of characters
+characters = list(string)
+
+# Create a dictionary to store the ASCII values of each character
+ascii_values = {}
+
+# Loop through each character in the string and add its ASCII value to the dictionary
+for char in characters:
+ascii_values[char] = ord(char)
+
+# Sort the ASCII values in descending order
+sorted_ascii_values = sorted(ascii_values.values(), reverse=True)
+
+# Return the character with the 18th smallest ASCII value
+return chr(sorted_ascii_values[17])
+```

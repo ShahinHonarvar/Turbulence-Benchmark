@@ -1,0 +1,13 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list of positive integers and check if each number is composite
+    for num in my_list:
+        # If the number is not prime, add it to the set of composite numbers
+        if not is_prime(num):
+            composite_nums.add(num)
+
+    # Return the set of all composite numbers between indices 31 and 72 (inclusive), or an empty set if no such numbers exist
+    return composite_nums

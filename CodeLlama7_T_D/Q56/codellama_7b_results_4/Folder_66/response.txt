@@ -1,0 +1,28 @@
+ ```
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the input string
+    for i in range(len(input_string)):
+
+        # Initialize a variable to store the current substring
+        current_substring = ""
+
+        # Loop through each character in the input string starting from the current index
+        for j in range(i, len(input_string)):
+
+            # Add the current character to the current substring
+            current_substring += input_string[j]
+
+            # If the length of the current substring is equal to 26, add it to the list of substrings
+            if len(current_substring) == 26:
+                substrings.append(current_substring)
+
+            # If the length of the current substring is greater than 26, break out of the inner loop
+            elif len(current_substring) > 26:
+                break
+
+    # Return the list of all distinct substrings of length equal to 26 with no duplicate characters.
+    return substrings
+```

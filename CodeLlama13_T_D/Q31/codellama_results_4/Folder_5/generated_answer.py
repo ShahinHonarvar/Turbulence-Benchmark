@@ -1,0 +1,7 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) <= 67:
+        return False
+    n = numbers[67]
+    s = sum(range(1, int(n**0.5) + 1))
+    return s == n and all(n % i for i in range(2, int(n**0.5) + 1))

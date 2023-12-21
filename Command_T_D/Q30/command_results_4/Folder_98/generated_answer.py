@@ -1,0 +1,3 @@
+import re
+def insert_before_character(text):
+    return re.sub(r'U', r'u\1', text)

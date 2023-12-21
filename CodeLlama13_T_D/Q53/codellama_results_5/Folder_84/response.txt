@@ -1,0 +1,11 @@
+```
+def palindrome_of_length_at_least_n(string):
+    palindromes = set()
+    for i in range(len(string)):
+        substr = string[i:]
+        if len(substr) >= 81:
+            rev_substr = reversed(substr)
+            if all(c.isalpha() and c.lower() == d.lower() for c, d in zip(substr, rev_substr)):
+                palindromes.add(substr[:80])
+    return palindromes
+```

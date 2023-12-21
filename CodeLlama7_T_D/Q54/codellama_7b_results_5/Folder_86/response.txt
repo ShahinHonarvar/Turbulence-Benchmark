@@ -1,0 +1,17 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    x = tuple[126]
+    prime_numbers = []
+    for i in range(2, x):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+Here's an explanation of the code:
+* The function `all_right_truncatable_prime` takes a tuple as an argument, where each element is a positive integer.
+* We define a variable `x` to be the 126th element in the tuple. This will be our upper bound for finding right-truncatable prime numbers.
+* We initialize an empty list called `prime_numbers`. This list will store all the right-truncatable prime numbers less than `x`.
+* We use a loop to iterate over the range of integers from 2 to `x`. For each integer `i` in this range, we check if it is a prime number using the function `is_prime`. If `i` is not a prime number, we move on to the next integer.
+* If `i` is a prime number, we also need to check if it is a right-truncatable prime number. We do this by calling the function `is_right_truncatable_prime` and passing in the value of `i`. If `i` is not a right-truncatable prime number, we move on to the next integer.
+* Once we have identified all the right-truncatable prime numbers less than `x`, we append them to the list `prime_numbers`.
+* Finally, we return the sorted list of all right-truncatable prime numbers less than `x` in descending order using the `sorted` function.

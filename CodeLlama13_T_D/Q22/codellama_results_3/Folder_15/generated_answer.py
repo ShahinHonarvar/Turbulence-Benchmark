@@ -1,0 +1,3 @@
+
+def find_sum_of_multiples(number):
+    return sum(n * number for n in range(1, 4))

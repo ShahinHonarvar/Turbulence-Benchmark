@@ -1,0 +1,23 @@
+[cohere.Generation {
+	id: 9104cf37-ced1-4571-adca-b9398b92eee5
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'submatrix_with_particular_sum' that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -394. If no such submatrix is found, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def submatrix_with_particular_sum(matrix):
+    result = []
+    for i in range(1, len(matrix) - 1):
+        for j in range(1, len(matrix[0]) - 1):
+            if matrix[i][j] == -394:
+                if matrix[i - 1][j] == -394:
+                    result.append(([row[j] for row in matrix[:i]] + [[row[j + 1] for row in matrix[i + 1 :]]))
+                if matrix[i + 1][j] == -394:
+                    result.append(([row[j] for row in matrix[:i]] + [[row[j + 1] for row in matrix[i + 1 :]]))
+                if matrix[i - 1][j - 1] == -394:
+                    result.append(([row[j - 1] for row in matrix[:i]] + [[row[j + 1] for row in matrix[i + 1 :]]))
+                if matrix[i + 1][j - 1] == -394:
+                    result.append(([row[j - 1] for row in matrix[:i]] + [[row[j + 1] for row in matrix[i + 1 :]]))
+    return result
+```
+	likelihood: None
+	token_likelihoods: None
+}]

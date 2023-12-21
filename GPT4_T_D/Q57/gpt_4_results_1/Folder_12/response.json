@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    all_submatrices = []\n    n , m = matrix.shape\n    start_x = 0\n    while start_x < n:\n        end_x = start_x+1\n        while end_x <= n:\n            start_y = 0\n            while start_y < m:\n                end_y = start_y+1\n                while end_y <= m:\n                    submatrix = matrix[start_x:end_x,start_y:end_y]\n                    if np.sum(submatrix) == -83:\n                        all_submatrices.append(submatrix)\n                    end_y += 1\n                start_y += 1\n            end_x += 1\n        start_x += 1\n    return all_submatrices\n```\nPlease note that this function uses a brute-force approach and attempts to create and check all possible submatrices, which may affect its time complexity.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690080806,
+  "id": "chatcmpl-7fJVm2cEP5PuX3aDQOt32aXOVEz2b",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 192,
+    "prompt_tokens": 121,
+    "total_tokens": 313
+  }
+}

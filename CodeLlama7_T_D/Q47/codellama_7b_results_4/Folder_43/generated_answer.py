@@ -1,0 +1,14 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring of interest
+    substr = string[41:89].lower()
+    # Create a list to store the palindromes
+    palindromes = []
+    # Loop through each character in the substring
+    for i in range(len(substr)):
+        # Check if the current character is a palindrome
+        if substr[i] == substr[i:][::-1]:
+            # If it is, add it to the list of palindromes
+            palindromes.append(substr[i])
+    # Return the set of palindromes that meet the requirements
+    return set(palindromes)

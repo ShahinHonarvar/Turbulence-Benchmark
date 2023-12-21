@@ -1,0 +1,6 @@
+
+def return_n_greatest_chars(input_str):
+    # Sort the input string in descending order based on ASCII values
+    sorted_str = sorted(input_str, key=ord, reverse=True)
+    # Return the first 38 characters of the sorted string
+    return sorted_str[:38]

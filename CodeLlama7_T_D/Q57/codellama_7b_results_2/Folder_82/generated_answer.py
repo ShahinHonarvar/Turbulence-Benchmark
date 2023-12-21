@@ -1,0 +1,16 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with the given matrix
+    submatrices = [matrix]
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all integers in the current submatrix
+            submatrix_sum = np.sum(matrix[i:, j])
+            # If the sum is equal to -27, add the submatrix to the list of submatrices with that sum
+            if submatrix_sum == -27:
+                submatrices.append(matrix[i:, j])
+    # Return the list of all submatrices with a sum of -27, or an empty list if no such submatrix is found
+    return submatrices

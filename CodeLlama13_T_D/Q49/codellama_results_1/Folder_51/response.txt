@@ -1,0 +1,17 @@
+```
+def if_decimal_is_divisible(binary_str):
+    decimal = int(binary_str, 2)
+    fibonacci = [0, 1]
+    for i in range(2, 100):
+        fibonacci.append((fibonacci[i - 1] + fibonacci[i - 2]) % 10007)
+    return decimal % fibonacci[16] == 0
+```
+Explanation:
+
+* The function takes a binary representation string of a non-negative decimal integer as an argument.
+* It converts the binary string to its corresponding decimal value using `int()` function with base `2`.
+* It initializes a list called `fibonacci` with the first two numbers in the Fibonacci sequence, which are 0 and 1.
+* It iterates from 2 to 99 (inclusive) and appends each number in the Fibonacci sequence modulo 10007 to `fibonacci` list.
+* It returns `True` if the decimal value of the given binary string is divisible by the 17th number that occurs in the Fibonacci sequence, and `False` otherwise.
+
+Note: The function uses `%` operator for modulo operation, which is more efficient than using a loop to iterate over each digit in the binary representation string. Also, the `% 10007` part is used to prevent overflow of the Fibonacci sequence numbers during the calculation.

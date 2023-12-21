@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    anagrams = {}
+    for s in strings:
+        l = len(s)
+        if l < 3: continue
+        t = tuple(sorted(s.lower()))
+        if t not in anagrams: anagrams[t] = []
+        anagrams[t].append(s)
+    return len(anagrams) >= 5

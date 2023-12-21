@@ -1,0 +1,20 @@
+ ```
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a set of all elements in both lists
+    element_set = set(list1).union(set(list2))
+
+    # Initialize an empty set to store the identical elements
+    identical_elements = set()
+
+    # Iterate over each element in the set and check if it occurs at least once in both lists
+    for element in element_set:
+        if element in list1[20:30+1] and element in list2[20:30+1]:
+            identical_elements.add(element)
+
+    # Return the set of all identical elements found between index 20 and index 30, both inclusive
+    return identical_elements
+```

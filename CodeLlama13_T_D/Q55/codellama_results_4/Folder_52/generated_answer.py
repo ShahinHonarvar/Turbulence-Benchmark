@@ -1,0 +1,11 @@
+
+def lists_with_product_equal_n(list, n):
+    result = []
+    for i in range(len(list)):
+        product = 1
+        for j in range(i, len(list)):
+            product *= list[j]
+            if product == n:
+                result.append(list[i:j+1])
+                break
+    return result

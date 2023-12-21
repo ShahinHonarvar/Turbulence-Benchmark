@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return "".join([char for char in string if not (24 <= ord(char) <= 82 and ord('5') <= ord(char) <= ord('<'))])

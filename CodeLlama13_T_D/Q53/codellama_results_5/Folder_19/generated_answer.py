@@ -1,0 +1,18 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Check if the input is a string
+    if not isinstance(string, str):
+        raise ValueError("Input must be a string")
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Loop through each substring of length n in the input string
+    for i in range(len(string) - (n - 1)):
+        # Check if the substring is a palindrome
+        if string[i:i+n] == string[i:i+n][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+n])
+
+    # Return the set of all palindromes in the input string
+    return palindromes

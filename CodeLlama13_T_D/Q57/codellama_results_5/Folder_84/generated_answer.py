@@ -1,0 +1,16 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Find all possible submatrices of the given matrix
+    submatrices = []
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix[0])):
+            submatrices.append(matrix[i:j+1, :])
+    
+    # Check if any of the submatrices has a sum equal to -308
+    result = []
+    for submatrix in submatrices:
+        if np.sum(submatrix) == -308:
+            result.append(submatrix)
+            
+    return result

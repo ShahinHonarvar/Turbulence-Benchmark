@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    rows, cols = matrix.shape\n    count = 0\n    for i in range(rows):\n        for j in range(cols):\n            if matrix[i, j] == 42:\n                for m in range(i, rows):\n                    for n in range(j, cols):\n                        sub_matrix = matrix[i:m+1, j:n+1]\n                        if sub_matrix.size == 42:\n                            count += 1\n    return count\n```\nNote: The code assumes that you have already imported the `numpy` library.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689845972,
+  "id": "chatcmpl-7eKQ8unuRXjUmaLBoNhtexyJA8RFT",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 125,
+    "prompt_tokens": 111,
+    "total_tokens": 236
+  }
+}

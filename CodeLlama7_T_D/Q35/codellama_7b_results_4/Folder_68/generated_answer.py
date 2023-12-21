@@ -1,0 +1,21 @@
+
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of the characters and their indices
+    char_dict = {}
+
+    for i, c in enumerate(s):
+        if c not in char_dict:
+            char_dict[c] = [i]
+
+        else:
+
+            char_dict[c].append(i)
+
+    # Iterate over the dictionary and remove all duplicates
+
+    for key, values in char_dict.items():
+        if len(values) > 1:
+            for value in values:
+                s = s[:value] + s[value+1:]
+
+    return s

@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(string):
+    # Find the indices of the first and last letters in the string
+    first_letter = string.find(string[0])
+    last_letter = string.rfind(string[-1])
+    # Create a set to store all palindromes found
+    palindromes = set()
+    # Iterate through each possible length of palindrome
+    for i in range(5, len(string)):
+        # Get the substring that corresponds to the current palindrome length
+        substr = string[first_letter:last_letter+1]
+        # Check if the substring is a palindrome
+        if substr == substr[::-1]:
+            # Add the palindrome to the set
+            palindromes.add(substr)
+    return palindromes
+```

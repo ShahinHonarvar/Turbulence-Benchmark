@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    """
+    Given a two-dimensional matrix of integers and an integer n, return the count of all submatrices that contain exactly n numbers each. If no such submatrix is found, return 0.
+    """
+    # Initialize variables
+    rows, cols = matrix.shape
+    count = 0
+    
+    # Iterate over the submatrices and check if they have exactly n numbers
+    for i in range(rows - n + 1):
+        for j in range(cols - n + 1):
+            submatrix = matrix[i:i+n, j:j+n]
+            if np.sum(submatrix == submatrix[0, 0]) == n**2:
+                count += 1
+    
+    return count

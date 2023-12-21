@@ -1,0 +1,18 @@
+
+def find_divisors_in_range(n):
+    # Initialize an empty list to store the divisors
+    divisors = []
+
+    # Iterate from 1 to n-1 (excluding n)
+    for i in range(1, n):
+
+        # Check if i is a divisor of n
+        if n % i == 0:
+
+            # If i is a divisor of n, check if it is between 3 and 6
+            if 3 <= i <= 6:
+                # If i is between 3 and 6, add it to the list of divisors
+                divisors.append(i)
+
+    # Return the list of divisors
+    return divisors

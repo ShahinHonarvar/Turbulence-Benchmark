@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(numbers):\n    a = numbers[80]\n    b = numbers[200]\n     # set up a set of numbers that between a+1 to b-1 both inclusive\n    complete_set = set(range(a+1, b))\n    # slice out numbers between a and b from the tuple and convert into set\n    subset = set(numbers[80:201])\n    # find out those numbers that are not in the subset\n    missing_set = complete_set - subset\n\n    sum_missing = sum(missing_set)\n    # if no missing numbers\n    if sum_missing == 0:\n        return ''\n    if sum_missing % 2 == 1:\n        return bin(sum_missing)[2:]\n    else:\n        return hex(sum_missing)[2:].upper()\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690134239,
+  "id": "chatcmpl-7fXPb3QV9HXuNMDD8k22LntAd0uUu",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 263,
+    "total_tokens": 429
+  }
+}

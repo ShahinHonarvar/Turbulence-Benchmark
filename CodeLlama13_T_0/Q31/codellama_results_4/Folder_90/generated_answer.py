@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[263] == sum(divisors(my_list[263])):
+        return True
+    else:
+        return False

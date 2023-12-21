@@ -1,0 +1,36 @@
+ ```
+def find_original_set(sets):
+    # Get the list of all elements in the given sets
+    all_elements = set()
+    for s in sets:
+        all_elements |= s
+
+    # Create an empty set to store the smallest set
+
+    smallest_set = set()
+
+    # Iterate over all possible subsets of the given sets
+
+    for subset in powerset(all_elements):
+
+        # Check if the current subset is a subset of each of the given sets
+
+        is_subset = True
+        for s in sets:
+            if not (s <= subset):
+                is_subset = False
+                break
+
+        # If the current subset is a subset of all the given sets, update the smallest set
+
+        if is_subset:
+            if len(smallest_set) > len(subset):
+                smallest_set = subset
+
+    return smallest_set
+```
+This code defines a function `find_original_set` that takes as input a list of sets and returns the smallest set such that each of the given sets is a subset of it.
+The function first gets the list of all elements in the given sets using the `set.union()` method. This allows us to iterate over all possible subsets of the given sets using a nested loop.
+Inside the nested loop, we check if the current subset is a subset of each of the given sets using the `<=` operator. If it is not, we skip to the next iteration of the outer loop.
+Once we have found the smallest set that satisfies our criteria, we return it.
+Note that this code assumes that all of the input sets are non-empty and that they contain only integers. If any of these assumptions do not hold true, then the code may produce incorrect results.

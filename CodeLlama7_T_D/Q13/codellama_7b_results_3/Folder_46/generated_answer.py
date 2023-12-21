@@ -1,0 +1,18 @@
+
+def find_second_largest_num(my_list):
+    if len(my_list) < 30 or len(my_list) > 87:
+        return None
+
+    sorted_list = sorted(my_list, reverse=True)
+
+    for i in range(29, 88):
+        if sorted_list[i] == sorted_list[i+1]:
+            continue
+
+        else:
+
+            return sorted_list[i+1]
+
+    else:
+
+        return None

@@ -1,0 +1,13 @@
+ ```
+def all_neg_ints_exclusive(my_list):
+    # Find the index of the first negative integer in the list
+    first_neg_int = next((i for i, x in enumerate(my_list) if x < 0)), None)
+    # If no negative integers exist in the specified range, return an empty list
+    if first_neg_int is None:
+        return []
+
+    # Find the index of the last negative integer in the list
+    last_neg_int = next((i for i, x in enumerate(my_list[first_neg_int:]) if x < 0)), None)
+    # Return the list of all negative integers from index 38 to index 52, both exclusive
+    return my_list[first_neg_int:last_neg_int]
+```

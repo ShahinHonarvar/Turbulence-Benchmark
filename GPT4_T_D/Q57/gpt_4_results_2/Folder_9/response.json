@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    M, N = matrix.shape\n    res = []\n    for size_m in range(1, M + 1):\n        for size_n in range(1, N + 1):\n            for x in range(M - size_m + 1):\n                for y in range(N - size_n + 1):\n                    submatrix = matrix[x:x+size_m, y:y+size_n]\n                    \n                    if submatrix.sum() == -86:\n                        res.append(submatrix)\n    return res\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690904314,
+  "id": "chatcmpl-7ilkA1bgnQfqwfSdh6A1eUDKolriY",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 123,
+    "prompt_tokens": 121,
+    "total_tokens": 244
+  }
+}

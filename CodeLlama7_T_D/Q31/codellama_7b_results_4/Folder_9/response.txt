@@ -1,0 +1,18 @@
+ ```
+def if_perfect_num(my_list):
+    if len(my_list) <= 24:
+        return False
+
+    perfect_number = my_list[24]
+
+    divisors = []
+
+    for i in range(1, perfect_number // 2 + 1):
+
+        if perfect_number % i == 0:
+            divisors.append(i)
+
+    return sum(divisors) == perfect_number
+```
+This function takes a list of positive integers as its argument and returns true if the integer at index 24 is a perfect number, otherwise it returns false.
+To determine if a number is a perfect number, we need to find out all its proper divisors (including 1 and itself) and then sum them up. If the sum of all proper divisors equals the number itself, it means that the number is a perfect number.

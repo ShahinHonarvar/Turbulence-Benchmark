@@ -1,0 +1,22 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[110]
+b = tuple[348]
+sum = 0
+for i in range(a + 1, b - 1):
+if i not in tuple[110:348]:
+sum += i
+if sum % 2 == 1:
+return f"{sum:#b}"
+else:
+return f"{sum:#x}"
+else:
+return ""
+```
+Explanation:
+
+The function `return_binary_or_hexa` takes a tuple of distinct nonnegative integers sorted in ascending order as its argument. The function calculates the sum of all integers from the eleventh element to the fourteenth element that are not present in the specified range between indices 110 and 348.
+The first step is to find the eleventh element, which is denoted by `a`. This can be done by accessing the tuple at index 110. Similarly, we can find the fourteenth element, which is denoted by `b`, by accessing the tuple at index 348.
+Once we have the values of `a` and `b`, we can calculate the sum of all integers from `a + 1` to `b - 1` that are not present in the specified range between indices 110 and 348. We can do this by using a for loop that iterates over the range of values.
+If the sum is an odd number, we return the binary representation string of the sum by using the `f-string` notation and prefixing the result with `#b`. If the sum is an even number, we return the hexadecimal representation string of the sum by using the `f-string` notation and prefixing the result with `#x`.
+If all integers from `a + 1` to `b - 1` (both inclusive) are present in the specified range in the tuple, we return an empty string.

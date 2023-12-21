@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef palindrome_of_length_n(s):\n    s = s.lower()\n    palindromes = set()\n    for i in range(len(s)):\n        for j in range(i, len(s)):\n            substr = s[i: j + 1]\n            clean_substr = \"\".join(ch for ch in substr if ch.isalpha())\n            if len(clean_substr) == 85 and clean_substr == clean_substr[::-1]:\n                palindromes.add(clean_substr)\n    return palindromes\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690141610,
+  "id": "chatcmpl-7fZKUNa1e8lhb4Zi2zjvDKrnLl9qg",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 105,
+    "prompt_tokens": 147,
+    "total_tokens": 252
+  }
+}

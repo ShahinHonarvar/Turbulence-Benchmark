@@ -1,0 +1,15 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Check if the decimal integer is divisible by the 38th number in the Fibonacci sequence
+    for i in range(37):
+        a, b = b, a + b
+    return decimal_int % a == 0
+```
+This code first converts the binary string to an integer using the `int()` function with a base of 2. It then initializes two variables, `a` and `b`, to represent the first two numbers in the Fibonacci sequence.
+The code then uses a for loop to iterate through the remaining numbers in the Fibonacci sequence until it reaches the 38th number. For each iteration of the loop, the function calculates the sum of the previous two numbers in the sequence using the `a, b = b, a + b` assignment statement.
+Once the 38th number has been reached, the function checks if the decimal integer is divisible by this number using the modulo operator (`%`). If the result of the division is zero, then the decimal integer is indeed divisible by the 38th number in the Fibonacci sequence.
+The final return statement at the end of the code returns a boolean value indicating whether the decimal integer is divisible by the 38th number in the Fibonacci sequence or not.

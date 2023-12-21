@@ -1,0 +1,37 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has more than 38 elements
+    if len(my_list) <= 38:
+        return False
+
+    # Get the value at index 38
+    num = my_list[38]
+
+    # Check if the number is an integer
+
+    if not isinstance(num, int):
+        return False
+
+    # Check if the number is positive
+
+    if num <= 0:
+        return False
+
+    # Get the sum of the divisors of the number
+
+    sum_divisors = 1
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i
+
+            if i * i < num:
+                sum_divisors += num // i
+
+    # Check if the number is a perfect number
+
+    if sum_divisors == 2 * num:
+        return True
+
+    else:
+        return False

@@ -1,0 +1,7 @@
+
+def composite_nums_between_indices(my_list):
+    composites = set()
+    for i in range(3, 6):
+        if my_list[i].is_composite():
+            composites.add(my_list[i])
+    return composites

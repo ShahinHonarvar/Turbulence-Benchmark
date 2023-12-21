@@ -1,0 +1,15 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over each character in the string from index 10 to index 55, both inclusive
+    for i in range(10, 56):
+        # Check if the current character is a letter and if it is part of a palindrome
+        if string[i].isalpha() and string[i] == string[55 - i]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:56-i])
+
+    # Return the set of palindromes
+    return palindromes
+```

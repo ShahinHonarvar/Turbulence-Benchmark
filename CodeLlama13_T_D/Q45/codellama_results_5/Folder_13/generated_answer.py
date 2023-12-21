@@ -1,0 +1,10 @@
+
+def palindromes_between_indices(string):
+    letters = set("abcdefghijklmnopqrstuvwxyz")
+    palindromes = []
+    for i in range(3, 10):
+        for j in range(i+4, len(string)):
+            substr = string[i:j]
+            if substr[::-1] in letters and len(substr) >= 5:
+                palindromes.append(substr)
+    return set(palindromes)

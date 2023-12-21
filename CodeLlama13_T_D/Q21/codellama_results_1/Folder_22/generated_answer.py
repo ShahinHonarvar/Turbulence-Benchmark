@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(my_list):
+    return [i for i in my_list[10:11] if i % 1 == 0]

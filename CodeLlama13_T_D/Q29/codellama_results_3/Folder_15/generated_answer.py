@@ -1,0 +1,3 @@
+
+def gcf_two_nums(lst):
+    return lst[0] // lst[1] * lst[1]

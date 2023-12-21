@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(string):
+    seen = set()
+    res = ""
+    for i in range(330, 543):
+        if string[i] not in seen:
+            seen.add(string[i])
+            res += string[i]
+    return res

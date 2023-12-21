@@ -1,0 +1,16 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0] - 91):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1] - 91):
+            # Check if the submatrix has 92 integers
+            if np.sum(matrix[i:i+92, j:j+92]) == 92 * 92:
+                # Increment the count variable
+                count += 1
+
+    # Return the count of all submatrices with 92 integers
+    return count

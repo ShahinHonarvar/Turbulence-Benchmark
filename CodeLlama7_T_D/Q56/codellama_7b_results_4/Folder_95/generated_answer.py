@@ -1,0 +1,22 @@
+
+def all_substring_of_size_n(string, n):
+    """
+    Return the list of all distinct substrings of length n in a given string.
+    Args:
+        string (str): The input string.
+        n (int): The length of the substrings to return.
+    Returns:
+        list[str]: A list of all distinct substrings of length n in the input string. If no such substrings exist, an empty list is returned.
+    """
+
+    if len(string) < n:
+        return []
+
+    substrings = []
+
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if all(c not in substring for c in substrings):
+            substrings.append(substring)
+
+    return substrings

@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    chars = []
+    for c in s:
+        if ord('j') <= ord(c) < ord('w'):
+            continue
+        else:
+            chars.append(c)
+    return ''.join(chars)

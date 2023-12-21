@@ -1,0 +1,47 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Loop through all integers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the integer is a prime number
+        if is_prime(i):
+            # Check if the integer can be truncated to a prime number using only the left and right digits
+            if is_left_right_truncatable_prime(i):
+                # Add the integer to the list of prime numbers
+                prime_list.append(i)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_list)
+
+# Check if an integer is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all integers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if there is a factor other than 1 and itself
+                return False
+
+    # Return True if n is a prime number
+    return True
+
+# Check if an integer can be truncated to a prime number using only the left and right digits
+def is_left_right_truncatable_prime(n):
+    # Convert the integer to a string
+    s = str(n)
+
+    # Loop through all possible combinations of the left and right digits
+    for i in range(10, 100):
+        # Check if the combination of left and right digits is a prime number
+        if is_prime(i):
+            # Check if the string representation of the integer starts with the left digit and ends with the right digit
+            if s.startswith(str(i // 10)) and s.endswith(str(i % 10))):
+                # Return True if the combination of left and right digits is a prime number and the string representation of the integer starts with the left digit and ends with the right digit
+                return True
+
+    # Return False if no combination of left and right digits is a prime number that can be truncated to a one- or two-digit prime using only the left and right digits
+    return False

@@ -1,0 +1,37 @@
+
+def find_original_set(sets):
+    # Check if all sets are non-empty and have the same number of elements
+    if not all(s for s in sets) or len(set(len(s) for s in sets))) > 1:
+        raise ValueError("All sets must be non-empty and have the same number of elements")
+    # Create a list of all elements in the given sets
+    elements = []
+    for set in sets:
+        elements.extend(set)
+
+    # Create a dictionary to keep track of the frequency of each element
+
+    freq = {}
+
+    for element in elements:
+
+        if element not in freq:
+
+            freq[element] = 1
+
+        else:
+
+            freq[element] += 1
+
+
+    # Create a new set with the smallest possible number of elements
+
+    smallest_set = set()
+
+    for element, frequency in freq.items():
+
+        if frequency == len(sets):
+
+            smallest_set.add(element)
+
+
+    return smallest_set

@@ -1,0 +1,12 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result_list = []
+
+    # Iterate through the list and check if each integer is not divisible by -46
+    for i in range(22, 97):
+        if my_list[i] % -46 != 0:
+            result_list.append(my_list[i])
+
+    # Return the list of all integers not divisible by -46 from index 22 to index 97, both exclusive
+    return result_list

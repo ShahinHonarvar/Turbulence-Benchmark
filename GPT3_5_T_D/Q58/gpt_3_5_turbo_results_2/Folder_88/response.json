@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    row, col = matrix.shape\n    limit = min(row, col)\n\n    for i in range(row):\n        for j in range(col):\n            for k in range(1, limit + 1):\n                if i + k > row or j + k > col:\n                    break\n                sub_matrix = matrix[i:i+k, j:j+k]\n                if np.sum(sub_matrix) == 67 * k * k:\n                    count += 1\n\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689823433,
+  "id": "chatcmpl-7eEYbceTTBGuG67m9scUlsJNZwW6A",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 111,
+    "total_tokens": 232
+  }
+}

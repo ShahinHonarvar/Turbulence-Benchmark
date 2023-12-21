@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ''
+    for char in string:
+        if ord(char) >= ord('f') and ord(char) <= ord('|'):
+            result += char
+    return result

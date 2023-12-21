@@ -1,0 +1,50 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_list = []
+
+    # Loop through each number in the tuple
+    for num in tuple:
+        # Check if the number is a prime number
+        if is_prime(num):
+            # If it is, check if it is left-truncatable
+            if is_left_truncatable(num):
+                # If it is, add it to the list of prime numbers
+                prime_list.append(num)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_list)
+
+# Function to check if a number is prime
+def is_prime(n):
+    # Check if n is less than 2
+    if n < 2:
+        # If it is, it is not prime
+        return False
+
+    # Loop through all numbers from 2 to the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if i divides n
+        if n % i == 0:
+            # If it does, n is not prime
+            return False
+
+    # If we reach this point, n is prime
+    return True
+
+# Function to check if a number is left-truncatable
+def is_left_truncatable(n):
+    # Check if n contains any 0s
+    if '0' in str(n):
+        # If it does, n is not left-truncatable
+        return False
+
+    # Loop through all numbers from the leading digit of n to 1
+    for i in range(len(str(n))) - 1, 1, -1:
+        # Check if the number formed by removing the leading digit is prime
+        if is_prime(int(str(n))[:i])):
+            # If it is, n is left-truncatable
+            return True
+
+    # If we reach this point, n is not left-truncatable
+    return False

@@ -1,0 +1,30 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_chars = False
+    # Iterate through the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        current_string = my_list[i]
+        # Check if the current string is at least 3 characters long
+        if len(current_string) >= 3:
+            three_or_more_chars = True
+            # Get a list of all possible anagrams of the current string
+            all_anagrams = []
+            for j in range(len(current_string)):
+                # Generate all possible anagrams of the current string
+                all_anagrams.append(''.join(sorted(current_string[j])))
+            # Check if there are at least 15 pairs of anagrams in the list of strings
+            for k in range(len(all_anagrams)):
+                for l in range(k+1, len(all_anagrams)):
+                    # Check if the two anagrams are equal
+                    if all_anagrams[k] == all_anagrams[l]:
+                        anagram_count += 1
+            # If there are at least 15 pairs of anagrams in the list of strings, return true
+            if anagram_count >= 15:
+                return True
+    # If there are no anagrams in the list of strings, return false
+    if not three_or_more_chars:
+        return False
+```

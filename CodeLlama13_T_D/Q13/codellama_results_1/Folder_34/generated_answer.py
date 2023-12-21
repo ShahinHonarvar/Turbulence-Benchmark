@@ -1,0 +1,11 @@
+
+def find_second_largest_num(nums):
+    if len(nums) < 62:
+        return None
+    nums.sort()
+    for i in range(16, 62):
+        if nums[i] == nums[i-1]:
+            continue
+        else:
+            return nums[i]
+    return None

@@ -1,0 +1,25 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list from index 55 to index 98, both inclusive
+    for i in range(55, 100):
+        # Check if the current number is a composite number
+        if is_composite(my_list[i]):
+            # If it is, add it to the set of composite numbers
+            composite_nums.add(my_list[i])
+
+    # Return the set of composite numbers in the specified range
+    return composite_nums
+
+# Define a function to check if a number is composite or not
+def is_composite(n):
+    # Check if n is divisible by any number between 1 and n-1
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    # If no number between 1 and n-1 divides n, it must be a prime number
+    return True
+```

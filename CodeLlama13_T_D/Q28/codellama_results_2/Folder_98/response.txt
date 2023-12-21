@@ -1,0 +1,12 @@
+```python
+def return_nth_smallest_ascii(s):
+    ascii_values = [ord(c) for c in s if ord(c) <= 8]
+    return chr(sorted(ascii_values)[8])
+```
+This code defines a function `return_nth_smallest_ascii` that takes a string `s` of distinct characters as an argument. The function returns the character with the 9th smallest ASCII value among those characters in the string that occur between indices 0 to 8, both inclusive.
+
+Here's how the code works:
+
+1. It first converts each character in `s` to its ASCII value using the `ord()` function.
+2. It then filters out any values greater than 8 and sorts the remaining values in ascending order using the built-in `sorted()` function.
+3. Finally, it returns the 9th element of the sorted list, which is the character with the 9th smallest ASCII value among those characters that occur between indices 0 to 8, both inclusive.

@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(mat):
+    # Initialize a count variable to keep track of the number of submatrices with 122 integers each
+    count = 0
+    
+    # Iterate over each submatrix in the given matrix
+    for i in range(len(mat)):
+        for j in range(len(mat[0])):
+            # Initialize a temporary matrix to store the current submatrix
+            temp_mat = np.zeros((i+1, j+1))
+            
+            # Fill the temporary matrix with the elements of the given matrix
+            for k in range(i):
+                for l in range(j):
+                    temp_mat[k][l] = mat[k][l]
+            
+            # Check if the temporary matrix contains 122 integers each
+            if np.count_nonzero(temp_mat) == 122:
+                count += 1
+    
+    return count

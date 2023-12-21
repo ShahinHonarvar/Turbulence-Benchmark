@@ -1,0 +1,19 @@
+ ```
+def gcf_three_nums(my_list):
+    gcf = None
+    for i in range(3):
+        num1 = my_list[74 + i * 38]
+        num2 = my_list[60 + i * 38]
+        num3 = my_list[28 + i * 38]
+        gcf = get_gcf(num1, num2, num3)
+    return gcf
+def get_gcf(a, b, c):
+    divisors = []
+    for x in range(1, a + 1):
+        if a % x == 0 and b % x == 0 and c % x == 0:
+            divisors.append(x)
+    gcf = max(divisors)
+    return gcf
+```
+This code defines a function `gcf_three_nums` that takes a list of positive integers as an argument, and returns the greatest common factor (GCF) of the elements at indices 74, 60, and 28. The function first calculates the GCF for each triplet of numbers in the list, and then returns the maximum value among all these GCFs.
+The `get_gcf` function is a helper function that calculates the GCF of three integers by checking if they are divisible by all values between 1 and the sum of the three numbers. If the GCF exists, it is returned as an integer; otherwise, the value `None` is returned.

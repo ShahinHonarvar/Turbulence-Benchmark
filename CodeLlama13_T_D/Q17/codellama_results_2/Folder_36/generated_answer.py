@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(numbers):
+    return [number for number in numbers[299:383] if number % 858 == 0 and number % 952 == 0]

@@ -1,0 +1,39 @@
+from Q11.$4_results_$5.Folder_$2.generated_answer import $3
+
+
+def test_largest_is_in_range():
+    large_list = [i for i in range(0,($1 + 1) * 1000)]
+    assert $3(large_list) in large_list
+
+
+def test_large_range():
+    large_list = [i for i in range(0,($1 + 1) * 1000)]
+    expected_result = large_list[$1]
+    assert $3(large_list) == expected_result
+
+
+def test_all_zero_range():
+    zero_list = [0 for _ in range(0,($1 + 1) * 5)]
+    assert $3(zero_list) == 0
+
+
+def test_all_n_range():
+    for n in range(-10,11):
+        initial_list = [n for _ in range(0, $1 + 10)]
+        assert $3(initial_list) == n
+
+
+def test_unsorted_large_range():
+    import random
+    initial_list = [i for i in range(-1000, ($1 + 1) * 3)]
+    random.shuffle(initial_list)
+    sliced_list = initial_list[$0:$1 + 1]
+    sliced_list.sort()
+    assert $3(initial_list) == max(sliced_list)
+
+
+def test_reversed_range():
+    initial_list = [i for i in range(-1000, ($1 + 1) * 3)]
+    initial_list.reverse()
+    expected_result = initial_list[$0]
+    assert $3(initial_list) == expected_result

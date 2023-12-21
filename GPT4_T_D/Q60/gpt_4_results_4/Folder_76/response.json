@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[370]\n    truncatable_primes = []\n    for num in range(13, x+1):\n        if '0' in str(num): \n            continue\n        num_str = str(num)\n        length = len(num_str)\n        left_right_truncations = [num_str[i:length-i] for i in range(length)]\n        if all(isprime(int(num_str)) for num_str in left_right_truncations):\n            truncatable_primes.append(num)\n    return sorted(truncatable_primes, reverse=True)\n```\nThe function 'all_left_right_truncatable_prime' first retrieves the integer at the 370th index of the tuple argument. It then generates all possible left-and-right truncations for all numbers from 13 to x, checks if all the truncations are prime numbers and if so, adds the number to the list of truncatable primes. The results are then sorted in descending order before being returned. If no left-and-right-truncatable prime number is found within the specified range, the function will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691104817,
+  "id": "chatcmpl-7jbu54yBYJY8PnMhFhVwRZplQE2Ar",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 250,
+    "prompt_tokens": 187,
+    "total_tokens": 437
+  }
+}

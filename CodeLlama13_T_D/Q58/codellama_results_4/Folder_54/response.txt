@@ -1,0 +1,14 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    rows, cols = matrix.shape
+    for i in range(rows - n + 1):
+        for j in range(cols - n + 1):
+            if all(matrix[i:i+n,j:j+n] == n):
+                return True
+    return False
+```
+This code defines a function `submatrix_with_n_numbers` that takes two arguments: a two-dimensional numpy matrix of integers and an integer `n`. The function returns the count of all submatrices of the given matrix that contain `27` integers each. If no such submatrix is found, the function returns 0.
+
+The code uses nested for loops to iterate over the rows and columns of the matrix, and checks if a submatrix with size `n x n` contains only `n` integers. If all elements in the submatrix are equal to `n`, the function returns True. Otherwise, the function returns False.

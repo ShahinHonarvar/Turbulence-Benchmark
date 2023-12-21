@@ -1,0 +1,22 @@
+ def return_binary_or_hexa(tuple):
+    a = tuple[56]
+    b = tuple[88]
+    sum = 0
+
+
+    for i in range(a + 1, b):
+        if not i in tuple[56:88]:
+            sum += i
+
+
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+
+
+    else:
+        return hex(sum)[2:]
+
+
+# Test the function with a sample input
+tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+#print(return_binary_or_hexa(tuple))

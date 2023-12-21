@@ -1,0 +1,26 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function:
+```python
+def palindromes_of_specific_lengths(string):
+    # Substring indices for the range we want to consider
+    start_index = 40
+    end_index = 94
+    # Set of all palindromes within the specified range
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(start_index, end_index + 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Create a copy of the substring starting at index i
+            substr = string[i:]
+            # Iterate over each character in the copy of the substring
+            for j in range(len(substr)):
+                # Check if the current character is a letter
+                if substr[j].isalpha():
+                    # Create a copy of the substring starting at index j
+                    substr2 = substr[j:]
+                    # Check if the substring starting at index j is a palindrome
+                    if substr2 == substr2[::-1]:
+                        # Add the palindrome to the set
+                        palindromes.add(substr2)
+    return palindromes
+```

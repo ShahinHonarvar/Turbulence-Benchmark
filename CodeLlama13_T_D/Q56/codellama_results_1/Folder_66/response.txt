@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    n = 26
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i, len(s) - n + 1):
+            substring = s[j:j+n]
+            if not any(substring in substrings or ''.join(sorted(substring)) == ''.join(sorted(sub)) for sub in substrings):
+                substrings.append(substring)
+    return substrings
+```

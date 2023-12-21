@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle, islice\n\ndef sublist_product(sublist):\n    product = 1\n    for num in sublist:\n        product *= num\n    return product\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    circular_lst = cycle(lst)\n    length = len(lst)\n    for i in range(length):\n        for j in range(1, length + 1):\n            sublist = list(islice(circular_lst, i, i + j))\n            if sublist_product(sublist) == -72:\n                result.append(sublist)\n    return result\n\ncircular_lst.cycle()\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690977377,
+  "id": "chatcmpl-7j4kbayKqIGKvytjoGUo4ra2v6lct",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 193,
+    "total_tokens": 319
+  }
+}

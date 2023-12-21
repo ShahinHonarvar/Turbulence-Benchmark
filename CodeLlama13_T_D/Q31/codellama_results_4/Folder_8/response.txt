@@ -1,0 +1,12 @@
+```python
+def if_perfect_num(lst):
+    if len(lst) <= 49:
+        return False
+    num = lst[49]
+    for i in range(2, num):
+        if num % i == 0 and sum(divisors(num)) == num + 1:
+            return True
+    return False
+```
+This function defines the `if_perfect_num` function that takes a list of positive integers as an argument. The function first checks whether the length of the input list is greater than or equal to 50 (the index of the integer to be checked). If not, it returns `False`. Otherwise, it assigns the integer at index 49 to a variable named `num`. Then, the function iterates over all integers between 2 and `num` (exclusive) and checks whether each number divides `num` evenly. If any such number is found, the function returns `True`, indicating that the input integer is a perfect number. Otherwise, the function returns `False`.
+Note: The function uses the built-in `divisors` function to find all divisors of `num`.

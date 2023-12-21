@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that matches your specification:\n\n```python\ndef find_primes_between_indices(lst):\n    def is_prime_num(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n**0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    primes = []\n    for i in range(66, 80):\n        if i < len(lst) and is_prime_num(lst[i]):\n            primes.append(lst[i])\n    return sorted(primes, reverse=True)\n```\nPlease note that the given function will work only if the size of a list is greater than or equal to 80, since it is looking for elements at position from 66 to 79 (0-index based).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690129503,
+  "id": "chatcmpl-7fWBDZbZjMSKixlH1pISUh7DnRxJP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 164,
+    "prompt_tokens": 118,
+    "total_tokens": 282
+  }
+}

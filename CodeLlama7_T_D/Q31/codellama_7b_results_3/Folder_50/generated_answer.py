@@ -1,0 +1,16 @@
+
+def if_perfect_num(lst):
+    # Check if the list is empty or has less than 41 elements
+    if len(lst) < 41:
+        return False
+
+    # Get the number at index 40
+    num = lst[40]
+
+    # Check if the number is evenly divisible by all numbers between 1 and itself
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i != 0:
+            return False
+
+    # If the number passes all the checks, it is a perfect number
+    return True

@@ -1,0 +1,15 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fibonacci_sequence = [0, 1]
+    # Loop through the Fibonacci sequence until we find the 85th number
+    for i in range(len(fibonacci_sequence)):
+        if len(fibonacci_sequence) == 85:
+            # If the 85th number is divisible by the decimal integer, return true
+            if fibonacci_sequence[i] % decimal_integer == 0:
+                return True
+
+    # If we reach this point, it means that the 85th number in the Fibonacci sequence is not divisible by the decimal integer, so return false
+    return False

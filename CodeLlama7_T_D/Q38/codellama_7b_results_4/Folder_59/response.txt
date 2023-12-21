@@ -1,0 +1,19 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize a dictionary to store the number of subsets of size 2 for each element
+    subset_counts = {}
+
+    # Iterate over all possible pairs of elements
+    for i in range(len(elements)):
+        for j in range(i + 1, len(elements))):
+            # If the current pair is already in the dictionary, skip it
+            if (elements[i], elements[j]) in subset_counts:
+                continue
+
+            # Otherwise, add the current pair to the dictionary and increment the count for that pair
+            else:
+                subset_counts[(elements[i], elements[j])] = 1
+
+    # Return the total number of subsets of size 2
+    return sum(subset_counts.values())
+```

@@ -1,0 +1,8 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Create a list of integers divisible by both 88 and 58
+    div_by_both = []
+    for i in range(48, 60):
+        if my_list[i] % 88 == 0 and my_list[i] % 58 == 0:
+            div_by_both.append(my_list[i])
+    return div_by_both

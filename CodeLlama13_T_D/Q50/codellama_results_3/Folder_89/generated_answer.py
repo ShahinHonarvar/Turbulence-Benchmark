@@ -1,0 +1,6 @@
+
+def if_contains_anagrams(strings):
+    for s in strings:
+        if len(s) >= 3 and len(set(s)) == len(s):
+            return True
+    return False

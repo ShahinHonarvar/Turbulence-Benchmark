@@ -1,0 +1,9 @@
+
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)-109):
+            substring = s[i:j]
+            if not any(c in substring for c in substrings) and ''.join(substring).isalpha():
+                substrings.append(substring)
+    return substrings

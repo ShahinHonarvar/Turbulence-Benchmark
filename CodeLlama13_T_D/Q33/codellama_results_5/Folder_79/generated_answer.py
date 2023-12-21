@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for char in string[74:96]:
+        if char >= 'I' and char <= 'X':
+            vowels.append(char)
+    return vowels

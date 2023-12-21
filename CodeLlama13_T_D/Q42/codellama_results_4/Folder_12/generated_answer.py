@@ -1,0 +1,9 @@
+
+def prime_factors(numbers):
+    number = numbers[27]
+    factors = set()
+    for i in range(1, int(number ** 0.5) + 1):
+        if number % i == 0:
+            factors.add(i)
+            factors.add(number // i)
+    return factors

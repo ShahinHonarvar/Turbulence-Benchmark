@@ -1,0 +1,18 @@
+ ```
+def return_n_smallest_chars(string, n):
+    # Create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+    for char in string:
+        ascii_values[char] = ord(char)
+    # Sort the dictionary by value (ASCII code)
+    sorted_dict = sorted(ascii_values.items(), key=lambda x: x[1])
+    # Return the top n characters from the sorted dictionary
+    return [item[0] for item in sorted_dict[:n]]
+```
+This function takes a string and an integer `n` as input, where `n` is the number of smallest ASCII values that you want to retrieve. The function first creates a dictionary that stores the ASCII values of each character in the string. Then it sorts the dictionary by value (ASCII code) using the `sorted()` function. Finally, it returns the top `n` characters from the sorted dictionary.
+For example, if you call the function with the following arguments:
+```
+string = "abcdefghijklmnopqrstuvwxyz"
+n = 63
+```
+The function will return a list of exactly 63 characters that have the smallest ASCII values in the string. The resulting list will be sorted in ascending order and will contain the top 63 characters from the original string.

@@ -1,0 +1,13 @@
+ def filter_chars(s):
+    start = 31
+    end = 38
+    # create a new string with the filtered characters
+    new_str = ""
+    for i in range(len(s)):
+        if i >= start and i <= end:
+            if s[i] >= ";" and s[i] <= "g":
+                continue
+
+        new_str += s[i]
+
+    return new_str

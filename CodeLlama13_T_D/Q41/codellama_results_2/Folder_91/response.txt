@@ -1,0 +1,9 @@
+```
+def identical_elements(list1, list2):
+    return {element for element in set(list1[0:5]) & set(list2[0:5])}
+```
+Explanation:
+
+The function uses the `set` constructor to create a set from each of the lists. Then, it uses the `&` operator to find the intersection of these sets. Finally, the resulting set is converted back into a list using a set comprehension.
+
+Note that this solution assumes that both lists have at least 5 elements and that no element appears more than once in either list. If these assumptions are not met, the function may not work correctly.

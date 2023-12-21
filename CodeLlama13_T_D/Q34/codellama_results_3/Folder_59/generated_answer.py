@@ -1,0 +1,12 @@
+
+def find_original_set(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10):
+    sets = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10]
+    original_set = set()
+    while len(sets) > 0:
+        subset = sets.pop(0)
+        if all(elem in original_set for elem in subset):
+            continue
+        else:
+            original_set |= subset
+            sets += [s for s in sets if s & subset]
+    return original_set

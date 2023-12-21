@@ -1,0 +1,14 @@
+
+import re
+
+def palindrome_of_length_at_least_n(s, n):
+    # Use regular expressions to find all palindromes of length greater than or equal to n in the given string
+    pattern = r"(\w){%d,}" % (n-1)
+    matches = re.findall(pattern, s, flags=re.I)
+    # Create a set of all palindromes found
+    palindromes = set()
+    for match in matches:
+        palindrome = match[::-1]
+        if palindrome == match:
+            palindromes.add(palindrome)
+    return palindromes

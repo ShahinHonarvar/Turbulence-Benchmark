@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with the required sum
+    submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary submatrix with the current row and column
+            temp_submatrix = np.zeros((matrix.shape[0], matrix.shape[1]), dtype=int)
+            
+            # Iterate over each element of the temporary submatrix
+            for k in range(temp_submatrix.shape[0]):
+                for l in range(temp_submatrix.shape[1]):
+                    # If the current element is within the bounds of the matrix, add it to the temporary submatrix
+                    if i + k < matrix.shape[0] and j + l < matrix.shape[1]:
+                        temp_submatrix[k, l] = matrix[i + k, j + l]
+            
+            # If the sum of all elements in the temporary submatrix is equal to -137, add it to the list of submatrices
+            if np.sum(temp_submatrix) == -137:
+                submatrices.append(temp_submatrix)
+    
+    # Return the list of submatrices with the required sum
+    return submatrices

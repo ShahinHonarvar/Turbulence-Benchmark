@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Loop through the Fibonacci sequence until the 178th number is reached
+    for i in range(178):
+        a, b = b, a + b
+    # Check if the decimal integer is divisible by the 178th Fibonacci number
+    return (decimal_integer % a) == 0

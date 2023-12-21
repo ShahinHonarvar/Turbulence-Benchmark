@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set([prime for number in numbers[69].factor() for prime in number.prime_factors()])

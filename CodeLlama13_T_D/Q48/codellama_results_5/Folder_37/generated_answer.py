@@ -1,0 +1,6 @@
+
+def return_binary_or_hexa(nums):
+    a = nums[2] + 1
+    b = nums[7] - 1
+    s = sum([i for i in range(a, b+1) if i not in nums])
+    return bin(s)[2:] if s % 2 else hex(s)[2:].lower()

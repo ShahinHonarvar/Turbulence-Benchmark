@@ -1,0 +1,22 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Convert the matrix to a list of lists
+    matrix = matrix.tolist()
+    
+    # Initialize an empty list to store the submatrices with the required sum
+    submatrices = []
+    
+    # Loop through each row and column of the matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            # Create a new submatrix by removing the current row and column from the original matrix
+            submatrix = np.delete(np.delete(matrix, i, 0), j, 1).tolist()
+            
+            # Check if the sum of all integers in the submatrix is -617
+            if sum(submatrix) == -617:
+                # If so, add the submatrix to the list of submatrices with the required sum
+                submatrices.append(submatrix)
+    
+    return submatrices

@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return max([x for x in set(range(1, numbers[83] + 1)) if numbers[83] % x == 0 and numbers[14] % x == 0])

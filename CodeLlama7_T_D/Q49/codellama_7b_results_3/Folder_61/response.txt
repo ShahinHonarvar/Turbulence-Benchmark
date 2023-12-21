@@ -1,0 +1,26 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables to store the values of the 76th number that occurs in the Fibonacci sequence
+    fib_num_index = 0
+    fib_num_previous = 1
+    fib_num_current = 0
+    # Iterate through each digit of the decimal integer, starting from the most significant digit
+    for digit in str(decimal_integer):
+        # If the current digit is a 1, then increment the index of the 76th number that occurs in the Fibonacci sequence
+        if digit == "1":
+            fib_num_index += 1
+
+        # If the index of the 76th number that occurs in the Fibonacci sequence is greater than or equal to 75, then break out of the loop
+        if fib_num_index >= 75:
+            break
+
+    # If the index of the 76th number that occurs in the Fibonacci sequence is less than 75, then return false
+    if fib_num_index < 75:
+        return False
+
+    # Otherwise, return true
+
+    return True
+```

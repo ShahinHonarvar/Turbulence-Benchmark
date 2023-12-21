@@ -1,0 +1,8 @@
+
+def return_n_greatest_chars(input_string):
+    # create a list of characters from the input string
+    char_list = list(input_string)
+    # sort the list in descending order based on ASCII values
+    sorted_list = sorted(char_list, key=ord, reverse=True)
+    # return the top 33 characters of the sorted list
+    return sorted_list[:33]

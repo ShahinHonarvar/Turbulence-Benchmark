@@ -1,0 +1,26 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+        # Convert the binary string to an integer
+        decimal_int = int(binary_string, 2)
+        # Check if the decimal integer is divisible by the 28th Fibonacci number
+        fib_num = fibonacci_sequence(27)
+        return (decimal_int % fib_num == 0)
+def fibonacci_sequence(n):
+        # Initialize the first two Fibonacci numbers
+        a = 0
+        b = 1
+
+        # Iterate from the third number to the nth number in the sequence
+        for i in range(2, n+1):
+                # Calculate the next number in the sequence using the formula
+                c = a + b
+
+                # Update the values of a and b for the next iteration
+                a = b
+                b = c
+
+        return b
+```
+This code defines two functions: `if_decimal_is_divisible` and `fibonacci_sequence`. The former takes as input a binary representation string of a non-negative decimal integer, converts it to an integer, and checks if the resulting number is divisible by the 28th Fibonacci number. The latter function computes the Fibonacci sequence up to the nth term, where n is the input to the function.
+The `fibonacci_sequence` function uses a recursive approach to compute the Fibonacci sequence. It initializes the first two Fibonacci numbers as 0 and 1, respectively, and then iterates from the third number to the nth number in the sequence using the formula for the next term in the sequence. The function returns the nth term in the sequence.
+The `if_decimal_is_divisible` function first computes the decimal integer corresponding to the given binary representation string using the `int()` constructor with base 2. It then checks if the resulting number is divisible by the 28th Fibonacci number using the modulo operator (`%`). If the number is not divisible, the function returns False; otherwise, it returns True.

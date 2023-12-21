@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if ord(char) >= 33 and ord(char) <= 70 and ord(char) >= 7 and ord(char) <= ord('k'):
+            result += char
+    return result

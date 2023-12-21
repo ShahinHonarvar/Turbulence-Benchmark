@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    res = ''
+    for i in range(10, 53):
+        c = s[i]
+        if '@' <= c <= 'T':
+            res += c
+    return res

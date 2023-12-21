@@ -1,0 +1,28 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the elements in the current sublist
+        product = 1
+
+        # Add the current element to the current sublist
+        sublist.append(circular_list[i])
+
+        # Iterate over the remaining elements in the circular list
+        for j in range(i + 1, len(circular_list)):
+            # Update the product of the elements in the current sublist
+            product *= circular_list[j]
+
+            # Check if the product is equal to -32
+            if product == -32:
+                # Add the current sublist to the list of sublists
+                sublists.append(sublist)
+
+                # Break out of the inner loop
+                break
+
+    # Return the list of sublists
+    return sublists

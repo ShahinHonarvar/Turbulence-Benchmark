@@ -1,0 +1,29 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the submatrix
+            submatrix_sum = 0
+
+            # Loop through each row and column of the submatrix
+            for k in range(3):
+                for l in range(3):
+                    # Add the elements of the submatrix to the sum
+                    submatrix_sum += matrix[i + k][j + l]
+
+            # If the sum of the submatrix is equal to 997, append it to the list of submatrices
+            if submatrix_sum == 997:
+                submatrices.append([])
+                for m in range(3):
+                    for n in range(3):
+                        submatrices[-1].append(matrix[i + m][j + n])
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 997. If no such submatrix is found, return an empty list.
+    return submatrices

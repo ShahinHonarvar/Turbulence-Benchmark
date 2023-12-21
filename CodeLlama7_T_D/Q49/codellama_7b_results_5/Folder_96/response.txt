@@ -1,0 +1,18 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize the Fibonacci sequence with the first two terms
+    fibonacci_sequence = [0, 1]
+    # Calculate the Fibonacci sequence up to the 47th term
+    for i in range(47):
+        fibonacci_sequence.append(fibonacci_sequence[i] + fibonacci_sequence[i + 1])
+    # Check if the decimal integer is divisible by the 47th Fibonacci number
+    if decimal_integer % fibonacci_sequence[46] == 0:
+        return True
+
+    else:
+
+        return False
+```
+This code defines a function called `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function first converts the binary representation to a decimal integer using the built-in `int()` function with the base specified as 2. It then initializes the Fibonacci sequence with the first two terms as 0 and 1 respectively. The function calculates the Fibonacci sequence up to the 47th term by adding the previous two terms together in a loop. Finally, it checks if the decimal integer is divisible by the 47th Fibonacci number using the modulo operator `%`. If the decimal integer is divisible by the 47th Fibonacci number, the function returns `True`, otherwise it returns `False`.

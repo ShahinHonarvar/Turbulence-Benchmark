@@ -1,0 +1,9 @@
+```python
+def find_subset_of_length_n(set_):
+    return len([i for i in range(len(set_) + 1) if sum(combinations(set_, i)) == 73])
+```
+Explanation:
+
+* `sum(combinations(set_, i))` calculates the number of combinations of size `i` from `set_`.
+* The list comprehension `[i for i in range(len(set_) + 1) if sum(combinations(set_, i)) == 73]` generates a list containing all values of `i` such that there are exactly 73 combinations of size `i` from `set_`.
+* The length of this list is the number of subsets of size 73 in `set_`.

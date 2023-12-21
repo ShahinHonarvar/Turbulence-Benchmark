@@ -1,0 +1,39 @@
+ ```
+def if_contains_anagrams(words):
+    # Check if the word list is empty
+    if len(words) == 0:
+        return False
+
+    # Initialize a counter for the number of pairs of anagrams found
+    num_pairs = 0
+
+    # Iterate over each word in the list
+    for i in range(len(words)):
+
+        # Check if the word is at least three characters long
+        if len(words[i]) < 3:
+            continue
+
+
+        # Convert the word to lowercase for case-insensitive comparison
+        word = words[i].lower()
+
+        # Iterate over each word in the list again from the beginning
+        for j in range(len(words)):
+
+            # Skip the current word if it is the same as the previous word
+            if i == j:
+                continue
+
+
+            # Convert the other word to lowercase for case-insensitive comparison
+            other_word = words[j].lower()
+
+            # Check if the two words are anagrams of each other
+            if sorted(word) == sorted(other_word):
+                num_pairs += 1
+
+    # Return true if there are at most four pairs of anagrams in the given list, otherwise return false
+    return num_pairs <= 4
+
+```

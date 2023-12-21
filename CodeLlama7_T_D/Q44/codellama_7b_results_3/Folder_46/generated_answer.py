@@ -1,0 +1,20 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_numbers = set()
+
+    # Iterate over the list of positive integers
+    for i in range(28, 39):
+        # Check if the number is divisible by any of the prime factors
+        is_composite = False
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_composite = True
+                break
+
+        # If the number is composite, add it to the set
+        if is_composite:
+            composite_numbers.add(i)
+
+    # Return the set of all composite numbers in the specified range
+    return composite_numbers

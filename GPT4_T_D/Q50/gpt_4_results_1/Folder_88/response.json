@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(strings):\n    sorted_strings = [''.join(sorted(s.lower())) for s in strings if len(s) >= 3]\n    freq_dict = {}\n    for s in sorted_strings:\n        if s in freq_dict:\n            freq_dict[s] += 1\n        else:\n            freq_dict[s] = 1\n    pairs = sum(f*(f-1)//2 for f in freq_dict.values())\n    return pairs >= 34\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690074620,
+  "id": "chatcmpl-7fHu0YHUSkE59MVjKnAio9IcXTyOe",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 99,
+    "prompt_tokens": 126,
+    "total_tokens": 225
+  }
+}

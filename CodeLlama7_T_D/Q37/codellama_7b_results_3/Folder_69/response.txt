@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `filter_chars` function:
+```
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ''
+
+    # Iterate over each character in the input string
+    for c in s:
+        # If the current character is within the specified range and does not match any of the excluded characters, add it to the filtered string
+        if (ord(c) >= ord('!') and ord(c) <= ord('x')) and (c not in ['!', '"', '&', "'", ')', '*', ',', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']):
+            filtered += c
+
+    # Return the filtered string
+    return filtered
+```

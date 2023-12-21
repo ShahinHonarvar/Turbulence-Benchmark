@@ -1,0 +1,18 @@
+
+def find_original_set(sets):
+    # Create a set from all elements in the given sets
+    merged_set = set()
+    for s in sets:
+        merged_set |= s
+
+    # Initialize the smallest set with the first element of the merged set
+
+    smallest_set = {merged_set.pop()}
+
+    # Add all remaining elements from the merged set to the smallest set
+
+    smallest_set |= merged_set
+
+    # Return the smallest set
+
+    return smallest_set

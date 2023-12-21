@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(nums):
+    return [x for x in nums if x % 13 != 0 and 0 <= x < 6]

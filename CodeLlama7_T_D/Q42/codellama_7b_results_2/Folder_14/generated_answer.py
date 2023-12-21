@@ -1,0 +1,17 @@
+
+def prime_factors(my_list):
+    # Check if input is a list of integers
+    if not all(isinstance(x, int) for x in my_list)):
+        raise ValueError("Input must be a list of integers.")
+    # Find the prime factors of the 17th element of the list
+    prime_factors = set()
+    for i in range(len(my_list)):
+        if my_list[i] == 1:
+            continue
+
+        for j in range(2, int(my_list[i]) ** 0.5 + 1):
+            if my_list[i] % j == 0:
+                prime_factors.add(j)
+                break
+
+    return prime_factors

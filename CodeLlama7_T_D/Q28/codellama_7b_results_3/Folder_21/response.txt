@@ -1,0 +1,27 @@
+ def return_nth_smallest_ascii(string):
+    """
+    Return the character with the 6th smallest ASCII value among those characters in the string that occur between indices 8 to 65, both inclusive.
+    Args:
+        string (str): A string of distinct characters.
+    Returns:
+        str: The character with the 6th smallest ASCII value.
+    """
+
+    # Create a dictionary to store the frequency of each character in the string
+    freq = {}
+    for char in string:
+        if char not in freq:
+            freq[char] = 1
+        else:
+            freq[char] += 1
+
+    # Get the frequency of all characters between indices 8 to 65, both inclusive.
+    freq_list = []
+    for i in range(8, 66):
+        freq_list.append((string[i], freq[string[i]])))
+
+    # Sort the list of tuples based on the frequency of each character.
+    sorted_list = sorted(freq_list, key=lambda x: x[1], reverse=True)
+
+    # Return the 6th smallest ASCII value among those characters in the string that occur between indices 8 to 65, both inclusive.
+    return sorted_list[5][0]

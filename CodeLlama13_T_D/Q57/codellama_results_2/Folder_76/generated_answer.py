@@ -1,0 +1,22 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary list to store the elements of the submatrix
+            temp = []
+            
+            # Calculate the sum of all integers in the submatrix
+            sum_of_submatrix = np.sum(matrix[i:, j:])
+            
+            # If the sum is -255, add the submatrix to the result list
+            if sum_of_submatrix == -255:
+                result.append(temp)
+    
+    return result

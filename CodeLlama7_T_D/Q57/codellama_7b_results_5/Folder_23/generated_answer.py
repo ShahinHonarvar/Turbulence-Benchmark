@@ -1,0 +1,24 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the output list
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Create a copy of the original matrix
+            submatrix = matrix.copy()
+
+            # Remove the elements from the specified row and column
+            submatrix = np.delete(submatrix, i, axis=0)
+            submatrix = np.delete(submatrix, j, axis=1)
+
+            # Check if the sum of all elements in the submatrix is equal to 59
+            if np.sum(submatrix) == 59:
+                # Add the submatrix to the output list
+                submatrices.append(submatrix)
+
+    # Return the output list of all submatrices with a sum of 59
+    return submatrices

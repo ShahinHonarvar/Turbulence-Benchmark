@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a list of the ASCII values of the characters in the string
+    ascii_values = [ord(char) for char in string]
+    # Get the indices of the characters that occur between indices 13 and 35 (inclusive)
+    start_index = max(13, string.find('a'))
+    end_index = min(35, string.rfind('z'))
+    # Get the ASCII values of the characters that occur between these indices
+    ascii_values_between_indices = ascii_values[start_index:end_index+1]
+    # Return the character with the 18th smallest ASCII value among these characters
+    return chr(sorted(ascii_values_between_indices)[17]))
+```

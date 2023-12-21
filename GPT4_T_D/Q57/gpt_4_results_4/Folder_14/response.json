@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the text specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    m, n = np.shape(matrix)\n    \n    for x1 in range(m):\n        for y1 in range(n):\n            for x2 in range(x1, m):\n                for y2 in range(y1, n):\n                    subMatrix = matrix[x1:x2+1, y1:y2+1]\n                    if np.sum(subMatrix) == -93:\n                        result.append(subMatrix)\n    return result\n```\nThe code above creates a function called 'submatrix_with_particular_sum' that gets all possible submatrices of the given matrix, calculates the sum of integers in each submatrix and if the sum equals -93, the submatrix is added to a result list. The function returns this list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691092325,
+  "id": "chatcmpl-7jYebzCdER0kPuLHnsHUkAcBZ6IbB",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 121,
+    "total_tokens": 303
+  }
+}

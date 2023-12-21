@@ -1,0 +1,21 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers.")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list and check if each number is composite
+    for i, num in enumerate(my_list):
+        # If the number is between index 90 to index 200 (inclusive) and is composite, add it to the set
+        if 90 <= i <= 200 and is_composite(num):
+            composite_nums.add(num)
+    return composite_nums
+
+def is_composite(n):
+    # Check if n is divisible by any number between 1 and floor(sqrt(n))
+    for i in range(1, int(math.sqrt(n))) + 1):
+        if n % i == 0:
+            return True
+
+    return False

@@ -1,0 +1,23 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Convert the input string to lowercase for case-insensitive matching
+lowercase_string = string.lower()
+# Define a list of palindrome lengths that should be considered
+palindrome_lengths = range(17, 56)
+# Initialize an empty set to store the found palindromes
+found_palindromes = set()
+# Iterate over each character in the input string
+for i in range(23, 94 + 1):
+# Extract the substring starting from index i and spanning up to the next palindrome length
+substring = lowercase_string[i:i+palindrome_lengths]
+# Check if any of the extracted substrings are palindromes
+for j in range(len(substring)):
+if substring[j] == substring[-j-1]:
+found_palindromes.add(substring)
+break
+return found_palindromes
+
+
+
+
+```

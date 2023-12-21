@@ -1,0 +1,27 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(lst):
+    # create an empty list to store the sublists
+    sublists = []
+
+    # loop through the elements of the given list
+    for i in range(len(lst)):
+        # initialize a variable to store the product of the current element and its neighbors
+        product = 1
+
+        # loop through the neighbors of the current element
+        for j in range(i - 1, i + 2):
+            # if the neighbor is out of bounds or not an integer, skip it
+            if j < 0 or j >= len(lst) or not isinstance(lst[j], int)):
+                continue
+
+            # multiply the product by the current element and its neighbors
+            product *= lst[j]
+
+        # if the product is equal to -26, add the sublist to the list of sublists
+        if product == -26:
+            sublists.append(lst[i - 1 : i + 2])
+
+    # return the list of sublists
+    return sublists
+```

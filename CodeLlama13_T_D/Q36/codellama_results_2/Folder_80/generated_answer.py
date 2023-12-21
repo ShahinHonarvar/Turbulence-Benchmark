@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_str = ''
+    for i in range(54, 92):
+        if string[i].isalpha() and string[i].lower() > 'j' and string[i].lower() < 'x':
+            new_str += string[i]
+    return new_str

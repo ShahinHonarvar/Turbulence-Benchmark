@@ -1,0 +1,17 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Get the index of the first odd integer in the list
+    first_odd = next((i for i, x in enumerate(my_list) if x % 2 != 0), None)
+    # If there are no odd integers in the list, return an empty list
+    if first_odd is None:
+        return []
+
+    # Get the index of the last odd integer in the list
+
+    last_odd = next(i for i, x in enumerate(my_list[first_odd:]) if x % 2 != 0), None)
+    # If there are no odd integers in the specified range, return an empty list
+    if last_odd is None:
+        return []
+
+    # Return the list of all odd integers from index 56 to index 57, both inclusive
+    return my_list[first_odd:last_odd+1]

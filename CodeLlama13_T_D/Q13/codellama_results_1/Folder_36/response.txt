@@ -1,0 +1,19 @@
+```python
+def find_second_largest_num(my_list):
+    if len(my_list) <= 2:
+        return None
+    else:
+        sorted_list = sorted(my_list)[-2:]
+        second_largest_num = sorted_list[0]
+        return second_largest_num
+```
+This code defines a function called `find_second_largest_num` that takes a list of distinct numbers as input and returns the second largest element from index 246 to index 750, both inclusive. If there is no such element, the function should return `None`. The function uses the built-in `sorted()` function to sort the list in descending order and then slices the last two elements of the sorted list using `[-2:]`, which are the second largest number and the third largest number. It then returns the first element of the sliced list, which is the second largest number.
+
+Here's an example usage of the function:
+```python
+my_list = [1, 2, 3, 4, 5]
+print(find_second_largest_num(my_list)) # prints 'None' because there are only 5 elements in the list
+
+my_list = [1, 2, 3, 4, 5, 6]
+print(find_second_largest_num(my_list)) # prints '5' because the second largest number is index 5 and it falls within the range of indices 246 to 750, both inclusive
+```

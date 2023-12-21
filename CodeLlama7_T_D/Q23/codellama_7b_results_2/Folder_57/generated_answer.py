@@ -1,0 +1,8 @@
+
+def find_divisors_in_range(n):
+    # create a list of all divisors between 15 and 92, inclusive
+    divisors = []
+    for i in range(15, 93):
+        if n % i == 0:
+            divisors.append(i)
+    return divisors

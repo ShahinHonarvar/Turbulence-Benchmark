@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the range of indices to be considered
+    sum = 0
+    start_index = 20
+    end_index = 93
+    # Iterate over the specified range of indices in the list
+    for i in range(start_index, end_index + 1):
+        # Check if the current element is divisible by either -92 or -50
+        if my_list[i] % (-92) == 0 or my_list[i] % (-50) == 0:
+            # If it is, add it to the sum
+            sum += my_list[i]
+    # Return the sum of all integers divisible by either -92 or -50 from index 20 to index 93, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum

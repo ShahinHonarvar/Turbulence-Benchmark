@@ -1,0 +1,24 @@
+
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[466]
+    left_truncatable_primes = []
+    for i in range(x):
+        if is_left_truncatable_prime(i):
+            left_truncatable_primes.append(i)
+    return sorted(left_truncatable_primes, reverse=True)
+
+def is_left_truncatable_prime(n):
+    if n < 2 or '0' in str(n):
+        return False
+    for i in range(1, len(str(n)) + 1):
+        if not is_prime(int(str(n)[:i])):
+            return False
+    return True
+
+def is_prime(n):
+    if n < 2 or n % 2 == 0:
+        return False
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True

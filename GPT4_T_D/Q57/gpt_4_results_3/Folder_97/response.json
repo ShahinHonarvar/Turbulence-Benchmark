@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrices = []\n    n, m = len(matrix), len(matrix[0])\n    \n    for si in range(n):\n        for sj in range(m):\n            for ei in range(si, n):\n                for ej in range(sj, m):\n                    submatrix = matrix[si:ei+1, sj:ej+1]\n                    if np.sum(submatrix) == -617:\n                        submatrices.append(submatrix)\n                    \n    return submatrices\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690985230,
+  "id": "chatcmpl-7j6nGL62MvW2jPBHihwo3Y0dGlwjO",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 121,
+    "total_tokens": 237
+  }
+}

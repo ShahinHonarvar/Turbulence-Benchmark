@@ -1,0 +1,24 @@
+
+def find_second_largest_num(my_list):
+    # Check if list is empty
+    if len(my_list) == 0:
+        return None
+
+    # Find the largest element in the list
+    largest = max(my_list)
+
+    # Create a new list that contains only the elements between index 75 and 85, both inclusive
+    sub_list = my_list[75:86]
+
+    # Check if the sub-list is empty
+    if len(sub_list) == 0:
+        return None
+
+    # Find the second largest element in the sub-list
+    second_largest = max(sub_list)
+
+    # Return the second largest element, or 'None' if there is no such element
+    if second_largest == largest:
+        return None
+    else:
+        return second_largest

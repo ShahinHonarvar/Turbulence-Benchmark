@@ -1,0 +1,30 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Get the current element and its neighbors
+            curr_element = matrix[i][j]
+            neighboring_elements = []
+            if i > 0:
+                neighboring_elements.append(matrix[i - 1][j]))
+            if j > 0:
+                neighboring_elements.append(matrix[i][j - 1]))
+            if i < matrix.shape[0] - 1:
+                neighboring_elements.append(matrix[i + 1][j]))
+            if j < matrix.shape[1] - 1:
+                neighboring_elements.append(matrix[i][j + 1]))
+            # Check if the sum of the current element and its neighbors is equal to 34
+            if sum(neighboring_elements) == 34:
+                # Add the submatrix to the list of submatrices
+                submatrices.append([[i, j], [i, j + 1], [i, j - 1], [i - 1, j], [i + 1, j]]))
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+```

@@ -1,0 +1,14 @@
+
+def sum_odd_ints_inclusive(my_list):
+    # initialize a variable to store the sum
+    sum = 0
+
+    # loop through the list of integers
+    for i in range(667, 774 + 1):
+        # if the current element is an odd integer
+        if my_list[i] % 2 != 0:
+            # add it to the sum
+            sum += my_list[i]
+
+    # return the sum
+    return sum

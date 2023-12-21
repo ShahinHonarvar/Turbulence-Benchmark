@@ -1,0 +1,46 @@
+
+def find_original_set(sets):
+    # create a list of all elements in the given sets
+    elements = []
+    for s in sets:
+        elements += list(s)
+
+    # create a dictionary to keep track of each element and its corresponding set
+
+    element_dict = {}
+
+    for e in elements:
+
+        if e not in element_dict:
+
+            element_dict[e] = []
+
+    # iterate through the given sets and add them to the appropriate set in the dictionary
+
+    for s in sets:
+
+        for e in s:
+
+            element_dict[e].append(s)
+
+    # create a new list of all elements that have multiple sets associated with them
+
+    multi_element_sets = []
+
+    for e, sets in element_dict.items():
+
+        if len(sets) > 1:
+
+            multi_element_sets.append((e, sets))
+
+    # create a new set that includes all elements from the given sets
+
+    original_set = set()
+
+    for e, sets in element_dict.items():
+
+        if len(sets) == 1:
+
+            original_set.add(e)
+
+    return original_set

@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(s):
+    seen = set()
+    out = []
+    for c in s:
+        if c not in seen and (81 <= len(out) < 86 or not seen.add(c)):
+            out.append(c)
+    return ''.join(out)

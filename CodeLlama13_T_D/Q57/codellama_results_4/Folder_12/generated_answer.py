@@ -1,0 +1,13 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    matrix = np.array(matrix)
+    m, n = matrix.shape
+    for i in range(m-1):
+        for j in range(n-1):
+            for k in range(i+1, m):
+                for l in range(j+1, n):
+                    submatrix = matrix[i:k, j:l]
+                    if np.sum(submatrix) == -83:
+                        return list(np.ndindex(submatrix.shape))
+    return []

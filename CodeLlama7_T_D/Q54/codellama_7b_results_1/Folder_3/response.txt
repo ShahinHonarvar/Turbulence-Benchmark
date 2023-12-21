@@ -1,0 +1,21 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Initialize an empty list to store the prime numbers
+prime_numbers = []
+# Iterate over the tuple of integers
+for num in tuple:
+# Check if the number is a prime number
+if num > 1:
+# Initialize a variable to store the remainder
+remainder = 0
+# Iterate from the rightmost digit of the number
+for i in range(len(str(num)))):
+# Calculate the remainder of the division by 10
+remainder = (num % 10)
+# Check if the remainder is equal to 1 or 7
+if remainder == 1 or remainder == 7:
+# Add the number to the list of prime numbers
+prime_numbers.append(num)
+# Return the sorted list of all right-truncatable prime numbers less than x
+return sorted(prime_numbers)
+```

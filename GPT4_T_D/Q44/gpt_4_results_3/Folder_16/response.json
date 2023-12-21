@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python function according to the given specification:\n\n```python\ndef composite_nums_between_indices(lst):\n    composite_nums_set = set()\n    for i in range(40, 81):\n        if i < len(lst):\n            num = lst[i]\n            if num > 1 and not all(num % i for i in range(2, num)):\n                composite_nums_set.add(num)\n    return composite_nums_set\n```\nThis function works by iterating over the specified range in the given list and checking each number to see if it is composite by testing if it has divisors other than 1 and itself. If the number is composite, it is added to the set of composite numbers.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690952243,
+  "id": "chatcmpl-7iyDD9Ww0Bn0uSBeB58CoyN1r4hKv",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 116,
+    "total_tokens": 257
+  }
+}

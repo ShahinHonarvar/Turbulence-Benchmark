@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(strings):
+    # Create a dictionary to store the anagram counts for each string
+    anagram_counts = {}
+    
+    # Iterate over the strings and increment the count for each anagram
+    for s in strings:
+        key = "".join(sorted(s.lower()))
+        if key not in anagram_counts:
+            anagram_counts[key] = 0
+        anagram_counts[key] += 1
+    
+    # Check if there are at most 474 pairs of anagrams
+    return len([k for k, v in anagram_counts.items() if v >= 2]) <= 474

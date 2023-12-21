@@ -1,0 +1,6 @@
+
+def remove_repeat_chars(s):
+    for c in s:
+        if s.count(c) > 1 and (s.index(c) < 100 or s.index(c) > 200):
+            s = s.replace(c, "")
+    return s

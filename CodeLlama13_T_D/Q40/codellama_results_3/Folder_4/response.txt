@@ -1,0 +1,10 @@
+```python
+def return_n_smallest_chars(string):
+    char_list = []
+    for char in string:
+        if char not in char_list:
+            char_list.append(char)
+    sorted_char_list = sorted(char_list, key=lambda x: ord(x))
+    return sorted_char_list[:90]
+```
+Note: The `ord()` function is used to get the ASCII value of each character in the string. The `sorted()` function is used to sort the list in descending order based on the ASCII values.

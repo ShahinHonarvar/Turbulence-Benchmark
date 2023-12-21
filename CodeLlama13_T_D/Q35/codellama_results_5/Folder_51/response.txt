@@ -1,0 +1,33 @@
+```
+def remove_repeat_chars(s):
+    # Initialize a dictionary to keep track of the characters that occur more than once between indices 6 and 9, both exclusive
+    char_dict = {}
+    
+    # Iterate through the string and check if each character occurs more than once between indices 6 and 9, both exclusive
+    for i in range(len(s)):
+        if i not in range(6, 10):
+            continue
+        
+        char = s[i]
+        
+        # If the character does not exist in the dictionary, add it to the dictionary with a count of 1
+        if char not in char_dict:
+            char_dict[char] = 1
+        
+        # If the character already exists in the dictionary, increment its count
+        else:
+            char_dict[char] += 1
+    
+    # Iterate through the string again and remove all occurrences of each repeated character between indices 6 and 9, both exclusive
+    for i in range(len(s)):
+        if i not in range(6, 10):
+            continue
+        
+        char = s[i]
+        
+        # If the character occurs more than once and is not already removed, remove all occurrences of that character from the string
+        if char_dict[char] > 1 and char in s:
+            s = s.replace(char, '')
+    
+    return s
+```

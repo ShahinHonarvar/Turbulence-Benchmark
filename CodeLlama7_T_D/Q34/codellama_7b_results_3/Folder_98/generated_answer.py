@@ -1,0 +1,10 @@
+
+def find_original_set(set1, set2, set3, set4, set5, set6, set7, set8):
+    smallest_set = None
+    for i in range(1, 9):
+        current_set = {j for j in range(i * 10, (i + 1) * 10)}
+        if all(current_set.issubset(s) for s in [set1, set2, set3, set4, set5, set6, set7, set8])):
+            smallest_set = current_set
+            break
+
+    return smallest_set

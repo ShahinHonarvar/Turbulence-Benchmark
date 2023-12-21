@@ -1,0 +1,8 @@
+```python
+def palindrome_of_length_n(string):
+    return set(
+        "".join(x)
+        for x in zip(*[iter(string)] * 40)
+        if all("A" <= c <= "Z" or "a" <= c <= "z" for c in x) and x == x[::-1]
+    )
+```

@@ -1,0 +1,10 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    try:
+        index = my_list.index(30) + 1
+        new_list.insert(index, 37)
+    except ValueError:
+        pass
+
+    return new_list

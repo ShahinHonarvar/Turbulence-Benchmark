@@ -1,0 +1,21 @@
+ def palindromes_between_indices(string):
+    # Define the range of indices to consider
+    min_index = 2
+    max_index = 7
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring in the given string
+    for i in range(min_index, len(string) - (max_index - min_index)):
+        # Extract the current substring from the given string
+        substring = string[i:i + (max_index - min_index)]
+        # Check if the substring is a palindrome of length at least 3
+        if len(substring) < 3:
+            continue
+
+        # Check if the substring is a palindrome in a case-insensitive manner
+        if not all(letter.lower() == letter.lower() for letter in substring):
+            continue
+
+        # Add the substring to the set of palindromes if it is a valid palindrome
+        palindromes.add(substring)
+    return palindromes

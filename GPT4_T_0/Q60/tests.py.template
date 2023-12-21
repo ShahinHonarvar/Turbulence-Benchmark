@@ -1,0 +1,72 @@
+from Q60.$4_results_$5.Folder_$2.generated_answer import $3
+import random
+
+
+def test_tuple_of_all_one_digit_nums():
+    for i in range(1,11):
+        input_tuple = (i,) * ($0 + 1)
+        if i < 2:
+            assert not $3(input_tuple)
+        elif i == 2:
+            assert $3(input_tuple) == [2]
+        elif 2 < i <= 4:
+            if "$1" == "ascending":
+                assert $3(input_tuple) == [2, 3]
+            else:
+                assert $3(input_tuple) == [3, 2]
+        elif i == 5 or i == 6:
+            if "$1" == "ascending":
+                assert $3(input_tuple) == [2, 3, 5]
+            else:
+                assert $3(input_tuple) == [5, 3, 2]
+        else:
+            if "$1" == "ascending":
+                assert $3(input_tuple) == [2, 3, 5, 7]
+            else:
+                assert $3(input_tuple) == [7, 5, 3, 2]
+            
+
+def test_if_result_integers_are_odd():
+    input_tuple = tuple(range(1, $0 + 2))
+    output = $3(input_tuple)
+    if $0 == 0:
+        assert not output
+    elif $0 == 1:
+        assert output[0] % 2 == 0
+    else:
+        if "$1" == "descending":
+            output.reverse()
+        assert output[0] % 2 == 0
+        for i in range(1, len(output)):
+            assert output[i] % 2 != 0
+
+
+def test_if_result_is_less_than_equal_to_$0():
+    input_tuple = tuple([random.randint(3, 1000) for _ in range($0 + 1)])
+    output = $3(input_tuple)
+    n = input_tuple[$0]
+    for i in output:
+        assert i <= n
+
+
+def test_if_result_order_is_correct():
+    input_tuple = tuple([random.randint(3, 1000) for _ in range($0 + 1)])
+    output = $3(input_tuple)
+    if "$1" == "ascending":
+        assert sorted(output) == output
+    else:
+        output_copy = output.copy()
+        output_copy.reverse()
+        assert sorted(output) == output_copy
+
+
+def test_result_size_is_less_than_specified_number():
+    input_tuple = tuple([random.randint(1, 1000) for _ in range($0 + 1)])
+    output = $3(input_tuple)
+    assert len(output) < input_tuple[$0]
+
+
+def test_tuple_of_all_ones():
+    input_tuple = (1,) * ($0 + 10)
+    assert not $3(input_tuple)
+    

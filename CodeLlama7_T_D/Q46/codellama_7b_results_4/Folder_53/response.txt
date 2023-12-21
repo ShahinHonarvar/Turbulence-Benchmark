@@ -1,0 +1,13 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 66, 56 and 92
+    gcf = None
+    for i in range(len(my_list)):
+        if i == 66 or i == 56 or i == 92:
+            if gcf is None:
+                gcf = my_list[i]
+            else:
+                while my_list[i] % gcf != 0:
+                    gcf -= 1
+    return gcf
+```

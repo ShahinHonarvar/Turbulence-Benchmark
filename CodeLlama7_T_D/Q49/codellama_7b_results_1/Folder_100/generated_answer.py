@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Initialize the Fibonacci sequence with 0 and 1
+    fibonacci_seq = [0, 1]
+    # Calculate the nth number in the Fibonacci sequence where n is the number of times the 190th number occurs in the binary representation of the decimal integer
+    for i in range(len(binary_string))):
+        if binary_string[i] == "1":
+            fibonacci_seq.append(fibonacci_seq[-2] + fibonacci_seq[-1])
+    # Check if the decimal integer is divisible by the 190th number in the Fibonacci sequence
+    if decimal_int % fibonacci_seq[-1] == 0:
+        return True
+
+    else:
+
+        return False

@@ -1,0 +1,20 @@
+
+def gcf_two_nums(my_list):
+    # Find the greatest common factor of the two numbers at indices 8 and 9
+    num1 = my_list[8]
+    num2 = my_list[9]
+    if num1 == num2:
+        return num1
+
+    while True:
+
+        if num1 % 2 == 0 and num2 % 2 == 0:
+            num1 //= 2
+            num2 //= 2
+        else:
+            break
+
+    if num1 == 1 or num2 == 1:
+        return 1
+
+    return num1

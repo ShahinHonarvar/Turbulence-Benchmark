@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(nums):\n    def is_prime(n):\n        if n == 1:\n            return False\n        for y in range(2, n):\n            if n % y == 0:\n                return False\n        return True\n\n    def is_left_right_truncatable(n):\n        str_num = str(n)\n        if '0' in str_num:\n            return False\n        for i in range(len(str_num)):\n            if not (is_prime(int(str_num[i:])) and is_prime(int(str_num[:len(str_num) - i]))):\n                return False\n        return True\n\n    x = nums[36]\n    res = []\n    for i in range(10, x + 1):\n        if is_prime(i) and is_left_right_truncatable(i):\n            res.append(i)\n    return sorted(res)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690918266,
+  "id": "chatcmpl-7ipNCoh8Q1hSbqSrJt7ofFJAU8Fus",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 187,
+    "total_tokens": 369
+  }
+}

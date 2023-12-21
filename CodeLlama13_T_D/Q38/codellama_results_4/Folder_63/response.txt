@@ -1,0 +1,7 @@
+```
+def find_subset_of_length_n(elements, n):
+    return len([subset for subset in powerset(elements) if len(subset) == n])
+```
+This function uses the `powerset` function from the `itertools` module to generate all subsets of `elements`, and then filters them by checking the length. The resulting list is converted back into a set using `set()` to remove duplicates, and the number of elements in the resulting set is returned as the final result.
+
+Please note that this solution assumes that the input set `elements` contains no duplicates. If it does contain duplicates, you may need to modify the function accordingly to ensure that each element in the resulting subsets is unique.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(num_tuple):\n    # get the 49th element\n    x = num_tuple[49]\n\n    def is_left_truncatable_prime(p):\n        # a prime should not contain 0\n        if '0' in str(p):\n            return False\n            \n        # if the leading leftmost digit is successively removed, check if all resulting numbers are prime\n        return all(isprime(int(str(p)[i:])) for i in range(len(str(p))))\n\n    return sorted(p for p in range(11, x) if isprime(p) and is_left_truncatable_prime(p))\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690990189,
+  "id": "chatcmpl-7j85FcxZbAL1AuSeXAHjaBuNye9IE",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 140,
+    "prompt_tokens": 146,
+    "total_tokens": 286
+  }
+}

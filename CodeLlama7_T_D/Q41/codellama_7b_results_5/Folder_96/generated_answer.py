@@ -1,0 +1,14 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    common_elements = set(list1).intersection(set(list2))
+    # Initialize an empty set to store the results
+    result = set()
+    # Iterate over each element in the intersection of sets
+    for element in common_elements:
+        # Check if the element occurs at least once in both lists anywhere between index 50 and index 200, both inclusive
+        if list1.count(element) >= 1 and list2.count(element) >= 1 and (list1.index(element) >= 50 and list1.index(element) <= 200) or (list2.index(element) >= 50 and list2.index(element) <= 200)):
+            # If the element occurs at least once in both lists anywhere between index 50 and index 200, both inclusive, add it to the result set
+            result.add(element)
+    # Return the set of all elements that occur at least once in both lists anywhere between index 50 and index 200, both inclusive
+    return result

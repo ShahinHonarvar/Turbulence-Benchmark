@@ -1,0 +1,5 @@
+
+def remove_repeat_chars(s):
+    repeat_chars = [char for char in s[3:8] if s[3:8].count(char) > 1]
+    result = "".join([char for char in s if char not in repeat_chars])
+    return result

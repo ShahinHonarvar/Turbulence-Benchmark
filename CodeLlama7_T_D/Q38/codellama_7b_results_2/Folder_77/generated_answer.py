@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    # Initialize the number of subsets as 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements
+    for i in range(1 << n):
+        # Check if the current combination has a subset of length 360
+        if sum(int(b) for b in bin(i)[2:]) == 360:
+            # Increment the number of subsets
+            num_subsets += 1
+
+    # Return the number of subsets of size 360
+    return num_subsets

@@ -1,0 +1,13 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the result
+    result = []
+
+    # Iterate through the list of integers, starting from index 10 (inclusive) and ending at index 55 (exclusive)
+    for i in range(10, 55):
+        # If the current integer is not divisible by 36, add it to the result list
+        if my_list[i] % 36 != 0:
+            result.append(my_list[i])
+
+    # Return the result list of all integers not divisible by 36 from index 10 to index 55, both exclusive
+    return result

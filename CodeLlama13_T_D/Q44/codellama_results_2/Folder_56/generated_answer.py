@@ -1,0 +1,13 @@
+
+def composite_nums_between_indices(numbers):
+    # Initialize an empty set to store the composite numbers
+    composites = set()
+    
+    # Iterate through the list of positive integers
+    for i in range(len(numbers)):
+        # Check if the current number is a composite number
+        if any(numbers[i] % x == 0 for x in range(2, int(numbers[i] ** 0.5) + 1)):
+            # If it is, add it to the set of composite numbers
+            composites.add(numbers[i])
+    
+    return composites

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    if not isinstance(matrix, np.ndarray) or len(matrix.shape) != 2:\n        raise ValueError(\"The input should be a 2-d numpy array\")\n  \n    result = []\n    row, col = matrix.shape\n    \n    for row_size in range(1, row + 1):\n        for col_size in range(1, col + 1):\n            for i in range(row - row_size + 1):\n                for j in range(col - col_size + 1):\n                    submatrix = matrix[i:i + row_size, j:j + col_size]\n                    if np.sum(submatrix) == -83:\n                        result.append(submatrix)\n                        \n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691092264,
+  "id": "chatcmpl-7jYdcMCblthGDQxhMpEi61amH3hKZ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 158,
+    "prompt_tokens": 121,
+    "total_tokens": 279
+  }
+}

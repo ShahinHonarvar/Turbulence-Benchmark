@@ -1,0 +1,33 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Initialize an empty list to store the right-truncatable prime numbers
+right_truncatable_primes = []
+# Loop through each integer in the tuple
+for i in range(len(tuple)):
+# Get the current integer
+current_integer = tuple[i]
+# Check if the current integer is a prime number
+if is_prime(current_integer):
+# Initialize an empty string to store the last rightmost digit of the current integer
+last_digit = ''
+# Loop through each character in the current integer's string representation
+for char in str(current_integer):
+# If the current character is not the last character
+if char != last_digit:
+# Remove the last rightmost digit from the current integer
+current_integer -= int(char) * 10 ** (len(str(current_integer))) - 1
+# Check if the current integer is a prime number after removing the last rightmost digit
+if is_prime(current_integer):
+# Add the current integer to the list of right-truncatable prime numbers
+right_truncatable_primes.append(current_integer)
+return sorted(right_truncatable_primes)
+else:
+return []
+
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True

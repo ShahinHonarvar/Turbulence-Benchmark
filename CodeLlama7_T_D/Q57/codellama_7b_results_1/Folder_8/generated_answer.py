@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with the entire input matrix
+    submatrices = [matrix]
+    # Loop through each row of the input matrix
+    for i in range(len(matrix)):
+        # Create a copy of the submatrices list for the current row
+        temp_submatrices = []
+        # Loop through each column of the input matrix
+        for j in range(len(matrix[i])):
+            # Extract the submatrix from the current row and column
+            submatrix = matrix[i][j]
+            # Check if the sum of all integers in the submatrix is equal to -61
+            if np.sum(submatrix) == -61:
+                # Add the submatrix to the list of submatrices with the particular sum
+                temp_submatrices.append(submatrix)
+        # If the list of submatrices with the particular sum is not empty, add it to the overall list of submatrices
+        if len(temp_submatrices) != 0:
+            submatrices = submatrices + temp_submatrices
+    # Return the overall list of submatrices with the particular sum
+    return submatrices

@@ -1,0 +1,20 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+# Convert the binary string to an integer
+integer = int(binary_string, 2)
+# Calculate the 97th number in the Fibonacci sequence
+fib_97 = fibonacci(96)
+# Check if the decimal integer is divisible by the 97th number in the Fibonacci sequence
+if (integer % fib_97) == 0:
+return True
+else:
+return False
+
+def fibonacci(n):
+if n <= 1:
+return n
+else:
+return fibonacci(n-1) + fibonacci(n-2)
+```
+This code defines a function `if_decimal_is_divisible` that takes a binary representation string of a non-negative decimal integer as input. The function first converts the binary string to an integer and then calculates the 97th number in the Fibonacci sequence using the `fibonacci` function defined below. Finally, the function checks if the decimal integer is divisible by the 97th number in the Fibonacci sequence and returns `True` if it is divisible or `False` otherwise.
+The `fibonacci` function is a recursive implementation of the Fibonacci sequence. It takes an integer `n` as input and calculates the `n`-th number in the Fibonacci sequence using the following formula: `fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)`. The base case of the function is when `n <= 1`, in which case the function returns `n`.

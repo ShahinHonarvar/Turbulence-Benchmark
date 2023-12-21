@@ -1,0 +1,4 @@
+
+def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return [char for char in string[13:35] if ord(char) > 8 and ord(char) <= ord('F') and char.lower() in vowels]

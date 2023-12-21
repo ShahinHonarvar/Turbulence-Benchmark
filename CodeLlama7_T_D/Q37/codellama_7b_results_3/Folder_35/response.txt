@@ -1,0 +1,15 @@
+ ```
+def filter_chars(my_string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate through each character in the string
+    for char in my_string:
+        # Check if the current character is between indices 155 and 403, both inclusive, and is greater than or equal to character '(' and smaller than or equal to character ']'
+        if (char.isalpha() and len(char) > 154 and len(char) < 404) and char in ['(', ')']:
+            # If the current character meets the condition, append it to the filtered_chars list
+            filtered_chars.append(char)
+    # Join all the characters in the filtered_chars list into a single string
+    filtered_string = "".join(filtered_chars)
+    return filtered_string
+```

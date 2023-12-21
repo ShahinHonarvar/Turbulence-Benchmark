@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    sum = 0
+    starting_index = 35
+    ending_index = 64
+
+    # Iterate through the list and add up the divisible integers
+    for i in range(starting_index, ending_index + 1):
+        if my_list[i] % -30 == 0 or my_list[i] % -95 == 0:
+            sum += my_list[i]
+
+    # Return the sum
+    return sum

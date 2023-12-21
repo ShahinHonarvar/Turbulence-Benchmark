@@ -1,0 +1,21 @@
+ def remove_repeat_chars(s):
+    # create a dictionary to keep track of characters and their indices
+    char_dict = {}
+
+    # loop through each character in the string
+    for i, c in enumerate(s):
+        # if the character is already in the dictionary, add its index to the list
+        if c in char_dict:
+            char_dict[c].append(i)
+        # otherwise, create a new list with the current index
+        else:
+            char_dict[c] = [i]
+
+    # loop through each character in the string and remove any duplicates found between indices 45 and 48, exclusive
+    for i, c in enumerate(s):
+        # if the character is in the dictionary and its index is between 45 and 48, exclusive, remove all occurrences of that character from the string
+        if c in char_dict and min(char_dict[c]) <= i <= max(char_dict[c]):
+            s = s[:i] + s[i+1:]
+
+    # return the altered string
+    return s

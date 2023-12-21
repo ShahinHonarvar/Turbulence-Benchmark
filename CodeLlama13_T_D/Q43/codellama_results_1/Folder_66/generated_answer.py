@@ -1,0 +1,11 @@
+
+def find_primes_between_indices(my_list):
+    return sorted(set(filter(lambda x: is_prime(x), my_list[72:73])))
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[97]\n    primes = []\n\n    for i in range(x):\n        if i > 10:\n            i_str = str(i)\n            if '0' not in i_str:\n                potential_trunc_primes = [i_str[j:] for j in range(len(i_str))]\n                if all(isprime(int(num)) for num in potential_trunc_primes):\n                    primes.append(i)\n\n    return sorted(primes, reverse=True)\n```\nHere is the Python code according to your specification. This function will find all left-truncatable prime numbers less than the number at index 97 of the input tuple. The list of found numbers is sorted in descending order before being returned. Please note that this function may take a while for large input numbers due to the nature of prime number determination.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690914143,
+  "id": "chatcmpl-7ioIh35jcFn9zQP7P7VNcAT2OoVBw",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 184,
+    "prompt_tokens": 146,
+    "total_tokens": 330
+  }
+}

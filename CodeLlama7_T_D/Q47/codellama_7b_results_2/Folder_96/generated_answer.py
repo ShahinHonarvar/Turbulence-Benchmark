@@ -1,0 +1,28 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all substrings between index 100 and 300, both inclusive
+    substring = string[100:300]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Check if the current character is a letter (uppercase or lowercase)
+        if substring[i].isalpha():
+            # Check if the current character is uppercase or lowercase and convert it to lowercase
+            letter = substring[i].lower()
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Iterate over each character in the substring from the current position to the end of the substring
+            for j in range(i, len(substring)):
+                # Check if the current character is a letter (uppercase or lowercase)
+                if substring[j].isalpha():
+                    # Check if the current character is uppercase or lowercase and convert it to lowercase
+                    letter = substring[j].lower()
+                    # Add the current character to the palindrome string
+                    palindrome += letter
+            # Check if the palindrome has a length between 50 and 100 (both inclusive)
+            if len(palindrome) >= 50 and len(palindrome) <= 100:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(tup):\n    a = tup[86]\n    b = tup[90]\n    excl_nums = set(tup[86:91])\n    calc_nums = set(range(a+1, b))\n    excl_nums = calc_nums.difference(excl_nums)\n    excl_sum = sum(excl_nums)\n    if excl_sum % 2 == 1: # if sum is odd\n        return bin(excl_sum)[2:] # returns binary representation without '0b' prefix\n    else: \n        return hex(excl_sum)[2:].upper() # returns hexadecimal representation without '0x' prefix\n    return \"\"\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690133817,
+  "id": "chatcmpl-7fXInpnioZsgcrqNMvmmDBoqhz68n",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 139,
+    "prompt_tokens": 263,
+    "total_tokens": 402
+  }
+}

@@ -1,0 +1,3 @@
+
+def prime_factors(mylist):
+    return set([int(x) for x in str(mylist[15]) if x.isdigit() and int(x) > 1 and all(int(x) % i != 0 for i in range(2, int(math.sqrt(int(x)) + 1)))])

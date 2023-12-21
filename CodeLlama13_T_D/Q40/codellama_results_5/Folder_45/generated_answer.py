@@ -1,0 +1,12 @@
+
+def return_n_smallest_chars(string):
+    # Create a list of tuples, where each tuple contains a character and its ASCII value
+    char_ascii = [(c, ord(c)) for c in string]
+
+    # Sort the list by the second element (ASCII value) in ascending order
+    sorted_char_ascii = sorted(char_ascii, key=lambda x: x[1])
+
+    # Create a new list with the first 52 characters from the sorted list
+    n_smallest_chars = [c for c, _ in sorted_char_ascii[:52]]
+
+    return n_smallest_chars

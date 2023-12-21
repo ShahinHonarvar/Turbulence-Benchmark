@@ -1,0 +1,19 @@
+ ```
+def find_second_smallest_num(numbers):
+    if len(numbers) < 2:
+        return None
+
+    sorted_numbers = sorted(numbers)
+
+    for i in range(1, len(sorted_numbers)):
+
+        if sorted_numbers[i] != sorted_numbers[i - 1]:
+            return sorted_numbers[i]
+
+    return None
+
+```
+Explanation:
+The function takes a list of distinct numbers as input and returns the second smallest element from index 1 to index 5, both inclusive. The function first sorts the list using the `sorted()` function. Then it iterates through the sorted list starting from index 1 and checks if the current element is not equal to the previous element. If the current element is different from the previous element, it returns the current element as the second smallest element.
+For example, if we have a list of numbers `numbers = [10, 5, 8, 20]`, the function will first sort the list to `[5, 8, 10, 20]`. Then it will iterate through the sorted list starting from index 1 and check if the current element is not equal to the previous element. Since the current element at index 1 is `5` and the previous element at index 0 is also `5`, the function will return `None`.
+It's worth noting that this solution assumes that the input list contains only distinct numbers. If there are duplicates in the list, the function may return a different second smallest element than what was intended.

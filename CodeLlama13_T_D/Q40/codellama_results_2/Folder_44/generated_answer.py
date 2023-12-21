@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(string):
+    sorted_chars = sorted(list(set(string)), key=lambda x: ord(x))
+    return sorted_chars[:73]

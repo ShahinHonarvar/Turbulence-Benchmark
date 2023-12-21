@@ -1,0 +1,22 @@
+
+def sum_of_divisors_in_range(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("n must be a positive integer")
+
+    # Initialize the sum to 0
+    sum = 0
+
+    # Loop through all positive divisors of n
+    for i in range(1, int(n ** 0.5) + 1):
+        # Check if i is a divisor of n
+        if n % i == 0:
+            # Increment the sum by the divisor
+            sum += i
+
+            # If the divisor is between 10 and 69, inclusive, then increment the sum by 1 more
+            if 10 <= i <= 69:
+                sum += 1
+
+    # Return the sum of all positive divisors of n that are between 10 and 69, inclusive
+    return sum

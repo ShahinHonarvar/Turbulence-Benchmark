@@ -1,0 +1,13 @@
+```python
+def find_second_largest_num(numbers):
+    if len(numbers) < 30 or len(numbers) > 200:
+        return None
+    
+    # sort the list in descending order
+    numbers.sort(reverse=True)
+    
+    # find the second largest element
+    for i in range(30, 201):
+        if numbers[i] != numbers[i-1]:
+            return numbers[i]
+```

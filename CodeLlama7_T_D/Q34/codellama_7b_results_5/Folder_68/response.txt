@@ -1,0 +1,17 @@
+ ```
+def find_original_set(set1, set2, set3):
+# Check if the sets are distinct and non-empty
+if len(set1) == 0 or len(set2) == 0 or len(set3) == 0:
+return None
+
+# Get the union of all three sets
+union_set = set1 | set2 | set3
+
+# Iterate through each element in the union set and check if it is present in all three input sets
+min_set = set()
+for elem in union_set:
+if elem in set1 and elem in set2 and elem in set3:
+min_set.add(elem)
+
+return min_set
+```

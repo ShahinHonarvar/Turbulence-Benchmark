@@ -1,0 +1,25 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Find the first and last indices of the sublist
+    first_index = my_list.index(30)
+    last_index = my_list.index(30) + 1
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate through the sublist of indices and check if each number is composite
+    for i in range(first_index, last_index):
+        num = my_list[i]
+        if is_composite(num):
+            composite_nums.add(num)
+    return composite_nums
+
+def is_composite(n):
+    # Check if n is divisible by 2 to 10
+    for i in range(2, 11):
+        if n % i == 0:
+            return False
+
+    return True
+```
+This code defines two functions: `composite_nums_between_indices` and `is_composite`. The former takes a list of positive integers as an argument and returns the set of all composite numbers in the given list that are between index 30 to index 30, both inclusive. If no composite number exists in the specified range, the function should return an empty set.
+The `is_composite` function takes a positive integer `n` as an argument and returns whether or not `n` is a composite number. This function checks if `n` is divisible by 2 to 10. If any of these numbers divides `n` evenly, then `n` is not a prime number and is therefore considered composite.
+The code uses the `index()` method to find the first and last indices of the sublist in the given list that contain the desired values between index 30 to index 30. It then iterates through this sublist using a for loop and checks if each number is composite using the `is_composite` function. If any number is found to be composite, it is added to an empty set called `composite_nums`. Finally, the `composite_nums` set is returned.

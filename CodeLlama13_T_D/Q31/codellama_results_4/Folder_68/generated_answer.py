@@ -1,0 +1,6 @@
+
+def if_perfect_num(list):
+    if len(list) < 4:
+        return False
+    else:
+        return list[3] == sum(i for i in range(2, int(sqrt(list[3])) + 1) if list[3] % i == 0)

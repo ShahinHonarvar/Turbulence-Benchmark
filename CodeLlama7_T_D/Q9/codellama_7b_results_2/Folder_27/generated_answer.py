@@ -1,0 +1,25 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Find the first index of an odd integer
+    for i in range(66, len(my_list)):
+        if my_list[i] % 2 != 0:
+            start_index = i
+            break
+
+    else:
+
+        return []
+
+# Find the last index of an odd integer
+
+for i in range(start_index, len(my_list)):
+
+    if my_list[i] % 2 != 0:
+
+        end_index = i
+
+        break
+
+else:
+
+    return []

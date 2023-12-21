@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Extract the characters between indices 12 and 87
+    sub_string = string[12:87]
+    # Convert the sub_string to a list of ASCII values
+    ascii_values = [ord(char) for char in sub_string]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 17th smallest ASCII value
+    return sorted_ascii_values[16]

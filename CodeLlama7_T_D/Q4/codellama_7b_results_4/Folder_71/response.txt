@@ -1,0 +1,25 @@
+ ```
+def all_pos_ints_exclusive(my_list):
+    # find the first positive integer in the list
+    first_pos_int = next((x for x in my_list if x > 0), None)
+    # return an empty list if there are no positive integers in the list
+    if first_pos_int is None:
+        return []
+
+    # find the last positive integer in the list
+
+    last_pos_int = next((x for x in my_list[::-1] if x > 0), None)
+
+    # return an empty list if there are no positive integers in the list
+
+    if last_pos_int is None:
+        return []
+
+    # find the range of positive integers between index 36 and index 54, both exclusive
+
+    pos_ints = [x for x in my_list[36:54] if x > 0]
+
+    # return the list of all positive integers between index 36 and index 54, both exclusive
+
+    return pos_ints
+```

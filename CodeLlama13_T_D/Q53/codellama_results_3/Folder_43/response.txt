@@ -1,0 +1,7 @@
+```
+def palindrome_of_length_at_least_n(string):
+    return {pal for pal in re.findall('[a-zA-Z]{49,}', string) if pal == pal[::-1]}
+```
+This solution uses the `re` module to find all substrings of length greater than or equal to 49 that consist only of English letters, and then checks each one to see if it is a palindrome. The function returns an empty set if no such palindromes are found in the given string.
+
+Note: This solution assumes that the input string consists only of English letters and spaces. If the input string contains any other characters, this solution may not work correctly.

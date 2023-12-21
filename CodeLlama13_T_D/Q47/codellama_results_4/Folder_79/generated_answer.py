@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    substring = string[1:8]
+    palindromes = set()
+    for i in range(3, 5):
+        for j in range(len(substring) - i + 1):
+            word = substring[j:j+i]
+            if word == word[::-1].lower():
+                palindromes.add(word)
+    return palindromes

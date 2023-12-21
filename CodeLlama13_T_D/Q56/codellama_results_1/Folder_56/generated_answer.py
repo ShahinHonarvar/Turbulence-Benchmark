@@ -1,0 +1,3 @@
+
+def all_substring_of_size_n(s):
+    return ["".join(i) for i in zip(*[s[i:] for i in range(69)])]

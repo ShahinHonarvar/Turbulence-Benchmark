@@ -1,0 +1,17 @@
+ ```
+def find_subset_of_length_n(my_set):
+# Initialize an empty list to store the subsets
+subsets = []
+# Iterate over all possible combinations of elements in the set
+for i in range(2**len(my_set)):
+# Convert the binary number to a list of 0s and 1s
+binary_string = bin(i)[2:]
+# Pad the list with 0s on the left until it has length len(my_set)
+while len(binary_string) < len(my_set):
+binary_string = "0" + binary_string
+# Convert the list of 0s and 1s to a set of elements
+subset = {my_set[j] for j in range(len(my_set)) if binary_string[j] == "1"}
+# Add the subset to the list of subsets
+subsets.append(subset)
+return len(subsets)
+```

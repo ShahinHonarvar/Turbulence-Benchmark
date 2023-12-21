@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to decimal integer
+    decimal = int(binary_string, 2)
+    
+    # Get the 49th number that occurs in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    for i in range(48):
+        fibonacci_sequence.append(fibonacci_sequence[i-1] + fibonacci_sequence[i])
+    divisor = fibonacci_sequence[48]
+    
+    # Check if decimal is divisible by the divisor
+    return (decimal % divisor) == 0

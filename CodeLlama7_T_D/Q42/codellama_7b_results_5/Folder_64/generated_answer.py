@@ -1,0 +1,16 @@
+
+def prime_factors(my_list):
+    # Check if input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Get the first integer from the list
+    num = my_list[0]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Loop through all factors of the input number
+    for i in range(1, int(num ** 0.5) + 1):
+        # Check if the factor is a prime number
+        if num % i == 0:
+            # If it is a prime number, add it to the set of prime factors
+            prime_factors.add(i)
+    return prime_factors

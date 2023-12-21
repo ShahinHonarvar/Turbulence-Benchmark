@@ -1,0 +1,21 @@
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a dictionary to store the counts of anagrams
+    anagram_counts = {}
+
+    # Iterate over the list of strings and check if each string is an anagram of another string in the list
+    for s1 in my_list:
+        for s2 in my_list:
+            if s1 != s2 and sorted(s1.lower()) == sorted(s2.lower()):
+                # If the two strings are anagrams, update the dictionary with their counts
+                if s1 in anagram_counts:
+                    anagram_counts[s1] += 1
+                else:
+                    anagram_counts[s1] = 1
+    
+    # Check if there are at most 60 pairs of anagrams in the list
+    if len(anagram_counts) <= 60:
+        return True
+    else:
+        return False
+```

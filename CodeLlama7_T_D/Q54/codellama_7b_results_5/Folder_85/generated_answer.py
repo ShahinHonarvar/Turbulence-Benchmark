@@ -1,0 +1,49 @@
+
+def all_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the range of numbers less than x
+    for i in range(2, x):
+
+        # Check if i is a prime number
+        if is_prime(i):
+
+            # Check if i is right-truncatable prime
+            if is_right_truncatable_prime(i):
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the sorted list of right-truncatable prime numbers less than x
+    return prime_numbers
+
+# Function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # If i divides n, then n is not prime
+                return False
+
+    # If n is greater than 1 and it is not divisible by any number between 2 and the square root of n, then it is prime
+    return True
+
+# Function to check if a number is right-truncatable prime
+def is_right_truncatable_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from the last digit of n to the first digit of n
+        for i in range(len(str(n))) - 1, len(str(n)) - 2, -1:
+            # Check if the number obtained by removing the rightmost digit of n is prime
+            if is_prime(int(str(n)[:i] + str(n)[i+1:]))) == False:
+                # If the number obtained by removing the rightmost digit of n is not prime, then n is not right-truncatable prime
+                return False
+
+    # If n is greater than 1 and it satisfies all the conditions, then it is a right-truncatable prime number
+    return True

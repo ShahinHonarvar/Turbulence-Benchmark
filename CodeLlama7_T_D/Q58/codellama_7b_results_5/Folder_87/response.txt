@@ -1,0 +1,17 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+    # Loop through each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Create a temporary submatrix by extracting the current row and column from the original matrix
+            temp_submatrix = matrix[i:i+96, j:j+96].copy()
+            # Check if the temporary submatrix contains 96 integers each
+            if np.all(temp_submatrix == np.full((96, 96), temp_submatrix[0][0]))):
+                # If the condition is true, increment the count variable by 1
+                count += 1
+    # Return the final value of the count variable
+    return count
+```

@@ -1,0 +1,24 @@
+ ```
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    # Iterate over the characters in the input string
+    for char in s:
+
+        # If the current character is between the indices 39 and 87 (both exclusive) and it is greater than character '!' and smaller than character '}', then remove all occurrences of that character within the filtered string while keeping the order of all characters intact.
+        if char >= "!" and char <= "}" and char in s[39:87]:
+            filtered_string += char * (s.count(char) - 1)
+
+        # Otherwise, append the current character to the filtered string
+        else:
+            filtered_string += char
+
+    # Return the altered string
+    return filtered_string
+
+# Test the function with a sample input
+#print(filter_chars("Hello World! This is a test sentence. {}"))
+```
+This code defines a function called `filter_chars` that takes one argument, a string. The function uses a for loop to iterate over the characters in the input string. For each character, it checks if it is between the indices 39 and 87 (both exclusive) and it is greater than character '!' and smaller than character '}'. If this condition is met, then the function removes all occurrences of that character within the filtered string while keeping the order of all characters intact. Otherwise, it appends the current character to the filtered string. Finally, the function returns the altered string.
+The code also includes a test case for the `filter_chars` function with a sample input "Hello World! This is a test sentence. {}". The output of this test case should be "Hello World! This is a test sentence.".

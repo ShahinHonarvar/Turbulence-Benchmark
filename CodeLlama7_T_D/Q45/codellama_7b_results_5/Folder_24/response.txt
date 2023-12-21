@@ -1,0 +1,21 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string) - 1):
+        # Check if the character is a letter
+        if string[i].isalpha():
+            # Create a list of all the letters that occur between index 2 and index 9 (both inclusive)
+            letters = [string[j] for j in range(2, 10)]
+            # Loop through each possible arrangement of the letters
+            for perm in itertools.permutations(letters):
+                # Join the elements of the permutation together to form a palindrome
+                palindrome = "".join(perm)
+                # Check if the palindrome has at least 4 characters and is a case-insensitive palindrome
+                if len(palindrome) >= 4 and palindrome.lower() == palindrome:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes
+```

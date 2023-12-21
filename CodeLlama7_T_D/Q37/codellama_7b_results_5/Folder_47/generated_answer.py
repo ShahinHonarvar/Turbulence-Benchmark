@@ -1,0 +1,18 @@
+
+def filter_chars(string):
+    # Create a new string with all characters removed
+    filtered_string = ""
+
+    # Iterate over each character in the given string
+    for char in string:
+
+        # Check if the current character is between indices 38 and 54, both inclusive, and is greater than or equal to character ':' and smaller than or equal to character 'r'
+        if (38 <= string.index(char) <= 54) and (char >= ':' and char <= 'r'):
+            # If the current character meets the above conditions, skip it in the filtered_string
+            continue
+
+        # Otherwise, append the current character to the filtered_string
+        filtered_string += char
+
+    # Return the filtered string
+    return filtered_string

@@ -1,0 +1,15 @@
+ ```
+def return_binary_or_hexa(tuple):
+# Define a list of all integers between a + 1 and b - 1 (inclusive)
+all_integers = list(range(tuple[38] + 1, tuple[81] - 1))
+# Define a set of all integers present in the specified range in the tuple
+present_integers = set(tuple[38:81])
+# Calculate the sum of all integers not present in the specified range
+sum_of_absent_integers = sum(all_integers) - sum(present_integers)
+# If the sum is an odd number, return the binary representation string
+if sum_of_absent_integers % 2 == 1:
+return f"{sum_of_absent_integers:b}"
+# Otherwise, return the hexadecimal representation string
+else:
+return f"{sum_of_absent_integers:x}"
+```

@@ -1,0 +1,12 @@
+
+def find_second_largest_num(nums):
+    if len(nums) <= 1:
+        return None
+    
+    nums.sort()
+    second_largest = nums[686]
+    for i in range(687, 988):
+        if nums[i] > second_largest:
+            second_largest = nums[i]
+    
+    return second_largest

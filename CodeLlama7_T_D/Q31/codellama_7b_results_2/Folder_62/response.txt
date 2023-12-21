@@ -1,0 +1,20 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has enough elements
+    if len(my_list) < 926:
+        return False
+
+    # Get the element at index 926
+    num = my_list[926]
+
+    # Check if the number is a perfect number
+    sum = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum += i + num / i
+
+    return sum == num
+```
+This code defines a function called `if_perfect_num` that takes a list of positive integers as an argument. The function returns `True` if the element at index 926 in the list is a perfect number, and `False` otherwise.
+To check if a number is a perfect number, we need to find its aliquot sum, which is the sum of all its proper divisors excluding itself. We can use a loop to iterate over all the proper divisors of the number and calculate their sum. If the sum of the proper divisors equals the number itself, then it is a perfect number.
+In this code, we first check if the list has enough elements to contain an element at index 926. If not, we return `False`. Then we get the element at index 926 and store it in the variable `num`. We then initialize the sum variable to 0 and start a loop that iterates over all the proper divisors of `num` excluding itself. For each proper divisor, we add its value to the sum variable. If the sum of the proper divisors equals the number itself, then it is a perfect number and we return `True`. Otherwise, we return `False`.

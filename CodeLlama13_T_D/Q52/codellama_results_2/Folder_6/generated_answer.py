@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return set(w for w in re.findall(r'(?i)\b[a-z]{474}\b', s))

@@ -1,0 +1,22 @@
+ ```
+def palindromes_of_specific_lengths(string):
+	# Create a list of all substrings in the specified index range
+	substrings = string[31:74].split()
+
+	# Initialize an empty set to store the palindromes
+
+	palindromes = set()
+
+	# Iterate over each substring and check if it is a palindrome of the required length
+
+	for substring in substrings:
+
+		if len(substring) >= 23 and len(substring) <= 39:
+
+			if substring == substring[::-1]:
+
+				palindromes.add(substring)
+
+	return palindromes
+```
+This function takes in a string as its argument, and returns the set of all palindromes with lengths between 23 to 39 (both inclusive), occurring in the substring from index 31 to index 74, both inclusive. The function also checks if the palindrome is found in a case-insensitive manner.

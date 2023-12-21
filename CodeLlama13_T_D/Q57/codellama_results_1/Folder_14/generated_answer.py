@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    results = []
+    
+    # Iterate over each submatrix of the given matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Extract a submatrix starting from (i, j) and ending at (i + 2, j + 2)
+            submatrix = matrix[i:i+3, j:j+3]
+            
+            # Check if the sum of all integers in the submatrix is equal to -93
+            if np.sum(submatrix) == -93:
+                results.append(submatrix)
+    
+    # Return the list of all submatrices with the desired sum
+    return results

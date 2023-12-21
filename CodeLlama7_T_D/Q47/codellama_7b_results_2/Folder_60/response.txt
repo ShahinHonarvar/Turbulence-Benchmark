@@ -1,0 +1,16 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # create a list of all palindromes in the substring
+    palindromes = []
+    for i in range(23, 83):
+        sub_string = string[i:i+1]
+        if len(sub_string) == 34 and sub_string.isalnum():
+            palindromes.append(sub_string)
+    return set(palindromes)
+```
+This code defines a function called `palindromes_of_specific_lengths` that takes one argument, a string. The function finds all the palindromes in the given string within the specified index range of 23 to 82, both inclusive. It also considers only palindromes with lengths between 32 and 34 (both inclusive).
+The code first creates an empty list called `palindromes` to store all the palindromes found in the given string. It then loops through each character of the given string within the specified index range, using a for loop.
+For each character, the function checks if it is an alphanumeric character (i.e., a letter or a number). If it is not, the function skips to the next character.
+If the current character is an alphanumeric character, the function then checks its length. If its length is not between 32 and 34 (both inclusive), the function skips to the next character.
+Once the current character meets both criteria (i.e., it is an alphanumeric character with a length between 32 and 34), the function adds it to the `palindromes` list.
+Finally, the function returns the set of all palindromes found in the given string within the specified index range.

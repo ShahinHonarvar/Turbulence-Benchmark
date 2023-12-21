@@ -1,0 +1,15 @@
+```python
+def if_decimal_is_divisible(binary):
+    # Convert the binary string to an integer
+    num = int(binary, 2)
+    
+    # Calculate the Fibonacci sequence until we reach the 168th number
+    fibs = [0]
+    a, b = 0, 1
+    while len(fibs) < 169:
+        a, b = b, a + b
+        fibs.append(a)
+    
+    # Check if the decimal integer is divisible by the 168th Fibonacci number
+    return num % fibs[168] == 0
+```

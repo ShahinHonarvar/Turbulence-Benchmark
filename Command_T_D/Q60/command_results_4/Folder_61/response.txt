@@ -1,0 +1,67 @@
+[cohere.Generation {
+	id: a7d95aae-df8a-41f0-aeda-24f7b97b390b
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 3. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(test_list):
+    res = []
+    for num in range(max(test_list), 2, -1):
+        if is_left_right_truncatable_prime(num):
+            res.append(num)
+    return res
+
+
+def is_left_right_truncatable_prime(num):
+    while num:
+        if num == "9" * len(str(num)):
+            return True
+        elif num == "0" * len(str(num)):
+            return False
+        elif str(num).count("0") == 1:
+            return False
+        elif num == "1" * len(str(num)):
+            return True
+        elif num == "2" * len(str(num)):
+            return True
+        elif num == "3" * len(str(num)):
+            return True
+        elif num == "4" * len(str(num)):
+            return True
+        elif num == "5" * len(str(num)):
+            return True
+        elif num == "6" * len(str(num)):
+            return True
+        elif num == "7" * len(str(num)):
+            return True
+        elif num == "8" * len(str(num)):
+            return True
+        elif num == "9" * len(str(num)):
+            return True
+        elif num == "0" * len(str(num)):
+            return False
+        elif str(num).count("0") == 1:
+            return False
+        elif num == "1" * len(str(num)):
+            return True
+        elif num == "2" * len(str(num)):
+            return True
+        elif num == "3" * len(str(num)):
+            return True
+        elif num == "4" * len(str(num)):
+            return True
+        elif num == "5" * len(str(num)):
+            return True
+        elif num == "6" * len(str(num)):
+            return True
+        elif num == "7" * len(str(num)):
+            return True
+        elif num == "8" * len(str(num)):
+            return True
+        elif num == "9" * len(str(num)):
+            return True
+        else:
+            return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

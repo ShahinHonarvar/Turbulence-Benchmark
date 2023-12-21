@@ -1,0 +1,147 @@
+[cohere.Generation {
+	id: ba4e0d7e-15a3-4897-bae9-3958ed4c7047
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 433. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+import functools
+import heapq
+import itertools
+import bisect
+
+# Yu-Kun ag:
+# primes
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/16
+#
+# Was too lazy to implement it properly, but:
+# I have tested it against all primes under 100,000 and it works
+#
+# N  = int(input())
+# A  = list(map(str, range(1, N+1)))
+# p  = set(A)
+# L  = list(p)
+# l  = len(L)
+#
+# def is_prime(s):
+#     # remove last digit
+#     for i in range(1, len(s)-1):
+#         s = int(s[:-1])
+#         if s == 0:
+#             return False
+#         if s not in p:
+#             return False
+#     return True
+#
+# def remove_last_digit(s):
+#     # remove last digit
+#     for i in range(1, len(s)-1):
+#         s = int(s[:-1])
+#         if s == 0:
+#             return
+#         if s not in p:
+#             return
+#     return
+#
+# def test():
+#     for x in L:
+#         if remove_last_digit(x):
+#             continue
+#         else:
+#             print(x)
+#
+# for x in L:
+#     if is_prime(x):
+#         print(x)
+#
+# test()
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/17
+#
+# 1. prime factors of n
+#
+# A prime number is a number that has no prime divisors other than itself and 1.
+#
+# 2. prime factorization
+#
+# Every positive integer can be uniquely written as a product of prime factors.
+#
+# A prime factorization of a positive integer is a list of prime factors.
+#
+# A prime factor of a positive integer is a prime number that divides the integer.
+#
+# A composite number is a positive integer that has a prime factor other than itself and 1.
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/18
+#
+# A prime number is a number that has no prime divisors other than itself and 1.
+#
+# 2. prime factorization
+#
+# Every positive integer can be uniquely written as a product of prime factors.
+#
+# A prime factorization of a positive integer is a list of prime factors.
+#
+# A prime factor of a positive integer is a prime number that divides the integer.
+#
+# A composite number is a positive integer that has a prime factor other than itself and 1.
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/19
+#
+# A prime number is a number that has no prime divisors other than itself and 1.
+#
+# 2. prime factorization
+#
+# Every positive integer can be uniquely written as a product of prime factors.
+#
+# A prime factorization of a positive integer is a list of prime factors.
+#
+# A prime factor of a positive integer is a prime number that divides the integer.
+#
+# A composite number is a positive integer that has a prime factor other than itself and 1.
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/20
+#
+# A prime number is a number that has no prime divisors other than itself and 1.
+#
+# 2. prime factorization
+#
+# Every positive integer can be uniquely written as a product of prime factors.
+#
+# A prime factorization of a positive integer is a list of prime factors.
+#
+# A prime factor of a positive integer is a prime number that divides the integer.
+#
+# A composite number is a positive integer that has a prime factor other than itself and 1.
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/21
+#
+# A prime number is a number that has no prime divisors other than itself and 1.
+#
+# 2. prime factorization
+#
+# Every positive integer can be uniquely written as a product of prime factors.
+#
+# A prime factorization of a positive integer is a list of prime factors.
+#
+# A prime factor of a positive integer is a prime number that divides the integer.
+#
+# A composite number is a positive integer that has a prime factor other than itself and 1.
+#
+# Yu-Kun ag:
+# prime factors
+# https://www.codewars.com/kata/reviews/54/groups/5/discussions/22
+#
+# A prime number is a number that has no
+	likelihood: None
+	token_likelihoods: None
+}]

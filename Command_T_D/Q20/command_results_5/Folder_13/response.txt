@@ -1,0 +1,22 @@
+[cohere.Generation {
+	id: 66f7cde3-e84b-477a-88a9-a7ef979899ba
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_n_th_smallest_num' that takes one argument, a list of distinct numbers, as input and returns the 11th smallest number from index 63 to index 79, both inclusive.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_n_th_smallest_num(nums):
+    sm = sorted(nums)
+    i = 63
+    while i < len(sm) - 1:
+        if sm[i] == sm[i + 1]:
+            break
+        i += 1
+    j = 79
+    while j >= 0:
+        if sm[j] == sm[j - 1]:
+            break
+        j -= 1
+    return sm[i + j - 1]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

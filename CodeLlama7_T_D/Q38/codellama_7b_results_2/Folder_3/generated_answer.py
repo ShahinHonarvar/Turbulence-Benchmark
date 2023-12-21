@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(set):
+    count = 0
+    for i in range(1, len(set)):
+        subset = set[i:i+100]
+        if len(subset) == 100:
+            count += 1
+
+    return count

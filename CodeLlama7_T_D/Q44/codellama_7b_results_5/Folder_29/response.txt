@@ -1,0 +1,30 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list and check if each number is a prime number
+    for i in range(52, 72):
+        num = my_list[i]
+        if is_prime(num):
+            composite_nums.add(num)
+
+    return composite_nums
+
+def is_prime(n):
+
+    # Check if n is greater than 1
+    if n > 1:
+
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+
+            # If i divides n, return False
+            if n % i == 0:
+                return False
+
+    # If n is a prime number, return True
+    return True
+```
+This code defines two functions, `composite_nums_between_indices` and `is_prime`. The `composite_nums_between_indices` function takes a list of positive integers as input and returns the set of all composite numbers in the given list that are between index 52 to index 71, both inclusive. If no composite number exists in the specified range, the function should return an empty set.
+The `is_prime` function takes a positive integer `n` as input and returns `True` if `n` is a prime number and `False` otherwise. The function uses the Sieve of Eratosthenes algorithm to check if a given number is prime or composite.

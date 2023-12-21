@@ -1,0 +1,15 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 61 elements
+    if len(my_list) < 61:
+        return False
+
+    # Get the value of the element at index 60
+    perfect_number = my_list[60]
+
+    # Check if the perfect number is divisible by all numbers less than its square root
+    for i in range(2, int(perfect_number ** 0.5) + 1):
+        if perfect_number % i == 0:
+            return False
+
+    return True

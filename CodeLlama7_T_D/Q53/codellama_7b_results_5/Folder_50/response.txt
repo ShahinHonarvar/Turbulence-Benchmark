@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(s, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each substring of length greater than or equal to n in the input string
+    for i in range(len(s) - n + 1):
+        # Extract the current substring
+        substr = s[i:i+n]
+        # Check if the substring is a palindrome in a case-insensitive manner
+        if substr == substr[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes
+```
+This code first defines an empty `set` to store the palindromes that are found in the input string. It then loops through each substring of length greater than or equal to `n` in the input string, extracts the current substring, and checks if it is a palindrome in a case-insensitive manner. If it is, the code adds it to the set of palindromes. Finally, the code returns the set of palindromes.
+Note that this code assumes that the input string contains only English letters. If the input string may contain other characters, such as digits or symbols, you will need to modify the code accordingly.

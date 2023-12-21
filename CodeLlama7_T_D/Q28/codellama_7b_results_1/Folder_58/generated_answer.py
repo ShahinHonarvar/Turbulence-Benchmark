@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a list of the characters in the string
+    char_list = list(string)
+    # Get the ASCII values of the characters
+    ascii_values = [ord(char) for char in char_list]
+    # Find the 6th smallest ASCII value
+    sixth_smallest = sorted(ascii_values)[5]
+    # Return the character with that ASCII value
+    return chr(sixth_smallest)

@@ -1,0 +1,19 @@
+ ```
+def find_subset_of_length_n(set):
+    # Initialize a counter to keep track of the number of subsets
+    count = 0
+
+    # Loop through all possible subsets of the given set
+    for i in range(2 ** len(set)):
+
+        # Convert the binary representation of the subset into a list of elements
+        subset = [element for element, bit in zip(set, str(i)) if bit == "1"]
+
+        # Check if the subset has length 722
+        if len(subset) == 722:
+            # Increment the counter by 1
+            count += 1
+
+    # Return the number of subsets with length 722
+    return count
+```

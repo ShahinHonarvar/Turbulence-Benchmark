@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with sum 28
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a 2D numpy array to store the current submatrix
+            curr_submatrix = np.zeros((matrix.shape[0], matrix.shape[1]), dtype=np.int)
+
+            # Fill the current submatrix with values from the given matrix
+            for k in range(i, matrix.shape[0]):
+                for l in range(j, matrix.shape[1]):
+                    curr_submatrix[k-i][l-j] = matrix[k][l]
+
+            # Check if the sum of all integers in the current submatrix is 28
+            if np.sum(curr_submatrix) == 28:
+                # If so, add the current submatrix to the list of submatrices
+                submatrices.append(curr_submatrix)
+
+    # Return the list of submatrices with sum 28
+    return submatrices

@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([char for char in string if (379 <= ord(char) <= 898 and 'M' <= char <= 'v')])

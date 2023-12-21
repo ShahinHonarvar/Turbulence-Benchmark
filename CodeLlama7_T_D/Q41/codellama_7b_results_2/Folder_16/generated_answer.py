@@ -1,0 +1,7 @@
+
+def identical_elements(list1, list2):
+    # create a set of all elements in both lists between index 33 and 36, inclusive
+    set1 = set(list1[33:37])
+    set2 = set(list2[33:37])
+    # return the intersection of the two sets
+    return set1.intersection(set2)

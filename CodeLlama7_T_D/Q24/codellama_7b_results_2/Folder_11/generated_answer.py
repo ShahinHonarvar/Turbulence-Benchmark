@@ -1,0 +1,11 @@
+
+def sum_of_divisors_in_range(n):
+    # Initialize the sum to 0
+    sum = 0
+    # Loop through all divisors of n between 39 and 57, both inclusive
+    for i in range(39, 60):
+        # If the current divisor is greater than 1 and divides n evenly, add it to the sum
+        if i > 1 and n % i == 0:
+            sum += i
+    # Return the sum of all positive divisors of n between 39 and 57, both inclusive
+    return sum

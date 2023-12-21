@@ -1,0 +1,13 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Define a lambda function to check if a number is prime or not
+    is_prime = lambda x: x % 2 > 0 and all(x % i != 0 for i in range(3, int(x ** 0.5) + 1, 2))
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list and check if each number is prime or not
+    for num in my_list:
+        if not is_prime(num):
+            composite_nums.add(num)
+    # Return the set of all composite numbers between indices 14 and 64, inclusive
+    return composite_nums
+```

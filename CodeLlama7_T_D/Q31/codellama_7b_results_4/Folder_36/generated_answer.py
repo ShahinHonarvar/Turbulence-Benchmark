@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or has fewer than 1000 elements
+    if len(my_list) < 1000:
+        return False
+
+    # Get the element at index 990 from the list
+    element = my_list[990]
+
+    # Check if the element is a perfect number
+    for i in range(2, int(element**0.5) + 1):
+        if element % i == 0:
+            sum_of_divisors = (i * (i + 1)) / 2
+            if sum_of_divisors == element:
+                return True
+
+    # If the element is not a perfect number, return False
+    return False

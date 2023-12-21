@@ -1,0 +1,3 @@
+
+def find_original_set(arg1, arg2, ... , arg90):
+    return {a for a in range(1, 1000) if all(a in s for s in (arg1, arg2, ... , arg90))}

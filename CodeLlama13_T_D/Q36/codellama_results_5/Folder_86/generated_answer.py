@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    chars = list(string)
+    for i in range(672, 709):
+        if chars[i] > 'X' and chars[i] < '}':
+            chars.remove(chars[i])
+    return "".join(chars)

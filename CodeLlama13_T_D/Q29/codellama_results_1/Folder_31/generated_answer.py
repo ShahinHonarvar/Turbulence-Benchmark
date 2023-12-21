@@ -1,0 +1,3 @@
+
+def gcf_two_nums(mylist):
+    return __gcd(mylist[87], mylist[95])

@@ -1,0 +1,14 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 185th number in the Fibonacci sequence
+    fib_185 = 0
+    a, b = 0, 1
+    for i in range(184):
+        fib_185 = a + b
+        a, b = b, fib_185
+    
+    # Check if the decimal integer is divisible by the 185th number
+    return decimal % fib_185 == 0

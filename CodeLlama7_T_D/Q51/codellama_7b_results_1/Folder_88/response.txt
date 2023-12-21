@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a set to store all the anagrams found in the list
+    anagram_set = set()
+    # Loop through each string in the list
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Create a sorted list of the letters in the string
+        sorted_letters = sorted(list(lowercase_string))
+        # Check if the sorted list of letters is already in the anagram set
+        if sorted_letters in anagram_set:
+            # If it is, return True since there are at most 407 pairs of anagrams in the given list
+            return True
+
+        else:
+
+            # If it's not, add the sorted list of letters to the anagram set
+            anagram_set.add(sorted_letters)
+    # If all the strings have been processed and no more than 407 pairs of anagrams were found, return True
+    if len(anagram_set) <= 407:
+        return True
+
+    else:
+
+        # Otherwise, return False since there are more than 407 pairs of anagrams in the given list
+        return False
+
+```

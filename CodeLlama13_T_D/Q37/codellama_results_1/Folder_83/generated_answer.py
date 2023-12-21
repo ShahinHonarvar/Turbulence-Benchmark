@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if ord(char) >= ord("K") and ord(char) <= ord("z"):
+            result += char
+    return result

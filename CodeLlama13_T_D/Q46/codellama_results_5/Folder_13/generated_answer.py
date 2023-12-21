@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return my_list[991] * my_list[244] * my_list[974]

@@ -1,0 +1,13 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring of length at least 3 in the given string
+    for i in range(len(string) - 2):
+        # Check if the substring is a palindrome
+        if string[i:i+3] == string[i:i+3][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+3])
+    return palindromes
+```
+This code uses a combination of slicing and list comprehension to extract all substrings of length at least 3 from the input string. It then checks each substring to see if it is a palindrome, and adds it to the set of palindromes if it is. Finally, the function returns the set of palindromes.

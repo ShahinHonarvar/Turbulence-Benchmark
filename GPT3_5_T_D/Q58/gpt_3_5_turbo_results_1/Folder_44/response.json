@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(len(matrix)):\n        for j in range(len(matrix[0])):\n            for w in range(len(matrix) - i):\n                for h in range(len(matrix[0]) - j):\n                    submatrix = matrix[i:i+w+1, j:j+h+1]\n                    if np.count_nonzero(submatrix == 191) == w*h:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798410,
+  "id": "chatcmpl-7e830pSGOm0XkMuA453qYOqSMAH9G",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 111,
+    "total_tokens": 219
+  }
+}

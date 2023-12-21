@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(lst):
+    anagram_pairs = []
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if len(lst[i]) > 2 and len(lst[j]) > 2:
+                if sorted(lst[i].lower()) == sorted(lst[j].lower()):
+                    anagram_pairs.append((lst[i], lst[j]))
+    return len(anagram_pairs) <= 16

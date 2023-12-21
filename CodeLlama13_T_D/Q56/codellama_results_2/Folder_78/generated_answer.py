@@ -1,0 +1,8 @@
+
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s) - 49 + 1):
+        substring = s[i:i+49]
+        if len(set(substring)) == 49 and not any(substring[j] in substring[:j] for j in range(50)):
+            substrings.append(substring)
+    return substrings

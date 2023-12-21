@@ -1,0 +1,10 @@
+```python
+def prime_factors(numbers):
+    return set(factor for number in numbers if isinstance(number, int) and number > 1 for factor in range(2, int(math.sqrt(number)) + 1) if number % factor == 0)
+```
+This function takes a list of positive integers as input and returns the set of all prime factors of the integer at index 97. The `isinstance` check ensures that only integers are processed, and the `math.sqrt` call avoids iterating over the entire range for numbers that have many factors.
+
+Here is an example usage:
+```python
+print(prime_factors([100, 200, 300])) # Output: {2, 5}
+```

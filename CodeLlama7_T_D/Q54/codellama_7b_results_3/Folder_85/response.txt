@@ -1,0 +1,31 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[94]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_right_truncatable_prime(i):
+list.append(i)
+return sorted(list)
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def is_right_truncatable_prime(n):
+while n > 0:
+if not is_prime(n):
+return False
+
+n = int(str(n)[:-1])
+return True
+```
+Explanation:
+The function `all_right_truncatable_prime` takes a tuple of positive integers as its argument. It returns the sorted list of all right-truncatable prime numbers less than the integer at index 94 in the given tuple.
+The function first extracts the integer at index 94 from the given tuple and assigns it to the variable `x`. Then, it initializes an empty list `list` to store the results.
+Next, the function iterates over all integers between 2 and `x`, inclusive. For each integer `i`, if `i` is a prime number and remains prime when the last rightmost digit is successively removed, then the function adds `i` to the list `list`.
+After completing the iteration, the function returns the sorted list `list` of all right-truncatable prime numbers less than `x`. If there are no such prime numbers, the function returns an empty list.

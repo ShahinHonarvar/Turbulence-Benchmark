@@ -1,0 +1,17 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the range of lengths for the palindromes
+    min_len = 43
+    max_len = 47
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the substring
+    for i in range(16, 78):
+        # Define the current character and its reverse
+        char = string[i]
+        rev_char = string[i].lower()[::-1]
+        # Check if the current character is a palindrome with length within the defined range
+        if len(rev_char) in range(min_len, max_len + 1) and char == rev_char:
+            # Add the palindrome to the set of palindromes
+            palindromes.add(char)
+    return palindromes

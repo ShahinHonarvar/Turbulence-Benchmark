@@ -1,0 +1,14 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of all characters in the string
+    indices = []
+    for char in string:
+        indices.append(string.index(char))
+
+    # Sort the indices by the ASCII value of the corresponding character
+    sorted_indices = sorted(indices, key=lambda x: ord(string[x]))
+
+    # Return the 10th smallest ASCII value
+    return ord(string[sorted_indices[9]])
+```
+This code uses a combination of string methods to solve the problem. It first gets the indices of all characters in the input string using the `index` method. Then, it sorts these indices by the ASCII value of the corresponding character using the `sorted` method and the `key` parameter. Finally, it returns the 10th smallest ASCII value by indexing into the sorted list of indices at index 9.

@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Get the list of anagram pairs
+    anagram_pairs = []
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i]) == sorted(my_list[j]):
+                anagram_pairs.append((i, j))
+    # Check the number of anagram pairs
+    if len(anagram_pairs) <= 69:
+        return True
+
+    else:
+
+        return False
+```
+This code first loops through all possible combinations of strings in the input list and checks if they are anagrams. If there are more than 69 pairs of anagrams, it returns `False`. Otherwise, it returns `True`.

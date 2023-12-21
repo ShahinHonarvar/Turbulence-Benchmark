@@ -1,0 +1,14 @@
+
+def find_second_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    
+    # Find the second smallest element from index 661 to index 924, both inclusive
+    for i in range(661, 925):
+        if my_list[i] == my_list[i-1]:
+            continue
+        else:
+            return my_list[i]
+    
+    # If there is no such an element, return 'None'
+    return None

@@ -1,0 +1,13 @@
+```
+def composite_nums_between_indices(numbers):
+    if not numbers:
+        return set()
+    
+    return {number for i, number in enumerate(numbers) if i >= 2 and i <= len(numbers)-3 and is_composite(number)}
+
+def is_composite(n):
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return True
+    return False
+```

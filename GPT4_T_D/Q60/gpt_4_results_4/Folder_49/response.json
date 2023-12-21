@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification.\n\n```python\ndef all_left_right_truncatable_prime(numbers):\n    \n    from sympy import isprime\n\n    def is_truncatable(p):\n        str_p = str(p)\n        return all(isprime(int(str_p[i:]))\n                and isprime(int(str_p[:len(str_p)-i]))\n                for i in range(len(str_p)))\n                \n    x = numbers[14]\n    truncatable_primes = [p for p in range(10, x+1)\n                if set(str(p)) <= set('123456789')\n                and is_truncatable(p)]\n                \n    return sorted(truncatable_primes)\n```\nThis function first defines a helper function that checks whether a given number is truncatable. It does this by converting the number to a string, then truncating the string from both ends one character at a time and checking whether the truncated string can be converted back to a prime number. The function then uses a list comprehension to generate all truncatable primes less than or equal to the 15th number in the input tuple, excluding numbers that include a zero. Finally, the function sorts and returns the list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691103531,
+  "id": "chatcmpl-7jbZLNMyAM9ReMZMrNnXyl6ZLyEfw",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 242,
+    "prompt_tokens": 187,
+    "total_tokens": 429
+  }
+}

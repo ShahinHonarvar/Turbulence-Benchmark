@@ -1,0 +1,28 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 35 integers each to 0
+    count = 0
+    # Loop over the rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element is equal to 35
+            if matrix[i][j] == 35:
+                # Initialize a variable to store the submatrix
+                submatrix = []
+
+                # Loop over the rows and columns of the submatrix
+                for row in range(i, i + 3):
+                    for col in range(j, j + 3):
+                        # Check if the current element is equal to 35
+                        if matrix[row][col] == 35:
+                            # Add the current element to the submatrix
+                            submatrix.append(matrix[row][col])
+                # Check if the submatrix has 9 elements (3x3)
+                if len(submatrix) == 9:
+                    # Increment the count of submatrices with 35 integers each
+                    count += 1
+
+    # Return the count of submatrices with 35 integers each
+    return count

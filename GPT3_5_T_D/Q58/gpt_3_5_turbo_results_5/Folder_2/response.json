@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(len(matrix)):\n        for j in range(len(matrix[0])):\n            for k in range(i+1, len(matrix)+1):\n                for l in range(j+1, len(matrix[0])+1):\n                    submatrix = matrix[i:k, j:l]\n                    if np.sum(submatrix) == 107 * (k-i) * (l-j):\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689888167,
+  "id": "chatcmpl-7eVOhhN51yW5obwPFOx2OWQatTp0A",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 111,
+    "total_tokens": 222
+  }
+}

@@ -1,0 +1,15 @@
+ def palindrome_of_length_at_least_n(string, n):
+    # convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+    # create an empty set to store the palindromes
+    palindromes = set()
+    # loop through each substring of length greater than or equal to 14 in the given string
+    for i in range(len(string) - n + 1):
+        # extract the substring and convert it to a list of characters
+        substring = [char for char in string[i:i+n]]
+        # check if the substring is a palindrome by comparing its characters from both ends
+        if all([substring[i] == substring[-i-1], i > 0])):
+            # if it is a palindrome, add it to the set of palindromes
+            palindromes.add(substring)
+    # return the set of palindromes found in the given string
+    return palindromes

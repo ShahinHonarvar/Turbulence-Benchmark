@@ -1,0 +1,32 @@
+ ```
+def if_perfect_num(my_list):
+    if len(my_list) < 8:
+        return False
+
+    else:
+
+        num = my_list[7]
+
+        sum = 0
+
+        for i in range(1, int(num ** 0.5)):
+
+            if num % i == 0:
+
+                sum += i + num // i
+
+
+        if sum - 1 == num:
+
+            return True
+
+
+        else:
+
+            return False
+```
+This code defines a function called `if_perfect_num` that takes a list of positive integers as an argument. The function returns `True` if the integer at index 7 is a perfect number, and returns `False` otherwise.
+The function first checks if the length of the input list is at least 8. If it is not, the function returns `False`.
+Otherwise, the function assigns the value at index 7 to a variable called `num`, and initializes a variable called `sum` to 0.
+Next, the function uses a loop to iterate over all integers from 1 up to the square root of `num`, checking if each integer is a factor of `num`. If an integer is a factor of `num`, the function adds that integer plus its multiplicity (i.e., the number of times it appears as a factor) to the running sum.
+After the loop has finished, the function checks if the sum of all factors of `num` minus 1 equals `num`. If this is the case, then `num` must be a perfect number, and the function returns `True`. Otherwise, the function returns `False`.

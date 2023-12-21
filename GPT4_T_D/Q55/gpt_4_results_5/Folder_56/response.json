@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(c_list):\n    N = len(c_list)\n    seqs = [c_list[i:j] for i in range(N) for j in range(i+1, i+N+1)]\n    return [seq for seq in seqs if prod(seq) == -65]\n\ndef prod(lst):\n    result = 1\n    for item in lst:\n        result *= item\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691011392,
+  "id": "chatcmpl-7jDbE8StJVrhfqLxAu1ruU5jkpTn2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 91,
+    "prompt_tokens": 193,
+    "total_tokens": 284
+  }
+}

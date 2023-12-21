@@ -1,0 +1,3 @@
+
+def insert_before_character(s):
+    return "".join([c if c != "a" else "6a" for c in s])

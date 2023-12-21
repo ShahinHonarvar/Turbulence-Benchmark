@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(string):
+    anagram_list = []
+    for i in range(len(string)):
+        for j in range(i + 1, len(string)):
+            temp = string[j]
+            string[j] = ''
+            if string[i].lower() == ''.join(sorted(temp.lower())):
+                anagram_list.append((string[i], temp))
+            string[j] = temp
+    return len(anagram_list) <= 86

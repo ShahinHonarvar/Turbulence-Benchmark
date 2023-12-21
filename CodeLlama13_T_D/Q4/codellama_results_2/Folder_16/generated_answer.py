@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(list):
+    return [x for x in list if 86 < x < 90 and x > 0]

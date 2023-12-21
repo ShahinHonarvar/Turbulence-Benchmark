@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the output list
+    submatrices = []
+
+    # Loop over all rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all integers in the current submatrix
+            sum_submatrix = 0
+            for row in range(i, i + 2):
+                for col in range(j, j + 2):
+                    sum_submatrix += matrix[row][col]
+
+            # Check if the sum of all integers in the current submatrix equals 40
+            if sum_submatrix == 40:
+                # Add the current submatrix to the output list
+                submatrices.append(matrix[i:i + 2, j:j + 2])
+
+    # Return the output list of all submatrices that satisfy the given condition
+    return submatrices

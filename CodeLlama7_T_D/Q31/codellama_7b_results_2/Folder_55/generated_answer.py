@@ -1,0 +1,17 @@
+
+def if_perfect_num(lst):
+    # Check if the list has at least 21 elements
+    if len(lst) < 21:
+        return False
+
+    # Get the integer at index 21
+    num = lst[21]
+
+    # Check if the integer is a perfect number
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            j = num / i
+            if i * j == num:
+                return True
+
+    return False

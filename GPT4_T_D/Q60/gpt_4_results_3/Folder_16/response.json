@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import product\n\ndef sieve(n):\n    primes = [True] * (n+1)\n    primes[0] = primes[1] = False\n    for i, isprime in enumerate(primes):\n        if isprime:\n            for multiples in range(i*i, n+1, i):\n                primes[multiples] = False\n    return [prime for prime, checked in enumerate(primes) if checked]\n\ndef is_truncatable(prime):\n    str_prime = str(prime)\n    for i in range(1, len(str_prime)):\n        if int(str_prime[i:]) not in primes or int(str_prime[:-i]) not in primes:\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(arg):\n    max_number = arg[792]\n    global primes\n    primes = set(sieve(max_number))\n    truncatable_primes = [prime for prime in primes if is_truncatable(prime) and '0' not in str(prime)]\n    return sorted(truncatable_primes)\n```\nThis Python code first generates all the prime numbers up to `max_number` using the Sieve of Eratosthenes algorithm. Then it checks each prime number if it's a left-and-right truncatable prime. If the prime number is left-and-right truncatable, it gets added to the list `truncatable_primes`. Finally, it returns a sorted list of all left-and-right truncatable primes up to `max_number`. If there's no left-and-right truncatable prime, an empty list is returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690993145,
+  "id": "chatcmpl-7j8qvc0nHUM4hhZDmXfK9CQD7jk1l",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 327,
+    "prompt_tokens": 187,
+    "total_tokens": 514
+  }
+}

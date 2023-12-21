@@ -1,0 +1,12 @@
+
+def all_even_ints_inclusive(my_list):
+    # Create a slice of the list starting at index 56 and ending at index 98, both inclusive
+    even_ints = my_list[56:99]
+    # Initialize an empty list to store the even integers
+    result = []
+
+    for i in even_ints:
+        if i % 2 == 0:
+            result.append(i)
+
+    return result

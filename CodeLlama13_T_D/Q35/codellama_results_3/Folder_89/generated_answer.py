@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(string):
+    new_str = ""
+    for i in range(55, 84):
+        char = string[i]
+        if char not in new_str:
+            new_str += char
+    return new_str

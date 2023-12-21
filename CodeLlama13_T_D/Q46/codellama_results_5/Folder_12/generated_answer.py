@@ -1,0 +1,3 @@
+
+def gcf_three_nums(mylist):
+    return mylist[91] * mylist[45] // gcd(mylist[91], mylist[45]) * mylist[48] // gcd(mylist[45], mylist[48])

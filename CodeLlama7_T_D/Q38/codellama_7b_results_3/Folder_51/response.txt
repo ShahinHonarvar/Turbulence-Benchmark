@@ -1,0 +1,17 @@
+ ```
+def find_subset_of_length_n(set):
+# Initialize an empty list to store all subsets of size 64
+subsets = []
+# Iterate over the elements of the input set
+for element in set:
+# Add the current element to a temporary subset
+temp_subset = [element]
+# Iterate over the remaining elements of the input set
+for other_element in set - {element}:
+# If the current element is not already in the temporary subset, add it
+if other_element not in temp_subset:
+temp_subset.append(other_element)
+# Add the temporary subset to the list of all subsets of size 64
+subsets.append(temp_subset)
+return len(subsets)
+```

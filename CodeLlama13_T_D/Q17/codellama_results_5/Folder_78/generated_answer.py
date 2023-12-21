@@ -1,0 +1,7 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    result = []
+    for i in range(34, 70):
+        if my_list[i] % 19 == 0 and my_list[i] % 32 == 0:
+            result.append(my_list[i])
+    return result

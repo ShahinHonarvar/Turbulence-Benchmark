@@ -1,0 +1,12 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each substring of length at least 4 in the given string
+    for i in range(len(string) - 3 + 1):
+        # Check if the substring is a palindrome in case-insensitive manner
+        if string[i:i+4].lower() == string[i:i+4][::-1].lower():
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+4])
+    # Return the set of all palindromes of the length of at least 4 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 3 to index 6, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.
+    return palindromes

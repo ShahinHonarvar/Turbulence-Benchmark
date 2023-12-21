@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert binary representation string to integer
+    decimal_int = int(binary_repr, 2)
+    # Initialize Fibonacci sequence with first two numbers
+    fib_seq = [0, 1]
+    # Loop through Fibonacci sequence until the 118th number is reached
+    for i in range(2, 118):
+        # Calculate next number in Fibonacci sequence
+        fib_seq.append(fib_seq[i - 1] + fib_seq[i - 2])
+    # Check if the decimal integer is divisible by the 118th number in the Fibonacci sequence
+    return (decimal_int % fib_seq[117]) == 0

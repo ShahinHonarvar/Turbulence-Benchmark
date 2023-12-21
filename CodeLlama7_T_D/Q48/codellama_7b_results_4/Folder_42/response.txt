@@ -1,0 +1,17 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+a = my_tuple[18]
+b = my_tuple[60]
+sum = 0
+for i in range(a+1, b-1):
+if i not in my_tuple[18:60]:
+sum += i
+return "" if sum == 0 else "{:b}".format(sum) if sum % 2 != 0 else "{:x}".format(sum).upper()
+```
+Explanation:
+
+The function takes a tuple of distinct nonnegative integers as input. Let `a` be the integer stored at index 18, and `b` be the integer stored at index 60. The function calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices 18 and 60. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum.
+The code first declares a variable `a` to store the value at index 18 in the tuple, and another variable `b` to store the value at index 60 in the tuple. Then, the code iterates over the integers from `a + 1` to `b - 1`, inclusive, using a for loop.
+For each integer `i` in the range, the code checks if `i` is present in the tuple between indices 18 and 60 by checking if it is in the list created by slicing the tuple from index 18 to index 60. If `i` is not present in the specified range, the code adds it to the sum.
+Once the for loop completes, the code returns an empty string if the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices 18 and 60 is equal to 0; otherwise, it returns the binary or hexadecimal representation string of the sum.
+Note: The code uses a variable `sum` to store the running total of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices 18 and 60. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum.

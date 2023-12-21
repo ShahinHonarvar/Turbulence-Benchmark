@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join([c if c != "W" else f"a{c}" for c in string])

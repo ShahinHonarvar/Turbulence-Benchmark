@@ -1,0 +1,14 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Create a new list to store the results
+    result_list = []
+
+    # Iterate through the list of integers and check if each integer is not divisible by -82
+    for i in range(41, 69):
+        if my_list[i] % -82 != 0:
+            # If the integer is not divisible by -82, add it to the result list
+            result_list.append(my_list[i])
+
+    # Return the result list
+
+    return result_list

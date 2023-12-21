@@ -1,0 +1,6 @@
+```python
+def remove_repeat_chars(s):
+    seen = set()
+    return "".join([c for c in s if ord(c) < 90 or ord(c) > 200 and not (ord(c) in seen or seen.add(ord(c)))])
+```
+This function uses a `set` to keep track of the characters that have been seen already, and only adds new characters to the set if they are outside of the indices 90-200. It then joins all the characters from the original string that are not in the set using a generator expression and a call to `str.join()`.

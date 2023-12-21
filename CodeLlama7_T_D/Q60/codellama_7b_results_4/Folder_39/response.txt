@@ -1,0 +1,29 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+
+        # Check if the number is a prime number using the Sieve of Eratosthenes algorithm
+        is_prime = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        # If the number is a prime number and it is left-and-right-truncatable, add it to the list of prime numbers
+        if is_prime and all(str(i)[j] != "0" for j in range(len(str(i))))):
+            prime_numbers.append(i)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers = sorted(prime_numbers, reverse=True)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Test the function with a specific value for x
+x = 10
+#print(all_left_right_truncatable_prime(x))
+```

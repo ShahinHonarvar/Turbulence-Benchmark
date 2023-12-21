@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef prime_factors(nums):\n    def prime(n):\n        if n <= 1:\n            return []\n        factors = []\n        d = 2\n        while d * d <= n:\n            while (n % d) == 0:\n                factors.append(d)\n                n //= d\n            d += 1\n        if n > 1:\n            factors.append(n)\n        return factors\n\n    return set(prime(nums[49]))\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690948197,
+  "id": "chatcmpl-7ix9x4mQIg23fJcJXasWmAJENnETk",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 84,
+    "total_tokens": 179
+  }
+}

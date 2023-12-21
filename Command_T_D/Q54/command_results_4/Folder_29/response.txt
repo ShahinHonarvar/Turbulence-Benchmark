@@ -1,0 +1,188 @@
+[cohere.Generation {
+	id: 820fdc07-d8da-4179-a888-e1aa1982a6de
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 55. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_right_truncatable_prime(n):
+    for i in range(2, n[0] // 2):
+        if is_prime(i):
+            yield i
+    for i in range(3, n[0], 2):
+        if is_prime(i):
+            yield i
+
+def is_prime(n):
+    if n < 2:
+        return False
+    elif n < 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    elif n < 6:
+        return True
+    elif n % 5 == 0 or n % 7 == 0:
+        return False
+    elif n < 10:
+        return True
+    elif n % 5 == 0 or n % 7 == 0:
+        return False
+    elif n < 15:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 21:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 27:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 33:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 39:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 45:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 51:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 57:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 63:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 67:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 71:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 73:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 79:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 83:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 89:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 97:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 101:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 103:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 107:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 109:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 113:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 127:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 521:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 607:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 1279:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 2203:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 2281:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 3217:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 4253:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 4423:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 9689:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 9937:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 11903:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 17647:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 19937:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 23209:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 44937:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 99873:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n < 19937:
+        return True
+    elif n % 3 == 0 or n % 5 == 0:
+        return False
+    elif n <
+	likelihood: None
+	token_likelihoods: None
+}]

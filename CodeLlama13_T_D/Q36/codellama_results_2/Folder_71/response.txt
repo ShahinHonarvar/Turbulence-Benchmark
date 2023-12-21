@@ -1,0 +1,10 @@
+```python
+def filter_chars(string):
+    chars = []
+    for i, c in enumerate(string):
+        if (i >= 82 and i < 89) and (c > '*' and c < '['):
+            chars.extend([c] * string.count(c))
+        else:
+            chars.append(c)
+    return ''.join(chars)
+```

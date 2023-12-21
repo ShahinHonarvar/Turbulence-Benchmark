@@ -1,0 +1,26 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 93 elements
+    if len(my_list) < 93:
+        return False
+
+    # Get the integer at index 93
+    num = my_list[93]
+
+    # Check if the integer is a perfect number
+    if num == 0 or num % 2 != 0:
+        return False
+
+    # Check if the sum of the factorials is equal to the square of the number
+    sum_of_factorials = 0
+
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_of_factorials += i * (i + 1) * (2 * i + 1)
+
+    if sum_of_factorials == num ** 2:
+        return True
+
+    else:
+
+        return False

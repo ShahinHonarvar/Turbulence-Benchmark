@@ -1,0 +1,127 @@
+
+def all_left_right_truncatable_prime(x):
+    # create a list of all prime numbers less than or equal to x
+    prime_list = []
+    for i in range(2, x + 1):
+        if is_prime(i):
+            prime_list.append(i)
+    # filter the list to only include left-and-right-truncatable prime numbers
+    left_right_truncatable_prime_list = []
+    for prime in prime_list:
+        if is_left_right_truncatable_prime(prime):
+            left_right_truncatable_prime_list.append(prime)
+    return sorted(left_right_truncatable_prime_list)
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # check if the number contains any 0 digits
+    if '0' in str(n):
+        return False
+
+    # check if the number can be divided by 11 without a remainder
+    if n % 11 == 0:
+        return False
+
+    # check if the number can be divided by 13 without a remainder
+    if n % 13 == 0:
+        return False
+
+    # check if the number can be divided by 17 without a remainder
+    if n % 17 == 0:
+        return False
+
+    # check if the number can be divided by 19 without a remainder
+    if n % 19 == 0:
+        return False
+
+    # check if the number can be divided by 23 without a remainder
+    if n % 23 == 0:
+        return False
+
+    # check if the number can be divided by 29 without a remainder
+    if n % 29 == 0:
+        return False
+
+    # check if the number can be divided by 31 without a remainder
+    if n % 31 == 0:
+        return False
+
+    # check if the number can be divided by 37 without a remainder
+    if n % 37 == 0:
+        return False
+
+    # check if the number can be divided by 41 without a remainder
+    if n % 41 == 0:
+        return False
+
+    # check if the number can be divided by 43 without a remainder
+    if n % 43 == 0:
+        return False
+
+    # check if the number can be divided by 47 without a remainder
+    if n % 47 == 0:
+        return False
+
+    # check if the number can be divided by 53 without a remainder
+    if n % 53 == 0:
+        return False
+
+    # check if the number can be divided by 59 without a remainder
+    if n % 59 == 0:
+        return False
+
+    # check if the number can be divided by 61 without a remainder
+    if n % 61 == 0:
+        return False
+
+    # check if the number can be divided by 67 without a remainder
+    if n % 67 == 0:
+        return False
+
+    # check if the number can be divided by 71 without a remainder
+    if n % 71 == 0:
+        return False
+
+    # check if the number can be divided by 73 without a remainder
+    if n % 73 == 0:
+        return False
+
+    # check if the number can be divided by 79 without a remainder
+    if n % 79 == 0:
+        return False
+
+    # check if the number can be divided by 83 without a remainder
+    if n % 83 == 0:
+        return False
+
+    # check if the number can be divided by 89 without a remainder
+    if n % 89 == 0:
+        return False
+
+    # check if the number can be divided by 97 without a remainder
+    if n % 97 == 0:
+        return False
+
+    # return true because no divisors were found
+    return True
+
+# main function to test the prime_factors function
+if __name__ == "__main__":
+    # test for prime numbers
+#    print("Testing Prime Factors Function...")
+    for i in range(1, 20):
+        if is_prime(i):
+            result = prime_factors(i)
+            # check if the result of the prime factors function is equal to 1
+            if result != 1:
+#                print("Error: The result of the prime factors function for the number", i, "is not equal to 1. The result is", result)
+        else:
+            # check if the prime factors function returns the correct result for a composite number

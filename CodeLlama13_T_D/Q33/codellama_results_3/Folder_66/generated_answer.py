@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for char in string[63:79]:
+        if 'A' <= char <= 'y':
+            vowels.append(char)
+    return vowels

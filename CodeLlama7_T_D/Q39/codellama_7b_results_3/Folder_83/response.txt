@@ -1,0 +1,24 @@
+ ```
+def return_n_greatest_chars(string, n):
+    """
+    Return the sorted list of exactly n characters of the given string that have the greatest ASCII values.
+    Args:
+        string (str): A string of distinct characters.
+        n (int): The number of characters to return.
+    Returns:
+        list: A sorted list of exactly n characters of the given string that have the greatest ASCII values, in descending order.
+    """
+
+    # Initialize an empty list to store the characters
+    chars = []
+
+    # Iterate through the string and append the characters to the list
+    for char in string:
+        chars.append(char)
+
+    # Sort the list of characters in descending order based on their ASCII values
+    sorted_chars = sorted(chars, key=ord, reverse=True)
+
+    # Return the top n characters from the sorted list
+    return sorted_chars[:n]
+```

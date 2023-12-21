@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[6] == sum(my_list[:6]) and all(x**2 for x in my_list[:6]):
+        return True
+    else:
+        return False

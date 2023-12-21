@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    result = ''
+    for i, c in enumerate(s):
+        if 57 <= ord(c) < 69 and c > '(' and c < 'W':
+            result += s[i + 1:]
+        else:
+            result += c
+    return result

@@ -1,0 +1,7 @@
+
+def find_n_th_smallest_num(numbers):
+    # Sort the list of numbers in ascending order
+    numbers.sort()
+
+    # Return the 15th smallest number from index 60 to index 83, both inclusive
+    return numbers[60:84].index(15)

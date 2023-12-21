@@ -1,0 +1,19 @@
+ ```
+def palindromes_between_indices(string):
+    # Create a list of all the English letters in the given string
+    letter_list = [letter for letter in string if letter.isalpha()]
+    # Find the indices of the first and last letters in the string
+    first_index = 0
+    while first_index < len(string) and not string[first_index].isalpha():
+        first_index += 1
+    last_index = len(string) - 1
+    while last_index >= 0 and not string[last_index].isalpha():
+        last_index -= 1
+    # Create a list of all the palindromes of length at least 3 that can be created from the English letters in the given string between the first and last indices
+    palindrome_list = []
+    for i in range(first_index, last_index + 1):
+        for j in range(i + 1, last_index + 1):
+            if letter_list[i].lower() == letter_list[j].lower():
+                palindrome_list.append(''.join([letter_list[k] for k in range(i, j + 1)])))
+    return set(palindrome_list)
+```

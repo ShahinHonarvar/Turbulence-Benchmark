@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return numbers[618] * numbers[195] / math.gcd(numbers[618], numbers[195])

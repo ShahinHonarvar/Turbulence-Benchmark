@@ -1,0 +1,8 @@
+
+def return_vowels(s):
+    vowels = ["a", "e", "i", "o", "u"]
+    result = []
+    for i in range(56, 96):
+        if s[i].lower() in vowels and ord(s[i]) <= ord("T"):
+            result.append(s[i])
+    return result

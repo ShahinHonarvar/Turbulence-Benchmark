@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n    product = 1\n    left = 0\n    right = 0\n    \n    while left < n:\n        while right < 2 * n and product * nums[right % n] <= 76:\n            product *= nums[right % n]\n            right += 1\n            if product == 76:\n                result.append(nums[left:right % n])\n        product //= nums[left]\n        left += 1\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866121,
+  "id": "chatcmpl-7ePf74dMwrGWHzcAOYmhS68RccLUZ",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 193,
+    "total_tokens": 305
+  }
+}

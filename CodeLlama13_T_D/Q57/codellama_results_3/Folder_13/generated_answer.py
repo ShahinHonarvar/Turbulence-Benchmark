@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the found submatrices
+    found_submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a submatrix with size (i, j)
+            submatrix = np.zeros((i, j), dtype=np.int64)
+            
+            # Fill the submatrix with the elements of the matrix
+            for k in range(i):
+                for l in range(j):
+                    submatrix[k, l] = matrix[k + i - 1, l + j - 1]
+            
+            # Check if the sum of all integers in the submatrix is equal to 382
+            if np.sum(submatrix) == 382:
+                # If so, add the submatrix to the list of found submatrices
+                found_submatrices.append(submatrix)
+    
+    # Return the list of found submatrices
+    return found_submatrices

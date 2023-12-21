@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_string = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+
+        # If the current character is between indices 259 and 502, both inclusive, and is greater than or equal to character ',' and smaller than or equal to character '3', then remove all occurrences of that character from the string.
+        if (char >= ',') and (char <= '3'):
+            new_string += char
+
+    # Return the altered string
+    return new_string

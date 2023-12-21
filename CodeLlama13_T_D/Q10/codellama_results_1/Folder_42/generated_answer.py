@@ -1,0 +1,3 @@
+
+def all_odd_ints_exclusive(lst):
+    return [x for x in lst[43:68] if x % 2 == 1]

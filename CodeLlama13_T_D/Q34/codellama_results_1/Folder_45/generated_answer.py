@@ -1,0 +1,3 @@
+
+def find_original_set(a1, a2, ..., a97):
+    return {n for s in (a1, a2, ..., a97) for n in s}

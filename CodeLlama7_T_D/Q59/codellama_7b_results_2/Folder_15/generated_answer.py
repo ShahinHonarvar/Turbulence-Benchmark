@@ -1,0 +1,48 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the results
+    prime_list = []
+
+    # Loop through all numbers less than x that are prime
+
+    for i in range(2, x):
+
+        if is_prime(i) and left_truncatable(i):
+
+            prime_list.append(i)
+
+    # Sort the list in descending order
+
+    prime_list.sort(reverse=True)
+
+    return prime_list
+
+# Check if a number is prime using the Sieve of Eratosthenes algorithm
+
+def is_prime(n):
+
+    if n <= 1:
+
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+    return True
+
+# Check if a number is left-truncatable by removing the leading leftmost digit
+
+def left_truncatable(n):
+
+    while n > 0:
+
+        if n % 10 == 0:
+
+            return False
+
+        n = int(str(n)[:-1]))
+
+    return True

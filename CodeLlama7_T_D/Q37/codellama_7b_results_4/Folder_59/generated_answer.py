@@ -1,0 +1,10 @@
+
+def filter_chars(s):
+    res = ""
+    for i in range(len(s)):
+        if s[i] >= "5" and s[i] <= "_":
+            continue
+
+        res += s[i]
+
+    return res

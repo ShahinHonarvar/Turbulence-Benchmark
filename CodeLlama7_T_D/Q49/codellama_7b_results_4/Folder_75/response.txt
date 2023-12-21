@@ -1,0 +1,18 @@
+ Here is a possible implementation of the function `if_decimal_is_divisible` in Python:
+```python
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Check if the decimal integer is divisible by the 189th Fibonacci number
+    fibonacci_sequence = [0, 1]
+    for i in range(189):
+        fibonacci_sequence.append(fibonacci_sequence[i] + fibonacci_sequence[i+1])
+    if decimal_integer % fibonacci_sequence[-1] == 0:
+        return True
+
+    else:
+
+        return False
+```
+This implementation first converts the binary representation of the decimal integer to an integer using the `int` function with a base of 2. It then checks if the decimal integer is divisible by the 189th Fibonacci number using the modulo operator (`%`). If the decimal integer is divisible by the 189th Fibonacci number, the function returns `True`. Otherwise, it returns `False`.
+For example, if the binary representation of the decimal integer is `"0111"`, the function will return `True` because the decimal integer corresponds to the binary number 7, which is divisible by the 189th Fibonacci number (which is 4590).

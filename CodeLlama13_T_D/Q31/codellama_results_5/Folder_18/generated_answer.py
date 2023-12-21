@@ -1,0 +1,6 @@
+
+def if_perfect_num(lst):
+    if lst[312] == sum(list(range(1, lst[312]))):
+        return True
+    else:
+        return False

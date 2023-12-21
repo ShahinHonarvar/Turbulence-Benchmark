@@ -1,0 +1,6 @@
+
+def if_contains_anagrams(str_list):
+    for str1, str2 in zip(str_list, str_list[1:]):
+        if set(str1.lower()) == set(str2.lower()):
+            return False
+    return True

@@ -1,0 +1,13 @@
+
+def filter_chars(my_string):
+    filtered_string = ""
+    for i in range(36, 41):
+        char = my_string[i]
+        if char >= 'H' and char <= 'e':
+            continue
+
+        else:
+
+            filtered_string += char
+
+    return filtered_string

@@ -1,0 +1,10 @@
+
+def all_left_truncatable_prime(nums):
+    x = nums[93]
+    prime_numbers = []
+    
+    for i in range(10, x+1):
+        if is_prime(i) and '0' not in str(i):
+            prime_numbers.append(i)
+            
+    return sorted(prime_numbers)

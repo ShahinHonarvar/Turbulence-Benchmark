@@ -1,0 +1,44 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the sorted right-truncatable prime numbers
+    prime_numbers = []
+
+    # Iterate over the tuple elements and check if each element is a prime number
+
+    for element in tuple:
+
+        if is_prime(element):
+
+            prime_numbers.append(element)
+
+
+    # Sort the list of right-truncatable prime numbers in ascending order
+
+    sorted_prime_numbers = sorted(prime_numbers)
+
+    return sorted_prime_numbers
+
+
+# Check if a number is prime by iterating from 2 to the square root of the number and checking if the number is divisible by any of the numbers between 2 and the square root of the number
+
+def is_prime(number):
+
+    # Base case: If the number is less than or equal to 1, it is not prime
+
+    if number <= 1:
+
+        return False
+
+
+    # Check if the number is divisible by any number between 2 and the square root of the number
+
+    for i in range(2, int(number ** 0.5) + 1):
+
+        if number % i == 0:
+
+            return False
+
+
+    # If the number is not divisible by any number between 2 and the square root of the number, it is prime
+
+    return True

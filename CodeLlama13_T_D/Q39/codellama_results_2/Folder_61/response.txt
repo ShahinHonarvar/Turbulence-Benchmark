@@ -1,0 +1,13 @@
+```python
+def return_n_greatest_chars(s):
+    chars = set(s)
+    sorted_list = sorted(chars, key=lambda x: ord(x), reverse=True)[:66]
+    return sorted_list
+```
+Explanation:
+
+* The `set()` function is used to create a set of distinct characters from the input string.
+* The `sorted()` function is used to sort the list of characters in descending order based on their ASCII values, which are determined by the `ord()` function.
+* The `[ ]` operator is used to slice the sorted list and return only the first 66 elements.
+* The `lambda` function is used to define an anonymous function that takes a single character as input and returns its ASCII value, which is then used for sorting.
+* The `reverse=True` argument is passed to the `sorted()` function to sort the list in descending order instead of ascending order.

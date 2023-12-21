@@ -1,0 +1,12 @@
+```python
+def find_second_largest_num(nums):
+    nums = sorted(nums)[15:52]
+    if len(nums) < 2:
+        return None
+    return nums[1]
+```
+Explanation:
+
+* We first sort the input list `nums` and then take a slice from index 15 to index 51, both inclusive. This gives us a sublist of distinct numbers that are within the specified range.
+* We check if the length of the sublist is less than 2, in which case there is no second largest element within the range and we return `None`.
+* If the sublist has at least two elements, we return the second largest element from the sorted list. This will be at index 1, since Python indices start at 0.

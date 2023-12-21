@@ -1,0 +1,10 @@
+ def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    index = 260
+    output = []
+    while index < len(string) and index < 322:
+        if string[index].lower() in vowels and string[index] > '%' and string[index] <= 'U':
+            output.append(string[index])
+        index += 1
+
+    return output

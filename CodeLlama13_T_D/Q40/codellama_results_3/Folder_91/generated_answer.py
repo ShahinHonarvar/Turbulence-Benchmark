@@ -1,0 +1,3 @@
+
+def return_n_smallest_chars(string):
+    return sorted([char for char in set(string)], reverse=True)[:6]

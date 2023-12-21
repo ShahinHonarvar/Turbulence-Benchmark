@@ -1,0 +1,18 @@
+
+def if_perfect_num(lst):
+    # Check if the list has at least 21 elements
+    if len(lst) < 21:
+        return False
+
+    # Find the number at index 20
+    num = lst[20]
+
+    # Check if the number is a perfect number
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_of_factors = i + num // i
+            if sum_of_factors == num:
+                return True
+
+    # If the number is not a perfect number, return False
+    return False

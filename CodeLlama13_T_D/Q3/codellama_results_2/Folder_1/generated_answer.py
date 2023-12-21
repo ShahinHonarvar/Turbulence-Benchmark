@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(numbers):
+    return [x for x in numbers if 31 <= x <= 72 and x > 0]

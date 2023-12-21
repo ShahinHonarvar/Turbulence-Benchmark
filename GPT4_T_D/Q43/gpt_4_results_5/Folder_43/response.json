@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\ndef find_primes_between_indices(numbers):\n    numbers = numbers[31:93]\n    primes = []\n    \n    for number in numbers:\n        if number > 1:\n            for i in range(2, number):\n                if (number % i) == 0:\n                    break\n            else:\n                primes.append(number)\n\n    return sorted(primes, reverse=True)\n```\nThis function works by first slicing the input list 'numbers' to only keep the numbers from index 31 to 92. It then checks whether each number is greater than 1 and if it doesn't have any divisors greater than 1 and less than itself (which would mean it's not a prime number). If this is the case, the number is added to the 'primes' list. Finally, the function returns the 'primes' list in reverse sorted order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690129844,
+  "id": "chatcmpl-7fWGi4002GeAPbruN2yQeBR9oJhWR",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 118,
+    "total_tokens": 307
+  }
+}

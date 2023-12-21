@@ -1,0 +1,8 @@
+ def find_smallest_num(numbers):
+    # Find the smallest element from index 66 to index 93, both inclusive.
+    smallest = None
+    for i in range(66, 94):
+        if smallest is None or numbers[i] < smallest:
+            smallest = numbers[i]
+
+    return smallest

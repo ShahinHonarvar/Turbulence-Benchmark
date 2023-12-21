@@ -1,0 +1,19 @@
+ def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+
+        # Check if the current character is between indices 515 and 538, both inclusive, and is greater than or equal to character '+' and smaller than or equal to character '}'
+        if (515 <= s.find(char) <= 538) and ('+' <= char <= '}'):
+
+            # If the current character meets the above conditions, then skip it in the filtered string
+            continue
+
+
+        # Otherwise, append the current character to the filtered string
+        filtered += char
+
+    # Return the altered string with all occurrences of characters between indices 515 and 538, both inclusive, and is greater than or equal to character '+' and smaller than or equal to character '}' removed while preserving the order of all characters in the string
+    return filtered

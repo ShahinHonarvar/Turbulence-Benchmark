@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(mat):\n    rows, cols = mat.shape\n    count = 0\n    for i in range(rows - 7):\n        for j in range(cols - 9):\n            submat = mat[i:i+8, j:j+10]\n            if len(submat.flatten()) == 80:\n                count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689846010,
+  "id": "chatcmpl-7eKQknLN9dLqSS2CDMIAwrLzOQ4Gb",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 111,
+    "total_tokens": 198
+  }
+}

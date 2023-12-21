@@ -1,0 +1,16 @@
+
+def filter_chars(string):
+    # Initialize a new empty string
+    result = ""
+    
+    # Iterate over each character in the input string
+    for char in string:
+        # If the character is between indices 672 and 709 (both exclusive) and greater than 'X' and smaller than '}', remove all occurrences of that character within the string while keeping the order of all characters intact.
+        if 672 < char < 709 and char > 'X' and char < '}':
+            result = result.replace(char, "")
+        
+        # Otherwise, keep the character unchanged
+        else:
+            result += char
+    
+    return result

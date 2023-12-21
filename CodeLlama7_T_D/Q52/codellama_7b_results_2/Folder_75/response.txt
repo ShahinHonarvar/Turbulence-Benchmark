@@ -1,0 +1,14 @@
+ ```
+def palindrome_of_length_n(string, n):
+    # Split the string into substrings of length n
+    substrings = [string[i:i+n] for i in range(len(string)-n+1)]
+    # Filter out substrings that are not palindromes
+    palindromes = [substring for substring in substrings if substring == substring[::-1]]
+    return set(palindromes)
+```
+Explanation:
+
+The function takes two arguments, a string and an integer `n`. It first splits the input string into substrings of length `n`, using slicing.
+Next, it filters out any substrings that are not palindromes by comparing them to their own reversals. If a substring is equal to its reversal, then it is a palindrome and should be included in the result set.
+Finally, the function returns the resulting set of palindromes.
+Note: The function assumes that the input string contains only English letters (a-z). If this assumption is not valid for your use case, you may need to modify the function accordingly.

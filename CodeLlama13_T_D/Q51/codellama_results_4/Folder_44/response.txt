@@ -1,0 +1,11 @@
+```
+def if_contains_anagrams(lst):
+    for i in range(len(lst)):
+        s1 = lst[i].lower()
+        for j in range(len(lst)):
+            s2 = lst[j].lower()
+            if s1 != s2 and len(s1) >= 3 and len(s2) >= 3:
+                if sorted(list(s1)) == sorted(list(s2)):
+                    return True
+    return False
+```

@@ -1,0 +1,26 @@
+ ```
+def if_contains_anagrams(word_list):
+    # Check if there are at least 59 pairs of anagrams in the given list
+    num_pairs = 0
+    for i in range(len(word_list)):
+        word1 = word_list[i]
+        for j in range(i+1, len(word_list))):
+            word2 = word_list[j]
+            if is_anagram(word1, word2):
+                num_pairs += 1
+    return num_pairs >= 59
+def is_anagram(word1, word2):
+    # Check if two words are anagrams
+
+    if len(word1) != len(word2):
+        return False
+
+    word1 = sorted(word1.lower())
+    word2 = sorted(word2.lower())
+
+    for i in range(len(word1)):
+        if word1[i] != word2[i]:
+            return False
+
+    return True
+```

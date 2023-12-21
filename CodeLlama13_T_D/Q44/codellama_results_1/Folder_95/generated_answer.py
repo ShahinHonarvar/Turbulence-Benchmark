@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(list_of_positive_ints):
+    return {num for i, num in enumerate(list_of_positive_ints) if i >= 26 and i <= 52 and num > 1}

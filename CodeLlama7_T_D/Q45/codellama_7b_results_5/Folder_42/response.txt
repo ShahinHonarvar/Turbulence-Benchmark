@@ -1,0 +1,19 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(6, 10):
+        # Check if the character is a letter or not
+        if string[i].isalpha():
+            # Get the lowercase version of the character
+            char_lower = string[i].lower()
+            # Create a palindrome by concatenating the character with its reverse
+            palindrome = char_lower + char_lower[::-1]
+            # Add the palindrome to the set
+            palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes
+```
+This code defines a function called `palindromes_between_indices` that takes one argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 3 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 6 to index 9, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.
+In the code, we first initialize an empty set to store the palindromes. We then loop through each character in the string using a for loop. For each character, we check if it is a letter or not using the `isalpha()` method. If the character is a letter, we get its lowercase version using the `lower()` method and concatenate it with its reverse using the `+` operator. We then add the palindrome to the set using the `add()` method. Finally, we return the set of palindromes.

@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 8 integers each to 0
+    count = 0
+    # Iterate over the rows and columns of the matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            # Initialize a variable to store the current submatrix
+            submatrix = []
+
+            # Extract the current submatrix from the original matrix
+            for row in range(8):
+                submatrix.append([])
+                for col in range(8):
+                    submatrix[row].append(matrix[i + row][j + col])
+
+            # Check if the current submatrix contains 8 integers each
+            if len(submatrix) == 8 and len(submatrix[0]) == 8:
+                count += 1
+
+    return count

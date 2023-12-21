@@ -1,0 +1,10 @@
+
+def filter_chars(string):
+    result = ''
+    for i, char in enumerate(string):
+        if 55 < i < 84 and char > ';' and char < 'z':
+            continue
+
+        result += char
+
+    return result

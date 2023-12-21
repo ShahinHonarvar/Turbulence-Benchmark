@@ -1,0 +1,9 @@
+
+def gcf_three_nums(my_list):
+    gcf = 1
+    for i in range(637, 758):
+        if my_list[i] % gcf == 0:
+            gcf *= my_list[i] // gcf
+        else:
+            break
+    return gcf

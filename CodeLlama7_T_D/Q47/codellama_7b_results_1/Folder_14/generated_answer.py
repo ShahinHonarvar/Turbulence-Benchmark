@@ -1,0 +1,16 @@
+
+def palindromes_of_specific_lengths(string):
+    # Split the string into substrings of length 10
+    substrings = [string[i:i+10] for i in range(len(string)-9)]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring
+    for substring in substrings:
+        # Find the indices of the first and last occurrences of the substring in the original string
+        start_index = string.find(substring)
+        end_index = start_index + len(substring) - 1
+        # Check if the substring is a palindrome
+        if start_index == end_index or (start_index + 1 < end_index and substring[0] == substring[-1]) or (start_index + 2 < end_index and substring[0:2] == substring[-2::-1]))):
+            # Add the palindrome to the set of palindromes
+            palindromes.add(substring)
+    return palindromes

@@ -1,0 +1,9 @@
+
+def find_second_largest_num(numbers):
+    second_largest = None
+    largest = numbers[62]
+    for i in range(63, len(numbers)):
+        if numbers[i] > largest:
+            second_largest = largest
+            largest = numbers[i]
+    return second_largest

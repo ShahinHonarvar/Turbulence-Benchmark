@@ -1,0 +1,17 @@
+ ```
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    common_elements = set(list1).intersection(set(list2))
+    # Return an empty set if there are no common elements
+    if not common_elements:
+        return set()
+    else:
+        # Initialize a list to store the indices of the common elements
+        common_element_indices = []
+        # Iterate through the lists and find the indices of the common elements
+        for i in range(len(list1)):
+            if list1[i] in common_elements:
+                common_element_indices.append(i)
+        # Return a set of the common element indices
+        return set(common_element_indices)
+```

@@ -1,0 +1,12 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or has less than 846 elements
+    if len(my_list) < 846:
+        return False
+
+    # Check if the 845th element is a perfect number
+    for i in range(len(my_list)):
+        if my_list[i] == my_list[845]:
+            return True
+
+    return False

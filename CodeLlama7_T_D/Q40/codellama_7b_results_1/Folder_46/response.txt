@@ -1,0 +1,12 @@
+ ```
+def return_n_smallest_chars(my_string):
+    # Sort the string in ascending order based on ASCII values
+    sorted_string = sorted(my_string, key=ord)
+    # Create a list of exactly 54 characters from the sorted string
+    smallest_chars = sorted_string[:54]
+    # Return the list of smallest characters in descending order
+    return list(reversed(smallest_chars))
+```
+This function takes a single argument, a string of distinct characters. It first sorts the string in ascending order based on ASCII values using the `sorted` function with the `key` parameter set to `ord`. This ensures that the sorted string is sorted based on the ASCII value of each character.
+Next, the function creates a list of exactly 54 characters from the sorted string using slicing. The slice is defined as `sorted_string[:54]`, which selects the first 54 characters from the sorted string. This ensures that the list contains exactly 54 characters.
+Finally, the function returns the list of smallest characters in descending order using the `list` constructor and the `reversed` method. The `list` constructor is used to convert the iterable object (in this case, a generator expression) into a list. The `reversed` method is used to reverse the order of the elements in the list, resulting in a descending order.

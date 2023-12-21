@@ -1,0 +1,10 @@
+```
+def all_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(10**5, x+1):
+        if is_prime(i) and all(is_prime(i // 10**j) for j in range(1, 6)):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+This function uses the `is_prime` function to check if a number is prime, and it iterates over all numbers from 10^5 to x+1. For each number i, it checks whether it is prime and whether all its right-truncatable primes (i.e., the last digit removed) are also prime. If both conditions are true, then i is a right-truncatable prime and is added to the list of prime_numbers. Finally, the list of prime numbers is sorted in descending order and returned.
+Note that this function only works for x up to 10^6, after which the number of possible prime numbers becomes too large to store in memory.

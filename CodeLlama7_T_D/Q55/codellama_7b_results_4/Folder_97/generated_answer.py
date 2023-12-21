@@ -1,0 +1,29 @@
+
+def lists_with_product_equal_n(my_list):
+    # Find the product of all elements in the list
+    prod = 1
+    for i in my_list:
+        prod *= i
+
+    # Initialize an empty list to store the sublists
+
+    sublists = []
+
+    # Iterate through the list and find contiguous sequences with the desired product
+
+    for i in range(len(my_list)):
+
+        # Calculate the product of the current sequence
+
+        curr_prod = 1
+        for j in range(i, len(my_list)):
+            curr_prod *= my_list[j]
+
+        # Check if the product is equal to -938 and add the sequence to the list of sublists if it is
+
+        if curr_prod == -938:
+            sublists.append(my_list[i:j+1])
+
+    # Return the list of sublists
+
+    return sublists

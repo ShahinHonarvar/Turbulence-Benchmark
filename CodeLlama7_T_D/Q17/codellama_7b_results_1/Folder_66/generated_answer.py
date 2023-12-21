@@ -1,0 +1,20 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Find the starting index of the range
+    start_index = 58
+
+    # Find the ending index of the range
+    end_index = 81
+
+    # Initialize an empty list to store the divisible integers
+    divisible_ints = []
+
+    # Iterate through the range of indices in the list
+    for i in range(start_index, end_index + 1):
+        # Check if the current integer is divisible by both 55 and 10
+        if my_list[i] % 55 == 0 and my_list[i] % 10 == 0:
+            # If it is, add it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by both 55 and 10 from index 58 to index 81, both inclusive
+    return divisible_ints

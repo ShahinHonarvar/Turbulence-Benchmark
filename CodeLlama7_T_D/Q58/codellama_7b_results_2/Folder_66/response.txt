@@ -1,0 +1,14 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            if matrix[i:i+2, j:j+2].sum() == 42:
+                count += 1
+
+    return count
+
+```
+This code uses a nested loop to iterate through each submatrix of the given matrix. For each submatrix, it checks if the sum of all elements in the submatrix is equal to 42. If it is, then the count variable is incremented. The function returns the final value of the count variable.

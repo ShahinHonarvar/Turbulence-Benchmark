@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ''
+    for i in range(len(string)):
+        if string[i] >= 'S' and string[i] <= 's':
+            result += string[i]
+    return result

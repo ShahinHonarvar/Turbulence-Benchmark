@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(strs):
+    anagrams = set()
+    for s in strs:
+        if len(s) < 3: continue
+        t = tuple(sorted(s.lower()))
+        if t not in anagrams: anagrams.add(t)
+    return len(anagrams) >= 97

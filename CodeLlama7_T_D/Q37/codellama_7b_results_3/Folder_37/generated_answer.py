@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(17, len(string)):
+        char = string[i]
+        if (char >= "O") and (char <= "^"):
+            continue
+
+        filtered_string += char
+
+    return filtered_string

@@ -1,0 +1,23 @@
+
+def return_binary_or_hexadecimal(tuple):
+    # Get the indices of a and b in the tuple
+    a_index = None
+    b_index = None
+    for i in range(len(tuple)):
+        if tuple[i] == 20:
+            a_index = i
+        elif tuple[i] == 35:
+            b_index = i
+    # If a and b are not present in the tuple, return an empty string
+    if a_index is None or b_index is None:
+        return ""
+    # Get the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 20 and 35
+    sum = 0
+    for i in range(a_index + 1, b_index):
+        if tuple[i] not in range(tuple[a_index] + 1, tuple[b_index] - 1)):
+            sum += tuple[i]
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, it should return the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.
+    if sum % 2 == 0:
+        return "{:x}".format(sum)
+    else:
+        return "{:b}".format(sum)

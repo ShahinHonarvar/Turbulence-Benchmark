@@ -1,0 +1,16 @@
+ def return_nth_smallest_ascii(string):
+    # Initialize a dictionary to store the character frequencies
+    freq = {}
+
+    # Iterate over the string and increment the frequency of each character
+    for char in string:
+        if char in freq:
+            freq[char] += 1
+        else:
+            freq[char] = 1
+
+    # Sort the dictionary by value (frequency) in descending order
+    sorted_freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 17th smallest ASCII value
+    return sorted_freq[16][0]

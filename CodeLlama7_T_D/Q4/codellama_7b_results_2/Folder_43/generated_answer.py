@@ -1,0 +1,28 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list
+    for i in range(38, len(my_list)):
+        if my_list[i] > 0:
+            first_pos_int = my_list[i]
+            break
+
+    else:
+
+        return []
+
+
+    # Find the last positive integer in the list
+
+    for i in range(len(my_list) - 1, 37, -1):
+        if my_list[i] > 0:
+            last_pos_int = my_list[i]
+            break
+
+    else:
+
+        return []
+
+
+    # Return the list of all positive integers in the specified range
+
+    return [x for x in range(first_pos_int, last_pos_int + 1) if x > 0]

@@ -1,0 +1,23 @@
+
+def if_contains_anagrams(list_of_strings):
+    # Calculate the number of anagrams in the list
+    num_anagrams = len([s for s in list_of_strings if is_anagram(s)])
+    # Return True if there are at least 72 pairs of anagrams in the list
+    return num_anagrams >= 72
+
+# Check if a string is an anagram by comparing its length to 3 and using the ''.lower() method for case-insensitive comparison
+def is_anagram(string):
+    # If the string is not at least 3 characters long, it cannot be an anagram
+    if len(string) < 3:
+        return False
+
+    # Convert the string to lowercase for case-insensitive comparison
+    lowercase_string = string.lower()
+
+    # Check if the string is a palindrome by comparing its lowercase representation to its reverse
+    if lowercase_string == lowercase_string[::-1]:
+        return True
+
+    # If the string is not a palindrome, it cannot be an anagram
+    else:
+        return False

@@ -1,0 +1,29 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with a particular sum
+    submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(len(matrix)):
+        # Iterate over each column of the matrix
+        for j in range(len(matrix[0])):
+            # Initialize a temporary submatrix with the current cell as its top-left corner
+            temp_submatrix = np.array([[matrix[i][j]]])
+            
+            # Check if the sum of all integers in the temporary submatrix is equal to 56
+            if np.sum(temp_submatrix) == 56:
+                # If so, add the temporary submatrix to the list of submatrices with a particular sum
+                submatrices.append(temp_submatrix)
+            
+            # Continue adding cells to the temporary submatrix until its size exceeds the size of the original matrix
+            for k in range(i+1, len(matrix)):
+                temp_submatrix = np.vstack([temp_submatrix, [matrix[k][j]]])
+                
+                # Check if the sum of all integers in the temporary submatrix is equal to 56
+                if np.sum(temp_submatrix) == 56:
+                    # If so, add the temporary submatrix to the list of submatrices with a particular sum
+                    submatrices.append(temp_submatrix)
+    
+    return submatrices

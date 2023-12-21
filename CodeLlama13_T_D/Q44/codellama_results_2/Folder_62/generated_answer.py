@@ -1,0 +1,8 @@
+
+def composite_nums_between_indices(numbers):
+    indices = range(30, 88)
+    composites = set()
+    for i in indices:
+        if numbers[i] > 1 and numbers[i] not in composites:
+            composites.add(numbers[i])
+    return composites

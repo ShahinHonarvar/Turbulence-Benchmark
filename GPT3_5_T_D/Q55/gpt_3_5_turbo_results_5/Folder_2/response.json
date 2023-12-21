@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(circular_list):\n    sublist_size = 1\n    result = []\n    \n    while sublist_size <= len(circular_list):\n        for i in range(len(circular_list)):\n            sublists = [circular_list[j:j+sublist_size] for j in range(i, i+len(circular_list))]\n            for sublist in sublists:\n                if sublist in result:\n                    continue\n                if sum(sublist) == -968:\n                    result.append(sublist)\n        sublist_size += 1\n\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887011,
+  "id": "chatcmpl-7eV633ANnSAKCoEgPTZQlxzaRbb0P",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 193,
+    "total_tokens": 314
+  }
+}

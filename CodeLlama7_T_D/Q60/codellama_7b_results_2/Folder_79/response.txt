@@ -1,0 +1,7 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Create a list of all prime numbers less than or equal to x
+primes = [p for p in range(2, x + 1) if all(n % p != 0 for n in range(2, int(p ** 0.5) + 1))]
+# Filter the list to only include prime numbers that are left-and-right-truncatable
+return [p for p in primes if str(p)[1:] == str(p)[:-1] and str(p) != '1']
+```

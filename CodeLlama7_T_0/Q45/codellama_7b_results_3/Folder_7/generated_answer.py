@@ -1,0 +1,18 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(1, len(string) - 9):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Create a list of all possible arrangements of the English letters in the given string that occur between index 1 to index 9, both inclusive
+            possible_arrangements = [string[j] + string[k] for j in range(1, i) for k in range(i, len(string)) if string[j].isalpha() and string[k].isalpha()]
+            # Loop through each possible arrangement of the English letters in the given string that occur between index 1 to index 9, both inclusive
+            for arrangement in possible_arrangements:
+                # Check if the current possible arrangement is a palindrome
+                if arrangement == arrangement[::-1]:
+                    # Add the current palindrome to the set of all palindromes
+                    palindromes.add(arrangement)
+    # Return the set of all palindromes of the length of at least 7 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 1 to index 9, both inclusive
+    return palindromes

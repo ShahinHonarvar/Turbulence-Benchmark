@@ -1,0 +1,32 @@
+ Here is a Python function that meets the requirements specified:
+```
+def palindromes_of_specific_lengths(string):
+    # Lowercase the input string for case-insensitive search
+    string = string.lower()
+    # Define the range of indices to search for palindromes
+    start_index = 70
+    end_index = 140
+    # Initialize an empty set to store the found palindromes
+    palindromes = set()
+    # Iterate over each character in the input string within the defined range
+    for i in range(start_index, end_index + 1):
+        # Check if the current character is a letter or not
+        if string[i].isalpha():
+            # Define the left and right indices of the current palindrome
+            left_index = i - 1
+            right_index = i + 1
+            # Iterate over each character in the input string within the defined range for the current palindrome
+            while left_index >= start_index and right_index <= end_index:
+                # Check if the current character is a letter or not
+                if string[left_index].isalpha() and string[right_index].isalpha():
+                    # Define the center index of the current palindrome
+                    center_index = i
+                    # Check if the current palindrome meets the length requirement
+                    if len(string[center_index - 1:center_index + 2]) >= 3 and len(string[center_index - 1:center_index + 2]) <= 60:
+                        # Add the current palindrome to the set of found palindromes
+                        palindromes.add(string[center_index - 1:center_index + 2])
+                # Increment the left and right indices for the next character in the input string
+                left_index -= 1
+                right_index += 1
+    return palindromes
+```

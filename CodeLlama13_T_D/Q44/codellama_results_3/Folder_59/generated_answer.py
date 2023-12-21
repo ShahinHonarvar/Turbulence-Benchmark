@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(numbers):
+    return {x for i, x in enumerate(numbers) if i >= 0 and i <= 9 and x > 1}

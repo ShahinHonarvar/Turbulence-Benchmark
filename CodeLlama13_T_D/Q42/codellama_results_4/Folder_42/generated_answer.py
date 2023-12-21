@@ -1,0 +1,10 @@
+
+def prime_factors(numbers):
+    return set(get_prime_factors(numbers[276]))
+
+def get_prime_factors(n):
+    factors = []
+    for i in range(1, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            factors.append(i)
+    return factors

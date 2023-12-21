@@ -1,0 +1,20 @@
+
+def all_left_right_truncatable_prime(tuple):
+    x = tuple[466]
+    prime_numbers = []
+    for i in range(2, x+1):
+        if is_prime(i) and contains_no_zero(str(i)):
+            prime_numbers.append(i)
+    
+    left_truncatable_primes = []
+    for i in prime_numbers:
+        if is_left_truncatable_prime(i):
+            left_truncatable_primes.append(i)
+            
+    right_truncatable_primes = []
+    for i in prime_numbers:
+        if is_right_truncatable_prime(i):
+            right_truncatable_primes.append(i)
+    
+    left_and_right_truncatable_primes = [x for x in left_truncatable_primes if x in right_truncatable_primes]
+    return sorted(left_and_right_truncatable_primes, reverse=True)

@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(mylist):
+    return [i for i in mylist if 21 <= i <= 97 and i > 0]

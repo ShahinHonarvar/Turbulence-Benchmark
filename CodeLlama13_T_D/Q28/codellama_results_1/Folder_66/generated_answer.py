@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(string):
+    asciis = [ord(c) for c in string[35:52]]
+    sorted_asciis = sorted(asciis, reverse=True)
+    nth_smallest_ascii = sorted_asciis[9]
+    return chr(nth_smallest_ascii)

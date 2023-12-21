@@ -1,0 +1,21 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_int = int(binary_string, 2)
+    # Calculate the number of digits in the decimal integer
+    num_digits = len(str(decimal_int))
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Loop through the digits of the decimal integer
+    for i in range(num_digits):
+        # Calculate the current digit in the decimal integer
+        current_digit = int(str(decimal_int)[i]))
+        # Add the current digit to the Fibonacci sequence
+        a, b = b, a + b
+        # Check if the current digit is divisible by the 97th number in the Fibonacci sequence
+        if current_digit % a == 0:
+            return True
+
+    # If no digits were divisible by the 97th number in the Fibonacci sequence, return False
+    return False
+```

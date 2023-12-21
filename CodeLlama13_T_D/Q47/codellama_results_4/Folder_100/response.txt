@@ -1,0 +1,16 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the string with lengths between 12 and 18
+    palindromes = []
+    for i in range(12, 19):
+        for j in range(len(string) - i + 1):
+            substr = string[j:j+i]
+            if substr == substr[::-1]:
+                palindromes.append(substr)
+    # Filter the palindromes to only those that occur between indices 29 and 96 (both inclusive)
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if 29 <= string.find(palindrome) <= 96:
+            filtered_palindromes.append(palindrome)
+    return set(filtered_palindromes)
+```

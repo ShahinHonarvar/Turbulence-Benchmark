@@ -1,0 +1,19 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list and check if each element is a composite number between indices 1 and 5, both inclusive
+    for i in range(len(my_list)):
+        # Check if the current element is a prime number
+        if my_list[i] > 1:
+            # Iterate over the list from the current index to index 5, both inclusive
+            for j in range(i, min(len(my_list), i + 5)):
+                # Check if the current element is a factor of the previous element
+                if my_list[j] % my_list[j - 1] == 0:
+                    # If it is a factor, add the current element to the set of composite numbers
+                    composite_nums.add(my_list[j])
+
+    # Return the set of all composite numbers between indices 1 and 5, both inclusive
+    return composite_nums
+```

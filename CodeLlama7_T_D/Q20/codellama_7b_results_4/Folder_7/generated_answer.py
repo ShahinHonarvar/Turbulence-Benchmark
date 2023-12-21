@@ -1,0 +1,6 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Return the 9th smallest number from index 470 to index 654, both inclusive
+    return my_list[470:654+1]

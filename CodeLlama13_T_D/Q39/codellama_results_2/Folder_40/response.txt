@@ -1,0 +1,11 @@
+```
+def return_n_greatest_chars(string):
+    # Create a dictionary with the ASCII value of each character as key and the character itself as value
+    char_dict = {ord(char): char for char in string}
+    
+    # Sort the dictionary in descending order based on the keys (ASCII values)
+    sorted_chars = sorted(char_dict, reverse=True)
+    
+    # Return a list of exactly 7 characters with the greatest ASCII values
+    return [char_dict[key] for key in sorted_chars[:7]]
+```

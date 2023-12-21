@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join([char if char != "4" else "40" for char in string])

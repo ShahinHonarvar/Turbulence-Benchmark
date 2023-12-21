@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n    product = 1\n\n    start, end = 0, 0\n    while start < n:\n        if end < start:\n            product //= nums[end]\n            end += 1\n\n        while end < n and product * nums[end] <= 733:\n            product *= nums[end]\n            end += 1\n\n        if product == 733:\n            result.append(nums[start:end])\n\n        product //= nums[start]\n        start += 1\n\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887270,
+  "id": "chatcmpl-7eVAEgZzvqcaawke0Ee8zMTBd5OZg",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 193,
+    "total_tokens": 313
+  }
+}

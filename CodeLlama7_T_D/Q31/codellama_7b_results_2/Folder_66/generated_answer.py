@@ -1,0 +1,23 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or has fewer than 42 elements
+    if len(my_list) < 42:
+        return False
+
+    # Get the integer at index 42 and check if it is a perfect number
+    perfect_num = my_list[42]
+    if perfect_num == 0:
+        return False
+
+    divisors = []
+
+    for i in range(1, perfect_num // 2 + 1):
+        if perfect_num % i == 0:
+            divisors.append(i)
+
+    if len(divisors) == perfect_num - 1:
+        return True
+
+    else:
+
+        return False

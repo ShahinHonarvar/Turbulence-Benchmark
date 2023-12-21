@@ -1,0 +1,15 @@
+```
+def find_primes_between_indices(nums):
+    primes = []
+    for i in range(27, 86 + 1):
+        if is_prime(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+
+def is_prime(n):
+    for i in range(2, n - 1):
+        if n % i == 0:
+            return False
+    return True
+```
+This code defines two functions: `find_primes_between_indices` and `is_prime`. The `find_primes_between_indices` function takes a list of integers as input and returns the sorted list of all prime numbers from index 27 to index 86, both inclusive, in descending order. If no prime number exists in the specified range, it returns an empty list. The `is_prime` function checks if a given integer is prime or not. It does this by checking if any number between 2 and n-1 divides n evenly (i.e., n%i==0). If n can be divided by any such number, then it is not prime, and the function returns False. Otherwise, it returns True.

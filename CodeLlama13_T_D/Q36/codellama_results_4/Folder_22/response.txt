@@ -1,0 +1,7 @@
+```
+def filter_chars(s):
+    return ''.join([c for c in s if ord(c) < ord(';') or ord(c) > ord('z')])
+```
+This function uses a list comprehension to iterate over the characters of the input string `s`. For each character, it checks whether its ASCII code is between 55 and 84 (exclusive), and if so, it keeps only those characters that are greater than ';' and smaller than 'z'. The resulting list is then joined into a new string using `''.join()`.
+
+For example, if `s` is the string "hello;world!", this function would return "helloworld".

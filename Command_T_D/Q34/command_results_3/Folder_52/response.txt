@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: b3235056-ce19-47f5-b6b2-da81d8eeeee6
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_original_set' that takes exactly 746 distinct arguments, each of which is a set of integers. The function should return the smallest set such that each of the given arguments is a subset of it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+input = sys.stdin.readline
+
+def find_original_set(S):
+    res = set(S)
+    for s in S:
+        if len(s) == len(res):
+            return s
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

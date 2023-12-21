@@ -1,0 +1,177 @@
+[cohere.Generation {
+	id: 333bc6be-f09e-488e-b5d7-23e931c6bd9a
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals -10. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import heapq
+
+def lists_with_product_equal_n(nums):
+    result = []
+    for x in nums:
+        hq = []
+        for i in range(1, x + 1):
+            hq.append(x * i)
+        hq.sort()
+        hq.reverse()
+        j = x - 1
+        while hq and hq[0] == hq[-1]:
+            hq.pop()
+            j -= 1
+        if hq:
+            while hq[0] == hq[-1]:
+                hq.pop()
+            hq.sort()
+            hq.reverse()
+            heapq.heapify(hq)
+            hq.append(hq[0])
+            hq.sort()
+            heapq.heapify(hq)
+            while hq:
+                y = heapq.heappop(hq)
+                if y == x:
+                    break
+                elif y == x - 1:
+                    y += 1
+                elif y == x + 1:
+                    y -= 1
+                if hq:
+                    heapq.heapify(hq)
+                j = x - 1
+                while hq and hq[0] == hq[-1]:
+                    hq.pop()
+                    j -= 1
+                if hq:
+                    heapq.heapify(hq)
+                hq.append(hq[0])
+                hq.sort()
+                heapq.heapify(hq)
+                while hq:
+                    y = heapq.heappop(hq)
+                    if y == x:
+                        break
+                    elif y == x - 1:
+                        y += 1
+                    elif y == x + 1:
+                        y -= 1
+                    if hq:
+                        heapq.heapify(hq)
+                    j = x - 1
+                    while hq and hq[0] == hq[-1]:
+                        hq.pop()
+                        j -= 1
+                    if hq:
+                        heapq.heapify(hq)
+                    hq.append(hq[0])
+                    hq.sort()
+                    heapq.heapify(hq)
+                    while hq:
+                        y = heapq.heappop(hq)
+                        if y == x:
+                            break
+                        elif y == x - 1:
+                            y += 1
+                        elif y == x + 1:
+                            y -= 1
+                        if hq:
+                            heapq.heapify(hq)
+                        j = x - 1
+                        while hq and hq[0] == hq[-1]:
+                            hq.pop()
+                            j -= 1
+                        if hq:
+                            heapq.heapify(hq)
+                        hq.append(hq[0])
+                        hq.sort()
+                        heapq.heapify(hq)
+                        while hq:
+                            y = heapq.heappop(hq)
+                            if y == x:
+                                break
+                            elif y == x - 1:
+                                y += 1
+                            elif y == x + 1:
+                                y -= 1
+                            if hq:
+                                heapq.heapify(hq)
+                            j = x - 1
+                            while hq and hq[0] == hq[-1]:
+                                hq.pop()
+                                j -= 1
+                            if hq:
+                                heapq.heapify(hq)
+                            hq.append(hq[0])
+                            hq.sort()
+                            heapq.heapify(hq)
+                            while hq:
+                                y = heapq.heappop(hq)
+                                if y == x:
+                                    break
+                                elif y == x - 1:
+                                    y += 1
+                                elif y == x + 1:
+                                    y -= 1
+                                if hq:
+                                    heapq.heapify(hq)
+                                j = x - 1
+                                while hq and hq[0] == hq[-1]:
+                                    hq.pop()
+                                    j -= 1
+                                if hq:
+                                    heapq.heapify(hq)
+                                hq.append(hq[0])
+                                hq.sort()
+                                heapq.heapify(hq)
+                                while hq:
+                                    y = heapq.heappop(hq)
+                                    if y == x:
+                                        break
+                                    elif y == x - 1:
+                                        y += 1
+                                    elif y == x + 1:
+                                        y -= 1
+                                    if hq:
+                                        heapq.heapify(hq)
+                                j = x - 1
+                                while hq and hq[0] == hq[-1]:
+                                    hq.pop()
+                                    j -= 1
+                                if hq:
+                                    heapq.heapify(hq)
+                                hq.append(hq[0])
+                                hq.sort()
+                                heapq.heapify(hq)
+                                while hq:
+                                    y = heapq.heappop(hq)
+                                    if y == x:
+                                        break
+                                    elif y == x - 1:
+                                        y += 1
+                                    elif y == x + 1:
+                                        y -= 1
+                                    if hq:
+                                        heapq.heapify(hq)
+                                j = x - 1
+                                while hq and hq[0] == hq[-1]:
+                                    hq.pop()
+                                    j -= 1
+                                if hq:
+                                    heapq.heapify(hq)
+                                hq.append(hq[0])
+                                hq.sort()
+                                heapq.heapify(hq)
+                                while hq:
+                                    y = heapq.heappop(hq)
+                                    if y == x:
+                                        break
+                                    elif y == x - 1:
+                                        y += 1
+                                    elif y == x + 1:
+                                        y -= 1
+                                    if hq:
+                                        heapq.heapify(hq)
+                                j = x - 1
+                                while hq and hq[0] == hq[-1]:
+                                    h
+	likelihood: None
+	token_likelihoods: None
+}]

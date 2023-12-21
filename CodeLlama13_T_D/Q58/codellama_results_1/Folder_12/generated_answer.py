@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a count variable to 0
+    count = 0
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Create a submatrix starting from the current position
+            sub_matrix = matrix[i:, j:]
+            
+            # Check if the submatrix contains 46 integers
+            if np.sum(sub_matrix == 46) == 46:
+                count += 1
+    
+    return count

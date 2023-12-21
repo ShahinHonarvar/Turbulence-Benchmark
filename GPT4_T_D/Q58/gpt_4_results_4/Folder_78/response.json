@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that follows your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            for x in range(i+1, rows+1):\n                for y in range(j+1, cols+1):\n                    if (x-i)*(y-j) == 91:\n                        count += 1\n    return count\n```\nFor each possible submatrix, the function checks if the number of elements (which is the product of the number of rows and columns) equals 91. It counts each of these submatrices and then returns the number of them.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691097293,
+  "id": "chatcmpl-7jZwjKwaSSfO6tY64UBrcxgpFt8PW",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 152,
+    "prompt_tokens": 111,
+    "total_tokens": 263
+  }
+}

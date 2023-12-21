@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[6] == sum(lst[:6]) and all(x for x in range(1, int(lst[6] ** 0.5) + 1) if lst[6] % x == 0)

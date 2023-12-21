@@ -1,0 +1,26 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list is empty or has less than 83 elements
+    if len(my_list) < 83:
+        return False
+
+    # Get the integer at index 83
+    num = my_list[83]
+
+    # Check if the integer is a perfect number
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum = i + num / i
+
+            if sum == num:
+                return True
+
+    # If the integer is not a perfect number, return False
+    return False
+```
+Here's an explanation of how the code works:
+1. The function `if_perfect_num` takes one argument, a list of positive integers.
+2. The first line checks if the list is empty or has less than 83 elements. If it does, the function returns False. This is because a perfect number must be greater than 496 and have at least 83 digits.
+3. The second line gets the integer at index 83 of the list. This integer will be used to check if it is a perfect number.
+4. The third line checks if the integer is a perfect number by checking if it can be divided evenly by all numbers up to its square root. If this is the case, then the sum of these divisors will be equal to the number itself, which means that it is a perfect number.
+5. If the integer is not a perfect number, the function returns False.

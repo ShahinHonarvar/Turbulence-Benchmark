@@ -1,0 +1,18 @@
+ Here's a possible implementation of the `return_binary_or_hexa` function:
+```python
+def return_binary_or_hexa(tuple):
+    # Initialize variables for sum and counter
+    sum = 0
+    count = 0
+    # Iterate over elements in tuple
+    for element in tuple:
+        # Increment counter and sum if element is not present in range between indices 56 and 90
+        if element not in range(tuple[56] + 1, tuple[90] - 1):
+            sum += count
+            count += 1
+    # Return binary or hexadecimal representation of sum
+    if sum % 2 == 0:
+        return "0x" + hex(sum)[2:]
+    else:
+        return "0b" + bin(sum)[3:]
+```

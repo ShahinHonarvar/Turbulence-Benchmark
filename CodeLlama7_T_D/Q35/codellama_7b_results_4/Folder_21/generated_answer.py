@@ -1,0 +1,12 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the same characters as s, but without any repeated characters
+    new_string = ""
+
+    # Iterate through the characters in s and add them to new_string if they are not repeated between indices 462 and 995
+    for i in range(len(s)):
+        if s[i] not in new_string or (i >= 462 and i <= 995 and s[i] not in s[i-462:i+1] and s[i] not in s[i+1:i+462])):
+            new_string += s[i]
+
+    # Return the altered string
+    return new_string

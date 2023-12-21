@@ -1,0 +1,14 @@
+ Here's a possible implementation of the `if_decimal_is_divisible` function in Python:
+```python
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation to an integer
+    decimal_int = int(binary_repr, 2)
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Check if the decimal integer is divisible by the 80th number that occurs in the Fibonacci sequence
+    while a < decimal_int:
+        a, b = b, a + b
+    return decimal_int % a == 0
+```
+This code first converts the binary representation of the non-negative decimal integer to an integer using the `int()` function with base 2. It then initializes two variables for the Fibonacci sequence: `a` and `b`.
+The code then checks if the decimal integer is divisible by the 80th number that occurs in the Fibonacci sequence. This is done by iterating over the Fibonacci sequence until the sum of the previous two numbers is greater than or equal to the decimal integer. If this condition is met, it means that the decimal integer is divisible by the 80th number that occurs in the Fibonacci sequence, and the function returns `True`. Otherwise, the function returns `False`.

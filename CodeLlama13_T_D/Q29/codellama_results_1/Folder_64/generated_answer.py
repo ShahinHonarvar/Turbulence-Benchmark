@@ -1,0 +1,8 @@
+
+def gcf_two_nums(numbers):
+    return __gcf(numbers[6], numbers[9])
+
+def __gcf(a, b):
+    if a == 0:
+        return b
+    return __gcf(b % a, a)

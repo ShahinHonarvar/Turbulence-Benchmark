@@ -1,0 +1,31 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a count variable to keep track of the number of submatrices with 121 integers
+    count = 0
+
+    # Loop through each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to keep track of the number of integers in the current submatrix
+            num_ints = 0
+
+            # Loop through each element in the current submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # If the element is not equal to 0, increment the number of integers in the submatrix
+                    if matrix[k][l] != 0:
+                        num_ints += 1
+
+            # If the number of integers in the current submatrix is equal to 121, increment the count variable
+            if num_ints == 121:
+                count += 1
+
+    # Return the count variable, which represents the total number of submatrices with 121 integers each in the given matrix.
+    return count
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
+#print(submatrix_with_n_numbers(matrix))
+```

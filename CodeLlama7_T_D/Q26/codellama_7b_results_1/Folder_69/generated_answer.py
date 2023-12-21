@@ -1,0 +1,14 @@
+
+def sum_in_range(my_list):
+    # Initialize a variable to store the sum
+    total = 0
+
+    # Iterate over the given list
+    for num in my_list:
+        # Check if the current number is between 739 and 928, both inclusive
+        if (739 <= num <= 928):
+            # If it is, add it to the total sum
+            total += num
+
+    # Return the total sum
+    return total

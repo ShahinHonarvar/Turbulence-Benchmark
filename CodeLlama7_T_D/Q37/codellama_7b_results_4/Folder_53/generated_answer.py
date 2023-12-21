@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    # Get the indices of all characters between 83 and 99
+    idx = [i for i in range(len(s)) if 83 <= s[i] <= 99]
+    # Create a new string with the filtered characters
+    filtered = ''.join([c for c in s if c not in s[idx]])
+    return filtered

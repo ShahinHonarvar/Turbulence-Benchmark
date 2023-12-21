@@ -1,0 +1,12 @@
+```
+def if_perfect_num(numbers):
+    if len(numbers) < 5:
+        return False
+    elif numbers[4] == sum(divisors(numbers[4])):
+        return True
+    else:
+        return False
+```
+This function uses the `divisors` function from the `math` module to get the divisors of a number, and then checks if the sum of those divisors is equal to the number itself. If that condition is true, it returns `True`, otherwise it returns `False`.
+
+Note: This code assumes that the list of positive integers passed in the argument is at least 5 elements long, and that the element at index 4 is a perfect number. If either of these conditions are not met, the function will return `False`.

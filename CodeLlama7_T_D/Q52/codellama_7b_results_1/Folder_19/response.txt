@@ -1,0 +1,13 @@
+ def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the character is a letter (not a space or a number)
+        if string[i].isalpha():
+            # Check if the character is a palindrome (the same when read forward and backward)
+            if string[i:].lower() == string[i:].lower()[::-1]:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(string[i:])
+    # Return the set of palindromes
+    return palindromes

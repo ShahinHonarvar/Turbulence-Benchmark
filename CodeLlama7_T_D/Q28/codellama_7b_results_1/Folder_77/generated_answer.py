@@ -1,0 +1,12 @@
+
+def return_nth_smallest_ascii(string):
+    # find the indices of the characters in the string that occur between indices 63 and 76, both inclusive
+    start = string.find('[')
+    end = string.find(']')
+    sub_string = string[start:end+1]
+    # get a list of all the ASCII values in the sub-string
+    ascii_values = [ord(char) for char in sub_string]
+    # sort the list in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # return the 14th smallest ASCII value in the sorted list
+    return sorted_ascii_values[13]

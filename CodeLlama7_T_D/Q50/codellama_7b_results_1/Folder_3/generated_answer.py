@@ -1,0 +1,6 @@
+
+def if_contains_anagrams(word_list):
+    # Get the number of anagrams in the list
+    num_anagrams = sum([len(set(w1)) == len(w2) and sorted(w1) == sorted(w2) for w1 in word_list])
+    # Return True if there are at least 30 pairs of anagrams, False otherwise
+    return num_anagrams >= 30

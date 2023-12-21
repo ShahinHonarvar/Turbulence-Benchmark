@@ -1,0 +1,11 @@
+```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    n, m = matrix.shape
+    for i in range(n-1):
+        for j in range(m-1):
+            if np.sum(matrix[i:i+2,j:j+2]) == 54:
+                return [matrix[i:i+2,j:j+2]]
+    return []
+```
+This code defines a function `submatrix_with_particular_sum` that takes one argument, a two-dimensional numpy matrix of integers. The function uses nested for loops to iterate through the rows and columns of the matrix, and checks if the sum of all integers in each submatrix equals 54. If such a submatrix is found, it is returned as a list with only one element; otherwise, an empty list is returned.

@@ -1,0 +1,33 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the tuple of positive integers
+    for i in range(18):
+        # Extract the integer at index i from the tuple
+        num = tuple[i]
+
+        # Check if the extracted number is a prime number
+        if num > 1:
+            for j in range(2, int(num ** 0.5) + 1):
+                if num % j == 0:
+                    break
+
+            else:
+
+                # If the extracted number is a prime number, add it to the list of prime numbers
+                prime_numbers.append(num)
+
+        # Check if the extracted number is a right-truncatable prime number
+        elif num > 1 and len(str(num)) > 1:
+            for j in range(len(str(num)) - 1, 0, -1):
+                if str(num)[j] != "1" and str(num)[j] != "3" and str(num)[j] != "7":
+                    break
+
+            else:
+
+                # If the extracted number is a right-truncatable prime number, add it to the list of prime numbers
+                prime_numbers.append(num)
+
+    return sorted(prime_numbers, reverse=True)

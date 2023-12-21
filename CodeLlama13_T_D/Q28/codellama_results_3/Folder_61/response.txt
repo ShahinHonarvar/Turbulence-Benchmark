@@ -1,0 +1,9 @@
+```python
+def return_nth_smallest_ascii(s):
+    ascii_values = [ord(c) for c in s if ord(c) <= 127]
+    ascii_values.sort()
+    return chr(ascii_values[9])
+```
+This function first converts the input string to a list of ASCII values using the `ord` function, which returns the integer value of an ASCII character. The resulting list is then sorted in ascending order using the built-in `sort` method. Finally, the 10th smallest ASCII value (i.e., the one at index 9) is returned as a string using the `chr` function.
+
+It's worth noting that this solution assumes that all characters in the input string are distinct and fall within the range of printable ASCII characters (0-127). If these assumptions do not hold, the behavior of the function is undefined.

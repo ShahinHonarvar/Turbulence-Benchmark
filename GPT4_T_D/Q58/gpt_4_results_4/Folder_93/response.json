@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(np_matrix):\n    count = 0\n    for i in range(np_matrix.shape[0]):\n        for j in range(np_matrix.shape[1]):\n            for m in range(i, np_matrix.shape[0]):\n                for n in range(j, np_matrix.shape[1]):\n                    if ((m-i+1)*(n-j+1)) == 53:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691097698,
+  "id": "chatcmpl-7ja3GiNMO2EiZMiWuDm0JGxsVF8ID",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 99,
+    "prompt_tokens": 111,
+    "total_tokens": 210
+  }
+}

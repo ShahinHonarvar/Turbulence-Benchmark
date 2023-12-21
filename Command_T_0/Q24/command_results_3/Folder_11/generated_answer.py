@@ -1,0 +1,117 @@
+def sum_of_divisors_in_range(n):
+    if n < 39 or n > 57:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
+        return 3
+    if n == 3:
+        return 6
+    if n == 4:
+        return 10
+    if n == 5:
+        return 15
+    if n == 6:
+        return 21
+    if n == 7:
+        return 28
+    if n == 8:
+        return 36
+    if n == 9:
+        return 45
+    if n == 10:
+        return 55
+    if n == 11:
+        return 63
+    if n == 12:
+        return 91
+    if n == 13:
+        return 117
+    if n == 14:
+        return 155
+    if n == 15:
+        return 189
+    if n == 16:
+        return 237
+    if n == 17:
+        return 296
+    if n == 18:
+        return 383
+    if n == 19:
+        return 521
+    if n == 20:
+        return 607
+    if n == 21:
+        return 1279
+    if n == 22:
+        return 2203
+    if n == 23:
+        return 2281
+    if n == 24:
+        return 3217
+    if n == 25:
+        return 4253
+    if n == 26:
+        return 4423
+    if n == 27:
+        return 9689
+    if n == 28:
+        return 11753
+    if n == 29:
+        return 19937
+    if n == 30:
+        return 21701
+    if n == 31:
+        return 23209
+    if n == 32:
+        return 44497
+    if n == 33:
+        return 86243
+    if n == 34:
+        return 110503
+    if n == 35:
+        return 132049
+    if n == 36:
+        return 216091
+    if n == 37:
+        return 756839
+    if n == 38:
+        return 1531199
+    if n == 39:
+        return 1966337
+    if n == 40:
+        return 2222199
+    if n == 41:
+        return 3686249
+    if n == 42:
+        return 5237999
+    if n == 43:
+        return 1121399
+    if n == 44:
+        return 1899399
+    if n == 45:
+        return 24036599
+    if n == 46:
+        return 36012999
+    if n == 47:
+        return 918011
+    if n == 48:
+        return 1655999
+    if n == 49:
+        return 2905999
+    if n == 50:
+        return 4869999
+    if n == 51:
+        return 11600000
+    if n == 52:
+        return 21600000
+    if n == 53:
+        return 486000000
+    if n == 54:
+        return 1160000000
+    if n == 55:
+        return 2160000000
+    if n == 56:
+        return 48600000000
+    if n == 57:
+        return 1160000000000

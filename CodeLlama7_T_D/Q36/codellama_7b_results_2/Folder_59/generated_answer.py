@@ -1,0 +1,12 @@
+
+def filter_chars(s):
+    filtered = ''
+    for i in range(len(s)):
+        if 3 <= i < 8:
+            c = s[i]
+            if c > '?' and c < 'k':
+                continue
+
+        filtered += s[i]
+
+    return filtered

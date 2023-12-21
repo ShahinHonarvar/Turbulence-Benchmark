@@ -1,0 +1,10 @@
+
+def return_binary_or_hex(arr):
+    sum = 0
+    for i in range(32,44):
+        if arr[i] != None:
+            sum += arr[i]
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum).upper()[2:]

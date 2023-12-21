@@ -1,0 +1,10 @@
+```python
+def find_subset_of_length_n(elements):
+    return len([s for s in powerset(elements) if len(s) == 327])
+
+def powerset(iterable):
+    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+```
+Note: The `powerset` function is taken from the itertools module and it generates all subsets of a set, including the empty set. The `chain.from_iterable` method is used to flatten the resulting list of lists into a single list, so that we can count the number of subsets of length 327.

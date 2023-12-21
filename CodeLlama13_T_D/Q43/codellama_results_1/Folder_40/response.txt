@@ -1,0 +1,17 @@
+```python
+def find_primes_between_indices(my_list):
+    primes = []
+    for i in range(1, len(my_list)):
+        if is_prime(my_list[i]):
+            primes.append(my_list[i])
+    return sorted(primes)
+
+def is_prime(n):
+    if n == 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+Note: The `is_prime` function is a basic implementation of the Miller-Rabin primality test, which is known to be fast and reliable for small numbers. However, it may not be suitable for large numbers or for prime number factorization.

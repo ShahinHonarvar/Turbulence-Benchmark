@@ -1,0 +1,12 @@
+
+def find_original_set(sets):
+    # Initialize an empty set to store the result
+    original_set = set()
+    
+    # Iterate over all sets in the input
+    for s in sets:
+        # Add each element of the current set to the result set
+        for elem in s:
+            original_set.add(elem)
+            
+    return original_set

@@ -1,0 +1,46 @@
+ ```
+def if_contains_anagrams(words):
+    # Check if the input is a list of strings
+    if not all(isinstance(word, str) for word in words)):
+        raise ValueError("The input must be a list of strings.")
+    # Initialize the counter for anagrams with at least three characters
+    anagram_counter = 0
+
+    # Loop through each word in the list
+    for word in words:
+        # Get the length of the word
+        word_length = len(word)
+
+        # Check if the word has at least three characters
+        if word_length < 3:
+            continue
+
+        # Create a copy of the word
+        word_copy = word[:]
+
+        # Loop through each character in the word
+        for char in word:
+            # Get the index of the character in the word
+            char_index = word.index(char)
+
+            # Check if the character is already used in the anagram
+            if word[char_index] == char:
+                continue
+
+            # Replace the character with a space
+            word_copy[char_index] = " "
+
+        # Join the characters of the word back together
+        word_string = "".join(word_copy)
+
+        # Check if there are at least 17 pairs of anagrams in the word
+        if word_string.count(" ") >= 17:
+            anagram_counter += 1
+
+    # Return True if there are at least 17 pairs of anagrams in the list, False otherwise
+    return anagram_counter >= 17
+
+# Test the function with a few lists of words
+#print(if_contains_anagrams(["listen", "silent", "enamel", "google"]))) # Should print True
+#print(if_contains_anagrams(["listen", "silent", "enamel", "goog"])))))) # Should print False
+```

@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: c36519b6-0359-4fa1-b8d6-f27312520476
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_perfect_num' takes one argument, a list of positive integers, and returns true if the integer at index 7 is a perfect number, otherwise, it should return false.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import bisect
+
+sys.setrecursionlimit(1_000_000)
+
+
+def if_perfect_num(nums):
+    return bisect.bisect_left(nums, 7) == bisect.bisect_right(nums, 7)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

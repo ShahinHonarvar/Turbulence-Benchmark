@@ -1,0 +1,3 @@
+
+def all_even_ints_inclusive(numbers):
+    return [x for x in numbers[310:371] if x % 2 == 0]

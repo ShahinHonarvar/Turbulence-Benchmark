@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the 100th Fibonacci number
+    fibonacci_number = 0
+    while fibonacci_number < 100:
+        fibonacci_number += 1
+    # Check if the decimal integer is divisible by the 100th Fibonacci number
+    return decimal_integer % fibonacci_number == 0

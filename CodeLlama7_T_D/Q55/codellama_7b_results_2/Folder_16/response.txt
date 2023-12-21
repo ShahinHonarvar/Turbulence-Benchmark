@@ -1,0 +1,22 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(lst):
+    # Initialize variables to keep track of sublists and products
+    sublists = []
+    product = 1
+
+    # Iterate over the elements of the list
+    for i in range(len(lst)):
+
+        # If the product is equal to -837, add the sublist to the list of sublists
+        if product == -837:
+            sublists.append(lst[i-product:i])
+
+        # Multiply the current element by the product
+        product *= lst[i]
+
+    # Return the list of sublists
+    return sublists
+```
+This code uses a similar approach to the one described in my previous response. It initializes a variable `sublists` to store the sublists that it finds, and another variable `product` to keep track of the product of the elements of the current sublist. The function then iterates over the elements of the list, multiplying each element by the current value of `product`. If the product is equal to -837, the function adds the sublist that it has been building to the list of sublists that it returns.
+Note that this code assumes that the input list is a circular list, and it does not check for this condition explicitly. If you want to handle lists that are not circular in this way, you will need to add an additional test to the loop that iterates over the elements of the list.

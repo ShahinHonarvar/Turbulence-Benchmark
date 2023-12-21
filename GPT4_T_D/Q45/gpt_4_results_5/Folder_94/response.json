@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import permutations\n\ndef palindromes_between_indices(string):\n    substr = string[3:5]\n    lower_substr = substr.lower()\n    perms_set = set()\n    for i in range(3, len(lower_substr)+1):\n        perms_set.update(\"\".join(p) for p in permutations(lower_substr,i) if \"\".join(p) == \"\".join(p)[::-1])\n    return perms_set\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690132258,
+  "id": "chatcmpl-7fWteA5iD1mrRFng0Uva8cym1EjNe",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 89,
+    "prompt_tokens": 182,
+    "total_tokens": 271
+  }
+}

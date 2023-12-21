@@ -1,0 +1,51 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_list = []
+
+    # Loop through each integer in the tuple
+    for i in tuple:
+        # Check if the integer is a prime number
+        if is_prime(i):
+            # If it is a prime number, add it to the list of prime numbers
+            prime_list.append(i)
+
+    # Loop through each integer in the list of prime numbers
+    for i in range(len(prime_list)):
+        # Check if the integer is a left-truncatable prime number
+        if is_left_truncatable_prime(prime_list[i])):
+            # If it is a left-truncatable prime number, add it to the list of left-truncatable prime numbers
+            left_truncatable_prime_list.append(prime_list[i])
+
+    # Return the list of left-truncatable prime numbers in descending order
+    return sorted(left_truncatable_prime_list, reverse=True)
+
+# Check if an integer is a prime number
+def is_prime(n):
+    # If the integer is less than 2, it is not a prime number
+    if n < 2:
+        return False
+
+    # Loop through each integer from 2 to the square root of the integer
+    for i in range(2, int(math.sqrt(n)) + 1):
+        # If the integer is divisible by any other integer, it is not a prime number
+        if n % i == 0:
+            return False
+
+    # If the integer is greater than 1 and it is not divisible by any other integer, it is a prime number
+    return True
+
+# Check if an integer is a left-truncatable prime number
+def is_left_truncatable_prime(n):
+    # If the integer is less than 2, it is not a left-truncatable prime number
+    if n < 2:
+        return False
+
+    # Loop through each integer from 2 to the square root of the integer
+    for i in range(2, int(math.sqrt(n)) + 1):
+        # If the integer is divisible by any other integer, it is not a left-truncatable prime number
+        if n % i == 0:
+            return False
+
+    # If the integer is greater than 1 and it is not divisible by any other integer, it is a left-truncatable prime number
+    return True

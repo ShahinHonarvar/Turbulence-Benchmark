@@ -1,0 +1,32 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check if the list is empty or None
+if my_list is None or len(my_list) == 0:
+return False
+
+# Create a dictionary to store the anagrams and their counts
+anagrams = {}
+
+# Iterate over the list of strings
+for string in my_list:
+
+# Check if the string length is at least three
+if len(string) < 3:
+continue
+
+# Convert the string to lowercase
+lowercase = string.lower()
+
+# Check if the lowercase string is an anagram of itself
+if lowercase == "".join(sorted(lowercase)):
+
+# Increment the count for this anagram
+anagrams[lowercase] = anagrams.get(lowercase, 0) + 1
+
+# Check if there are at least 86 pairs of anagrams in the list
+if len(anagrams) >= 86:
+return True
+
+return False
+```
+This code will check if there are at least 86 pairs of anagrams in a given list of strings. It does this by creating a dictionary to store the anagrams and their counts, iterating over the list of strings, converting each string to lowercase, checking if the lowercase string is an anagram of itself, and incrementing the count for this anagram. Finally, it checks if there are at least 86 pairs of anagrams in the list by comparing the length of the dictionary to 86.

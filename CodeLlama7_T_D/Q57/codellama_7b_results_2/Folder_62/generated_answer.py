@@ -1,0 +1,30 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the elements in the submatrix
+            sum = 0
+
+            # Iterate over each element in the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # Add the current element to the sum
+                    sum += matrix[k][l]
+
+                    # Check if the sum is equal to the target value
+                    if sum == 394:
+                        # If the sum is equal to the target value, add the submatrix to the list of submatrices
+                        submatrices.append(matrix[k - 2:k + 1][l - 2:l + 1]])
+
+            # Reset the sum variable for the next iteration
+            sum = 0
+
+    # Return the list of all submatrices that have a sum of 394
+    return submatrices

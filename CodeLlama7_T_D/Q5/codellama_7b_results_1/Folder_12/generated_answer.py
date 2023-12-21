@@ -1,0 +1,14 @@
+
+def all_neg_ints_inclusive(my_list):
+    # Get the range of indices for negative integers
+    neg_int_indices = [i for i, x in enumerate(my_list) if x < 0]
+    # Check if any negative integers exist in the specified range
+    if len(neg_int_indices) == 0:
+        return []
+
+    # Get the indices of the negative integers in the specified range
+    neg_int_start_index = max(neg_int_indices[0] - 14, 0)
+    neg_int_end_index = min(neg_int_indices[-1] + 14, len(my_list))
+    # Get the list of negative integers in the specified range
+    neg_ints = my_list[neg_int_start_index:neg_int_end_index+1]
+    return neg_ints

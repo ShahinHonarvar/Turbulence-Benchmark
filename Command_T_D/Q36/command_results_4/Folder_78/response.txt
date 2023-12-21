@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: 193dd78f-2936-4a92-a4b5-46bc5cc2e73c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'filter_chars' that takes one argument, a string. For each character between the indices 29 and 33 (both exclusive) in the given string, if that character is greater than character '%' and smaller than character 'a', the function should remove all occurrences of that character within the string while keeping the order of all characters in the string intact. The function should return the altered string.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def filter_chars(s):
+    res = ""
+    for i in range(29, 33):
+        res += s[i]
+        if res[0] >= '%' and res[0] <= 'a':
+            res = res.replace(res[0], "")
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

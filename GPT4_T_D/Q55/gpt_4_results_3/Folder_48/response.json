@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    if not lst or len(lst) == 0:\n        return []\n    circular_lst = deque(lst)\n    result_sublists = []\n\n    for i in range(len(lst)):\n        head = 0\n        product = 1\n        sublist = []\n        while head < len(lst):\n            sublist.append(circular_lst[head])\n            product *= circular_lst[head]\n            if product == 990:\n                result_sublists.append(sublist[:])\n                break\n            elif product > 990:\n                break\n            head += 1\n        circular_lst.rotate(-1)\n\n    return result_sublists\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690978325,
+  "id": "chatcmpl-7j4ztdVKpnEStVsr0mMFTSRjENq6h",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 142,
+    "prompt_tokens": 193,
+    "total_tokens": 335
+  }
+}

@@ -1,0 +1,5 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    return len([sub for sub in itertools.combinations(range(len(matrix)), n) if all(matrix[i][j] == 83 for i, j in sub)])

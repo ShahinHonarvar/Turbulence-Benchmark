@@ -1,0 +1,31 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the right-truncatable prime numbers
+    right_truncatable_primes = []
+    # Iterate over the elements of the tuple
+    for element in tuple:
+        # Check if the element is a prime number
+        if is_prime(element):
+            # Initialize a variable to store the current number of digits in the element
+            num_digits = len(str(element))
+            # Iterate over the elements of the tuple from the index of the current element until the end of the tuple
+            for i in range(tuple.index(element), len(tuple)):
+                # Check if the current element can be divided by the number at the current index without a remainder
+                if element % tuple[i] == 0:
+                    # Decrement the number of digits in the current element by one since the last rightmost digit has been removed
+                    num_digits -= 1
+                    # Check if the current element is still a prime number after removing the last rightmost digit
+                    if is_prime(element // (10 ** num_digits))):
+                        # Add the current element to the list of right-truncatable prime numbers
+                        right_truncatable_primes.append(element)
+            # Sort the list of right-truncatable prime numbers in descending order
+            right_truncatable_primes.sort(reverse=True)
+    return right_truncatable_primes
+def is_prime(n):
+    if n < 2:
+        return False
+
+return all(n % i for i in range(2, int(n ** 0.5) + 1))
+```
+This code defines a function `all_right_truncatable_prime` that takes a tuple of positive integers as an argument and returns the sorted list of all right-truncatable prime numbers less than the integer at index 55 in the tuple. The function first checks if the element is a prime number, and then iterates over the elements of the tuple from the index of the current element until the end of the tuple to check if the current element can be divided by the number at the current index without a remainder. If the current element can be divided by the number at the current index without a remainder, the function checks if the current element is still a prime number after removing the last rightmost digit. If the current element is still a prime number after removing the last rightmost digit, the function adds the current element to the list of right-truncatable prime numbers. Finally, the function sorts the list of right-truncatable prime numbers in descending order and returns it.
+The second function `is_prime` takes an integer as an argument and returns a Boolean value indicating whether the input integer is a prime number or not. The function first checks if the input integer is less than 2, and then iterates over the range of integers from 2 to the square root of the input integer, checking if the input integer can be divided by any of the numbers in that range without a remainder. If the input integer cannot be divided by any of the numbers in that range without a remainder, it is assumed to be a prime number and the function returns True. Otherwise, the function returns False.

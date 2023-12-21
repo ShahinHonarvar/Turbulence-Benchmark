@@ -1,0 +1,20 @@
+ ```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(76, 93):
+        if my_list[i] > 1:
+            for j in range(2, my_list[i]):
+                if my_list[i] % j == 0:
+                    break
+
+            else:
+
+                prime_numbers.append(my_list[i])
+
+    return sorted(prime_numbers)
+
+```
+This code defines a function called `find_primes_between_indices` that takes one argument, a list of integers. The function returns the sorted list of all prime numbers from index 76 to index 92, both inclusive. If no prime number exists in the specified range, the function should return an empty list.
+The code first initializes an empty list called `prime_numbers` to store the prime numbers between indices 76 and 92.
+Next, it iterates through each element of the input list using a nested loop. The outer loop iterates from index 76 to index 92 (both inclusive), while the inner loop checks if each number is divisible by any number between 2 and that number. If no such number exists, then the number is prime and is appended to the `prime_numbers` list.
+Finally, the function returns the sorted `prime_numbers` list.

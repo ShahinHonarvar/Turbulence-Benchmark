@@ -1,0 +1,9 @@
+```
+def return_n_smallest_chars(string):
+    char_dict = {}
+    for char in string:
+        if char not in char_dict:
+            char_dict[char] = ord(char)
+    sorted_list = sorted(char_dict.items(), key=lambda x: x[1])
+    return [x[0] for x in sorted_list[:2]]
+```

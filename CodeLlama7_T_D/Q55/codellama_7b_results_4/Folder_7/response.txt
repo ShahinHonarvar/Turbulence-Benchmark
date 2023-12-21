@@ -1,0 +1,17 @@
+ Here is a possible implementation of the function:
+```
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+    # Loop through each element in the input list
+    for i in range(len(my_list)):
+        # Initialize a variable to store the product of the current element and its successor
+        prod = my_list[i] * my_list[(i+1) % len(my_list)]
+        # If the product is equal to 537, add the current sublist to the output list
+        if prod == 537:
+            sublists.append([my_list[i], my_list[(i+1) % len(my_list)]]))
+    return sublists
+```
+This function takes an input list and returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 537. If no such sublist exists, the function should return an empty list. The order of sublists in the returned list does not matter.
+For example, if we call the function with `my_list = [1, 2, 3, 4, 5]`, the function will return `[ [1, 2], [2, 3], [3, 4], [4, 5] ]` because the product of each pair of adjacent elements is equal to 537.
+Note that this implementation uses a circular list data structure, which allows us to access the successor of an element by taking the remainder of the element's index plus one modulo the length of the list.

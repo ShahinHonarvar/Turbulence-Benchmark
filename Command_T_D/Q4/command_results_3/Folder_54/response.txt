@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: ce4ec55d-0bab-4c3a-9a89-d48b1ae3535f
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_pos_ints_exclusive' that takes one argument, a list of integers, and returns the list of all positive integers from index 27 to index 34, both exclusive. If no positive integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+
+def all_pos_ints_exclusive(lst):
+    idx_str = "27-34"
+    idx_list = re.findall(r'\d+', idx_str)
+    idx_list = list(set(idx_list))
+    idx_list = sorted(idx_list)
+    idx_list = idx_list[1:] + [int(idx_list[0])]
+    idx_list = idx_list[1:-1]
+    return [idx for idx in range(27, 34) if idx in idx_list]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

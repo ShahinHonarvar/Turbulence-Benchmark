@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `filter_chars` function:
+```python
+def filter_chars(s):
+    # Create a new string that is the same length as the original string
+    filtered = ""
+
+    # Iterate over the characters in the original string
+    for i, c in enumerate(s):
+        # If the character is between 72 and 93 (inclusive) and not '<' or 'J', remove all occurrences of that character from the filtered string
+        if 72 <= ord(c) < 94 and c != "<" and c != "J":
+            filtered = filtered.replace(c, "")
+    # Return the filtered string
+    return filtered
+```
+This function first creates an empty string `filtered` that will be used to store the characters of the original string after removing any characters between 72 and 93 (inclusive) and not '<' or 'J'.
+It then iterates over the characters in the original string using a loop. For each character `c`, it checks if its ASCII code is between 72 and 93 (inclusive) and not '<' or 'J'. If this condition is true, it removes all occurrences of that character from the filtered string by replacing it with an empty string.
+Finally, the function returns the filtered string.

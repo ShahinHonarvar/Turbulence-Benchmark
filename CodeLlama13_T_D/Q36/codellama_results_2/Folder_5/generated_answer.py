@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    s = list(s)
+    for i in range(55, 66):
+        if s[i] > 'f' and s[i] < '|':
+            s = [x for x in s if x != s[i]]
+    return "".join(s)

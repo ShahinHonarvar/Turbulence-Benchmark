@@ -1,0 +1,20 @@
+ ```
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the integers at indices 23 and 27
+    i = 23
+    j = 27
+    while i > 0 and j > 0:
+        if i % 2 == 0 and j % 2 == 0:
+            i //= 2
+            j //= 2
+        elif i % 2 == 1 and j % 2 == 1:
+            i += 1
+            j += 1
+        else:
+            break
+
+    return i
+```
+This code defines a function `gcf_two_nums` that takes one argument, a list of positive integers. The function first calculates the indices of interest in the input list using the variables `i` and `j`. These indices are calculated based on the assumption that the greatest common factor (GCF) of two numbers is equal to the GCF of their respective prime factors.
+The code then enters a loop where it checks the primality of the numbers at indices `i` and `j`, and increments them if they are not prime. The loop continues until the numbers at indices `i` and `j` are both prime.
+Once the numbers at indices `i` and `j` are both prime, the function returns their GCF using the `//=` operator to divide both numbers by their respective prime factors until the resulting numbers are 1. The final result is then multiplied by the original numbers to obtain their GCF.

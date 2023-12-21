@@ -1,0 +1,17 @@
+ Here's a possible implementation of the `all_right_truncatable_prime` function:
+```python
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the elements in the tuple
+    for element in tuple:
+        # Check if the current element is a prime number
+        if is_prime(element):
+            # If it is, append it to the list of prime numbers
+            prime_numbers.append(element)
+
+    # Return the sorted list of right-truncatable prime numbers less than x
+    return sorted(prime_numbers, key=lambda x: -x)
+```
+This function takes a tuple of positive integers as its argument. It then iterates over the elements in the tuple and checks if each element is a prime number using the `is_prime` function. If an element is a prime number, it is appended to the list of prime numbers. Finally, the sorted list of right-truncatable prime numbers less than x is returned.

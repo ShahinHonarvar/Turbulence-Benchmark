@@ -1,0 +1,16 @@
+
+def find_subset_of_length_n(set):
+    # Initialize a list to store all subsets of size n
+    subsets = []
+
+    # Iterate over all possible combinations of elements in the set
+    for i in range(2 ** len(set))):
+        # Convert the binary representation of the combination to a decimal number
+        dec = int(bin(i)[2:])
+        # Create a list with the corresponding number of elements from the original set
+        subset = [set[j] for j in range(len(set)) if dec & (1 << j)]
+        # Add the subset to the list of subsets
+        subsets.append(subset)
+
+    # Return the number of all its subsets of size n
+    return len(subsets)

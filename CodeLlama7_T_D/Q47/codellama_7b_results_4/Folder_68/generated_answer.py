@@ -1,0 +1,17 @@
+
+def palindromes_of_specific_lengths(string):
+    # Convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+
+    # Find all the palindromes in the substring from index 0 to index 50, both inclusive
+    palindromes = []
+    for i in range(len(string) - 1):
+        # Check if the current character is a palindrome
+        if string[i] == string[i + 1]:
+            # If it is a palindrome, check if it has the required length
+            if len(string[i:i + 2]) in range(50, 101):
+                # Add the palindrome to the list of palindromes
+                palindromes.append(string[i:i + 2])
+
+    # Return the set of all palindromes that meet the requirements
+    return set(palindromes)

@@ -1,0 +1,12 @@
+ Here's a possible implementation of the `return_nth_smallest_ascii` function:
+```python
+def return_nth_smallest_ascii(string):
+    # Get the set of unique characters in the string
+    unique_chars = set(string)
+    # Create a list of tuples, where each tuple contains the ASCII value and the character it corresponds to
+    ascii_list = [(ord(char), char) for char in unique_chars]
+    # Sort the list by the ASCII values in descending order
+    sorted_ascii_list = sorted(ascii_list, key=lambda x: x[0], reverse=True)
+    # Return the 11th smallest ASCII value and its corresponding character
+    return sorted_ascii_list[10][1]
+```

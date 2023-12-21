@@ -1,0 +1,38 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    x = tuple[77]
+    prime_numbers = []
+
+    for i in range(2, x + 1):
+        if is_prime(i) and is_right_truncatable_prime(i, x):
+            prime_numbers.append(i)
+
+    return sorted(prime_numbers, reverse=True)
+
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_right_truncatable_prime(n, x):
+    while n > 0 and n <= x:
+        if n != int(str(n)[:-1])):
+            return False
+
+        n = int(str(n)[:-1]))
+
+    return True
+
+```
+The code above is a Python function that takes a tuple as an argument. The function returns the sorted list of all right-truncatable prime numbers less than x, where x is the integer at index 77 in the input tuple.
+The function first extracts x from the input tuple and initializes an empty list to store the returned values.
+Next, the function iterates through the numbers from 2 to x, inclusive, and checks whether each number is a prime number using the is_prime() function. If a number is not a prime number, the function moves on to the next iteration.
+If a number is a prime number, the function checks whether it is also a right-truncatable prime number using the is_right_truncatable_prime() function. If a number is a right-truncatable prime number, the function adds it to the list of returned values and moves on to the next iteration.
+If there are no right-truncatable prime numbers less than x, the function returns an empty list.
+The is_prime() function checks whether a given integer n is a prime number by iterating through the numbers from 2 to the square root of n, inclusive, and checking whether any of them divide n without leaving a remainder. If no such number exists, the function returns True. Otherwise, the function returns False.
+The is_right_truncatable_prime() function checks whether a given integer n is a right-truncatable prime number by iteratively removing the rightmost digit of n until it becomes 0 or a single-digit number. If the resulting number is not a prime number, the function returns False. Otherwise, the function returns True.

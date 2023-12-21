@@ -1,0 +1,73 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize the list of prime numbers
+    prime_numbers = []
+
+    # Loop through the range of numbers less than or equal to x
+    for i in range(2, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list of prime numbers
+                prime_numbers.append(i)
+    return prime_numbers
+
+def is_prime(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("n must be a positive integer")
+
+    # Check if n is equal to 1 or 2
+    if n in [1, 2]:
+        return True
+
+    # Check if n is odd
+    if n % 2 == 0:
+        return False
+
+    # Loop through the range of numbers from 3 to sqrt(n)
+    for i in range(3, int(math.sqrt(n))) + 1, 2):
+        # Check if i is a factor of n
+        if n % i == 0:
+            return False
+
+    # If the loop completes, return True
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # Check if n contains any zeroes
+    if "0" in str(n):
+        return False
+
+    # Initialize a list of strings to store the digits of n
+    digits = []
+
+    # Loop through the range of numbers from 1 to the length of the string representation of n
+    for i in range(1, len(str(n))) + 1:
+        # Append the substring of str(n) from index i to the end of the list digits
+        digits.append(str(n)[i:])
+
+    # Initialize a set to store the unique digits in n
+    unique_digits = set()
+
+    # Loop through the list digits
+    for digit in digits:
+        # Check if the digit is already in the set of unique digits
+        if digit not in unique_digits:
+            # Add the digit to the set of unique digits
+            unique_digits.add(digit)
+
+    # Initialize a list to store the prime numbers found in n
+    prime_numbers = []
+
+    # Loop through the set of unique digits
+    for digit in unique_digits:
+        # Check if the digit is a prime number
+        if is_prime(int(digit)):
+            # Add the prime number to the list of prime numbers found in n
+            prime_numbers.append(int(digit))
+
+    # Return True if the list of prime numbers found in n has length greater than 1, False otherwise
+    return len(prime_numbers) > 1
+```

@@ -1,0 +1,10 @@
+
+def find_subset_of_length_n(set_of_elements, n):
+    return len([subset for subset in powerset(set_of_elements) if len(subset) == n])
+
+def powerset(s):
+    result = []
+    for element in s:
+        combinations = [subset + [element] for subset in result]
+        result.extend(combinations)
+    return result

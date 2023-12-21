@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(string):
+    chars = []
+    for i in range(48, 76):
+        if string[i] not in chars:
+            chars.append(string[i])
+    return "".join([c for c in string if c not in chars])

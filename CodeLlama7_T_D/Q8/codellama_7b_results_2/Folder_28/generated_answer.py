@@ -1,0 +1,21 @@
+
+def all_even_ints_exclusive(my_list):
+    # Find the first even integer in the list
+    for i in range(20, len(my_list)):
+        if my_list[i] % 2 == 0:
+            first_even_index = i
+            break
+
+    # If there are no even integers in the list, return an empty list
+    if first_even_index is None:
+        return []
+
+    # Find the last even integer in the list
+
+    for i in range(first_even_index + 1, len(my_list)):
+        if my_list[i] % 2 == 0:
+            last_even_index = i
+
+    # Return the list of all even integers from index 20 to index 51, both exclusive
+
+    return my_list[first_even_index + 1:last_even_index]

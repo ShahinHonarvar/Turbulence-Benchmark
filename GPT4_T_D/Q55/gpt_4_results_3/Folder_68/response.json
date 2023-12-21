@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given specification:\n\n```python\nfrom collections import deque\nfrom itertools import combinations, chain\nfrom operator import mul\nfrom functools import reduce\n\ndef lists_with_product_equal_n(circular_lst):\n    deque_values = deque(circular_lst)\n    result = []\n    \n    for _ in range(len(circular_lst)):\n        deque_values.rotate(1)\n        current_lst = list(deque_values)\n\n        for r in range(1, len(current_lst) + 1):\n            for sublist in combinations(current_lst, r):\n                if reduce(mul, sublist) == 6:\n                    result.append(list(sublist))\n\n    return [list(x) for x in set(tuple(sorted(i)) for i in result)]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690978927,
+  "id": "chatcmpl-7j59bk9RayQDwuNHP1VcpoVGP6rTn",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 151,
+    "prompt_tokens": 193,
+    "total_tokens": 344
+  }
+}

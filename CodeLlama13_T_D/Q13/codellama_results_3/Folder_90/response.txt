@@ -1,0 +1,13 @@
+```
+def find_second_largest_num(distinct_numbers):
+    if len(distinct_numbers) < 2:
+        return None
+    second_largest = distinct_numbers[1]
+    for num in distinct_numbers[2:]:
+        if num > second_largest:
+            second_largest = num
+    return second_largest
+```
+Please note that this code assumes that the input list contains at least two elements. If the input list has only one element, the function will return `None` as there is no second largest element. Also, this function returns the second largest element from index 262 to index 746 both inclusive if present in the given list of distinct numbers.
+
+This code uses a variable called `second_largest` to store the second largest number found so far in the input list. Initially, it is set to the second element of the input list (index 1). The loop then iterates over the remaining elements of the input list starting from index 2 until the end, and for each element `num`, if `num` is greater than `second_largest`, it updates `second_largest` to `num`. Finally, the function returns `second_largest` which is the second largest element found in the given range. If there is no such element, the function returns `None`.

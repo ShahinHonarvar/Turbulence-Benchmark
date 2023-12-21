@@ -1,0 +1,18 @@
+ ```
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Get the intersection of the two lists
+    intersection = list1.intersection(list2)
+
+    # Filter the intersection to only include elements that occur at least once in both lists anywhere between index 13 and index 68, both inclusive
+    filtered_intersection = []
+
+    for element in intersection:
+        if list1.count(element) >= 13 and list2.count(element) >= 13:
+            filtered_intersection.append(element)
+
+    return set(filtered_intersection)
+```

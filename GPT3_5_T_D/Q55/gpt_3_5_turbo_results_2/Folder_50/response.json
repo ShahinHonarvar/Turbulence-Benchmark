@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\nfrom math import prod\n\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    result = []\n    for i in range(1, n + 1):\n        for combination in combinations(lst, i):\n            if prod(combination) == 45:\n                result.append(list(combination))\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689821944,
+  "id": "chatcmpl-7eEAajYJw7Q32GQCuOvqUcvxQuuO1",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 75,
+    "prompt_tokens": 193,
+    "total_tokens": 268
+  }
+}

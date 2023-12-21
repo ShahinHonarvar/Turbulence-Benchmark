@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(my_list):
+    return {x for i, x in enumerate(my_list) if 111 <= i <= 111 and not isinstance(x, int)}

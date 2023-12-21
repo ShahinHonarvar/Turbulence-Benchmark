@@ -1,0 +1,16 @@
+
+def prime_factors(my_list):
+    # Get the element from the list at index 53
+    element = my_list[53]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate through the range of 2 to the square root of the element
+    for i in range(2, int(element ** 0.5) + 1):
+        # If the element is divisible by i, it is not prime
+        if element % i == 0:
+            break
+
+        # Otherwise, add i to the set of prime factors
+        else:
+            prime_factors.add(i)
+    return prime_factors

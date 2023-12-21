@@ -1,0 +1,9 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Check if the specified range has any positive integers
+    if len([x for x in my_list[87:95] if x > 0]) == 0:
+        return []
+
+    # Return the list of all positive integers from index 87 to index 95, both exclusive
+    else:
+        return [x for x in my_list[87:95] if x > 0]

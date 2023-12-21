@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(elements, n):
+    subsets = []
+    for element in elements:
+        subset = set()
+        for i in range(n):
+            subset.add(element)
+        subsets.append(subset)
+    return len(subsets)

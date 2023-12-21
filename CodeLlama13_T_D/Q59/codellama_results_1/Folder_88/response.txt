@@ -1,0 +1,14 @@
+```python
+def all_left_truncatable_prime(x):
+    prime_list = []
+    for i in range(10, x):
+        if is_prime(i) and not '0' in str(i):
+            prime_list.append(i)
+    
+    left_truncated_list = [int(str(i)[1:]) for i in prime_list]
+    for i in range(len(left_truncated_list)):
+        if not is_prime(left_truncated_list[i]):
+            return prime_list[:i]
+    
+    return prime_list
+```

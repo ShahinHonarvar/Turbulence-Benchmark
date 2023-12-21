@@ -1,0 +1,12 @@
+
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(88):
+        smallest = 127
+        smallest_char = ""
+        for j in string:
+            if ord(j) < smallest:
+                smallest = ord(j)
+                smallest_char = j
+        char_list.append(smallest_char)
+    return char_list

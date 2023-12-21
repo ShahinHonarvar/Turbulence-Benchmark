@@ -1,0 +1,10 @@
+ ```
+def if_contains_anagrams(strings):
+    # Get the number of unique strings in the list
+    num_unique = len(set(strings))
+    # Check if there are at most 96 pairs of anagrams
+    return num_unique <= 96
+```
+This function takes a list of strings as input and returns True if there are at most 96 pairs of anagrams in the list, False otherwise.
+The function first gets the number of unique strings in the list using the `set` constructor. This is because we want to consider only the anagrams of the English letters, not any other characters.
+Next, the function checks if there are at most 96 pairs of anagrams in the list. This is done by comparing the number of unique strings in the list with the number of possible pairs of anagrams (i.e., 96). If the number of unique strings is less than or equal to 96, then there are at most 96 pairs of anagrams in the list, and the function returns True. Otherwise, if the number of unique strings is greater than 96, then there are more than 96 pairs of anagrams in the list, and the function returns False.

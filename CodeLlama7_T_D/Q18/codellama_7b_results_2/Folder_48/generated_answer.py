@@ -1,0 +1,15 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the current index
+    sum = 0
+    current_index = 306
+    # Loop through the list from index 306 to index 957, both inclusive
+    while current_index <= 957:
+        # Check if the current element is divisible by either 982 or 319
+        if my_list[current_index] % 982 == 0 or my_list[current_index] % 319 == 0:
+            # If it is, add it to the sum
+            sum += my_list[current_index]
+        # Increment the current index by 1
+        current_index += 1
+    # Return the sum
+    return sum

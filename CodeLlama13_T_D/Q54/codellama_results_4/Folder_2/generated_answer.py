@@ -1,0 +1,13 @@
+
+def all_right_truncatable_prime(x):
+    prime_list = []
+    for i in range(10, x+1):
+        if is_prime(i):
+            prime_list.append(i)
+    right_truncatable_prime_list = []
+    for j in prime_list:
+        for k in range(len(str(j))-1, 0, -1):
+            temp = int(str(j)[:k])
+            if is_prime(temp):
+                right_truncatable_prime_list.append(temp)
+    return sorted(right_truncatable_prime_list)

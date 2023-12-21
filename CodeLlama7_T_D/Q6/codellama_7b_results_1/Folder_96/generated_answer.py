@@ -1,0 +1,16 @@
+
+def all_neg_ints_exclusive(my_list):
+    # Find the first negative integer in the list
+    for i in range(50, len(my_list)):
+        if my_list[i] < 0:
+            break
+
+    # Find the last negative integer in the list
+
+    for j in range(len(my_list)-1, -1, -1):
+        if my_list[j] < 0:
+            break
+
+    # Return a list of all negative integers between the two indices found above
+
+    return my_list[i:j+1]

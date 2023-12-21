@@ -1,0 +1,22 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the elements in the submatrix
+            sum = 0
+            # Loop over each element in the submatrix
+            for row in range(i, i + 2):
+                for col in range(j, j + 2):
+                    # Add the element to the sum if it is within the bounds of the matrix
+                    if row < matrix.shape[0] and col < matrix.shape[1]:
+                        sum += matrix[row][col]
+            # If the sum equals -59, add the submatrix to the list of submatrices
+            if sum == -59:
+                submatrices.append((i, j))
+    # Return the list of submatrices
+    return submatrices

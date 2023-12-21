@@ -1,0 +1,13 @@
+```
+def return_n_greatest_chars(s):
+    # Create a dictionary with the characters as keys and their ASCII values as values
+    char_dict = {char: ord(char) for char in set(s)}
+    
+    # Sort the dictionary by value in descending order
+    sorted_dict = sorted(char_dict.items(), key=lambda x: x[1], reverse=True)
+    
+    # Create a list of the top 88 characters with the greatest ASCII values
+    result = [char for char, _ in sorted_dict[:88]]
+    
+    return result
+```

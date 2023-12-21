@@ -1,0 +1,32 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for consideration
+    start = 32
+    end = 71
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the substring range
+    for i in range(start, end + 1):
+        # Check if the character at index i is a letter (a-z or A-Z)
+        if string[i].isalpha():
+            # Define the left and right indices for the current palindrome
+            left = i - 1
+            right = i + 1
+
+            # Iterate over the characters in the substring range for the current palindrome
+            while left >= start and right <= end:
+                # Check if the character at index left is equal to the character at index right
+                if string[left].lower() == string[right].lower():
+                    # If the character at index left is equal to the character at index right, then add the palindrome to the set of palindromes
+                    palindromes.add(string[left:right])
+                    # Update the indices for the next iteration
+                    left -= 1
+                    right += 1
+                else:
+                    # If the character at index left is not equal to the character at index right, then break out of the loop and move on to the next palindrome
+                    break
+
+    return palindromes
+```

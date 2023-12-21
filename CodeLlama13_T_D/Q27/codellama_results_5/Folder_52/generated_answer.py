@@ -1,0 +1,5 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    new_list[98] = 72.27
+    return new_list

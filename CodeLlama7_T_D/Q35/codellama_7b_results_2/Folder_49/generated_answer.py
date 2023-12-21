@@ -1,0 +1,50 @@
+
+def remove_repeat_chars(s):
+    # Create a set of unique characters in the string
+    unique_chars = set(s)
+    # Initialize an empty string to store the altered string
+    altered_string = ""
+
+    # Iterate over each character in the string
+    for char in s:
+        # If the current character is not in the set of unique characters, append it to the altered string
+        if char not in unique_chars:
+            altered_string += char
+
+        # Otherwise, if the current character is in the set of unique characters, and its index is less than or equal to 200, and greater than or equal to 90, remove all occurrences of that character from the string, while preserving the order of all characters in the string
+        else:
+            # Find the first occurrence of the current character in the string
+            first_occurrence = s.index(char)
+            # If the first occurrence of the current character is less than or equal to 200, and greater than or equal to 90, remove all occurrences of that character from the string, while preserving the order of all characters in the string
+            if first_occurrence <= 200 and first_occurrence >= 90:
+                # Initialize a variable to store the current index of the altered string
+                current_index = 0
+
+                # Iterate over each character in the original string
+                for char_in_original_string in s:
+                    # If the current character is not the character that is being removed, append it to the altered string
+                    if char_in_original_string != char:
+                        altered_string += s[current_index]
+
+                    # Otherwise, if the current character is the character that is being removed, remove all occurrences of that character from the string, while preserving the order of all characters in the string
+                    else:
+                        # Initialize a variable to store the index of the next character in the original string
+                        next_character_index = current_index + 1
+
+                        # Iterate over each occurrence of the character that is being removed in the original string
+                        while next_character_index < len(s) and s[next_character_index] == char:
+                            # Remove the current occurrence of the character that is being removed from the altered string
+                            altered_string = altered_string[:current_index] + altered_string[current_index + 1:]
+
+                            # Increment the index of the next character in the original string
+                            next_character_index += 1
+
+                        # If there are no more occurrences of the character that is being removed in the original string, append it to the altered string
+                        if next_character_index >= len(s) or s[next_character_index] != char:
+                            altered_string += s[current_index]
+
+                    # Increment the index of the current character in the original string
+                    current_index += 1
+
+    # Return the altered string
+    return altered_string

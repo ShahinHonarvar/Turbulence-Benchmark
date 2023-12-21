@@ -1,0 +1,15 @@
+```python
+def all_left_truncatable_prime(x):
+    x = list(range(2, x+1))
+    prime_numbers = []
+    for i in range(len(x)):
+        if is_prime(x[i]) and '0' not in str(x[i]):
+            prime_numbers.append(x[i])
+    return sorted(prime_numbers, reverse=True)
+
+def is_prime(n):
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```

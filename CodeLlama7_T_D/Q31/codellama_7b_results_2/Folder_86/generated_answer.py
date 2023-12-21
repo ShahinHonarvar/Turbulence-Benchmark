@@ -1,0 +1,13 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the element at index 194 is a perfect number
+    elif my_list[194] in [6, 28, 496]:
+        return True
+
+    else:
+
+        return False

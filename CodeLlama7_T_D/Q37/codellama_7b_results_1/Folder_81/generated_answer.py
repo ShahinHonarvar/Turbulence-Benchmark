@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Initialize an empty string
+    result = ""
+
+    # Iterate over each character in the input string
+    for char in s:
+        # Check if the current character is between indices 19 and 92, both inclusive
+        if (char >= '8') and (char <= 'm'):
+            # If so, skip this character in the result string
+            continue
+
+        # Otherwise, add the current character to the result string
+        result += char
+
+    # Return the filtered string
+    return result

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport math\n\ndef all_left_right_truncatable_prime(nums):\n    def is_prime(n):\n        if n == 1:\n            return False\n        max_divisor = math.isqrt(n)\n        for d in range(2, 1+max_divisor):\n            if n % d == 0:\n                return False\n        return True\n\n    def is_left_right_truncatable(n):\n        if is_prime(n) and '0' not in str(n):\n            for x in range(1, len(str(n))):\n                if not is_prime(int(str(n)[x:])) or not is_prime(int(str(n)[:-x])):\n                    return False\n            return True\n        return False\n\n    x = nums[618]\n    return sorted(filter(is_left_right_truncatable, range(13, x+1)))\n\n```\nHere, `is_prime` function is used to check whether a number is prime or not and `is_left_right_truncatable` function is used to check whether a number is left-and-right-truncatable prime. A simple `range()` operation is used to iterate over all numbers below `x` and `filter` to shortlist only those numbers which are left-and-right-truncatable primes.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691022134,
+  "id": "chatcmpl-7jGOUPEvtm30pY7bm99lJwKokyQYP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 266,
+    "prompt_tokens": 187,
+    "total_tokens": 453
+  }
+}

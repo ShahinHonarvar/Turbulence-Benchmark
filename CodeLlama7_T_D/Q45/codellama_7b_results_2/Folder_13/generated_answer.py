@@ -1,0 +1,12 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible starting index in the range of indices specified in the problem statement
+    for i in range(3, 9 + 1):
+        # Loop through each possible ending index in the range of indices specified in the problem statement
+        for j in range(i, 9 + 1):
+            # Check if the substring starting at index i and ending at index j is a palindrome
+            if string[i:j] == string[i:j][::-1]:
+                # If it is a palindrome, add it to the set of palindromes
+                palindromes.add(string[i:j])
+    return palindromes

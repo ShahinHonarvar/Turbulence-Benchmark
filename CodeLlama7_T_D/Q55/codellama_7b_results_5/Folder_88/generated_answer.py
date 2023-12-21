@@ -1,0 +1,24 @@
+
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store sublists
+    sublists = []
+
+    # Iterate through the elements of the given list
+    for i in range(len(my_list)):
+
+        # Initialize a variable to store the product of the current element and its neighbors
+        prod = 1
+
+        # Iterate through the neighbors of the current element
+        for j in range(i-1, i+2):
+
+            # If the neighbor is within the bounds of the given list, add its product to the running total
+            if 0 <= j < len(my_list):
+                prod *= my_list[j]
+
+        # If the product equals -56, add the sublist containing the current element and its neighbors to the returned list
+        if prod == -56:
+            sublists.append([my_list[i-1], my_list[i], my_list[i+1]])
+
+    # Return the list of sublists
+    return sublists

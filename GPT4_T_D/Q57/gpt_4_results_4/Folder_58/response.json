@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    num_rows, num_cols = np.shape(matrix)\n    submatrix_list = []\n    \n    for start_row in range(num_rows):\n        for end_row in range(start_row+1, num_rows+1):\n            for start_col in range(num_cols):\n                for end_col in range(start_col+1, num_cols+1):\n                    submatrix = matrix[start_row:end_row, start_col:end_col]\n                    if np.sum(submatrix) == -137:\n                        submatrix_list.append(submatrix)\n    \n    return submatrix_list\n```\n\nThe function works by iterating over all possible starting and ending row and column indexes to form submatrices, sums the elements in each submatrix and checks whether the sum equals -137. If it does, it adds the submatrix to the list of submatrices. It finally returns the list of submatrices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093866,
+  "id": "chatcmpl-7jZ3S40nt8zahRECxcPEC581xiZPo",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 192,
+    "prompt_tokens": 121,
+    "total_tokens": 313
+  }
+}

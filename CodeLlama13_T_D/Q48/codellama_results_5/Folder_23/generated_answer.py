@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(nums):
+    a = nums[20] + 1
+    b = nums[36] - 1
+    result = 0
+    for i in range(a, b+1):
+        if i not in nums:
+            result += i
+    if result % 2 == 0:
+        return hex(result)
+    else:
+        return bin(result)[2:]

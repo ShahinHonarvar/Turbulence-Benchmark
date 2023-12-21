@@ -1,0 +1,17 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[69]
+b = tuple[97]
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple:
+sum += i
+return ""
+else:
+
+if sum % 2 == 1:
+return "{:b}".format(sum)
+else:
+return "{:x}".format(sum)
+```
+This function takes a single argument, a tuple of distinct nonnegative integers sorted in ascending order. It then calculates the sum of all integers from the 70th element to the 98th element (both inclusive) that are not present in the tuple between indices 69 and 97. If the sum is an odd number, the function returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary representation string should not be prefixed with "0b". The hexadecimal representation string should not be prefixed with "0x". The binary and hexadecimal representation strings should start with the most significant digit and have no leading zeros. The letters in the hexadecimal representation string can be either in lowercase or uppercase. If all integers from the 70th element to the 98th element (both inclusive) are present in the specified range in the tuple, the function returns an empty string.

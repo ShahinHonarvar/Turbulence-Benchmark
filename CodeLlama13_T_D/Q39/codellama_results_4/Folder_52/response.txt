@@ -1,0 +1,6 @@
+```python
+def return_n_greatest_chars(string):
+    sorted_list = sorted([char for char in string if char not in ' '], key=lambda x: ord(x))
+    return sorted_list[-68:]
+```
+This function uses a list comprehension to create a list of all the distinct characters in the input string, and then it sorts this list using the `ord()` function to get the ASCII value of each character. Finally, it returns the last 68 elements of the sorted list, which are the characters with the greatest ASCII values.

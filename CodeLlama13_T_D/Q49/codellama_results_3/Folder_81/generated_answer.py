@@ -1,0 +1,7 @@
+
+def if_decimal_is_divisible(binary):
+    fib = {0:0, 1:1}
+    for i in range(2, len(binary)):
+        fib[i] = fib[i-1] + fib[i-2]
+    decimal = int(binary, 2)
+    return decimal % fib[97] == 0

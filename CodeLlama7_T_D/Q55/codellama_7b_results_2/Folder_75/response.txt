@@ -1,0 +1,34 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Check if the input is a list
+if not isinstance(circular_list, list):
+    raise ValueError("Input must be a list")
+
+# Initialize an empty list to store the sublists
+sublists = []
+
+# Loop through the circular list and find contiguous integers whose product equals 13
+for i in range(len(circular_list)):
+    # Check if the current element is equal to 13
+    if circular_list[i] == 13:
+        # Initialize an empty list to store the sublist
+        sublist = []
+
+        # Add the current element to the sublist
+        sublist.append(circular_list[i])
+
+        # Loop through the remaining elements of the circular list and find contiguous integers whose product equals 13
+        for j in range(i + 1, len(circular_list)):
+            # Check if the current element is equal to 13
+            if circular_list[j] == 13:
+                # Add the current element to the sublist
+                sublist.append(circular_list[j])
+
+        # Check if the sublist is empty or not
+        if len(sublist) > 0:
+            # Append the sublist to the list of sublists
+            sublists.append(sublist)
+
+# Return the list of sublists
+return sublists
+```

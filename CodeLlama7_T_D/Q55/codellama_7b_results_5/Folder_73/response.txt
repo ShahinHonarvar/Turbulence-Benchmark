@@ -1,0 +1,16 @@
+ ```
+def lists_with_product_equal_n(lst):
+# Step 1: Create a dictionary to store the sublists with product equal to n
+sublists = {}
+
+# Step 2: Iterate over the list and calculate the product of each contiguous sequence of integers. If the product is equal to n, add it to the sublists dictionary.
+for i in range(len(lst)):
+product = 1
+for j in range(i, len(lst)):
+product *= lst[j]
+if product == n:
+sublists[product] = [lst[k] for k in range(i, j+1)]
+
+# Step 3: Return the sublists dictionary with all the sublists that have a product equal to n. If no such sublist exists, return an empty list.
+return sublists.get(n, [])
+```

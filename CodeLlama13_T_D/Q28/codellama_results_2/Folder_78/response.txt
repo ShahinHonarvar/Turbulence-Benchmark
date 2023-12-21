@@ -1,0 +1,7 @@
+```python
+def return_nth_smallest_ascii(string):
+    asciis = sorted([ord(c) for c in string])[0:87]
+    nth = min(len(asciis), 14) - 1
+    return chr(asciis[nth])
+```
+This function first creates a list of ASCII values for the characters in the input string using the `ord()` function. The list is then sorted and sliced to include only the ASCII values between indices 0 and 87, both inclusive. Finally, the character with the nth-smallest ASCII value among those included in the slice is returned using the `chr()` function.

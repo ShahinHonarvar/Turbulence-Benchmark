@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_n(s):
+    return {p for p in (s[i:i+464] for i in range(len(s)-463)) if p == p[::-1]}
+```
+This code uses a set comprehension to iterate over all substrings of the input string `s` with length 464, and checks whether each substring is equal to its reverse using the `==` operator. If a palindrome is found, it is added to the output set. The function returns an empty set if no palindromes are found.

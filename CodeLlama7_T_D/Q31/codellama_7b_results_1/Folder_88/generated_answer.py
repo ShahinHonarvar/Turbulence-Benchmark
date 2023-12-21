@@ -1,0 +1,23 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if not my_list:
+        return False
+
+    # Get the element at index 46
+    element = my_list[46]
+
+    # Check if the element is a perfect number
+    if element == 0 or element % 2 != 0:
+        return False
+
+    # Calculate the sum of the divisors
+    sum_of_divisors = 0
+    for i in range(1, int(element ** 0.5) + 1):
+        if element % i == 0:
+            sum_of_divisors += i
+            if element != i:
+                sum_of_divisors += element // i
+
+    # Check if the sum of the divisors is equal to the element
+    return sum_of_divisors == element

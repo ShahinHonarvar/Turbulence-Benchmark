@@ -1,0 +1,24 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the submatrices with the desired sum
+    submatrices = []
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a list to store the elements of the submatrix
+            submatrix_elements = []
+            # Loop through each row and column of the submatrix
+            for m in range(i, i + 3):
+                for n in range(j, j + 3):
+                    # Add the element to the list if it is within the bounds of the matrix
+                    if m < matrix.shape[0] and n < matrix.shape[1]:
+                        submatrix_elements.append(matrix[m][n]])
+            # Check if the sum of all elements in the submatrix is equal to -811
+            if sum(submatrix_elements) == -811:
+                # Add the submatrix to the list of submatrices with the desired sum
+                submatrices.append(submatrix_elements)
+    # Return the list of all submatrices with the desired sum
+    return submatrices
+```

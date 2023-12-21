@@ -1,0 +1,14 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # convert the binary string to a decimal integer
+    decimal_int = int(binary_string, 2)
+    # initialize variables for Fibonacci sequence
+    fib1, fib2 = 0, 1
+    # loop through the digits of the decimal integer
+    for digit in str(decimal_int):
+        # if the current digit is a 1, add the previous two Fibonacci numbers together
+        if digit == "1":
+            fib1, fib2 = fib2, fib1 + fib2
+    # return True if the final Fibonacci number in the sequence is divisible by 84, otherwise return False
+    return (fib2 % 84) == 0
+```

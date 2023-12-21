@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string
+    indices = [i for i, c in enumerate(string) if c != ""]
+    # Get the ASCII values of the characters at the specified indices
+    ascii_values = [ord(string[i]) for i in indices]
+    # Sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the character with the 19th smallest ASCII value
+    return chr(sorted_ascii_values[18])

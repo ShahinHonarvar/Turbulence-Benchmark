@@ -1,0 +1,6 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Return the 17th smallest number from index 366 to index 578, both inclusive
+    return my_list[366:579].index(17)

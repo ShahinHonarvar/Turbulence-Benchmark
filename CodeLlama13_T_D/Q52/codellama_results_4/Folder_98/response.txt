@@ -1,0 +1,13 @@
+```python
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string)):
+        substr = string[i:i+6]
+        if len(substr) != 6:
+            continue
+        if not all(c.isalpha() for c in substr):
+            continue
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes
+```

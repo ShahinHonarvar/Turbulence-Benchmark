@@ -1,0 +1,12 @@
+
+def identical_elements(list1, list2):
+    if len(list1) != len(list2):
+        return set()
+    
+    common_elements = set()
+    for i in range(31, 35):
+        element = list1[i]
+        if element in list2:
+            common_elements.add(element)
+    
+    return common_elements

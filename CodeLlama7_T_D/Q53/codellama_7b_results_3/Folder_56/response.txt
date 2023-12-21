@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function:
+```python
+import re
+
+def palindrome_of_length_at_least_n(string, n):
+    # Use regular expressions to find all palindromes
+    # in the given string that have a length of at least n.
+    pattern = r"(?i)(?=[\w\W]{%d})[\w]*[\w][\w]*" % (n)
+    matches = re.findall(pattern, string)
+    # Return an empty set if no palindromes were found.
+    return set(matches) or set()
+```
+This implementation uses regular expressions to find all palindromes in the given string that have a length of at least `n`. The regular expression used is `r"(?i)(?=[\w\W]{%d})[\w]*[\w][\w]*" % (n)`. This pattern matches any word that contains only letters and has a length greater than or equal to `n`.
+The function then returns the set of all palindromes found in the given string. If no such palindromes exist, an empty set is returned instead.

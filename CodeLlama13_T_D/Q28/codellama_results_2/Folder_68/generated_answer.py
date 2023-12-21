@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(s):
+    asciis = list(map(ord, s))
+    for i in range(10):
+        asciis[i+1:] = list(filter(lambda x: x > asciis[i], asciis[i+1:]))
+    return chr(asciis[10])

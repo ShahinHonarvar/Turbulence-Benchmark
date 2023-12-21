@@ -1,0 +1,17 @@
+
+def gcf_two_nums(my_list):
+    # Get the greatest common factor of two numbers
+    # using the Euclidean algorithm
+
+    # Initialize variables
+    a = my_list[56]
+    b = my_list[92]
+    c = 0
+
+    # Calculate the greatest common factor
+    while b != 0:
+        c = a % b
+        a = b
+        b = c
+
+    return a

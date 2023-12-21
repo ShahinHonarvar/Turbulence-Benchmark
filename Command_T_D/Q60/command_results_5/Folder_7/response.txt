@@ -1,0 +1,97 @@
+[cohere.Generation {
+	id: 4fc68582-4bb1-4949-b609-ab062e9d09fe
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 803. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import bisect
+import functools
+
+from collections import namedtuple
+
+# Python doesn't have a built-in prime number generator, so we have to write our own.
+# This is the function that generates all prime numbers that are less than or equal to
+# the given integer.
+@functools.lru_cache(maxsize=1_000_000)
+def generate_primes(n):
+    # If n <= 3, then there are no prime numbers.
+    if n <= 3:
+        return []
+    # If n == 2 or n == 3, then there is only one prime number.
+    if n == 2 or n == 3:
+        yield from [2, 3]
+    # If n == 4, then there are only two prime numbers.
+    if n == 4:
+        yield from [2, 3]
+        yield from [5, 7]
+    # If n > 4, then there are prime numbers for all even numbers
+    # less than sqrt(n).
+    for i in range(5, int(n ** .5) + 1, 2):
+        # If i is already known to be prime, then there is no need to
+        # check if i + 2, i + 3, i + 5, or i + 7 are prime.
+        if all(type(x) == int for x in range(2, i // 2 + 1)):
+            # i + 2 is prime if i is odd.
+            if i % 2 == 1:
+                yield from range(i + 2, min(n, i + 5), i + 2)
+            # i + 3 is prime if i is even.
+            if i % 2 == 0:
+                yield from range(i + 3, min(n, i + 5), i + 3)
+            # i + 5 is prime if i is odd.
+            if i % 2 == 1:
+                yield from range(i + 5, min(n, i + 7), i + 5)
+            # i + 7 is prime if i is even.
+            if i % 2 == 0:
+                yield from range(i + 7, min(n, i + 7), i + 7)
+    # If there are no more odd or even numbers, then there are no more
+    # prime numbers.
+    if n == int(n ** .5) + 1:
+        return []
+    # If there is only one odd number left, then there is only one more prime
+    # number.
+    if n == int(n ** .5) + 2:
+        yield from [int(n ** .5) + 3]
+    # If there are two odd numbers left, then there are two more prime
+    # numbers.
+    if n == int(n ** .5) + 3:
+        yield from [int(n ** .5) + 3, int(n ** .5) + 5]
+    # If there are three odd numbers left, then there are six more prime
+    # numbers.
+    if n == int(n ** .5) + 4:
+        yield from [int(n ** .5) + 3, int(n ** .5) + 5]
+        yield from [int(n ** .5) + 7, int(n ** .5) + 9, int(n ** .5) + 11]
+        yield from [int(n ** .5) + 13, int(n ** .5) + 15]
+
+# This is a named tuple to represent a prime number.
+PRIME = namedtuple("PRIME", ["value", "left", "right"])
+
+# This function generates all left-and-right-truncatable prime numbers less than or
+# equal to the given integer.
+@functools.lru_cache(maxsize=1_000_000)
+def generate_left_right_truncatable_primes(n):
+    # Generate all prime numbers less than or equal to the given integer.
+    primes = generate_primes(n)
+    # Create an empty list to store the left-and-right-truncatable primes.
+    left_right_truncatable_primes = []
+    # Create a list to store the left-and-right-truncatable prime pairs.
+    left_right_truncatable_pairs = []
+    # Create a list to store the left-right-truncatable prime triplets.
+    left_right_truncatable_triplets = []
+    # Create a list to store the left-right-truncatable prime quadruplets.
+    left_right_truncatable_quadruplets = []
+    # Create a list to store the left-right-truncatable prime quintuplets.
+    left_right_truncatable_quintuplets = []
+    # Create a list to store the left-right-truncatable prime sextuplets.
+    left_right_truncatable_sextuplets = []
+    # Create a list to store the left-right-truncatable prime septuplets.
+    left_right_truncatable_septuplets = []
+    # Create a list to store the left-right-truncatable prime octuplets.
+    left_right_truncatable_octuplets = []
+    # Create a list to store the left-right-truncatable prime nonuplets.
+    left_right_truncatable_nonuplets = []
+    # Create a list to store the left-right-truncatable prime pairs.
+    left_right_truncatable_pairs = []
+    # Create a list to store the left-right-truncatable prime triplets.
+    left_right_truncatable_triplets = []
+    # Create a list to store
+	likelihood: None
+	token_likelihoods: None
+}]

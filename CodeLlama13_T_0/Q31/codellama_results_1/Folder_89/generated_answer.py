@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[18] == sum(filter(lambda x: x % my_list[18] == 0, my_list)):
+        return True
+    else:
+        return False

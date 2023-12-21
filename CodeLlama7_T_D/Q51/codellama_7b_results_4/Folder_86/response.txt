@@ -1,0 +1,19 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    anagram_count = 0
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_count += 1
+                # If there are more than 48 pairs of anagrams, return False
+                if anagram_count > 48:
+                    return False
+
+    # If there are at most 48 pairs of anagrams in the list, return True
+    return True
+```
+The function `if_contains_anagrams` takes a list of strings as input. It returns true if there are at most 48 pairs of anagrams in the given list; otherwise, it returns false.
+The function first counts the number of anagrams in the list using a nested loop. For each pair of strings, the function checks if they are anagrams by comparing their sorted values. If the two strings have the same length and the same sorted value, then they are considered to be anagrams. The function increments the `anagram_count` variable for every pair of anagrams it finds.
+If the number of anagrams found is greater than 48, then the function returns false. This means that there are more than 48 pairs of anagrams in the list, which is not allowed according to the problem statement.
+On the other hand, if the `anagram_count` variable has a value less than or equal to 48, then the function returns true. This means that there are at most 48 pairs of anagrams in the list, which is allowed according to the problem statement.

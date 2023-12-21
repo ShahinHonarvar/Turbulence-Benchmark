@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: 7cdb100a-8cd4-43a8-bb83-1f09a1fb098d
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_both_two_nums' that takes one argument, a list of integers, and returns the list of all integers divisible by both 850 and 587 from index 250 to index 629, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+
+def all_ints_div_by_both_two_nums(nums):
+    low = bisect.bisect_left(nums, 250)
+    high = bisect.bisect_right(nums, 629)
+    return nums[low:high]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    n = len(lst)\n    for size in range(1, n+1):\n        for start in range(n):\n            sublist = lst[start:start+size]\n            if len(sublist) < size:\n                sublist += lst[:start+size-n]\n            if reduce(lambda x, y: x*y, sublist) == -56:\n                result.append(sublist)\n                break\n    return result\n\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822106,
+  "id": "chatcmpl-7eEDCguHuKhQAXyV4KdFiCM0ZH43k",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 193,
+    "total_tokens": 296
+  }
+}

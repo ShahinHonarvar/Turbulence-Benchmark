@@ -1,0 +1,32 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_list = []
+    # Iterate through the tuple of positive integers
+    for i in range(len(tuple)):
+        # Get the current number from the tuple
+        num = tuple[i]
+        # Check if the number is a prime number
+        if is_prime(num):
+            # If the number is a prime number, append it to the list of prime numbers
+            prime_list.append(num)
+    # Sort the list of prime numbers in descending order
+    prime_list.sort(reverse=True)
+    # Return the sorted list of prime numbers
+    return prime_list
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Initialize a variable to store the result of the loop
+        result = True
+        # Iterate through the numbers from 2 to n-1
+        for i in range(2, n):
+            # If any number divides n without leaving a remainder, return False
+            if n % i == 0:
+                result = False
+                break
+
+        # Return the result of the loop
+        return result

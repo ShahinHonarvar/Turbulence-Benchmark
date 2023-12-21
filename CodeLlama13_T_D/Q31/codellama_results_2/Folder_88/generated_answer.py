@@ -1,0 +1,26 @@
+
+def if_perfect_num(list):
+    return True if list[46] in perfect_nums() else False
+
+def perfect_nums():
+    nums = []
+    for i in range(1, 1000):
+        s = sum(divisors(i))
+        if s > i and is_prime(s):
+            nums.append(s)
+    return nums
+
+def divisors(n):
+    divs = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            divs.append(i)
+    return divs
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True

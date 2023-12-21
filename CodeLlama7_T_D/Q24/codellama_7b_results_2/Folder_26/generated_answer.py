@@ -1,0 +1,12 @@
+
+def sum_of_divisors_in_range(n):
+    if n < 83 or n > 95:
+        return 0
+
+    divisors = []
+
+    for i in range(83, 96):
+        if n % i == 0:
+            divisors.append(i)
+
+    return sum(divisors)

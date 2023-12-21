@@ -1,0 +1,14 @@
+ ```
+def find_subset_of_length_n(elements):
+# Initialize an empty list to store the subsets
+subsets = []
+# Iterate over all possible combinations of elements
+for i in range(1 << len(elements)):
+# Convert the binary representation of the combination into a set of elements
+current_subset = {elements[j] for j in range(len(elements)) if (i & (1 << j)) > 0}
+# Check if the current subset has size n
+if len(current_subset) == n:
+# Add the current subset to the list of subsets
+subsets.append(current_subset)
+return len(subsets)
+```

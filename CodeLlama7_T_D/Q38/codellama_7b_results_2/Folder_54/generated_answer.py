@@ -1,0 +1,18 @@
+
+def find_subset_of_length_n(set):
+    # Initialize a counter for the number of subsets
+    count = 0
+
+    # Loop through all possible subsets of size 51
+    for i in range(2 ** 51):
+        # Convert the binary representation of the subset to a set of integers
+        subset = set()
+        for j in range(51):
+            if (i >> j) & 1:
+                subset.add(j)
+
+        # Check if the subset has length 51
+        if len(subset) == 51:
+            count += 1
+
+    return count

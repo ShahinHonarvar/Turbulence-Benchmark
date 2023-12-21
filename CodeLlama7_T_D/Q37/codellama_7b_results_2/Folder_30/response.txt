@@ -1,0 +1,16 @@
+ ```
+def filter_chars(s):
+    filtered = ""
+    for i in range(len(s)):
+        if s[i] >= "K" and s[i] <= "]":
+            continue
+
+        filtered += s[i]
+
+    return filtered
+
+```
+Explanation:
+The function `filter_chars` takes a single argument, a string `s`, and returns an altered version of the string with all characters between indices 41 and 64, both inclusive, removed while preserving the order of all other characters.
+To achieve this, we iterate over each character in the input string using a for loop. We then check if the current character is within the specified range (i.e., between indices 41 and 64) and whether it satisfies the additional criteria that it should be greater than or equal to character 'K' and smaller than or equal to character ']'. If these conditions are met, we skip over this character in the output string using the `continue` keyword.
+Otherwise, we add the current character to the filtered string using the `+=` operator. Once we have iterated over all characters in the input string, we return the altered output string containing only the desired characters.

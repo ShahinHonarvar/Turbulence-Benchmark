@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the result list
+    result = []
+    # Loop through each submatrix of the given matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Check if the sum of all integers in the submatrix equals -90
+            if np.sum(matrix[i:i+2, j:j+2]) == -90:
+                # If so, add the submatrix to the result list
+                result.append(matrix[i:i+2, j:j+2])
+    # Return the result list
+    return result
+```

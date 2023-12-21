@@ -1,0 +1,61 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list
+                prime_numbers.append(i)
+
+    # Sort the list in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if i divides n
+                return False
+
+    # If the number is greater than 1, it is a prime number
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if n is a prime number
+    if not is_prime(n):
+        # If n is not a prime number, it is not a left-and-right-truncatable prime number
+        return False
+
+    # Initialize an empty list to store the digits of n
+    digits = []
+
+    # Iterate from 1 to the length of n
+    for i in range(1, len(str(n)) + 1):
+        # Append the digit at position i of n to the list of digits
+        digits.append(int(str(n)[i - 1])))
+
+    # Initialize an empty string to store the number with the leading leftmost and last rightmost digits removed
+    result = ""
+
+    # Iterate from 0 to the length of n minus one
+    for i in range(0, len(str(n)) - 1):
+        # Add the digit at position i plus one to the end of the string
+        result += str(int(str(n)[i] + 1)))
+
+    # Check if the number with the leading leftmost and last rightmost digits removed is a prime number
+    if is_prime(int(result))):
+        # Return True if the number with the leading leftmost and last rightmost digits removed is a prime number
+        return True

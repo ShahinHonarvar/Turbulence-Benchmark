@@ -1,0 +1,19 @@
+
+def prime_factors(my_list):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the list of integers
+    for i in my_list:
+        # Check if the integer is prime by dividing it by all the positive integers less than or equal to its square root
+        is_prime = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        # If the integer is prime, add it to the set of prime factors
+        if is_prime:
+            prime_factors.add(i)
+
+    # Return the set of all prime factors
+    return prime_factors

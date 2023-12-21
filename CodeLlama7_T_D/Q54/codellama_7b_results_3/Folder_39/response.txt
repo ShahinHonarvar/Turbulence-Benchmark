@@ -1,0 +1,54 @@
+ ```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+	# Initialize an empty list to store the right-truncatable prime numbers
+	list_of_right_truncatable_primes = []
+
+	# Iterate through the tuple of positive integers
+
+	for integer in tuple_of_positive_integers:
+
+		# If the integer is a prime number, check if it is right-truncatable
+
+		if is_prime(integer):
+
+			# Check if the integer remains prime when the last rightmost digit is successively removed
+
+			for i in range(1, len(str(integer)))):
+
+				# If the integer is not prime after removing the rightmost digit, break out of the loop and move on to the next integer
+
+				if not is_prime(int(str(integer)[0:-i])):
+
+					break
+
+
+				# If the integer remains prime after removing the rightmost digit, add it to the list of right-truncatable prime numbers and move on to the next integer
+
+				else:
+
+					list_of_right_truncatable_primes.append(integer)
+
+
+	# Sort the list of right-truncatable prime numbers in descending order and return it
+
+	return sorted(list_of_right_truncatable_primes, reverse=True)
+
+
+# Define a function to check if an integer is prime or not
+
+def is_prime(n):
+
+	if n < 2:
+
+		return False
+
+
+	for i in range(2, int(n ** 0.5) + 1)):
+
+		if n % i == 0:
+
+			return False
+
+
+	return True
+```

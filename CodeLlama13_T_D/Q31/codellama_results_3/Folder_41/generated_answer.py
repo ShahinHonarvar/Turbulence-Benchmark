@@ -1,0 +1,3 @@
+
+def if_perfect_num(arr):
+    return arr[84] == sum(filter(lambda x: x != arr[84], range(1, int(sqrt(arr[84])))))**2

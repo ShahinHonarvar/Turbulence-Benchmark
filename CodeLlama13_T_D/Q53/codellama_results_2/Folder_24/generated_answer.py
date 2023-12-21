@@ -1,0 +1,10 @@
+
+def palindrome_of_length_at_least_n(s):
+    palindromes = set()
+    for i in range(len(s) - 53 + 1):
+        substr = s[i:i+54]
+        if len(substr) < 53:
+            continue
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes

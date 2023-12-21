@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return __greatest_common_factor__(my_list[29], my_list[74], my_list[49])

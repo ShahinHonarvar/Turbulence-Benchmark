@@ -1,0 +1,13 @@
+ ```
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    common_elements = set(list1).intersection(set(list2))
+    # Check if any element occurs at least once in both lists anywhere between index 30 and index 87, both inclusive.
+    for element in common_elements:
+        if list1.count(element) >= 30 and list2.count(element) >= 30:
+            return {element}
+
+    # If no such elements exist in the given lists, the function should return an empty set.
+    return set()
+```
+This code uses the `set` data structure to keep track of all the elements that occur at least once in both lists. It then iterates over each element in this set and checks if it occurs at least once in both lists anywhere between index 30 and index 87, both inclusive. If such an element is found, the function returns a set containing only that element. Otherwise, the function returns an empty set.

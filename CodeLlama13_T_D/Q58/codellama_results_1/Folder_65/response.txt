@@ -1,0 +1,16 @@
+```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    if not isinstance(matrix, np.ndarray):
+        raise ValueError("Input must be a 2D numpy array")
+    
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows-34):
+        for j in range(cols-34):
+            submatrix = matrix[i:i+35, j:j+35]
+            if (submatrix == 35).all():
+                count += 1
+    
+    return count
+```

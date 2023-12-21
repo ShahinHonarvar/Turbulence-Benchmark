@@ -1,0 +1,33 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_pairs = 0
+    min_length = 3
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the string is an anagram of a three-letter word
+        if len(lowercase_string) >= min_length:
+            # Create a list of all possible anagrams of the string
+            all_anagrams = []
+            for i in range(len(lowercase_string)):
+                for j in range(i + 1, len(lowercase_string) + 1):
+                    anagram = ''.join(sorted(lowercase_string[i:j]))
+                    if anagram not in all_anagrams:
+                        all_anagrams.append(anagram)
+
+            # Check if there are at most 26 pairs of anagrams in the list
+            if len(all_anagrams) <= 26:
+                anagram_pairs += len(all_anagrams)
+
+    # Return True if there are at most 26 pairs of anagrams in the given list; otherwise, return False
+    if anagram_pairs <= 26:
+        return True
+
+    else:
+
+        return False
+```

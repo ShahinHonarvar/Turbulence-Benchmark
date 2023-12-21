@@ -1,0 +1,7 @@
+ def filter_chars(s):
+    # create a new string with the filtered characters
+    new_str = ""
+    for i in range(len(s)):
+        if s[i] not in range(82, 94):
+            new_str += s[i]
+    return new_str

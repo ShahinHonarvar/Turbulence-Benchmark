@@ -1,0 +1,3 @@
+
+def all_substring_of_size_n(s):
+    return [''.join(s[i:j]) for i in range(len(s) - 126) for j in range(i + 127, len(s) + 1)]

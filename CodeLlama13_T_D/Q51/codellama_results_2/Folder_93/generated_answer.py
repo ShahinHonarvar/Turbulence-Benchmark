@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strs):
+    anagram_pairs = 0
+    for str1 in strs:
+        for str2 in strs:
+            if str1.lower() == str2.lower():
+                continue
+            if "".join(sorted(str1)) == "".join(sorted(str2)):
+                anagram_pairs += 1
+    return anagram_pairs <= 36

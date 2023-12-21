@@ -1,0 +1,12 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Find the substring from index 101 to index 292, both inclusive
+    substr = string[101:293]
+    
+    # Create a set of all palindromes with lengths between 154 to 182 (both inclusive)
+    palindromes = {palindrome for length in range(154, 183)
+                              for palindrome in substr.split()
+                              if len(palindrome) == length and palindrome.isalpha()}
+    
+    return palindromes
+```

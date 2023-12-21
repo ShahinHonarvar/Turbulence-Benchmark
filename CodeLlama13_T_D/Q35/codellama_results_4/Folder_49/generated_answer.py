@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    seen = {}
+    result = ""
+    for i, c in enumerate(s[90:200]):
+        if not (c in seen and seen[c] < i):
+            result += c
+            seen[c] = i
+    return result + s[:90] + s[200:]

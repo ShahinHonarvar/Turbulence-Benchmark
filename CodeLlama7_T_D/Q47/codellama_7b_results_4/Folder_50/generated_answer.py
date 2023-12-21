@@ -1,0 +1,15 @@
+ def palindromes_of_specific_lengths(string):
+    # Find the indices of the substring in the given string
+    start_index = string.lower().find('abcdefg', 36, 92)
+    end_index = start_index + len('abcdefg') - 1
+    # Create a list to store all palindromes
+    palindromes = []
+    # Iterate over the characters in the substring
+    for i in range(start_index, end_index + 1):
+        # Check if the character at index i is the same as the character at index i - 1
+        if string[i] == string[i - 1]:
+            # If the condition above is true, check if the character at index i is the same as the character at index i + 1
+            if string[i] == string[i + 1]:
+                # If the condition above is true, add the palindrome to the list of palindromes
+                palindromes.append(string[i - 1:i + 1])
+    return palindromes

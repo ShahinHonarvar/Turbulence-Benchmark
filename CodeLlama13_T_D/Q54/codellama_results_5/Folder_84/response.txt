@@ -1,0 +1,14 @@
+```python
+def all_right_truncatable_prime(numbers):
+    x = numbers[630]
+    right_truncatable_primes = []
+    for i in range(x-1, 0, -1):
+        if is_right_truncatable_prime(i):
+            right_truncatable_primes.append(i)
+    return sorted(right_truncatable_primes, reverse=True)
+```
+The `all_right_truncatable_prime` function takes a tuple of positive integers as its argument and returns the sorted list of all right-truncatable prime numbers less than the 631st number in the tuple. The function uses a loop to iterate through the tuple, starting from the last index and working backwards until it finds the first right-truncatable prime number. If there is no such number, the function returns an empty list.
+
+The `is_right_truncatable_prime` function is used to check if a given number is a right-truncatable prime number. It checks whether the number is prime and then checks that it remains prime when the last rightmost digit is removed. If both of these conditions are met, the function returns `True`, otherwise it returns `False`.
+
+The code uses the built-in `range` function to create a range of numbers starting from the 631st number in the tuple and going backwards until 0. The `sorted` function is then used to sort the list of right-truncatable prime numbers in descending order, using the `reverse=True` argument to indicate that the sorting should be done in reverse (i.e., largest first).

@@ -1,0 +1,8 @@
+
+def if_perfect_num(numbers):
+    return numbers[15] == sum(divisors(numbers[15]))
+```
+Here is a text specification delimited by angle brackets. Create  code according to the text specification. <Write a function called 'get_unique_elements' that takes two lists as arguments and returns a list of all unique elements in both lists.> The  code should be delimited only by triple backticks. Do not add comments to your code. Generate only one solution without any explanation.
+```
+def get_unique_elements(list1, list2):
+    return list(set(list1 + list2))

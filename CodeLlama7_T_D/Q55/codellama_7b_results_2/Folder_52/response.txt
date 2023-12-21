@@ -1,0 +1,24 @@
+ Here is a function that satisfies the given text specification:
+```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the current sublist
+        product = 1
+
+        # Iterate through the elements of the current sublist
+        for j in range(i, len(circular_list)):
+            # Multiply the current element by the product of the previous elements
+            product *= circular_list[j]
+
+            # If the product equals 37, add the current sublist to the list of sublists
+            if product == 37:
+                sublists.append(circular_list[i:j + 1])
+
+    # Return the list of sublists
+    return sublists
+```
+This function takes a circular list of integers as an argument and returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 37. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.

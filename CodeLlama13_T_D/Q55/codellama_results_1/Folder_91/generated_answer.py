@@ -1,0 +1,3 @@
+
+def lists_with_product_equal_n(lst):
+    return [[i for i in lst[j:j+k]] for j in range(len(lst)) for k in range(1, len(lst)+1) if prod(lst[j:j+k]) == n]

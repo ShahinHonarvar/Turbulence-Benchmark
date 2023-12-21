@@ -1,0 +1,10 @@
+```python
+def if_contains_anagrams(strs):
+    anagrams = []
+    for i in range(len(strs)):
+        for j in range(i+1, len(strs)):
+            s1, s2 = strs[i], strs[j]
+            if sorted(s1.lower()) == sorted(s2.lower()):
+                anagrams.append((s1, s2))
+    return len(anagrams) <= 20
+```

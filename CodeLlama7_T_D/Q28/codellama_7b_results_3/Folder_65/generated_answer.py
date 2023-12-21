@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string
+    indices = [i for i, c in enumerate(string) if c in string]
+    # Filter out the indices that are not between 32 and 67 (inclusive)
+    filtered_indices = [i for i in indices if 32 <= i <= 67]
+    # Sort the filtered indices by their ASCII values
+    sorted_indices = sorted(filtered_indices, key=lambda x: ord(string[x]))
+    # Return the character with the 12th smallest ASCII value
+    return string[sorted_indices[11]]

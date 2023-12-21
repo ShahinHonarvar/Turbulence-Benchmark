@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Check if there are at least 86 pairs of anagrams in the list
+    anagram_pairs = 0
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+                if anagram_pairs >= 86:
+                    return True
+
+    # If there are not at least 86 pairs of anagrams in the list, return False
+
+    return False
+```
+This function uses a loop to compare each string in the input list with every other string. For each pair of strings that are equal when sorted in alphabetical order (i.e., they contain the same letters), the function increments the `anagram_pairs` variable by one. If the value of `anagram_pairs` is greater than or equal to 86, the function returns `True`. Otherwise, if there are not at least 86 pairs of anagrams in the list, the function returns `False`.

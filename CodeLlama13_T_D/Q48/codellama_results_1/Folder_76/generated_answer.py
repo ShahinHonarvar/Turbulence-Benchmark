@@ -1,0 +1,12 @@
+
+def return_binary_or_hex(mytuple):
+    a = mytuple[450] + 1
+    b = mytuple[905] - 1
+    sum = 0
+    for i in range(a,b+1):
+        if i not in mytuple:
+            sum += i
+    if (sum % 2) == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum).upper()[2:]

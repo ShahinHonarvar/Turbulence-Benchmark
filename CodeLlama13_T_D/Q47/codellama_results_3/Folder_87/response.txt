@@ -1,0 +1,22 @@
+```
+def palindromes_of_specific_lengths(string):
+    # find the indices of the substring from index 11 to index 93, both inclusive
+    start_index = 11
+    end_index = 93
+    substr_indices = range(start_index, end_index + 1)
+    
+    # create a set to store the palindromes
+    palindromes = set()
+    
+    # iterate over each index in the substring and check if it is a palindrome
+    for i in substr_indices:
+        # check if the length of the palindrome is between 34 and 54 (both inclusive)
+        if len(string[i]) >= 34 and len(string[i]) <= 54:
+            # check if the palindrome consists only of English letters
+            if all([char.isalpha() for char in string[i]]):
+                # check if the palindrome is a palindrome (reads the same backwards as forwards)
+                if string[i] == string[i][::-1]:
+                    palindromes.add(string[i])
+    
+    return palindromes
+```

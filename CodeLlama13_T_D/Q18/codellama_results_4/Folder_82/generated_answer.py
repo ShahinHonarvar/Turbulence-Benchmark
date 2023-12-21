@@ -1,0 +1,11 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    if len(my_list) < 20 or len(my_list) > 200:
+        return 0
+    
+    sum = 0
+    for i in range(20, 201):
+        if my_list[i] % -20 == 0 or my_list[i] % -200 == 0:
+            sum += my_list[i]
+    
+    return sum

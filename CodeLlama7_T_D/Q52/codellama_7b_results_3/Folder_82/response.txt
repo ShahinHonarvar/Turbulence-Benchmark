@@ -1,0 +1,10 @@
+ Here is a possible implementation of the `palindrome_of_length_n` function:
+```python
+def palindrome_of_length_n(string):
+    # Split the string into substrings of length n
+    substrings = [string[i:i+n] for i in range(len(string)-n+1)]
+    # Filter out substrings that are not palindromes
+    palindromes = [s for s in substrings if s == s[::-1]]
+    return set(palindromes)
+```
+This code uses a list comprehension to split the input string into substrings of length n. It then filters out any substrings that are not palindromes by comparing them with their reversed versions using the `==` operator. Finally, it returns a set containing all the remaining palindromes found in the input string.

@@ -1,0 +1,18 @@
+ ```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+	# Get the integer at index 54 of the tuple
+	x = tuple_of_positive_integers[54]
+	# Initialize an empty list to store the right-truncatable prime numbers less than x
+	right_truncatable_prime_numbers = []
+	# Iterate from 1 to x
+	for i in range(1, x + 1):
+		# Check if i is a prime number and if it remains prime when the last rightmost digit is successively removed
+		if i > 1:
+			for j in range(len(str(i)) - 1, -1, -1)):
+				if i % int(str(i)[0:j])) == 0:
+					break
+				elif j == 0:
+					right_truncatable_prime_numbers.append(i)
+	# Sort the list of right-truncatable prime numbers in descending order
+	return sorted(right_truncatable_prime_numbers, reverse=True)
+```

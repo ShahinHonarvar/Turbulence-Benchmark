@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(numbers):\n    if len(numbers) == 0:\n        return []\n\n    sublists = []\n    product = 1\n    start = 0\n\n    for end in range(len(numbers)):\n        product *= numbers[end]\n        while product > 247 and start <= end:\n            product //= numbers[start]\n            start += 1\n\n        if product == 247:\n            sublists.append(numbers[start:end+1])\n\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887345,
+  "id": "chatcmpl-7eVBR7plDe7PRNCsQ14eqe4k8SQ41",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 193,
+    "total_tokens": 293
+  }
+}

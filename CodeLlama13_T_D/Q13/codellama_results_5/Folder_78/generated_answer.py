@@ -1,0 +1,3 @@
+
+def find_second_largest_num(numbers):
+    return sorted(numbers)[42] if len(numbers) > 51 else None

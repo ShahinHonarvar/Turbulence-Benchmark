@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(lst):\n    from collections import Counter\n    \n    count = 0\n    \n    # Iterate through each string in the list\n    for i in range(len(lst)):\n        for j in range(i+1, len(lst)):\n            # Convert both strings to lowercase and remove non-alphabetic characters\n            str1 = ''.join(c.lower() for c in lst[i] if c.isalpha())\n            str2 = ''.join(c.lower() for c in lst[j] if c.isalpha())\n            \n            # Check if the length of the anagram is at least three\n            if len(str1) >= 3 and len(str2) >= 3:\n                \n                # Check if the strings are anagrams\n                if Counter(str1) == Counter(str2):\n                    count += 1\n                    \n                    # Return False if more than 25 pairs of anagrams are found\n                    if count > 25:\n                        return False\n    \n    # Return True if at most 25 pairs of anagrams are found\n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689819245,
+  "id": "chatcmpl-7eDT3j5ax3qRofU8mBXR2C5h4dCeP",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 217,
+    "prompt_tokens": 139,
+    "total_tokens": 356
+  }
+}

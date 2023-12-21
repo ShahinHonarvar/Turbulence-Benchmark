@@ -1,0 +1,14 @@
+```
+def return_nth_smallest_ascii(string):
+    ascii_values = []
+    for char in string:
+        if 3 <= ord(char) <= 52:
+            ascii_values.append(ord(char))
+    ascii_values.sort()
+    return chr(ascii_values[7])
+```
+This code defines a function called `return_nth_smallest_ascii` that takes one argument, a string of distinct characters. The function returns the character with the 8th smallest ASCII value among those characters in the string that occur between indices 3 to 52, both inclusive.
+
+The function first creates an empty list called `ascii_values` to store the ASCII values of the characters in the input string. Then it iterates over each character in the string using a for loop and checks if its ASCII value is between 3 and 52 (inclusive). If the condition is true, the function appends the ASCII value of the current character to `ascii_values`.
+
+After all characters have been processed, the function sorts the list of ASCII values in ascending order using the built-in `sort()` method. Finally, it returns the 8th element of the sorted list (the 8th smallest ASCII value) as a character using the `chr()` function.

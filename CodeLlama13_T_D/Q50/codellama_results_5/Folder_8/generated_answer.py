@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(lst):
+    anagram_pairs = 0
+    for s1 in lst:
+        for s2 in lst:
+            if s1 != s2 and len(s1) >= 3 and len(s2) >= 3:
+                if sorted(s1.lower()) == sorted(s2.lower()):
+                    anagram_pairs += 1
+                    if anagram_pairs > 85:
+                        return True
+    return False

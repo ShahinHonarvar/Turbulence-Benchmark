@@ -1,0 +1,18 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Check if the input is a list of integers
+    if not all([isinstance(x, int) for x in my_list])):
+        raise ValueError("The input must be a list of integers.")
+    # Get the range of indices to check
+    start_index = 21
+    end_index = 51
+    # Initialize an empty list to store the results
+    result_list = []
+    # Loop through the indices in the range
+    for i in range(start_index, end_index):
+        # Check if the current integer is not divisible by -77
+        if my_list[i] % -77 != 0:
+            # Add the current integer to the result list
+            result_list.append(my_list[i])
+    # Return the result list
+    return result_list

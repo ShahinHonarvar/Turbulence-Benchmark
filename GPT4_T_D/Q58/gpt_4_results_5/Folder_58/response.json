@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    row_length = len(matrix)\n    column_length = len(matrix[0])\n    count = 0\n\n    for row_submatrix in range(1, row_length + 1):\n        for column_submatrix in range(1, column_length + 1):\n            if row_submatrix * column_submatrix == 185:\n                for i in range(row_length - row_submatrix + 1):\n                    for j in range(column_length - column_submatrix + 1):\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691018291,
+  "id": "chatcmpl-7jFOVjRlFMkE5uG5xQQOe7iFcxE84",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 124,
+    "prompt_tokens": 111,
+    "total_tokens": 235
+  }
+}

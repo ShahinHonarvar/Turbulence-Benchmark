@@ -1,0 +1,24 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Calculate the number of digits in the binary string
+    num_digits = len(binary_string)
+    # Initialize variables for storing the Fibonacci sequence and its index
+    fib_seq = [0, 1]
+    fib_seq_index = 2
+    # Check if the decimal integer is divisible by the 60th number in the Fibonacci sequence
+    while True:
+        # Calculate the next term in the Fibonacci sequence
+        next_term = fib_seq[fib_seq_index - 1] + fib_seq[fib_seq_index - 2]
+        # Add the next term to the Fibonacci sequence
+        fib_seq.append(next_term)
+        # Increment the index of the Fibonacci sequence
+        fib_seq_index += 1
+        # Check if the decimal integer is divisible by the current term in the Fibonacci sequence
+        if decimal_int % next_term == 0:
+            return True
+
+    # If the decimal integer is not divisible by any number in the Fibonacci sequence, return False
+    return False
+```

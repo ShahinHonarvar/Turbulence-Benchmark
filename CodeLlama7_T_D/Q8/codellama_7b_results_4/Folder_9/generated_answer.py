@@ -1,0 +1,5 @@
+
+def all_even_ints_exclusive(my_list):
+    # Get the range of even integers from index 70 to index 200, both exclusive
+    even_ints = [x for x in my_list[70:200] if x % 2 == 0]
+    return even_ints

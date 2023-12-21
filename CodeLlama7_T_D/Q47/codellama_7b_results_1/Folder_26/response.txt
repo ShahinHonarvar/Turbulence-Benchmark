@@ -1,0 +1,39 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Convert the string to lowercase for case-insensitive search
+lowercase_string = string.lower()
+# Define the index range for the substring
+index_range = (24, 84)
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Iterate over each character in the substring
+for i in range(*index_range):
+# Check if the current character is a letter (A-Z or a-z)
+if lowercase_string[i].isalpha():
+# Check if the current character is the same as its reversed form
+if lowercase_string[i] == lowercase_string[i][::-1]:
+# If both conditions are true, add the current character to the set of palindromes
+palindromes.add(lowercase_string[i])
+# Check if any palindrome with the length specified occurs in the substring
+for length in range(21, 32):
+# Initialize an empty string to store the palindrome
+palindrome = ""
+# Iterate over each character in the substring
+for i in range(*index_range):
+# Check if the current character is a letter (A-Z or a-z)
+if lowercase_string[i].isalpha():
+# Check if the current character is the same as its reversed form
+if lowercase_string[i] == lowercase_string[i][::-1]:
+# If both conditions are true, add the current character to the string of palindrome
+palindrome += lowercase_string[i]
+# Check if the length of the palindrome is equal to the specified length
+if len(palindrome) == length:
+# If the length condition is true, return the set of palindromes
+return palindromes
+else:
+# If the length condition is false, continue searching for palindromes in the substring
+continue
+
+# If no palindrome with the specified length occurs in the substring, return an empty set
+return set()
+```

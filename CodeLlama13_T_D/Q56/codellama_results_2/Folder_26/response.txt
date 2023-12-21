@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i, len(s) - 32):
+            substring = s[i:j + 1]
+            if len(set(substring)) == 33 and all_distinct(substring):
+                substrings.append(substring)
+    return substrings
+```
+This function uses two nested for loops to iterate through the string and find all possible substrings of length 33. It then checks if the substring is valid by checking if it has no duplicate characters and only contains letters (since we are using a-z, A-Z, and _). If the substring is valid, it is added to the list of substrings. The function returns an empty list if no such substrings exist in the given string.

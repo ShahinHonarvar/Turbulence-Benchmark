@@ -1,0 +1,7 @@
+
+def insert_after_character(string):
+    new_string = ""
+    for i, char in enumerate(string):
+        if char == 'x':
+            new_string += "N" + string[i+1:]
+    return new_string

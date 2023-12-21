@@ -1,0 +1,20 @@
+ ```
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - 95 + 1):
+
+        # Extract a substring of length 95 from the current position in the string
+        substring = string[i:i+95]
+
+        # Check if the substring is valid (has no duplicate characters)
+        if len(substring) == 95 and len(set(substring)) == 95:
+
+            # Add the valid substring to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of all distinct substrings of length 95 with no duplicate characters, or an empty list if no such substrings exist in the given string
+    return substrings
+```

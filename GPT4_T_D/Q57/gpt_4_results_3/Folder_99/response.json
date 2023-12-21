@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    no_of_rows, no_of_columns = matrix.shape\n    for x1 in range(no_of_rows):\n        for y1 in range(no_of_columns):\n            for x2 in range(x1, no_of_rows):\n                for y2 in range(y1, no_of_columns):\n                    submatrix = matrix[x1:x2+1, y1:y2+1]\n                    if np.sum(submatrix) == -185:\n                        result.append(submatrix)\n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690985293,
+  "id": "chatcmpl-7j6oHyDIPjLemFWvo5FgLRmzmqtlF",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 121,
+    "total_tokens": 242
+  }
+}

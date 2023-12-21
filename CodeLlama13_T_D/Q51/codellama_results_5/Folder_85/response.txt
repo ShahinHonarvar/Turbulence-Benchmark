@@ -1,0 +1,12 @@
+```python
+def if_contains_anagrams(lst):
+    anagrams = {}
+    for s in lst:
+        key = tuple(sorted(s.lower()))
+        if key not in anagrams:
+            anagrams[key] = 1
+        else:
+            anagrams[key] += 1
+    
+    return len(anagrams) <= 276
+```

@@ -1,0 +1,14 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+
+    # Initialize a list to store the Fibonacci sequence
+    fib = [0]
+
+    # Calculate the Fibonacci sequence up to 17th number
+    for i in range(16):
+        fib.append(fib[i-1] + fib[i])
+
+    # Check if the decimal integer is divisible by the 17th number
+    return (decimal % fib[16]) == 0

@@ -1,0 +1,14 @@
+```python
+def prime_factors(list_of_integers):
+    return set(prime_factors_at_index(87))
+
+def prime_factors_at_index(index):
+    integer = list_of_integers[index]
+    factors = []
+    for i in range(2, int(integer ** 0.5) + 1):
+        if integer % i == 0:
+            factors.append(i)
+            while integer % i == 0:
+                integer //= i
+    return set(factors)
+```

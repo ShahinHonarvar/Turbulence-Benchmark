@@ -1,0 +1,17 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the character counts
+    char_counts = {}
+
+    # Iterate over the string and increment the count for each character
+    for char in string:
+        if char in char_counts:
+            char_counts[char] += 1
+        else:
+            char_counts[char] = 1
+
+    # Sort the dictionary by value in descending order
+    sorted_counts = sorted(char_counts.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 4th smallest ASCII value
+    return sorted_counts[3][0]

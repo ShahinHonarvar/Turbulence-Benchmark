@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(distinct_string):
+    sorted_list = sorted([(ord(char), char) for char in distinct_string])
+    return [char for _, char in sorted_list[:28]]

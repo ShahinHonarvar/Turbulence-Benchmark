@@ -1,0 +1,15 @@
+
+def if_perfect_num(my_list):
+    if len(my_list) <= 24:
+        return False
+
+    perfect_number = my_list[24]
+
+    divisors = []
+
+    for i in range(1, perfect_number // 2 + 1):
+
+        if perfect_number % i == 0:
+            divisors.append(i)
+
+    return sum(divisors) == perfect_number

@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(24, 80):
+        if string[i].isalpha() and string[i].lower() >= 'a' and string[i].lower() <= 'f':
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

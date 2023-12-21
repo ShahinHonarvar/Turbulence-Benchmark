@@ -1,0 +1,15 @@
+
+def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Loop through each substring of length 3 to 7 in the given string, starting from index 10 and ending at index 55
+    for i in range(10, 56):
+        for j in range(i, min(i + 7, len(string))):
+            # Check if the substring is a palindrome by comparing it to its reverse
+            if string[i:j] == string[i:j][::-1]:
+                # If the substring is a palindrome, add it to the set of palindromes
+                palindromes.add(string[i:j])
+    
+    # Return the set of palindromes found in the specified index range and with the required lengths
+    return palindromes

@@ -1,0 +1,15 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 3):
+        for j in range(matrix.shape[1] - 3):
+            if (
+                matrix[i][j] == matrix[i + 1][j + 1]
+                and matrix[i][j + 1] == matrix[i + 1][j + 2]
+                and matrix[i][j + 2] == matrix[i + 1][j + 3]
+            ):
+                count += 1
+
+    return count

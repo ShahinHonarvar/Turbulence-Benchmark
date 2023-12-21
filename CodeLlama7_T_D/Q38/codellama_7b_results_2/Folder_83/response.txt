@@ -1,0 +1,13 @@
+ ```
+def find_subset_of_length_n(set):
+return len(powerset(set))
+
+def powerset(set):
+result = []
+for i in range(1 << len(set)):
+bitmask = bin(i)[2:]
+bitmask = '0' * (len(set) - len(bitmask)) + bitmask
+result.append([element for j, element in enumerate(set) if bitmask[j] == '1'])
+return result
+```
+This code defines a function `find_subset_of_length_n` that takes a set of elements as input and returns the number of all its subsets of size 95. The function also defines another function `powerset` that generates all subsets of a given set.

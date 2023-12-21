@@ -1,0 +1,11 @@
+```
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(26):
+        char_list.append(chr(i + 97)) # add the character with ascii value i to the list
+    
+    sorted_char_list = sorted(char_list, key=lambda x: ord(x), reverse=True) # sort the list in descending order based on ASCII values
+    
+    return [char for char in string if char in sorted_char_list] # return the list of characters from the given string that are in the sorted list
+```
+This function takes a single argument, a string of distinct characters, and returns a list of exactly 26 characters from the given string that have the smallest ASCII values. The function first creates a list of all the unique characters in the given string using a for loop and the `chr()` function. It then sorts this list in descending order based on the ASCII value of each character using the `sorted()` function with a custom key argument. Finally, it returns a new list containing only the characters from the given string that are in the sorted list.

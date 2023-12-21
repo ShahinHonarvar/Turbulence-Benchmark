@@ -1,0 +1,6 @@
+
+def if_perfect_num(nums):
+    for i in range(54, len(nums)):
+        if sum(nums[:i]) == nums[i]:
+            return True
+    return False

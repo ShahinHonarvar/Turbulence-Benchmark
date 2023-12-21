@@ -1,0 +1,23 @@
+```
+def palindromes_of_specific_lengths(string):
+    # find all palindromes in the given string
+    palindromes = set()
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            if string[i:j] == string[i:j][::-1]:
+                palindromes.add(string[i:j])
+    
+    # filter out palindromes that are not of the specified length
+    filtered_palindromes = set()
+    for palindrome in palindromes:
+        if len(palindrome) >= 12 and len(palindrome) <= 20:
+            filtered_palindromes.add(palindrome)
+    
+    # filter out palindromes that are not within the specified index range
+    final_palindromes = set()
+    for palindrome in filtered_palindromes:
+        if 30 <= string.index(palindrome) <= 84:
+            final_palindromes.add(palindrome)
+    
+    return final_palindromes
+```

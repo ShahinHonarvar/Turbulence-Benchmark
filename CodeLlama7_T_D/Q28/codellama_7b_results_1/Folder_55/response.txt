@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Get the ASCII values of all characters in the list
+    ascii_values = [ord(char) for char in char_list]
+    # Sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 13th smallest ASCII value
+    return sorted_ascii_values[12]
+```
+This code defines a function `return_nth_smallest_ascii` that takes a single argument, which is a string of distinct characters. The function returns the character with the 13th smallest ASCII value among those characters in the string that occur between indices 0 to 12, both inclusive.
+To understand how this code works, let's go through each step:
+1. First, we define a list `char_list` which contains all the characters of the input string.
+2. Next, we use a list comprehension to get the ASCII values of all the characters in the string. The list comprehension looks like this: `[ord(char) for char in char_list]`.
+3. Now, we sort the list of ASCII values in ascending order using the `sorted()` function. This is necessary because we want to find the 13th smallest ASCII value among all the characters in the string.
+4. Finally, we return the 13th element of the sorted list, which corresponds to the 13th smallest ASCII value in the input string.
+Note that this code assumes that the input string contains only distinct characters. If the input string contains repeated characters, then this code will not work correctly.

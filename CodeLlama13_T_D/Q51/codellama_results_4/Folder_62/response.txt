@@ -1,0 +1,6 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([x for x in my_list if ''.join(sorted(x)) in my_list]) <= 289
+```
+This function uses list comprehension to iterate over the input list and check if any string is an anagram of another string in the list. The sorted function is used to sort each string, and then we use the 'in' operator to check if the sorted string is present in the original list. If the length of the resulting list is less than or equal to 289, it means that there are at most 289 pairs of anagrams in the input list.
+The function also uses case-insensitive comparison by using the ''.join()' method on each string, which converts all characters to uppercase before comparing them with other strings.

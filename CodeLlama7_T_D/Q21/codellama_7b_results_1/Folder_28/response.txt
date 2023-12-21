@@ -1,0 +1,17 @@
+ ```
+def all_ints_div_by_num(my_list):
+    # Find the first index where the element is divisible by 22
+    first_idx = next((i for i, x in enumerate(my_list) if x % 22 == 0), None)
+    # If no such indices exist, return an empty list
+    if first_idx is None:
+        return []
+
+    # Find the last index where the element is divisible by 22
+    last_idx = next((i for i, x in enumerate(my_list[first_idx:]) if x % 22 == 0), None)
+    # If no such indices exist, return an empty list
+    if last_idx is None:
+        return []
+
+    # Return the list of all integers divisible by 22 from index 43 to index 59, both inclusive
+    return my_list[first_idx + 42 : last_idx + 42]
+```

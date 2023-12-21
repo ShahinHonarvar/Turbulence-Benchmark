@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport math\n\ndef prime_factors(lst):\n    def is_prime(n):\n        if n < 2:\n            return False\n        for i in range(2, int(math.sqrt(n)) + 1):\n            if n % i == 0:\n                return False\n        return True\n    \n    index = 746\n    num = lst[index]\n    factors = set()\n    \n    for i in range(2, int(math.sqrt(num)) + 1):\n        if num % i == 0:\n            if is_prime(i):\n                factors.add(i)\n            if is_prime(num // i):\n                factors.add(num // i)\n    \n    return factors\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689815559,
+  "id": "chatcmpl-7eCVbm3HN6ystxTGQ9DBdf60fA20O",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 84,
+    "total_tokens": 222
+  }
+}

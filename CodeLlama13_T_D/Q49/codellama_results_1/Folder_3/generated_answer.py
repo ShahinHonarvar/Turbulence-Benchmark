@@ -1,0 +1,19 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+    
+    # Initialize a variable to keep track of the 35th Fibonacci number
+    fib_num = 0
+    
+    # Loop through each digit in the binary representation
+    for i in range(len(binary_repr)):
+        # Calculate the current Fibonacci number using the previous two numbers
+        fib_num = fib_num + (fib_num << 1) - (fib_num >> 1)
+        
+        # Check if the current Fibonacci number is the 35th number
+        if i == 34:
+            break
+    
+    # Return true if the decimal integer corresponding to the given string is divisible by the 35th Fibonacci number
+    return decimal % fib_num == 0

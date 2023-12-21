@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_string = ""
+    for char in string:
+        if 3 <= ord(char) <= 9 and ord(char) > ord('*') and ord(char) < ord('E'):
+            new_string += char
+    return new_string

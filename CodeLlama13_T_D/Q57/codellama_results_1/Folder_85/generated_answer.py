@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    results = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of integers in the current submatrix
+            current_sum = 0
+            
+            # Iterate over each row and column of the submatrix
+            for k in range(i, matrix.shape[0]):
+                for l in range(j, matrix.shape[1]):
+                    # Add the integer at the current position to the sum
+                    current_sum += matrix[k][l]
+                    
+                    # If the sum is equal to -87, add the submatrix to the results list
+                    if current_sum == -87:
+                        results.append(matrix[i:k+1, j:l+1])
+    
+    # Return the results list
+    return results

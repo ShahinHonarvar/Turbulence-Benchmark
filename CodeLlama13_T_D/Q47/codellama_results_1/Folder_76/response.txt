@@ -1,0 +1,11 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Get the substring from index 101 to index 292, both inclusive
+    substring = string[101:293]
+    
+    # Create a set of all palindromes with lengths between 154 and 182
+    palindromes = {substring[i:j] for i in range(len(substring)) for j in range(i+154, min(i+183, len(substring)+1)) if substring[i:j][::-1] == substring[i:j]}
+    
+    # Return the set of palindromes that occur in the specified index range
+    return {palindrome for palindrome in palindromes if 101 <= string.find(palindrome) <= 292}
+```

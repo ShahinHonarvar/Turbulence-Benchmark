@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_substring_of_size_n(s):\n    if len(s) < 41:\n        return []\n    \n    substrings = []\n    \n    for i in range(len(s) - 40):\n        substring = s[i:i+41]\n        if len(set(substring)) == 41:\n            substrings.append(substring)\n    \n    return list(set(substrings))\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690080121,
+  "id": "chatcmpl-7fJKjswfb08KOyzig6nEvgEVvaD8a",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 80,
+    "prompt_tokens": 126,
+    "total_tokens": 206
+  }
+}

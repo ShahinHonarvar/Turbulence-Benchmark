@@ -1,0 +1,14 @@
+ ```
+def if_decimal_is_divisible(binary_rep):
+# Convert the binary representation string to an integer
+decimal_int = int(binary_rep, 2)
+# Calculate the 46th number that occurs in the Fibonacci sequence
+fib_seq = [0, 1]
+for i in range(2, 47):
+fib_seq.append(fib_seq[i-1] + fib_seq[i-2])
+# Check if the decimal integer is divisible by the 46th number that occurs in the Fibonacci sequence
+if decimal_int % fib_seq[45] == 0:
+return True
+else:
+return False
+```

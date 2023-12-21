@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    from operator import mul\n    from functools import reduce\n    n = len(lst)\n    lst.extend(lst)\n    result = []\n    for i in range(n):\n        for j in range(i+1, i+n+1):\n            if reduce(mul, lst[i:j]) == 33:\n                result.append(lst[i:j])\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691089238,
+  "id": "chatcmpl-7jXqo2FbJb3ZSCakReIwrZz8WlgbZ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 85,
+    "prompt_tokens": 193,
+    "total_tokens": 278
+  }
+}

@@ -1,0 +1,2 @@
+def identical_elements(lst1, lst2):
+    return set(range(64, 66)) & set(lst1) & set(lst2)

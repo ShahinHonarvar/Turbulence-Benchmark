@@ -1,0 +1,13 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or None
+    if my_list is None or len(my_list) == 0:
+        return False
+
+    # Check if the integer at index 4 is a perfect number
+    if my_list[4] == sum(range(1, my_list[4])):
+        return True
+
+    else:
+
+        return False

@@ -1,0 +1,22 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the index range for consideration
+    start = 27
+    end = 77
+    # Define the length range for consideration
+    min_length = 18
+    max_length = 19
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate through each substring of the specified length in the index range
+    for i in range(start, end + 1):
+        for j in range(i - min_length, i + max_length + 1):
+            substring = string[j:i]
+            # Check if the substring is a palindrome and satisfies the length and case requirements
+            if is_palindrome(substring) and len(substring) >= min_length and len(substring) <= max_length and all(c.islower() for c in substring)):
+                palindromes.add(substring)
+    return palindromes
+
+def is_palindrome(string):
+    # Check if the string is a palindrome by comparing it with its reverse
+    return string == string[::-1]

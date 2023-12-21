@@ -1,0 +1,11 @@
+ ```
+def return_n_smallest_chars(string):
+    # create a dictionary with the ASCII values of each character in the string as keys and the characters themselves as values
+    char_dict = {}
+    for char in string:
+        char_dict[ord(char)] = char
+    # sort the dictionary by key (ASCII value) in descending order
+    sorted_dict = sorted(char_dict.items(), reverse=True, key=lambda x: x[0])
+    # return the top 59 characters of the sorted list
+    return [char for char, _ in sorted_dict[:59]]
+```

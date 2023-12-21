@@ -1,0 +1,15 @@
+ ```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(237, 381 + 1):
+        is_prime = True
+        for j in range(2, my_list[i] + 1):
+            if my_list[i] % j == 0:
+                is_prime = False
+                break
+
+        if is_prime:
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers, reverse=True)
+```
+This code will first loop through each element in the list starting at index 237 and ending at index 381 (inclusive). For each element, it will check if it is a prime number by dividing it by all numbers less than or equal to its square root. If an element is not divisible by any number between 2 and its square root, it is considered a prime number. The function will then append the prime numbers it finds into a list called `prime_numbers`. Finally, the function will return the sorted list of all prime numbers in descending order.

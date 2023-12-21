@@ -1,0 +1,23 @@
+ ```
+def lists_with_product_equal_n(lst):
+    # Check if there are any duplicates in the list
+    if len(lst) != len(set(lst)):
+        return []
+
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the list and find contiguous integers with product equal to -95
+    for i in range(len(lst)):
+        product = 1
+        j = i
+        while j < len(lst) and product == -95:
+            product *= lst[j]
+            j += 1
+
+        # If a sublist with product equal to -95 is found, add it to the list of sublists
+        if product == -95:
+            sublists.append(lst[i:j])
+
+    return sublists
+```

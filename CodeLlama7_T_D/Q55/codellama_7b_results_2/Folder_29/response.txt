@@ -1,0 +1,27 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function in Python:
+```python
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list))
+        # Initialize a variable to store the current product
+        current_product = 1
+
+        # Iterate over the remaining elements of the circular list
+        for j in range(i + 1, len(circular_list))
+            # Update the current product with the product of the current element and the next element
+            current_product *= circular_list[j]
+
+            # If the current product is equal to n, add the sublist to the list of sublists
+            if current_product == n:
+                sublists.append(circular_list[i:j + 1])
+
+        # Reset the current product to 1 for the next iteration
+        current_product = 1
+
+    # Return the list of sublists
+    return sublists
+```
+This function takes a circular list of integers as input, and returns a list of sublists such that each sublist contains the contiguous integers from the given list such that their product equals 15. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.

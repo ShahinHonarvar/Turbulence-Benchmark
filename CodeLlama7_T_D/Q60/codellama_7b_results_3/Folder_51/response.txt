@@ -1,0 +1,79 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the left-and-right-truncatable prime numbers
+    prime_list = []
+    # Loop through all prime numbers less than or equal to x
+
+    for i in range(2, x+1):
+        # Check if i is a prime number
+
+        if is_prime(i):
+            # Check if i contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.
+
+            if all_digits_are_not_zero(i) and is_left_right_truncatable_prime(i):
+                # If i meets both conditions, add it to the list of left-and-right-truncatable prime numbers
+
+                prime_list.append(i)
+    # Sort the list of left-and-right-truncatable prime numbers in ascending order
+
+    return sorted(prime_list)
+
+def is_prime(n):
+    """Check if a number n is prime"""
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def all_digits_are_not_zero(n):
+    """Check if all digits of a number n are not zero"""
+    while n > 0:
+        digit = n % 10
+        if digit == 0:
+            return False
+
+        n //= 10
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+    """Check if a number n is left-and-right-truncatable prime"""
+    # Check if n contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.
+
+    if all_digits_are_not_zero(n) and is_prime(remove_leftmost_digit(remove_last_rightmost_digit(n)))):
+        return True
+
+    return False
+
+def remove_leftmost_digit(n):
+    """Remove the leftmost digit of a number n"""
+    while n > 0:
+        if n % 10 == 0:
+            continue
+
+        break
+
+    return n // 10
+
+def remove_last_rightmost_digit(n):
+    """Remove the last rightmost digit of a number n"""
+    while n > 0:
+        if n % 10 == 0:
+            continue
+
+        break
+
+    return n // 10
+
+def remove_leftmost_and_last_rightmost_digit(n):
+    """Remove the leftmost and last rightmost digits of a number n"""
+    while n > 0:
+        if n % 10 == 0:
+            continue
+
+        break
+
+    return n // 10

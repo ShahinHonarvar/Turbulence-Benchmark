@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    \n    rows, cols = matrix.shape\n    \n    for row_dim in range(1, rows + 1):\n        for col_dim in range(1, cols + 1):\n            if row_dim * col_dim == 94:\n                for i in range(rows - row_dim + 1):\n                    for j in range(cols - col_dim + 1):\n                        count += 1\n    return count\n```\n\nPlease note that this function assumes that the input is a valid numpy array. If the input can be non-numpy arrays or has a chance to be invalid, error checking code must be incorporated.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690986305,
+  "id": "chatcmpl-7j74biwRKHvdBHuTp0sTkW73bgDDh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 156,
+    "prompt_tokens": 111,
+    "total_tokens": 267
+  }
+}

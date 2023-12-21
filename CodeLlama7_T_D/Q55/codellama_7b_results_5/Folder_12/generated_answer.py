@@ -1,0 +1,44 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list
+
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to store the product of the elements in the current sublist
+
+        product = 1
+
+
+        # Add the current element to the current sublist
+
+        current_sublist = [circular_list[i]]
+
+
+        # Iterate through the remaining elements in the circular list
+
+        for j in range(i + 1, len(circular_list)):
+
+            # Multiply the current element by the next element in the circular list
+
+            product *= circular_list[j]
+
+
+            # If the product equals -18, add the current sublist to the list of sublists and reset the product and current sublist variables
+
+            if product == -18:
+
+                sublists.append(current_sublist)
+
+
+                product = 1
+
+
+                current_sublist = []
+
+
+    # Return the list of sublists containing contiguous integers from the given circular list such that their product equals -18
+
+    return sublists

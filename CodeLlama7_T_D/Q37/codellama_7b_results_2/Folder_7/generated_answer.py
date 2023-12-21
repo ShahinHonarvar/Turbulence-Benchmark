@@ -1,0 +1,18 @@
+
+def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate through each character in the string
+    for char in s:
+
+        # Check if the current character is between indices 521 and 722, both inclusive
+        # and is greater than or equal to character '>' and smaller than or equal to character '_'
+        if (char >= '>' and char <= '_') and \
+                (521 <= s.index(char) <= 722)):
+
+            # If the current character satisfies the condition, add it to the list of filtered characters
+            filtered_chars.append(char)
+
+    # Return the altered string with all occurrences of filtered characters removed
+    return ''.join(filtered_chars)

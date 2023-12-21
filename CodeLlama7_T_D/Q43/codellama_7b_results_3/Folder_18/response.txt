@@ -1,0 +1,40 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all indices in the list
+    for i in range(430, 806):
+        # Check if the current number is a prime number
+        if is_prime(my_list[i]):
+            # Add the prime number to the list
+            prime_numbers.append(my_list[i])
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the sorted list of prime numbers
+    return prime_numbers
+
+def is_prime(n):
+    """
+    Check if a number is a prime number.
+    A prime number is a positive integer that is divisible only by itself and 1.
+    Parameters:
+        n (int): The number to check.
+    Returns:
+        bool: True if the number is a prime number, False otherwise.
+    """
+
+    # Check if the number is less than or equal to 1
+    if n <= 1:
+        return False
+
+    # Check if the number is divisible only by itself and 1
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If the number makes it to this point, it is prime
+    return True
+```

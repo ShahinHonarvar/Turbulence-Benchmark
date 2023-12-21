@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(my_list):
+    return [x for x in my_list[93:94] if x % 57 != 0]

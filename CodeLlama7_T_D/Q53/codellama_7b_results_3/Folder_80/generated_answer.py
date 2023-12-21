@@ -1,0 +1,13 @@
+ def palindrome_of_length_at_least_n(string, n):
+    # Find all substrings in the given string that are at least n characters long and consist only of English letters
+    substrings = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if len(substring) < n:
+            continue
+
+        if all(c.isalpha() for c in substring):
+            substrings.append(substring)
+
+    # Return the set of all palindromes found in the given string
+    return {s for s in substrings if s == s[::-1]}

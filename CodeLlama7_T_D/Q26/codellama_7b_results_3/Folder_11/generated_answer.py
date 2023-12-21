@@ -1,0 +1,16 @@
+
+def sum_in_range(my_list):
+    # Initialize the sum to 0
+    total = 0
+
+    # Loop through the list of integers
+    for num in my_list:
+
+        # Check if the current integer is between 11 and 76, inclusive
+        if 11 <= num <= 76:
+
+            # If it is, add it to the total
+            total += num
+
+    # Return the sum of all integers between 11 and 76, inclusive
+    return total

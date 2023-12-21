@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    seen = {}
+    for i in range(50, 200):
+        if s[i] in seen:
+            s = s[:i] + s[i+1:]
+        else:
+            seen[s[i]] = True
+    return s

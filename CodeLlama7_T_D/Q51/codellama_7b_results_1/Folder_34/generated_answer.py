@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(my_list):
+    # Get the list of anagram pairs
+    anagram_pairs = []
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                anagram_pairs.append((my_list[i], my_list[j])))
+    # Check the number of anagram pairs
+    if len(anagram_pairs) <= 401:
+        return True
+    else:
+        return False

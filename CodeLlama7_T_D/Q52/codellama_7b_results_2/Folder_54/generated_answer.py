@@ -1,0 +1,13 @@
+
+def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the character is a letter (not whitespace or punctuation)
+        if string[i].isalpha():
+            # Check if the substring starting from the current character and has a length of 85 exists in the string
+            if string[i:i+85].isalnum():
+                # Add the substring to the set of palindromes
+                palindromes.add(string[i:i+85])
+    return palindromes

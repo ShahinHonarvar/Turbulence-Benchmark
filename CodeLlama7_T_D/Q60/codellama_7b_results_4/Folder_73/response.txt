@@ -1,0 +1,66 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all numbers from 1 to x
+    for i in range(1, x + 1):
+
+        # Check if the number is a prime number
+        if is_prime(i):
+
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+
+                # Add the prime number to the list
+                prime_numbers.append(i)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers)
+
+# Check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if a divisor is found
+                return False
+
+    # If the number is greater than 1 and has no divisors, it is prime
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Initialize an empty string to store the number in string format
+    num_str = ''
+
+    # Loop through all characters of the number in string format
+    for char in str(n):
+
+        # Check if the character is not a 0 and is a digit
+        if char != '0' and char.isdigit():
+
+            # Add the character to the number in string format
+            num_str += char
+
+    # If the number in string format has no leading leftmost or last rightmost digits, return False
+    if len(num_str) <= 1:
+        return False
+
+    # If the number in string format has a leading leftmost and last rightmost digits, check if they are both prime numbers
+    leftmost = int(num_str[0])
+    rightmost = int(num_str[-1])
+
+    if is_prime(leftmost) and is_prime(rightmost):
+        return True
+
+    # If the number in string format has a leading leftmost or last rightmost digit that is not prime, return False
+    else:
+        return False
+
+# Test the 'all_left_right_truncatable_prime' function with different inputs
+#print(all_left_right_truncatable_prime((100))))  # Should print [13, 29, 37, 71, 73, 79, 97]
+```

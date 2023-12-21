@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef composite_nums_between_indices(nums):\n    def is_composite(n):\n        factors = []\n        for i in range(1,n+1):\n            if n%i == 0:\n                factors.append(i)\n        if len(factors)>2:\n            return True\n        return False\n\n    comp_nums = set()\n    for i in range(29,94):\n        if i<len(nums) and is_composite(nums[i]):\n            comp_nums.add(nums[i])\n    return comp_nums\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691058769,
+  "id": "chatcmpl-7jPvNlT93eop62drhAJ6km0j8bqsN",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 116,
+    "total_tokens": 219
+  }
+}

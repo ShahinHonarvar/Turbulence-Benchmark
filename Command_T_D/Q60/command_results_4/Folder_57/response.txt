@@ -1,0 +1,36 @@
+[cohere.Generation {
+	id: c25a2fda-399a-44ab-b3f0-439fdac42dba
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 54. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(test_list):
+    res = []
+    for i in range(2, test_list[0] + 1):
+        temp = str(i)
+        while temp:
+            if i == int(temp[0:10] + temp[-10:]):
+                break
+            elif i == int(temp[0:9] + temp[-9:]):
+                break
+            elif i == int(temp[0:8] + temp[-8:]):
+                break
+            elif i == int(temp[0:7] + temp[-7:]):
+                break
+            elif i == int(temp[0:6] + temp[-6:]):
+                break
+            elif i == int(temp[0:5] + temp[-5:]):
+                break
+            elif i == int(temp[0:4] + temp[-4:]):
+                break
+            elif i == int(temp[0:3] + temp[-3:]):
+                break
+            elif i == int(temp[0:2] + temp[-2:]):
+                break
+            else:
+                res.append(i)
+    res.sort(reverse=True)
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

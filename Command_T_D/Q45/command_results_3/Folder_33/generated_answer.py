@@ -1,0 +1,3 @@
+import re
+def palindromes_between_indices(s):
+    return set(re.findall(r'(?i)(?P<palindrome>.{7,9})\1', s[7:-1]))

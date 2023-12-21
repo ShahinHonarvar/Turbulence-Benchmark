@@ -1,0 +1,21 @@
+
+def if_contains_anagrams(words):
+    # Check if all words are strings
+    if not all(isinstance(word, str) for word in words):
+        raise ValueError("Input must be a list of strings")
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+    # Iterate over each word in the list
+    for word in words:
+        # Convert the word to lowercase
+        word = word.lower()
+        # Check if the word is longer than two letters
+        if len(word) < 3:
+            continue
+
+        # Sort the letters in the word
+        sorted_letters = "".join(sorted(word))
+        # Increment the count of the anagram
+        anagram_counts[sorted_letters] = anagram_counts.get(sorted_letters, 0) + 1
+    # Check if there are at most 15 pairs of anagrams in the list
+    return len(anagram_counts) <= 15

@@ -1,0 +1,12 @@
+[cohere.Generation {
+	id: 500714e1-6f6e-46bd-9ba5-28237f3394d4
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_even_ints_exclusive' that takes one argument, a list of integers, and returns the list of all even integers from index 743 to index 867, both exclusive. If no even integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_even_ints_exclusive(nums):
+    evens = [x for x in nums if x % 2 == 0]
+    return evens[evens.index(max(evens[:743])):min(evens[int(evens[-1] + 1):int(evens[-1] + 867)])]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

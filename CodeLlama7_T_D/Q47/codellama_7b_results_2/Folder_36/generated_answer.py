@@ -1,0 +1,14 @@
+
+def palindromes_of_specific_lengths(string, lengths):
+    # Convert string to lowercase for case-insensitive search
+    string = string.lower()
+    # Find index of first and last occurrence of substring
+    start_index = string.find("abc")
+    end_index = string.rfind("abc")
+    # Check if any palindromes in specified range have the correct lengths
+    palindromes = []
+    for i in range(start_index, end_index + 1):
+        substring = string[i:i+2]
+        if len(substring) in lengths and substring == substring[::-1]:
+            palindromes.append(substring)
+    return palindromes

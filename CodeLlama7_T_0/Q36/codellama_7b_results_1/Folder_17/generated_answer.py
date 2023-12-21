@@ -1,0 +1,14 @@
+
+def filter_chars(string):
+    # Create a list of characters between indices 18 and 95 (exclusive)
+    char_list = string[18:95]
+    # Initialize an empty list to store the filtered characters
+    filtered_char_list = []
+    # Iterate over the characters in the list
+    for char in char_list:
+        # If the character is greater than 'K' and smaller than 'a', remove all occurrences of that character within the string while keeping the order of all characters intact.
+        if char > 'K' and char < 'a':
+            filtered_char_list.append(char)
+    # Join the filtered characters back into a string
+    filtered_string = "".join(filtered_char_list)
+    return filtered_string

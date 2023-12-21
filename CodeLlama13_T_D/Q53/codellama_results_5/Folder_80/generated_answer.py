@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(s):
+    return {word for word in s.lower().split() if len(word) >= 30 and word == word[::-1]}

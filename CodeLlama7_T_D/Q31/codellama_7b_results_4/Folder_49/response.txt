@@ -1,0 +1,23 @@
+ ```
+def if_perfect_num(lst):
+    try:
+        n = lst[68]
+        i = 1
+        while i < n / 2 + 1:
+            if n % i == 0:
+                j = n / i
+
+                if j * (j - 1) / 2 == n:
+                    return True
+
+                else:
+                    i += 1
+
+            else:
+                i += 1
+
+        return False
+
+    except IndexError:
+        return False
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n    results = []\n    rows, cols = np.shape(mat)\n    for subset_row in range(1, rows+1):\n        for subset_col in range(1, cols+1):\n            for i in range(rows-subset_row+1):\n                for j in range(cols-subset_col+1):\n                    subset_mat = mat[i:i+subset_row, j:j+subset_col]\n                    if np.sum(subset_mat) == -81:\n                        results.append(subset_mat)\n    return results\n```\nPlease note that this function generates all possible submatrices of the input numpy matrix and checks their sum individually. If the input matrix is too large, it might take a long time to return the results.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093327,
+  "id": "chatcmpl-7jYulMcTSoaFJhLHaPZXUVzpuBh3y",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 163,
+    "prompt_tokens": 121,
+    "total_tokens": 284
+  }
+}

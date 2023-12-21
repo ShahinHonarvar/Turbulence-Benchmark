@@ -1,0 +1,9 @@
+
+def return_nth_smallest_ascii(string):
+    # find the 11th smallest ASCII value among those characters in the string that occur between indices 21 and 59, both inclusive
+    ascii_values = [ord(c) for c in string[20:60] if c.isalpha()]
+    nth_smallest = sorted(ascii_values)[10]
+    # find the character with that ASCII value
+    for c in string[20:60]:
+        if ord(c) == nth_smallest:
+            return c

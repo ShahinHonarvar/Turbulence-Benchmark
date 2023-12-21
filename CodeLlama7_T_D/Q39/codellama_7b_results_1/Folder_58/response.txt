@@ -1,0 +1,11 @@
+ Here is a possible implementation of the `return_n_greatest_chars` function:
+```
+def return_n_greatest_chars(input_string, n):
+    # Create a list of tuples, where each tuple contains the character and its ASCII value
+    char_list = [(c, ord(c)) for c in input_string]
+    # Sort the list in descending order based on the ASCII values
+    sorted_list = sorted(char_list, key=lambda x: -x[1])
+    # Return the top n elements of the sorted list
+    return [c[0] for c in sorted_list[:n]]
+```
+This function takes two arguments: `input_string`, which is a string of distinct characters to be sorted, and `n`, which is an integer representing the number of characters to be returned. The function first creates a list of tuples, where each tuple contains the character and its ASCII value. It then sorts the list in descending order based on the ASCII values, and returns the top n elements of the sorted list.

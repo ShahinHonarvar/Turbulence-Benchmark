@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the Fibonacci sequence up to 10th number
+    fib = [0, 1]
+    for i in range(9):
+        fib.append((fib[i-1] + fib[i]) % (1 << 64))
+    
+    # Check if the decimal is divisible by 10th Fibonacci number
+    return decimal % fib[9] == 0

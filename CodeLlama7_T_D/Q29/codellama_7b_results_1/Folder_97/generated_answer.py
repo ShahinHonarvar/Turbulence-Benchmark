@@ -1,0 +1,8 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the integers at indices 180 and 312
+    gcf = 1
+    for i in range(2, min(my_list[180], my_list[312]) + 1):
+        if my_list[180] % i == 0 and my_list[312] % i == 0:
+            gcf = i
+    return gcf

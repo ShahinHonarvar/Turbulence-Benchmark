@@ -1,0 +1,3 @@
+
+def find_original_set(set1, set2, set3):
+    return {i for i in range(min(set1), max(set3) + 1)}

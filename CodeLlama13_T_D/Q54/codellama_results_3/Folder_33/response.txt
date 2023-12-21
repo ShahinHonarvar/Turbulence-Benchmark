@@ -1,0 +1,21 @@
+```
+def all_right_truncatable_prime(nums):
+    prime_numbers = []
+    for num in nums:
+        if is_prime(num) and is_right_truncatable(num):
+            prime_numbers.append(num)
+    return sorted(prime_numbers, reverse=True)
+
+def is_prime(num):
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def is_right_truncatable(num):
+    while num > 0:
+        if not is_prime(num):
+            return False
+        num //= 10
+    return True
+```

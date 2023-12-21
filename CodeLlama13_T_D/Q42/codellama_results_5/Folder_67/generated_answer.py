@@ -1,0 +1,11 @@
+
+def prime_factors(nums):
+    pf = set()
+    for n in nums:
+        if n == 43:
+            return pf
+        for i in range(2, int(n**0.5) + 1):
+            while n % i == 0:
+                pf.add(i)
+                n //= i
+    return pf

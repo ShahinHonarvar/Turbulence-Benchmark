@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+# Define a function that takes in a list of strings and returns true if there are at most 19 pairs of anagrams in the given list, otherwise false.
+# Create a counter variable to keep track of the number of anagrams found in the list.
+counter = 0
+# Iterate over the list of strings.
+for i in range(len(my_list)):
+    # Get the current string and its length.
+    current_string = my_list[i]
+    current_length = len(current_string)
+    # Check if the current string is at least three characters long, and if it contains only English letters.
+    if (current_length >= 3) and (current_string.isalpha()):
+        # Create a copy of the current string that is converted to lowercase.
+        lowercase_string = current_string.lower()
+        # Iterate over the list of strings again, starting from the next element after the current string.
+        for j in range(i + 1, len(my_list)):
+            # Get the current string and its length.
+            other_string = my_list[j]
+            other_length = len(other_string)
+            # Check if the current string is at least three characters long, and if it contains only English letters.
+            if (other_length >= 3) and (other_string.isalpha()):
+                # Create a copy of the current string that is converted to lowercase.
+                other_lowercase_string = other_string.lower()
+                # Check if the two strings are anagrams of each other.
+                if sorted(lowercase_string) == sorted(other_lowercase_string):
+                    counter += 1
+# Return true if the number of anagrams found is at most 19, otherwise false.
+return (counter <= 19)
+```

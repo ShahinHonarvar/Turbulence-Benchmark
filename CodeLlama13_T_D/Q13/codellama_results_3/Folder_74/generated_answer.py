@@ -1,0 +1,3 @@
+
+def find_second_largest_num(numbers):
+    return sorted(numbers)[17:79][-2] if len(sorted(numbers)[17:79]) >= 2 else None

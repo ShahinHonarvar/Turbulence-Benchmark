@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the provided specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(len(matrix)):\n        for j in range(len(matrix[i])):\n            for k in range(i, len(matrix)):\n                for l in range(j, len(matrix[k])):\n                    if (k - i + 1) * (l - j + 1) == 186:\n                        count += 1\n    return count\n```\n\nPlease replace 'matrix' with your actual numpy matrix when calling the function.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082894,
+  "id": "chatcmpl-7fK3S1x8Oe5WeQYjusChSHQwavlbj",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 111,
+    "total_tokens": 232
+  }
+}

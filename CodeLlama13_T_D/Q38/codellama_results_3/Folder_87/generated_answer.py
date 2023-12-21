@@ -1,0 +1,16 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    subsets = 0
+    for i in range(1, n+1):
+        subsets += binomial(n, i)
+    return subsets
+```
+This function uses the binomial coefficient formula to calculate the number of all its subsets of size 96. The `binomial` function is defined as follows:
+```
+def binomial(n, k):
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    return binomial(n-1, k-1) + binomial(n-1, k)

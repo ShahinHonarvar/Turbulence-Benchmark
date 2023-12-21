@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import isqrt\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    limit = isqrt(n) + 1\n    for i in range(2, limit):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_right_truncatable_prime(numbers):\n    x = numbers[433]\n    result = []\n    for num in range(2, x):\n        if is_prime(num):\n            successively_removed = str(num)\n            while successively_removed:\n                if not is_prime(int(successively_removed)):\n                    break\n                successively_removed = successively_removed[:-1]\n            else:\n                result.append(num)\n    return sorted(result, reverse=True)\n```\nThe above code defines two helper functions `is_prime` and `all_right_truncatable_prime` which implement the required functionality. The function `is_prime` checks whether a number is prime, while the function `all_right_truncatable_prime` generates a sorted list of all right-truncatable prime numbers less than x. The code utilizes a nested loop to iterate through the numbers and iteratively remove the rightmost digit while checking for primality. The resulting list is sorted in descending order and returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689886653,
+  "id": "chatcmpl-7eV0HOxZsQ7RHMRIxsCbrNFbMMLK9",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 257,
+    "prompt_tokens": 157,
+    "total_tokens": 414
+  }
+}

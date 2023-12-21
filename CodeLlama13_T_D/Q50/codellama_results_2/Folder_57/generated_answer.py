@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(string_list):
+    anagrams = []
+    for i in range(len(string_list)):
+        current_str = string_list[i].lower()
+        for j in range(i + 1, len(string_list)):
+            next_str = string_list[j].lower()
+            if sorted(current_str) == sorted(next_str):
+                anagrams.append((i, j))
+    return len(anagrams) >= 50

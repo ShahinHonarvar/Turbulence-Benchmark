@@ -1,0 +1,11 @@
+```python
+def prime_factors(numbers):
+    return set([p for n in numbers for p in range(2, int(n**0.5) + 1) if n % p == 0])
+```
+This code defines a function called `prime_factors` that takes one argument `numbers`, which is a list of positive integers. The function returns the set of all prime factors of the integer at index 96, which is calculated as follows:
+
+1. First, we use a list comprehension to generate a list of all prime numbers up to and including the square root of the input number. This is done using the `range` function, with the start value set to 2 and the stop value set to the square root plus one.
+2. Next, we iterate over each number in the input list and use another list comprehension to generate a list of all factors of that number that are also prime numbers. This is done by using `n % p == 0` as a condition on the list comprehension, where `p` is a prime number less than or equal to the square root of `n`.
+3. Finally, we convert the resulting list into a set and return it as the output of the function.
+
+Note that this implementation uses a single loop to generate all prime factors up to the square root of the input number, which is more efficient than generating all prime numbers up to the square root separately.

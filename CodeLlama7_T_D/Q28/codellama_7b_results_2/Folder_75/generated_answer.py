@@ -1,0 +1,14 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a set of characters in the string
+    char_set = set(string)
+    # Find the smallest ASCII value among the characters in the set
+    smallest_ascii = min(char_set, key=ord)
+    # Find the 9th smallest ASCII value by iterating through the values between 62 and 83 (inclusive)
+    nth_smallest_ascii = None
+    for i in range(62, 84):
+        if ord(smallest_ascii) == i:
+            nth_smallest_ascii = chr(i)
+            break
+
+    return nth_smallest_ascii

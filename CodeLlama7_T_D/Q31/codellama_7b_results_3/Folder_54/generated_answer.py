@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 51 elements
+    if len(my_list) < 51:
+        return False
+
+    # Get the element at index 51
+    perfect_number = my_list[51]
+
+    # Check if the element is a perfect number
+    if perfect_number == int(perfect_number / 2 * (1 + perfect_number)))):
+        return True
+
+    else:
+
+        return False

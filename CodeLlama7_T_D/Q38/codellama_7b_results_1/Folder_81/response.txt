@@ -1,0 +1,17 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize the result variable
+    result = 0
+
+    # Iterate over all possible subsets of size 20
+    for i in range(1 << len(elements))):
+        # Extract the current subset from the binary representation
+        subset = [elements[j] for j in range(len(elements)) if (i & (1 << j)) != 0]
+        # Check if the subset has size 20
+        if len(subset) == 20:
+            # Increment the result variable
+            result += 1
+
+    # Return the result variable
+    return result
+```

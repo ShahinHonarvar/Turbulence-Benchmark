@@ -1,0 +1,20 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the index 851 exists in the list
+    if len(my_list) - 1 < 851:
+        return False
+
+    # Get the value at index 851
+    perfect_num = my_list[851]
+
+    # Check if the number is a perfect number
+    if (perfect_num % 2 == 0) and all(perfect_num % i != 0 for i in range(2, int(perfect_num ** 0.5) + 1)):
+        return True
+
+    # If the number is not a perfect number
+    else:
+        return False

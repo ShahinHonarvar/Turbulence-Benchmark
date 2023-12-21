@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(set_elements):
+    subset_count = 0
+    for i in range(len(set_elements)):
+        current_subset = set()
+        for j in range(i, len(set_elements)):
+            if len(current_subset) == 801:
+                break
+
+            current_subset.add(set_elements[j])
+
+            if len(current_subset) == 801:
+                subset_count += 1
+
+    return subset_count

@@ -1,0 +1,33 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check that the list is not empty and has at least three elements
+if len(my_list) < 3:
+return False
+
+# Create a set to store all the anagrams found in the list
+anagram_set = set()
+
+# Iterate over the list and check for anagrams
+for word in my_list:
+word = word.lower()
+
+# Check if the word is a palindrome (i.e., it reads the same backwards as it does forwards)
+if word == word[::-1]:
+continue
+
+# Get all possible permutations of the letters in the word
+permutations = []
+for i in range(len(word)):
+permutations.append(''.join(sorted(word, key=str.lower))))
+
+# Check if any of the permutations is already in the set of anagrams
+for permutation in permutations:
+if permutation in anagram_set:
+return True
+
+anagram_set.add(permutation)
+
+# If we reach this point, it means that there are no more anagrams to be found in the list
+return False
+
+```

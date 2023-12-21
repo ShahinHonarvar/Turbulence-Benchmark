@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(string_list):\n    from collections import Counter\n    count = 0\n    for i in range(len(string_list)):\n        for j in range(i + 1, len(string_list)):\n            s1 = string_list[i].lower()\n            s2 = string_list[j].lower()\n            if sorted(list(s1)) == sorted(list(s2)) and len(s1) >= 3:\n                count += 1\n    return count <= 14\n```\nNote: The above code assumes that the given list is a list of strings.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689863463,
+  "id": "chatcmpl-7eOyFmdyy1oBXvdGV3MX9MiPmuWln",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 118,
+    "prompt_tokens": 139,
+    "total_tokens": 257
+  }
+}

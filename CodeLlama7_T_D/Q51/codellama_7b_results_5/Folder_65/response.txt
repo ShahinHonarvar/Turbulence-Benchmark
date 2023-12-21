@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Define the number of anagrams to consider
+    max_anagrams = 72
+    # Initialize a counter for the number of anagrams found
+    num_anagrams = 0
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase for case-insensitive comparison
+        string_lower = string.lower()
+        # Check if the current string is an anagram of another string in the list
+        for other_string in my_list:
+            # Skip the current string since it is compared with itself later
+            if other_string == string_lower:
+                continue
+
+            # Convert the other string to lowercase for case-insensitive comparison
+            other_string_lower = other_string.lower()
+            # Check if the current string is an anagram of the other string
+            if sorted(string_lower) == sorted(other_string_lower):
+                # Increment the counter for the number of anagrams found
+                num_anagrams += 1
+                # If the maximum number of anagrams has been reached, return false immediately
+                if num_anagrams > max_anagrams:
+                    return False
+
+    # Return true if the number of anagrams found is less than or equal to the maximum allowed
+    return num_anagrams <= max_anagrams
+```

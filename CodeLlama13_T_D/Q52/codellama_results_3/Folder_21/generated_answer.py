@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string, n):
+    return {x for x in re.findall(r'(?i)[a-zA-Z]{%s}' % (n), string) if x == x[::-1]}

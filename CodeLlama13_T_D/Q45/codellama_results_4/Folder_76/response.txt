@@ -1,0 +1,6 @@
+```
+def palindromes_between_indices(string):
+    letters = ''.join(sorted(set(string)))
+    return {''.join(letters[i:j]) for i in range(1, 4) for j in range(i + 3, len(letters) + 1) if letters[i] == letters[j - 1]}
+```
+This code first joins all the unique characters of the input string into a sorted set, then generates all possible palindromes of length at least 4 by iterating over each character in the range between indices 1 to 4 both inclusive. Finally, it checks whether the generated palindrome is a valid palindrome or not using the condition that the first and last characters must be equal. If there are no such palindromes found, an empty set is returned.

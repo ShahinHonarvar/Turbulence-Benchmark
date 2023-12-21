@@ -1,0 +1,19 @@
+ Here's the function that satisfies the given text specification:
+```python
+def all_right_truncatable_prime(tuple):
+    # Initialize empty list for storing prime numbers
+    prime_list = []
+    
+    # Iterate through each integer in the tuple
+    for i in range(len(tuple)):
+        x = tuple[i]
+        
+        # Check if the number is a prime number and remains prime when the last rightmost digit is successively removed.
+        if is_prime(x) and is_right_truncatable_prime(x):
+            
+            # If it is, add it to the list of prime numbers.
+            prime_list.append(x)
+            
+    # Return the sorted list of all right-truncatable prime numbers less than x.
+    return sorted(prime_list, reverse=True)
+```

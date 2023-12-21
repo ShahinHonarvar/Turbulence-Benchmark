@@ -1,0 +1,15 @@
+
+def find_original_set(sets):
+    # Get the smallest set from the input sets
+    smallest_set = min(sets, key=len)
+    # Create a new set that is the union of all input sets
+    original_set = set.union(*sets)
+    # Return the smallest set if it is a subset of the original set
+    if smallest_set <= original_set:
+        return smallest_set
+
+    # Otherwise, return the original set
+
+    else:
+
+        return original_set

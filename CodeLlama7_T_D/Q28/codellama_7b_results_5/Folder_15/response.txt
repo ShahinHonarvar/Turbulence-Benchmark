@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the frequency of each character in the string
+    char_freq = {}
+    for char in string:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+    # Get a list of tuples containing the character and its frequency
+    freq_list = [(char, char_freq[char]) for char in string]
+    # Sort the list based on the frequency of each character
+    sorted_list = sorted(freq_list, key=lambda x: x[1], reverse=True)
+    # Return the character with the 6th smallest ASCII value
+    return sorted_list[5][0]
+```

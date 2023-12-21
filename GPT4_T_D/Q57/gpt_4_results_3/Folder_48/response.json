@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your expert:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices = []\n    for row_start in range(rows):\n        for row_end in range(row_start+1, rows+1): \n            for col_start in range(cols):\n                for col_end in range(col_start+1, cols+1): \n                    submatrix = matrix[row_start:row_end, col_start:col_end]\n                    if np.sum(submatrix) == -261:\n                        submatrices.append(submatrix)\n    return submatrices\n```\n\nPlease note that finding submatrices in a matrix is a task with high computational complexity, so depending on the size of the input matrix, the function might not be able to complete its task in a reasonable amount of time.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690983362,
+  "id": "chatcmpl-7j6J8YYDtZc0erlzYnMSJh9O0csCq",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 121,
+    "total_tokens": 299
+  }
+}

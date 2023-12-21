@@ -1,0 +1,76 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # loop through the range of numbers from 1 to x
+    for num in range(1, x + 1):
+
+        # check if the number is a prime number
+        if is_prime(num):
+
+            # check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(num):
+
+                # add the number to the list of prime numbers
+                prime_numbers.append(num)
+
+    # sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # return the list of prime numbers
+    return prime_numbers
+
+# check if a number is a prime number
+def is_prime(num):
+
+    # check if the number is less than or equal to 1
+    if num <= 1:
+
+        # return False if the number is less than or equal to 1
+        return False
+
+    # loop through the range of numbers from 2 to the square root of num
+    for i in range(2, int(num ** 0.5) + 1):
+
+        # check if the number is divisible by i
+        if num % i == 0:
+
+            # return False if the number is divisible by i
+            return False
+
+    # return True if the number is a prime number
+    return True
+
+# check if a number is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(num):
+
+    # initialize variables to store the leading leftmost and last rightmost digits of the number
+    leading_leftmost = 0
+    last_rightmost = 0
+
+    # check if the number contains no 0
+    if '0' in str(num):
+
+        # return False if the number contains a 0
+        return False
+
+    # loop through the range of numbers from the square root of num to 1
+    for i in range(int(num ** 0.5), 1, -1):
+
+        # check if the number is divisible by i
+        if num % i == 0:
+
+            # store the leading leftmost and last rightmost digits of the number in the variables
+            leading_leftmost = i
+            last_rightmost = num // i
+
+    # check if the number is a prime number after removing the leading leftmost and last rightmost digits
+    if is_prime(num // (leading_leftmost * last_rightmost)) == True:
+
+        # return True if the number is a left-and-right-truncatable prime number
+        return True
+
+    # return False if the number is not a left-and-right-truncatable prime number
+    return False
+```

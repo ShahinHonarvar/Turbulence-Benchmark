@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `composite_nums_between_indices` function in Python:
+```
+def composite_nums_between_indices(my_list):
+    # Find the starting and ending indices of the range
+    start = 75
+    end = 94
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list from the starting index to the ending index
+    for i in range(start, end + 1):
+        # Check if the current number is a prime number
+        if my_list[i] == 1:
+            # If it's a prime number, add it to the set of composite numbers
+            composite_nums.add(my_list[i])
+    # Return the set of composite numbers in the specified range
+    return composite_nums
+```
+This implementation first finds the starting and ending indices of the range that we want to search for composite numbers within. It then initializes an empty set to store the composite numbers, and iterates over the list from the starting index to the ending index using a `for` loop.
+For each number in the list, it checks if it's a prime number by comparing it to 1 (since we know that any number that is not a multiple of 2 is either a prime number or a composite number). If the current number is a prime number, it adds it to the set of composite numbers.
+Finally, it returns the set of composite numbers in the specified range.

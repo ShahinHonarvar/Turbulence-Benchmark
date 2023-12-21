@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables to keep track of anagram pairs
+    pair_count = 0
+    anagram_pairs = []
+    # Iterate over the list of strings
+    for string1 in my_list:
+        # Ignore strings with length < 3
+        if len(string1) < 3:
+            continue
+
+        # Convert both strings to lowercase
+        string1_lower = string1.lower()
+
+        # Iterate over the remaining list of strings
+        for string2 in my_list[my_list.index(string1) + 1:]:
+            # Ignore strings with length < 3
+            if len(string2) < 3:
+                continue
+
+            # Convert both strings to lowercase
+            string2_lower = string2.lower()
+
+            # Check if the two strings are anagrams
+            if sorted(string1_lower) == sorted(string2_lower):
+                # Add the pair of anagrams to the list
+                anagram_pairs.append((string1, string2))
+
+    # Return true if there are at least 22 pairs of anagrams in the given list; otherwise, return false
+    return len(anagram_pairs) >= 22

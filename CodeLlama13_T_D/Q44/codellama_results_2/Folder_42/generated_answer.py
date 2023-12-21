@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(lst):
+    return {i for i in lst[91:100] if len(str(i)) > 1 and all(int(j) for j in str(i))}

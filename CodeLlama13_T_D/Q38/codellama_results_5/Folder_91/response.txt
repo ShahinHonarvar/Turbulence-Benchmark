@@ -1,0 +1,12 @@
+```python
+def find_subset_of_length_n(elements, n):
+    return len([sub for sub in subsets(elements) if len(sub) == n])
+
+def subsets(elements):
+    if not elements:
+        yield []
+    else:
+        for i in range(len(elements)):
+            for sub in subsets(elements[i+1:]):
+                yield [elements[i]] + sub
+```

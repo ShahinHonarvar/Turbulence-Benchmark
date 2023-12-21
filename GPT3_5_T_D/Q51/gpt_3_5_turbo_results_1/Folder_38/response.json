@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(strings):\n    def count_anagrams(string):\n        count = {}\n        for char in string.lower():\n            if char.isalpha():\n                if char in count:\n                    count[char] += 1\n                else:\n                    count[char] = 1\n        return count\n    \n    anagram_pairs = 0\n    for i in range(len(strings)):\n        for j in range(i+1, len(strings)):\n            if len(strings[i]) >= 3 and len(strings[j]) >= 3:\n                anagram1 = count_anagrams(strings[i])\n                anagram2 = count_anagrams(strings[j])\n                if anagram1 == anagram2:\n                    anagram_pairs += 1\n                    if anagram_pairs > 416:\n                        return False\n    \n    return True\n```\nNote: The function assumes that the input list `strings` contains only strings. If there are non-string elements in the list, it may raise an error.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689779052,
+  "id": "chatcmpl-7e30myA59lvm5ev9QqOfaKzO1R7Wc",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 200,
+    "prompt_tokens": 139,
+    "total_tokens": 339
+  }
+}

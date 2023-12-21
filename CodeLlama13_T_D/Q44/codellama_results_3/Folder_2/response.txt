@@ -1,0 +1,7 @@
+```
+def composite_nums_between_indices(numbers):
+    if len(numbers) <= 49:
+        return set()
+    
+    return {number for i, number in enumerate(numbers[35:50]) if number > 1 and all(number % div == 1 for div in range(2, int(number ** 0.5 + 1)))}
+```

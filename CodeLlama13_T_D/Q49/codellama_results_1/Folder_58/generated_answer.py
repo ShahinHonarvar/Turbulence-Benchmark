@@ -1,0 +1,6 @@
+
+def if_decimal_is_divisible(binary_repr):
+    fibonacci_seq = [0, 1]
+    while len(fibonacci_seq) <= binary_repr:
+        fibonacci_seq.append(fibonacci_seq[-2] + fibonacci_seq[-1])
+    return int(binary_repr, 2) % fibonacci_seq[104] == 0

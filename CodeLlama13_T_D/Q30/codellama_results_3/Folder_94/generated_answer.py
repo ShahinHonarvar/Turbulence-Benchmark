@@ -1,0 +1,3 @@
+
+def insert_before_character(string, character):
+    return "".join([f"{character if c == '5' else ''}{c}" for c in string])

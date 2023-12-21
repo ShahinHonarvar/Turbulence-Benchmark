@@ -1,0 +1,6 @@
+
+def find_original_set(arg1, arg2, ..., arg25):
+    original_set = set()
+    for i in range(25):
+        original_set |= {item for item in locals()[f'arg{i+1}']}
+    return original_set

@@ -1,0 +1,17 @@
+```python
+def find_subset_of_length_n(elements):
+    return len([s for s in subsets(elements) if len(s) == 51])
+
+def subsets(elements):
+    # Base case: If the set is empty, return an empty list
+    if not elements:
+        yield []
+    else:
+        # Recursive case: For each element e in the set, generate all subsets that do not contain e, and for each such subset s, add e to it and generate the resulting subset [e] + s
+        for e in elements:
+            for s in subsets(elements - {e}):
+                yield [e] + s
+```
+This function uses a recursive approach to find all subsets of size 51. The base case is when the set is empty, in which case there are no subsets. The recursive case is when we have at least one element e in the set, and for each subset that does not contain e, we generate all subsets by adding e to it and generating the resulting subset [e] + s.
+
+The function first defines a helper function `subsets` which generates all subsets of a given set. The `find_subset_of_length_n` function then calls this helper function with the input set, and filters the generated subsets by checking their length to find all subsets of size 51.

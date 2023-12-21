@@ -1,0 +1,20 @@
+ Here is a possible implementation of the function `lists_with_product_equal_n`:
+```
+def lists_with_product_equal_n(my_list):
+	result = []
+	for i in range(len(my_list)):
+		current_product = 1
+		for j in range(i, len(my_list)):
+			current_product *= my_list[j]
+		if current_product == n:
+			result.append(my_list[i:j+1])
+	return result
+```
+This function takes a list of integers as input, and returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 45. If no such sublist exists, the function should return an empty list. The order of sublists in the returned list does not matter.
+Here is an example usage of this function:
+```
+my_list = [1, 2, 3, 4, 5]
+result = lists_with_product_equal_n(my_list)
+#print(result)
+```
+This will output `[[1, 2, 3], [4, 5]]`, which is the list of sublists each of which contains the contiguous integers from the given list such that their product equals 45.

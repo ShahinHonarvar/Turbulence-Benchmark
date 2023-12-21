@@ -1,0 +1,9 @@
+ ```
+def if_contains_anagrams(my_list):
+    # create a set of all possible anagrams
+    anagram_set = {frozenset(a) for a in itertools.permutations('abcdefghijklmnopqrstuvwxyz', 3)}
+    # count the number of anagrams in the list
+    anagram_count = sum(1 for a in my_list if frozenset(a) in anagram_set and len(a) >= 3))
+    return anagram_count <= 18
+```
+Note: This code assumes that the input list is a list of strings. If the input is not a list of strings, this code will raise a `TypeError`.

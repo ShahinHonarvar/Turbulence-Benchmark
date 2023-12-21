@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(list_of_strings):
+    count = 0
+    for i in range(len(list_of_strings) - 1):
+        for j in range(i + 1, len(list_of_strings))):
+            if sorted(list_of_strings[i].lower()) == sorted(list_of_strings[j].lower()):
+                count += 1
+                if count >= 88:
+                    return True
+    return False
+```
+Explanation:
+This function takes a list of strings as input and returns true if there are at least 88 pairs of anagrams in the given list; otherwise, it should return false.
+The function first checks if the length of the list is less than or equal to 3. If it is, then it immediately returns false because there cannot be any anagrams with a length of only three letters or fewer.
+If the length of the list is greater than or equal to four, then the function proceeds to check for pairs of anagrams in the list. To do this, the function uses two nested loops: one loop that iterates over the elements of the list from index 0 to len(list_of_strings) - 1, and another loop that iterates over the elements of the list from index i + 1 to len(list_of_strings).
+Inside these two loops, the function uses the sorted() built-in function to sort each string in the list in a case-insensitive manner. The function then checks if the sorted strings are equal to each other using the == operator. If they are equal, then the function increments a counter variable called count by 1.
+After both loops have completed, the function checks if the value of the count variable is greater than or equal to 88. If it is, then the function returns true because there are at least 88 pairs of anagrams in the given list. Otherwise, the function returns false because there are not enough pairs of anagrams in the list.
+The function also considers only strings with a length of at least three characters when checking for pairs of anagrams. This is done by first checking if the length of the list is less than or equal to 3. If it is, then the function immediately returns false because there cannot be any anagrams with a length of only three letters or fewer.

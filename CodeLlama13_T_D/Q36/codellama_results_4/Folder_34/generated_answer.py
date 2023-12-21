@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    new_string = ''
+    for i in range(10, 79):
+        if s[i] > '?' and s[i] < 'm':
+            new_string += s[i]
+        else:
+            new_string += s[:i-1] + s[i:]
+    return new_string

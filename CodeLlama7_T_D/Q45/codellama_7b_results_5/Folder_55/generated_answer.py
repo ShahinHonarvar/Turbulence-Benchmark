@@ -1,0 +1,8 @@
+ def palindromes_between_indices(string):
+    # Create a list of all possible palindromes of length 3 or more
+    palindromes = []
+    for i in range(len(string) - 2):
+        substr = string[i:i+3]
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+    return set(palindromes)

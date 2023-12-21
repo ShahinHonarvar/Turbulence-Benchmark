@@ -1,0 +1,24 @@
+```
+def find_second_largest_num(my_list):
+    if len(my_list) < 2:
+        return None
+
+    largest = my_list[0]
+    second_largest = None
+
+    for i in range(1, len(my_list)):
+        current = my_list[i]
+        if current > largest:
+            second_largest = largest
+            largest = current
+        elif second_largest is None or current > second_largest:
+            second_largest = current
+    return second_largest
+```
+This function takes a list of distinct numbers as input and returns the second largest element from index 0 to index 5, both inclusive. If there is no such element, it returns `None`. The function first checks if the length of the list is at least 2, otherwise it returns `None` immediately. Then, it sets `largest` and `second_largest` variables to the first two elements of the list, respectively.
+
+Then, in a loop, starting from the second element to the end of the list, the function checks if each element is larger than `largest`. If so, then the current element becomes the new largest element and the previous largest element becomes the second largest element. If the current element is less than or equal to `largest`, but greater than `second_largest`, it becomes the new second largest element.
+
+Finally, after the loop completes, the function returns the value of `second_largest`.
+
+It's worth noting that this code assumes that the input list is sorted in ascending order. If the list is not sorted, then the algorithm will return incorrect results. Also, if there are duplicate elements in the list, it may not work correctly.

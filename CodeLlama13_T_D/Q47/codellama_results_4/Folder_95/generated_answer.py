@@ -1,0 +1,12 @@
+
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(12, 57):
+        for j in range(i+20, i+22):
+            substring = string[i:j]
+            if len(substring) == 0 or not all(c.isalpha() for c in substring):
+                continue
+            reverse_substring = "".join(reversed(substring))
+            if substring == reverse_substring:
+                palindromes.add(substring)
+    return palindromes

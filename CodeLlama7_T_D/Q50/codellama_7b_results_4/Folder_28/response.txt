@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(string_list):
+    # Check if there are at least 81 pairs of anagrams in the given list
+    num_pairs = 0
+    for i in range(len(string_list)):
+        string1 = string_list[i]
+        for j in range(i + 1, len(string_list)):
+            string2 = string_list[j]
+            # Check if the two strings are anagrams
+            if sorted(string1) == sorted(string2):
+                num_pairs += 1
+    return num_pairs >= 81
+```
+This code defines a function called `if_contains_anagrams` that takes one argument, a list of strings. The function returns true if there are at least 81 pairs of anagrams in the given list; otherwise, it returns false.
+The function first checks if there are at least 81 pairs of anagrams in the given list by initializing a variable `num_pairs` to 0 and iterating over the list of strings using two nested loops.
+For each pair of strings, the function uses the `sorted()` function to sort both strings alphabetically and then compares them for equality. If the two sorted strings are equal, the function increments the variable `num_pairs` by 1 to keep track of the number of pairs of anagrams found in the list.
+Finally, the function returns true if `num_pairs` is greater than or equal to 81; otherwise, it returns false.

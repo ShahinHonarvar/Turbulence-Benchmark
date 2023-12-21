@@ -1,0 +1,65 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is left-and-right-truncatable prime
+            if is_left_right_truncatable_prime(i):
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+    return prime_numbers
+
+def is_prime(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("n must be a positive integer")
+
+    # Return True if n is a prime number, False otherwise
+    if n == 2 or n == 3:
+        return True
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # Check if n contains any 0 digits
+    if "0" in str(n):
+        return False
+
+    # Get the length of the number of digits in n
+    num_digits = len(str(n))
+
+    # Initialize variables to store the leading leftmost and last rightmost digits of n
+    leading_leftmost = None
+    last_rightmost = None
+
+    # Iterate over the digits of n
+    for i in range(num_digits):
+        # Get the digit at position i of n
+        digit = str(n)[i]
+
+        # Check if the digit is a 0
+        if digit == "0":
+            return False
+
+        # If this is the first iteration, store the leading leftmost digit as leading_leftmost
+        if leading_leftmost is None:
+            leading_leftmost = digit
+
+        # If this is the last iteration, store the last rightmost digit as last_rightmost
+        if i == num_digits - 1:
+            last_rightmost = digit
+
+    # Check if removing the leading leftmost and last rightmost digits from n results in a prime number
+    if is_prime(int(str(n)[:-len(str(last_rightmost))]))):
+        return True
+
+    else:
+        return False

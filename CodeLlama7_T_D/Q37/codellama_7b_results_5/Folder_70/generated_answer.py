@@ -1,0 +1,14 @@
+ def filter_chars(s):
+    # Create a new empty string
+    new_string = ""
+    # Iterate over the characters of the given string
+    for char in s:
+        # If the character is between indices 515 and 538, both inclusive, and is greater than or equal to character '+' and smaller than or equal to character '}', then remove all occurrences of that character from the string while preserving the order of all characters in the string.
+        if (char == "+") and (char == "}") and (515 <= s.index(char) <= 538)):
+            # Remove all occurrences of the current character from the new string
+            new_string = new_string.replace(char, "", 1)
+        else:
+            # Add the current character to the new string
+            new_string += char
+    # Return the altered string
+    return new_string

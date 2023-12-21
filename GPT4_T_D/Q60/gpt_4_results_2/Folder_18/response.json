@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the provided specifications.\n\n```python\nfrom itertools import product\nfrom sympy import isprime\n\ndef form_number(num_tuple):\n   return int(''.join(map(str, num_tuple)))\n\ndef is_truncatable(num):\n    num_str = str(num)\n    for i in range(1, len(num_str)):\n        if not isprime(int(num_str[i:])) or not isprime(int(num_str[:-i])):\n            return False\n    return True\n   \ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[429]\n    primes = [2, 3, 5, 7]\n    digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]\n    for num_len in range(2, len(str(x)) + 1):\n        for num_tuple in product(digits, repeat=num_len):\n            num = form_number(num_tuple)\n            if num <= x and isprime(num) and is_truncatable(num):\n                primes.append(num)\n    return sorted(primes, reverse=True)\n```\nThe function named \"all_left_right_truncatable_prime\" receives a tuple of positive integers. It takes the integer at index 429 and finds all left-and-right truncatable prime numbers less than or equal to this number. The function returns these numbers in a list sorted in descending order. If there are no truncatable prime numbers in the specified range, it returns an empty list. A truncatable prime number is a prime number that remains prime if the leading leftmost and last rightmost digits are successively removed down to a one- or two-digit prime. The function excludes any prime number that contains the digit 0 in its sequence.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690915464,
+  "id": "chatcmpl-7ioe0MLjggUdVM7tMd8eTjWTCvb3A",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 360,
+    "prompt_tokens": 187,
+    "total_tokens": 547
+  }
+}

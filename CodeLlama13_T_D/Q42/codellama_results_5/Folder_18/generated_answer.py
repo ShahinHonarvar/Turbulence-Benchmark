@@ -1,0 +1,11 @@
+
+def prime_factors(numbers):
+    # find all prime factors of the number at index 312
+    num = numbers[312]
+    prime_factors = []
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            prime_factors.append(i)
+            while num % i == 0:
+                num //= i
+    return set(prime_factors)

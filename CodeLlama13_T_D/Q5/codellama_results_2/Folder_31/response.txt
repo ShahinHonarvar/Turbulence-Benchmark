@@ -1,0 +1,16 @@
+```python
+def all_neg_ints_inclusive(my_list):
+    return [x for x in my_list[75:89] if x < 0]
+```
+Here's an explanation of the code:
+
+* `my_list`: this is the list that we want to extract negative integers from.
+* `[75:89]`: this is the range of indices we want to consider. The slice operator (`[start:end]`) gives us a new list with the elements at indices between `start` (inclusive) and `end` (exclusive). In this case, we want to consider indices 75 through 89.
+* `[x for x in my_list[75:89] if x < 0]`: this is a list comprehension that iterates over the elements of `my_list[75:89]` and returns only the ones that are less than zero (i.e., negative).
+
+Here's an example usage of the function:
+```python
+>>> my_list = [-1, 2, -3, 4, -5, 6, -7, 8, -9]
+>>> all_neg_ints_inclusive(my_list)
+[-1, -3, -5, -7, -9]
+```

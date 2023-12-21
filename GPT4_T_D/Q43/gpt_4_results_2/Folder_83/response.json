@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef find_primes_between_indices(integer_list):\n    prime_numbers = []\n    for i in range(14, min(74, len(integer_list))): \n        number = integer_list[i]\n        if number > 1:\n            is_prime = True\n            for j in range(2, number):\n                if (number % j) == 0:\n                    is_prime = False\n                    break\n            if is_prime:\n                prime_numbers.append(number)\n    return sorted(prime_numbers, reverse=True)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690129898,
+  "id": "chatcmpl-7fWHaMOpVUqO79IuBlWPQ5FKV6pzf",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 118,
+    "total_tokens": 226
+  }
+}

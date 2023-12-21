@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import defaultdict\n\ndef is_anagram(str1, str2):\n    return sorted(str1.lower()) == sorted(str2.lower())\n\ndef if_contains_anagrams(lst):\n    checked = defaultdict(int)\n    for string in lst:\n        checked[''.join(sorted(string.lower()))] += 1\n\n    pairs = sum((v * (v-1))//2 for v in checked.values())\n\n    return pairs <= 39\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690140737,
+  "id": "chatcmpl-7fZ6PBw2UtWHfP2xo0dxIbE6UZHbb",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 139,
+    "total_tokens": 231
+  }
+}

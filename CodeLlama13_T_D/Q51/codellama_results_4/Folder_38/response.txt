@@ -1,0 +1,10 @@
+```python
+def if_contains_anagrams(lst):
+    return len([s for s in lst if is_anagram(s)]) <= 416
+
+def is_anagram(s):
+    return sorted(list(set(s))) == ['a', 'b', 'c', 'd', 'e']
+```
+This function `if_contains_anagrams` takes a list of strings as its argument and returns true if there are at most 416 pairs of anagrams in the given list. It does this by first checking each string in the list to see if it is an anagram of the English letters using the function `is_anagram`. If a string is an anagram, then it is added to a new list using list comprehension. The length of this new list is then checked to see if it is at most 416.
+The function `is_anagram` takes a single string as its argument and returns true if the given string is an anagram of the English letters 'a', 'b', 'c', 'd', and 'e'. It does this by first converting the string to lowercase using the built-in `lower()` method. Then, it sorts the characters in the string and checks to see if they are equal to the sorted list `['a', 'b', 'c', 'd', 'e']`.
+Note that this solution only considers anagrams of the English letters 'a', 'b', 'c', 'd', and 'e' and does not consider anagrams of other letters.

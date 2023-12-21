@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python function according to the specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):   \n    num_rows, num_columns = matrix.shape \n    submatrix_list = []\n\n    for row_len in range (1,num_rows+1):\n        for col_len in range (1,num_columns+1):\n            for i in range (0,num_rows-row_len+1):\n                for j in range (0,num_columns-col_len+1):\n                    submatrix = matrix[i:i+row_len,j:j+col_len]\n                    if np.sum(submatrix) == 830: \n                        submatrix_list.append(submatrix)\n\n    return submatrix_list\n```\nThis Python function accepts a two-dimensional numpy matrix as an argument and locates all submatrices within that matrix where the sum of all integer values equates to 830. The function follows a nested loop mechanism to check various submatrix sizes ranging from 1x1 to the size of the input matrix itself. If no such submatrices are found, the function will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081312,
+  "id": "chatcmpl-7fJdwbpjDnOhb0jOIiDOGmQdvEd7U",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 222,
+    "prompt_tokens": 121,
+    "total_tokens": 343
+  }
+}

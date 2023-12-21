@@ -1,0 +1,23 @@
+```
+def palindrome_of_length_n(string, n):
+    """
+    Find all palindromes of length n in the given string.
+
+    Args:
+        string (str): The input string.
+        n (int): The length of each palindrome.
+
+    Returns:
+        set[str]: A set of palindromes found in the string.
+    """
+    if len(string) < n:
+        return set()
+
+    palindromes = set()
+    for i in range(len(string)):
+        substr = string[i:i + n]
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+
+    return palindromes
+```

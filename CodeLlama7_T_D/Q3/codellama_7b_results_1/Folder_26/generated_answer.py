@@ -1,0 +1,15 @@
+
+def all_pos_ints_inclusive(my_list):
+    # Find the first positive index in the list
+    first_pos_index = next((i for i, x in enumerate(my_list) if x > 0)), None)
+    # If no positive integers exist in the specified range, return an empty list
+    if first_pos_index is None:
+        return []
+
+    # Find the last positive index in the list
+
+    last_pos_index = next((i for i, x in enumerate(my_list[first_pos_index:]) if x > 0)), None)
+
+    # Return the sublist of all positive integers from index 62 to index 99, both inclusive
+
+    return my_list[first_pos_index:last_pos_index + 1]

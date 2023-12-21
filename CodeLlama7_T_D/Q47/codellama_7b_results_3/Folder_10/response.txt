@@ -1,0 +1,27 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Convert the input string to lowercase for case-insensitive comparison
+string = string.lower()
+# Define a list to store the palindrome strings of the desired lengths
+palindromes = []
+# Iterate over the characters in the substring from index 16 to index 60, both inclusive
+for i in range(16, 61):
+# Check if the character at index i is a letter (not a digit or a special character)
+if string[i].isalpha():
+# If the character is a letter, check if it forms a palindrome with its reverse
+if string[i] == string[i-16]:
+# If the character forms a palindrome with its reverse, add it to the list of palindromes
+palindromes.append(string[i])
+# End of inner loop
+
+# Iterate over the lengths of the palindromes to be considered
+for length in range(16, 39+1):
+# Check if any palindrome with the current length occurs in the substring from index 16 to index 60, both inclusive
+if len(palindromes) > 0:
+# If a palindrome with the current length occurs, add it to the list of palindromes
+palindromes.append(string[i])
+# End of outer loop
+
+# Return the set of all palindromes with the desired lengths that occur in the substring from index 16 to index 60, both inclusive
+return set(palindromes)
+```

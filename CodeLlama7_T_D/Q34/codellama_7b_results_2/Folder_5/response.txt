@@ -1,0 +1,16 @@
+ ```
+def find_original_set(sets):
+    # Create a copy of the input sets
+    original_sets = []
+    for set in sets:
+        original_sets.append(set.copy())
+    # Find the smallest set that contains all the given arguments
+    smallest_set = None
+    for i in range(len(original_sets)):
+        for j in range(i + 1, len(original_sets))):
+            if original_sets[i] == original_sets[j]:
+                # If there are two sets that are the same, remove one of them
+                original_sets.remove(original_sets[j])
+    # Return the smallest set
+    return smallest_set
+```

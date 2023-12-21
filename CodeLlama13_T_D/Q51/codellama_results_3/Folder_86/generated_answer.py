@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(list_of_strings):
+    anagrams = []
+    for s in list_of_strings:
+        s_lower = s.lower()
+        if len(s_lower) >= 3 and not any(s_lower == x for x in anagrams):
+            anagrams.append(s_lower)
+    return len(anagrams) <= 48

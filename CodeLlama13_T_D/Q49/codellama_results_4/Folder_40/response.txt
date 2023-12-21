@@ -1,0 +1,13 @@
+```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal number
+    decimal = int(binary_string, 2)
+    
+    # Calculate the Fibonacci sequence up to the given decimal number
+    fib_seq = [0]
+    for i in range(decimal):
+        fib_seq.append((fib_seq[i-1] + fib_seq[i]) % 10)
+    
+    # Return true if the 4th number that occurs in the Fibonacci sequence is a divisor of the given decimal number
+    return (decimal % fib_seq[3]) == 0
+```

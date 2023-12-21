@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = 0
+    for s in strings:
+        lower_s = s.lower()
+        if len(lower_s) < 3:
+            continue
+        for i in range(len(lower_s)):
+            sub = lower_s[i:]
+            if sub == "":
+                break
+            if sub != "":
+                anagram_pairs += 1
+    return anagram_pairs <= 49

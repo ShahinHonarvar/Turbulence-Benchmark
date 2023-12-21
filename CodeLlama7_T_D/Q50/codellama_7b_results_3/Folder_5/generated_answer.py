@@ -1,0 +1,25 @@
+
+def if_contains_anagrams(word_list):
+    # Check if there are at least two anagram pairs in the list
+    if len([pair for pair in get_anagram_pairs(word_list) if len(pair[0]) >= 3]) < 21:
+        return False
+
+    # Check if all anagrams have a length of at least three
+
+    for word in word_list:
+        if len(word) < 3:
+            return False
+
+    return True
+
+def get_anagram_pairs(word_list):
+    anagram_pairs = []
+
+    # Iterate over all possible pairs of words in the list
+
+    for i in range(len(word_list)):
+        for j in range(i + 1, len(word_list))):
+            if sorted(word_list[i]) == sorted(word_list[j])):
+                anagram_pairs.append((word_list[i], word_list[j])))
+
+    return anagram_pairs

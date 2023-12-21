@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters that occur between indices 0 and 18, both inclusive
+    chars = string[0:19]
+    # Create a list of tuples containing each character and its ASCII value
+    char_list = [(char, ord(char)) for char in chars]
+    # Sort the list by ASCII value in ascending order
+    char_list.sort(key=lambda x: x[1])
+    # Return the character with the 19th smallest ASCII value
+    return char_list[18][0]

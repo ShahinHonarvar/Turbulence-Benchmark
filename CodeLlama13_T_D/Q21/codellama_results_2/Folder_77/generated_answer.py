@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(arr):
+    return [x for x in arr[816:883+1] if x % -586 == 0]

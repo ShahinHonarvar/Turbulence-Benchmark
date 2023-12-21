@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Create a copy of the input matrix
+    matrix_copy = matrix.copy()
+    
+    # Initialize an empty list to store the results
+    results = []
+    
+    # Iterate over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all elements in the submatrix starting from (i, j)
+            current_sum = np.sum(matrix_copy[i:, j:])
+            
+            # If the current sum is equal to -61, add the submatrix to the results list
+            if current_sum == -61:
+                results.append((i, j))
+    
+    # Return the results list
+    return results

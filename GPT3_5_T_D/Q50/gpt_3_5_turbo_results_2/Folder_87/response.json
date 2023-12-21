@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(strings):\n    # count the frequency of each string after converting it to lowercase\n    count = {}\n    for string in strings:\n        lower_string = string.lower()\n        if len(lower_string) >= 3:\n            sorted_string = ''.join(sorted(lower_string))\n            count[sorted_string] = count.get(sorted_string, 0) + 1\n\n    # check if there are at least 88 pairs of anagrams\n    count_pairs = 0\n    for freq in count.values():\n        count_pairs += freq * (freq - 1) // 2\n\n    return count_pairs >= 88\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689818951,
+  "id": "chatcmpl-7eDOJUGgwhCA5FOcSbXGpwv1zCLpj",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 126,
+    "total_tokens": 259
+  }
+}

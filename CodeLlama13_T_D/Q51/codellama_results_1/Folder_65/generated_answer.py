@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = 0
+    for i in range(len(strings)):
+        string1 = strings[i].lower()
+        for j in range(i + 1, len(strings)):
+            string2 = strings[j].lower()
+            if set(string1) == set(string2):
+                anagram_pairs += 1
+    return anagram_pairs <= 72

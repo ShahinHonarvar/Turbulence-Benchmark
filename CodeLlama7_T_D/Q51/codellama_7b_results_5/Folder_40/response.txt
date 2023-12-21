@@ -1,0 +1,13 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Set to store all anagram pairs found in the list
+    anagram_pairs = set()
+    for string1 in my_list:
+        for string2 in my_list:
+            # Check if strings are anagrams of each other
+            if sorted(string1) == sorted(string2):
+                # Add anagram pair to the set
+                anagram_pairs.add((string1, string2))
+    # Return False if there are more than 29 pairs of anagrams in the list
+    return len(anagram_pairs) <= 29
+```

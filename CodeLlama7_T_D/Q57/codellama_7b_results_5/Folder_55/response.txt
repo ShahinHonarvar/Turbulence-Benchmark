@@ -1,0 +1,25 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Get the current column of the matrix
+            col = row[:,j]
+
+            # Check if the sum of all integers in the submatrix equals 1
+            if np.sum(col) == 1:
+                # If so, add the submatrix to the list of submatrices
+                submatrices.append(col)
+
+    # Return the list of all submatrices that satisfy the condition
+    return submatrices
+```

@@ -1,0 +1,36 @@
+ ```
+def all_left_truncatable_prime(tuple):
+# Extract the integer at index 30 from the tuple
+x = tuple[30]
+# Initialize an empty list to store the left-truncatable prime numbers
+left_truncatable_primes = []
+# Iterate through all numbers less than x
+for num in range(2, x):
+# Check if num is a prime number
+if is_prime(num):
+# Check if num can be obtained by repeatedly removing the leading leftmost digit of num
+if check_left_truncatable_prime(num):
+# Add num to the list of left-truncatable prime numbers
+left_truncatable_primes.append(num)
+return left_truncatable_primes
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def check_left_truncatable_prime(num):
+# Check if num can be obtained by repeatedly removing the leading leftmost digit of num
+while num > 0:
+# Check if the number obtained by removing the leading leftmost digit of num is prime
+if not is_prime(num % 10):
+return False
+
+num //= 10
+
+return True
+```

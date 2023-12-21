@@ -1,0 +1,21 @@
+ ```
+def if_perfect_num(lst):
+    # Check if the list has at least 101 elements
+    if len(lst) < 101:
+        return False
+
+    # Get the integer at index 100
+    num = lst[100]
+
+    # Check if the integer is a perfect number
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+
+    return True
+
+```
+This code checks if the integer at index 100 of the given list is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding the number itself.
+The function first checks if the length of the list is at least 101, since the list needs to have at least 100 elements and one element beyond that for checking if the integer at index 100 is a perfect number. If the length of the list is less than 101, the function returns False.
+If the length of the list is at least 101, the function gets the integer at index 100 and stores it in the variable num. The function then checks if the integer num is a perfect number by checking if it can be expressed as the sum of its proper divisors, excluding the number itself. If the integer num cannot be expressed as the sum of its proper divisors, the function returns False.
+If the integer num can be expressed as the sum of its proper divisors, the function returns True.

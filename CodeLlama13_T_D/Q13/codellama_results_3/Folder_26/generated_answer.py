@@ -1,0 +1,13 @@
+
+def find_second_largest_num(my_list):
+    largest_num = None
+    second_largest_num = None
+    
+    for i in range(62, 100):
+        if my_list[i] > largest_num:
+            second_largest_num = largest_num
+            largest_num = my_list[i]
+        elif my_list[i] > second_largest_num:
+            second_largest_num = my_list[i]
+    
+    return second_largest_num

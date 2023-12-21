@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    result = ''
+    for i, c in enumerate(s):
+        if (i >= 31 and i <= 38) and (c >= ';' and c <= 'g'):
+            result += c
+    return result

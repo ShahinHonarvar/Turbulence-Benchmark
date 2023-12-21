@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(list_of_strings):
+    anagram_count = 0
+    for s1 in list_of_strings:
+        if len(s1) >= 3:
+            for s2 in list_of_strings:
+                if len(s2) >= 3 and s1 != s2 and sorted(s1.lower()) == sorted(s2.lower()):
+                    anagram_count += 1
+    return anagram_count >= 177
+```

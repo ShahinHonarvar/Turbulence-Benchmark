@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the text specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = np.shape(matrix)\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(i+1, rows+1):\n                for l in range(j+1, cols+1):\n                    if ((k-i)*(l-j)) == 51:\n                        count += 1\n    return count\n```\nPlease note that two-dimensional submatrix is obtained by selecting rows i through k and columns j through l where i, j are starting indices and k, l are ending indices. Hence '(k-i)*(l-j)' gives us the total number of elements in the submatrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691017555,
+  "id": "chatcmpl-7jFCd0rPO8Hg1r3EWGm6PXklcxo5z",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 162,
+    "prompt_tokens": 111,
+    "total_tokens": 273
+  }
+}

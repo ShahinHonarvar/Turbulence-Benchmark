@@ -1,0 +1,9 @@
+
+def return_binary_or_hexa(my_tuple):
+    a = my_tuple[33] + 1
+    b = my_tuple[78] - 1
+    
+    if len([i for i in range(a, b+1) if i not in my_tuple]) % 2 == 0:
+        return format(sum([i for i in range(a, b+1) if i not in my_tuple]), 'x')
+    else:
+        return bin(sum([i for i in range(a, b+1) if i not in my_tuple]))[2:]

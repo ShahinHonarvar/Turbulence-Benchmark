@@ -1,0 +1,18 @@
+
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)):
+            substring = s[i:j]
+            if len(substring) == 130 and all_distinct_chars(substring):
+                substrings.append(substring)
+    return substrings
+
+def all_distinct_chars(s):
+    seen = set()
+    for c in s:
+        if c in seen:
+            return False
+        else:
+            seen.add(c)
+    return True

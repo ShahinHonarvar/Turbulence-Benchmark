@@ -1,0 +1,36 @@
+
+def if_contains_anagrams(my_list):
+    # Get the length of the list
+    list_length = len(my_list)
+    # Initialize a counter for the number of pairs of anagrams
+    num_pairs = 0
+    # Loop through each string in the list
+    for i in range(list_length):
+        # Get the current string
+        current_string = my_list[i]
+        # Get the length of the current string
+        current_string_length = len(current_string)
+        # Check if the current string is at least three characters long
+        if current_string_length >= 3:
+            # Loop through each string in the list starting from the next index
+            for j in range(i + 1, list_length):
+                # Get the current string
+                other_string = my_list[j]
+                # Get the length of the current string
+                other_string_length = len(other_string)
+                # Check if the current string is at least three characters long
+                if other_string_length >= 3:
+                    # Create a list of tuples containing the anagram pairs
+                    anagram_pairs = [(current_string, other_string)]
+                    # Loop through each tuple in the list of anagram pairs
+                    for pair in anagram_pairs:
+                        # Get the first string in the tuple
+                        first_string = pair[0]
+                        # Get the second string in the tuple
+                        second_string = pair[1]
+                        # Check if the first string and second string are anagrams of each other
+                        if sorted(first_string) == sorted(second_string):
+                            # Increment the number of pairs of anagrams by 1
+                            num_pairs += 1
+    # Return true if there are at least 52 pairs of anagrams in the given list; otherwise, return false
+    return num_pairs >= 52

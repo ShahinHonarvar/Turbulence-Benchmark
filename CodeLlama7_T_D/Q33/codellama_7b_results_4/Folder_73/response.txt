@@ -1,0 +1,13 @@
+ def return_vowels(my_string):
+    # Create a list of all vowel characters in the string
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    # Initialize an empty list to store the desired characters
+    desired_chars = []
+    # Iterate over each character in the string
+    for char in my_string:
+        # Check if the current character is a vowel and greater than '@' and less than or equal to 'n'
+        if char.lower() in vowels and ord(char) > 47 and ord(char) <= 89:
+            # If the condition is true, add the current character to the list of desired characters
+            desired_chars.append(char)
+    # Return the list of desired characters
+    return desired_chars

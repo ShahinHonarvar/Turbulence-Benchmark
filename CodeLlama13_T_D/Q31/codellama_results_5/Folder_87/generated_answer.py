@@ -1,0 +1,3 @@
+
+def if_perfect_num(list):
+    return list[96] == 8128 and all(d in list for d in range(2, int(list[96])**0.5 + 1) if list[96] % d == 0)

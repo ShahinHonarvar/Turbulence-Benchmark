@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with sum -37
+    submatrices = []
+
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element has sum -37
+            if matrix[i, j] == -37:
+                # Initialize a new submatrix with the same dimensions as the original matrix
+                submatrix = np.zeros((matrix.shape[0], matrix.shape[1]))
+                # Set the current element to 1 in the submatrix
+                submatrix[i, j] = 1
+                # Add the submatrix to the list of submatrices with sum -37
+                submatrices.append(submatrix)
+
+    return submatrices

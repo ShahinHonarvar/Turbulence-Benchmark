@@ -1,0 +1,20 @@
+ def palindromes_of_specific_lengths(string):
+    # Create a substring of the given string
+    # between indices 10 and 70 (inclusive)
+    substr = string[10:71]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substr)):
+        # Get the length of the current palindrome
+        current_length = len(substr[i:])
+        # Check if the current length is between 24 and 52 (inclusive)
+        if current_length >= 24 and current_length <= 52:
+            # Get the substring of the current palindrome
+            current_palindrome = substr[i:]
+            # Check if the current palindrome is a palindrome in a case-insensitive manner
+            if current_palindrome == current_palindrome[::-1]:
+                # Add the current palindrome to the set of palindromes
+                palindromes.add(current_palindrome)
+    # Return the set of palindromes found in the specified index range
+    return palindromes

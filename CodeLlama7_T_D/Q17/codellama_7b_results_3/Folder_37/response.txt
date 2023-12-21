@@ -1,0 +1,15 @@
+ ```
+def all_ints_div_by_both_two_nums(my_list):
+    # Find the indices of the first occurrence of -1 and -7 in the list
+    idx_of_minus_one = my_list.index(-1)
+    idx_of_minus_seven = my_list.index(-7)
+    # Initialize an empty list to store the result
+    result = []
+
+    for i in range(idx_of_minus_one, idx_of_minus_seven + 1):
+        # Check if the current element is divisible by both -1 and -7
+        if my_list[i] % (-1 * -7) == 0:
+            result.append(my_list[i])
+
+    return result
+```

@@ -1,0 +1,22 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Create a copy of the list to avoid mutating the original list
+    current_list = circular_list[:]
+    # Initialize an empty list to store the sublists with product equal to -10
+    sublists = []
+    # Loop through each element in the list
+    for i in range(len(current_list)):
+        # Get the current element and its adjacent elements
+        current_element = current_list[i]
+        previous_element = None
+        next_element = None
+        if i - 1 >= 0:
+            previous_element = current_list[i - 1]
+        if i + 1 < len(current_list):
+            next_element = current_list[i + 1]
+        # Calculate the product of the current element and its adjacent elements
+        product = (current_element * previous_element) % 10
+        if product == -10:
+            # Add the sublist to the list of sublists with product equal to -10
+            sublists.append(current_list[i - 2 : i + 2])
+    return sublists

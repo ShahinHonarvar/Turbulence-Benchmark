@@ -1,0 +1,17 @@
+
+def find_primes_between_indices(numbers):
+    primes = []
+    for i in range(1, 6):
+        if is_prime(numbers[i]):
+            primes.append(numbers[i])
+    return sorted(primes)
+```
+<code>is_prime</code> is a function that checks whether a number is prime or not. It should be defined as follows:
+```
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

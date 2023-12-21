@@ -1,0 +1,7 @@
+
+def all_ints_not_div_by_num(arr):
+    result = []
+    for i in range(0, 1):
+        if arr[i] % 1 != 0:
+            result.append(arr[i])
+    return result

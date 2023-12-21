@@ -1,0 +1,5 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    start, end = 72, 93
+    nums = [32, 44]
+    return sum(int for int in my_list[start:end+1] if int % any(nums))

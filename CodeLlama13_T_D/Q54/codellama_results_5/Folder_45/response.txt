@@ -1,0 +1,18 @@
+```python
+def all_right_truncatable_prime(numbers):
+    x = numbers[61]
+    right_truncatable_primes = []
+    for i in range(2, x+1):
+        if is_prime(i) and is_right_truncatable_prime(i, x):
+            right_truncatable_primes.append(i)
+    return sorted(right_truncatable_primes)
+```
+
+This code defines a function called `all_right_truncatable_prime` that takes a tuple of positive integers as input and returns the sorted list of all right-truncatable prime numbers less than the integer at index 61 in the input tuple. The function uses the `is_prime` and `is_right_truncatable_prime` helper functions to check if a number is prime and if it is a right-truncatable prime, respectively.
+
+Here is an example usage of the `all_right_truncatable_prime` function:
+```python
+>>> all_right_truncatable_prime((1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+[2, 3, 5, 7]
+```
+This would return the sorted list of right-truncatable prime numbers less than 10.

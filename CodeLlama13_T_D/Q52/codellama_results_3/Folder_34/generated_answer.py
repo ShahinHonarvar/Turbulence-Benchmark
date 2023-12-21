@@ -1,0 +1,16 @@
+
+def palindrome_of_length_n(string, n):
+    # Find all substrings of the given string
+    subs = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            subs.append(string[i:j])
+    
+    # Check if each substring is a palindrome
+    palindromes = set()
+    for sub in subs:
+        if sub == sub[::-1] and all(c.isalpha() for c in sub):
+            palindromes.add(sub)
+    
+    # Return the set of all palindromes
+    return palindromes

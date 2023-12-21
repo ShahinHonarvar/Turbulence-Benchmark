@@ -1,0 +1,20 @@
+ Here's a possible implementation of the `filter_chars` function:
+```python
+def filter_chars(string):
+    # Split the string into individual characters
+    chars = list(string)
+
+    # Loop through each character in the string
+    for i, char in enumerate(chars):
+        # Check if the current character is between indices 22 and 85, both inclusive
+        if (i >= 22 and i <= 85) and (char >= '7' and char <= 'e'):
+            # If it is, remove all occurrences of that character from the string
+            chars = [c for c in chars if c != char]
+
+    # Join the list of characters back into a string
+    filtered_string = "".join(chars)
+
+    # Return the altered string
+    return filtered_string
+```
+This implementation first splits the input string into individual characters. It then loops through each character in the string and checks if it is between indices 22 and 85, both inclusive, and is greater than or equal to character '7' and smaller than or equal to character 'e'. If it meets these conditions, all occurrences of that character are removed from the list of characters. Finally, the list of characters is joined back into a string and returned as the output of the function.

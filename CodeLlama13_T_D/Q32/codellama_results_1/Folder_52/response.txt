@@ -1,0 +1,17 @@
+```python
+def insert_after_character(s):
+    return "".join([c if c != "T" else f"{c}V" for c in s])
+```
+This function uses a list comprehension to iterate over the characters in `s`. For each character `c`, it checks whether `c` is equal to `'T'`. If so, it adds an `'V'` immediately after the `'T'` using string formatting. Otherwise, it returns the original character unchanged. The resulting list of characters is then joined together into a single string using `"".join()`.
+
+For example:
+```python
+>>> insert_after_character("hello")
+'hello'
+>>> insert_after_character("helloT")
+'helloTV'
+>>> insert_after_character("helloTworld")
+'helloTVworld'
+>>> insert_after_character("helloTworld")
+'helloTwVorld'
+```

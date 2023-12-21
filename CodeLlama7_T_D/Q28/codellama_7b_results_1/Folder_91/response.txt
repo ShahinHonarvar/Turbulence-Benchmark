@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(s):
+# Check if the input string is empty or None
+if not s:
+return None
+
+# Convert the input string to a list of characters
+lst = list(s)
+
+# Find the character with the 8th smallest ASCII value among those characters that occur between indices 0 to 7, both inclusive.
+ascii_values = [ord(c) for c in lst]
+nth_smallest_ascii = sorted(ascii_values)[7]
+
+# Return the character with the 8th smallest ASCII value
+return chr(nth_smallest_ascii)
+```

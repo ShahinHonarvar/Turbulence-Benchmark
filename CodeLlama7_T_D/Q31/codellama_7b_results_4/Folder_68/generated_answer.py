@@ -1,0 +1,15 @@
+
+def if_perfect_num(lst):
+    # Check if the list has at least four elements
+    if len(lst) < 4:
+        return False
+
+    # Calculate the sum of the factors of the number at index 3
+    num = lst[3]
+    sum = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum += i
+
+    # Return True if the sum of the factors is equal to the number at index 3, otherwise return False
+    return sum == lst[3]

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef is_prime(n):\n    if n <= 1:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    max_divisor = round(n ** 0.5)\n    for d in range(3, 1 + max_divisor, 2):\n        if n % d == 0:\n            return False\n    return True\n\ndef find_primes_between_indices(numbers):\n    prime_numbers = [number for number in numbers[289:382] if is_prime(number)]\n    prime_numbers.sort(reverse=True)\n    return prime_numbers\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690129350,
+  "id": "chatcmpl-7fW8kvM10R0260qLmusVMhoiJISrl",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 134,
+    "prompt_tokens": 118,
+    "total_tokens": 252
+  }
+}

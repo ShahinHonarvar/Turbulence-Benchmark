@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(my_list):
+    return {x for x in my_list[90:201] if len(set(range(2, int(x**0.5) + 1)).intersection(set(range(2, x)))) > 0}

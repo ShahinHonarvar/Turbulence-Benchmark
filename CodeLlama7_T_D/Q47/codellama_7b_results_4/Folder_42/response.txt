@@ -1,0 +1,24 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the given string
+    palindromes = []
+    for i in range(43, 95 + 1):
+        substr = string[i - 43:i - 42 + 1]
+        if is_palindrome(substr) and len(substr) >= 18 and len(substr) <= 47:
+            palindromes.append(substr)
+    return set(palindromes)
+
+def is_palindrome(string):
+
+    # Check if the given string is a palindrome
+
+    return string == string[::-1]
+
+# Test the function with a sample input
+if __name__ == "__main__":
+#    print(palindromes_of_specific_lengths("abcdefghijklmnopqrstuvwxyz"))
+```
+This code defines a function `palindromes_of_specific_lengths` that takes a string as input and returns the set of all palindromes with lengths between 18 to 47 (both inclusive) occurring in the substring from index 43 to index 95, both inclusive.
+The function first checks if the given string is a palindrome. If it is not, then the function returns an empty set.
+If the given string is a palindrome, then the function iterates over the characters in the substring from index 43 to index 95 and checks if each character is a palindrome. If a character is not a palindrome, then the function moves on to the next character.
+Once all the characters have been checked, the function returns the set of all palindromes with lengths between 18 to 47 (both inclusive) occurring in the substring from index 43 to index 95, both inclusive.

@@ -1,0 +1,18 @@
+ Here is a function that solves the problem:
+```
+def lists_with_product_equal_n(circular_list):
+# Find the index of the head of the circular list in the original list
+head_index = circular_list.index(circular_list[0])
+# Initialize an empty list to store the sublists
+sublists = []
+# Loop through the elements of the circular list
+for i in range(len(circular_list)):
+# If the product of the current element and the previous element is equal to -779, add the current element to the sublist
+if (circular_list[i] * circular_list[(i + 1) % len(circular_list)]) == -779:
+sublists.append([circular_list[head_index], circular_list[i]])
+# If the product of the current element and the previous element is not equal to -779, add the current element to the sublist and set the new head of the sublist
+else:
+sublists[-1].append(circular_list[i])
+# Return the list of sublists
+return sublists
+```

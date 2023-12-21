@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    nrows, ncols = matrix.shape\n    res = []\n    for i in range(nrows):\n        for j in range(ncols):\n            for x in range(i, nrows):\n                for y in range(j, ncols):\n                    submatrix = matrix[i:x+1, j:y+1]\n                    if np.sum(submatrix) == 997:\n                        res.append(submatrix)\n    return res\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081026,
+  "id": "chatcmpl-7fJZKRrqulwpeJxtuKnv6VCzvmAGm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 121,
+    "total_tokens": 222
+  }
+}

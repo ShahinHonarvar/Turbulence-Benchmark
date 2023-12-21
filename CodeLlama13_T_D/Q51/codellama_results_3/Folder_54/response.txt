@@ -1,0 +1,5 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([s for s in my_list if len(set(s)) == 3 and ''.join(sorted(s)) not in ''.join(sorted(s[1:]))]) <= 39
+```
+This function first checks whether the length of each string is at least three using `len(set(s)) == 3`. If this condition is true, it checks if the anagram of the string is already present in the list using `''.join(sorted(s)) not in ''.join(sorted(s[1:]))`. If both conditions are true, the string is added to the new list. Finally, the length of the new list is returned and compared with 39. If it is less than or equal to 39, the function returns `True`, otherwise it returns `False`.

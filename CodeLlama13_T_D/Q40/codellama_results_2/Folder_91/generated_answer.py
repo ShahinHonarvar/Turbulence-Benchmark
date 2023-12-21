@@ -1,0 +1,10 @@
+
+def return_n_smallest_chars(s):
+    char_count = {}
+    for c in s:
+        if c not in char_count:
+            char_count[c] = 1
+        else:
+            char_count[c] += 1
+    sorted_char_count = sorted(char_count.items(), key=lambda x: x[1])
+    return [c for c, _ in sorted_char_count[:6]]

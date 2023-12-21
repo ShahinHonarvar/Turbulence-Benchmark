@@ -1,0 +1,2 @@
+def identical_elements(list1, list2):
+    return set(list(range(13, 69))) & set(list1) & set(list2)

@@ -1,0 +1,15 @@
+
+def find_second_largest_num(numbers):
+    # find the largest element
+    largest = None
+    for num in numbers:
+        if largest is None or num > largest:
+            largest = num
+    
+    # find the second largest element
+    second_largest = None
+    for num in numbers:
+        if second_largest is None or (num != largest and num > second_largest):
+            second_largest = num
+    
+    return second_largest

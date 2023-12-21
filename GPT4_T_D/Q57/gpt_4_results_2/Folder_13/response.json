@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    m, n = matrix.shape\n    results = []\n    \n    # consider all sub-arrays\n    for si in range(m):\n        for sj in range(n):\n            for ei in range(si, m):\n                for ej in range(sj, n):\n                    if matrix[si:ei+1,sj:ej+1].sum() == 382:\n                        results.append(matrix[si:ei+1,sj:ej+1])\n    return results\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690904445,
+  "id": "chatcmpl-7ilmHScdKMiKeAXpUlAuYUw7u6vxa",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 121,
+    "total_tokens": 236
+  }
+}

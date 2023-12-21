@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(s):
+    for i in range(4):
+        for c in set(s[i:]):
+            if s[i:].count(c) > 1 and c not in s[:i]:
+                s = s.replace(c, "")
+    return s

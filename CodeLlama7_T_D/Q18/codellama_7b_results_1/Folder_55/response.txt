@@ -1,0 +1,19 @@
+ Here is a possible implementation of the `sum_ints_div_by_either_nums` function in Python:
+```
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the current index
+    total = 0
+    current_index = 0
+    # Loop through the list of integers, starting from the first element
+    for i in range(len(my_list)):
+        # Check if the current element is divisible by either 10 or 100
+        if my_list[i] % 10 == 0 or my_list[i] % 100 == 0:
+            # If it is, add it to the sum and increment the current index
+            total += my_list[i]
+            current_index += 1
+    # Return the sum of all integers divisible by either 10 or 100 from index 0 to index 9, both inclusive
+    return total
+```
+This function takes a list of integers as its only argument, and returns the sum of all integers in the list that are divisible by either 10 or 100. The function starts by initializing two variables: `total`, which will keep track of the sum of all divisible integers, and `current_index`, which will keep track of the current index in the list being processed.
+The function then loops through the list of integers using a for loop, starting from the first element in the list. For each element in the list, the function checks if it is divisible by either 10 or 100 using the modulo operator (`%`). If an element is found to be divisible by either 10 or 100, the function adds its value to the `total` variable and increments the `current_index` variable.
+Once all elements in the list have been processed, the function returns the sum of all integers divisible by either 10 or 100 from index 0 to index 9, both inclusive. If no such integers exist in the specified range, the function will return `0`.

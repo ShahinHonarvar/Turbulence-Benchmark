@@ -1,0 +1,24 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fib_seq = [0, 1]
+    # Loop through the Fibonacci sequence until the current number is greater than or equal to the decimal integer
+    for i in range(len(fib_seq)):
+        if fib_seq[i] >= decimal_integer:
+            # If the current number is divisible by 128, return True
+            if fib_seq[i] % 128 == 0:
+                return True
+
+            # Otherwise, return False
+
+            else:
+
+                return False
+
+    # If the loop completes successfully, return False
+
+    else:
+
+        return False

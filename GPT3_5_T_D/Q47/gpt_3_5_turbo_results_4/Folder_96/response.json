@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport re\n\ndef palindromes_of_specific_lengths(string):\n    substring = string[100:301]\n    substring = re.sub(r'[^a-zA-Z]', '', substring).lower()\n    palindromes = set()\n    \n    for i in range(50, 101):\n        for j in range(len(substring) - i + 1):\n            sub = substring[j : j + i]\n            if sub == sub[::-1]:\n                palindromes.add(sub)\n    \n    return palindromes\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689861974,
+  "id": "chatcmpl-7eOaEu5O901wuGENQpSIhGc4KOW4q",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 190,
+    "total_tokens": 302
+  }
+}

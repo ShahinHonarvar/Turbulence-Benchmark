@@ -1,0 +1,16 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    start_index = 86
+    end_index = 89
+    divisor1 = -61
+    divisor2 = -79
+
+    # Calculate the sum of all integers divisible by either -61 or -79 from index 86 to index 89, both inclusive.
+    sum = 0
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % divisor1 == 0 or my_list[i] % divisor2 == 0:
+            sum += my_list[i]
+
+    # Return the sum
+    return sum

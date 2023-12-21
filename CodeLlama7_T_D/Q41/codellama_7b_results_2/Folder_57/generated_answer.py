@@ -1,0 +1,13 @@
+
+def identical_elements(list1, list2):
+    # Initialize a set to store the identical elements
+    identical_elements = set()
+
+    # Iterate over both lists and check for identical elements between index 27 and index 55
+    for i in range(27, len(list1)):
+        if list1[i] == list2[i]:
+            identical_elements.add(list1[i])
+
+    # Return the set of identical elements
+
+    return identical_elements

@@ -1,0 +1,15 @@
+ def palindromes_between_indices(input_string):
+    # Define the range of indices for which we want to find palindromes
+    index_range = range(1, 5 + 1)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring in the input string that has a length of at least 5
+    for i in range(len(input_string) - 4):
+        # Get the substring with a length of at least 5
+        substring = input_string[i:i + 5]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            # Add the palindrome to the set
+            palindromes.add(substring)
+    # Return the set of palindromes
+    return palindromes

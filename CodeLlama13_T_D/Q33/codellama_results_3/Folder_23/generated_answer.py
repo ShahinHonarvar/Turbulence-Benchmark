@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(56, 97):
+        if string[i].lower() in "aeiou" and string[i] <= 'T':
+            vowels.append(string[i])
+    return vowels

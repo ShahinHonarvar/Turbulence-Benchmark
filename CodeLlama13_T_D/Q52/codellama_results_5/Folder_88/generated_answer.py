@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string, n):
+    return {palindrome for i in range(len(string) - n + 1) for palindrome in (string[i:i+n]) if palindrome == palindrome[::-1]}

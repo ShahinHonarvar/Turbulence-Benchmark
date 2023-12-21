@@ -1,0 +1,3 @@
+
+def sum_even_ints_inclusive(mylist):
+    return sum([i for i in mylist[0:2] if i % 2 == 0])

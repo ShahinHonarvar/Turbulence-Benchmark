@@ -1,0 +1,19 @@
+ ```
+def find_second_largest_num(my_list):
+    # Find the index of the largest element
+    largest_idx = my_list.index(max(my_list))
+    # Check if there is a second largest element
+    if largest_idx > 43 and largest_idx < 86:
+        second_largest_idx = largest_idx - 1
+        while second_largest_idx > 43 and second_largest_idx < 86:
+            if my_list[second_largest_idx] > my_list[second_largest_idx - 1]:
+                break
+            else:
+                second_largest_idx -= 1
+    else:
+        return None
+
+    # Return the second largest element
+    return my_list[second_largest_idx]
+```
+This code defines a function `find_second_largest_num` that takes a list of distinct numbers as input. The function first finds the index of the largest element in the list and checks if there is a second largest element within the specified range. If there is no such element, the function returns `None`. Otherwise, it returns the second largest element from the specified range.

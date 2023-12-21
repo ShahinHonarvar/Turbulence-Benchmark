@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return "".join([c for c in s if ord(c) < 603 or ord(c) > 759 or (ord(c) >= ord("Q") and ord(c) <= ord("h"))])

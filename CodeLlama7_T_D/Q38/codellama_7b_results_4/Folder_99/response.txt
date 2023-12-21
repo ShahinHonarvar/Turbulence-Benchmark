@@ -1,0 +1,15 @@
+ ```
+def find_subset_of_length_n(set):
+    # Initialize a counter for the number of subsets
+    count = 0
+
+    # Loop through each element in the set
+    for element in set:
+
+        # If the element has at least one subset of size n, increment the counter
+        if any(element in subset and len(subset) == n for subset in combinations(set, r=307))):
+            count += 1
+
+    # Return the number of subsets of size n in the set
+    return count
+```

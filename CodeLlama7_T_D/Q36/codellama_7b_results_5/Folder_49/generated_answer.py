@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(46, 91):
+        if string[i-1] > 'D' and string[i-1] < 'H':
+            string = string[:i-1] + string[i:]
+    return string

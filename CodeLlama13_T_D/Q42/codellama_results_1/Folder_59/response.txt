@@ -1,0 +1,12 @@
+```
+def prime_factors(list_of_ints):
+    return set(prime_factors_helper(list_of_ints[2]))
+
+def prime_factors_helper(n):
+    if n == 1:
+        return []
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return [i] + prime_factors_helper(n // i)
+    return [n]
+```

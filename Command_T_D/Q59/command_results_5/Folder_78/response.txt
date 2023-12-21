@@ -1,0 +1,33 @@
+[cohere.Generation {
+	id: f6fa48af-856f-4898-90d6-dbce8eea3ca0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 23. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_left_truncatable_prime(nums):
+    # Filter the input to only get prime numbers.
+    primes = [x for x in nums if all(x % y != 0 for y in range(2, int(x ** 0.5) + 1))]
+    # Create a list of pairs of numbers that differ by a single digit.
+    # For example, this will create a pair for each of the following:
+    #
+    # 1) 99
+    # 2) 99, 9900
+    # 3) 99, 9900, 99000
+    #
+    # The key here is that the first element of each pair is a prime number
+    # and the second element is a left-truncatable number.
+    #
+    # Since the list of primes is already sorted in ascending order,
+    # we can pass it directly to `itertools.accumulate` to calculate
+    # the list of pairs.
+    pairs = itertools.accumulate(primes)
+    # Now that we have the list of pairs, we can filter it to
+    # only include pairs where the second element is left-truncatable.
+    # To do this, we can remove any elements where the second element
+    # is not prime or contains a zero.
+    return [x for x in pairs if x[1] in primes and not any(x[1] % y == 0 for y in range(2, int(x[1] ** 0.5) + 1))]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

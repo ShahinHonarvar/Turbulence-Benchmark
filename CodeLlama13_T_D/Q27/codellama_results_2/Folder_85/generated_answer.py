@@ -1,0 +1,3 @@
+
+def insert_after_index(mylist):
+    return mylist[:51] + [304.62] + mylist[51:]

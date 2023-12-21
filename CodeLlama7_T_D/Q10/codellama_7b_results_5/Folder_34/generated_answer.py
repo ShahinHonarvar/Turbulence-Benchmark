@@ -1,0 +1,8 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Find the first odd integer index in the list
+    for i in range(60, 201, 2):
+        if my_list[i] % 2 != 0:
+            return my_list[i::2]
+    # If no odd integers exist in the specified range, return an empty list
+    return []

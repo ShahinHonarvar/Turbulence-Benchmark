@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```
+def palindrome_of_length_at_least_n(s, n):
+    # Convert the input string to lowercase
+    s = s.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(len(s)):
+        # Check if the current character is a letter
+        if s[i].isalpha():
+            # Check if the current character is a palindrome of length greater than or equal to n
+            if len(s[i:]) >= n and s[i:] == s[i:][::-1]:
+                # Add the palindrome to the set
+                palindromes.add(s[i:])
+    # Return the set of palindromes
+    return palindromes
+```
+This function takes two arguments: `s`, which is the input string, and `n`, which is the minimum length of the palindromes to be found in the input string. The function first converts the input string to lowercase using the `lower()` method. It then initializes an empty set to store the palindromes.
+The function then loops through each character in the input string, starting from the first character. For each character, it checks if it is a letter using the `isalpha()` method. If the current character is a letter, the function checks if it is a palindrome of length greater than or equal to `n`. It does this by checking if the substring starting at the current character and ending at the end of the input string is equal to the same substring but in reverse order using the slicing notation `[::-1]`. If the current character is a palindrome of length greater than or equal to `n`, it adds the palindrome to the set of palindromes.
+Finally, the function returns the set of palindromes found in the input string.

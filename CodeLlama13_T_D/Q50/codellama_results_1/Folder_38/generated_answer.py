@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strs):
+    anagrams = {}
+    for s in strs:
+        key = ''.join(sorted(s.lower()))
+        if len(key) >= 3 and key not in anagrams:
+            anagrams[key] = []
+        anagrams[key].append(s)
+    return len(anagrams) >= 24

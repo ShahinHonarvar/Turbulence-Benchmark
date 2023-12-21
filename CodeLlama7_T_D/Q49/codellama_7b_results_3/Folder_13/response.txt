@@ -1,0 +1,19 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+# Convert the binary string to an integer
+decimal_integer = int(binary_string, 2)
+# Calculate the number of bits in the binary string
+num_bits = len(binary_string)
+# Initialize the Fibonacci sequence
+fibonacci_sequence = [0, 1]
+# Iterate through the Fibonacci sequence until we reach the 174th number
+for i in range(2, num_bits + 1):
+current_fibonacci_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+fibonacci_sequence.append(current_fibonacci_number)
+# Check if the decimal integer is divisible by the 174th number in the Fibonacci sequence
+if decimal_integer % fibonacci_sequence[173] == 0:
+return True
+else:
+return False
+
+```

@@ -1,0 +1,21 @@
+```
+def palindromes_between_indices(string):
+    # Create a set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each possible arrangement of English letters in the given string that occur between index 2 and 6, both inclusive
+    for letter in string[2:7]:
+        # Check if the current letter is a vowel
+        if letter in "aeiouAEIOU":
+            # If it is a vowel, check if there are any consonants before or after it
+            for i in range(1, 6):
+                # If there is a consonant before the current letter, add it to the palindrome
+                if string[i] not in "aeiouAEIOU":
+                    palindromes.add(string[2:7][:i] + letter + string[7-i:])
+                # If there is a consonant after the current letter, add it to the palindrome
+                if string[6-i] not in "aeiouAEIOU":
+                    palindromes.add(string[2:7][:i] + letter + string[7-i:])
+    
+    # Return the set of all palindromes
+    return palindromes
+```

@@ -1,0 +1,29 @@
+[cohere.Generation {
+	id: 05979bec-ce05-4c6f-98bd-b1a23473d433
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'submatrix_with_particular_sum' that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 66. If no such submatrix is found, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    if matrix.shape[0] < matrix.shape[1]:
+        matrix = np.rot90(matrix)
+    if matrix[0][0] != 0:
+        matrix[0][0] = 0
+    # Add the first row of the given matrix to the list of submatrices
+    submatrices = [(matrix[0].tolist())]
+    # Do the dynamic programming
+    for i in range(1, matrix.shape[0]):
+        for j in range(1, matrix.shape[1]):
+            # If the submatrix i, j does not equal 66, do nothing
+            if matrix[i][j] == 66:
+                # Add the submatrix i, j to the list of submatrices
+                submatrices.append((matrix[i].tolist()))
+                # Recursively call the function with the submatrix i, j
+                submatrices += submatrix_with_particular_sum(matrix[i])
+    # If the list of submatrices is empty, return an empty list
+    return submatrices
+```
+	likelihood: None
+	token_likelihoods: None
+}]

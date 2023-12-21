@@ -1,0 +1,18 @@
+
+def palindrome_of_length_n(string):
+    # Convert the string to lowercase for case-insensitive matching
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate through each substring of length n in the given string
+    for i in range(len(string) - 1):
+        for j in range(i + 1, len(string)):
+            substring = string[i:j]
+
+            # Check if the substring is a palindrome by comparing it to its reverse
+            if substring == substring[::-1]:
+                palindromes.add(substring)
+
+    return palindromes

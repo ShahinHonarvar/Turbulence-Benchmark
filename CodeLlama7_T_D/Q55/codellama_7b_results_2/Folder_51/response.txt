@@ -1,0 +1,28 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(lst):
+    # initialize an empty list to store the sublists
+    sublists = []
+
+    # loop through the elements of the input list
+    for i in range(len(lst)):
+
+        # initialize two variables to keep track of the current product and its index
+        product = 1
+        index = i
+
+        # loop until we find a sublist whose product equals -44
+        while product != -44:
+
+            # update the product and its index
+            product *= lst[index]
+            index = (index + 1) % len(lst)
+
+        # if we found a sublist with product equal to -44, add it to the list of sublists
+        if product == -44:
+            sublists.append(lst[i:index])
+
+    # return the list of sublists
+    return sublists
+```
+This code works by first initializing an empty list `sublists` to store the sublists that we find. Then, it loops through each element of the input list `lst`. For each element, it initializes two variables `product` and `index` to keep track of the product and its index in the input list. It then loops until it finds a sublist whose product equals -44. If it does find such a sublist, it adds the sublist to the list of sublists `sublists`. Finally, it returns the list of sublists.

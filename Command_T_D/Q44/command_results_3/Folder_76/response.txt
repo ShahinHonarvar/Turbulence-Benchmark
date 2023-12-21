@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: 0fcf1c21-d339-4a9e-84b5-f9003224b1a0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'composite_nums_between_indices' that takes one argument, a list of positive integers. The function should return the set of all composite numbers in the given list that are between index 639 to index 975, both inclusive. If no composite number exists in the specified range, the function should return an empty set.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+
+def composite_nums_between_indices(lst):
+    lst = lst[:]
+    c = bisect.bisect_left(lst, 639)
+    while c < len(lst) and lst[c] <= 975:
+        c += 1
+    return set(lst[c-1:c])
+```
+	likelihood: None
+	token_likelihoods: None
+}]

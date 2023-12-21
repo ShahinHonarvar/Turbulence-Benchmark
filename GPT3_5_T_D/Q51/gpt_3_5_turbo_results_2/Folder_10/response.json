@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(string_list):\n    def count_chars(string):\n        char_counts = {}\n        for char in string.lower():\n            if char.isalpha():\n                if char in char_counts:\n                    char_counts[char] += 1\n                else:\n                    char_counts[char] = 1\n        return char_counts\n\n    def is_anagram(string1, string2):\n        return count_chars(string1) == count_chars(string2)\n\n    anagram_count = 0\n    for i in range(len(string_list)):\n        for j in range(i+1, len(string_list)):\n            if len(string_list[i]) >= 3 and len(string_list[j]) >= 3:\n                if is_anagram(string_list[i], string_list[j]):\n                    anagram_count += 1\n                    if anagram_count > 21:\n                        return False\n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689819074,
+  "id": "chatcmpl-7eDQIefQzOMizbmmMKP9MRkqNYffu",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 181,
+    "prompt_tokens": 139,
+    "total_tokens": 320
+  }
+}

@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_str = ""
+    for i, char in enumerate(string):
+        if (i < 1 or i > 5) or char < '$' or char > ';':
+            new_str += char
+    return new_str

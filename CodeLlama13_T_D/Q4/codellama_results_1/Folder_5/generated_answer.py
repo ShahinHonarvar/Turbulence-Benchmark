@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(nums):
+    return [num for num in nums if 2 <= num < 7 and num > 0]

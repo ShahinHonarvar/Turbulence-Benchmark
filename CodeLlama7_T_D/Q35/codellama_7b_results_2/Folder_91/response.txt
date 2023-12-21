@@ -1,0 +1,24 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of the characters and their frequencies
+    freq = {}
+
+    for c in s:
+        if c not in freq:
+            freq[c] = 1
+        else:
+            freq[c] += 1
+
+    # Remove all duplicates from the string
+    res = ""
+    for i in range(len(s)):
+        c = s[i]
+        if freq[c] == 1:
+            res += c
+
+    return res
+```
+The function takes a single argument, `s`, which is the input string. It then iterates over each character in the string using a for loop, and creates a dictionary called `freq` to keep track of the characters and their frequencies. If the current character does not appear in the dictionary yet, it adds it with frequency 1. Otherwise, it increments its frequency by 1.
+After that, the function iterates over each character again using another for loop, but this time it only adds the character to the result string if its frequency is equal to 1. This ensures that all duplicates are removed from the input string while preserving the order of all characters.
+Finally, the function returns the altered string.

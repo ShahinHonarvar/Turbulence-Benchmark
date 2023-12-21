@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(two_dim_matrix):\n    row, col = np.shape(two_dim_matrix)\n    count = 0\n    for submatrix_row in range(1, row + 1):\n        for submatrix_col in range(1, col + 1):\n            if submatrix_row * submatrix_col == 92:\n                count += (row - submatrix_row + 1) * (col - submatrix_col + 1)\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691096743,
+  "id": "chatcmpl-7jZnremOGpQVIO30sWXletcF3lVOb",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 111,
+    "total_tokens": 220
+  }
+}

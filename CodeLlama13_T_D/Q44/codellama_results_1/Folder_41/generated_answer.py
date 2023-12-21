@@ -1,0 +1,5 @@
+
+def composite_nums_between_indices(numbers):
+    if len(numbers) < 3:
+        return set()
+    return {number for i, number in enumerate(numbers[0:3]) if i > 1 and number > 1}

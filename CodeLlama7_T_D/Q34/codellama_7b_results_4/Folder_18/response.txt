@@ -1,0 +1,19 @@
+ ```
+def find_original_set(sets):
+    # Check if all sets are distinct and have the same number of elements
+    if len(sets) != len(set(tuple(sorted(s)) for s in sets))) or len(sets) == 0:
+        raise ValueError("All sets must be distinct and have the same number of elements")
+
+    # Initialize the smallest set as the first element of the input list
+    smallest_set = sets[0]
+
+    # Iterate over each set in the input list
+    for i in range(1, len(sets)):
+
+        # If the current set is smaller than the smallest set, update the smallest set
+        if len(sets[i]) < len(smallest_set):
+            smallest_set = sets[i]
+
+    # Return the smallest set found
+    return smallest_set
+```

@@ -1,0 +1,3 @@
+
+def sum_in_range(numbers):
+    return sum([x for x in numbers if 4 <= x <= 7]) or 0

@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return True if lst[993] == sum(range(1, int(lst[993])**0.5+1)) else False

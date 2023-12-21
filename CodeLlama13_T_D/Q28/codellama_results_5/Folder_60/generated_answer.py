@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(s):
+    asciis = []
+    for i in range(36, 80):
+        if s[i] in asciis:
+            continue
+        else:
+            asciis.append(ord(s[i]))
+    
+    return chr(sorted(asciis)[12])

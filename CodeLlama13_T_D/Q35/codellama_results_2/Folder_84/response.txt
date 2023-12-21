@@ -1,0 +1,16 @@
+```python
+def remove_repeat_chars(s):
+    char_dict = {}
+    for i in range(32, 45):
+        if s[i] in char_dict:
+            del char_dict[s[i]]
+        else:
+            char_dict[s[i]] = True
+    
+    new_string = ""
+    for i in range(len(s)):
+        if s[i] not in char_dict:
+            new_string += s[i]
+    
+    return new_string
+```

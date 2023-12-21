@@ -1,0 +1,6 @@
+
+def remove_repeat_chars(s):
+    for i in range(22, 24):
+        if s[i - 1] == s[i]:
+            s = s[:i - 1] + s[i:]
+    return s

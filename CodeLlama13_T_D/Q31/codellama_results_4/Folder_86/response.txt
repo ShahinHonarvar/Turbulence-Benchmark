@@ -1,0 +1,11 @@
+```
+def if_perfect_num(numbers):
+    return numbers[194] in perfect_nums(numbers)
+
+def perfect_nums(numbers):
+    for i in range(len(numbers)):
+        n = numbers[i]
+        s = sum(filter(lambda x: x < n, numbers))
+        if n == s and n % (n - 1) == 0:
+            yield n
+```

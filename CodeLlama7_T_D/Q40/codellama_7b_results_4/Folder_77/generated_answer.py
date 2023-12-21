@@ -1,0 +1,8 @@
+
+def return_n_smallest_chars(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Sort the list in ascending order based on ASCII values
+    char_list.sort(key=ord)
+    # Return the first 47 characters of the sorted list
+    return char_list[:47]

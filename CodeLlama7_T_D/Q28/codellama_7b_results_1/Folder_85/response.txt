@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Find the indices of the characters in the list that occur between indices 17 and 86
+    start_index = max(char_list.index('!'), char_list.index('"')) + 2
+    end_index = min(char_list.index(':'), char_list.index(';')) - 2
+    # Get the ASCII values of the characters in the list that occur between indices 17 and 86, both inclusive
+    ascii_values = [ord(c) for c in char_list[start_index:end_index+1]]
+    # Return the character with the 15th smallest ASCII value among those characters in the list that occur between indices 17 and 86, both inclusive.
+    return chr(sorted(ascii_values)[14])
+```

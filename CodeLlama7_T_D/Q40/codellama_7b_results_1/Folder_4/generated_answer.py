@@ -1,0 +1,7 @@
+
+def return_n_smallest_chars(input_string):
+    # sort the input string in descending order based on ASCII value
+    sorted_list = sorted(input_string, key=ord, reverse=True)
+    # create a list of exactly 90 characters from the sorted list
+    result_list = sorted_list[:90]
+    return result_list

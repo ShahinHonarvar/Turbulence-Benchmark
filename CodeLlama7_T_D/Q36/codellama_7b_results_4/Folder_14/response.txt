@@ -1,0 +1,23 @@
+ ```
+def filter_chars(string):
+    # Create a new string with all characters removed
+    filtered_string = ""
+
+    # Iterate over each character in the original string
+    for char in string:
+
+        # Check if the current character is between 41 and 56 (both exclusive)
+        if 40 < ord(char) < 57:
+
+            # If it is, check if it is greater than 'Z' and smaller than 'c'
+            if ord(char) > ord('Z') and ord(char) < ord('c'):
+
+                # If it is, remove all occurrences of this character in the original string
+                filtered_string = filtered_string.replace(char, "")
+
+        # Append the current character to the filtered string
+        filtered_string += char
+
+    # Return the altered string
+    return filtered_string
+```

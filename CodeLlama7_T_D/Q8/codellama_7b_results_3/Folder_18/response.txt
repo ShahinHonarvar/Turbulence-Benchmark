@@ -1,0 +1,22 @@
+ ```
+def all_even_ints_exclusive(my_list):
+    # Find the index of the first even integer
+    first_even_index = next((i for i, x in enumerate(my_list) if x % 2 == 0), None)
+    # If there are no even integers in the list, return an empty list
+    if first_even_index is None:
+        return []
+
+    # Find the index of the last even integer
+
+    last_even_index = next((i for i, x in enumerate(my_list[first_even_index:]) if x % 2 == 0), None)
+    # If there are no even integers in the specified range, return an empty list
+    if last_even_index is None:
+        return []
+
+    # Return a list of all even integers from index 57 to index 84, both exclusive
+
+    return my_list[first_even_index:last_even_index+1]
+```
+This code should work correctly. The `all_even_ints_exclusive` function takes a single argument, which is a list of integers. It then finds the index of the first even integer in the list using the `next` function with a generator expression that iterates over the list and checks if each element is divisible by 2. If there are no even integers in the list, the function returns an empty list.
+Next, the function finds the index of the last even integer in the specified range using the same approach as before, but this time it starts searching from the first even integer it found in the previous step. If there are no even integers in the specified range, the function returns an empty list.
+Finally, the function returns a list of all even integers from index 57 to index 84, both exclusive, using slicing notation with the `my_list[first_even_index:last_even_index+1]` syntax.

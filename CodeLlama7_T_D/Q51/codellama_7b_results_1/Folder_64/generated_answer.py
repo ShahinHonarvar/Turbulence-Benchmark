@@ -1,0 +1,19 @@
+
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+    # Iterate over the list of strings
+    for string in my_list:
+        # Get the lowercase version of the string
+        lowercase_string = string.lower()
+        # Sort the characters in the string
+        sorted_chars = "".join(sorted(lowercase_string))
+        # Check if the anagram pair already exists
+        if sorted_chars in anagram_pairs:
+            # If it does, increment the count by 1
+            anagram_pairs[sorted_chars] += 1
+        else:
+            # If it doesn't, add a new entry to the dictionary with a count of 1
+            anagram_pairs[sorted_chars] = 1
+    # Check if there are at most 59 pairs of anagrams in the list
+    return len(anagram_pairs) <= 59

@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(len(string)):
+        if string[i].isalpha() and ord(string[i]) >= ord('_') and ord(string[i]) <= ord('o'):
+            result += string[i]
+    return result

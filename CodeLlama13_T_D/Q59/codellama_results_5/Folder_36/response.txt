@@ -1,0 +1,10 @@
+```
+def all_left_truncatable_prime(x):
+    x = list(map(int, x))
+    primes = []
+    for i in range(10**9):
+        if is_prime(i) and not any(str(i).startswith('0') for j in x):
+            primes.append(i)
+    return sorted(primes)
+```
+This solution uses a list comprehension to generate all prime numbers less than `x` that do not contain the digit 0, and then sorts them using the built-in `sorted()` function. The `is_prime()` function is not defined in this code snippet, but it should return `True` if the input number is prime and `False` otherwise.

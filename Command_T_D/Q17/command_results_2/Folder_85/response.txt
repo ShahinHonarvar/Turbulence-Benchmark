@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 57e2c258-64eb-41b7-9ed6-23a1b2e1c6dc
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_both_two_nums' that takes one argument, a list of integers, and returns the list of all integers divisible by both -9 and -3 from index 1 to index 8, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def all_ints_div_by_both_two_nums(lst):
+    str_lst = [str(x) for x in lst]
+    return [x for x in range(1, len(str_lst)+1) if re.match(r'(-9|9)\|(-3|3)', str_lst[x-1])]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

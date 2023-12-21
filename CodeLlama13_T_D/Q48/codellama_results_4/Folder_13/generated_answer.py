@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(nums):
+    a, b = 46, 91
+    sum_ = 0
+    for i in range(a + 1, b - 1):
+        if nums[i] not in nums[46:91]:
+            sum_ += nums[i]
+    if sum_ % 2 == 0:
+        return hex(sum_)
+    else:
+        return bin(sum_)

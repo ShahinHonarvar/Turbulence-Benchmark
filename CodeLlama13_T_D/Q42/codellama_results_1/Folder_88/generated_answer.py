@@ -1,0 +1,3 @@
+
+def prime_factors(my_list):
+    return set(factor for factor in range(1, my_list[46]) if my_list[46] % factor == 0 and all(my_list[i] % factor != 0 for i in range(len(my_list))))

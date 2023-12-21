@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(s):
+    n = 7
+    start, end = 18, 45
+    ascii_values = [ord(c) for c in s[start:end+1]]
+    sorted_ascii_values = sorted(ascii_values)
+    return chr(sorted_ascii_values[n-1])

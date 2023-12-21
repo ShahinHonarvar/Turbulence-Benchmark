@@ -1,0 +1,9 @@
+```python
+def return_n_smallest_chars(string):
+    ascii_values = {}
+    for char in string:
+        ascii_values[char] = ord(char)
+    sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[1])
+    smallest_chars = [char for (char, _) in sorted_ascii_values[:45]]
+    return smallest_chars
+```

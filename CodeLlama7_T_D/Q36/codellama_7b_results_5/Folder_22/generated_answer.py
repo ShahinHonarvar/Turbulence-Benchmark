@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(55, 84):
+        if s[i] > ';' and s[i] < 'z':
+            s = s[:i] + s[i+1:]
+    return s

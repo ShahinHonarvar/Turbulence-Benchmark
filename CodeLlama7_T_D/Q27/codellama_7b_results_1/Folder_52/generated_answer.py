@@ -1,0 +1,7 @@
+
+def insert_after_index(my_list):
+    # Find the index of the element after which we want to insert the new element
+    next_index = my_list.index(97) + 1
+    # Insert the new element at the found index
+    my_list.insert(next_index, 72.27)
+    return my_list

@@ -1,0 +1,9 @@
+```python
+def if_contains_anagrams(strlist):
+    anagram = {}
+    for s in strlist:
+        key = tuple(sorted(s.lower()))
+        if len(key) < 3: continue
+        anagram[key] = True
+    return len(anagram) >= 178
+```

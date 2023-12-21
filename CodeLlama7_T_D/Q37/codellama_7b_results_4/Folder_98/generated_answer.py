@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    filtered_string = ''
+    for i in range(len(string)):
+        char = string[i]
+        if i < 8 or i > 9:
+            filtered_string += char
+        elif char >= 'R' and char <= 't':
+            continue
+
+    return filtered_string

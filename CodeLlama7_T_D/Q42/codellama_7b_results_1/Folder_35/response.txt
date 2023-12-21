@@ -1,0 +1,14 @@
+ ```
+def prime_factors(n):
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            return set([i]) | prime_factors(n // i)
+        i += 1
+
+return set([n])
+
+```
+This code defines a function `prime_factors` that takes an argument `n`, which is a list of positive integers. The function returns the set of all prime factors of the integer at index 993.
+The function works by iterating through the numbers from 2 to the number being factored, checking if each number divides evenly into the number being factored. If it does, then that number is a factor of the number being factored and we return the set containing just that number. If no factors are found, then we return the set containing only the original number.
+This code assumes that all numbers in the list passed to the function are positive integers.

@@ -1,0 +1,13 @@
+
+def return_binary_or_hexa(tuple_of_ints):
+    a = tuple_of_ints[2]
+    b = tuple_of_ints[5]
+    sum_odd = False
+    for i in range(a+1, b-1+1):
+        if i not in tuple_of_ints:
+            sum_odd = True
+            break
+    if sum_odd:
+        return bin(sum(tuple_of_ints[2:5]))[2:]
+    else:
+        return hex(sum(tuple_of_ints[2:5]))[2:].upper()

@@ -1,0 +1,11 @@
+```
+def return_n_smallest_chars(string):
+    char_list = []
+    for char in string:
+        if char not in char_list:
+            char_list.append(char)
+    
+    sorted_char_list = sorted(char_list, key=ord)
+    return sorted_char_list[:37]
+```
+This code defines a function `return_n_smallest_chars` that takes a string as an argument and returns a list of exactly 37 characters from the given string that have the smallest ASCII values. The function first creates a list called `char_list` to store all distinct characters in the input string, then sorts the list using the built-in `sorted` function with the `key` parameter set to `ord`, which gives the ASCII value of each character. Finally, it returns the first 37 characters from the sorted list.

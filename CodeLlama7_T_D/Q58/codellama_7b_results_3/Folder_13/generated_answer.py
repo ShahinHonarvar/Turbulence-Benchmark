@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows - 150):
+        for j in range(cols - 175):
+            if np.sum(matrix[i:i+150, j:j+175]) == 175 * 150:
+                count += 1
+    return count

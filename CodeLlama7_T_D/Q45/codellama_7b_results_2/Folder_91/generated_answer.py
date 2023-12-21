@@ -1,0 +1,13 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible length of a palindrome
+    for length in range(3, len(string) + 1):
+        # Loop through each possible starting index of a palindrome
+        for start_index in range(2, len(string) - length + 1):
+            # Check if the substring starting at the current starting index and with the current length is a palindrome
+            if string[start_index:start_index + length] == string[start_index:start_index + length][::-1]:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(string[start_index:start_index + length])
+    return palindromes

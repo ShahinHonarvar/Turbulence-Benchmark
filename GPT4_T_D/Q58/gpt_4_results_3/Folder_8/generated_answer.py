@@ -1,0 +1,13 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    m, n = len(matrix), len(matrix[0])
+    
+    for sub_m in range(1, m+1):
+        for sub_n in range(1, n+1):
+            if sub_m * sub_n == 29:
+                count += (m - sub_m + 1) * (n - sub_n + 1)
+                
+    return count

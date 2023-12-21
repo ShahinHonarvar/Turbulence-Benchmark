@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef gcf_three_nums(lst):\n    def find_factors(n):\n        factors = []\n        for i in range(1, n + 1):\n            if n % i == 0:\n                factors.append(i)\n        return factors\n\n    def find_gcf(a, b):\n        a_factors = find_factors(a)\n        b_factors = find_factors(b)\n        gcf = 1\n        for factor in a_factors:\n            if factor in b_factors:\n                gcf = factor\n        return gcf\n\n    return find_gcf(lst[85], lst[36], lst[54])\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689817026,
+  "id": "chatcmpl-7eCtG4NMmXwG870orhxQFZXjnoarG",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 90,
+    "total_tokens": 216
+  }
+}

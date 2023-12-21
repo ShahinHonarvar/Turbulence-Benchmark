@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(string_list):\n    def is_anagram(s1, s2):\n        return sorted(s1.lower()) == sorted(s2.lower())\n\n    pairs = 0\n    for i in range(len(string_list)):\n        for j in range(i + 1, len(string_list)):\n            if len(string_list[i]) >= 3 and len(string_list[j]) >= 3 and is_anagram(string_list[i], string_list[j]):\n                pairs += 1\n                if pairs >= 177:\n                    return True\n\n    return False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689818964,
+  "id": "chatcmpl-7eDOWiRDUuA1n321kAINna6Cvh6RX",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 117,
+    "prompt_tokens": 126,
+    "total_tokens": 243
+  }
+}

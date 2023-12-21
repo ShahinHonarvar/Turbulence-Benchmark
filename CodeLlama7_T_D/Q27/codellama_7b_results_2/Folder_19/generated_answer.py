@@ -1,0 +1,7 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    index_to_insert_at = next((i for i, x in enumerate(new_list) if x == 49), None)
+    if index_to_insert_at is not None:
+        new_list.insert(index_to_insert_at + 1, 0.78)
+    return new_list

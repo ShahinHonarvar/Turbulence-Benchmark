@@ -1,0 +1,12 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the divisible integers
+    div_ints = []
+
+    # Iterate through the list and check if each integer is divisible by both 5 and 7
+    for i in range(len(my_list)):
+        if my_list[i] % 5 == 0 and my_list[i] % 7 == 0:
+            div_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by both 5 and 7 from index 7 to index 7, both inclusive
+    return div_ints

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import defaultdict\n\ndef if_contains_anagrams(strings):\n    counts = defaultdict(int)\n    for s in strings:\n        canonical = ''.join(sorted(s.lower()))\n        if len(canonical) >= 3:\n            counts[canonical] += 1\n    total = sum(c * (c - 1) // 2 for c in counts.values())\n    return total >= 144\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690963975,
+  "id": "chatcmpl-7j1GR0uv4n7DzsuJSHReEDlgcUree",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 84,
+    "prompt_tokens": 126,
+    "total_tokens": 210
+  }
+}

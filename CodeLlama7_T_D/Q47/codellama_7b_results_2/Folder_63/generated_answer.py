@@ -1,0 +1,24 @@
+
+def palindromes_of_specific_lengths(string, start_index=33, end_index=85):
+    # Get the substring containing the specified index range
+    substring = string[start_index:end_index+1]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i, char in enumerate(substring):
+        # Check if the current character is a letter (i.e., not a space or punctuation)
+        if char.isalpha():
+            # Get the index of the last occurrence of the current character in the substring
+            last_index = len(substring) - 1 - i
+            # Check if the current character is also the first character of the substring
+            if i == 0:
+                # Add the palindrome to the set if it has the correct length and contains only English letters
+                if last_index - i + 1 >= 26 and last_index - i + 1 <= 31 and all(c.isalpha() for c in substring[i:last_index+1])):
+                    palindromes.add(substring[i:last_index+1])
+            # Check if the current character is also the last character of the substring
+            elif last_index - i + 1 == len(substring) - end_index - 1:
+                # Add the palindrome to the set if it has the correct length and contains only English letters
+                if last_index - i + 1 >= 26 and last_index - i + 1 <= 31 and all(c.isalpha() for c in substring[i:last_index+1])):
+                    palindromes.add(substring[i:last_index+1])
+    # Return the set of palindromes found in the specified index range
+    return palindromes

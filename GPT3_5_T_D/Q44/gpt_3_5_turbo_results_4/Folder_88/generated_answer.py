@@ -1,0 +1,16 @@
+
+def composite_nums_between_indices(lst):
+    def is_prime(num):
+        if num <= 1:
+            return False
+        for i in range(2, num):
+            if num % i == 0:
+                return False
+        return True
+
+    composite_nums = set()
+    for i in range(8, 10):
+        if not is_prime(lst[i]):
+            composite_nums.add(lst[i])
+    
+    return composite_nums

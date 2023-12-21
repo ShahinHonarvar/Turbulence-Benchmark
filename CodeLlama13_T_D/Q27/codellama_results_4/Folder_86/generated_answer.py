@@ -1,0 +1,4 @@
+
+def insert_after_index(lst):
+    new_list = lst[:990+1] + [905, 742] + lst[990+1:]
+    return new_list

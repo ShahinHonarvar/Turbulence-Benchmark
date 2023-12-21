@@ -1,0 +1,32 @@
+ ```
+def if_contains_anagrams(words):
+    # Initialize variables
+    anagram_pairs = 0
+    min_length = 3
+
+    # Iterate over the words in the list
+    for word1 in words:
+        # Check if the word is at least three characters long
+        if len(word1) < min_length:
+            continue
+
+        # Convert the word to lowercase
+        word1 = word1.lower()
+
+        # Iterate over the remaining words in the list
+        for word2 in words[words.index(word1) + 1:]:
+            # Check if the word is at least three characters long
+            if len(word2) < min_length:
+                continue
+
+            # Convert both words to lowercase
+            word2 = word2.lower()
+
+            # Check if the two words are anagrams of each other
+            if sorted(word1) == sorted(word2):
+                # Increment the number of anagram pairs found
+                anagram_pairs += 1
+
+    # Return whether there are at least 48 pairs of anagrams in the given list
+    return anagram_pairs >= 48
+```

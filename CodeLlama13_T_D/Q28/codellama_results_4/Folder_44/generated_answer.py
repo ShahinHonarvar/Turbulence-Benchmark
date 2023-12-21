@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    ascii_values = {}
+    for char in string[20:31]:
+        if char not in ascii_values:
+            ascii_values[char] = ord(char)
+    sorted_ascii_values = sorted(ascii_values.values())
+    return chr(sorted_ascii_values[7])

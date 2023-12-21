@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 81 elements
+    if len(my_list) < 81:
+        return False
+
+    # Get the element at index 80
+    num = my_list[80]
+
+    # Check if the number is a perfect square
+    root = int(num ** 0.5)
+    if root ** 2 == num:
+        return True
+
+    else:
+        return False

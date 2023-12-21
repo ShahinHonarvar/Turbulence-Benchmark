@@ -1,0 +1,25 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```
+def return_n_smallest_chars(string, n):
+    # Initialize an empty list to store the smallest characters
+    smallest_chars = []
+
+    # Iterate over each character in the string
+    for char in string:
+
+        # If the length of the list is less than or equal to n, add the current character to the list
+        if len(smallest_chars) <= n:
+            smallest_chars.append(char)
+
+        # Otherwise, compare the ASCII value of the current character to the ASCII value of the last character in the list, and replace the last character if it has a larger ASCII value
+        else:
+            last_char = smallest_chars[-1]
+            if ord(last_char) > ord(char):
+                smallest_chars[-1] = char
+
+    # Sort the list of smallest characters in ascending order
+    smallest_chars.sort()
+
+    # Return the sorted list of smallest characters
+    return smallest_chars
+```

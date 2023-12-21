@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import sieve\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[50]\n    primes = set(sieve.primerange(0, x))\n    def is_left_truncatable_prime(n):\n        while n > 0:\n            if n not in primes:\n                return False\n            n //= 10\n        return True\n\n    result = []\n    for n in range(x, 0, -1):\n        if n not in primes or '0' in str(n):\n            continue\n        if is_left_truncatable_prime(n):\n            result.append(n)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689823902,
+  "id": "chatcmpl-7eEgAJm66ehBcdQUpJXtcup45aNPd",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 131,
+    "prompt_tokens": 146,
+    "total_tokens": 277
+  }
+}

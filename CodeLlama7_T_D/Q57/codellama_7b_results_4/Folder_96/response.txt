@@ -1,0 +1,29 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Find the sum of all integers in the submatrix
+            submatrix_sum = np.sum(matrix[i:,j])
+            # Check if the sum equals -63
+            if submatrix_sum == -63:
+                # Append the submatrix to the list of submatrices
+                submatrices.append(matrix[i:,j])
+    # Return the list of submatrices
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[10, -23, 45], [7, 8, 9], [-6, -7, -8]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+```
+This code first imports the NumPy library with the alias `np`. It then defines a function called `submatrix_with_particular_sum` that takes one argument, which is a two-dimensional NumPy matrix of integers.
+The function first initializes an empty list to store the submatrices. Then it loops through each row of the matrix using the `for i in range(matrix.shape[0]):` loop. Inside this loop, the code loops through each column of the matrix using the `for j in range(matrix.shape[1]):` loop.
+Inside these two loops, the code finds the sum of all integers in the submatrix by calling the NumPy function `np.sum()` and passing it the submatrix as an argument. The `np.sum()` function returns a scalar value that represents the sum of all elements in the input array.
+The code then checks if the sum equals -63 using the `if` statement. If the sum is equal to -63, the code appends the submatrix to the list of submatrices using the `submatrices.append(matrix[i:,j])` statement.
+Finally, the code returns the list of submatrices by calling the `return` statement and passing it the `submatrices` variable as an argument.

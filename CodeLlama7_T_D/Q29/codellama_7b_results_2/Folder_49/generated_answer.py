@@ -1,0 +1,9 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the integers at indices 28 and 20
+    i = 1
+    while i <= my_list[28]:
+        if my_list[28] % i == 0 and my_list[20] % i == 0:
+            gcf = i
+
+    return gcf

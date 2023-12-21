@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix: np.ndarray) -> int:
+    # Initialize a counter variable for the number of submatrices with 20 integers each
+    count = 0
+
+    # Iterate over all possible starting indices in the matrix
+    for i in range(len(matrix) - 1):
+        for j in range(i + 1, len(matrix)):
+            # Check if the submatrix with the given indices contains 20 integers each
+            if sum(np.count_nonzero(matrix[i:j], axis=1)) == 20:
+                # Increment the counter variable if a valid submatrix is found
+                count += 1
+
+    # Return the number of submatrices with 20 integers each
+    return count

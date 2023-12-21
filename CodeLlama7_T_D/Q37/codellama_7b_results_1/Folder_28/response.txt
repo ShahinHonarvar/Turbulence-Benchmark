@@ -1,0 +1,17 @@
+ def filter_chars(s):
+    # Create a new empty string
+    result = ""
+
+    # Iterate through the characters of the input string
+    for char in s:
+        # Check if the current character is between indices 20 and 79, both inclusive, and is greater than or equal to '!' and smaller than or equal to 'T'
+        if (char >= "!" and char <= "T") and (20 <= ord(char) <= 79):
+            # Skip this character since it meets the conditions
+            continue
+
+        # If we reach here, it means that the current character does not meet the conditions. So, we add it to the result string.
+        result += char
+
+    # Return the altered string
+    return result
+```

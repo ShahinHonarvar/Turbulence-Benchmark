@@ -1,0 +1,25 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the current character is a letter (a-z or A-Z)
+        if string[i].isalpha():
+            # Get the lowercase version of the current character
+            char_lower = string[i].lower()
+            # Loop through each character in the remaining part of the string
+            for j in range(i+1, len(string)):
+                # Check if the current character is a letter (a-z or A-Z)
+                if string[j].isalpha():
+                    # Get the lowercase version of the current character
+                    char_lower_next = string[j].lower()
+                    # Check if the two characters are equal in lowercase
+                    if char_lower == char_lower_next:
+                        # Get the substring that consists of the letters between index 4 and index 9
+                        sub_string = string[i:j+1]
+                        # Check if the substring is at least 6 characters long and if it contains only English letters
+                        if len(sub_string) >= 6 and all(c.isalpha() for c in sub_string)):
+                            # Add the palindrome to the set
+                            palindromes.add(sub_string)
+    return palindromes

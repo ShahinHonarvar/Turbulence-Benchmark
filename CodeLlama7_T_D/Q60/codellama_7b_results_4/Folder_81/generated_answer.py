@@ -1,0 +1,62 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the range of numbers from 1 to x
+    for i in range(1, x + 1):
+
+        # Check if the number is a prime number
+        if is_prime(i):
+
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+
+                # Add the number to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through the range of numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if n is divisible by i
+            if n % i == 0:
+                # Return False if n is divisible by i
+                return False
+
+        # Return True if n is greater than 1 and not divisible by any number in the range of numbers from 2 to the square root of n
+        return True
+
+    # Return False if n is less than or equal to 1
+    return False
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Initialize an empty string to store the number in string format
+    str_number = ''
+
+    # Loop through the digits of the number from right to left
+    for i in range(len(str(n))) - 1, -1:
+
+        # Check if the digit is not equal to 0
+        if str(n)[i] != '0':
+
+            # Add the digit to the string
+            str_number += str(n)[i]
+
+    # Check if the number in string format is a prime number
+    if is_prime(int(str_number)):
+
+        # Return True if the number in string format is a prime number
+        return True
+
+    # Return False if the number in string format is not a prime number
+    return False

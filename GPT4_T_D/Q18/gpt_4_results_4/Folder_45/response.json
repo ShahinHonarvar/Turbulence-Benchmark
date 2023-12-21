@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef sum_ints_div_by_either_nums(lst):\n    if len(lst) < 31:\n        return 0\n    end_index = min(len(lst), 201)\n    valid_integers = [num for num in lst[30:end_index] if num % 115 == 0 or num % -115 == 0]\n    if not valid_integers:\n        return 0\n    return sum(valid_integers)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691034431,
+  "id": "chatcmpl-7jJapQ6ypsMWdWNchlmGUW4gWG88m",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 117,
+    "total_tokens": 210
+  }
+}

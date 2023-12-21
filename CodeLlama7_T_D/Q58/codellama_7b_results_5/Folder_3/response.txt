@@ -1,0 +1,24 @@
+ Here's a solution in Python:
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    # Initialize the count to 0
+    count = 0
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+        # Check if the current row contains n integers
+        if row.size == n:
+            count += 1
+
+    return count
+```
+To test this function, you can use the following code:
+```
+# Test the submatrix_with_n_numbers function
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#print(submatrix_with_n_numbers(matrix, 5))
+```
+This code should output `0`, since there are no submatrices of the given matrix that contain 5 integers each.

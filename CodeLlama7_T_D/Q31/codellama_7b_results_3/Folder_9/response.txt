@@ -1,0 +1,19 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 25 elements
+    if len(my_list) < 25:
+        return False
+
+    # Get the integer at index 24
+    num = my_list[24]
+
+    # Check if the number is a perfect number
+    sum = 0
+    for i in range(1, num // 2 + 1):
+        if num % i == 0:
+            sum += i
+
+    return sum == num
+
+```
+This code defines a function called `if_perfect_num` that takes a single argument, which is a list of positive integers. The function first checks if the list has at least 25 elements, and if not, it returns False immediately. If the list has enough elements, the function gets the integer at index 24 and checks if it is a perfect number by computing the sum of its factors and comparing it to the number itself. If the sum is equal to the number, then the function returns True, otherwise it returns False.

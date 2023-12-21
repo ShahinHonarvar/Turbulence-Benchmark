@@ -1,0 +1,16 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    pair_count = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                pair_count += 1
+                if pair_count >= 29:
+                    return True
+    return False
+
+# Test the function with a list of strings
+my_list = ["listen", "silent", "enamel", "canal", "elemnt"]
+#print(if_contains_anagrams(my_list)) # Should print "True"
+```

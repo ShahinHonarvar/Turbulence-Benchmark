@@ -1,0 +1,34 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize a counter for the number of anagrams found
+    num_anagrams = 0
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Check if the string is at least three characters long and contains only the letters a-z
+        if len(lowercase_string) >= 3 and all(letter in "abcdefghijklmnopqrstuvwxyz" for letter in lowercase_string):
+            # Create a dictionary to keep track of the letters in the string
+            letter_counts = {}
+
+            # Iterate over each letter in the string
+            for letter in lowercase_string:
+                # If the letter is already in the dictionary, increment its count
+                if letter in letter_counts:
+                    letter_counts[letter] += 1
+                # Otherwise, add the letter to the dictionary and set its count to 1
+                else:
+                    letter_counts[letter] = 1
+
+            # Check if any two letters have the same count
+            for letter in letter_counts:
+                if letter_counts[letter] > 1:
+                    num_anagrams += 1
+
+            # If there are at most 81 pairs of anagrams, return True
+            if num_anagrams <= 81:
+                return True
+
+    # Otherwise, return False
+    return False
+```

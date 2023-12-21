@@ -1,0 +1,13 @@
+ Here is a possible implementation of the `find_subset_of_length_n` function in Python:
+```
+def find_subset_of_length_n(set):
+    subsets = []
+    for i in range(0, len(set)):
+        subset = set[i]
+        for j in range(i + 1, len(set)):
+            subset.add(set[j])
+        subsets.append(subset)
+    return len(subsets)
+```
+This implementation creates a list of all the subsets of the input set, and then returns the length of this list.
+Note that this function assumes that the input set is not empty. If the input set is empty, the function will raise an error because it cannot create any subsets from an empty set.

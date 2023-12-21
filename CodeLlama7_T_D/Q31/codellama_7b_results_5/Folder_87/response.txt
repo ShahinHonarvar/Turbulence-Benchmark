@@ -1,0 +1,21 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers.")
+    # Check if the element at index 96 exists in the list
+    if len(my_list) <= 96:
+        raise IndexError("List does not have enough elements to access element at index 96.")
+    # Calculate the sum of the divisors of the number at index 96
+    num = my_list[96]
+    divisor_sum = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            divisor_sum += i
+            if i * i != num:
+                divisor_sum += num / i
+    # Check if the number at index 96 is a perfect number
+    return divisor_sum == num
+
+```
+This code checks if the element at index 96 in the list is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors (excluding the number itself). The code first checks if the input is a list of positive integers and then checks if the element at index 96 exists in the list. If both conditions are true, the code calculates the sum of the divisors of the number at index 96 using a loop and then compares it to the number itself. Finally, the code returns True if the number is a perfect number and False otherwise.

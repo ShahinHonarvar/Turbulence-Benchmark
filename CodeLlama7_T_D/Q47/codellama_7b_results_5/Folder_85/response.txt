@@ -1,0 +1,15 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for palindrome search
+    substr = string[29:98]
+    # Initialize an empty set to store palindromes
+    palindromes = set()
+    # Iterate through each character in the substring
+    for i in range(len(substr) - 1):
+        # Check if the current character is a palindrome
+        if substr[i] == substr[i + 1]:
+            # If it is, append the corresponding substring to the set of palindromes
+            palindromes.add(substr[i:i + 2])
+    # Return the set of palindromes found in the specified index range
+    return palindromes
+```

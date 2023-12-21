@@ -1,0 +1,35 @@
+ ```
+def if_contains_anagrams(list_of_strings):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    for i in range(len(list_of_strings)):
+        # Get the current string and its lowercase version
+        current_string = list_of_strings[i]
+        lowercase_current_string = current_string.lower()
+
+        for j in range(i + 1, len(list_of_strings)):
+            # Get the second string and its lowercase version
+            second_string = list_of_strings[j]
+            lowercase_second_string = second_string.lower()
+
+            if lowercase_current_string == lowercase_second_string:
+                # If the current string is an anagram of the second string,
+                # increment the count for the pair (current string, second string)
+                if (current_string, second_string) in anagram_pairs:
+                    anagram_pairs[(current_string, second_string)] += 1
+
+                else:
+
+                    anagram_pairs[(current_string, second_string)] = 1
+
+
+    # Check if there are at least 78 pairs of anagrams in the given list
+    if len(anagram_pairs) >= 78:
+        return True
+
+    else:
+
+        return False
+
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    size = len(lst)\n    lst += lst # being a circular list, we append a copy of the list\n    result = []\n    for i in range(size):\n        p = 1\n        for j in range(i, size + i):\n            p *= lst[j]\n            if p > 36:\n                break\n            elif p == 36:\n                result.append(lst[i:j + 1])\n            else:\n                continue\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690899375,
+  "id": "chatcmpl-7ikSV0LNtixanFSUlIrVotdwnTnBb",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 193,
+    "total_tokens": 300
+  }
+}

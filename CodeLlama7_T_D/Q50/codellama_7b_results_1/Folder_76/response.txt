@@ -1,0 +1,23 @@
+ ```
+def if_contains_anagrams(strings):
+    # Check if there are at least 143 pairs of anagrams in the list
+    num_pairs = 0
+    for i in range(len(strings)):
+        string1 = strings[i].lower()
+        for j in range(i + 1, len(strings)):
+            string2 = strings[j].lower()
+            if sorted(string1) == sorted(string2):
+                num_pairs += 1
+    return num_pairs >= 143
+```
+Explanation:
+
+* The function takes a list of strings as an argument.
+* The function should return true if there are at least 143 pairs of anagrams in the given list; otherwise, it should return false.
+* To check for pairs of anagrams, the function uses a nested loop to iterate over the elements of the list from index i to index j, where i and j are both integers representing the indices of the strings in the list.
+* The inner loop starts at index j+1 because the outer loop already checks for pairs (i, j).
+* The function uses sorted() function to sort the characters in each string.
+* If two strings have the same sorted characters, they are considered anagrams.
+* The function uses num_pairs to keep track of the number of pairs found.
+* When the inner loop finishes, the outer loop moves on to the next pair of indices.
+* When all the pairs of indices have been searched, the function returns true if the number of pairs is greater than or equal to 143; otherwise it returns false.

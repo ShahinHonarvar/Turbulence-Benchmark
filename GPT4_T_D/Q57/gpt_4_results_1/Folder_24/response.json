@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code based on your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    row = matrix.shape[0]\n    col = matrix.shape[1]\n\n    for sub_matrix_row in range(1, row + 1):\n        for sub_matrix_col in range(1, col + 1):\n            for i in range(row - sub_matrix_row + 1):\n                for j in range(col - sub_matrix_col + 1):\n                    sub_matrix = matrix[i: i + sub_matrix_row, j: j + sub_matrix_col]\n                    if np.sum(sub_matrix) == -36:\n                        result.append(sub_matrix)\n    return result\n```\nIn this code block, the function 'submatrix_with_particular_sum' takes a numpy matrix as input. It iterates through all possible sub-matrices of the input matrix and checks the sum of each one. If the sum equals -36, it appends the sub-matrix to the result list. Finally, it returns the result list which contains all desired sub-matrices. If no sub-matrix with sum -36 exists, the function will return an empty list. The outer for-loops control the size of the sub-matrices to consider, while the inner for-loops control the position of those sub-matrices in the main matrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690080994,
+  "id": "chatcmpl-7fJYoMybxRnwOLXFbR2pTEXE7GENs",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 284,
+    "prompt_tokens": 121,
+    "total_tokens": 405
+  }
+}

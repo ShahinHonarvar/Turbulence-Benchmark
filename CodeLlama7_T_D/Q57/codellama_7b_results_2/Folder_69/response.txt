@@ -1,0 +1,26 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a counter to keep track of the sum of the elements in the submatrix
+            count = 0
+            # Loop over each element in the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # If the element is outside the bounds of the matrix, skip it
+                    if k >= matrix.shape[0] or l >= matrix.shape[1]:
+                        continue
+
+                    # Add the element to the counter
+                    count += matrix[k][l]
+            # If the sum of the elements in the submatrix is equal to 752, add the submatrix to the list of submatrices
+            if count == 752:
+                submatrices.append(matrix[i:i + 3, j:j + 3])
+    # Return the list of all submatrices that have a sum of 752
+    return submatrices
+```

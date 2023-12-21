@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `filter_chars` function:
+```python
+def filter_chars(s):
+    # create a list of characters that should be removed
+    chars_to_remove = []
+    for i in range(15, 86):
+        if s[i] > 'I' and s[i] < 'M':
+            chars_to_remove.append(s[i])
+    # remove the characters from the string
+    for c in chars_to_remove:
+        s = s.replace(c, '')
+    return s
+```
+This function takes a string as input and performs the following steps:
+1. It creates an empty list called `chars_to_remove`. This list will contain all of the characters that should be removed from the string.
+2. It iterates over each character in the string, starting at index 15 (the first character after the "hello" message) and ending at index 86 (the last character before the "world" message). For each character it checks if it is greater than character 'I' and smaller than character 'M'. If this condition is true, the function adds the current character to the `chars_to_remove` list.
+3. After all of the characters have been checked, the function removes each character from the string that was added to the `chars_to_remove` list. It does this by using the `replace()` method to replace each character in the string with an empty string (i.e., a string without any characters).
+4. Finally, the function returns the altered string.

@@ -1,0 +1,17 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert string to list of characters
+    char_list = list(string)
+    # Find the indices of the substring between 47 and 70
+    start_index = char_list.index('{', 47)
+    end_index = char_list.index('}', 70)
+    # Extract the characters from the substring
+    substring = ''.join(char_list[start_index:end_index+1])
+    # Convert the substring to a list of integers representing ASCII values
+    ascii_values = [ord(char) for char in substring]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 14th smallest ASCII value from the sorted list
+    return sorted_ascii_values[13]
+```
+This code will first convert the given string to a list of characters. It will then find the indices of the substring between indices 47 and 70, both inclusive, using the `index` method. The substring is then converted to a list of integers representing ASCII values using a list comprehension. The list of ASCII values is then sorted in ascending order using the `sorted` function. Finally, the 14th smallest ASCII value from the sorted list is returned using indexing.

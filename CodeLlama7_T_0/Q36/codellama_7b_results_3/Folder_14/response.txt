@@ -1,0 +1,14 @@
+ ```
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate over the characters in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between 41 and 56 (exclusive)
+        if 40 < ord(char_list[i]) < 57:
+            # Remove all occurrences of this character from the string
+            char_list = [c for c in char_list if c != char_list[i]]
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string
+```

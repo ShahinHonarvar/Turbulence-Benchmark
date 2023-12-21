@@ -1,0 +1,19 @@
+
+def prime_factors(my_list):
+    # Check if input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers.")
+    # Get the integer at index 15
+    num = my_list[15]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Iterate from 2 to the square root of num
+    for i in range(2, int(num ** 0.5) + 1):
+        # If i divides num without leaving a remainder
+        if num % i == 0:
+            # Add i to the set of prime factors
+            prime_factors.add(i)
+            # Set num equal to num divided by i
+            num = num // i
+    # Return the set of all prime factors of num
+    return prime_factors

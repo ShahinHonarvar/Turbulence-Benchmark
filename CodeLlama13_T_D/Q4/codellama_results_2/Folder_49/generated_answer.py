@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(nums):
+    return [x for x in nums if x > 80 and x < 200 and x % 1 == 0 and x > 0]

@@ -1,0 +1,7 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the starting and ending indices of the positive integers in the list
+    start_idx = next((i for i, x in enumerate(my_list) if x > 0), None)
+    end_idx = next((i for i, x in enumerate(my_list[start_idx:]) if x > 0), None) + start_idx
+    # Return the list of all positive integers from index 43 to index 99, both exclusive
+    return my_list[start_idx+42:end_idx]

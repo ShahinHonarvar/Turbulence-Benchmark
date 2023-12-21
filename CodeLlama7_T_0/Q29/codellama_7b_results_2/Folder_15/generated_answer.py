@@ -1,0 +1,10 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common divisor of two numbers
+    def gcd(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    # Return the greatest common factor of the two numbers at indices 0 and 1
+    return gcd(my_list[0], my_list[1])

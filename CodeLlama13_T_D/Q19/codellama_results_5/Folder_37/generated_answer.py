@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(list_of_ints):
+    return [i for i in list_of_ints[1:2] if i % 5 != 0]

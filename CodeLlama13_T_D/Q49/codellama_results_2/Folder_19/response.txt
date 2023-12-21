@@ -1,0 +1,11 @@
+```python
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal = int(binary_string, 2)
+    
+    # Get the list of Fibonacci numbers up to and including the 29th number
+    fibonacci_numbers = [0] + [1, 1] + [sum(fibonacci_numbers[-2:]) for i in range(27)]
+    
+    # Check if the decimal integer is divisible by the 29th Fibonacci number
+    return decimal % fibonacci_numbers[28] == 0
+```

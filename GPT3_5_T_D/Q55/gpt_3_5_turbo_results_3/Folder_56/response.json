@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    result = []\n    \n    # Generate all possible sublists\n    for i in range(n):\n        for j in range(i, n):\n            sublist = nums[i:j+1]\n            \n            # Check if product equals -65\n            product = 1\n            for num in sublist:\n                product *= num\n            if product == -65:\n                result.append(sublist)\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689844569,
+  "id": "chatcmpl-7eK3Vs8MNM4iwpExwlxSQq9NC6Fp8",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 193,
+    "total_tokens": 293
+  }
+}

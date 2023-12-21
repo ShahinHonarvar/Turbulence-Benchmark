@@ -1,0 +1,7 @@
+ def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Find the first occurrence of the 160th Fibonacci number in the sequence
+    fib_160_index = [i for i, x in enumerate(fibonacci_seq) if x == 160][0]
+    # Check if the decimal integer is divisible by the 160th Fibonacci number
+    return decimal_int % fibonacci_seq[fib_160_index] == 0

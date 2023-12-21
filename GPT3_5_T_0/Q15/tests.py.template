@@ -1,0 +1,51 @@
+from Q15.$4_results_$5.Folder_$2.generated_answer import $3
+import random
+
+
+def test_all_zero_range():
+    zero_list = [0 for _ in range(0, ($1 + 1) * 10)]
+    assert $3(zero_list) == 0
+
+
+def test_all_one_range():
+    initial_list = [1 for _ in range(0, $1 + 100)]
+    assert $3(initial_list) == $1 - $0 + 1
+
+
+def test_all_minus_one_range():
+    initial_list = [-1 for _ in range(0, $1 + 100)]
+    assert $3(initial_list) == -($1 - $0 + 1)
+
+
+def test_positive_odd_range():
+    for n in range(3,9,2):
+        n_list = [n for _ in range(0, ($1 + 1) * 10)]
+        assert $3(n_list) == n * ($1 - $0 + 1)
+
+
+def test_negative_odd_range():
+    for n in range(-9,-3,2):
+        n_list = [n for _ in range(0, ($1 + 1) * 10)]
+        assert $3(n_list) == n * ($1 - $0 + 1)
+
+
+def test_positive_even_range():
+    for n in range(2,10,2):
+        n_list = [n for _ in range(0, ($1 + 1) * 10)]
+        assert $3(n_list) == 0
+
+
+def test_negative_even_range():
+    for n in range(-8,-2,2):
+        n_list = [n for _ in range(0, ($1 + 1) * 10)]
+        assert $3(n_list) == 0
+
+
+def test_compare_sums():
+    initial_list = [random.choice(range(1, 2000)) for _ in range(0, ($1 + 1) * 10)]
+    assert $3(initial_list) < sum(initial_list)
+
+
+def test_sum_of_odds():
+    initial_list = [i for i in range(1, ($1 + 1) * 10, 2)]
+    assert $3(initial_list) > 0

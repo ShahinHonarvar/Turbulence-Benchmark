@@ -1,0 +1,19 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[450]
+b = tuple[905]
+sum = 0
+for i in range(a + 1, b - 1):
+if i not in tuple[450:905]:
+sum += i
+if sum % 2 == 1:
+return format(sum, 'b')
+else:
+return format(sum, 'x')
+
+```
+Explanation:
+
+The function first calculates the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 450 and 905. This is done by iterating through the range of numbers and adding each number that is not present in the specified range in the tuple.
+If the sum is an odd number, the function returns the binary representation string of the sum using the format() method with the 'b' conversion specifier. If the sum is an even number, the function returns the hexadecimal representation string of the sum using the format() method with the 'x' conversion specifier.
+The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in the hexadecimal representation can be either in lowercase or uppercase.

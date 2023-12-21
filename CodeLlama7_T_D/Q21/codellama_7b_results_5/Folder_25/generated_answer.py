@@ -1,0 +1,13 @@
+
+def all_ints_div_by_num(my_list):
+    # Initialize an empty list to store the divisible integers
+    div_ints = []
+
+    # Iterate through the list and check if each integer is divisible by -97
+    for i in range(25, 41 + 1):
+        if my_list[i] % -97 == 0:
+            # If the integer is divisible by -97, add it to the list of divisible integers
+            div_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by -97 from index 25 to index 41, both inclusive
+    return div_ints

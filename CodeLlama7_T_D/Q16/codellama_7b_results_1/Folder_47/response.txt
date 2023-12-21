@@ -1,0 +1,14 @@
+ def sum_even_ints_inclusive(my_list):
+    # Initialize variables for the range and the sum
+    start = 37
+    end = 76
+    sum = 0
+
+    # Iterate through the list from the starting index to the ending index
+    for i in range(start, end + 1):
+        # If the current element is even, add it to the sum
+        if my_list[i] % 2 == 0:
+            sum += my_list[i]
+
+    # Return the sum of all even integers from index 37 to index 76, both inclusive
+    return sum

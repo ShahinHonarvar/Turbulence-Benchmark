@@ -1,0 +1,18 @@
+```
+def all_right_truncatable_prime(nums):
+    x = nums[43]
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            j = i
+            while j > 0:
+                if not is_prime(j):
+                    break
+                j //= 10
+            if j == 0:
+                primes.append(i)
+    return sorted(primes)
+```
+This function takes a tuple of positive integers `nums` as input and returns the sorted list of all right-truncatable prime numbers less than `x`. It uses the `is_prime()` function to check if a number is prime, and it iterates over each integer from 2 to `x+1` to find all prime numbers. For each prime number, it checks if it remains prime when the last rightmost digit is successively removed by dividing the number by 10 until the number becomes 0. If the number becomes 0, then it is a right-truncatable prime number and is added to the list of primes. Finally, the list of primes is sorted in ascending order and returned as output.
+
+Note: The `is_prime()` function is not defined here, but you can use any available implementation or write your own.

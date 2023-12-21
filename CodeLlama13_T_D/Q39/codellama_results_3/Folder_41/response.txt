@@ -1,0 +1,10 @@
+```python
+def return_n_greatest_chars(string):
+    char_dict = {}
+    for char in string:
+        if char not in char_dict:
+            char_dict[char] = ord(char)
+    sorted_list = sorted(char_dict, key=lambda x: char_dict[x], reverse=True)[:37]
+    return "".join(sorted_list)
+```
+This function creates a dictionary `char_dict` that maps each character in the input string to its ASCII value. The function then sorts the list of keys from `char_dict` based on their ASCII values in descending order and returns the first 37 characters of the sorted list.

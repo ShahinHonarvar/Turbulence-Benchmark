@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    new_str = ''
+    for i, char in enumerate(s):
+        if 22 <= i <= 85 and '7' <= char <= 'e':
+            continue
+        else:
+            new_str += char
+    return new_str

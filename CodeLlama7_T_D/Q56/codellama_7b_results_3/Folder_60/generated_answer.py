@@ -1,0 +1,8 @@
+
+def all_substring_of_size_n(input_string):
+    substring_list = []
+    for i in range(len(input_string) - 29):
+        substring = input_string[i:i + 30]
+        if len(substring) == 30 and not any(c in substring for c in "abcdefghijklmnopqrstuvwxyz"):
+            substring_list.append(substring)
+    return substring_list

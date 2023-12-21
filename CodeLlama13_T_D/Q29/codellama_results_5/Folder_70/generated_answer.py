@@ -1,0 +1,3 @@
+
+def gcf_two_nums(list_of_ints):
+    return list_of_ints[300].gcd(list_of_ints[616])

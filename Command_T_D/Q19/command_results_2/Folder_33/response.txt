@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 56c0574d-e916-456a-ad88-e887f3e5e0c2
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_not_div_by_num' that takes one argument, a list of integers, and returns the list of all integers not divisible by -514 from index 103 to index 574, both exclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_ints_not_div_by_num(lst):
+    if not lst:
+        return []
+    idx = next(i for i, x in enumerate(lst) if x % -514)
+    return lst[:idx] + lst[idx + 1:]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    result = []\n    for i in range(len(lst)):\n        for j in range(1, len(lst)+1):\n            sub = lst[i:i+j]\n            if i+j > len(lst):\n                sub += lst[:(i+j)%len(lst)]\n            product = 1\n            for num in sub:\n                product *= num\n            if product == -65:\n                result.append(sub)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691088929,
+  "id": "chatcmpl-7jXlp0LZsKcHeSLBGfZk7MwYdET39",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 193,
+    "total_tokens": 291
+  }
+}

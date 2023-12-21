@@ -1,0 +1,6 @@
+
+def palindrome_of_length_n(s, n):
+    return set(substring for substring in s if len(substring) == n and is_palindrome(substring))
+
+def is_palindrome(s):
+    return s == s[::-1]

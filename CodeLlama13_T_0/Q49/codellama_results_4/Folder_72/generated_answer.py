@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 175th number in the Fibonacci sequence
+    fib_175 = (((1 + 5 ** 0.5) / 2) ** 175 - ((1 - 5 ** 0.5) / 2) ** 175) / 5 ** 0.5
+    
+    # Check if the decimal integer is divisible by the 175th number in the Fibonacci sequence
+    return decimal % fib_175 == 0

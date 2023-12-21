@@ -1,0 +1,7 @@
+
+def return_n_greatest_chars(string):
+    # create a list of all the characters in the string
+    chars = list(set(string))
+    # sort the list in descending order based on ASCII value
+    sorted_chars = sorted(chars, key=ord, reverse=True)[:65]
+    return "".join(sorted_chars)

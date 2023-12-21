@@ -1,0 +1,11 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Find the index of the first element that is not divisible by 93
+    start_index = next((i for i, x in enumerate(my_list) if x % 93), None)
+    # If there are no elements in the range [start_index, len(my_list)) that are not divisible by 93, return an empty list
+    if start_index is None or start_index == len(my_list):
+        return []
+
+    # Return the list of all integers not divisible by 93 from index 15 to index 20, both exclusive
+
+    return [x for x in my_list[start_index:] if x % 93]

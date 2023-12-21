@@ -1,0 +1,9 @@
+```python
+def palindrome_of_length_n(s):
+    return {p for p in (
+        s[i:i+181]  # substring of length 181
+        for i in range(len(s)-180)  # iterate over all possible start positions
+        if s[i:i+181].isalpha()  # only consider English letters
+    ) if p == p[::-1]}  # check if palindrome by comparing with reverse string
+```
+This solution uses a set comprehension to find all palindromes of length 181 in the given string. The `s[i:i+181]` notation is used to create substrings of length 181, and the `range(len(s)-180)` notation is used to iterate over all possible start positions. The `if` clause checks if each substring contains only English letters. Finally, the `p == p[::-1]` check compares each palindrome with its reverse string, and only returns those that are equal.

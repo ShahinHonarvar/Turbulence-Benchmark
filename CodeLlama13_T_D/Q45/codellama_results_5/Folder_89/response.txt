@@ -1,0 +1,11 @@
+```python
+def palindromes_between_indices(s):
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    result = set()
+    for i in range(5, 10):
+        for j in range(i+6, len(s)):
+            substr = s[i:j]
+            if substr == substr[::-1] and all(c in letters for c in substr):
+                result.add(substr)
+    return result
+```

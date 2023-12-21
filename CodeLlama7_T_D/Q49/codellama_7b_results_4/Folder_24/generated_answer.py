@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation to an integer
+    decimal = int(binary_rep, 2)
+    # Calculate the 56th Fibonacci number
+    fib_56 = (((1 + 5 ** 0.5) / 2)**56 - ((1 + 5 ** 0.5) / 2)) / (5 ** 0.5)
+    # Check if the decimal integer is divisible by the 56th Fibonacci number
+    return decimal % fib_56 == 0

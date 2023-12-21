@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(string):
+    lst = sorted([char for char in string], key=ord)[:23]
+    return lst

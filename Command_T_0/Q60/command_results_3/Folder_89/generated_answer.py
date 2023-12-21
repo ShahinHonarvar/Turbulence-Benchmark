@@ -1,0 +1,2 @@
+def all_left_right_truncatable_prime(n):
+    return sorted(n for n in range(2, n[97] + 1) if all(n % d == 0 for d in range(3, int(str(n)[-1]))) and n not in [2, 3, 5, 7, 11, 13, 17, 19, 31, 61, 89, 107, 127, 521, 607, 1279, 2203, 2281, 3217, 4253, 4423, 9689, 9941, 11213, 19937, 21701, 23209, 44497, 86243, 110503, 132049, 216091, 756839, 9999])

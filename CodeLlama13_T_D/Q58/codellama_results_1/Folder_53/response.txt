@@ -1,0 +1,12 @@
+```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    n = 24
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if len(set(matrix[i][j:j+n])) == n:
+                count += 1
+    return count
+```
+This code defines a function `submatrix_with_n_numbers` that takes a two-dimensional matrix of integers as input. The function iterates over each element in the matrix and checks if there is a submatrix with 24 elements that contains all unique numbers from 0 to n-1 (where n is the number of rows or columns in the matrix). If such a submatrix is found, the function increments a counter variable `count` by 1. Finally, the function returns the value of `count`.

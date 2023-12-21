@@ -1,0 +1,13 @@
+
+def remove_repeat_chars(s):
+    # Initialize an empty string
+    res = ""
+
+    # Iterate through the characters in the given string
+    for i, c in enumerate(s):
+        # Check if the character is repeated between indices 10 and 28 (exclusive)
+        if s.count(c) > 1 and i < 28 and i > 10:
+            # Remove all occurrences of the character from the string
+            res += s[:i] + s[i+1:]
+
+    return res

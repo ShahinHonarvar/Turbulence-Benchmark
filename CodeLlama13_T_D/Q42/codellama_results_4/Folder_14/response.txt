@@ -1,0 +1,22 @@
+```python
+def prime_factors(numbers):
+    return set(prime_factorization(numbers[17]))
+```
+This function uses the `prime_factorization` function, which is defined as follows:
+```python
+def prime_factorization(n):
+    factors = []
+    while n % 2 == 0:
+        factors.append(2)
+        n //= 2
+    for i in range(3, int(n**0.5) + 1, 2):
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+    if n > 2:
+        factors.append(n)
+    return sorted(factors)
+```
+This function takes an integer `n` as input and returns a list of its prime factors in ascending order. The algorithm works by repeatedly dividing `n` by the smallest odd number that divides it, and adding the result to the list of factors until `n` is 1 or has no more prime factors.
+
+Note that this function only works for positive integers, since negative numbers cannot be prime factors. Also, if `n` is not a prime factor of `numbers[17]`, then the function will return an empty set.

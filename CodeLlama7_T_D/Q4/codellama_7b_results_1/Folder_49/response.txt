@@ -1,0 +1,13 @@
+ ```
+def all_pos_ints_exclusive(my_list):
+    # Get the range of indices for positive integers
+    start_idx = next((i for i, x in enumerate(my_list) if x > 0)), None)
+    end_idx = next((i for i, x in enumerate(my_list) if x > 0), None)
+    # Check if any positive integers exist in the range
+    if start_idx is not None and end_idx is not None:
+        # Return the list of all positive integers in the range
+        return [x for x in my_list[start_idx:end_idx]]
+    else:
+        # If no positive integers exist in the range, return an empty list
+        return []
+```

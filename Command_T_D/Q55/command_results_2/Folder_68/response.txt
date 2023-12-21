@@ -1,0 +1,49 @@
+[cohere.Generation {
+	id: fc670b43-ad2f-499f-8d75-17b12da4eb82
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals 6. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def lists_with_product_equal_n(nums):
+    result = []
+    i = 0
+    while True:
+        temp = []
+        while i < len(nums):
+            temp.append(nums[i])
+            i += 1
+        if len(temp) == 0:
+            break
+        if temp[0] == 1 and temp[1] == 2 and temp[2] == 3:
+            result.append(temp)
+        elif temp[0] == 2 and temp[1] == 4:
+            result.append(temp)
+        elif temp[0] == 3 and temp[1] == 6:
+            result.append(temp)
+        elif temp[0] == 4 and temp[1] == 8:
+            result.append(temp)
+        elif temp[0] == 5 and temp[1] == 10:
+            result.append(temp)
+        elif temp[0] == 6 and temp[1] == 12:
+            result.append(temp)
+        elif temp[0] == 7 and temp[1] == 14:
+            result.append(temp)
+        elif temp[0] == 8 and temp[1] == 16:
+            result.append(temp)
+        elif temp[0] == 9 and temp[1] == 18:
+            result.append(temp)
+        elif temp[0] == 10 and temp[1] == 20:
+            result.append(temp)
+        elif temp[0] == 11 and temp[1] == 22:
+            result.append(temp)
+        elif temp[0] == 12 and temp[1] == 24:
+            result.append(temp)
+        elif temp[0] == 13 and temp[1] == 26:
+            result.append(temp)
+        elif temp[0] == 14 and temp[1] == 28:
+            result.append(temp)
+        elif temp[0] == 15 and temp[1] == 30:
+            result.append(temp)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

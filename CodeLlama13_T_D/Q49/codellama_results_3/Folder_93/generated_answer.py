@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+    
+    # Get the Fibonacci sequence up to the 59th number
+    fibonacci_sequence = [0]
+    for i in range(1, 59):
+        fibonacci_sequence.append(fibonacci_sequence[i-1] + fibonacci_sequence[i-2])
+    
+    # Check if the decimal number is divisible by the 59th Fibonacci number
+    return (decimal % fibonacci_sequence[58]) == 0

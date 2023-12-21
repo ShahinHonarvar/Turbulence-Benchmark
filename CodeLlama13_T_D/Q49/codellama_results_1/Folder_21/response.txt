@@ -1,0 +1,13 @@
+
+```
+def if_decimal_is_divisible(binary_repr: str) -> bool:
+    fibonacci_sequence = [0, 1]
+    for i in range(2, 196):
+        fibonacci_sequence.append(fibonacci_sequence[i-1] + fibonacci_sequence[i-2])
+    
+    decimal = int(binary_repr, 2)
+    if decimal % fibonacci_sequence[195]:
+        return False
+    else:
+        return True
+```

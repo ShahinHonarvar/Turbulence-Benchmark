@@ -1,0 +1,22 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Compute the 17th number that occurs in the Fibonacci sequence
+    fibonacci_sequence = [0] + [a + b for a, b in zip(fibonacci_sequence, fibonacci_sequence[1:])]
+    if len(fibonacci_sequence) < 17:
+        # The Fibonacci sequence is not long enough to have the 17th number
+        return False
+
+    else:
+
+        # Compute the remainder of dividing the decimal integer by the 17th number in the Fibonacci sequence
+        remainder = decimal_integer % fibonacci_sequence[16]
+        if remainder == 0:
+            # The decimal integer is divisible by the 17th number in the Fibonacci sequence
+            return True
+
+        else:
+
+            # The decimal integer is not divisible by the 17th number in the Fibonacci sequence
+            return False

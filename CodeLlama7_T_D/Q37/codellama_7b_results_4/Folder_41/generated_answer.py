@@ -1,0 +1,15 @@
+
+def filter_chars(string):
+    # Split the string into a list of characters
+    char_list = list(string)
+    # Iterate over the characters in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between indices 26 and 64, both inclusive
+        if (i >= 26 and i <= 64) and char_list[i] == 'o':
+            # If so, remove all occurrences of that character from the list
+            while char_list.count(char_list[i]) > 0:
+                index = char_list.index(char_list[i])
+                char_list.pop(index)
+    # Join the characters in the list back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string

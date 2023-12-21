@@ -1,0 +1,35 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and find contiguous integers with product equal to n
+
+    for i in range(len(circular_list)):
+        # Initialize variables to keep track of the current contiguous sequence and its product
+        curr_seq = [circular_list[i]]
+        curr_prod = circular_list[i]
+
+        # Iterate over the remaining elements of the circular list
+
+        for j in range(i + 1, len(circular_list)):
+            # If the product of the current sequence and the next element is equal to n, then add the current sequence to the sublists list and reset the current sequence
+            if curr_prod * circular_list[j] == n:
+                sublists.append(curr_seq)
+                curr_seq = []
+
+            # Add the next element to the current sequence
+            curr_seq.append(circular_list[j])
+
+            # Update the product of the current sequence
+            curr_prod *= circular_list[j]
+
+    # Return the list of sublists with their products equal to n
+    return sublists
+
+# Test the function with a sample input
+#print(lists_with_product_equal_n([3, 4, 2, 6, 7]))
+```
+This code defines a function `lists_with_product_equal_n` that takes a circular list of integers as an argument. The function iterates over the elements of the circular list and finds contiguous sequences of integers whose product is equal to the given number n. If such a sequence exists, the function adds it to a list of sublists and returns the list. Otherwise, the function returns an empty list.
+In this solution, we use two nested loops to iterate over the elements of the circular list. The outer loop iterates over the indices of the elements in the circular list, while the inner loop iterates over the remaining elements of the circular list starting from the index `i + 1`. We initialize variables to keep track of the current contiguous sequence and its product within each iteration of the outer loop. If we find a contiguous sequence with product equal to n, we add it to the list of sublists and reset the current sequence to an empty list.
+In the code, we use the `append` method to add elements to a list, and the `*=` operator to multiply two integers in place. We also use the `range` function to generate a sequence of indices for iterating over the circular list.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(numbers):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        for i in range(2, int(n ** 0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    def is_truncatable_prime(n):\n        if '0' in str(n):\n            return False\n        for i in range(len(str(n))):\n            if not is_prime(int(str(n)[i:])):\n                return False\n            if not is_prime(int(str(n)[:i+1])):\n                return False\n        return True\n\n    x = numbers[37]\n    result = []\n    for i in range(x, 0, -1):\n        if is_truncatable_prime(i):\n            result.append(i)\n    return sorted(result, reverse=True)\n```\nCall the function with a tuple of positive integers to get the list of all left-and-right-truncatable prime numbers less than or equal to x.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689847872,
+  "id": "chatcmpl-7eKumbzjJrxypitGFicnexNjw1WMP",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 213,
+    "prompt_tokens": 187,
+    "total_tokens": 400
+  }
+}

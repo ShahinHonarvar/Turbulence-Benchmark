@@ -1,0 +1,10 @@
+```python
+def find_original_set(s1, s2, ..., s20):
+    original_set = set()
+    for i in range(20):
+        original_set |= {e for e in locals()[f's{i+1}'] if e not in original_set}
+    return original_set
+```
+This code defines a function called `find_original_set` that takes exactly 20 distinct arguments, each of which is a set of integers. The function returns the smallest set such that each of the given arguments is a subset of it.
+
+The solution works by using a loop to iterate over all the arguments and their sets, and adding every element from each set to a new set called `original_set`. This ensures that every element in every argument's set will be included in the returned set. The use of `|=` operator allows for efficient union of two sets, which is useful for the task at hand.

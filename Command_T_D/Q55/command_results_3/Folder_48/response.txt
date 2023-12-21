@@ -1,0 +1,107 @@
+[cohere.Generation {
+	id: 1e9ecce8-3284-4194-86bb-492f5933216b
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals 990. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def lists_with_product_equal_n(nums):
+    res = []
+    for j in range(len(nums)):
+        if nums[j] == 1:
+            if j == 0:
+                res.append([1])
+            elif j == len(nums) - 1:
+                res.append([nums[0], nums[j]])
+            else:
+                res.append(nums[j:j + 2])
+        elif nums[j] == 2:
+            if j == 0:
+                res.append([2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2])
+            else:
+                res.append(nums[j:j + 2])
+        elif nums[j] == 3:
+            if j == 0:
+                res.append([3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3])
+            else:
+                res.append(nums[j:j + 3])
+        elif nums[j] == 4:
+            if j == 0:
+                res.append([4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4])
+            else:
+                res.append(nums[j:j + 4])
+        elif nums[j] == 5:
+            if j == 0:
+                res.append([5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5])
+            else:
+                res.append(nums[j:j + 5])
+        elif nums[j] == 6:
+            if j == 0:
+                res.append([6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6])
+            else:
+                res.append(nums[j:j + 6])
+        elif nums[j] == 7:
+            if j == 0:
+                res.append([7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7])
+            else:
+                res.append(nums[j:j + 7])
+        elif nums[j] == 8:
+            if j == 0:
+                res.append([8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8])
+            else:
+                res.append(nums[j:j + 8])
+        elif nums[j] == 9:
+            if j == 0:
+                res.append([9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8, 9])
+            else:
+                res.append(nums[j:j + 9])
+        elif nums[j] == 10:
+            if j == 0:
+                res.append([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            else:
+                res.append(nums[j:j + 10])
+        elif nums[j] == 11:
+            if j == 0:
+                res.append([11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+            else:
+                res.append(nums[j:j + 11])
+        elif nums[j] == 12:
+            if j == 0:
+                res.append([12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+            else:
+                res.append(nums[j:j + 12])
+        elif nums[j] == 13:
+            if j == 0:
+                res.append([13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+            else:
+                res.append(nums[j:j + 13])
+        elif nums[j] == 14:
+            if j == 0:
+                res.append([14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+            elif j == len(nums) - 1:
+                res.append([1, 2, 3, 4, 5, 6, 7,
+	likelihood: None
+	token_likelihoods: None
+}]

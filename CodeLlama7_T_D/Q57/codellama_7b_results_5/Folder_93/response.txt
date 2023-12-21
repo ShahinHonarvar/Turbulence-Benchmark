@@ -1,0 +1,27 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the elements in the submatrix
+            submatrix_sum = 0
+            # Initialize variables to keep track of the starting and ending indices of the submatrix
+            start_row, start_col = i, j
+            # Loop until the end of the row or column is reached
+            while start_row < matrix.shape[0] and start_col < matrix.shape[1]:
+                # Add the current element to the sum
+                submatrix_sum += matrix[start_row][start_col]
+                # Increment the starting indices of the submatrix
+                start_row += 1
+                start_col += 1
+            # If the sum of the elements in the submatrix is equal to -65, add the submatrix to the list of submatrices
+            if submatrix_sum == -65:
+                submatrices.append(matrix[start_row - 1:end_row + 1, start_col - 1:end_col + 1])
+    # Return the list of submatrices that have a sum of -65
+    return submatrices
+```

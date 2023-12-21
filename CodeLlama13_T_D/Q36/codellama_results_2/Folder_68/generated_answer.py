@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_string = ''
+    for char in string:
+        if ord(char) > 8 and ord(char) < 130:
+            new_string += char
+    return new_string

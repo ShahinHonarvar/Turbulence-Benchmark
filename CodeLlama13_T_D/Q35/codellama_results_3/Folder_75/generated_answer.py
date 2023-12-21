@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(string):
+    seen = set()
+    new_str = ""
+    for i, char in enumerate(string[20:51]):
+        if char not in seen and i > 20 and i < 51:
+            new_str += char
+            seen.add(char)
+    return new_str + string[51:]

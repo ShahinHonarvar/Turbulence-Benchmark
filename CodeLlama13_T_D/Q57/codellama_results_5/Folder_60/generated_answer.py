@@ -1,0 +1,36 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with the particular sum
+    submatrices = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Find the submatrix with the particular sum starting from the current position (i, j)
+            submatrix = find_submatrix_with_particular_sum(matrix, i, j, 94)
+
+            # If a submatrix with the particular sum is found, add it to the list of submatrices
+            if submatrix is not None:
+                submatrices.append(submatrix)
+
+    return submatrices
+
+def find_submatrix_with_particular_sum(matrix, i, j, sum):
+    # Initialize a two-dimensional array to store the submatrix
+    submatrix = np.zeros((matrix.shape[0] - i, matrix.shape[1] - j), dtype=int)
+
+    # Loop through each row of the submatrix
+    for r in range(submatrix.shape[0]):
+        # Loop through each column of the submatrix
+        for c in range(submatrix.shape[1]):
+            # Add the value at position (i + r, j + c) to the current element of the submatrix
+            submatrix[r, c] = matrix[i + r, j + c]
+
+    # Check if the sum of all elements in the submatrix is equal to the particular sum
+    if np.sum(submatrix) == sum:
+        return submatrix
+
+    return None

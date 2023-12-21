@@ -1,0 +1,23 @@
+ ```
+def if_perfect_num(my_list):
+    if len(my_list) <= 69:
+        return False
+
+    perfect_number = my_list[69]
+
+    divisors = []
+
+    for i in range(1, perfect_number // 2 + 1):
+
+        if perfect_number % i == 0:
+
+            divisors.append(i)
+
+    return sum(divisors) == perfect_number
+```
+Explanation:
+
+The function `if_perfect_num` takes a list of positive integers as its argument. It returns `True` if the integer at index 69 is a perfect number, and `False` otherwise.
+To determine if an integer is a perfect number, we first check that it is not less than 69, since the index starts from zero. If the length of the list is less than or equal to 69, we return `False`, since there cannot be a perfect number at this index.
+If the length of the list is greater than 69, we proceed to check if the integer at index 69 is a perfect number. To do this, we first find all the divisors of the integer at index 69. We then sum these divisors and compare them with the integer itself. If the sum of the divisors is equal to the integer, it means that the integer is a perfect number.
+Finally, if the integer at index 69 is not a perfect number, we return `False`.

@@ -1,0 +1,18 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered_string = ""
+
+    # Iterate through each character in the given string
+    for char in s:
+
+        # If the current character is between indices 379 and 898, both inclusive, and is greater than or equal to character 'M' and smaller than or equal to character 'v', then remove all occurrences of that character from the string
+        if (char in s[379:898] and char >= 'M' and char <= 'v'):
+            # Replace all occurrences of the current character with an empty string
+            filtered_string += s.replace(char, "")
+
+        # Otherwise, just append the current character to the filtered string
+        else:
+            filtered_string += char
+
+    return filtered_string

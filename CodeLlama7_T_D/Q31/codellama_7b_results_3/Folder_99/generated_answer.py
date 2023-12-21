@@ -1,0 +1,23 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 734 elements
+    if len(my_list) < 734:
+        return False
+
+    # Check if the integer at index 733 is a perfect number
+    if my_list[733] == 0:
+        return False
+
+    else:
+
+        for i in range(1, int(my_list[733]) + 1):
+            if my_list[733] % i == 0:
+                sum = 0
+
+                for j in range(1, i + 1):
+                    sum += j
+
+                if sum == my_list[733]:
+                    return True
+
+        return False

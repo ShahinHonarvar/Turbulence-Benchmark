@@ -1,0 +1,5 @@
+```python
+def return_n_smallest_chars(string):
+    return sorted([char for char in set(string)], key=lambda c: ord(c), reverse=True)[:28]
+```
+This function uses a list comprehension to create a list of all the unique characters in the input string, and then sorts them by their ASCII values using `sorted` with a custom `key` function that calls `ord` on each character. The `reverse` parameter is set to `True` to get the smallest ASCII values first. Finally, the resulting list is sliced to include only the first 28 characters.

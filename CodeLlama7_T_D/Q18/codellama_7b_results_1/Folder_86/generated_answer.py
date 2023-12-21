@@ -1,0 +1,18 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the indices of the divisible integers
+    total = 0
+    i = 54
+    j = 79
+
+    while i <= j:
+        # Check if the current integer is divisible by either 54 or 28
+        if my_list[i] % 54 == 0 or my_list[i] % 28 == 0:
+            # If it is, add it to the sum
+            total += my_list[i]
+
+        # Increment the index variable by 1
+        i += 1
+
+    # Return the sum of the divisible integers in the specified range
+    return total

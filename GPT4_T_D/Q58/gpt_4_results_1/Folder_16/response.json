@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(mat):\n    rows, cols = mat.shape\n    count = 0\n    for r in range(rows+1):\n        for c in range(cols+1):\n            for x in range(r):\n                for y in range(c):\n                    if (r-x)*(c-y) == 154:\n                        count += 1\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082268,
+  "id": "chatcmpl-7fJtM8jmg9PW6RJQ8LVNuKtglzmLV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 111,
+    "total_tokens": 198
+  }
+}

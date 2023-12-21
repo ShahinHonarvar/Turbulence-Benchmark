@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\ndef if_contains_anagrams(lst):\n    from collections import defaultdict\n    anagram = defaultdict(list)\n    \n    for word in lst:\n        if len(word) < 3:\n            continue\n        sorted_word = ''.join(sorted(word.lower()))\n        anagram[sorted_word].append(word)\n        \n    pairs = sum(len(words)*(len(words)-1)//2 for words in anagram.values() if len(words) > 1)\n    return pairs <= 445\n```\nThe function 'if_contains_anagrams' finds all the anagrams by sorting the characters in each word and grouping together the words with the same sorted characters. Then, it calculates the number of anagram pairs as combination of 2 words from the group (if it has more than 1 word). The result is the comparison of the total pair counts with 445.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690136350,
+  "id": "chatcmpl-7fXxe88Jco20MTA3oLPDuxrm524jy",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 184,
+    "prompt_tokens": 139,
+    "total_tokens": 323
+  }
+}

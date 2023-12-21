@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    res = []\n    nrows, ncols = matrix.shape\n    for row in range(nrows):\n        for col in range(ncols):\n            for r in range(row + 1, nrows + 1):\n                for c in range(col + 1, ncols + 1):\n                    submatrix = matrix[row:r, col:c]\n                    if np.sum(submatrix) == 8:\n                        res.append(submatrix)\n    return res\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691093960,
+  "id": "chatcmpl-7jZ4yOAVBtZURJc4u3vzOyEjDNtjm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 121,
+    "total_tokens": 230
+  }
+}

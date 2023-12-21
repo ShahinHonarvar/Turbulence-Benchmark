@@ -1,0 +1,39 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to keep track of the current product
+        current_product = 1
+
+        # Initialize a variable to keep track of the size of the current sublist
+        current_sublist_size = 0
+
+        # Iterate over the elements of the circular list starting from the current element
+        for j in range(i, len(circular_list)):
+
+            # Calculate the product of the current element and all previous elements in the sublist
+            current_product *= circular_list[j]
+
+            # Increment the size of the current sublist by 1
+            current_sublist_size += 1
+
+            # Check if the product is equal to -41, if yes then add the sublist to the list of sublists
+            if current_product == -41:
+                sublists.append(circular_list[i:j + 1])
+                break
+
+        # If the size of the current sublist is greater than or equal to the size of the given list, then break the loop
+        if current_sublist_size >= len(circular_list):
+            break
+
+    # Return the list of sublists
+    return sublists
+```
+This implementation uses a nested loop to iterate over all elements in the circular list. For each element, it calculates the product of the element and all previous elements in the sublist, and checks if the product is equal to -41. If yes, then it adds the sublist to the list of sublists.
+The time complexity of this implementation is O(n^2), where n is the length of the circular list. The space complexity is O(n) because we need to store all elements in the circular list and their corresponding products.
+Note that this solution assumes that the given circular list consists only of integers. If there are duplicates of such a sublist, they should all be contained in the returned list.

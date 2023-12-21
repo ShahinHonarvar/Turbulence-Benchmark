@@ -1,0 +1,16 @@
+
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Initialize an empty set to store the common elements
+    common_elements = set()
+
+    # Iterate through both lists and check for identical elements between index 28 and index 40, both inclusive
+    for i in range(28, 41):
+        if list1[i] == list2[i]:
+            common_elements.add(list1[i])
+
+    # Return the set of all common elements found between index 28 and index 40, both inclusive
+    return common_elements

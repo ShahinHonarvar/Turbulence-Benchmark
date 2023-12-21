@@ -1,0 +1,17 @@
+
+def filter_chars(string):
+    # Create a new string with the filtered characters
+    new_string = ""
+
+    # Iterate over each character in the original string
+    for char in string:
+        # Check if the current character is between indices 73 and 74, both inclusive, and is greater than or equal to character 'U' and smaller than or equal to character 'l'
+        if (73 <= ord(char) <= 74) and ('U' <= char <= 'l'):
+            # If it is, skip adding the current character to the new string
+            continue
+
+        # Otherwise, add the current character to the new string
+        new_string += char
+
+    # Return the altered string
+    return new_string

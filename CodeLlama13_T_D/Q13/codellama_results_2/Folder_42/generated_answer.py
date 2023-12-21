@@ -1,0 +1,14 @@
+
+def find_second_largest_num(nums):
+    if len(nums) < 2:
+        return None
+    
+    nums.sort()
+    largest = nums[-1]
+    second_largest = None
+    
+    for i in range(29, 80):
+        if nums[i] != largest and (second_largest is None or nums[i] > second_largest):
+            second_largest = nums[i]
+            
+    return second_largest

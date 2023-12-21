@@ -1,0 +1,22 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 850 elements
+    if len(my_list) < 850:
+        return False
+
+    # Check if the integer at index 849 is a perfect number
+    num = my_list[849]
+    sum = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum += i + num / i
+
+    return sum == num
+
+```
+This code defines a function called `if_perfect_num` that takes one argument, a list of positive integers. The function checks if the integer at index 849 in the list is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding the number itself.
+The code first checks if the length of the input list is at least 850. If it is not, the function returns `False`.
+Next, the code checks if the integer at index 849 in the list is a perfect number. To do this, the code calculates the sum of the proper divisors of the number using the formula:
+sum = i + num / i
+where i is the current divisor and num is the input number. The loop continues until all proper divisors have been added to the sum. If the sum is equal to the input number, then it is a perfect number. Otherwise, it is not a perfect number.
+The function returns `True` if the integer at index 849 is a perfect number, and `False` otherwise.

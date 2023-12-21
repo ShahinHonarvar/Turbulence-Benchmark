@@ -1,0 +1,40 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize count variable
+    count = 0
+
+    # Loop over all rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element is a 1
+            if matrix[i][j] == 1:
+                # Initialize a submatrix with the size of the given matrix
+                submatrix = np.zeros((matrix.shape[0], matrix.shape[1]))
+
+                # Set the current element to 1 in the submatrix
+                submatrix[i][j] = 1
+
+                # Increment count if the submatrix contains 10 integers each
+                if count_integers(submatrix) == 10:
+                    count += 1
+
+    # Return the count of all submatrices of the given matrix that contain 10 integers each
+    return count
+
+# Function to count the number of integers in a submatrix
+def count_integers(submatrix):
+    # Initialize count variable
+    count = 0
+
+    # Loop over all rows and columns of the submatrix
+    for i in range(submatrix.shape[0]):
+        for j in range(submatrix.shape[1]):
+            # Increment count if the current element is a 1
+            if submatrix[i][j] == 1:
+                count += 1
+
+    # Return the number of integers in the submatrix
+    return count
+```

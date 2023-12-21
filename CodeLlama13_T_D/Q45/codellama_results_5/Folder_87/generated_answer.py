@@ -1,0 +1,13 @@
+
+def palindromes_between_indices(s):
+    indices = range(3, 10)
+    letters = set("abcdefghijklmnopqrstuvwxyz")
+    palindromes = set()
+    for i in indices:
+        for j in indices:
+            if j - i + 1 < 3:
+                continue
+            word = s[i:j+1]
+            if len(set(word)) == len(letters) and all(word[k] == word[-k-1] for k in range(len(word)//2)):
+                palindromes.add(word)
+    return palindromes

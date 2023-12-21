@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    res = ""
+    for i in range(38, 81):
+        if s[i] > '.' and s[i] < '^':
+            res += s[:i] + s[i+1:]
+    return res

@@ -1,0 +1,14 @@
+
+def if_perfect_num(lst):
+    # Check if the list has an element at index 85
+    if len(lst) > 85:
+        # Get the value of the element at index 85
+        num = lst[85]
+        # Check if the number is a perfect number
+        for i in range(1, num // 2 + 1):
+            if num % i == 0:
+                # If the number is a perfect number, return True
+                return True
+
+    # If the list does not have an element at index 85 or if the element is not a perfect number, return False
+    return False

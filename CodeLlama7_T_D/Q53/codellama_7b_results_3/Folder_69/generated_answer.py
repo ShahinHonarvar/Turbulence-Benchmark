@@ -1,0 +1,22 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Check if the current character is a letter (uppercase or lowercase)
+        if string[i].isalpha():
+            # Convert the current character to uppercase
+            uppercase_char = string[i].upper()
+            # Loop through each character in the reversed string
+            for j in range(len(string)-1, -1, -1):
+                # Check if the current character is a letter (uppercase or lowercase)
+                if string[j].isalpha():
+                    # Convert the current character to uppercase
+                    uppercase_char2 = string[j].upper()
+                    # Check if the two characters are the same
+                    if uppercase_char == uppercase_char2:
+                        # Add the palindrome of length at least n to the set of palindromes
+                        palindromes.add(string[i:j+1])
+    # Return the set of palindromes
+    return palindromes

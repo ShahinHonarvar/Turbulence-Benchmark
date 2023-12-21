@@ -1,0 +1,19 @@
+
+def remove_repeat_chars(s):
+    # Initialize an empty list to store the characters of the string
+    char_list = []
+    # Iterate through each character in the string
+    for i in range(len(s)):
+        # If the current character is not already in the list
+        if s[i] not in char_list:
+            # Add the current character to the list
+            char_list.append(s[i])
+    # Initialize an empty string to store the altered string
+    altered_string = ""
+    # Iterate through each character in the list of unique characters
+    for i in range(len(char_list)):
+        # If the current character is not between indices 37 and 43, both exclusive
+        if (i < 37 or i > 43) and s[i] != "":
+            # Add the current character to the altered string
+            altered_string += s[i]
+    return altered_string

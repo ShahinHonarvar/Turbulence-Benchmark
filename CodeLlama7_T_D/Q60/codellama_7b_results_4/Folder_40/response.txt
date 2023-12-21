@@ -1,0 +1,211 @@
+ ```
+def all_left_right_truncatable_prime(tuple_of_positive_integers):
+    # Initialize variables
+    x = tuple_of_positive_integers[10]
+    left_right_truncatable_prime_numbers = []
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the number to the list of left-and-right-truncatable prime numbers
+                left_right_truncatable_prime_numbers.append(i)
+    # Sort the list of left-and-right-truncatable prime numbers in descending order
+    left_right_truncatable_prime_numbers = sorted(left_right_truncatable_prime_numbers, reverse=True)
+    return left_right_truncatable_prime_numbers
+
+# Check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # If i divides n, return False
+                return False
+
+    # If the number is greater than 1, return True
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Convert the number to a string
+    str_n = str(n)
+    # Get the length of the string
+    len_str_n = len(str_n)
+    # Check if the length of the string is less than or equal to 2
+    if len_str_n <= 2:
+        # If the length of the string is less than or equal to 2, return False
+        return False
+
+    # Get the first digit of the number
+    first_digit = int(str_n[0])
+
+    # Check if the first digit is not equal to 1
+    if first_digit != 1:
+        # If the first digit is not equal to 1, return False
+        return False
+
+    # Get the last digit of the number
+    last_digit = int(str_n[-1])
+
+    # Check if the last digit is not equal to 1
+    if last_digit != 1:
+        # If the last digit is not equal to 1, return False
+        return False
+
+    # Get the leading leftmost digits of the number
+    leading_leftmost_digits = int(str_n[:-1])
+
+    # Check if the leading leftmost digits is not equal to 1
+    if leading_leftmost_digits != 1:
+        # If the leading leftmost digits is not equal to 1, return False
+        return False
+
+    # Get the last rightmost digits of the number
+    last_rightmost_digits = int(str_n[1:])
+
+    # Check if the last rightmost digits is not equal to 1
+    if last_rightmost_digits != 1:
+        # If the last rightmost digits is not equal to 1, return False
+        return False
+
+    # If none of the above conditions are true, return True
+    return True
+
+# Test the function with different inputs
+if __name__ == "__main__":
+    # Test case 1: Tuple of positive integers with one element
+#    print(is_left_right_truncatable_prime((43,))))
+
+    # Test case 2: Tuple of positive integers with two elements
+#    print(is_left_right_truncatable_prime((43, 179)))))
+
+    # Test case 3: Tuple of positive integers with three elements
+#    print(is_left_right_truncatable_prime((43, 179, 568))))
+
+# Improve the function with better readability and maintainability
+def is_left_right_truncatable_prime(n):
+    # Check if n is less than or equal to 2
+    if n <= 2:
+        # If n is less than or equal to 2, return False
+        return False
+
+    # Get the length of the number in base 10
+    len_n = len(str(n))
+
+    # Check if the length of the number is less than or equal to 2
+    if len_n <= 2:
+        # If the length of the number is less than or equal to 2, return False
+        return False
+
+    # Get the first digit of the number in base 10
+    first_digit = int(str(n)[0]))
+
+    # Check if the first digit of the number is not equal to 1
+    if first_digit != 1:
+        # If the first digit of the number is not equal to 1, return False
+        return False
+
+    # Get the last digit of the number in base 10
+    last_digit = int(str(n)[-1]))
+
+    # Check if the last digit of the number is not equal to 1
+    if last_digit != 1:
+        # If the last digit of the number is not equal to 1, return False
+        return False
+
+    # Get the leading leftmost digits of the number in base 10
+    leading_leftmost_digits = int(str(n)[:-1]))
+
+    # Check if the leading leftmost digits of the number is not equal to 1
+    if leading_leftmost_digits != 1:
+        # If the leading leftmost digits of the number is not equal to 1, return False
+        return False
+
+    # Get the last rightmost digits of the number in base 10
+    last_rightmost_digits = int(str(n)[1:]))
+
+    # Check if the last rightmost digits of the number is not equal to 1
+    if last_rightmost_digits != 1:
+        # If the last rightmost digits of the number is not equal to 1, return False
+        return False
+
+    # Get the trailing rightmost digits of the number in base 10
+    trailing_rightmost_digits = int(str(n)[-2]))
+
+    # Check if the trailing rightmost digits of the number is not equal to 1
+    if trailing_rightmost_digits != 1:
+        # If the trailing rightmost digits of the number is not equal to 1, return False
+        return False
+
+    # Get the total number of distinct digits in the number
+    distinct_digits = len(set(str(n))))
+
+    # Check if the total number of distinct digits in the number is greater than or equal to 2
+    if distinct_digits >= 2:
+        # If the total number of distinct digits in the number is greater than or equal to 2, return False
+        return False
+
+    # Otherwise return True
+    return True
+
+# Improve the function with better readability and maintainability
+def is_left_right_truncatable_prime(n):
+    # Check if n is less than or equal to 2
+    if n <= 2:
+        # If n is less than or equal to 2, return False
+        return False
+
+    # Get the length of the number in base 10
+    len_n = len(str(n))
+
+    # Check if the length of the number is less than or equal to 2
+    if len_n <= 2:
+        # If the length of the number is less than or equal to 2, return False
+        return False
+
+    # Get the first digit of the number in base 10
+    first_digit = int(str(n)[0]))
+
+    # Check if the first digit of the number is not equal to 1
+    if first_digit != 1:
+        # If the first digit of the number is not equal to 1, return False
+        return False
+
+    # Get the last digit of the number in base 10
+    last_digit = int(str(n)[-1]))
+
+    # Check if the last digit of the number is not equal to 1
+    if last_digit != 1:
+        # If the last digit of the number is not equal to 1, return False
+        return False
+
+    # Get the second rightmost digit of the number in base 10
+    second_rightmost_digit = int(str(n)[2]))
+
+    # Check if the second rightmost digit of the number is not equal to 1
+    if second_rightmost_digit != 1:
+        # If the second rightmost digit of the number is not equal to 1, return False
+        return False
+
+    # Get the trailing rightmost digits of the number in base 10
+    trailing_rightmost_digits = int(str(n)[-2]))
+
+    # Check if the trailing rightmost digits of the number is not equal to 1
+    if trailing_rightmost_digits != 1:
+        # If the trailing rightmost digits of the number is not equal to 1, return False
+        return False
+
+    # Get the total number of distinct digits in the number
+    distinct_digits = len(set(str(n))))
+
+    # Check if the total number of distinct digits in the number is greater than or equal to 2
+    if distinct_digits >= 2:
+        # If the total number of distinct digits in the number is greater than or equal to 2, return False
+        return False
+
+    # Otherwise return True
+    return True

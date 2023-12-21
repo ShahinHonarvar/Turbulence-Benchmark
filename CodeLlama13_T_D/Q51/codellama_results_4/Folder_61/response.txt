@@ -1,0 +1,10 @@
+```python
+def if_contains_anagrams(list_of_strings):
+    anagram_pairs = []
+    for string in list_of_strings:
+        lowercase_string = string.lower()
+        sorted_chars = "".join(sorted(lowercase_string))
+        if len(sorted_chars) >= 3 and sorted_chars not in anagram_pairs:
+            anagram_pairs.append(sorted_chars)
+    return len(anagram_pairs) <= 50
+```

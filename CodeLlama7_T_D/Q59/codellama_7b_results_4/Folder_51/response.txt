@@ -1,0 +1,18 @@
+ Here's a possible implementation of the `all_left_truncatable_prime` function:
+```python
+def all_left_truncatable_prime(tuple_of_primes):
+    # Initialize an empty list to store the results
+    left_truncatable_primes = []
+    # Iterate over the tuple of prime numbers
+    for prime in tuple_of_primes:
+        # Check if the prime number is a left-truncatable prime number
+        if is_left_truncatable_prime(prime):
+            # Add the prime number to the list of left-truncatable prime numbers
+            left_truncatable_primes.append(prime)
+    # Sort the list of left-truncatable prime numbers in ascending order
+    left_truncatable_primes.sort()
+    return left_truncatable_primes
+```
+In this implementation, the `is_left_truncatable_prime` function is used to check if a given number is a left-truncatable prime number. This function works by iteratively removing the leading leftmost digit of the number until all resulting numbers are prime. If at any point during the iteration, the resulting number is not a prime number, then the original number is not a left-truncatable prime number.
+The `all_left_truncatable_prime` function first initializes an empty list to store the results of the computation. It then iterates over each prime number in the input tuple using a for loop. For each prime number, it checks if the prime number is a left-truncatable prime number using the `is_left_truncatable_prime` function. If the prime number is a left-truncatable prime number, then it adds the prime number to the list of left-truncatable prime numbers.
+Once all prime numbers have been processed and any left-truncatable prime numbers have been added to the list, the `all_left_truncatable_prime` function sorts the list of left-truncatable prime numbers in ascending order using the `sort()` method. Finally, it returns the sorted list of left-truncatable prime numbers.

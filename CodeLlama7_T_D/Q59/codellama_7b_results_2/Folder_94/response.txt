@@ -1,0 +1,56 @@
+ ```
+def all_left_truncatable_prime(tuple):
+	# Initialize list of left-truncatable prime numbers
+	ltp_numbers = []
+	# Iterate through tuple and check for prime numbers
+	for i in range(len(tuple)):
+		number = tuple[i]
+		if is_prime(number) and is_left_truncatable(number):
+			# Add left-truncatable prime number to list
+			ltp_numbers.append(number)
+	# Sort list of left-truncatable prime numbers in ascending order
+	ltp_numbers = sorted(ltp_numbers)
+	return ltp_numbers
+
+def is_prime(number):
+
+	if number < 2:
+
+		return False
+
+
+	for i in range(2, number):
+
+		if number % i == 0:
+
+			return False
+
+
+	return True
+
+
+def is_left_truncatable(number):
+
+	string = str(number)
+
+	# Check if string contains any 0s
+
+	if "0" in string:
+
+		return False
+
+
+	# Iterate through string and check for prime numbers
+
+	for i in range(len(string)):
+
+		sub_string = string[:i]
+
+		if not is_prime(int(sub_string)):
+
+			return False
+
+
+	return True
+
+```

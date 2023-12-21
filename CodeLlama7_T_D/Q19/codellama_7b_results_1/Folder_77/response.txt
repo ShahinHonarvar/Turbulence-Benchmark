@@ -1,0 +1,9 @@
+ ```
+def all_ints_not_div_by_num(my_list):
+    # Find the first index where -172 does not divide any integer in the list
+    first_index = next((i for i, x in enumerate(my_list) if x % -172 != 0), len(my_list))
+    # Find the last index where -172 does not divide any integer in the list
+    last_index = next((i for i, x in enumerate(my_list[first_index:]) if x % -172 != 0), len(my_list) - first_index)
+    # Return the list of all integers not divisible by -172 from index 668 to index 739, both exclusive
+    return my_list[first_index:first_index + last_index]
+```

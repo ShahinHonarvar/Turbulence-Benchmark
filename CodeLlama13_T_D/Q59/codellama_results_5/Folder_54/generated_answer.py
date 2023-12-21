@@ -1,0 +1,20 @@
+
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[88]
+    left_truncatable_primes = []
+    for i in range(x):
+        if is_prime(i) and not contains_zero(str(i)):
+            left_truncatable_primes.append(i)
+    return sorted(left_truncatable_primes, reverse=True)
+
+def is_prime(n):
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def contains_zero(s):
+    for c in s:
+        if c == '0':
+            return True
+    return False

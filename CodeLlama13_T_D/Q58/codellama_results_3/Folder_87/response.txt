@@ -1,0 +1,13 @@
+```
+import numpy as np
+def submatrix_with_n_numbers(arr):
+    n = 96
+    m, l = arr.shape[0], arr.shape[1]
+    count = 0
+    for i in range(m-n+1):
+        for j in range(l-n+1):
+            submatrix = arr[i:i+n, j:j+n]
+            if np.sum(submatrix) == n**2 * n:
+                count += 1
+    return count
+```

@@ -1,0 +1,16 @@
+```python
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[54]
+    right_truncatable_primes = []
+    for i in range(2, x+1):
+        if is_right_truncatable_prime(i):
+            right_truncatable_primes.append(i)
+    return sorted(right_truncatable_primes)
+```
+This function takes a tuple of positive integers as input and returns the sorted list of all right-truncatable prime numbers less than the integer at index 54 in the tuple. The function uses a helper function `is_right_truncatable_prime` to check if a given number is a right-truncatable prime, and it appends the prime numbers to a list that is then sorted and returned.
+
+Here is an example of how you could call this function:
+```python
+>>> all_right_truncatable_prime((2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]
+```

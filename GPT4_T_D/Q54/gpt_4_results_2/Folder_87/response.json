@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the requested Python code snippet:\n\n```python\nfrom itertools import chain\nfrom sympy import isprime\n\n\ndef all_right_truncatable_prime(tup):\n    def rtp(n):\n        # n is a list of characters\n        n = ''.join(n)\n        return n and isprime(int(n)) and rtp(n[:-1])\n\n    return sorted(list(filter(rtp, map(list, map(str, chain(*[range(tup[i]) for i in range(len(tup))]))))), key=int, reverse=True) if tup and len(tup) > 39 else []\n```\nThis function generates all numbers less than 'x' and filters out those that aren't right-truncatable primes, then sorts and returns the resulting list. If the tuple is empty or fewer than 40 elements, an empty list is returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690898207,
+  "id": "chatcmpl-7ik9frou42DvxDMiaMsPRtd5lma7g",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 172,
+    "prompt_tokens": 157,
+    "total_tokens": 329
+  }
+}

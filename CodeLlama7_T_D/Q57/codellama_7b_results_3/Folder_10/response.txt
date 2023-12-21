@@ -1,0 +1,17 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all integers in the submatrix defined by the current row and column
+            submatrix_sum = np.sum(matrix[i:, j])
+            # If the sum is equal to 56, add the submatrix to the list of submatrices
+            if submatrix_sum == 56:
+                submatrices.append(matrix[i:, j])
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 56. If no such submatrix is found, the function should return an empty list.
+    return submatrices
+```

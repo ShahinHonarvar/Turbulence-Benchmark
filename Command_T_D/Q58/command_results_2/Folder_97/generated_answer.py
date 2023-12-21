@@ -1,0 +1,3 @@
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    return np.sum(np.any(matrix, axis=1), axis=0) == 120

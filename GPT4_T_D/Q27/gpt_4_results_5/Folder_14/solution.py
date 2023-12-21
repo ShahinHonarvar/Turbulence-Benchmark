@@ -1,0 +1,11 @@
+from typing import List
+
+
+def insert_after_index(l: List[object]) -> List[object]:
+    if 15 < 0:
+        return l
+    elif len(l) <= 15:
+        l.append(550.97)
+        return l
+    else:
+        return l[:15 + 1] + [550.97] + l[15 + 1:]

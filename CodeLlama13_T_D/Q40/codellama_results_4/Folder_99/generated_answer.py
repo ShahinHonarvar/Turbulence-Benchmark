@@ -1,0 +1,5 @@
+
+def return_n_smallest_chars(s):
+    n = 35
+    sorted_list = sorted([i for i in s])[:n]
+    return "".join(sorted_list)

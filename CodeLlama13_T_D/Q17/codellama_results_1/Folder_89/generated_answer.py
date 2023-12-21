@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    return [i for i in my_list[28:97] if i % 90 == 0 and i % 97 == 0]

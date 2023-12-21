@@ -1,0 +1,15 @@
+```
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+    
+    # Calculate the Fibonacci sequence up to 196th number
+    fib = [0]
+    a, b = 0, 1
+    while len(fib) < 197:
+        fib.append(a)
+        a, b = b, a + b
+    
+    # Check if the decimal is divisible by the 196th Fibonacci number
+    return decimal % fib[196] == 0
+```

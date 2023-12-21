@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import permutations\n\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    res = []\n    # Join the original list with itself to simulate a circular list\n    lst = lst + lst\n    for i in range(2, n+1):\n        all_perms = permutations(lst, i)\n        for perm in all_perms:\n            prod = 1\n            for num in perm:\n                prod *= num\n            if prod == -3:\n                res.append(list(perm))\n    return res\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691089016,
+  "id": "chatcmpl-7jXnET1qp53BBtJ21ZrkU9b5iqorV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 193,
+    "total_tokens": 304
+  }
+}

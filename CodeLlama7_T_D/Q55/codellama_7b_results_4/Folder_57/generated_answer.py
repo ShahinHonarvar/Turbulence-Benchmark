@@ -1,0 +1,20 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and find contiguous integers with product equal to -75
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the current sublist
+        product = 1
+
+        # Iterate over the remaining elements in the circular list starting from the current element
+        for j in range(i + 1, len(circular_list)):
+            # Calculate the product of the current sublist and add it to the list of sublists
+            product *= circular_list[j]
+            if product == -75:
+                # Add the current sublist to the list of sublists
+                sublists.append(circular_list[i:j + 1])
+
+    # Return the list of sublists
+    return sublists

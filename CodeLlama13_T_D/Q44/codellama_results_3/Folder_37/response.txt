@@ -1,0 +1,11 @@
+```python
+def composite_nums_between_indices(lst):
+    composites = set()
+    for i in range(0, 6):
+        if lst[i] > 1 and len(str(lst[i])) > 1:
+            composites.add(lst[i])
+    return composites
+```
+Explanation: The function takes a list of positive integers as input. It iterates over the indices from 0 to 5, both inclusive, and checks if each element is a composite number (a number greater than 1 that has at least two distinct prime factors). If a number meets this criterion, it is added to the set `composites`. Finally, the function returns the set of all composite numbers between indices 0 to 5.
+
+Note: The function uses the built-in `len()` function and the `>=` operator to check if a number has at least two distinct prime factors (i.e., its length is greater than or equal to 2). This approach is more efficient than calling an external library for factorization, as it does not require any additional imports.

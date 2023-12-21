@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if not (18 <= ord(c) <= 81 and ord('W') <= ord(c) <= ord('['))])

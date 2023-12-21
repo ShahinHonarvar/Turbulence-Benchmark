@@ -1,0 +1,28 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Get the anagram pairs from the list
+    anagram_pairs = get_anagram_pairs(my_list)
+    # Check if there are at most 50 pairs of anagrams in the list
+    return len(anagram_pairs) <= 50
+# Get the anagram pairs from the list
+def get_anagram_pairs(my_list):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Check if the string is at least three characters long
+        if len(lowercase_string) >= 3:
+            # Get the sorted version of the string
+            sorted_string = ''.join(sorted(lowercase_string))
+            # Check if the sorted string is already in the dictionary
+            if sorted_string not in anagram_pairs:
+                # Add the sorted string to the dictionary with a value of 1
+                anagram_pairs[sorted_string] = 1
+            else:
+                # Increment the value of the sorted string in the dictionary by 1
+                anagram_pairs[sorted_string] += 1
+    # Return the anagram pairs from the dictionary
+    return anagram_pairs.items()
+```

@@ -1,0 +1,9 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) <= 35:
+        return False
+    num = numbers[35]
+    for i in range(1, num):
+        if num % i == 0 and i * i != num:
+            return False
+    return True

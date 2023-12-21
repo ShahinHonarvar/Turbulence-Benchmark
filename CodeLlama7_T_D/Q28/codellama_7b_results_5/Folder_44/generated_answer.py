@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Find the indices of the characters in the list that occur between indices 20 and 30 (inclusive)
+    indices = [i for i, x in enumerate(char_list) if 20 <= i <= 30]
+    # Sort the indices based on the ASCII value of the corresponding character
+    sorted_indices = sorted(indices, key=lambda x: ord(char_list[x]))
+    # Return the character with the 8th smallest ASCII value among those characters in the list that occur between indices 20 to 30 (inclusive)
+    return char_list[sorted_indices[7]]

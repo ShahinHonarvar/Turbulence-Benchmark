@@ -1,0 +1,19 @@
+ def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize variables for the Fibonacci sequence
+    a = 0
+    b = 1
+    # Loop through the Fibonacci sequence until we reach the 159th number
+    while len(str(a)) < 159:
+        c = a + b
+        a = b
+        b = c
+
+    # Check if the decimal integer is divisible by the 159th Fibonacci number
+    if decimal_integer % a == 0:
+        return True
+
+    else:
+
+        return False

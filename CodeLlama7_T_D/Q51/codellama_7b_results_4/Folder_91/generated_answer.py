@@ -1,0 +1,15 @@
+
+def if_contains_anagrams(word_list):
+    # Define a function to check if two strings are anagrams
+    def is_anagram(str1, str2):
+        return sorted(str1) == sorted(str2)
+    # Initialize a counter for the number of anagrams
+    num_anagrams = 0
+    # Iterate over each pair of strings in the list
+    for i in range(len(word_list) - 1):
+        for j in range(i + 1, len(word_list))):
+            # If the two strings are anagrams, increment the counter
+            if is_anagram(word_list[i], word_list[j])):
+                num_anagrams += 1
+    # Return True if there are at most 88 pairs of anagrams in the list; otherwise return False
+    return num_anagrams <= 88

@@ -1,0 +1,24 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Find the length of the circular list
+length = len(circular_list)
+# Initialize an empty list to store the sublists
+sublists = []
+# Iterate over the circular list and find contiguous integers whose product equals 47
+for i in range(length):
+product = 1
+# Find the start and end indices of a contiguous sublist with product equal to 47
+start_index = i
+while product == 1 and start_index < length:
+product *= circular_list[start_index]
+end_index = start_index
+while product == 1 and end_index >= 0:
+product *= circular_list[end_index]
+# Add the sublist to the list of sublists if its product equals 47
+if product == 47:
+sublists.append(circular_list[start_index:end_index+1])
+# Increment the start and end indices by one to find the next contiguous sublist with product equal to 47
+start_index += 1
+end_index -= 1
+return sublists
+```

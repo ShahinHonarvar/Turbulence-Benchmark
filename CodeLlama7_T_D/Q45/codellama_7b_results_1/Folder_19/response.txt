@@ -1,0 +1,33 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the current character
+        char = string[i]
+        # Check if the current character is a letter
+        if char.isalpha():
+            # Get the lowercase version of the character
+            lowercase = char.lower()
+            # Loop through each character in the string starting from the current index and ending at the end of the string
+            for j in range(i + 1, len(string) + 1):
+                # Get the next character
+                next_char = string[j]
+                # Check if the next character is a letter
+                if next_char.isalpha():
+                    # Get the lowercase version of the next character
+                    lowercase_next_char = next_char.lower()
+                    # Check if the current character and the next character are the same in lowercase
+                    if lowercase == lowercase_next_char:
+                        # Check if the length of the substring starting from the current index and ending at the next index is greater than or equal to 7
+                        if (j - i) >= 7:
+                            # Get the substring starting from the current index and ending at the next index
+                            substring = string[i:j]
+                            # Check if the substring is a palindrome in a case-insensitive manner
+                            if substring == substring.lower():
+                                # Add the palindrome to the set of palindromes
+                                palindromes.add(substring)
+    # Return the set of palindromes
+    return palindromes
+```

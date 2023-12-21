@@ -1,0 +1,15 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Find the indices of the characters in the list that occur between indices 67 and 77, both inclusive
+    start_index = char_list.index('A') + 67
+    end_index = char_list.index('G') - 1
+    # Get the character with the 7th smallest ASCII value among the characters in the list that occur between the indices found above
+    nth_smallest_ascii = None
+    for i in range(start_index, end_index + 1):
+        if char_list[i].isalpha():
+            if nth_smallest_ascii is None or ord(nth_smallest_ascii) > ord(char_list[i])):
+                nth_smallest_ascii = char_list[i]
+    return nth_smallest_ascii
+```

@@ -1,0 +1,3 @@
+
+def all_neg_ints_exclusive(lst):
+    return [i for i in lst if i < 0 and 0 <= i <= 8]

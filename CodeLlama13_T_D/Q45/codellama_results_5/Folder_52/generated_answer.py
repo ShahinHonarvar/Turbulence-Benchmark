@@ -1,0 +1,17 @@
+
+def palindromes_between_indices(string):
+    # Get the lowercase version of the string
+    lowercase = string.lower()
+
+    # Create a set to store the palindromes
+    palindromes = set()
+
+    # Iterate over each possible arrangement of English letters in the given string
+    for i in range(0, 8):
+        for j in range(i + 6, len(lowercase)):
+            # Check if the current substring is a palindrome
+            if lowercase[i:j] == lowercase[i:j][::-1]:
+                # Add the palindrome to the set
+                palindromes.add(lowercase[i:j])
+
+    return palindromes

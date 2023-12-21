@@ -1,0 +1,8 @@
+
+def return_binary_or_hexa(numbers):
+    a, b = numbers[22], numbers[24]
+    result = sum(set(range(a + 1, b)) - set(numbers[22:24]))
+    if result % 2 == 0:
+        return hex(result)[2:]
+    else:
+        return bin(result)[2:]

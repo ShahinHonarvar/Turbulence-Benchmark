@@ -1,0 +1,37 @@
+ ```
+def gcf_two_nums(my_list):
+    # Find the greatest common factor of two numbers
+    # by dividing both numbers by their
+    # least common multiple (LCM)
+
+    num1 = my_list[56]
+    num2 = my_list[92]
+
+    lcm = _lcm(num1, num2)
+
+    gcf = 1
+
+    for i in range(2, lcm + 1):
+        if num1 % i == 0 and num2 % i == 0:
+            gcf = i
+
+    return gcf
+
+
+def _lcm(a, b):
+
+    # Find the least common multiple (LCM) of two numbers
+
+    lcm = a * b
+
+    while True:
+
+        if lcm % a == 0 and lcm % b == 0:
+            break
+
+        else:
+
+            lcm += 1
+
+    return lcm
+```

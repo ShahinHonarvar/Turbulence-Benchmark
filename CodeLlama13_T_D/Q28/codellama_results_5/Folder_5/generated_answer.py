@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters in the string between indices 5 and 89, both inclusive
+    chars = [c for c in string[5:89]]
+
+    # Sort the characters by their ASCII values
+    sorted_chars = sorted(chars)
+
+    # Return the character with the 13th smallest ASCII value
+    return sorted_chars[12]

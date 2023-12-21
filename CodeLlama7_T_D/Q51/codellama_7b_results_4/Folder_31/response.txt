@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Get the number of elements in the list
+    num_elements = len(my_list)
+    # Initialize a counter for the number of anagrams found
+    num_anagrams = 0
+    # Loop through each element in the list
+    for i in range(num_elements):
+        # Get the current element
+        current_element = my_list[i]
+        # Check if the current element is a palindrome
+        if current_element == current_element[::-1]:
+            # Increment the number of anagrams found
+            num_anagrams += 1
+    # Return whether there are at most 65 pairs of anagrams in the given list
+    return num_anagrams <= 65
+```
+This code defines a function called `if_contains_anagrams` that takes a single argument, a list of strings. The function returns `True` if there are at most 65 pairs of anagrams in the given list, and `False` otherwise.
+The function works by first getting the number of elements in the list using the `len()` function. It then initializes a counter for the number of anagrams found to be zero.
+Next, the function loops through each element in the list using a `for` loop. For each element, it checks if the current element is a palindrome by comparing it with its own reverse. If the current element is a palindrome, the function increments the number of anagrams found by one.
+Finally, the function returns whether there are at most 65 pairs of anagrams in the given list based on the value of the counter.

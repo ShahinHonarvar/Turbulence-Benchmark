@@ -1,0 +1,24 @@
+ ```
+def lists_with_product_equal_n(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return []
+
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the list
+    for i in range(len(my_list)):
+        # Get the current element and its neighbors
+        curr_elem = my_list[i]
+        prev_elem = my_list[(i - 1) % len(my_list)]
+        next_elem = my_list[(i + 1) % len(my_list)]
+
+        # Check if the product of the current element and its neighbors is equal to -26
+        if curr_elem * prev_elem * next_elem == -26:
+            # Add the sublist to the list of sublists
+            sublists.append([curr_elem, prev_elem, next_elem])
+
+    # Return the list of sublists
+    return sublists
+```

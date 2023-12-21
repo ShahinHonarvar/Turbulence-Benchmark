@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[21] == sum(divisors(numbers[21]))

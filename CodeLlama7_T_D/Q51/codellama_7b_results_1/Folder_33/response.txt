@@ -1,0 +1,14 @@
+ ```
+def if_contains_anagrams(words):
+    count = 0
+    for i in range(len(words)):
+        for j in range(i+1, len(words)):
+            first = words[i].lower()
+            second = words[j].lower()
+            if sorted(first) == sorted(second):
+                count += 1
+                
+    return count <= 85
+```
+This function takes a list of strings as its argument. It then iterates over the list and compares each string to every other string in the list using the `sorted` method to sort the letters in each string. If two strings are anagrams, they will have the same sorted value, so the function increments a counter if it finds two anagrams that match.
+After iterating over all pairs of strings in the list, the function returns whether or not the number of anagram pairs found is less than or equal to 85. If the number is less than or equal to 85, then there are at most 85 pairs of anagrams in the list, and the function returns `True`. If the number is greater than 85, then there are more than 85 pairs of anagrams in the list, and the function returns `False`.

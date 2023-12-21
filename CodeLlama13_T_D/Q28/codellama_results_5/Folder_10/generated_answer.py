@@ -1,0 +1,5 @@
+
+def return_nth_smallest_ascii(s):
+    # Find the 20th smallest ASCII value in the string s between indices 38 and 82, both inclusive
+    ascii_values = list(map(ord, filter(lambda x: ord(x) >= 38 and ord(x) <= 82, s)))
+    return chr(sorted(ascii_values)[19])

@@ -1,0 +1,17 @@
+ ```
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - 21 + 1):
+        # Extract the substring of size 22 from the current position
+        substring = string[i:i+22]
+
+        # Check if the substring contains any duplicate characters
+        if len(substring) == len(set(substring)):
+            substrings.append(substring)
+
+    # Return the list of all distinct substrings of size 22 with no duplicate characters, or an empty list if none exist
+    return substrings
+```

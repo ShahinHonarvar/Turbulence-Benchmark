@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible length of palindrome
+    for i in range(4, len(string) + 1):
+        # Generate all combinations of English letters that occur between index 4 and index 8, both inclusive
+        combinations = itertools.combinations(string[4:8], i - 4)
+        # Loop through each combination to check if it forms a palindrome
+        for combination in combinations:
+            # Join the combination with itself, reversed, and then lowercased
+            joined_string = "".join([combination, combination[::-1], combination.lower()])
+            # If the joined string is a palindrome, add it to the set of palindromes
+            if is_palindrome(joined_string):
+                palindromes.add(joined_string)
+    return palindromes
+```

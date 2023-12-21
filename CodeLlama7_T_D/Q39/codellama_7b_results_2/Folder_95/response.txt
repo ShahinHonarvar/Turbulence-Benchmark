@@ -1,0 +1,24 @@
+ def return_n_greatest_chars(string):
+    # Create a dictionary with the character and its ASCII value
+    char_dict = {}
+    for char in string:
+        if char not in char_dict:
+            char_dict[char] = ord(char)
+
+    # Sort the dictionary by value (ASCII value)
+    sorted_dict = dict(sorted(char_dict.items(), key=lambda x: x[1], reverse=True))
+
+    # Extract the top 36 characters with the greatest ASCII values
+    top_36_chars = []
+    i = 0
+    for char in sorted_dict:
+        if i < 36:
+            top_36_chars.append(char)
+        else:
+            break
+
+        i += 1
+
+
+    # Return the sorted list of top 36 characters with greatest ASCII values
+    return top_36_chars

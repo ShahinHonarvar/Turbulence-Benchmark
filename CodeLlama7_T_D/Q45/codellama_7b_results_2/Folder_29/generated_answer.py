@@ -1,0 +1,19 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string) - 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Get the index of the next letter after the current one
+            j = i + 1
+
+            while j < len(string) and string[j].isalpha():
+                # Check if the substring starting from the current character and ending at the next letter is a palindrome
+                if string[i:j+1] == string[i:j+1][::-1]:
+                    # If it is, add it to the set of palindromes
+                    palindromes.add(string[i:j+1])
+                j += 1
+
+    return palindromes

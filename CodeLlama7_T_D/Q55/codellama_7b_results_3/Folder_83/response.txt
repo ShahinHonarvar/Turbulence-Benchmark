@@ -1,0 +1,14 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    result = []
+    for i in range(len(circular_list)):
+        product = 1
+        for j in range(i, len(circular_list)):
+            product *= circular_list[j]
+            if product == -57:
+                sublist = circular_list[i:j+1]
+                result.append(sublist)
+    return result
+```
+This code uses a nested loop to iterate over the elements of the given circular list. The outer loop iterates over the elements of the list, while the inner loop iterates over the sublists of length 2 or more that contain the current element and its predecessor.
+The product of the elements in each sublist is calculated using the `*=` operator and compared to the desired value of -57. If a sublist with the desired product exists, it is appended to the result list using the `append()` method. The resulting list contains all contiguous sublists from the given circular list that have a product equal to -57.

@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(string):
+    return {palindrome for palindrome in set(string) if len(palindrome) >= 90 and all(c in string for c in palindrome)}

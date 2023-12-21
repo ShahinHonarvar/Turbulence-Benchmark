@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(strs):
+    return len([i for i in strs if len(i) >= 3 and len(set(sorted(i))) == 1]) >= 194

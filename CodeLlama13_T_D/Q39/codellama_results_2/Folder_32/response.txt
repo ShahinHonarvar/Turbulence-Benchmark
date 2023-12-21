@@ -1,0 +1,7 @@
+```python
+def return_n_greatest_chars(my_str):
+    return sorted([char for char in my_str if char.isalpha()], key=lambda x: ord(x), reverse=True)[:8]
+```
+This function uses a list comprehension to create a list of all the alphabetic characters in `my_str`, and then it sorts that list using `ord` to get the ASCII value of each character. Finally, it slices the list to keep only the first 8 elements, which are the greatest ASCII values.
+
+Note: The `isalpha()` method is used to filter out any non-alphabetic characters in the input string.

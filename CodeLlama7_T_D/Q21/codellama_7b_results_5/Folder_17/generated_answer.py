@@ -1,0 +1,16 @@
+
+def all_ints_div_by_num(my_list):
+    # Initialize an empty list to store the divisible integers
+    divisible_ints = []
+
+    # Loop through the specified range of indices in the input list
+    for i in range(33, 36):
+
+        # Check if the current element is divisible by 91
+        if my_list[i] % 91 == 0:
+
+            # If it is divisible, add it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by 91 from index 33 to index 35, both inclusive.
+    return divisible_ints

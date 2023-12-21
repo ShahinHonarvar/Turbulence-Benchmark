@@ -1,0 +1,24 @@
+
+def find_original_set(sets):
+    # Convert all sets to lists for easy comparison
+    sets = [list(s) for s in sets]
+    # Create a new set that contains all elements from the given sets
+    new_set = set()
+    for s in sets:
+        new_set |= s
+
+    # Iterate over all elements in the new set and check if they are present in any of the given sets
+    for element in new_set:
+        found = False
+
+        for s in sets:
+            if element in s:
+                found = True
+                break
+
+        # If an element is not found in any of the given sets, it means that it is not a subset of any of them. In this case, we return an empty set.
+        if not found:
+            return set()
+
+    # If all elements are found in at least one of the given sets, we return the new set as our final answer.
+    return new_set

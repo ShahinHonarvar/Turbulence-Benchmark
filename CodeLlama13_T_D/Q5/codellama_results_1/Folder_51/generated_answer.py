@@ -1,0 +1,3 @@
+
+def all_neg_ints_inclusive(my_list):
+    return [x for x in my_list if 1 <= x <= 8 and x < 0]

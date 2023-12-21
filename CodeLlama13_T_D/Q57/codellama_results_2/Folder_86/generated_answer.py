@@ -1,0 +1,28 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the found submatrices
+    submatrices = []
+    
+    # Loop over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary list to store the current submatrix
+            temp_submatrix = []
+            
+            # Add the current element to the temporary submatrix
+            temp_submatrix.append(matrix[i, j])
+            
+            # Loop over each subsequent row in the matrix
+            for k in range(i+1, matrix.shape[0]):
+                # Add the current element to the temporary submatrix
+                temp_submatrix.append(matrix[k, j])
+                
+                # Check if the sum of all elements in the temporary submatrix is equal to -394
+                if np.sum(temp_submatrix) == -394:
+                    # If so, add the temporary submatrix to the list of found submatrices
+                    submatrices.append(np.array(temp_submatrix))
+            
+    return submatrices

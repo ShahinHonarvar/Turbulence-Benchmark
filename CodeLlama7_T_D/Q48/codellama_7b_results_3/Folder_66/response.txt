@@ -1,0 +1,19 @@
+ ```
+def return_binary_or_hexadecimal(tuple):
+# Get the integer values from the tuple
+a, b = tuple[11], tuple[76]
+# Calculate the sum of all integers between a + 1 and b - 1 that are not present in the tuple
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple:
+sum += i
+# Check if the sum is an odd number
+if sum % 2 == 1:
+# Return the binary representation of the sum
+return f"{sum:b}"
+else:
+# Return the hexadecimal representation of the sum
+return f"{sum:x}"
+# If all integers from a + 1 to b - 1 are present in the tuple, return an empty string
+return ""
+```

@@ -1,0 +1,8 @@
+
+def sum_even_ints_inclusive(lst):
+    # Slice the list from index 310 to index 370, both inclusive
+    sliced = lst[310:371]
+    # Find all even integers in the sliced list
+    evens = [i for i in sliced if i % 2 == 0]
+    # Return the sum of all even integers, or 0 if no even integers exist
+    return sum(evens) if evens else 0

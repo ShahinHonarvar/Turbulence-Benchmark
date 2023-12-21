@@ -1,0 +1,7 @@
+
+def all_ints_div_by_num(my_list):
+    divisible_ints = []
+    for i in range(30, len(my_list)):
+        if my_list[i] % 3 == 0:
+            divisible_ints.append(my_list[i])
+    return divisible_ints

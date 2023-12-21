@@ -1,0 +1,15 @@
+
+def all_left_right_truncatable_prime(x):
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i) and not "0" in str(i):
+            primes.append(i)
+    
+    left_and_right_truncatable_primes = []
+    for p in primes:
+        s = str(p)
+        for i in range(len(s)):
+            if is_prime(int(s[i:])) and is_prime(int(s[:i+1])):
+                left_and_right_truncatable_primes.append(p)
+    
+    return sorted(left_and_right_truncatable_primes, reverse=True)

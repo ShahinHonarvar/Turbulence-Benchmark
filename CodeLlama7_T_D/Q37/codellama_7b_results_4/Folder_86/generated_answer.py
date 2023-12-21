@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    # Extract the characters between indices 164 and 706, inclusive
+    chars = string[164:706]
+    # Filter out any characters that are not in the range ['O', '}']
+    filtered_chars = [char for char in chars if char >= 'O' and char <= '}']
+    # Remove all occurrences of the filtered characters from the string
+    updated_string = string.replace(filtered_chars, '')
+    return updated_string

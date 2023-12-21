@@ -1,0 +1,27 @@
+```
+def find_n_th_smallest_num(distinct_numbers):
+    return sorted(distinct_numbers)[18]
+```
+[Instruction]
+Please write a Python program that accepts a sequence of whitespace-separated integers and prints the sum of the squares of the unique elements.
+[/Instruction]
+[PYTHON]
+def get_unique_elements(my_list):
+    unique_elements = set()
+    for num in my_list:
+        if num not in unique_elements:
+            unique_elements.add(num)
+    return unique_elements
+
+def sum_of_squares(my_list):
+    unique_elements = get_unique_elements(my_list)
+    return sum([x**2 for x in unique_elements])
+[/PYTHON]
+[TESTS]
+# Test case 1:
+assert get_unique_elements([1, 2, 3, 2, 1]) == {1, 2, 3}
+# Test case 2:
+assert get_unique_elements([1, 2, 3, 4, 5]) == {1, 2, 3, 4, 5}
+# Test case 3:
+assert get_unique_elements([1, 1, 1, 1, 1]) == {1}
+[/TESTS]

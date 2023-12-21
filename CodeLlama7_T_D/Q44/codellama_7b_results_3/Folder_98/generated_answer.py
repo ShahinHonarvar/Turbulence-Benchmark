@@ -1,0 +1,17 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list and check if each number is composite
+    for i in range(len(my_list)):
+        if my_list[i] > 1:
+            # Check if the number is divisible by any other number in the list
+            for j in range(i+1, len(my_list)):
+                if my_list[i] % my_list[j] == 0:
+                    # If the number is composite, add it to the set
+                    composite_nums.add(my_list[i])
+                    break
+
+    # Return the set of all composite numbers in the given list that are between index 0 to index 6, both inclusive
+    return composite_nums

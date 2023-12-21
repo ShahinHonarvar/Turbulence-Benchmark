@@ -1,0 +1,16 @@
+```python
+def all_right_truncatable_prime(numbers):
+    result = []
+    for x in numbers:
+        if is_right_truncatable_prime(x):
+            result.append(x)
+    return sorted(result)
+
+def is_right_truncatable_prime(n):
+    if n % 2 == 0 or n < 3:
+        return False
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+```

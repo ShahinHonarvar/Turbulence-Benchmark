@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_rep):
+  # Convert binary representation to decimal
+  decimal = int(binary_rep, 2)
+  # Initialize Fibonacci sequence with first two numbers
+  fib = [0, 1]
+  # Iterate over the Fibonacci sequence until the 24th number is reached
+  for i in range(23):
+    fib.append(fib[i] + fib[i+1])
+  # Check if decimal integer is divisible by the 24th number of the Fibonacci sequence
+  return decimal % fib[23] == 0

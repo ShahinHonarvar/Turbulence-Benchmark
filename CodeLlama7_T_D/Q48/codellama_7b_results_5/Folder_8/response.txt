@@ -1,0 +1,24 @@
+ ```
+def return_binary_or_hexa(tuple):
+    # Get the indices of the elements in the tuple
+    a_index = 45
+    b_index = 48
+
+    # Get the integers at the specified indices
+    a = tuple[a_index]
+    b = tuple[b_index]
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 45 and 48
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in tuple[a_index:b_index + 1]:
+            sum += i
+
+    # Return the binary or hexadecimal representation of the sum depending on whether it is an odd number or not
+    if sum % 2 == 0:
+        return f"{sum:x}"
+
+    else:
+        return f"{sum:b}"
+
+```

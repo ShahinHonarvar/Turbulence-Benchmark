@@ -1,0 +1,15 @@
+ def palindromes_of_specific_lengths(string, lengths=[26, 31], index_range=(33, 85)):
+    # Convert the input string to lowercase for case-insensitive comparison
+    lowercase_string = string.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the specified index range in the input string
+    for i in range(index_range[0], index_range[1] + 1):
+        # Check if the substring starting at position i and ending at position j (where j is the length of the substring minus 1) is a palindrome
+        for j in range(i, i + lengths[-1] + 1):
+            substring = lowercase_string[i:j]
+            if substring == substring[::-1]:
+                # If the substring is a palindrome, add it to the set of palindromes
+                palindromes.add(substring)
+    # Return the set of palindromes that meet the specified requirements
+    return palindromes

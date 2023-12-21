@@ -1,0 +1,11 @@
+
+def filter_chars(my_string):
+    filtered_string = ""
+    for i in range(35, 52):
+        char = my_string[i]
+        if char >= "H" and char <= "s":
+            continue
+
+        filtered_string += char
+
+    return filtered_string

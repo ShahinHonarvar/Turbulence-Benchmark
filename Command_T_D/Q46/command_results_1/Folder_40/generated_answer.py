@@ -1,0 +1,7 @@
+
+import functools
+import operator
+
+@functools.lru_cache(maxsize=1)
+def gcf_three_nums(nums):
+    return functools.reduce(operator.gcd, (nums[1], nums[6], nums[8]))

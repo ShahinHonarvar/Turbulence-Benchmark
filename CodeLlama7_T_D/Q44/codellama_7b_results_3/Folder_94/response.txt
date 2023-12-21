@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `composite_nums_between_indices` function:
+```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list and check if each number is a composite number
+    for i in range(27, 56):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]) + 1):
+                if my_list[i] % j == 0:
+                    composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers between indices 27 and 55
+    return composite_nums
+```
+This function takes a single argument, which is a list of positive integers. It returns a set containing all the composite numbers in the given list that are between indices 27 and 55, both inclusive. If no composite number exists in the specified range, the function returns an empty set.

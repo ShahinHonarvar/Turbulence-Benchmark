@@ -1,0 +1,30 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list and find contiguous integers with product equal to n
+
+    for i in range(len(circular_list))):
+        # Initialize a variable to store the current product
+        curr_product = 1
+
+        # Initialize a variable to store the starting index of the sublist
+        start_index = i
+
+        # Iterate through the rest of the circular list to find contiguous integers with product equal to n
+
+        for j in range(i + 1, len(circular_list))):
+            # Update the current product and the ending index of the sublist
+            curr_product *= circular_list[j]
+            end_index = j
+
+            # Check if the current product is equal to n. If so, add the corresponding sublist to the returned list and reset the current product and starting index of the sublist
+            if curr_product == n:
+                sublists.append(circular_list[start_index:end_index + 1])
+                curr_product = 1
+                start_index = end_index + 1
+
+    # Return the list of sublists that have a product equal to n, or an empty list if no such sublist exists
+
+    return sublists

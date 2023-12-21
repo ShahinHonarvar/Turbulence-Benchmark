@@ -1,0 +1,9 @@
+
+def if_perfect_num(lst):
+    if len(lst) <= 68: return False
+    num = lst[68]
+    sum = 0
+    for i in range(1, int(sqrt(num))+1):
+        if num % i == 0:
+            sum += i + num // i
+    return sum == num * 2

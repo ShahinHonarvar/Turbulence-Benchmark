@@ -1,0 +1,10 @@
+ ```
+def if_contains_anagrams(my_list):
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+    return anagram_pairs >= 276
+```
+This code defines a function called `if_contains_anagrams` that takes one argument, a list of strings. The function returns `True` if there are at least 276 pairs of anagrams in the given list; otherwise, it returns `False`. The function only considers the anagrams of the length of at least three. The function compares the strings in a case-insensitive manner.

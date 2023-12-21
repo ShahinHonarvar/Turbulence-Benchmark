@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string
+    indices = []
+    for char in string:
+        indices.append(string.index(char))
+
+    # Filter out the indices that are not between 17 and 56 (inclusive)
+    filtered_indices = [i for i in indices if 17 <= i <= 56]
+
+    # Sort the filtered indices by their ASCII values
+    sorted_indices = sorted(filtered_indices, key=lambda x: ord(string[x]))
+
+    # Return the character with the 9th smallest ASCII value among the remaining indices
+    return string[sorted_indices[8]]
+```

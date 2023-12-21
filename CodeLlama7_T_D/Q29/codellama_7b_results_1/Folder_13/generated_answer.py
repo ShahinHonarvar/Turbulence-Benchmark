@@ -1,0 +1,11 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common divisor (GCD) of the two numbers
+    gcd = my_list[534] * my_list[630]
+    while True:
+        if gcd == 1:
+            break
+
+        gcd -= 1
+
+    return gcd

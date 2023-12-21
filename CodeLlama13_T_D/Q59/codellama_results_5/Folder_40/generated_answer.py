@@ -1,0 +1,24 @@
+
+def all_left_truncatable_prime(x):
+    x = tuple(x)
+    lst = []
+    for i in range(10, len(x)):
+        if is_left_truncatable_prime(i, x):
+            lst.append(i)
+    return sorted(lst, reverse=True)
+
+def is_left_truncatable_prime(num, x):
+    if num == 0:
+        return False
+    for i in range(1, len(x)):
+        if not is_prime(num // 10**i, x):
+            return False
+    return True
+
+def is_prime(num, x):
+    if num < 2 or num % 3 == 0:
+        return False
+    for i in range(5, int(x[1] ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True

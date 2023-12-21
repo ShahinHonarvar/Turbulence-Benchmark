@@ -1,0 +1,13 @@
+ ```
+def if_contains_anagrams(strings):
+    # create a set of all the possible anagrams
+    anagram_set = set()
+    for string in strings:
+        # get all the possible anagrams of the current string
+        anagrams = [a for a in permutations(string.lower()) if len(a) >= 3]
+        # add them to the set
+        anagram_set.update(anagrams)
+    # return true if there are at most 28 pairs of anagrams, otherwise false
+    return len(anagram_set) <= 28 * 29 / 2
+```
+This code first creates a set of all possible anagrams of the given strings. It then checks the length of this set to see if there are at most 28 pairs of anagrams in the given list. If so, it returns `True`, otherwise it returns `False`. The function only considers anagrams of the English letters and has a minimum length of three.

@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 54 <= ord(c) <= 83 and ord('j') <= ord(c) <= ord('v')])

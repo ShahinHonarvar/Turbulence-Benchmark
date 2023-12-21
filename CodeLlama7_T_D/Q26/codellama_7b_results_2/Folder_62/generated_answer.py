@@ -1,0 +1,13 @@
+
+def sum_in_range(my_list):
+    # initialize sum to 0
+    sum = 0
+    # loop through the list of integers
+    for i in my_list:
+        # check if the integer is between -28 and 573, both inclusive
+        if -28 <= i <= 573:
+            # add the integer to the sum
+            sum += i
+
+    # return the sum
+    return sum

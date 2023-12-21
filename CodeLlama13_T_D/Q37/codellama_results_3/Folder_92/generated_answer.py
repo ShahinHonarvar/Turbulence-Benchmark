@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    new_string = ''
+    for i, c in enumerate(s):
+        if i < 4 or i > 4:
+            new_string += c
+    return new_string

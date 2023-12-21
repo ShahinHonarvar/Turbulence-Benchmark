@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(23, 83):
+        if string[i] > 'f' and string[i] < 'o':
+            string = string[:i] + string[i+1:]
+    return string

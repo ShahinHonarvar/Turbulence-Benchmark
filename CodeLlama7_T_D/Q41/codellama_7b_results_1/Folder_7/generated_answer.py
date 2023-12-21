@@ -1,0 +1,14 @@
+
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a set of all elements in list1 between indices 661 and 924, inclusive
+    set_list1 = set(list1[661:924+1])
+
+    # Create a set of all elements in list2 between indices 661 and 924, inclusive
+    set_list2 = set(list2[661:924+1])
+
+    # Return the intersection of the two sets
+    return set_list1 & set_list2

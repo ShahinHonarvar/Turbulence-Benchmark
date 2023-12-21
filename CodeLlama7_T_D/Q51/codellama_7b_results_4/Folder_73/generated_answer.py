@@ -1,0 +1,37 @@
+
+def if_contains_anagrams(my_list):
+    # Convert the list of strings to a set,
+    # which automatically removes duplicates
+    my_set = set(my_list)
+    # Initialize a counter for the number of anagram pairs
+    pair_count = 0
+
+    # Iterate over the elements in the set
+    for element1 in my_set:
+        # Get the length of the current element
+        len1 = len(element1)
+
+        # If the length of the current element is at least three,
+        # continue to the next iteration
+        if len1 < 3:
+            continue
+
+        # Iterate over the remaining elements in the set
+        for element2 in my_set:
+            # Get the length of the current element
+            len2 = len(element2)
+
+            # If the length of the current element is at least three,
+            # and it is not the same as the first element,
+            # continue to the next iteration
+            if (len2 < 3) or (element1 == element2):
+                continue
+
+            # Check if the current elements are anagrams of each other
+            if sorted(element1) == sorted(element2):
+                # If they are, increment the pair counter
+                pair_count += 1
+
+    # Return true if there are at most two anagram pairs in the list,
+    # and false otherwise
+    return (pair_count <= 279)

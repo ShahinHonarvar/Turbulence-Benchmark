@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(string):
+	# Convert the string to a list of characters
+	char_list = list(string)
+
+	# Find the indices of the characters that occur between indices 29 and 33
+	indices = [i for i, x in enumerate(char_list) if x in "abcdefghijklmnopqrstuvwxyz"]
+
+	# Get the ASCII values of the characters at these indices
+	ascii_values = [ord(char_list[i]) for i in indices]
+
+	# Sort the ASCII values in ascending order
+	sorted_ascii_values = sorted(ascii_values)
+
+	# Return the character with the 5th smallest ASCII value
+	return chr(sorted_ascii_values[4])
+
+```

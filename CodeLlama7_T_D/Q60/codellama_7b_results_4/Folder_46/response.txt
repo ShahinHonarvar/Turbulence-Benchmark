@@ -1,0 +1,78 @@
+ ```
+def all_left_right_truncatable_prime(nums):
+    # Create a list to store the prime numbers
+    prime_list = []
+
+    for num in nums:
+
+        # Check if the number is a prime number
+
+        if is_prime(num):
+
+            # Check if the number is left-and-right-truncatable prime number
+
+            if is_left_right_truncatable_prime(num):
+
+                # Add the prime number to the list
+
+                prime_list.append(num)
+
+    return prime_list
+
+def is_prime(n):
+
+    # Check if n is a positive integer
+
+    if not isinstance(n, int) or n < 2:
+
+        return False
+
+
+    # Check if n is divisible by any number between 2 and the square root of n
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+
+    # Check if n is a prime number
+
+    if not is_prime(n):
+
+        return False
+
+
+    # Check if the leading leftmost and last rightmost digits of n are both 1
+
+    if str(n)[0] != "1" or str(n)[-1] != "1":
+
+        return False
+
+
+    # Check if removing the leading leftmost digit from n results in a prime number
+
+    if not is_prime(int(str(n)[:-1]))):
+
+        return False
+
+
+    # Check if removing the last rightmost digit from n results in a prime number
+
+    if not is_prime(int(str(n)[1:]))):
+
+        return False
+
+
+    return True
+
+# Test the function with different inputs
+
+#print(all_left_right_truncatable_prime((2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))))
+#print(all_left_right_truncatable_prime((20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100))))
+#print(all_left_right_truncatable_prime((1, 100))))

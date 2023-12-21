@@ -1,0 +1,12 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Get the indices of the first and last positive integers in the list
+    first_pos_int = next((i for i, x in enumerate(my_list) if x > 0)), None)
+    last_pos_int = next((i for i, x in enumerate(my_list) if x > 0), None)
+    # Check if there are any positive integers in the list
+    if first_pos_int is not None and last_pos_int is not None:
+        # Return the list of all positive integers from index 4 to index 5, both exclusive
+        return my_list[first_pos_int + 1:last_pos_int]
+    else:
+        # If there are no positive integers in the list, return an empty list
+        return []

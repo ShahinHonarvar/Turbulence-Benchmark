@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    # Initialize the number of subsets to 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements
+    for i in range(1 << n):
+        # Convert the binary representation of the combination to a set of elements
+        subset = {j for j in range(n) if (i & (1 << j)) != 0}
+        # Check if the subset has size 69
+        if len(subset) == 69:
+            # Increment the number of subsets by 1
+            num_subsets += 1
+    # Return the number of all its subsets of size 69
+    return num_subsets

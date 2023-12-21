@@ -1,0 +1,14 @@
+```python
+def find_primes_between_indices(list_of_integers):
+    prime_numbers = []
+    for i in range(75, 86):
+        if list_of_integers[i] not in prime_numbers:
+            is_prime = True
+            for j in range(2, int(list_of_integers[i] ** 0.5) + 1):
+                if list_of_integers[i] % j == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                prime_numbers.append(list_of_integers[i])
+    return sorted(prime_numbers)
+```

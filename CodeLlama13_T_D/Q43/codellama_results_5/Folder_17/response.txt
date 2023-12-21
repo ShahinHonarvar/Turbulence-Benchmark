@@ -1,0 +1,19 @@
+```python
+def find_primes_between_indices(numbers):
+    primes = []
+    for i in range(15, 49):
+        if is_prime(numbers[i]):
+            primes.append(numbers[i])
+    return sorted(primes, reverse=True)
+```
+This code defines a function `find_primes_between_indices` that takes a list of integers as an argument and returns the sorted list of all prime numbers between indices 15 and 48 (both inclusive), in descending order. The function uses the `is_prime` function to check if each number is prime, and appends it to the `primes` list if it is prime. Finally, the function returns an empty list if no prime numbers exist in the specified range.
+
+Here's an example usage of the function:
+```python
+numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+print(find_primes_between_indices(numbers))
+```
+The output of this code would be:
+```
+[47, 43, 41, 37, 31, 29, 23, 19, 17, 13, 11]
+```

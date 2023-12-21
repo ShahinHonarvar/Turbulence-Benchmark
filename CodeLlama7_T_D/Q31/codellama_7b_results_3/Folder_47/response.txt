@@ -1,0 +1,17 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list is empty or has fewer than 34 elements
+    if len(my_list) < 34:
+        return False
+
+    # Get the value of the 34th element in the list
+    perfect_number = my_list[33]
+
+    # Check if the perfect number is equal to the sum of its proper divisors
+    if sum(divisor for divisor in range(1, int(perfect_number ** 0.5) + 1) if perfect_number % divisor == 0) == perfect_number:
+        return True
+
+    else:
+
+        return False
+```

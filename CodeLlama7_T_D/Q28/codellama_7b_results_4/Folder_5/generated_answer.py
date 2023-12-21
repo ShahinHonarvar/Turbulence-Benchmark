@@ -1,0 +1,21 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the frequency of each character
+    char_freq = {}
+    for char in string:
+        if char in char_freq:
+            char_freq[char] += 1
+        else:
+            char_freq[char] = 1
+    # Find the smallest ASCII value that occurs between indices 5 to 89, both inclusive
+    smallest_ascii = None
+    for i in range(5, len(string) - 89):
+        if string[i] not in char_freq:
+            continue
+
+        ascii_value = ord(string[i])
+
+        if smallest_ascii == None or ascii_value < smallest_ascii:
+            smallest_ascii = ascii_value
+    # Return the character with the 13th smallest ASCII value
+    return chr(smallest_ascii)

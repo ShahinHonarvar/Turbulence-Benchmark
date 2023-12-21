@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: bca20338-a715-48e7-8bd3-2031baee8e6c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_pos_ints_inclusive' that takes one argument, a list of integers, and returns the list of all positive integers from index 209 to index 556, both inclusive. If no positive integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_pos_ints_inclusive(int_list):
+    idx_209, idx_556 = next(x for x, _ in enumerate(int_list) if x == 209), next(x for x, _ in enumerate(int_list) if x == 556)
+    if idx_209 != -1 and idx_556 != -1:
+        return [idx_209, idx_556]
+    else:
+        return []
+```
+	likelihood: None
+	token_likelihoods: None
+}]

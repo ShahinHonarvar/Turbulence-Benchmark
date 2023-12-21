@@ -1,0 +1,26 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Find all prime numbers in the specified range
+    prime_numbers = []
+    for i in range(94, 100):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+    return prime_numbers
+
+# Check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+# Test the function with a sample input
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+#print(find_primes_between_indices(my_list))
+```

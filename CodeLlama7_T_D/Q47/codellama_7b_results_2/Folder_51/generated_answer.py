@@ -1,0 +1,21 @@
+
+def palindromes_of_specific_lengths(string, min_len=3, max_len=4):
+    # Create a case-insensitive version of the input string
+    case_insensitive_string = string.lower()
+    # Define a function to check if a substring is a palindrome
+    def is_palindrome(substring):
+        return substring == substring[::-1]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the input string
+    for i in range(len(case_insensitive_string)):
+        # Check if the current character is a letter (i.e., not a space or punctuation)
+        if case_insensitive_string[i].isalpha():
+            # Define the substring starting from the current character and ending at index 8 (inclusive)
+            substring = case_insensitive_string[i:min(i+9, len(case_insensitive_string)))]
+            # Check if the substring is a palindrome and its length falls within the specified range
+            if is_palindrome(substring) and len(substring) >= min_len and len(substring) <= max_len:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(substring)
+    # Return the set of palindromes found in the input string
+    return palindromes

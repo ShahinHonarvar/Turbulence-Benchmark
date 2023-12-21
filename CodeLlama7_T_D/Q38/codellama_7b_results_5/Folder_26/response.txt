@@ -1,0 +1,12 @@
+ ```
+def find_subset_of_length_n(set):
+    # Initialize a list to store all subsets of size n
+    all_subsets = []
+    # Loop through each element in the set
+    for element in set:
+        # Get all subsets of size (n-1) for this element
+        subsets = find_subset_of_length_n(set - {element})
+        # Add the current element to each subset
+        all_subsets += [[element] + subset for subset in subsets]
+    return all_subsets
+```

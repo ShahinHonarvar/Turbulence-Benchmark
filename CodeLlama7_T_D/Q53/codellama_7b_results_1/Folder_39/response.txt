@@ -1,0 +1,17 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+    # Define a function to check if a string is a palindrome
+    def is_palindrome(s):
+        return s == s[::-1]
+    # Create a set to store all palindromes of length greater than or equal to n
+    palindromes = set()
+    # Iterate over each word in the string
+    for word in string.split():
+        # Check if the word is a palindrome and its length is greater than or equal to n
+        if is_palindrome(word) and len(word) >= n:
+            # Add the palindrome to the set
+            palindromes.add(word)
+    return palindromes
+```
+This function takes in a string `string` and an integer `n`, and returns the set of all palindromes of length greater than or equal to `n` that exist in the given string. Each palindrome should only consist of English letters. If no such palindromes exist in the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.
+For example, if we call `palindrome_of_length_at_least_n("A man, a plan, a canal Panama!", 69)`, the function will return the set `{"a man", "a plan", "a canal", "panama"}`, because these are all palindromes of length greater than or equal to 69 that exist in the given string.

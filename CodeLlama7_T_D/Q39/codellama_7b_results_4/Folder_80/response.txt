@@ -1,0 +1,11 @@
+ Here's a possible implementation of the `return_n_greatest_chars` function:
+```python
+def return_n_greatest_chars(string):
+    # Sort the string in descending order based on ASCII value
+    sorted_list = sorted(string, key=ord, reverse=True)
+    # Return the top 35 characters from the sorted list
+    return sorted_list[:35]
+```
+This function takes a single argument `string`, which is a string of distinct characters. The function first sorts the input string in descending order based on ASCII value using the `sorted` function with the `key=ord` and `reverse=True` arguments.
+Next, the function returns the top 35 characters from the sorted list using slicing. The slice starts at index 0 (the beginning of the list) and ends at index 34 (one less than the length of the list).
+Note that this implementation assumes that the input string is a valid Python string object. If the input string is not a valid string object, the function may raise an error or produce unexpected results.

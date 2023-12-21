@@ -1,0 +1,13 @@
+ ```
+def find_subset_of_length_n(set_of_elements):
+    # Initialize a list to store all subsets of size n
+    all_subsets = []
+    # Iterate through each element in the set
+    for element in set_of_elements:
+        # Get all subsets of size n - 1 that do not contain the current element
+        subsets_of_size_n_minus_1 = find_subset_of_length_n(set_of_elements - {element})
+        # Add the current element to each subset of size n - 1
+        for subset in subsets_of_size_n_minus_1:
+            all_subsets.append(subset | {element})
+    return all_subsets
+```

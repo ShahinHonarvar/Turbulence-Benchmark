@@ -1,0 +1,72 @@
+ Here is the Python code for the given text specification:
+```
+def all_left_right_truncatable_prime(tuple_of_positive_integers):
+    # Initialize an empty list to store the left-and-right-truncatable prime numbers
+    left_right_truncatable_prime_numbers = []
+
+    # Iterate over the tuple of positive integers
+
+    for x in tuple_of_positive_integers:
+
+        # Check if x is a prime number
+
+        if is_prime(x):
+
+            # Check if x is a left-and-right-truncatable prime number
+
+            if is_left_right_truncatable_prime(x):
+
+                # Add x to the list of left-and-right-truncatable prime numbers
+
+                left_right_truncatable_prime_numbers.append(x)
+
+    return sorted(left_right_truncatable_prime_numbers, reverse=True)
+
+def is_prime(n):
+
+    # Check if n is a positive integer
+
+    if not (isinstance(n, int) and n > 0):
+
+        raise ValueError("n must be a positive integer")
+
+    # Return True if n is a prime number and False otherwise
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+
+    # Check if n is a positive integer
+
+    if not (isinstance(n, int) and n > 0):
+
+        raise ValueError("n must be a positive integer")
+
+    # Return True if n is a left-and-right-truncatable prime number and False otherwise
+
+    for i in range(10):
+
+        # Check if the leading leftmost digit of n is equal to 1
+
+        if str(n)[0] != "1":
+
+            return False
+
+        # Check if the last rightmost digit of n is equal to 1
+
+        if str(n)[-1] != "1":
+
+            return False
+
+        # Remove the leading leftmost and last rightmost digits of n
+
+        n = int(str(n)[1:-1])
+
+    return True
+```

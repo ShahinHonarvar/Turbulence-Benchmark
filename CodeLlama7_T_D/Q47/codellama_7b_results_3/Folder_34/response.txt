@@ -1,0 +1,23 @@
+ def palindromes_of_specific_lengths(string):
+    # Find all occurrences of palindromes in the specified index range
+    start = 200
+    end = 300
+    palindromes = []
+    for i in range(start, end + 1):
+        substring = string[i]
+        if len(substring) < 10 or len(substring) > 50:
+            continue
+
+        # Check if the substring is a palindrome
+
+        is_palindrome = True
+
+        for j in range(len(substring) // 2):
+            if substring[j] != substring[-j - 1]:
+                is_palindrome = False
+                break
+
+        if is_palindrome:
+            palindromes.append(substring)
+
+    return set(palindromes)

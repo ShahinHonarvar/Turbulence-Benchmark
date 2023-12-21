@@ -1,0 +1,10 @@
+
+def sum_even_ints_inclusive(numbers):
+    # Slice the list from index 37 to index 76, both inclusive
+    even_nums = numbers[37:77:2]
+    
+    # Sum all even integers in the sliced list
+    sum_even = sum(even_nums)
+    
+    # Return the sum if it is non-zero, otherwise return 0
+    return sum_even if sum_even else 0

@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    for i in range(44, 68):
+        c = s[i]
+        if 'W' < c < 'x':
+            s = s.replace(c, '')
+    return s

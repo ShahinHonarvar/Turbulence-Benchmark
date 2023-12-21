@@ -1,0 +1,16 @@
+ ```
+def prime_factors(my_list):
+    # Get the integer at index 537
+    num = my_list[537]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Iterate from 2 to the square root of num
+    for i in range(2, int(num ** 0.5) + 1):
+        # If i divides num, add it to the set of prime factors
+        if num % i == 0:
+            prime_factors.add(i)
+            # Update num by dividing it by i
+            num = int(num / i)
+    # Return the set of all prime factors of the integer at index 537
+    return prime_factors
+```

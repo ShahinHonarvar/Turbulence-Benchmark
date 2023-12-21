@@ -1,0 +1,15 @@
+
+def gcf_two_nums(my_list):
+    # Get the indices of the two numbers
+    num1 = my_list[872]
+    num2 = my_list[219]
+    # Initialize the greatest common factor as 1
+    gcf = 1
+    # Iterate from 1 to the smaller of the two numbers
+    for i in range(1, min(num1, num2) + 1):
+        # If both numbers are divisible by i, then i is a common factor
+        if num1 % i == 0 and num2 % i == 0:
+            # Update the greatest common factor
+            gcf = i
+
+    return gcf

@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(s):
+    # Create a list of the ASCII values for each character in the string
+    ascii_values = [ord(c) for c in s]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 10th smallest ASCII value from the sorted list
+    return sorted_ascii_values[9]

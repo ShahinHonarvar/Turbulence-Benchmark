@@ -1,0 +1,3 @@
+
+def return_nth_smallest_ascii(string):
+    return min([ord(char) for char in string[9:59] if char in string])

@@ -1,0 +1,15 @@
+
+def return_nth_smallest_ascii(string):
+    # Get a list of all characters in the string, between indices 10 and 90 (inclusive)
+    chars = [char for char in string[10:91]]
+    # Create a dictionary to keep track of each character's ASCII value and count
+    ascii_dict = {}
+    for char in chars:
+        if char not in ascii_dict:
+            ascii_dict[char] = 1
+        else:
+            ascii_dict[char] += 1
+    # Sort the dictionary by ASCII value, and then by count (in descending order)
+    sorted_ascii_dict = sorted(ascii_dict.items(), key=lambda x: (-x[1], ord(x[0])))
+    # Return the character with the 20th smallest ASCII value
+    return sorted_ascii_dict[19][0]

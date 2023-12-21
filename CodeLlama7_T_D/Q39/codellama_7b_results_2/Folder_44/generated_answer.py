@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string):
+    # Create a list of all characters in the string
+    char_list = list(string)
+
+    # Sort the list of characters by ASCII value (ascending order)
+    sorted_char_list = sorted(char_list, key=ord)
+
+    # Return the top 73 characters (by ASCII value) from the sorted list
+    return sorted_char_list[:73]

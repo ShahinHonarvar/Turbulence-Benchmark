@@ -1,0 +1,38 @@
+ ```
+def all_left_truncatable_prime(tuple):
+# Initialize an empty list for the result
+result = []
+
+# Loop through each element in the tuple
+for i in range(len(tuple)):
+
+# Get the current element and its length
+element = tuple[i]
+length = len(element)
+
+# Check if the element is a prime number
+if is_prime(element):
+
+# If it is, check if all of its left-truncatable prime numbers are less than x
+for j in range(length - 1):
+if not is_prime(element[j:length]):
+break
+
+# If all of the left-truncatable prime numbers are less than x, add it to the result list
+result.append(element)
+
+return result
+
+def is_prime(n):
+# Check if n is a positive integer
+if not (type(n) == int and n > 0):
+raise ValueError("Invalid input")
+
+# Check if n is a prime number
+for i in range(2, n // 2 + 1):
+if n % i == 0:
+return False
+
+return True
+
+```

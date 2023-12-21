@@ -1,0 +1,5 @@
+```python
+def return_n_smallest_chars(string):
+    return sorted(set(string), key=ord)[:32]
+```
+Note: The `sorted` function returns a list of the items in the given iterable (in this case, the set of distinct characters in the string) sorted in ascending order. The `key` argument specifies that the sorting should be done by the result of calling the `ord` function on each item (which returns the ASCII value of the character). The `[:32]` slice is then used to take only the first 32 characters from the resulting list, which are the smallest ASCII values.

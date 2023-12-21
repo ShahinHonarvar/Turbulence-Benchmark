@@ -1,0 +1,61 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Initialize an empty list to store the left-and-right-truncatable prime numbers
+l = []
+# Loop through the range of integers from 1 to x
+for i in range(1, x + 1):
+# Check if the current integer is a prime number
+if is_prime(i):
+# Check if the current integer is left-and-right-truncatable prime
+if is_left_right_truncatable_prime(i):
+# Add the current integer to the list of left-and-right-truncatable prime numbers
+l.append(i)
+return l
+
+def is_prime(n):
+# Check if the input number is greater than 1
+if n > 1:
+# Loop through the range of integers from 2 to the square root of the input number
+for i in range(2, int(n ** 0.5) + 1):
+# Check if the current integer divides the input number without a remainder
+if n % i == 0:
+# Return False if the current integer divides the input number without a remainder
+return False
+
+# Return True if the input number is a prime number
+return True
+
+def is_left_right_truncatable_prime(n):
+# Check if the input number contains no 0
+if '0' not in str(n):
+# Initialize an empty string to store the leading leftmost digit of the input number
+l = ''
+# Initialize an empty string to store the last rightmost digit of the input number
+r = ''
+# Loop through the digits of the input number from left to right
+for i in range(len(str(n)))):
+# Check if the current digit is the leading leftmost digit of the input number
+if i == 0:
+l = str(n)[i]
+# Check if the current digit is the last rightmost digit of the input number
+elif i == len(str(n))) - 1:
+r = str(n)[i]
+# Remove the leading leftmost digit from the input number and check if the resulting number is a prime number
+if is_prime(int(str(n))[:-1])):
+return True
+
+# Remove the last rightmost digit from the input number and check if the resulting number is a prime number
+if is_prime(int(str(n))[1:])):
+return True
+
+# Return False if the leading leftmost digit of the input number does not divide the resulting number without a remainder
+if int(l) > 0 and n % int(l) != 0:
+return False
+
+# Return False if the last rightmost digit of the input number does not divide the resulting number without a remainder
+if int(r) > 0 and n % int(r) != 0:
+return False
+
+# Return True if all checks pass
+return True
+```

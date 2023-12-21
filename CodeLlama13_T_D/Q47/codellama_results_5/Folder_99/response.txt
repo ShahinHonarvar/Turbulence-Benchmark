@@ -1,0 +1,14 @@
+```python
+def palindromes_of_specific_lengths(string):
+    indices = range(127, 289)
+    lengths = range(119, 142)
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    
+    palindromes = set()
+    for i in indices:
+        for j in lengths:
+            if string[i:i+j] == string[i+j-1::-1]:
+                palindromes.add(string[i:i+j])
+    
+    return palindromes
+```

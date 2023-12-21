@@ -1,0 +1,20 @@
+ ```
+def return_n_greatest_chars(input_string):
+    # Initialize an empty list to store the sorted characters
+    sorted_chars = []
+
+    # Loop through each character in the input string
+    for char in input_string:
+
+        # Check if the current character is already in the sorted list
+        if char not in sorted_chars:
+
+            # If it's not, add it to the end of the list
+            sorted_chars.append(char)
+
+    # Sort the list in descending order based on the ASCII values of the characters
+    sorted_chars.sort(key=ord, reverse=True)
+
+    # Return the first 27 elements of the sorted list
+    return sorted_chars[:27]
+```

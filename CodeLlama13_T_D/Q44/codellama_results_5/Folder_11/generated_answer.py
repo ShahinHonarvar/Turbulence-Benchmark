@@ -1,0 +1,7 @@
+
+def composite_nums_between_indices(nums):
+    composites = []
+    for i in range(37, 77):
+        if nums[i] > 1:
+            composites.append(nums[i])
+    return set(composites)

@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(s):
+    asciis = set()
+    for i in range(30, 71):
+        if s[i] not in asciis:
+            asciis.add(s[i])
+    return sorted(list(asciis))[14]

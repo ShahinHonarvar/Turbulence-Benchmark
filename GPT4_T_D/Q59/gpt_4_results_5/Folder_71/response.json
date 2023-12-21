@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[22]\n    left_truncatable_primes = []\n    for num in range(x):\n        str_num = str(num)\n        if '0' not in str_num and isprime(num):\n            for i in range(len(str_num)):\n                if not isprime(int(str_num[i:])):\n                    break\n            else:\n                left_truncatable_primes.append(num)\n    return sorted(left_truncatable_primes, reverse=True)\n```\nThis function all_left_truncatable_prime takes in a tuple of positive integers, finds the 22nd value (indexed at 22), then generates all prime numbers less than this value which remain prime when any number of leftmost digits are successively truncated, and are free of the digit 0. It returns the list of these primes in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691021264,
+  "id": "chatcmpl-7jGASOZ9pYIRMRzB8aiUNn6MRLQCf",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 186,
+    "prompt_tokens": 146,
+    "total_tokens": 332
+  }
+}

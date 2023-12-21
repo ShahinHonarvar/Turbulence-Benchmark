@@ -1,0 +1,7 @@
+
+def if_decimal_is_divisible(binary_representation):
+    num = 0
+    for i, digit in enumerate(binary_representation[::-1]):
+        if digit == '1':
+            num += 2**i
+    return (num % 78) == 0

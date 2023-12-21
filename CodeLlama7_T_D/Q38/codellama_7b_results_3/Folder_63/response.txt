@@ -1,0 +1,16 @@
+ ```
+def find_subset_of_length_n(elements):
+    num_subsets = 0
+    for i in range(2**len(elements)):
+        binary_string = bin(i)[2:]
+        if len(binary_string) == 57:
+            subset = []
+            for j, bit in enumerate(binary_string):
+                if bit == "1":
+                    subset.append(elements[j])
+
+            num_subsets += 1
+
+    return num_subsets
+```
+This code defines a function called `find_subset_of_length_n` that takes one argument, a set of elements, and returns the number of all its subsets of size 57. The function uses a for loop to iterate over all possible binary strings of length 57. For each binary string, it checks if it is a subset of the original set by checking if each bit in the binary string corresponds to an element in the original set and adding it to the subset if it does. Finally, it returns the number of subsets found.

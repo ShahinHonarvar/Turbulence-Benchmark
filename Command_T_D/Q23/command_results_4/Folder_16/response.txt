@@ -1,0 +1,135 @@
+[cohere.Generation {
+	id: 75b8180f-cf6c-4fa7-b739-1c6336093be3
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_divisors_in_range' that takes a positive integer as its argument, and returns the list of all positive divisors of the given integer that are between 228 and 846, both inclusive. If no such divisors exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import math
+
+def find_divisors_in_range(n):
+    # Type checks
+    if not isinstance(n, int) or n < 228 or n > 846:
+        return []
+    # Begins with the prime factors
+    factors = []
+    for i in range(2, int(math.ceil(math.sqrt(n)) + 1)):
+        if n % i == 0:
+            factors.append(i)
+            while n % i == 0:
+                n /= i
+    # Checks for n and n+1
+    if n > 1 and n not in factors:
+        factors.append(n)
+    if n + 1 not in factors:
+        factors.append(n + 1)
+    # Checks for n / 2
+    if n % 2 == 0 and n not in factors:
+        factors.append(n / 2)
+    # Checks for n / 3
+    if n % 3 == 0 and n not in factors:
+        factors.append(n / 3)
+    # Checks for n / 5
+    if n % 5 == 0 and n not in factors:
+        factors.append(n / 5)
+    # Checks for n / 7
+    if n % 7 == 0 and n not in factors:
+        factors.append(n / 7)
+    # Checks for n / 11
+    if n % 11 == 0 and n not in factors:
+        factors.append(n / 11)
+    # Checks for n / 13
+    if n % 13 == 0 and n not in factors:
+        factors.append(n / 13)
+    # Checks for n / 17
+    if n % 17 == 0 and n not in factors:
+        factors.append(n / 17)
+    # Checks for n / 19
+    if n % 19 == 0 and n not in factors:
+        factors.append(n / 19)
+    # Checks for n / 23
+    if n % 23 == 0 and n not in factors:
+        factors.append(n / 23)
+    # Checks for n / 29
+    if n % 29 == 0 and n not in factors:
+        factors.append(n / 29)
+    # Checks for n / 31
+    if n % 31 == 0 and n not in factors:
+        factors.append(n / 31)
+    # Checks for n / 37
+    if n % 37 == 0 and n not in factors:
+        factors.append(n / 37)
+    # Checks for n / 41
+    if n % 41 == 0 and n not in factors:
+        factors.append(n / 41)
+    # Checks for n / 43
+    if n % 43 == 0 and n not in factors:
+        factors.append(n / 43)
+    # Checks for n / 47
+    if n % 47 == 0 and n not in factors:
+        factors.append(n / 47)
+    # Checks for n / 53
+    if n % 53 == 0 and n not in factors:
+        factors.append(n / 53)
+    # Checks for n / 59
+    if n % 59 == 0 and n not in factors:
+        factors.append(n / 59)
+    # Checks for n / 61
+    if n % 61 == 0 and n not in factors:
+        factors.append(n / 61)
+    # Checks for n / 67
+    if n % 67 == 0 and n not in factors:
+        factors.append(n / 67)
+    # Checks for n / 71
+    if n % 71 == 0 and n not in factors:
+        factors.append(n / 71)
+    # Checks for n / 73
+    if n % 73 == 0 and n not in factors:
+        factors.append(n / 73)
+    # Checks for n / 79
+    if n % 79 == 0 and n not in factors:
+        factors.append(n / 79)
+    # Checks for n / 83
+    if n % 83 == 0 and n not in factors:
+        factors.append(n / 83)
+    # Checks for n / 89
+    if n % 89 == 0 and n not in factors:
+        factors.append(n / 89)
+    # Checks for n / 97
+    if n % 97 == 0 and n not in factors:
+        factors.append(n / 97)
+    # Checks for n / 101
+    if n % 101 == 0 and n not in factors:
+        factors.append(n / 101)
+    # Checks for n / 103
+    if n % 103 == 0 and n not in factors:
+        factors.append(n / 103)
+    # Checks for n / 107
+    if n % 107 == 0 and n not in factors:
+        factors.append(n / 107)
+    # Checks for n / 109
+    if n % 109 == 0 and n not in factors:
+        factors.append(n / 109)
+    # Checks for n / 113
+    if n % 113 == 0 and n not in factors:
+        factors.append(n / 113)
+    # Checks for n / 127
+    if n % 127 == 0 and n not in factors:
+        factors.append(n / 127)
+    # Checks for n / 131
+    if n % 131 == 0 and n not in factors:
+        factors.append(n / 131)
+    # Checks for n / 137
+    if n % 137 == 0 and n not in factors:
+        factors.append(n / 137)
+    # Checks for n / 139
+    if n % 139 == 0 and n not in factors:
+        factors.append(n / 139)
+    # Checks for n / 149
+    if n % 149 == 0 and n not in factors:
+        factors.append(n / 149)
+    # Checks for n / 151
+    if n % 151 == 0 and n not in factors:
+        factors.append(n / 151)
+    #
+	likelihood: None
+	token_likelihoods: None
+}]

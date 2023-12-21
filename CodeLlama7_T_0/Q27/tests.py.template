@@ -1,0 +1,41 @@
+from Q27.$4_results_$5.Folder_$2.generated_answer import $3
+
+
+
+def test_presence_of_inserted_element():
+    initial_list = [set() for i in range(($1 + 1) * 2)]
+    returned_list = $3(initial_list)
+    assert $0 in returned_list
+
+
+def test_index_of_inserted_element():
+    initial_list = [i for i in range(($1 + 1) * 2)]
+    returned_list = $3(initial_list)
+    indices = []
+    for index, value in enumerate(returned_list):
+        if value == $0:
+            indices.append(index)
+    assert returned_list.index($0) in indices
+
+
+def test_presence_of_inserted_element_at_index_$1():
+    initial_list = [i for i in range(($1 + 1) * 2)]
+    returned_list = $3(initial_list)
+    assert returned_list[$1 + 1] == $0
+
+
+def test_list_of_particular_size():
+    if $1 == 0:
+        initial_list = [1, 2]
+    else:
+        initial_list = [1] * ($1 + 2)
+
+    returned_list = $3(initial_list)
+    assert returned_list[-2] == $0
+
+
+def test_size_of_returned_list():
+    initial_list = [i for i in range(($1 + 1) * 2)]
+    x = len(initial_list)
+    returned_list = $3(initial_list)
+    assert len(returned_list) == x + 1

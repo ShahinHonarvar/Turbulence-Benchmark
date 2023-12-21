@@ -1,0 +1,36 @@
+[cohere.Generation {
+	id: 7758460a-24af-4f74-96b8-6514ed5d34b1
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_original_set' that takes exactly 64 distinct arguments, each of which is a set of integers. The function should return the smallest set such that each of the given arguments is a subset of it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+# we need the sys module to get the input, and print the output
+sys.setrecursionlimit(10**6)  # to allow large inputs
+
+# for printing, we use the print() function
+print("*" * 64)
+
+# we define our function
+def find_original_set(S):
+    # we sort the sets by their size, so that we can take the smallest set
+    S.sort(key=lambda x: len(x))
+    # we start with an empty set, and then add elements from the sets
+    # as long as they are not already in the set
+    s = set()
+    for i in range(len(S)):
+        s.update(S[i])
+    # once we have added all elements from all sets, we return s
+    return s
+
+# we read the input, which is a string with 64 spaces
+input = sys.stdin.readline().strip()
+# we split the input into a list of strings, where each string is a set
+S = [input[:i] for i in range(len(input), 0, -1)]
+# we call our function with the list of sets
+print("*" * 64)
+print(find_original_set(S))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

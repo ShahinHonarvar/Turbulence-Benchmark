@@ -1,0 +1,19 @@
+ ```
+def return_binary_or_hexa(tuple):
+    # Get the values of a and b
+    a = tuple[37]
+    b = tuple[43]
+    # Initialize the sum to 0
+    sum = 0
+    # Iterate over the integers from a + 1 to b - 1 (both inclusive)
+    for i in range(a + 1, b):
+        # If the integer is not present in the tuple between indices 37 and 43, add it to the sum
+        if i not in tuple[37:43]:
+            sum += i
+    # If the sum is an odd number, return the binary representation string of the sum
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    # Otherwise, return the hexadecimal representation string of the sum
+    else:
+        return hex(sum)[2:]
+```

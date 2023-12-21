@@ -1,0 +1,23 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_int = int(binary_string, 2)
+    # Calculate the number of bits in the binary representation of the decimal integer
+    num_bits = len(bin(decimal_int)[2:]))
+    # Find the first occurrence of the 118th Fibonacci number in the binary representation
+    for i in range(num_bits):
+        if binary_string[i] == '1':
+            # If the bit at position i is set to 1, then it must be part of the 118th Fibonacci number
+            fibonacci_index = i + 2
+            break
+
+    # Calculate the remainder of the decimal integer divided by the 118th Fibonacci number
+    remainder = decimal_int % (59 * 59)
+
+    if remainder == 0:
+        # If the remainder is 0, then the decimal integer must be divisible by the 118th Fibonacci number
+        return True
+    else:
+        # If the remainder is non-zero, then the decimal integer must not be divisible by the 118th Fibonacci number
+        return False
+```

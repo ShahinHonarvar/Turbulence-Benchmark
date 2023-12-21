@@ -1,0 +1,11 @@
+ ```
+def palindrome_of_length_n(string):
+    # Case-insensitive search for palindromes of length n
+    palindromes = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if substring == substring[::-1]:
+            palindromes.append(substring)
+    return set(palindromes)
+```
+This function takes a single argument, `string`, which is the input string that contains the substrings to be searched for palindromes. It returns a set of all palindromes of length 76, where each palindrome is a substring of the given string. The function finds the palindromes in a case-insensitive manner by comparing the original substring with its reverse. If two substrings are equal when compared in this way, they are considered to be palindromes.

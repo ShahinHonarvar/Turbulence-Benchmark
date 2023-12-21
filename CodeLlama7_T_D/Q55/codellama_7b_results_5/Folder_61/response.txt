@@ -1,0 +1,14 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    result = []
+    for i in range(len(circular_list)):
+        product = 1
+        current = circular_list[i]
+        while current != circular_list[i]:
+            product *= current
+            current = next(circular_list, current)
+        if product == -10:
+            result.append(circular_list[i])
+    return result
+```
+The above code uses a simple approach to find the sublists with product equal to -10 in a given circular list of integers. The code iterates over each element of the circular list and calculates the product of the elements from that point onwards until it reaches the end of the list or finds a sublist with product equal to -10. If such a sublist is found, its elements are added to the result list. Finally, the result list is returned.

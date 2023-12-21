@@ -1,0 +1,18 @@
+
+def if_contains_anagrams(my_list):
+# Initialize variables
+count = 0
+
+# Loop through the list of strings and check for anagrams
+for i in range(len(my_list) - 1):
+    for j in range(i + 1, len(my_list))):
+        # If the length of the current string is at least three and the two strings are anagrams
+        if (len(my_list[i]) >= 3 and len(my_list[j]) >= 3) and sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+            # Increment the count by one
+            count += 1
+
+# Return true if the count is greater than or equal to 219; otherwise, return false
+if (count >= 219):
+    return True
+else:
+    return False

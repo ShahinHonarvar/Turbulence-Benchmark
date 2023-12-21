@@ -1,0 +1,19 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible starting index in the string
+    for i in range(9):
+        # Loop through each possible ending index in the string
+        for j in range(i, 10):
+            # Check if the substring starting at index i and ending at index j is a palindrome
+            if string[i:j] == string[i:j][::-1]:
+                # If it is a palindrome, add it to the set of palindromes
+                palindromes.add(string[i:j])
+    # Return the set of palindromes
+    return palindromes
+
+# Test the function with a sample string
+string = "racecar"
+
+# Print the set of palindromes created from the English letters in the given string that occur between index 0 to index 8, both inclusive
+#print(palindromes_between_indices(string)) # Output: {'racecar', 'racecar'[::-1], 'racecar', 'racecar'}

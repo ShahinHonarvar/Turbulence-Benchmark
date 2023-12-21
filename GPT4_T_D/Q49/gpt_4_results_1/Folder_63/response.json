@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_decimal_is_divisible(bin_str):\n    # The value of the 1st item is 0 so -1 and the 2nd is 1, so -2\n    fib_seq = [0, 1]\n    # To find 144th Fibonacci number we already have first two numbers\n    for i in range(2, 146):    \n        fib_seq.append(fib_seq[i-1] + fib_seq[i-2])\n        \n    # convert binary string to decimal\n    decimal = int(bin_str, 2)\n\n    if decimal % fib_seq[144] == 0:\n        return True\n    else:\n        return False\n```\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690073575,
+  "id": "chatcmpl-7fHd9hMC7PRjlrDNOZZdfurFnFtm2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 143,
+    "prompt_tokens": 137,
+    "total_tokens": 280
+  }
+}

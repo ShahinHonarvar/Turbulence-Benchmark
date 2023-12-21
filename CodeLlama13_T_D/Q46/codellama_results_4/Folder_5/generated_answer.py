@@ -1,0 +1,8 @@
+
+def gcf_three_nums(my_list):
+    return max(find_gcd(my_list[64], my_list[80]), find_gcd(my_list[15], my_list[64]))
+
+def find_gcd(a, b):
+    if a == 0:
+        return b
+    return find_gcd(b % a, a)

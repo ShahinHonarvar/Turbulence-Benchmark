@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+    # create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    for word in my_list:
+        # convert the word to lowercase
+        word = word.lower()
+
+        # sort the letters of the word
+        sorted_word = ''.join(sorted(word))
+
+        # check if the sorted word is already in the dictionary
+        if sorted_word in anagram_counts:
+            # if it is, increment its count
+            anagram_counts[sorted_word] += 1
+
+        else:
+            # if it's not, add it to the dictionary with a count of 1
+            anagram_counts[sorted_word] = 1
+
+    # loop through the dictionary and check if there are more than 49 pairs of anagrams
+    for sorted_word in anagram_counts:
+        if anagram_counts[sorted_word] > 1:
+            return True
+
+    # if there aren't any pairs of anagrams, return False
+    return False
+```

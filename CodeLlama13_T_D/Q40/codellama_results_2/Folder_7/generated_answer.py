@@ -1,0 +1,9 @@
+
+def return_n_smallest_chars(s):
+    n = 49
+    char_list = []
+    for i in range(len(s)):
+        char_list.append(chr(ord(s[i]) + n))
+    
+    sorted_char_list = sorted(char_list)
+    return [sorted_char_list[i] for i in range(n)]

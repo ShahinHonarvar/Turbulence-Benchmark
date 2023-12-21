@@ -1,0 +1,6 @@
+
+def if_perfect_num(numbers):
+    for i in range(1, len(numbers)):
+        if numbers[i] == sum(numbers[:i]):
+            return True
+    return False

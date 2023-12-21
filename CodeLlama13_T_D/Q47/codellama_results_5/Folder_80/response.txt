@@ -1,0 +1,10 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all substrings of the specified length between 24 and 33 characters, inclusive
+    substrings = [string[i:j] for i in range(35, 89) for j in range(i+24, i+34)]
+    
+    # Filter out non-palindromes and those that do not consist of English letters only
+    palindromes = [s for s in substrings if s == s[::-1] and all(c.isalpha() for c in s)]
+    
+    return set(palindromes)
+```

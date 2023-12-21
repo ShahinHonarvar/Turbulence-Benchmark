@@ -1,0 +1,14 @@
+```
+def all_right_truncatable_prime(numbers):
+    x = numbers[466]
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+The `is_prime` function checks whether an integer is prime or not by checking whether it's divisible by any other number between 2 and the square root of that number. If it's not divisible, then it's prime.
+
+The `is_right_truncatable_prime` function takes an integer as input and checks whether it's a right-truncatable prime by successively removing the last digit until the number becomes 1 or a non-prime number. If at any point, the number becomes non-prime, then it's not a right-truncatable prime.
+
+The `sorted` function is used to sort the list of primes in descending order. The `reverse=True` parameter is used to indicate that the list should be sorted in descending order.

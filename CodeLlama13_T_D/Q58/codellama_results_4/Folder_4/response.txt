@@ -1,0 +1,25 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    """
+    Takes a two-dimensional numpy matrix of integers and returns the count of all
+    submatrices that contain 15 integers each. If no such submatrix is found,
+    return 0.
+    """
+    n = 15 # number of integers in each submatrix
+    count = 0 # initialize counter
+    for i in range(len(matrix) - n + 1): # iterate over rows
+        for j in range(len(matrix[i]) - n + 1): # iterate over columns
+            submatrix = matrix[i:i+n, j:j+n] # create submatrix
+            if np.sum(submatrix) == n * (n + 1) // 2: # check if submatrix contains n integers
+                count += 1 # increment counter
+    return count # return number of submatrices that contain n integers each
+```
+This code defines a function called `submatrix_with_n_numbers` that takes one argument, a two-dimensional numpy matrix of integers. The function returns the count of all submatrices of the given matrix that contain 15 integers each. If no such submatrix is found, the function returns 0.
+
+The code first imports the `numpy` library as `np`. It then defines a variable `n` to store the number of integers in each submatrix (which is set to 15). The function then initializes a counter variable called `count` to keep track of the number of submatrices that contain n integers.
+
+The function then uses nested for-loops to iterate over the rows and columns of the input matrix, creating a submatrix at each iteration using slicing. For each submatrix, it checks if it contains n integers by summing up all the elements in the submatrix and comparing it with the expected value of n * (n + 1) / 2. If the condition is satisfied, it increments the counter variable `count`.
+
+Finally, the function returns the value of `count`, which indicates the number of submatrices that contain n integers each. If no such submatrix is found, the function returns 0.

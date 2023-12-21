@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    row, col = np.shape(matrix)\n    for i in range(row):\n        for j in range(col):\n            for m in range(i+1, row+1):\n                for n in range(j+1, col+1):\n                    if ((m-i)*(n-j)) == 191:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691096355,
+  "id": "chatcmpl-7jZhb42Zr4xizBW6ukWGgsy805e1x",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 111,
+    "total_tokens": 206
+  }
+}

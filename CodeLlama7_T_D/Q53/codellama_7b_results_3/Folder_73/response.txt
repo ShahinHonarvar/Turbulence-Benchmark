@@ -1,0 +1,13 @@
+ def palindrome_of_length_at_least_n(string, n):
+    # Create a list of all the substrings in the given string
+    substrings = []
+    for i in range(len(string)):
+        for j in range(i + 1, len(string) + 1):
+            substrings.append(string[i:j])
+    # Filter the substrings to find only palindromes of length greater than or equal to n
+    palindromes = []
+    for substring in substrings:
+        if substring == substring[::-1] and len(substring) >= n:
+            palindromes.append(substring)
+    return set(palindromes)
+```

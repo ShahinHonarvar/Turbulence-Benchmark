@@ -1,0 +1,3 @@
+
+def sum_in_range(my_list):
+    return sum(x for x in my_list if 56 <= x <= 90) or 0

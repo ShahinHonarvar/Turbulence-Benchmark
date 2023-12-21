@@ -1,0 +1,14 @@
+ def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for char in s:
+        # Check if the current character should be removed
+        if (char.isalpha() or char.isspace()) and 11 <= len(filtered) < 32:
+            filtered = filtered[:-1] + char
+
+        else:
+            filtered += char
+
+    return filtered

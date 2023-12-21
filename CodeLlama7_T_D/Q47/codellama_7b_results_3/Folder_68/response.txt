@@ -1,0 +1,14 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring
+    palindromes = []
+    for i in range(50, len(string)):
+        for j in range(i - 49, i + 1):
+            if string[j] == string[j]:
+                palindrome = ""
+                for k in range(j - 49, j + 1):
+                    palindrome += string[k]
+                if len(palindrome) >= 50 and len(palindrome) <= 100:
+                    palindromes.append(palindrome)
+    return set(palindromes)
+```

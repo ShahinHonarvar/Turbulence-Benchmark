@@ -1,0 +1,7 @@
+
+def return_n_smallest_chars(my_string):
+    # Sort the characters in the string based on their ASCII values
+    sorted_chars = sorted(my_string, key=ord)
+    # Create a list of exactly 31 characters of the given string that have the smallest ASCII values
+    smallest_chars = sorted_chars[:31]
+    return smallest_chars

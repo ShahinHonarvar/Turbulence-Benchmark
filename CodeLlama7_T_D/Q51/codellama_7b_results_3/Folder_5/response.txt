@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(words):
+    # Create a set of all anagram pairs
+    anagram_pairs = set()
+    for word1 in words:
+        for word2 in words:
+            if len(word1) < 3 or len(word2) < 3:
+                continue
+
+            if sorted(word1.lower()) == sorted(word2.lower()):
+                anagram_pairs.add((word1, word2))
+    # Check if there are more than 4 pairs of anagrams
+    return len(anagram_pairs) <= 4
+```
+This implementation first loops through all the words in the list and checks if the length of each word is at least three. If a word's length is less than three, the function skips it and moves on to the next word.
+Next, the function creates a set called `anagram_pairs` that will store all the pairs of anagrams in the given list. The function then loops through each word again and checks if there are any other words in the list that are anagrams of the current word. If there is at least one other word that is an anagram of the current word, the function adds the pair of anagrams to the `anagram_pairs` set.
+Finally, the function returns a boolean value indicating whether or not there are more than 4 pairs of anagrams in the given list. If there are at most 4 pairs of anagrams, the function returns `True`. Otherwise, it returns `False`.

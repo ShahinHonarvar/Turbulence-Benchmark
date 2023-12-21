@@ -1,0 +1,15 @@
+```
+def sum_of_divisors_in_range(n):
+    if n <= 0:
+        return 0
+    
+    divisors = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            if n // i != i:
+                divisors.append(n // i)
+    
+    return sum(filter(lambda x: 615 <= x <= 792, divisors))
+```
+Note that the `sum` function is used to calculate the total of all the divisors in the specified range, and the `filter` function is used to select only the divisors that are between 615 and 792. The `lambda` expression is used as a one-line function to filter out the elements that are not in the specified range.

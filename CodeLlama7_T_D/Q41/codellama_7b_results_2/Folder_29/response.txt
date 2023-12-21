@@ -1,0 +1,24 @@
+ def identical_elements(list1, list2):
+    # Check if the lists are of the same size and have at least one element between index 59 and 97 (inclusive)
+    if len(list1) != len(list2) or not any(59 <= i < 98 for i in range(len(list1)))):
+        # If there are no such elements, return an empty set
+        return set()
+
+
+
+    # Create a set of all elements in list1 between index 59 and 97 (inclusive)
+    elements_in_list1 = {list1[i] for i in range(59, 98)}
+
+
+    # Return the intersection of this set with the set of all elements in list2 that are also in elements_in_list1
+    return elements_in_list1 & set(list2)
+
+
+
+# Test the function with two lists containing the same elements
+test_lists = [['a', 'b', 'c'], ['d', 'e', 'f']], [[1, 2, 3], [4, 5, 6]]]
+for test_list in test_lists:
+    # Call the function with the two lists as arguments
+    identical_elements(test_list[0], test_list[1])
+    # Print the result
+#    print(identical_elements(test_list[0], test_list[1])))

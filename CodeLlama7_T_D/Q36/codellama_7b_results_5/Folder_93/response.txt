@@ -1,0 +1,13 @@
+ ```
+def filter_chars(s):
+    # Remove all occurrences of the character '&' in the given string
+    s = s.replace("&", "")
+    # Define a range of characters between the indices 52 and 88 (both exclusive)
+    char_range = range(52, 88)
+    # Loop through each character in the range and check if it is greater than '&' and smaller than 'c'
+    for i in char_range:
+        if s[i] > "&" and s[i] < "c":
+            # Remove all occurrences of the current character in the string
+            s = s.replace(s[i], "")
+    return s
+```

@@ -1,0 +1,5 @@
+
+def sum_ints_div_by_either_nums(nums):
+    if len(nums) <= 81:
+        return 0
+    return sum(num for i, num in enumerate(nums[58:82]) if (i + 57) % 55 == 0 or (i + 57) % 10 == 0)

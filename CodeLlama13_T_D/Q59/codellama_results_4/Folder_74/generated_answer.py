@@ -1,0 +1,11 @@
+
+def all_left_truncatable_prime(x):
+    return sorted([i for i in range(2, x) if is_left_truncatable_prime(i)])
+
+def is_left_truncatable_prime(n):
+    if n < 2:
+        return False
+    for i in range(10**(len(str(n))-1)):
+        if str(n)[i:] not in primes:
+            return False
+    return True

@@ -1,0 +1,73 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the number to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Return the list of prime numbers in descending order
+    return sorted(prime_numbers, reverse=True)
+
+# Function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Check if n is a power of 2
+        if bin(n).count("1") == 1:
+            # Return True since n is a prime number
+            return True
+
+        # Check if n has exactly two factors, one of which is 1
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if n is divisible by i
+            if n % i == 0:
+                # Return False since n has more than two factors
+                return False
+
+        # Return True since n has exactly two factors
+        return True
+
+    # Return False since n is not greater than 1
+    return False
+
+# Function to check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if n contains 0
+    if "0" in str(n):
+        # Return False since n contains 0
+        return False
+
+    # Initialize an empty string to store the digits of n
+    digits = ""
+
+    # Iterate from 1 to the number of digits in n
+    for i in range(1, len(str(n)))):
+        # Extract the current digit from n
+        digit = int(str(n)[i])
+
+        # Check if the extracted digit is a prime number
+        if is_prime(digit):
+            # Add the extracted digit to the string of digits
+            digits += str(digit)
+
+    # Check if the string of digits is a one- or two-digit prime number
+    if len(digits) == 1:
+        # Return True since the string of digits is a one-digit prime number
+        return True
+
+    elif len(digits) == 2:
+        # Check if the first digit in the string of digits is a prime number
+        if is_prime(int(str(n)[0]))):
+            # Return True since the string of digits is a two-digit prime number
+            return True
+
+    # Return False since the string of digits is not a one- or two-digit prime number
+    return False
+```

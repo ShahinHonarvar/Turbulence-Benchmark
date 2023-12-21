@@ -1,0 +1,30 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a count variable to keep track of the number of submatrices with 56 integers
+    count = 0
+    
+    # Iterate over each row in the matrix
+    for i in range(len(matrix)):
+        # Iterate over each column in the matrix
+        for j in range(len(matrix[i])):
+            # Initialize a submatrix with the current element as its center
+            submatrix = np.zeros((3, 3), dtype=int)
+            
+            # Fill the submatrix with elements from the original matrix
+            submatrix[0][0] = matrix[i-1][j-1] if i > 0 and j > 0 else 0
+            submatrix[0][1] = matrix[i-1][j] if i > 0 else 0
+            submatrix[0][2] = matrix[i-1][j+1] if i > 0 and j < len(matrix[i]) - 1 else 0
+            submatrix[1][0] = matrix[i][j-1] if j > 0 else 0
+            submatrix[1][1] = matrix[i][j]
+            submatrix[1][2] = matrix[i][j+1] if j < len(matrix[i]) - 1 else 0
+            submatrix[2][0] = matrix[i+1][j-1] if i < len(matrix) - 1 and j > 0 else 0
+            submatrix[2][1] = matrix[i+1][j] if i < len(matrix) - 1 else 0
+            submatrix[2][2] = matrix[i+1][j+1] if i < len(matrix) - 1 and j < len(matrix[i]) - 1 else 0
+            
+            # Check if the submatrix contains 56 integers
+            if np.count_nonzero(submatrix == 56) == 56:
+                count += 1
+    
+    return count

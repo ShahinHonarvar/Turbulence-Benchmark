@@ -1,0 +1,26 @@
+
+def if_contains_anagrams(strings):
+    # Initialize a counter for the number of pairs of anagrams
+    num_pairs = 0
+    # Loop through each string in the list
+    for i in range(len(strings)):
+        # Get the current string
+        s = strings[i]
+        # Check if the current string is at least three characters long
+        if len(s) >= 3:
+            # Convert the current string to lowercase
+            s_lower = s.lower()
+            # Loop through each string in the list again
+            for j in range(len(strings)):
+                # Get the current string
+                t = strings[j]
+                # Check if the current string is at least three characters long and not the same as the original string
+                if len(t) >= 3 and t != s:
+                    # Convert the current string to lowercase
+                    t_lower = t.lower()
+                    # Check if the current string is an anagram of the original string
+                    if sorted(s_lower) == sorted(t_lower):
+                        # Increment the number of pairs of anagrams by 1
+                        num_pairs += 1
+    # Return true if there are at least 78 pairs of anagrams in the given list; otherwise, return false
+    return num_pairs >= 78

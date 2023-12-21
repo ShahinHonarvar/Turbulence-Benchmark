@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_n(s):
+    return {p for p in (''.join(c) for c in zip(*[reversed(s)]*37)) if len(set(p)) == 37}
+```
+This function uses a set comprehension to generate all possible palindromes of length 37, where each palindrome is a substring of the given string. It then filters out any palindromes that are not in English letters using the `len` function and a set. The `reversed` function is used to create the reverse of the string, which allows for case-insensitive searching.

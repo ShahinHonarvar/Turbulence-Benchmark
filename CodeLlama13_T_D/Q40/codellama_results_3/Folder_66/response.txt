@@ -1,0 +1,13 @@
+```python
+def return_n_smallest_chars(string):
+    chars = list(set(string))
+    sorted_chars = sorted(chars, key=lambda x: ord(x))
+    return sorted_chars[:33]
+```
+This code defines a function `return_n_smallest_chars` that takes one argument, a string of distinct characters. The function creates a list of exactly 33 characters of the given string that have the smallest ASCII values using the following steps:
+
+1. Convert the input string to a set, which removes duplicates and preserves the order of the original string.
+2. Sort the list of characters in ascending order using `sorted` with a custom key function that calls `ord` on each character to get its ASCII value.
+3. Return the first 33 elements of the sorted list, which are the smallest ASCII values.
+
+The function returns the sorted list as a Python list object.

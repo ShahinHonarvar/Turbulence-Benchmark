@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef generate_primes(n):\n    primes = [2, 3, 5, 7]\n    for p in primes:\n        yield p\n    num = 10\n    while num <= n:\n        if isprime(num) and all(isprime(int(str(num)[:i])) and isprime(int(str(num)[i:])) for i in range(1, len(str(num)))):\n            yield num\n        num += 1\n\ndef all_left_right_truncatable_prime(t):\n    x = t[26]\n    return sorted(list(generate_primes(x)))\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690087176,
+  "id": "chatcmpl-7fLAWjrUScXkSbmPivLHkXccQgd61",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 187,
+    "total_tokens": 316
+  }
+}

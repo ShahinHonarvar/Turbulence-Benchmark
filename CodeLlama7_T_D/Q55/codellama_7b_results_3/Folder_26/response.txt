@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```
+def lists_with_product_equal_n(circular_list, n):
+    # Initialize an empty list to store the sublists
+    sublists = []
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Extract a contiguous subsequence from the circular list
+        subsequence = circular_list[i:] + circular_list[:i]
+        # Check if the product of the elements in the subsequence is equal to n
+        if all(element * subsequence[j] == n for j in range(len(subsequence)))):
+            # Add the subsequence to the list of sublists
+            sublists.append(subsequence)
+    return sublists
+```
+This implementation uses a nested loop to iterate over the elements of the circular list and extract contiguous subsequences from it using slicing. The loop then checks if the product of the elements in each subsequence is equal to n, and adds any subsequences that satisfy this condition to the list of sublists.
+For example, suppose we call the `lists_with_product_equal_n` function with the circular list `[2, 4, 6, 8]` and the value 93. In this case, the function would return a list containing one sublist, which consists of the elements [4, 6] in the original circular list. This is because the product of these two elements is equal to 93.

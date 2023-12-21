@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 7a0468d8-ccd5-4ed3-a10f-832129e3b05c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 792. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(n):
+    return sorted(list(filter(lambda x: is_left_right_truncatable_prime(x), range(3, n[0] + 1))))
+
+def is_left_right_truncatable_prime(x):
+    return all(x % 2 == 0 or x % 2 == 1 for x in range(x, 1, -1)) and x != 1 and x != 2
+```
+	likelihood: None
+	token_likelihoods: None
+}]

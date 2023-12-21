@@ -1,0 +1,13 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+    # Return true if the number of anagram pairs is at most 16, otherwise return false
+    return anagram_pairs <= 16
+```
+This code defines a function called `if_contains_anagrams` that takes one argument: a list of strings. The function returns `True` if there are at most 16 pairs of anagrams in the given list, and returns `False` otherwise.
+The function first counts the number of anagram pairs in the list using two nested loops. It then checks whether the number of anagram pairs is at most 16, and returns `True` if it is, and returns `False` otherwise.

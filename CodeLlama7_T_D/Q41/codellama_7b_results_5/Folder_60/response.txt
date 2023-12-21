@@ -1,0 +1,20 @@
+ ```
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size and length is greater than or equal to 75
+    if len(list1) != len(list2) or len(list1) < 75:
+        return set()
+    # Initialize an empty set to store the identical elements
+    identical_elements = set()
+    # Iterate through both lists and check for identical elements between index 75 and index 85, inclusive
+    for i in range(75, 86):
+        if list1[i] == list2[i]:
+            identical_elements.add(list1[i])
+    # Return the set of identical elements
+    return identical_elements
+
+```
+This code defines a function called 'identical_elements' that takes two arguments, two lists of the same size, and returns the set of all elements that occur at least once in both lists anywhere between index 75 and index 85, both inclusive. If no such elements exist in the given lists, the function should return an empty set.
+The code first checks if both lists are of the same size and length is greater than or equal to 75. If it is not, then the function returns an empty set.
+Next, the code initializes an empty set called 'identical_elements' to store all the identical elements between the two lists.
+Then, the code iterates through both lists from index 75 to index 86 (both inclusive), and for each element in the list, it checks if the corresponding element in the other list is identical. If the element is identical, then it is added to the 'identical_elements' set.
+Finally, the function returns the set of identical elements between the two lists.

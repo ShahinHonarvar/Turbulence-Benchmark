@@ -1,0 +1,22 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(4, 6 + 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Get the lowercase version of the current character
+            lower_char = string[i].lower()
+            # Add the palindrome formed by the lowercase version of the current character to the set of palindromes
+            palindromes.add(lower_char)
+    # Loop through each pair of adjacent characters in the string
+    for i in range(4, 6 + 1):
+        for j in range(i + 1, 6 + 1):
+            # Check if the current pair of adjacent characters is a letter
+            if string[i].isalpha() and string[j].isalpha():
+                # Get the lowercase version of each character in the current pair of adjacent characters
+                lower_char1 = string[i].lower()
+                lower_char2 = string[j].lower()
+                # Add the palindrome formed by the lowercase version of both characters to the set of palindromes
+                palindromes.add(lower_char1 + lower_char2)
+    return palindromes

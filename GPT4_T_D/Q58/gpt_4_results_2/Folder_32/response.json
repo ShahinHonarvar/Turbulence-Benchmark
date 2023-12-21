@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape[0], matrix.shape[1]\n    for x1 in range(rows):\n        for y1 in range(cols):\n            for x2 in range(x1, rows):\n                for y2 in range(y1, cols):\n                    if (x2 - x1 + 1) * (y2 - y1 + 1) == 103:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908561,
+  "id": "chatcmpl-7imqfJtdm9xtC89I39mA22nir8wWe",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 113,
+    "prompt_tokens": 111,
+    "total_tokens": 224
+  }
+}

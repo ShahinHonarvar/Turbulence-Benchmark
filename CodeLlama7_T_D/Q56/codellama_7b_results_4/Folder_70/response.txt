@@ -1,0 +1,27 @@
+ ```
+def all_substring_of_size_n(string):
+"""
+This function takes a string as an argument and returns the list of all distinct substrings of length equal to n with no duplicate characters. If no such substrings exist in the given string, the function should return an empty list. The order of the substrings in the returned list does not matter.
+"""
+if len(string) < 12:
+# If the length of the input string is less than 12, then there are no substrings of size n to be found and we can immediately return an empty list.
+return []
+else:
+
+# Initialize an empty list to store the substrings.
+substrings = []
+
+# Loop through each substring of length n in the input string.
+for i in range(len(string) - 12 + 1):
+substring = string[i:i+12]
+
+# Check if the substring is already present in the list of substrings. If it is, then we can skip this substring and move on to the next one.
+if substring in substrings:
+continue
+
+# Add the substring to the list of substrings.
+substrings.append(substring)
+
+# Return the list of all distinct substrings of length equal to n with no duplicate characters, or an empty list if no such substrings exist in the given string.
+return substrings
+```

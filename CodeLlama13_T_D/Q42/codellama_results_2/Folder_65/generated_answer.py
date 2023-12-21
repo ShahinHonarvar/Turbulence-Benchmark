@@ -1,0 +1,3 @@
+
+def prime_factors(lst):
+    return set(list(range(2, int(lst[35] ** 0.5) + 1))).intersection(set(map(int, lst)))

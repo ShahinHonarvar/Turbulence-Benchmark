@@ -1,0 +1,9 @@
+
+def if_decimal_is_divisible(binary_string):
+    fibonacci = (0, 1)
+    while True:
+        fibonacci += (fibonacci[-1], fibonacci[-2] + fibonacci[-1])
+        if len(fibonacci) == 179:
+            break
+    decimal = int(binary_string, 2)
+    return decimal % fibonacci[178] == 0

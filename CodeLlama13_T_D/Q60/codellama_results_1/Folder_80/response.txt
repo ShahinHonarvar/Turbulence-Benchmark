@@ -1,0 +1,14 @@
+```
+def all_left_right_truncatable_prime(nums):
+    left_trunc = []
+    right_trunc = []
+    for n in nums:
+        if is_prime(n) and not str(n).startswith('0'):
+            left_trunc.append(n)
+            right_trunc.append(n)
+        while len(str(left_trunc[-1])) > 2:
+            left_trunc.append(int(str(left_trunc[-1])[1:]))
+        while len(str(right_trunc[0])) > 2:
+            right_trunc.insert(0, int(str(right_trunc[0])[:-1]))
+    return list(set(left_trunc + right_trunc))
+```

@@ -1,0 +1,38 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Initialize an empty list for the results
+    results = []
+
+    # Loop through each number in the tuple
+    for num in tuple:
+
+        # Check if the current number is prime
+        if is_prime(num):
+
+            # If it is, loop through all digits of the number
+            for i in range(len(str(num)))):
+
+                # Construct a new number by removing the leading digit
+                new_num = int(str(num)[:i] + str(num)[i+1:]))
+
+                # Check if the new number is prime
+                if is_prime(new_num):
+
+                    # If it is, add it to the list of results
+                    results.append(new_num)
+
+    # Sort the list of results in descending order
+    results = sorted(results, reverse=True)
+
+    # Return the list of results
+    return results
+
+# Check if a number is prime
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```

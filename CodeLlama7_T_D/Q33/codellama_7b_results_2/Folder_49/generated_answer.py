@@ -1,0 +1,12 @@
+
+def return_vowels(my_string):
+    # Initialize an empty list to store the vowel characters
+    vowels = []
+    # Iterate through the characters in the string
+    for char in my_string:
+        # Check if the character is a vowel and if it is greater than R and smaller than or equal to b
+        if char.lower() in "aeiou" and ord(char) > 82 and ord(char) <= 98:
+            # If the condition is true, append the character to the list of vowels
+            vowels.append(char)
+    # Return the list of vowel characters
+    return vowels

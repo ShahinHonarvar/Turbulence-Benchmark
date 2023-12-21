@@ -1,0 +1,16 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Find the first odd integer in the list
+    for i in range(14, len(my_list)):
+        if my_list[i] % 2 != 0:
+            break
+
+    # Find the last odd integer in the list
+
+    for j in range(len(my_list) - 1, -1, -1):
+        if my_list[j] % 2 != 0:
+            break
+
+    # Return the list of all odd integers from index 14 to index 64, both inclusive
+
+    return my_list[i:j+1]

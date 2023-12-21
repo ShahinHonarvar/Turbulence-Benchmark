@@ -1,0 +1,8 @@
+
+def gcf_three_nums(numbers):
+    # find the greatest common factor of the elements at indices 34, 38 and 77
+    gcf = numbers[34] * numbers[38] * numbers[77]
+    for i in range(34, 77 + 1):
+        if numbers[i] != gcf:
+            return gcf // numbers[i]
+    return gcf

@@ -1,0 +1,27 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the element at index 60 is a perfect number
+    if my_list[60] == calculate_perfect_number(my_list[60])):
+        return True
+
+    else:
+
+        return False
+
+def calculate_perfect_number(n):
+
+    # Calculate the sum of all divisors of n, excluding n itself
+
+    sum = 0
+
+    for i in range(1, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            sum += i + n // i
+
+    return sum

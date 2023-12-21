@@ -1,0 +1,19 @@
+
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the given string
+    for char in string:
+        # Check if the current character is between the indices 171 and 636 (both exclusive)
+        if 170 < ord(char) < 637:
+            # If the current character is between the indices, check if it is greater than 'c' and smaller than 's'
+            if char > 'c' and char < 's':
+                # If the current character meets the criteria, skip adding it to the list of filtered characters
+                continue
+
+        # Add the current character to the list of filtered characters
+        filtered_chars.append(char)
+
+    # Join the filtered characters into a single string and return it
+    return ''.join(filtered_chars)

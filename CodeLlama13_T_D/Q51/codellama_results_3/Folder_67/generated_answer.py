@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = 0
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            s1 = strings[i].lower()
+            s2 = strings[j].lower()
+            if len(s1) >= 3 and len(s2) >= 3:
+                anagram_pairs += s1 == "".join(sorted(s2)) or s2 == "".join(sorted(s1))
+    return anagram_pairs <= 5

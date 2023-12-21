@@ -1,0 +1,21 @@
+ ```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(60, 95+1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers)
+
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5)+1):
+        if n % i == 0:
+            return False
+
+    return True
+
+my_list = [0, 1, 4, 6, 8, 9, 11, 13, 14, 15, 17, 19, 21, 22, 23, 25, 27, 29, 31, 32, 33, 35, 37, 39, 41, 42, 43, 45, 47, 49, 51, 52, 53, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]
+#print(find_primes_between_indices(my_list))
+```

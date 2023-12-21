@@ -1,0 +1,4 @@
+
+def insert_after_index(my_list):
+    # Insert 742.2 at index immediately succeeding index 18
+    return my_list[:18] + [742.2] + my_list[18:]

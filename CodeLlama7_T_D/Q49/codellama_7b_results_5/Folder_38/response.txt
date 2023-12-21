@@ -1,0 +1,13 @@
+ Here's a possible implementation of the `if_decimal_is_divisible` function:
+```python
+def if_decimal_is_divisible(binary_representation):
+    # Convert binary representation to decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Find the index of the 78th Fibonacci number in the sequence
+    fib_sequence = [0, 1]
+    for i in range(2, 78):
+        fib_sequence.append(fib_sequence[i - 1] + fib_sequence[i - 2])
+    index_of_78th_number = len(fib_sequence) - 1
+    # Check if the decimal integer is divisible by the 78th Fibonacci number
+    return (decimal_integer % fib_sequence[index_of_78th_number]) == 0
+```

@@ -1,0 +1,35 @@
+ def all_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+    # Loop through all prime numbers less than x
+    for i in range(2, x):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is right-truncatable prime number
+            if is_right_truncatable_prime(i):
+                # Add i to the list of prime numbers
+                prime_list.append(i)
+    return sorted(prime_list)
+def is_prime(n):
+    # Check if n is an integer greater than 1
+    if not isinstance(n, int) or n < 2:
+        return False
+
+# Loop through all numbers less than sqrt(n)
+for i in range(2, int(math.sqrt(n))) + 1):
+    # Check if i divides n without a remainder
+    if n % i == 0:
+        return False
+
+return True
+
+def is_right_truncatable_prime(n):
+    # Check if n is an integer greater than 1
+    if not isinstance(n, int) or n < 2:
+        return False
+
+# Loop through all numbers less than sqrt(n)
+for i in range(2, int(math.sqrt(n))) + 1):
+    # Check if i divides n without a remainder
+    if n % i == 0:
+        return False

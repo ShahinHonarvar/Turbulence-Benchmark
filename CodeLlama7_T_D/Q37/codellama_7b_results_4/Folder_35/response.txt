@@ -1,0 +1,16 @@
+ def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over the characters in the given string
+    for char in s:
+        # Check if the current character is between indices 155 and 403, both inclusive, and is greater than or equal to character '(' and smaller than or equal to character ']'
+        if (char >= '(') and (char <= ']') and (155 <= s.index(char)) and (s.index(char) <= 403)):
+            # If the current character passes the filter, add it to the list of filtered characters
+            filtered_chars.append(char)
+
+    # Join the filtered characters into a single string
+    filtered_string = "".join(filtered_chars)
+
+    # Return the altered string with all occurrences of filtered characters removed
+    return filtered_string

@@ -1,0 +1,21 @@
+
+def all_left_truncatable_prime(x):
+    x = list(range(1, x+1))
+    return sorted([i for i in x if is_left_truncatable_prime(i)])
+
+def is_left_truncatable_prime(n):
+    n = str(n)
+    if '0' in n:
+        return False
+    for i in range(1, len(n)):
+        if not is_prime(int(n[i:])):
+            return False
+    return True
+
+def is_prime(n):
+    if n == 1 or n == 0:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

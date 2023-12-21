@@ -1,0 +1,8 @@
+
+def return_n_greatest_chars(input_string):
+    # Split the input string into a list of characters
+    char_list = list(input_string)
+    # Sort the character list in descending order based on ASCII values
+    char_list.sort(key=ord, reverse=True)
+    # Return the first 11 elements of the sorted list
+    return char_list[:11]

@@ -1,0 +1,70 @@
+
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    # Initialize an empty list to store the sorted right-truncatable prime numbers
+    right_truncatable_primes = []
+
+    # Iterate over the elements in the tuple of positive integers
+    for element in tuple_of_positive_integers:
+        # Check if the current element is a prime number
+        if is_prime(element):
+            # If the current element is a prime number, check if it is right-truncatable prime number
+            if is_right_truncatable_prime(element):
+                # Add the current element to the list of sorted right-truncatable prime numbers
+                right_truncatable_primes.append(element)
+
+    # Sort the list of sorted right-truncatable prime numbers in ascending order
+    right_truncatable_primes.sort()
+
+    # Return the list of sorted right-truncatable prime numbers
+    return right_truncatable_primes
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Initialize a variable to store the number of divisors
+        divisor_count = 0
+
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i is a factor of n
+            if n % i == 0:
+                # Increment the number of divisors
+                divisor_count += 1
+
+        # Return True if the number of divisors is less than or equal to 2, otherwise return False
+        return divisor_count <= 2
+
+    # If n is less than or equal to 1, return False
+    else:
+        return False
+
+# Define a function to check if a prime number is right-truncatable
+def is_right_truncatable_prime(n):
+    # Check if n is a prime number
+    if is_prime(n):
+        # Initialize a variable to store the current number of digits in n
+        digit_count = len(str(n))
+
+        # Iterate from 1 to the square root of n
+        for i in range(1, int(n ** 0.5) + 1):
+            # Check if the current number of digits in n is less than or equal to the number of digits in i
+            if digit_count <= len(str(i))):
+                # Return False if the current number of digits in n is less than or equal to the number of digits in i, otherwise return True
+                return digit_count == len(str(i)))
+
+        # If the number of digits in n is greater than 1, check if the last rightmost digit of n is a prime number
+        elif digit_count > 1:
+            # Check if the last rightmost digit of n is a prime number
+            if is_prime(int(str(n)[-1])), return True
+
+        # Return False if the number of digits in n is greater than 1 and the last rightmost digit of n is not a prime number, otherwise return True
+        return False
+
+# If the argument is not a tuple of positive integers, raise a TypeError
+if not isinstance(tuple_of_positive_integers, tuple) or any(not element > 0 for element in tuple_of_positive_integers)):
+    raise TypeError("Argument must be a tuple of positive integers")
+
+# If the argument is an empty tuple, return an empty list
+if not tuple_of_positive_integers:
+    return []

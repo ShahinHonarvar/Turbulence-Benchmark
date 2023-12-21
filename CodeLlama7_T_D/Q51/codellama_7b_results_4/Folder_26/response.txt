@@ -1,0 +1,20 @@
+ ```
+def if_contains_anagrams(words):
+    # Initialize a dictionary to store the number of anagram pairs
+    anagram_pairs = {}
+    # Loop through each word in the list
+    for word1 in words:
+        # Loop through each word in the list again
+        for word2 in words:
+            # If the words are not the same and their lengths are at least 3
+            if word1 != word2 and len(word1) >= 3:
+                # Convert the words to lowercase
+                word1_lower = word1.lower()
+                word2_lower = word2.lower()
+                # If the words are anagrams of each other
+                if sorted(word1_lower) == sorted(word2_lower):
+                    # Increment the number of anagram pairs in the dictionary
+                    anagram_pairs[word1, word2] = anagram_pairs.get((word1, word2), 0) + 1
+    # Return true if there are at most 35 pairs of anagrams in the given list; otherwise, return false
+    return len(anagram_pairs) <= 35
+```

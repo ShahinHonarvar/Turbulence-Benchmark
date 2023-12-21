@@ -1,0 +1,16 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with -37 sum
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of the elements in the submatrix
+            submatrix_sum = np.sum(matrix[i:, j]) + np.sum(matrix[i, j+1:]) - matrix[i, j]
+            # If the sum is equal to -37, add the submatrix to the list
+            if submatrix_sum == -37:
+                submatrices.append(matrix[i:, j])
+    # Return the list of all submatrices with -37 sum
+    return submatrices

@@ -1,0 +1,3 @@
+
+def all_left_truncatable_prime(x):
+    return sorted([int(''.join(str(i)[1:])) for i in range(2, x) if is_prime(i)] + [int(str(x)[1:])], key=lambda x: str(x))

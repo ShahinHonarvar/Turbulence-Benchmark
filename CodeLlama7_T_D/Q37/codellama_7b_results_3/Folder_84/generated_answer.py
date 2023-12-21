@@ -1,0 +1,13 @@
+
+def filter_chars(string):
+    filtered = ""
+
+    for i in range(138, 920 + 1):
+        char = string[i]
+
+        if char >= '6' and char <= 'A':
+            continue
+
+        filtered += char
+
+    return filtered

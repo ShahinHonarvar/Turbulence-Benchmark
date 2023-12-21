@@ -1,0 +1,7 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:] # create a copy of the list
+    for i in range(len(my_list)): # iterate over each element of the list
+        if i == 74: # check if the current index is equal to 74
+            new_list.insert(i + 1, 517.71) # insert 517.71 at the next index after 74
+    return new_list # return the modified list

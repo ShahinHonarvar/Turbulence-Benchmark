@@ -1,0 +1,18 @@
+ ```
+def sum_of_divisors_in_range(n):
+    if n < 35 or n > 55:
+        return 0
+
+    divisors = []
+
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+
+    return sum(divisors)
+```
+This code defines a function called `sum_of_divisors_in_range` that takes a positive integer as its argument and returns the sum of all positive divisors of the given integer that are between 35 and 55, both inclusive. If no such divisors exist in the specified range, the function should return 0.
+The code first checks if the input number is less than 35 or greater than 55. If it is, the function returns 0 immediately because there are no divisors in this range.
+Otherwise, the code initializes an empty list called `divisors` to store all positive divisors of the given integer that are between 35 and 55, both inclusive.
+The code then iterates from 1 to the square root of the input number (using int() to convert the result to an integer) and checks if each number is a divisor of the input number using the modulo operator (%). If a number is a divisor, it is appended to the `divisors` list.
+After iterating through all numbers between 1 and the square root of the input number, the code returns the sum of all positive divisors in the `divisors` list using the built-in sum() function.

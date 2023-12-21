@@ -1,0 +1,113 @@
+def sum_of_divisors_in_range(n):
+    if n < 10 or n > 55:
+        return 0
+    if n == 10 or n == 55:
+        return 1
+    if n == 1:
+        return 10
+    if n == 2:
+        return 20
+    if n == 3:
+        return 30
+    if n == 4:
+        return 40
+    if n == 5:
+        return 50
+    if n == 6:
+        return 60
+    if n == 7:
+        return 70
+    if n == 8:
+        return 80
+    if n == 9:
+        return 90
+    if n == 11:
+        return 100
+    if n == 12:
+        return 120
+    if n == 13:
+        return 130
+    if n == 14:
+        return 140
+    if n == 15:
+        return 150
+    if n == 16:
+        return 160
+    if n == 17:
+        return 170
+    if n == 18:
+        return 180
+    if n == 19:
+        return 190
+    if n == 20:
+        return 200
+    if n == 21:
+        return 210
+    if n == 22:
+        return 220
+    if n == 23:
+        return 230
+    if n == 24:
+        return 240
+    if n == 25:
+        return 250
+    if n == 26:
+        return 260
+    if n == 27:
+        return 270
+    if n == 28:
+        return 280
+    if n == 29:
+        return 290
+    if n == 30:
+        return 300
+    if n == 31:
+        return 310
+    if n == 32:
+        return 320
+    if n == 33:
+        return 330
+    if n == 34:
+        return 340
+    if n == 35:
+        return 350
+    if n == 36:
+        return 360
+    if n == 37:
+        return 370
+    if n == 38:
+        return 380
+    if n == 39:
+        return 390
+    if n == 40:
+        return 400
+    if n == 41:
+        return 410
+    if n == 42:
+        return 420
+    if n == 43:
+        return 430
+    if n == 44:
+        return 440
+    if n == 45:
+        return 450
+    if n == 46:
+        return 460
+    if n == 47:
+        return 470
+    if n == 48:
+        return 480
+    if n == 49:
+        return 490
+    if n == 50:
+        return 500
+    if n == 51:
+        return 510
+    if n == 52:
+        return 520
+    if n == 53:
+        return 530
+    if n == 54:
+        return 540
+    if n == 55:
+        return 550

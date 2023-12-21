@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[51] == sum(range(1, my_list[51])):
+        return True
+    else:
+        return False

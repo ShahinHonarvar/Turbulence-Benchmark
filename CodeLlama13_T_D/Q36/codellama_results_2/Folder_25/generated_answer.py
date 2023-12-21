@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(24, 37):
+        if string[i].isalpha() and string[i].upper() > 'A' and string[i].upper() < 'H':
+            string = string.replace(string[i], '')
+    return string

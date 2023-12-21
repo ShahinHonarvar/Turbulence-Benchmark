@@ -1,0 +1,32 @@
+
+def remove_repeat_chars(string):
+    # Initialize an empty list to store the characters of the string
+    char_list = []
+
+    # Iterate over each character in the given string
+    for char in string:
+
+        # If the current character is not already in the list of unique characters
+        if char not in char_list:
+
+            # Add the current character to the list of unique characters
+            char_list.append(char)
+
+    # Initialize an empty string to store the final result
+    result = ""
+
+    # Iterate over each character in the list of unique characters
+    for char in char_list:
+
+        # If the current character occurs more than once in the original string
+        if string.count(char) > 1:
+
+            # Replace all occurrences of the current character with a single copy of the character
+            result += char * string.count(char)
+
+        # Otherwise, add the current character to the final result as is
+        else:
+            result += char
+
+    # Return the final result string
+    return result

@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(string):
+    chars = sorted([char for char in string if char.isalpha()])
+    return chars[:21]

@@ -1,0 +1,18 @@
+
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of the two numbers at indices 42 and 25
+    num1 = my_list[42]
+    num2 = my_list[25]
+    if num1 > num2:
+        smaller_num = num2
+        larger_num = num1
+    else:
+        smaller_num = num1
+        larger_num = num2
+
+    while smaller_num != 0:
+        temp = smaller_num
+        smaller_num = larger_num % smaller_num
+        larger_num = temp
+
+    return larger_num

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(circular_list):\n    sublists = []\n    size = len(circular_list)\n    for i in range(size):\n        product = 1\n        for j in range(i, size+i):\n            product *= circular_list[j % size]\n            if product == 51:\n                sublists.append(circular_list[i:(j+1) % size])\n    return sublists\n```\nNote: In the code above, `circular_list` is assumed to be a list of integers.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866331,
+  "id": "chatcmpl-7ePiV9in7aCJ6VY2ZCHR5XFFfbqNH",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 193,
+    "total_tokens": 302
+  }
+}

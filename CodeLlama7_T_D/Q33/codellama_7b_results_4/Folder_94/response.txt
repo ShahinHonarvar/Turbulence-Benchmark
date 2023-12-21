@@ -1,0 +1,8 @@
+ def return_vowels(my_string):
+    vowels = ["a", "e", "i", "o", "u"]
+    char_list = list(my_string)
+    result = []
+    for i in range(40, 95):
+        if char_list[i] in vowels and char_list[i] > char_list[4] and char_list[i] <= char_list[72]:
+            result.append(char_list[i])
+    return result

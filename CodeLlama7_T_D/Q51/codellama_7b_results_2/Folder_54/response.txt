@@ -1,0 +1,36 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    # Loop through each string in the list
+    for string in my_list:
+
+        # Convert the string to lowercase
+        # This will ensure case-insensitive comparison
+        string = string.lower()
+
+        # Check if the string is an anagram of the English letters
+        # If it is, add its count to the dictionary
+        if is_anagram(string):
+            anagram_counts[string] = anagram_counts.get(string, 0) + 1
+
+    # Check if there are at most 39 pairs of anagrams in the list
+    # If there are, return True; otherwise, return False
+    return len(anagram_counts) <= 39
+
+# Define a function to check if a string is an anagram of the English letters
+def is_anagram(string):
+    # Create a dictionary to store the counts of each letter in the alphabet
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    letter_counts = {letter: 0 for letter in alphabet}
+
+    # Loop through each letter in the string
+    for letter in string:
+        # Increment the count of the letter in the dictionary
+        letter_counts[letter] += 1
+
+    # Check if the string is an anagram of the English letters
+    # If it is, return True; otherwise, return False
+    return all(count == 0 for count in letter_counts.values()) and len(string) >= 3
+```

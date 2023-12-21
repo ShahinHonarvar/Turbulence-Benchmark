@@ -1,0 +1,22 @@
+```
+def all_right_truncatable_prime(numbers):
+    x = numbers[25]
+    prime_numbers = []
+    for i in range(10, x + 1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    
+    right_truncatable_primes = []
+    for i in prime_numbers:
+        if is_right_truncatable_prime(i):
+            right_truncatable_primes.append(i)
+    
+    return sorted(right_truncatable_primes, reverse=True)
+```
+This code defines a function called `all_right_truncatable_prime` that takes a tuple of positive integers as an argument. The function first extracts the integer at index 25 from the tuple and stores it in a variable named `x`. Then, it creates a list called `prime_numbers` by iterating over the range of numbers from 10 to `x + 1` (inclusive) and testing each number for primality using the `is_prime` function.
+
+Next, the code creates another list called `right_truncatable_primes` by iterating over the elements of `prime_numbers` and testing each prime number for right-truncatability using the `is_right_truncatable_prime` function. If a prime number is found to be right-truncatable, it is added to the list.
+
+Finally, the code returns the sorted list of right-truncatable primes less than `x`, sorted in descending order using the built-in `sorted` function with the `reverse=True` parameter. If there are no right-truncatable prime numbers less than `x`, an empty list is returned.
+
+Note that this code assumes that you have already defined a function called `is_prime` and another function called `is_right_truncatable_prime`. These functions should be defined separately and should take an integer as their sole argument, returning True if the number is prime or right-truncatable, respectively.

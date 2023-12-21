@@ -1,0 +1,16 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    left_and_right_truncatable_primes = []
+    for number in numbers:
+        if is_left_and_right_truncatable_prime(number):
+            left_and_right_truncatable_primes.append(number)
+    return sorted(left_and_right_truncatable_primes)
+
+def is_left_and_right_truncatable_prime(number):
+    if number == 1 or number == 0:
+        return False
+    for i in range(2, int(math.sqrt(number)) + 1):
+        if number % i == 0:
+            return False
+    return True
+```

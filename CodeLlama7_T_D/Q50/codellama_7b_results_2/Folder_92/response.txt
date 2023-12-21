@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(string_list):
+# Create a dictionary to store the anagrams and their counts
+anagram_counts = {}
+# Loop through each string in the list
+for string in string_list:
+# Convert the string to lowercase for case-insensitive comparison
+lowercase_string = string.lower()
+# Check if the string is a palindrome (i.e., its reverse is equal to itself)
+if string == lowercase_string[::-1]:
+# If the string is a palindrome, add it to the dictionary of anagrams and their counts
+if lowercase_string in anagram_counts:
+anagram_counts[lowercase_string] += 1
+else:
+anagram_counts[lowercase_string] = 1
+# Check if there are at least two pairs of anagrams in the dictionary
+if len(anagram_counts) < 2:
+return False
+
+return True
+```

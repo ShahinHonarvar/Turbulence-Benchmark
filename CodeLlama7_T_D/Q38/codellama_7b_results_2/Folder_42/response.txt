@@ -1,0 +1,17 @@
+ ```
+def find_subset_of_length_n(s):
+    count = 0
+    for i in range(1 << len(s)):
+        subset = []
+        for j in range(len(s)):
+            if (i >> j) & 1:
+                subset.append(s[j])
+        if len(subset) == 31:
+            count += 1
+
+    return count
+
+```
+This code defines a function `find_subset_of_length_n` that takes one argument, a set of elements, and returns the number of all its subsets of size 31.
+The function works by iterating over all possible combinations of elements in the set using bitwise operations. For each combination, it checks if the subset has length 31 and increments the count if it does.
+The function returns the total number of subsets of size 31 found in the given set.

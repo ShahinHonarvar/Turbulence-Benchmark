@@ -1,0 +1,20 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Create a dictionary to store the sublists with product equal to n
+    sublists = {}
+
+    # Iterate over the circular list and calculate the product of each contiguous sublist
+    for i in range(len(circular_list))):
+        product = 1
+
+        # Calculate the product of the sublist starting from index i
+        for j in range(i, len(circular_list)):
+            product *= circular_list[j]
+
+        # Add the sublist to the dictionary if its product is equal to n
+        if product == n:
+            sublists.append((i, product))
+
+    # Return the list of sublists with product equal to n
+    return sublists
+```

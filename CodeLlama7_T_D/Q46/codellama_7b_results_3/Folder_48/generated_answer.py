@@ -1,0 +1,9 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the three numbers
+    gcf = my_list[654] * my_list[312] * my_list[441]
+    for i in range(1, min(my_list[654], my_list[312], my_list[441])) + 1):
+        if my_list[654] % i == 0 and my_list[312] % i == 0 and my_list[441] % i == 0:
+            gcf = i
+
+    return gcf

@@ -1,0 +1,28 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    def is_left_right_truncatable_prime(n):
+        if n < 2:
+            return False
+
+        for i in range(1, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        digits = [int(d) for d in str(n)]
+        for i in range(len(digits)):
+            if digits[i] == 0:
+                return False
+
+            if digits[-1 - i] != digits[i]:
+                return False
+
+        return True
+
+    return [n for n in range(2, x + 1) if is_left_right_truncatable_prime(n)]
+```
+This code defines a function `all_left_right_truncatable_prime` that takes one argument, which is a tuple of positive integers. The function returns the list of all left-and-right-truncatable prime numbers less than or equal to the integer at index 767 in the specified range.
+The function first defines another helper function called `is_left_right_truncatable_prime` that takes one argument, which is an integer n. The function returns True if n is a left-and-right-truncatable prime number and False otherwise.
+To check whether an integer n is a left-and-right-truncatable prime number, the function first checks if n is less than 2. If it is, then it is not a left-and-right-truncatable prime number and the function returns False.
+Next, the function checks if n has any factors other than 1 and itself. If it does, then it is not a left-and-right-truncatable prime number and the function returns False.
+If n is greater than 2 and has no factors other than 1 and itself, then the function continues to check whether the digits of n are all different from each other and whether the leading digit of n is also the last rightmost digit of n. If these conditions are not met, then it is not a left-and-right-truncatable prime number and the function returns False.
+If all of these conditions are met, then n is considered to be a left-and-right-truncatable prime number and the function returns True.

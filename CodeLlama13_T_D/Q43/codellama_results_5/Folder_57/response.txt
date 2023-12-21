@@ -1,0 +1,17 @@
+```
+def find_primes_between_indices(numbers):
+    prime_numbers = []
+    for i in range(35, 90):
+        if numbers[i] == 2:
+            prime_numbers.append(numbers[i])
+        elif numbers[i] % 2 != 0 and numbers[i] > 1:
+            is_prime = True
+            for j in range(3, int(math.sqrt(numbers[i])) + 1, 2):
+                if numbers[i] % j == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                prime_numbers.append(numbers[i])
+    return sorted(prime_numbers, reverse=True)
+```
+Note that this solution assumes that the input list of integers is already sorted in ascending order.

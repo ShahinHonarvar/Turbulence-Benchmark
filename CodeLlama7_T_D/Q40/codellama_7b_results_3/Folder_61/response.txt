@@ -1,0 +1,10 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```python
+def return_n_smallest_chars(string, n):
+    # Sort the string in descending order based on ASCII value
+    sorted_string = sorted(string, key=lambda x: ord(x), reverse=True)
+    # Return the first n characters of the sorted string
+    return sorted_string[:n]
+```
+This function takes two arguments: `string`, which is a string of distinct characters, and `n`, which is an integer representing the number of smallest ASCII values that the user wants to retrieve. The function first sorts the `string` in descending order based on its ASCII value using the `sorted()` function with the `key` parameter set to `ord()`. This ensures that the characters with the smallest ASCII values are at the beginning of the sorted string.
+The function then returns the first `n` characters of the sorted string using slicing. The resulting list contains exactly `n` characters, which are the smallest ASCII values in the original `string`.

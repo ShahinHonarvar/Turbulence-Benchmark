@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: 81dab713-ed4b-4412-b576-6fedb8acb2d6
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_not_div_by_num' that takes one argument, a list of integers, and returns the list of all integers not divisible by 10 from index 0 to index 9, both exclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def all_ints_not_div_by_num(int_list):
+    result = re.findall(r'(\d+)', str(int_list))
+    if result:
+        return [int(i) for i in result if int(i) % 10 != 0]
+    else:
+        return []
+```
+	likelihood: None
+	token_likelihoods: None
+}]

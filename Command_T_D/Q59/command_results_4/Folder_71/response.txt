@@ -1,0 +1,54 @@
+[cohere.Generation {
+	id: 10a26364-6e46-4000-a6ff-1aa22cef2800
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 22. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in descending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+import heapq
+import math
+import sys
+import time
+import collections
+
+sys.setrecursionlimit(10**7)
+mod = 10**9 + 7
+def prime():
+    def is_prime(n):
+        if n <= 1:
+            return False
+        if n <= 3:
+            return True
+        if n % 2 == 0 or n % 3 == 0:
+            return False
+        maxDivisor = n**0.5
+        i = 5
+        while i * i <= maxDivisor:
+            if n % i == 0 or n % (i + 2) == 0:
+                return False
+            i += 6
+        return True
+    res = []
+    for i in range(2, int(math.ceil(math.sqrt(n) + 1)) + 1):
+        if is_prime(i):
+            res.append(i)
+    return res
+
+def left_truncatable_prime():
+    res = []
+    for prime in prime():
+        x = str(prime)
+        if x[0] != '0' and all(x[0] != c for c in x[1:]):
+            res.append(prime)
+    return res
+
+def all_left_truncatable_prime(tup):
+    res = left_truncatable_prime()
+    res.sort(reverse=True)
+    for i in range(len(res)):
+        while res[i] < tup[22]:
+            res[i] += 1
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

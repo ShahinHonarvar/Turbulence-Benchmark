@@ -1,0 +1,7 @@
+
+def palindrome_of_length_n(string):
+    # Create a list of all substrings of the given string
+    substrings = [string[i:j+1] for i in range(len(string)) for j in range(i, len(string))]
+    # Filter out substrings that are not palindromes or do not have length equal to n
+    palindromes = [substring for substring in substrings if substring == substring[::-1] and len(substring) == n]
+    return set(palindromes)

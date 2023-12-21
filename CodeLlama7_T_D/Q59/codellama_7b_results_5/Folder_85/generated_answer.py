@@ -1,0 +1,15 @@
+
+def all_left_truncatable_prime(tuple):
+    x = tuple[94]
+    left_truncatable_primes = []
+    for i in range(2, x):
+        is_prime = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        if is_prime and str(i).count("0") == 0:
+            left_truncatable_primes.append(i)
+
+    return sorted(left_truncatable_primes)

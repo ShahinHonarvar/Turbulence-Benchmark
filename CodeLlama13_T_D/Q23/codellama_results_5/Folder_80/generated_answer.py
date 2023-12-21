@@ -1,0 +1,7 @@
+
+def find_divisors_in_range(num):
+    divisors = []
+    for i in range(70, 94):
+        if num % i == 0 and i >= 70 and i <= 93:
+            divisors.append(i)
+    return divisors

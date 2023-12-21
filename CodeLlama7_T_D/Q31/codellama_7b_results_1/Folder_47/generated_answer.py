@@ -1,0 +1,23 @@
+
+def if_perfect_num(lst):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in lst)):
+        raise ValueError("Input must be a list of positive integers")
+    # Check if the integer at index 34 exists
+    if len(lst) < 35:
+        raise ValueError("List is too short to contain an element at index 34")
+    # Check if the integer at index 34 is a perfect number
+    if not is_perfect_num(lst[34]):
+        return False
+
+    # If the above conditions are met, then the input list is considered valid
+    return True
+
+def is_perfect_num(n):
+    # Check if the input is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("Input must be a positive integer")
+    # Calculate the sum of the proper divisors of the input number
+    sum_divisors = sum([i for i in range(1, int(n ** 0.5) + 1) if n % i == 0])
+    # Check if the sum of the proper divisors is equal to the input number
+    return sum_divisors == n

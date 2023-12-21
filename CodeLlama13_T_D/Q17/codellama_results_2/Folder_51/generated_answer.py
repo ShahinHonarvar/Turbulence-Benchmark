@@ -1,0 +1,11 @@
+
+def all_ints_div_by_both_two_nums(arr):
+    # find the range of indices that are divisible by -1 and -10
+    start = 6
+    end = 9
+    for i in range(start, end+1):
+        if arr[i] % -1 != 0 or arr[i] % -10 != 0:
+            return []
+    # find the indices that are divisible by both -1 and -10
+    ind = [i for i in range(start, end+1) if arr[i] % -1 == 0 and arr[i] % -10 == 0]
+    return ind

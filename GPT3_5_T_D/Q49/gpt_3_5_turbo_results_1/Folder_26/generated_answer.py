@@ -1,0 +1,7 @@
+
+def if_decimal_is_divisible(decimal):
+    fibonacci = [0, 1]
+    while len(fibonacci) < 138:
+        fibonacci.append(fibonacci[-1] + fibonacci[-2])
+    decimal_value = int(decimal, 2)
+    return decimal_value % fibonacci[137] == 0

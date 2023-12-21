@@ -1,0 +1,5 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([a for a, b in zip(my_list, my_list[1:]) if set(a) == set(b) and len(a) >= 3]) > 155
+```
+This function uses a list comprehension to create a list of tuples `(a, b)` where `a` and `b` are adjacent strings in the input list, and `set(a) == set(b)` is true if they have the same letters (ignoring case). The `len()` function is then used to count the number of such pairs. Finally, a boolean expression is used to check whether this count is greater than 155.

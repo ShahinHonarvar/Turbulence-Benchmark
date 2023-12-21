@@ -1,0 +1,23 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Initialize variables for the Fibonacci sequence
+    n = 0
+    a = 0
+    b = 1
+
+    # Check if the decimal integer is divisible by the 74th number that occurs in the Fibonacci sequence
+    while n < len(str(decimal_integer)):
+        if str(decimal_integer)[n] == '1':
+            if a + b > 73:
+                return False
+
+            else:
+
+                a = b
+                b = a + b
+                n += 1
+
+    return True
+```

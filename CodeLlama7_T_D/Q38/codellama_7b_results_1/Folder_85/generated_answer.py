@@ -1,0 +1,11 @@
+
+def find_subset_of_length_n(set):
+    count = 0
+    for i in range(1 << len(set)):#bitmask, check every subset
+        temp_set = set()#empty set to store the subset
+        for j in range(len(set)):
+            if (i & (1 << j)): #check if bit at position j is 1
+                temp_set.add(set[j])#if yes, add element at position j to the temporary set
+        if len(temp_set) == n: #if the length of the temporary set equals n
+            count += 1 #increment counter
+    return count

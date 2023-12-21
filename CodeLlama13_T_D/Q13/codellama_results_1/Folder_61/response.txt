@@ -1,0 +1,13 @@
+```
+def find_second_largest_num(numbers):
+    if len(numbers) < 8:
+        return None
+    
+    sorted_numbers = sorted(numbers)[-8:]
+    second_largest = sorted_numbers[1]
+    for num in sorted_numbers[2:]:
+        if num > second_largest:
+            second_largest = num
+            
+    return second_largest
+```

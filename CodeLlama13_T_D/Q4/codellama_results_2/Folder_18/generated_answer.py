@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(numbers):
+    return [n for n in numbers if 57 < n < 84 and n > 0]

@@ -1,0 +1,10 @@
+
+def palindromes_between_indices(string):
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    palindromes = set()
+    for i in range(2, 8+1):
+        for j in range(i+5, len(string)+1):
+            substring = string[i:j]
+            if substring[::-1] in english_letters and len(substring) >= 6:
+                palindromes.add(substring)
+    return palindromes

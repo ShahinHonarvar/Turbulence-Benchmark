@@ -1,0 +1,16 @@
+ ```
+def lists_with_product_equal_n(circulal_list):
+# Initialize an empty list to store the sublists
+sublists = []
+# Iterate over the circular list
+for i in range(len(circulal_list)):
+# Get the current element and its adjacent elements
+current = circulal_list[i]
+left = circulal_list[(i - 1) % len(circulal_list)]
+right = circulal_list[(i + 1) % len(circulal_list)]
+# Check if the product of the current element and its adjacent elements is equal to -94
+if current * left * right == -94:
+# Add the sublist to the list of sublists
+sublists.append([current, left, right])
+return sublists
+```

@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    return [x for x in my_list[10:76+1] if x % -40 == 0 and x % -12 == 0]

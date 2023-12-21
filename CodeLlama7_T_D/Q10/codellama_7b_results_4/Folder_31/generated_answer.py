@@ -1,0 +1,28 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Find the first odd integer in the list
+    for i in range(87, len(my_list)):
+        if my_list[i] % 2 != 0:
+            start = i + 1
+            break
+
+    else:
+
+        return []
+
+
+# Find the last odd integer in the list
+
+for i in range(start, 95):
+
+    if my_list[i] % 2 != 0:
+
+        end = i - 1
+
+        break
+
+
+else:
+
+
+    return []

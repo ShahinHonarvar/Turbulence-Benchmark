@@ -1,0 +1,52 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    primes = []
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list
+                primes.append(i)
+    # Return the sorted list of prime numbers
+    return sorted(primes, reverse=True)
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if n is divisible by i
+            if n % i == 0:
+                # Return False if n is divisible by i
+                return False
+    # Return True if n is greater than 1 and not divisible by any number between 2 and the square root of n
+    return True
+def is_left_right_truncatable_prime(n):
+    # Check if n is a prime number
+    if not is_prime(n):
+        # Return False if n is not a prime number
+        return False
+
+    # Check if the leading leftmost digit of n is 1 or 2
+    if n // 10 ** (len(str(n))) - 1) == 1 or n // 10 ** (len(str(n))) - 1) == 2:
+        # Return False if the leading leftmost digit of n is not 3 or 5
+        return False
+
+    # Check if the last rightmost digit of n is 1 or 3
+    if n % 10 ** (len(str(n))) - 1) == 1 or n % 10 ** (len(str(n))) - 1) == 3:
+        # Return False if the last rightmost digit of n is not 7 or 9
+        return False
+
+    # Check if the number can be obtained by successively removing digits from both sides until a one- or two-digit prime is obtained
+    while len(str(n)) > 1:
+        # Check if the number can be obtained by successively removing digits from both sides until a one- or two-digit prime is obtained
+        if is_prime(int(str(n)[1:-1]))):
+            # Return True if the number can be obtained by successively removing digits from both sides until a one- or two-digit prime is obtained
+            return True
+
+        # Remove the leftmost digit of n
+        n = int(str(n)) * 10 ** (len(str(n))) - 1)
+
+    # Return False if no left-and-right-truncatable prime number exists in the specified range
+    return False

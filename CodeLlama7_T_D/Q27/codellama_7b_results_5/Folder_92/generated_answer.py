@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    # Insert 478.12 at the index immediately succeeding index 1
+    new_list.insert(new_list.index(1) + 1, 478.12)
+    return new_list

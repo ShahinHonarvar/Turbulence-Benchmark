@@ -1,0 +1,15 @@
+
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate through each character in the input string
+    for i in range(len(input_string) - 27)):
+        # Extract the substring of length 28 starting from the current index
+        substring = input_string[i:i + 28]
+
+        # If the substring is not already present in the list, add it
+        if substring not in substrings:
+            substrings.append(substring)
+
+    return substrings

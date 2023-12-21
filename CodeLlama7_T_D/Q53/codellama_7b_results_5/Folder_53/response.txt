@@ -1,0 +1,10 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+import re
+
+def palindrome_of_length_at_least_n(string, n):
+    # Find all palindromes of length greater than or equal to n in the given string.
+    pattern = r"(?i)\b(\w{n,})?\1\b"
+    return set(re.findall(pattern, string))
+```
+This implementation uses a regular expression to find all palindromes of length greater than or equal to `n` in the given string. The regular expression uses a positive lookahead assertion to ensure that the palindrome is at least `n` characters long, and then matches the same character sequence in reverse. Finally, the function returns the set of all such palindromes found in the given string.

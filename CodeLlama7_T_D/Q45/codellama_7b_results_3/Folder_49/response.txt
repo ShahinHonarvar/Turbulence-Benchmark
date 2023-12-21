@@ -1,0 +1,28 @@
+ ```
+def palindromes_between_indices(string):
+# Define the range of indices to search for palindromes
+start = 5
+end = 7
+# Initialize an empty set to store the palindromes
+palindromes = set()
+# Iterate over the characters in the string
+for i in range(start, end + 1):
+# Check if the character at index i is not a space
+if string[i] != ' ':
+# Add the character to a list of characters
+characters = [string[i]]
+# Iterate over the remaining characters in the string
+for j in range(i + 1, end + 1):
+# Check if the character at index j is not a space
+if string[j] != ' ':
+# Add the character to the list of characters
+characters.append(string[j])
+# Check if the length of the list of characters is greater than or equal to 3
+if len(characters) >= 3:
+# Create a palindrome by reversing the order of the characters in the list
+palindrome = ''.join(reversed(characters))
+# Add the palindrome to the set of palindromes
+palindromes.add(palindrome)
+# Return the set of palindromes
+return palindromes
+```

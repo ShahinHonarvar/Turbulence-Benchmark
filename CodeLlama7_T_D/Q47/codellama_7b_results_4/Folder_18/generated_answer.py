@@ -1,0 +1,14 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the range of lengths to consider
+    lengths = range(13, 67)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each length in the range
+    for length in lengths:
+        # Define the substring to search for palindromes
+        substring = string[11:83]
+        # Search for palindromes in the substring using a case-insensitive regular expression
+        palindromes.update(re.findall(r"(\b[a-zA-Z]*\b)(?=\1)", substring, re.IGNORECASE))
+    # Return the set of palindromes found in the specified index range
+    return palindromes

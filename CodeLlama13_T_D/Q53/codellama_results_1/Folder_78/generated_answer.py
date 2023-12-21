@@ -1,0 +1,13 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    if len(string) < 96:
+        return set()
+    palindromes = set()
+    for i in range(len(string)):
+        for j in range(i+1, len(string)):
+            if string[i] != string[j]:
+                continue
+            substring = string[i:j+1]
+            if substring == substring[::-1]:
+                palindromes.add(substring)
+    return palindromes

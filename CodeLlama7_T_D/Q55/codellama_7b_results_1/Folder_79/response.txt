@@ -1,0 +1,30 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list and find the contiguous subsequence of integers whose product equals -83
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the current subsequence
+        current_subsequence = [circular_list[i]]
+
+        # Iterate through the remaining elements of the circular list and find the contiguous subsequence of integers whose product equals -83
+        for j in range(i + 1, len(circular_list)):
+            # Add the current element to the current subsequence
+            current_subsequence.append(circular_list[j])
+
+            # Check if the product of the current subsequence is equal to -83
+            if np.prod(current_subsequence) == -83:
+                # Add the current subsequence to the list of sublists
+                sublists.append(current_subsequence)
+
+                # Break out of the inner loop since a matching sublist has been found
+                break
+
+        # If a matching sublist has not been found, break out of the outer loop
+        if len(sublists) > 0:
+            break
+
+# Return the list of sublists that have a product equal to -83
+return sublists
+```

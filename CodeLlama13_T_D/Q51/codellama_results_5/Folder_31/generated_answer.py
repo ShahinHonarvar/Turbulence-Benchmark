@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(my_list):
+    return len([i for i in my_list if all(set(i) == set(j) and len(i) >= 3 for j in my_list)]) <= 65

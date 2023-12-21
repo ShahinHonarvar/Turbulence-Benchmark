@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Define the English alphabet as a set
+    english_alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    # Initialize a counter for the number of anagrams
+    num_anagrams = 0
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        string = string.lower()
+        # Split the string into individual letters
+        letters = [letter for letter in string]
+        # Create a set of the letters in the string
+        letter_set = set(letters)
+        # Check if the set of letters is a subset of the English alphabet set
+        if letter_set.issubset(english_alphabet):
+            # If the set of letters is a subset of the English alphabet set, increment the counter for the number of anagrams
+            num_anagrams += 1
+    # Check if there are at most 66 pairs of anagrams in the given list
+    return num_anagrams <= 66
+```

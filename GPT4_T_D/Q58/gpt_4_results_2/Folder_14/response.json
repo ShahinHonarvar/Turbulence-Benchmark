@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for nrow in range(1, rows+1):\n        for ncol in range(1, cols+1):\n            total_blocks = (rows-nrow+1)*(cols-ncol+1)\n            if nrow * ncol == 84:\n                count += total_blocks\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908032,
+  "id": "chatcmpl-7imi8gRaLhANiu3NtYpWFipGF2OKx",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 111,
+    "total_tokens": 207
+  }
+}

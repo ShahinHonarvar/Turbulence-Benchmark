@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `insert_after_index` function:
+```python
+def insert_after_index(my_list, index):
+    # Check if the index is valid
+    if index < 0 or index >= len(my_list):
+        raise ValueError("Invalid index")
+
+    # Create a new list with the element inserted at the specified index
+    new_list = my_list[:index+1] + [581.49] + my_list[index+1:]
+
+    return new_list
+```
+This function takes two arguments: `my_list`, which is the list that we want to insert an element into, and `index`, which is the index at which we want to insert the element. The function first checks if the index is valid by checking if it is less than 0 or greater than or equal to the length of the list. If the index is invalid, the function raises a `ValueError` exception.
+If the index is valid, the function creates a new list with the element inserted at the specified index. The new list is created by slicing the original list into two parts: the part before the insertion point and the part after the insertion point. The element to be inserted is then added to the appropriate part of the new list. Finally, the function returns the new list.

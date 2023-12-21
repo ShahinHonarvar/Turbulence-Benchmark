@@ -1,0 +1,28 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Initialize an empty list to store the left-truncatable prime numbers
+    left_truncatable_primes = []
+    # Iterate through each integer in the tuple
+    for x in tuple:
+        # Check if x is a prime number
+        if is_prime(x):
+            # Initialize an empty string to store the left-truncatable prime numbers less than x
+            left_truncatable_primes = []
+            # Iterate through each digit in the integer x
+            for i in range(len(str(x)))):
+                # Check if the current digit is a 0
+                if str(x)[i] == '0':
+                    # Skip to the next iteration of the loop
+                    continue
+
+                # Remove the leading leftmost digit from the integer x
+                y = int(str(x)[1:]))
+                # Check if y is a prime number
+                if is_prime(y):
+                    # Add y to the list of left-truncatable prime numbers less than x
+                    left_truncatable_primes.append(y)
+            # Sort the list of left-truncatable prime numbers less than x in ascending order
+            left_truncatable_primes.sort()
+            # Return the list of left-truncatable prime numbers less than x
+            return left_truncatable_primes
+```

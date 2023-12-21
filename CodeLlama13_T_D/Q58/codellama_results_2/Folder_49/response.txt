@@ -1,0 +1,18 @@
+```
+def submatrix_with_n_numbers(mat):
+    rows = len(mat)
+    cols = len(mat[0])
+    
+    count = 0
+    
+    for r in range(rows):
+        for c in range(cols):
+            # Find the largest square that starts at (r, c)
+            size = min(rows - r, cols - c)
+            
+            for i in range(size):
+                if mat[r + i][c + i] == 72:
+                    count += 1
+    
+    return count
+```

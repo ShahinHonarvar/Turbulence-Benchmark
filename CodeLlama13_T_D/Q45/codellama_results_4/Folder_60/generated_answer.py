@@ -1,0 +1,9 @@
+
+def palindromes_between_indices(s):
+    indices = range(3, 7)
+    palindromes = set()
+    for i in indices:
+        for j in indices:
+            if s[i] == s[j]:
+                palindromes.add(s[i:j+1])
+    return palindromes

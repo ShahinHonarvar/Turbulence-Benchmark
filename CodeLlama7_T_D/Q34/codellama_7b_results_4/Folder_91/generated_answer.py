@@ -1,0 +1,7 @@
+
+def find_original_set(set1, set2, set3, set4, set5):
+    # Create a list of all the given sets
+    sets = [set1, set2, set3, set4, set5]
+    # Get the smallest set from the list
+    smallest_set = min(sets, key=len)
+    return smallest_set

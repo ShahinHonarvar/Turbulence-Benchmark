@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    # To store the results\n    results = []\n\n    # Size of the whole matrix\n    rows, cols = matrix.shape\n\n    for box_row in range(1, rows+1):\n        for box_col in range(1, cols+1):\n\n            # Sum all boxes of the same size\n            for i in range(rows - box_row + 1):\n                for j in range(cols - box_col + 1):\n\n                    submatrix = matrix[i : i + box_row, j : j + box_col]\n\n                    if np.sum(submatrix) == 245:\n                        results.append(submatrix.tolist())\n\n    return results\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081799,
+  "id": "chatcmpl-7fJlnkuT4zEHgjudjFGdWviLvNWnV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 149,
+    "prompt_tokens": 121,
+    "total_tokens": 270
+  }
+}

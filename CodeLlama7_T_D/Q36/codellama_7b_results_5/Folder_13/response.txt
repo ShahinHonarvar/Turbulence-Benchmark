@@ -1,0 +1,7 @@
+ def filter_chars(s):
+    start = 323
+    end = 526
+    for i in range(start, end):
+        if s[i] > ')' and s[i] < 'O':
+            s = s[:i] + s[i+1:]
+    return s

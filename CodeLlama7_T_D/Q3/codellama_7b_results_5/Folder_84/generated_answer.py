@@ -1,0 +1,11 @@
+
+def all_pos_ints_inclusive(my_list):
+    # Initialize an empty list to store the positive integers
+    pos_ints = []
+    # Iterate through the list from index 43 to index 86, both inclusive
+    for i in range(43, 87):
+        # If the current element is a positive integer, add it to the list of positive integers
+        if my_list[i] > 0:
+            pos_ints.append(my_list[i])
+    # Return the list of all positive integers from index 43 to index 86, both inclusive
+    return pos_ints

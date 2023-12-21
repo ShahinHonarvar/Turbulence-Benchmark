@@ -1,0 +1,7 @@
+
+def insert_at_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = my_list[:]
+    # Insert [13, 46] at index 84 in the new list
+    new_list.insert(84, [13, 46])
+    return new_list

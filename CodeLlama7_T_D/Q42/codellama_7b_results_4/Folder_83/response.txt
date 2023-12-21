@@ -1,0 +1,18 @@
+ ```
+def prime_factors(my_list):
+    # Find the prime factorization of the number at index 95
+    prime_factorization = []
+    for i in range(len(my_list)):
+        if my_list[i] == 1:
+            continue
+
+        for j in range(2, int(my_list[i]) ** 0.5 + 1)):
+            if my_list[i] % j == 0:
+                prime_factorization.append(j)
+                break
+
+    return set(prime_factorization)
+
+```
+This code defines a function called `prime_factors` that takes a list of positive integers as an argument and returns the set of all prime factors of the integer at index 95 in the input list.
+The function first finds the prime factorization of the number at index 95 by iterating over the other numbers in the list and checking if any of them are divisors of the number at index 95. If a divisor is found, it is added to the `prime_factorization` list. Once all the numbers in the list have been checked, the `prime_factorization` list is returned as the result of the function.

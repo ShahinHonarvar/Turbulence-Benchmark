@@ -1,0 +1,19 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    palindromes = set()
+    # Iterate over the characters in the string
+    for i in range(len(string)):
+        # Check if the character is a letter
+        if string[i].isalpha():
+            # Get the reverse of the substring starting at i and ending at the end of the string
+            rev_substring = string[i:][::-1]
+            # Check if the reverse of the substring is a prefix of the original string
+            if rev_substring in string:
+                # Get the length of the palindrome
+                palindrome_length = len(rev_substring) + i
+                # Check if the palindrome has a length greater than or equal to n
+                if palindrome_length >= n:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(string[i:palindrome_length])
+    # Return the set of palindromes
+    return palindromes

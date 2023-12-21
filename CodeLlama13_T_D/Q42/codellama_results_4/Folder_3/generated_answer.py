@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(filter(lambda x: all(y % x == 0 for y in numbers), range(2, int(numbers[100]) + 1)))

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef filter_chars(string):\n    removed_chars = set()\n    indices = []\n    for i, char in enumerate(string):\n        if 82 <= i < 93 and '!' < char < '*':\n            removed_chars.add(char)\n        if char not in removed_chars:\n            indices.append(i)\n    return ''.join([char for i, char in enumerate(string) if i in indices])\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689771950,
+  "id": "chatcmpl-7e1AEDOKhOrPSaeVne5TUnLKRjjqf",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 83,
+    "prompt_tokens": 131,
+    "total_tokens": 214
+  }
+}

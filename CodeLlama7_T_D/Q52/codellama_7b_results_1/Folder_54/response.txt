@@ -1,0 +1,18 @@
+ ```
+def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate through each character in the string
+    for i in range(len(string)):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Get the substring of length n starting at index i
+            substr = string[i:i+n]
+            # Check if the substring is a palindrome
+            if substr == substr[::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes
+```
+This code defines a function `palindrome_of_length_n` that takes a single argument, a string, and returns a set of all palindromes of length n that are substrings of the given string. The function uses the `isalpha()` method to check if each character in the string is a letter, and the `[:]` notation to extract substrings. The function also uses the `set()` type to store the palindromes in a set for efficient membership testing.

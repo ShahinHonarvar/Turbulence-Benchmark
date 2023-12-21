@@ -1,0 +1,11 @@
+```python
+def return_n_smallest_chars(s):
+    char_list = []
+    for c in s:
+        if len(char_list) < 56:
+            char_list.append(c)
+        elif ord(c) > ord(char_list[-1]):
+            char_list.pop()
+            char_list.append(c)
+    return sorted(char_list, reverse=True)
+```

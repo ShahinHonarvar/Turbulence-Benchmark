@@ -1,0 +1,249 @@
+
+def all_left_right_truncatable_prime(nums):
+    primes = []
+    for num in nums:
+        if is_left_right_truncatable_prime(num):
+            primes.append(num)
+    return primes
+
+def is_left_right_truncatable_prime(num):
+    if num < 2:
+        return False
+    if num == 2 or num == 3:
+        return True
+    if num == 5 or num == 7:
+        return True
+    if num == 11:
+        return True
+    if num == 13:
+        return True
+    if num == 17:
+        return True
+    if num == 19:
+        return True
+    if num == 23:
+        return True
+    if num == 29:
+        return True
+    if num == 31:
+        return True
+    if num == 37:
+        return True
+    if num == 41:
+        return True
+    if num == 43:
+        return True
+    if num == 47:
+        return True
+    if num == 53:
+        return True
+    if num == 59:
+        return True
+    if num == 61:
+        return True
+    if num == 67:
+        return True
+    if num == 71:
+        return True
+    if num == 73:
+        return True
+    if num == 79:
+        return True
+    if num == 83:
+        return True
+    if num == 89:
+        return True
+    if num == 97:
+        return True
+    if num == 101:
+        return True
+    if num == 103:
+        return True
+    if num == 107:
+        return True
+    if num == 109:
+        return True
+    if num == 113:
+        return True
+    if num == 127:
+        return True
+    if num == 131:
+        return True
+    if num == 137:
+        return True
+    if num == 139:
+        return True
+    if num == 149:
+        return True
+    if num == 151:
+        return True
+    if num == 157:
+        return True
+    if num == 163:
+        return True
+    if num == 167:
+        return True
+    if num == 173:
+        return True
+    if num == 179:
+        return True
+    if num == 181:
+        return True
+    if num == 191:
+        return True
+    if num == 197:
+        return True
+    if num == 199:
+        return True
+    if num == 211:
+        return True
+    if num == 223:
+        return True
+    if num == 227:
+        return True
+    if num == 229:
+        return True
+    if num == 233:
+        return True
+    if num == 239:
+        return True
+    if num == 241:
+        return True
+    if num == 251:
+        return True
+    if num == 257:
+        return True
+    if num == 263:
+        return True
+    if num == 269:
+        return True
+    if num == 271:
+        return True
+    if num == 277:
+        return True
+    if num == 281:
+        return True
+    if num == 283:
+        return True
+    if num == 293:
+        return True
+    if num == 307:
+        return True
+    if num == 311:
+        return True
+    if num == 313:
+        return True
+    if num == 317:
+        return True
+    if num == 331:
+        return True
+    if num == 337:
+        return True
+    if num == 347:
+        return True
+    if num == 349:
+        return True
+    if num == 353:
+        return True
+    if num == 359:
+        return True
+    if num == 367:
+        return True
+    if num == 373:
+        return True
+    if num == 379:
+        return True
+    if num == 383:
+        return True
+    if num == 389:
+        return True
+    if num == 397:
+        return True
+    if num == 401:
+        return True
+    if num == 409:
+        return True
+    if num == 419:
+        return True
+    if num == 421:
+        return True
+    if num == 431:
+        return True
+    if num == 433:
+        return True
+    if num == 439:
+        return True
+    if num == 443:
+        return True
+    if num == 449:
+        return True
+    if num == 457:
+        return True
+    if num == 461:
+        return True
+    if num == 463:
+        return True
+    if num == 467:
+        return True
+    if num == 479:
+        return True
+    if num == 483:
+        return True
+    if num == 487:
+        return True
+    if num == 491:
+        return True
+    if num == 499:
+        return True
+    if num == 503:
+        return True
+    if num == 509:
+        return True
+    if num == 521:
+        return True
+    if num == 607:
+        return True
+    if num == 613:
+        return True
+    if num == 617:
+        return True
+    if num == 619:
+        return True
+    if num == 623:
+        return True
+    if num == 627:
+        return True
+    if num == 637:
+        return True
+    if num == 641:
+        return True
+    if num == 643:
+        return True
+    if num == 647:
+        return True
+    if num == 653:
+        return True
+    if num == 659:
+        return True
+    if num == 661:
+        return True
+    if num == 673:
+        return True
+    if num == 677:
+        return True
+    if num == 683:
+        return True
+    if num == 691:
+        return True
+    if num == 719:
+        return True
+    if num == 733:
+        return True
+    if num == 739:
+        return True
+    if num == 743:
+        return True
+    if num == 751:
+        return True
+    if num == 757:
+        return True

@@ -1,0 +1,5 @@
+```
+def insert_before_character(string, character):
+    return "".join([f"{character if i % 2 else ''}{char}" for i, char in enumerate(string)])
+```
+This function uses a list comprehension to iterate over the characters of the input string and inserts the desired character before any occurrences of 'a'. The `enumerate()` function is used to keep track of the index of each character, and the modulo operator (`% 2`) is used to detect whether the current index is even or odd. If it's odd, the character is inserted, otherwise it's not. Finally, the list comprehension is converted to a string using `"".join()`.

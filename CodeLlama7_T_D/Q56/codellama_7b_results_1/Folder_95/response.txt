@@ -1,0 +1,27 @@
+ ```
+def all_substring_of_size_n(s):
+# Check if the length of the string is less than or equal to 89
+if len(s) <= 89:
+# Initialize an empty list to store the substrings
+substrings = []
+
+# Loop through each character in the string
+for i in range(len(s)):
+
+# Get the substring starting from the current character and ending at the end of the string
+substring = s[i:]
+
+# Check if the substring is of length 89
+if len(substring) == 89:
+
+# Add the substring to the list of substrings
+substrings.append(substring)
+
+# Remove duplicates from the list of substrings
+return list(dict.fromkeys(substrings))
+
+else:
+
+# If no such substrings exist in the given string, return an empty list
+return []
+```

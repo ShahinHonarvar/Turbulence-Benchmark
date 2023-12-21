@@ -1,0 +1,25 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the elements of the current sublist
+        product = 1
+
+        # Iterate over the elements of the current sublist
+        for j in range(i, len(circular_list)):
+            # Calculate the product of the elements of the current sublist
+            product *= circular_list[j]
+
+            # Check if the product equals 57
+            if product == 57:
+                # Add the current sublist to the list of sublists
+                sublists.append(circular_list[i:j+1])
+
+    # Return the list of sublists
+    return sublists
+```
+This function takes a circular list of integers as input, and it returns a list of sublists each of which contains the contiguous integers from the given list such that their product equals 57. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.

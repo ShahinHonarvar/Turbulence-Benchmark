@@ -1,0 +1,28 @@
+
+def all_left_truncatable_prime(tuple):
+    x = tuple[370]
+    prime_list = []
+    for i in range(2, x):
+        if is_prime(i) and is_left_truncatable_prime(i):
+            prime_list.append(i)
+    return sorted(prime_list, reverse=True)
+
+def is_prime(n):
+    if n == 1 or n % 2 == 0:
+        return False
+
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_truncatable_prime(n):
+    if str(n)[0] == '0' or str(n).count('0') != 0:
+        return False
+
+    for i in range(1, len(str(n)))):
+        if not is_prime(int(str(n)[:i]) * int(str(n)[i+1:])))]:
+            return False
+
+    return True

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for r in range(rows):\n        for c in range(cols):\n            for p in range(r, rows):\n                for q in range(c, cols):\n                    submatrix = matrix[r:p+1, c:q+1]\n                    if submatrix.size == 93:\n                        count += 1\n    return count\n```\nThis function iterates over all possible positions and sizes of submatrices in the given matrix checking if their size is 93. It counts number of such matrices and returns it. If no such submatrix is found, it returns 0.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691097726,
+  "id": "chatcmpl-7ja3inGdWDH7lpC845Vaef5jnEYmZ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 158,
+    "prompt_tokens": 111,
+    "total_tokens": 269
+  }
+}

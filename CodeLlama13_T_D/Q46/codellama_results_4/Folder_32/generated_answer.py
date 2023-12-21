@@ -1,0 +1,3 @@
+
+def gcf_three_nums(arr):
+    return __greatest_common_factor(arr[20], arr[43], arr[95])

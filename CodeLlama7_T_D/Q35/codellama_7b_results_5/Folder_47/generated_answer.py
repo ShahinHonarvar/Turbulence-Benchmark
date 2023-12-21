@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(s):
+    # Create a new string to store the result
+    new_str = ""
+    # Iterate over each character in the given string
+    for i in range(len(s)):
+        # If the current character is not already in the new string, append it
+        if s[i] not in new_str:
+            new_str += s[i]
+    return new_str

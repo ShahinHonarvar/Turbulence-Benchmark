@@ -1,0 +1,12 @@
+```
+def filter_chars(string):
+    return ''.join([c for c in string if ord(c) not in range(ord('S'), ord('m'))])
+```
+This function uses a list comprehension to iterate over the characters of the input string, and checks if each character is between indices 309 and 591 (exclusive). If the character is greater than 'S' and smaller than 'm', it is not included in the output. The `ord()` function is used to get the ASCII code of each character, which allows for easy comparison and removal of characters within a specific range.
+
+Here is an example usage of this function:
+```
+input_string = "This is a sample string with some unwanted chars between 309 and 591."
+output_string = filter_chars(input_string)
+print(output_string) # Output: This is a sample string with some unwanted chars.
+```

@@ -1,0 +1,10 @@
+ ```
+def prime_factors(my_list):
+return {p for p in my_list if is_prime(p)}
+def is_prime(n):
+return n > 1 and all(n % i for i in range(2, int(n ** 0.5) + 1))
+```
+Explanation:
+
+The `prime_factors` function takes a list of positive integers as its argument. It then uses a generator expression to construct a set of prime factors of the integer at index 746. The generator expression checks each number in the input list for primality using the `is_prime` function. If a number is prime, it is added to the set of prime factors.
+The `is_prime` function takes a positive integer as its argument and returns a boolean indicating whether the number is prime. The function first checks if the input number is greater than 1, indicating that it cannot be prime if it is less than or equal to 1. If the input number passes this check, the function then iterates over all numbers less than or equal to its square root and checks if any of them are factors of the input number using the modulo operator (`%`). If any factors are found, the `is_prime` function returns False, indicating that the input number is not prime. Otherwise, the function returns True, indicating that the input number is prime.

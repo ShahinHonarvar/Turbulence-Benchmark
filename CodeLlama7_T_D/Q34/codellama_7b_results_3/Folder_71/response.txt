@@ -1,0 +1,18 @@
+ ```
+def find_original_set(sets):
+\# check if all sets are distinct and have the same size
+if len(set(map(len, sets))) != 1:
+return -1
+
+\# create a set of all elements from all given sets
+all_elements = set()
+for s in sets:
+all_elements |= s
+
+\# find the smallest set that contains all elements
+smallest_set = None
+for e in all_elements:
+if smallest_set is None or len(smallest_set) > len(sets[e])):
+smallest_set = sets[e]
+return smallest_set
+```

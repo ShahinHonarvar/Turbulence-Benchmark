@@ -1,0 +1,15 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the range of indices to iterate over
+    start_index = 281
+    end_index = 694
+    # Initialize an empty list to store the divisible integers
+    divisible_ints = []
+    # Iterate over the specified range of indices in my_list
+    for i in range(start_index, end_index + 1):
+        # If the current element is divisible by either -722 or -731
+        if my_list[i] % -722 == 0 or my_list[i] % -731 == 0:
+            # Add it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+    # Return the sum of all divisible integers in the specified range, or 0 if no such integers exist
+    return sum(divisible_ints) if divisible_ints else 0

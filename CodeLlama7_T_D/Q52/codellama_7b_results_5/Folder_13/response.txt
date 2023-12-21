@@ -1,0 +1,16 @@
+ ```
+def palindrome_of_length_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each substring of length n in the given string
+    for i in range(len(string) - n + 1):
+        # Check if the substring is a palindrome
+        if string[i:i+n] == string[i:i+n][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+n])
+    return palindromes
+```
+This code defines a function called `palindrome_of_length_n` that takes two arguments, a string and an integer `n`. The function returns a set of all palindromes of length `n`, where each palindrome is a substring of the given string. Each palindrome should only consist of English letters.
+The function first initializes an empty set called `palindromes` to store the palindromes. Then, it loops through each substring of length `n` in the given string using a nested loop.
+Inside the nested loop, the function checks if the current substring is a palindrome by comparing it with its reverse. If the current substring is a palindrome, the function adds it to the set of palindromes using the `add()` method.
+Finally, the function returns the set of palindromes.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification: \n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(npmat):\n    n, m = npmat.shape\n    res = []\n    for i in range(n+1):\n        for j in range(m+1):\n            for p in range(i+1, n+1):\n                for q in range(j+1, m+1):\n                    a = npmat[i:p,j:q]\n                    if a.sum() == 416:\n                        res.append(a)\n    return res\n```\n\nPlease note, this function finds sub-matrices at all positions and sizes. It may not be efficient for big matrices as it has a high time complexity due to multiple nested loops.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690905568,
+  "id": "chatcmpl-7im4OXZtpL2pNexLBUJQGB971SFnC",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 154,
+    "prompt_tokens": 121,
+    "total_tokens": 275
+  }
+}

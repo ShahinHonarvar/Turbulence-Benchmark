@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(set_elements):
+    # Calculate the number of subsets of size n
+    num_subsets = 2 ** len(set_elements)
+    # Initialize an empty set to store the subsets
+    subsets = set()
+
+    for i in range(len(set_elements)):
+        for j in range(i + 1, len(set_elements)):
+            subset = {set_elements[i], set_elements[j]}
+            # Check if the subset is already in the set of subsets
+            if subset not in subsets:
+                subsets.add(subset)
+
+    return num_subsets - len(subsets)

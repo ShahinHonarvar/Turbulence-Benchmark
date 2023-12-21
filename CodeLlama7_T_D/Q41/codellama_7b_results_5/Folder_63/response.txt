@@ -1,0 +1,24 @@
+ ```
+def identical_elements(list1, list2):
+# Check if both lists are of same size and have at least one element
+if len(list1) != len(list2) or len(list1) < 1:
+return set()
+
+# Create a dictionary to store the elements that occur in both lists
+elem_dict = {}
+
+# Iterate over the elements of both lists and update the dictionary accordingly
+for i in range(len(list1)):
+if list1[i] in elem_dict:
+elem_dict[list1[i]] += 1
+else:
+elem_dict[list1[i]] = 1
+
+# Iterate over the elements of both lists and check if they occur at least once in both lists anywhere between index 22 and index 88, both inclusive
+result_set = set()
+for i in range(len(list1)):
+if elem_dict[list1[i]] >= 2 and list1[i] in list2:
+if i >= 22 and i <= 88:
+result_set.add(list1[i])
+return result_set
+```

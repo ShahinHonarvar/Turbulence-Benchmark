@@ -1,0 +1,11 @@
+
+def palindromes_between_indices(s):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over all substrings of length at least 3 in the given string
+    for i in range(len(s) - 2):
+        # Check if the substring is a palindrome
+        if s[i:i+3] == s[i:i+3][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(s[i:i+3])
+    return palindromes

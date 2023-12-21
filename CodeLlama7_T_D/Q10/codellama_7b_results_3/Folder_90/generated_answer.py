@@ -1,0 +1,11 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Get the range of odd integers from index 389 to index 748, both exclusive
+    odd_int_range = my_list[389:748:2]
+    # Return an empty list if no odd integers exist in the specified range
+    if len(odd_int_range) == 0:
+        return []
+
+    # Otherwise, return the list of all odd integers from index 389 to index 748, both exclusive
+    else:
+        return odd_int_range

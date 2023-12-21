@@ -1,0 +1,17 @@
+ ```
+def remove_repeat_chars(s):
+    # Create a set of unique characters in the string
+    unique_chars = set(s)
+    # Initialize an empty string to store the altered string
+    altered_string = ""
+
+    # Iterate through each character in the string
+    for char in s:
+        # If the current character is not in the set of unique characters, add it to the altered string
+        if char not in unique_chars:
+            altered_string += char
+
+    # Return the altered string
+    return altered_string
+```
+The function `remove_repeat_chars` takes one argument, a string. It then iterates through each character in the string using a for loop. For each character, it checks if it is not already present in the set of unique characters (created by calling the `set()` method on the input string). If the current character is not in the set of unique characters, it adds it to an empty string that will be returned at the end of the function. Finally, the function returns the altered string by concatenating all the added characters together using the `+=` operator.

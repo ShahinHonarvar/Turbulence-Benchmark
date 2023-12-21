@@ -1,0 +1,13 @@
+ ```
+def remove_repeat_chars(string):
+    # Create a new string with the characters from the original string
+    # that do not occur more than once between indices 56 and 88, both exclusive
+    new_string = ""
+
+    for i in range(len(string)):
+        if (i < 56 or i > 88) and string.count(string[i]) == 1:
+            new_string += string[i]
+
+    return new_string
+```
+This function takes a single argument, a string, and returns a modified string that has all characters removed that occur more than once between indices 56 and 88, both exclusive. The function uses the `count()` method to check the frequency of each character in the original string, and only appends characters that have a count of 1 to the new string.

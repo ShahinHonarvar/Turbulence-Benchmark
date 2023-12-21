@@ -1,0 +1,13 @@
+ `def gcf_three_nums(my_list):
+    # Initialize the greatest common factor as 1
+    gcf = 1
+    # Loop through the indices specified in the prompt
+    for i in [37, 30, 48]:
+        # Get the current number at the specified index
+        num = my_list[i]
+        # Check if the current number is a factor of the previous greatest common factor and the current number
+        if gcf % num == 0:
+            # If it is, update the greatest common factor to be the product of the two factors
+            gcf = gcf * num
+    # Return the final value of the greatest common factor
+    return gcf`

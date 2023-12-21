@@ -1,0 +1,29 @@
+
+def gcf_three_nums(my_list):
+    # find the greatest common factor of three numbers
+    # using the Euclidean algorithm
+
+    a = my_list[944]
+    b = my_list[814]
+    c = my_list[865]
+
+    if a > b:
+        if a > c:
+            if b > c:
+                return gcf(b, c)
+            else:
+                return gcf(a, c)
+        else:
+            return gcf(a, b)
+
+    elif a == b:
+        if b > c:
+            return gcf(a, c)
+        else:
+            return gcf(a, b)
+
+    else:
+        if a > c:
+            return gcf(b, c)
+        else:
+            return gcf(b, a)

@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([c for c in string if (ord(c) < 138 or ord(c) > 920 or ord(c) < 6 or ord(c) > 97)]).replace(' ', '')

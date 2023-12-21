@@ -1,0 +1,19 @@
+
+def remove_repeat_chars(s):
+    # Create a list of characters that occur more than once in the string
+    char_count = {}
+    for c in s:
+        if c not in char_count:
+            char_count[c] = 1
+        else:
+            char_count[c] += 1
+    # Remove repeated characters from the string
+    start = 68
+    end = 99
+    new_s = ""
+    for i in range(start, end):
+        c = s[i]
+        if char_count[c] == 1:
+            new_s += c
+
+    return new_s

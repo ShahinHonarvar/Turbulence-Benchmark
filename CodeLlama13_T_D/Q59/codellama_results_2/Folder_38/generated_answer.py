@@ -1,0 +1,11 @@
+
+def all_left_truncatable_prime(nums):
+    x = nums[28]
+    primes = []
+    for i in range(1, 10):
+        for j in range(1, 10):
+            for k in range(1, 10):
+                n = str(i) + str(j) + str(k)
+                if all([int(n[1:]) % 2 == 0, int(n[:-1]) % 3 == 0]):
+                    primes.append(int(n))
+    return sorted(primes)

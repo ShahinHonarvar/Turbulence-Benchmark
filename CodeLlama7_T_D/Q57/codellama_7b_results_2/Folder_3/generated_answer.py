@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a counter to keep track of the sum of the integers in the submatrix
+            count = 0
+
+            # Iterate over each element of the matrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # Add the current element to the counter if it is within the boundaries of the submatrix
+                    if 0 <= k < matrix.shape[0] and 0 <= l < matrix.shape[1]:
+                        count += matrix[k][l]]
+
+            # If the sum of the integers in the submatrix equals 54, add it to the list of submatrices
+            if count == 54:
+                submatrices.append(np.array([[matrix[i + x][j + y] for y in range(3)] for x in range(3)]]))
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, return an empty list.
+    return submatrices

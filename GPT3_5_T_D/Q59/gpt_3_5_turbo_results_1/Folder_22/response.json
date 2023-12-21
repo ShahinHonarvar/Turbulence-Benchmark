@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom math import isqrt\n\ndef is_prime(n):\n    if n <= 1:\n        return False\n    if n <= 3:\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    for i in range(5, isqrt(n) + 1, 6):\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n    return True\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[85]\n    result = []\n    for i in range(10, x):\n        num_str = str(i)\n        # Check if the number contains any 0\n        if num_str.count('0') > 0:\n            continue\n        # Check if all left truncations are prime\n        is_truncatable_prime = True\n        for j in range(1, len(num_str)):\n            truncation = int(num_str[j:])\n            if not is_prime(truncation):\n                is_truncatable_prime = False\n                break\n        if is_truncatable_prime:\n            result.append(i)\n    return result\n\nall_left_truncatable_prime((1, 2, 3, ..., x))\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798904,
+  "id": "chatcmpl-7e8AySQqyGneNRvcqjMJTsOgZ3Eg8",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 266,
+    "prompt_tokens": 146,
+    "total_tokens": 412
+  }
+}

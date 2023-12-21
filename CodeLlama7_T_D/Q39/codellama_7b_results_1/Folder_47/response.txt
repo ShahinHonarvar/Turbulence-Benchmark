@@ -1,0 +1,6 @@
+ def return_n_greatest_chars(input_string):
+    # Sort the input string in descending order based on ASCII values
+    sorted_list = sorted(input_string, key=ord, reverse=True)
+    # Create a list of exactly 21 characters of the sorted list
+    n_greatest_chars = sorted_list[:21]
+    return n_greatest_chars

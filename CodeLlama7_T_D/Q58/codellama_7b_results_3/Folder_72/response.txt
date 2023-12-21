@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 15):
+        for j in range(matrix.shape[1] - 15):
+            if all(matrix[i + k, j + l] == 16 for k in range(16) for l in range(16)):
+                count += 1
+    return count
+```
+Explanation:
+The function `submatrix_with_n_numbers` takes a two-dimensional numpy matrix of integers as input. It returns the count of all submatrices of the given matrix that contain 16 integers each. If no such submatrix is found, the function should return 0.
+The function uses a nested loop to iterate over the rows and columns of the given matrix. For each iteration, the function checks if all the elements in a 16x16 submatrix are equal to 16. If the condition is met, the function increments a counter variable `count`.
+After completing the iterations, the function returns the value of the counter variable `count`.

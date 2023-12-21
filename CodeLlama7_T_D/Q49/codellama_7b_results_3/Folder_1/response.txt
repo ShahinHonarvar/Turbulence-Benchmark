@@ -1,0 +1,21 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+# convert the binary string to an integer
+decimal_int = int(binary_string, 2)
+# find the index of the 90th Fibonacci number in the binary representation of the decimal integer
+fib_index = (decimal_int - 1).bit_length() // 2
+# check if the 90th Fibonacci number is divisible by the decimal integer
+if (fib(fib_index) % decimal_int) == 0:
+return True
+else:
+return False
+
+def fib(n):
+# base case
+if n <= 1:
+return n
+
+# recursive case
+else:
+return fib(n - 1) + fib(n - 2)
+```

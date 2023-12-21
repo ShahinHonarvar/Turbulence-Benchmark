@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the character frequencies
+    freq = {}
+
+    # Iterate over the characters in the string
+    for char in string:
+        # If the character is already in the dictionary, increment its frequency
+        if char in freq:
+            freq[char] += 1
+        # Otherwise, add it to the dictionary with an initial frequency of 1
+        else:
+            freq[char] = 1
+
+    # Sort the dictionary by frequency in descending order
+    sorted_freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 15th smallest ASCII value among those characters that occur between indices 1 to 36, both inclusive
+    for i, (char, freq) in enumerate(sorted_freq):
+        if i == 14 and char >= '!' and char <= '~':
+            return char
+
+```

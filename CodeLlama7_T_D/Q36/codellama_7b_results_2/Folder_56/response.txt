@@ -1,0 +1,11 @@
+ def filter_chars(string):
+    filtered = ""
+    for i in range(len(string)):
+        if (31 < i < 50) and (string[i] > "/") and (string[i] < "J"):
+            continue
+
+        else:
+
+            filtered += string[i]
+
+    return filtered

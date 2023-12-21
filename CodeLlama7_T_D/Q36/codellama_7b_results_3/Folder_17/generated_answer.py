@@ -1,0 +1,13 @@
+
+def filter_chars(my_string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the given string
+    for char in my_string:
+        # If the current character is not between indices 18 and 95 (both exclusive), add it to the list of filtered characters
+        if ord(char) < 18 or ord(char) > 95:
+            filtered_chars.append(char)
+
+    # Join the filtered characters back into a string and return it
+    return "".join(filtered_chars)

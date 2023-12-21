@@ -1,0 +1,34 @@
+ ```
+def if_contains_anagrams(str_list):
+# Create a dictionary to store the anagram pairs
+anagram_pairs = {}
+
+# Iterate over each string in the list
+for str1 in str_list:
+
+# Iterate over each string in the list again
+for str2 in str_list:
+
+# If the strings are not equal and the length of the string is at least three
+if str1 != str2 and len(str1) >= 3:
+
+# Check if the two strings are anagrams of each other
+if sorted(str1.lower()) == sorted(str2.lower()):
+
+# If they are, add them to the dictionary of anagram pairs
+anagram_pairs[str1] = str2
+
+# If there are at least 30 pairs of anagrams in the list
+if len(anagram_pairs) >= 30:
+
+# Return True
+return True
+
+
+# If there are not enough pairs of anagrams in the list
+else:
+
+# Return False
+return False
+```
+This code defines a function `if_contains_anagrams` that takes one argument, a list of strings. The function first creates a dictionary to store the anagram pairs. Then it iterates over each string in the list and checks if there are at least 30 pairs of anagrams in the list by using the dictionary to count the number of anagram pairs found. If there are at least 30 pairs, the function returns `True`. If there are not enough pairs of anagrams in the list, the function returns `False`. The code also checks that the strings being compared have a length of at least three before checking if they are anagrams of each other.

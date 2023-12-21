@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(mat):
+    # Initialize an empty list to store the found submatrices
+    submatrices = []
+    
+    # Loop through each row of the matrix
+    for i in range(mat.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(mat.shape[1]):
+            # Initialize a temporary list to store the submatrix elements
+            temp = []
+            
+            # Loop through each row and column of the submatrix starting from (i,j)
+            for k in range(i, mat.shape[0]):
+                for l in range(j, mat.shape[1]):
+                    # Add the element at position (k,l) to the temporary list
+                    temp.append(mat[k,l])
+            
+            # Check if the sum of all elements in the submatrix is equal to -185
+            if sum(temp) == -185:
+                # If so, add the submatrix to the list of found submatrices
+                submatrices.append(temp)
+    
+    # Return the list of found submatrices
+    return submatrices

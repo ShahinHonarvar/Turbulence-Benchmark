@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+        # If the current character is between indices 33 and 70, inclusive, and is greater than or equal to '7' and smaller than or equal to 'k', then remove all occurrences of that character from the filtered string
+        if (33 <= ord(char) <= 70) and ('7' <= char <= 'k'):
+            continue
+
+        # Otherwise, add the current character to the filtered string
+        else:
+            filtered += char
+
+    # Return the filtered string
+    return filtered

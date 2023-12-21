@@ -1,0 +1,25 @@
+[cohere.Generation {
+	id: 39f8273b-6c8e-413d-a585-d7c8c1eb47f7
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_original_set' that takes exactly 714 distinct arguments, each of which is a set of integers. The function should return the smallest set such that each of the given arguments is a subset of it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_original_set(S):
+    # find the smallest set such that each of the given arguments is a subset of it
+    # implement by finding all transitive reductions
+    # and use set.issubset to test
+    # create a set containing all the elements of all the sets, called the universe
+    universe = set()
+    for s in S:
+        universe |= s
+    # create a set of all the elements in the universe which appear in at least one set
+    present = set()
+    for s in S:
+        present |= s
+    # the intersection of the universe and the present sets is the original set
+    original = universe & present
+    # return the original set
+    return original
+```
+	likelihood: None
+	token_likelihoods: None
+}]

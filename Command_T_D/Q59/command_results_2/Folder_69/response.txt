@@ -1,0 +1,263 @@
+[cohere.Generation {
+	id: 0ccf9665-87c6-4b87-8f6f-2147060a537d
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 760. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in descending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**7)
+
+import bisect
+import functools
+import heapq
+import math
+import re
+import string
+import sys
+import time
+
+import scipy
+
+import numpy as np
+import scipy.special as special
+from collections import Counter, defaultdict
+from functools import reduce
+from heapq import heappush, heappop
+
+sys.setrecursionlimit(10**7)
+mod = 998244353
+
+
+def all_left_truncatable_prime(n):
+    left_truncatable_primes = []
+    for i in range(2, int(math.ceil(math.log10(n)) + 1)):
+        if n % 10 ** i == 0:
+            continue
+        else:
+            left_truncatable_primes.append(n % 10 ** i)
+    return left_truncatable_primes
+
+
+def is_prime(n):
+    if n < 2:
+        return False
+    elif n == 2 or n == 3:
+        return True
+    elif n == 1:
+        return False
+    elif n == 4:
+        return True
+    elif n == 5:
+        return True
+    elif n == 0:
+        return False
+    elif n == 6:
+        return True
+    elif n == 7:
+        return True
+    elif n == 8:
+        return True
+    elif n == 9:
+        return True
+    elif n == 10:
+        return False
+    elif n == 11:
+        return True
+    elif n == 12:
+        return True
+    elif n == 13:
+        return True
+    elif n == 14:
+        return True
+    elif n == 15:
+        return True
+    elif n == 16:
+        return True
+    elif n == 17:
+        return True
+    elif n == 18:
+        return True
+    elif n == 19:
+        return True
+    elif n == 20:
+        return False
+    elif n == 21:
+        return True
+    elif n == 22:
+        return True
+    elif n == 23:
+        return True
+    elif n == 24:
+        return True
+    elif n == 25:
+        return True
+    elif n == 26:
+        return True
+    elif n == 27:
+        return True
+    elif n == 28:
+        return True
+    elif n == 29:
+        return True
+    elif n == 30:
+        return False
+    elif n == 31:
+        return True
+    elif n == 32:
+        return True
+    elif n == 33:
+        return True
+    elif n == 34:
+        return True
+    elif n == 35:
+        return True
+    elif n == 36:
+        return True
+    elif n == 37:
+        return True
+    elif n == 38:
+        return True
+    elif n == 39:
+        return True
+    elif n == 40:
+        return False
+    elif n == 41:
+        return True
+    elif n == 42:
+        return True
+    elif n == 43:
+        return True
+    elif n == 44:
+        return True
+    elif n == 45:
+        return True
+    elif n == 46:
+        return True
+    elif n == 47:
+        return True
+    elif n == 48:
+        return True
+    elif n == 49:
+        return True
+    elif n == 50:
+        return False
+    elif n == 51:
+        return True
+    elif n == 52:
+        return True
+    elif n == 53:
+        return True
+    elif n == 54:
+        return True
+    elif n == 55:
+        return True
+    elif n == 56:
+        return True
+    elif n == 57:
+        return True
+    elif n == 58:
+        return True
+    elif n == 59:
+        return True
+    elif n == 60:
+        return False
+    elif n == 61:
+        return True
+    elif n == 62:
+        return True
+    elif n == 63:
+        return True
+    elif n == 64:
+        return True
+    elif n == 65:
+        return True
+    elif n == 66:
+        return True
+    elif n == 67:
+        return True
+    elif n == 68:
+        return True
+    elif n == 69:
+        return True
+    elif n == 70:
+        return False
+    elif n == 71:
+        return True
+    elif n == 72:
+        return True
+    elif n == 73:
+        return True
+    elif n == 74:
+        return True
+    elif n == 75:
+        return True
+    elif n == 76:
+        return True
+    elif n == 77:
+        return True
+    elif n == 78:
+        return True
+    elif n == 79:
+        return True
+    elif n == 80:
+        return False
+    elif n == 81:
+        return True
+    elif n == 82:
+        return True
+    elif n == 83:
+        return True
+    elif n == 84:
+        return True
+    elif n == 85:
+        return True
+    elif n == 86:
+        return True
+    elif n == 87:
+        return True
+    elif n == 88:
+        return True
+    elif n == 89:
+        return True
+    elif n == 90:
+        return False
+    elif n == 91:
+        return True
+    elif n == 92:
+        return True
+    elif n == 93:
+        return True
+    elif n == 94:
+        return True
+    elif n == 95:
+        return True
+    elif n == 96:
+        return True
+    elif n == 97:
+        return True
+    elif n == 98:
+        return True
+    elif n == 99:
+        return True
+    elif n == 100:
+        return False
+    elif n == 101:
+        return True
+    elif n == 102:
+        return True
+    elif n == 103:
+        return True
+    elif n == 104:
+        return True
+    elif n == 105:
+        return True
+    elif n == 106:
+        return True
+    elif n == 107:
+        return True
+    elif n == 108:
+        return True
+   
+	likelihood: None
+	token_likelihoods: None
+}]

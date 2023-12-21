@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(299, 418):
+        if s[i].isalpha() and s[i].lower() > '9' and s[i].lower() < 'p':
+            s = s.replace(s[i], '')
+    return s

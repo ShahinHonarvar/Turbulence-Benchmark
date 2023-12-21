@@ -1,0 +1,26 @@
+ ```
+def lists_with_product_equal_n(circlist):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the given list
+    for i in range(len(circlist)):
+
+        # Initialize two variables to keep track of the current product and the current sum
+        product = 1
+        sum = 0
+
+        # Iterate over the elements of the given list starting from the current index
+        for j in range(i, len(circlist)):
+
+            # Update the product and sum variables accordingly
+            product *= circlist[j]
+            sum += circlist[j]
+
+            # Check if the product is equal to -44. If it is, add the sublist to the list of sublists
+            if product == -44:
+                sublists.append(circlist[i:j + 1])
+
+    # Return the list of sublists
+    return sublists
+```

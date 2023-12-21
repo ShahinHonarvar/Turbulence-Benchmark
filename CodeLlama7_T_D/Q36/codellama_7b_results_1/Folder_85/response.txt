@@ -1,0 +1,20 @@
+ ```
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_characters = []
+
+    # Iterate through each character in the string
+    for character in string:
+        # If the current character is between indices 55 and 80 (exclusive) and it is greater than 'S' and smaller than 's', remove all occurrences of that character within the string while keeping the order of all characters intact.
+        if 55 < ord(character) < 80 and character > 'S' and character < 's':
+            # Replace all occurrences of the current character with an empty string in the original string
+            string = string.replace(character, "")
+
+        # Add the filtered character to the list of filtered characters
+        filtered_characters.append(character)
+
+    # Join the filtered characters back into a single string
+    filtered_string = "".join(filtered_characters)
+
+    return filtered_string
+```

@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 64th number in the Fibonacci sequence
+    fib_64 = (1 << 64) - 1
+    
+    # Check if the decimal is divisible by the 64th number in the Fibonacci sequence
+    return decimal % fib_64 == 0

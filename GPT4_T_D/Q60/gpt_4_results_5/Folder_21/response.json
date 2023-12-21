@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(tuple_of_integers):\n    x = tuple_of_integers[175]\n    truncatable_primes = []\n    for num in range(11, x + 1):\n        str_num = str(num)\n        if '0' not in str_num:\n            len_str = len(str_num)\n            all_are_primes = True\n            for i in range(len_str):\n                if not isprime(int(str_num[i:])) or not isprime(int(str_num[:len_str - i])):\n                    all_are_primes = False\n                    break\n            if all_are_primes:\n                truncatable_primes.append(num)\n    return sorted(truncatable_primes)\n```\nIn this code, I use the isprime function from the sympy library to check if a number is prime. In the loop, I convert the number to a string and check whether it contains 0. If it does not contain 0, I slice this string from both the right and left and check whether the resulting numbers are prime. If all sliced numbers are prime, I add the number to the list of truncatable primes. After examining all numbers in the range, I return the sorted list of truncatable primes.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691022910,
+  "id": "chatcmpl-7jGb01AbqG4I8xL7Yn5rhiSVRLYo4",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 261,
+    "prompt_tokens": 187,
+    "total_tokens": 448
+  }
+}

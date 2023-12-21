@@ -1,0 +1,9 @@
+```
+def all_left_truncatable_prime(nums):
+    left_trunc_primes = []
+    for num in nums:
+        if str(num).count('0') == 0 and is_prime(num) and all(is_prime(int(str(num)[1:i])) for i in range(len(str(num)), 0, -1)):
+            left_trunc_primes.append(num)
+    return sorted(left_trunc_primes)
+```
+This function takes a tuple of positive integers as input and returns a list of all left-truncatable prime numbers less than the integer at index 758 in the tuple, sorted in ascending order. The function uses the `str.count()` method to count the number of '0' digits in the string representation of each number, and the `all()` function with a generator expression to check if all resulting numbers are prime after removing the leading leftmost digit successively from the original number.

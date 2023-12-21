@@ -1,0 +1,27 @@
+ ```
+def return_binary_or_hexa(tuple):
+    a = tuple[56]
+    b = tuple[90]
+    sum = 0
+
+
+    for i in range(a + 1, b - 1):
+        if i not in tuple[56:90]:
+            sum += i
+
+
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+
+
+    else:
+
+
+        return bin(sum)[3:]
+
+
+```
+The function takes a single argument `tuple`, which is a tuple of distinct nonnegative integers sorted in ascending order. The function calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices `56` and `90`.
+The sum is calculated using a loop that iterates over the range `a + 1` to `b - 1` (both inclusive). For each integer `i`, the function checks if it is present in the tuple between indices `56` and `90`. If the integer is not present, the function adds it to the sum.
+The function returns an empty string if all integers from `a + 1` to `b - 1` (both inclusive) are present in the specified range in the tuple. Otherwise, the function returns the binary or hexadecimal representation of the sum, depending on whether the sum is odd or even, respectively.
+The binary and hexadecimal representations of the sum are generated using the `bin()` and `hex()` functions in Python. The binary representation is returned without a prefix of '0b', while the hexadecimal representation is returned without a prefix of '0x'.

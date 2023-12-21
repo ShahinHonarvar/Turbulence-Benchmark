@@ -1,0 +1,80 @@
+Root
+└── Module
+    └── FunctionDef
+        ├── arguments
+        │   └── arg
+        ├── Assign
+        │   ├── Name
+        │   │   └── Store
+        │   └── List
+        │       └── Load
+        ├── For
+        │   ├── Name
+        │   │   └── Store
+        │   ├── Subscript
+        │   │   ├── Name
+        │   │   │   └── Load
+        │   │   ├── Slice
+        │   │   │   ├── Constant
+        │   │   │   └── Constant
+        │   │   └── Load
+        │   └── If
+        │       ├── Compare
+        │       │   ├── Name
+        │       │   │   └── Load
+        │       │   ├── NotIn
+        │       │   └── Name
+        │       │       └── Load
+        │       └── Expr
+        │           └── Call
+        │               ├── Attribute
+        │               │   ├── Name
+        │               │   │   └── Load
+        │               │   └── Load
+        │               └── Name
+        │                   └── Load
+        ├── Assign
+        │   ├── Name
+        │   │   └── Store
+        │   └── ListComp
+        │       ├── Name
+        │       │   └── Load
+        │       └── comprehension
+        │           ├── Name
+        │           │   └── Store
+        │           ├── Name
+        │           │   └── Load
+        │           └── Compare
+        │               ├── Call
+        │               │   ├── Attribute
+        │               │   │   ├── Subscript
+        │               │   │   │   ├── Name
+        │               │   │   │   │   └── Load
+        │               │   │   │   ├── Slice
+        │               │   │   │   │   ├── Constant
+        │               │   │   │   │   └── Constant
+        │               │   │   │   └── Load
+        │               │   │   └── Load
+        │               │   └── Name
+        │               │       └── Load
+        │               ├── Gt
+        │               └── Constant
+        └── Return
+            └── Call
+                ├── Attribute
+                │   ├── Constant
+                │   └── Load
+                └── GeneratorExp
+                    ├── Name
+                    │   └── Load
+                    └── comprehension
+                        ├── Name
+                        │   └── Store
+                        ├── Name
+                        │   └── Load
+                        └── Compare
+                            ├── Name
+                            │   └── Load
+                            ├── NotIn
+                            └── Name
+                                └── Load

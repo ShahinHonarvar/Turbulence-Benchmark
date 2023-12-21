@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(86, 93):
+        if s[i].isalpha() and s[i].lower() > 'e' and s[i].lower() < '~':
+            s = s.replace(s[i], '')
+    return s

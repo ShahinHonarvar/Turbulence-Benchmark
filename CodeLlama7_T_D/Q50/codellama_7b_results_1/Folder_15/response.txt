@@ -1,0 +1,38 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a dictionary to store the counts of each string
+    string_counts = {}
+
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the lowercase string is already in the dictionary
+        if lowercase_string in string_counts:
+            # If it is, increment its count
+            string_counts[lowercase_string] += 1
+
+        else:
+            # If it isn't, add it to the dictionary with a count of one
+            string_counts[lowercase_string] = 1
+
+    # Check if there are at least four pairs of anagrams in the list
+    num_anagrams = 0
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the lowercase string is already in the dictionary
+        if lowercase_string in string_counts:
+            # If it is, increment its count
+            string_counts[lowercase_string] += 1
+
+            # Check if the count of this string is at least three
+            if string_counts[lowercase_string] >= 3:
+                # If it is, increase the number of anagrams by one
+                num_anagrams += 1
+
+    # Return whether there are at least four pairs of anagrams in the list
+    return num_anagrams >= 4
+```

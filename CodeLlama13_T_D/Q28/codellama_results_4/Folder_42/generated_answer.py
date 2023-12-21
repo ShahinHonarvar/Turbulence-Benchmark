@@ -1,0 +1,17 @@
+
+def return_nth_smallest_ascii(string):
+    # Use a set to store the unique characters in the string
+    char_set = set(string)
+    
+    # Iterate over the characters in the set and find the ones that occur between indices 12 to 72, both inclusive
+    nth_smallest_ascii = None
+    for char in char_set:
+        if ord(char) >= 12 and ord(char) <= 72:
+            # If this is the first character with the appropriate index, store its ASCII value as the nth smallest
+            if nth_smallest_ascii == None:
+                nth_smallest_ascii = ord(char)
+            # If this character has a smaller ASCII value than the current nth smallest, update it
+            elif ord(char) < nth_smallest_ascii:
+                nth_smallest_ascii = ord(char)
+    
+    return chr(nth_smallest_ascii)

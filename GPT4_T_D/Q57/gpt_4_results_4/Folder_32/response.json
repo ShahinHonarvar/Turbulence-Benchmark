@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the python code according to your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n    result = []\n    rows, cols = mat.shape\n    for row_size in range(1, rows + 1):\n        for col_size in range(1, cols + 1):\n            for row in range(0, rows - row_size + 1):\n                for col in range(0, cols - col_size + 1):\n                    submat = mat[row:row+row_size, col:col+col_size]\n                    if np.sum(submat) == 901:\n                        result.append(submat)\n    return result\n```\nThis function checks all possible submatrices of the given matrix (from each cell scanning right and down, for all possible widths and heights), and sums their elements. If the sum is 901, it adds the submatrix to the result list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691092942,
+  "id": "chatcmpl-7jYoYNKc6EmC6aN9V9I8XBFpvIWM3",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 121,
+    "total_tokens": 312
+  }
+}

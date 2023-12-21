@@ -1,0 +1,17 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count to 0
+    count = 0
+    # Iterate over each submatrix of size 54x54
+    for i in range(len(matrix) - 48 + 1):
+        for j in range(len(matrix[i]) - 48 + 1):
+            # Check if the current submatrix contains 54 integers
+            if matrix[i:i+54, j:j+54].size == 54 * 54:
+                # Increment the count if it does
+                count += 1
+
+    # Return the count of all submatrices containing 54 integers each
+    return count
+```

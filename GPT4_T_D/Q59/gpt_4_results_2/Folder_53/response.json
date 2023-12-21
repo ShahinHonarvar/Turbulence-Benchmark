@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(numbers):\n    x = numbers[86]\n\n    def check_left_truncatable(num):\n        if '0' in str(num):\n            return False\n        for i in range(1, len(str(num))):\n            if not isprime(int(str(num)[i:])):\n                return False\n        return True\n\n    left_truncatable_primes = [i for i in range(10, x) if isprime(i) and check_left_truncatable(i)]\n    left_truncatable_primes.sort(reverse=True)\n\n    return left_truncatable_primes\n```\nWhen you run the function 'all_left_truncatable_prime' with a tuple as argument, it will return the list of all left-truncatable prime numbers less than the 87th element of the tuple, sorted in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690912659,
+  "id": "chatcmpl-7inulbnSrGeTYSvKr8vKDin2yRiv2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 146,
+    "total_tokens": 328
+  }
+}

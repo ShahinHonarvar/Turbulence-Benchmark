@@ -1,0 +1,23 @@
+
+def find_subset_of_length_n(set_of_elements):
+    # Initialize a list to store all subsets of size 100
+    all_subsets = []
+    # Iterate through each element in the set
+    for element in set_of_elements:
+        # Create a subset with only the current element
+        subset = {element}
+
+        # While the length of the subset is less than or equal to 100, add the next element from the set to the subset
+        while len(subset) <= 100:
+            try:
+                next_element = set_of_elements.next()
+                subset.add(next_element)
+            except StopIteration:
+                # If there are no more elements in the set, break out of the loop
+                break
+
+        # Add the subset to the list of all subsets
+        all_subsets.append(subset)
+
+    # Return the number of all subsets of size 100
+    return len(all_subsets)

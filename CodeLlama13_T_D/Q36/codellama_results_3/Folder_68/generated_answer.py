@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    result = ''
+    for i in range(1, len(string)):
+        if string[i] > '8' and string[i] < 'm':
+            result += string[i - 1] + string[i + 1:]
+        else:
+            result += string[i]
+    return result

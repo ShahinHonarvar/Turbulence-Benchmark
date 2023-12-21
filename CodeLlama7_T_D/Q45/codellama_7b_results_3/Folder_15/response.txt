@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(string):
+    # Create a list of all possible palindromes of length 3 or more
+    palindromes = []
+    for i in range(len(string) - 2):
+        # Check if the substring starting at index i and ending at index i + 2 is a palindrome
+        substr = string[i:i + 2]
+        if substr == substr[::-1]:
+            # Add the palindrome to the list
+            palindromes.append(substr)
+    return set(palindromes)
+```
+This code defines a function `palindromes_between_indices` that takes one argument, which is a string. The function returns the set of all palindromes of the length of at least 3 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 1 to index 2, both inclusive.
+The function first creates an empty list called `palindromes` to store all possible palindromes.
+Then, it iterates through the characters in the given string using a loop. For each character, the function checks if the substring starting at that character and ending at the next two characters is a palindrome. If it is, the function adds the palindrome to the `palindromes` list.
+Finally, the function returns the set of all palindromes in the `palindromes` list. The set is created using the built-in `set()` function, which takes a sequence of iterable objects as its argument and creates an unordered collection where each element appears only once.
+For example, if the given string is "racecar", the function would return the set {"racecar", "racecaR", "racecar"} because these are all palindromes that can be created from any possible arrangement of the English letters in the given string that occur between index 1 to index 2, both inclusive.

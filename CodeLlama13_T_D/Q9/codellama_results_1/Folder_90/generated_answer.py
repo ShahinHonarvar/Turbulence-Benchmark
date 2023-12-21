@@ -1,0 +1,7 @@
+
+def all_odd_ints_inclusive(list):
+    odds = []
+    for i in range(262, 746+1):
+        if list[i] % 2 != 0:
+            odds.append(list[i])
+    return odds

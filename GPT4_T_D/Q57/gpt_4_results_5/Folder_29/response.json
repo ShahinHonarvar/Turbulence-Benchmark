@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    m, n = matrix.shape\n    for ix in range(m):\n        for jx in range(n):\n            for kx in range(ix, m):\n                for lx in range(jx, n):\n                    submatrix = matrix[ix:kx+1, jx:lx+1]\n                    if submatrix.sum() == 84:\n                        result.append(submatrix)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691014848,
+  "id": "chatcmpl-7jEUyyMrUDWNQQlpObzkSQKKbiCbB",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 121,
+    "total_tokens": 224
+  }
+}

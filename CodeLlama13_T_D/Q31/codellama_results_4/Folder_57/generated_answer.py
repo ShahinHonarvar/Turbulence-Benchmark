@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return True if numbers[92] == sum(set(range(1, int(numbers[92]) ** 0.5 + 1))) else False

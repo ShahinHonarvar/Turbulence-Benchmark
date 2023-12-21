@@ -1,0 +1,16 @@
+
+def find_primes_between_indices(my_list):
+    # Find the first prime number in the range
+    start = next((i for i, x in enumerate(my_list) if is_prime(x)), None)
+    # If there are no prime numbers in the range, return an empty list
+    if start is None:
+        return []
+
+    # Find the last prime number in the range
+    end = next((i for i, x in enumerate(my_list[start:]) if is_prime(x)), None)
+    # If there are no prime numbers in the range, return an empty list
+    if end is None:
+        return []
+
+    # Return the sorted list of all prime numbers from index 86 to index 93, both inclusive
+    return sorted([my_list[i] for i in range(start, start + end)])

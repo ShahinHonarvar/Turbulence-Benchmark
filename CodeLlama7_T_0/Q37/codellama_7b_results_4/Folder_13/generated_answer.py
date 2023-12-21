@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(124, 854 + 1):
+        if string[i] >= "9" and string[i] <= "s":
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

@@ -1,0 +1,8 @@
+
+def return_vowels(my_string):
+    vowels = []
+    for i in range(24, 68):
+        char = my_string[i]
+        if char > 'f' and char <= '|':
+            vowels.append(char)
+    return vowels

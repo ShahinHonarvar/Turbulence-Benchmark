@@ -1,0 +1,10 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 173 + 1):
+        for j in range(len(matrix[i]) - 173 + 1):
+            if np.all(matrix[i:i+173, j:j+173] == 173)):
+                count += 1
+    return count
+```

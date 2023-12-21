@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return "".join([char for char in string if not (11 <= ord(char) <= 32 and '!' <= char <= '@')])

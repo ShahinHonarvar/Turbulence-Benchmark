@@ -1,0 +1,193 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_letter_anagrams = []
+    four_letter_anagrams = []
+    five_letter_anagrams = []
+    six_letter_anagrams = []
+    seven_letter_anagrams = []
+    eight_letter_anagrams = []
+    nine_letter_anagrams = []
+    ten_letter_anagrams = []
+    eleven_letter_anagrams = []
+    twelve_letter_anagrams = []
+    thirteen_letter_anagrams = []
+    fourteen_letter_anagrams = []
+    fifteen_letter_anagrams = []
+    sixteen_letter_anagrams = []
+    seventeen_letter_anagrams = []
+    eighteen_letter_anagrams = []
+    nineteen_letter_anagrams = []
+    twenty_letter_anagrams = []
+
+    # Iterate through the list of strings and check for anagrams
+    for string in my_list:
+        # Check if there are any anagrams of length three or more
+        if len(string) >= 3:
+            # Create a list of all possible anagrams of the current string
+            all_anagrams = []
+            for i in range(len(string)):
+                for j in range(i+1, len(string)+1):
+                    all_anagrams.append(''.join(sorted(string[i:j]))))
+            # Check if any of the anagrams are already in the list
+            for anagram in all_anagrams:
+                if anagram in my_list:
+                    # Increment the count and add the anagram to the appropriate list
+                    anagram_count += 1
+                    if len(anagram) == 3:
+                        three_letter_anagrams.append(anagram)
+                    elif len(anagram) == 4:
+                        four_letter_anagrams.append(anagram)
+                    elif len(anagram) == 5:
+                        five_letter_anagrams.append(anagram)
+                    elif len(anagram) == 6:
+                        six_letter_anagrams.append(anagram)
+                    elif len(anagram) == 7:
+                        seven_letter_anagrams.append(anagram)
+                    elif len(anagram) == 8:
+                        eight_letter_anagrams.append(anagram)
+                    elif len(anagram) == 9:
+                        nine_letter_anagrams.append(anagram)
+                    elif len(anagram) == 10:
+                        ten_letter_anagrams.append(anagram)
+                    elif len(anagram) == 11:
+                        eleven_letter_anagrams.append(anagram)
+                    elif len(anagram) == 12:
+                        twelve_letter_anagrams.append(anagram)
+                    elif len(anagram) == 13:
+                        thirteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 14:
+                        fourteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 15:
+                        fifteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 16:
+                        sixteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 17:
+                        seventeen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 18:
+                        eighteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 19:
+                        nineteen_letter_anagrams.append(anagram)
+                    elif len(anagram) == 20:
+                        twenty_letter_anagrams.append(anagram)
+            # Write out the lists of anagrams in a new .txt file
+            with open("./Results/" + word + "_" + str(number) + ".txt", "w") as fout:
+                if three_letter_anagrams != []:
+                    fout.write("\nThree Letter Anagrams\n")
+                    for anagram in three_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if four_letter_anagrams != []:
+                    fout.write("\nFour Letter Anagrams\n")
+                    for anagram in four_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if five_letter_anagrams != []:
+                    fout.write("\nFive Letter Anagrams\n")
+                    for anagram in five_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if six_letter_anagrams != []:
+                    fout.write("\nSix Letter Anagrams\n")
+                    for anagram in six_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if seven_letter_anagrams != []:
+                    fout.write("\nSeven Letter Anagrams\n")
+                    for anagram in seven_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if eight_letter_anagrams != []:
+                    fout.write("\nEight Letter Anagrams\n")
+                    for anagram in eight_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if nine_letter_anagrams != []:
+                    fout.write("\nNine Letter Anagrams\n")
+                    for anagram in nine_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if ten_letter_anagrams != []:
+                    fout.write("\nTen Letter Anagrams\n")
+                    for anagram in ten_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if eleven_letter_anagrams != []:
+                    fout.write("\nEleven Letter Anagrams\n")
+                    for anagram in eleven_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twelve_letter_anagrams != []:
+                    fout.write("\nTwelve Letter Anagrams\n")
+                    for anagram in twelve_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if thirteen_letter_anagrams != []:
+                    fout.write("\nThirteen Letter Anagrams\n")
+                    for anagram in thirteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if fourteen_letter_anagrams != []:
+                    fout.write("\nFourteen Letter Anagrams\n")
+                    for anagram in fourteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if fifteen_letter_anagrams != []:
+                    fout.write("\nFifteen Letter Anagrams\n")
+                    for anagram in fifteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if sixteen_letter_anagrams != []:
+                    fout.write("\nSixteen Letter Anagrams\n")
+                    for anagram in sixteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if seventeen_letter_anagrams != []:
+                    fout.write("\nSeventeen Letter Anagrams\n")
+                    for anagram in seventeen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if eighteen_letter_anagrams != []:
+                    fout.write("\nEighteen Letter Anagrams\n")
+                    for anagram in eighteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if nineteen_letter_anagrams != []:
+                    fout.write("\nNineteen Letter Anagrams\n")
+                    for anagram in nineteen_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_letter_anagrams != []:
+                    fout.write("\nTwenty Letter Anagrams\n")
+                    for anagram in twenty_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_one_letter_anagrams != []:
+                    fout.write("\nTwenty One Letter Anagrams\n")
+                    for anagram in twenty_one_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_two_letter_anagrams != []:
+                    fout.write("\nTwenty Two Letter Anagrams\n")
+                    for anagram in twenty_two_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_three_letter_anagrams != []:
+                    fout.write("\nTwenty Three Letter Anagrams\n")
+                    for anagram in twenty_three_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_four_letter_anagrams != []:
+                    fout.write("\nTwenty Four Letter Anagrams\n")
+                    for anagram in twenty_four_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_five_letter_anagrams != []:
+                    fout.write("\nTwenty Five Letter Anagrams\n")
+                    for anagram in twenty_five_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_six_letter_anagrams != []:
+                    fout.write("\nTwenty Six Letter Anagrams\n")
+                    for anagram in twenty_six_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_seven_letter_anagrams != []:
+                    fout.write("\nTwenty Seven Letter Anagrams\n")
+                    for anagram in twenty_seven_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_eight_letter_anagrams != []:
+                    fout.write("\nTwenty Eight Letter Anagrams\n")
+                    for anagram in twenty_eight_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if twenty_nine_letter_anagrams != []:
+                    fout.write("\nTwenty Nine Letter Anagrams\n")
+                    for anagram in twenty_nine_letter_anagrams:
+                        fout.write(anagram + "\n")
+                if thirty_letter_anagrams != []:
+                    fout.write("\nThirty Letter Anagrams\n")
+                    for anagram in thirty_letter_anagrams:
+                        fout.write(anagram + "\n")
+            else:
+#                print("Error: The file " + filename + " is missing.")
+        except OSError as error:
+#            print("Error: File I/O Error " + str(error) + ".")
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 7ed90e4c-5616-4b42-8a54-eacc240f277d
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'palindromes_between_indices' that takes one argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 4 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 2 to index 5, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def palindromes_between_indices(s):
+    for m in re.finditer(r'([a-z])?([a-z]?)([a-z]?)([a-z]?)([a-z]?)', s[2:-5]):
+        yield m.group(2).lower() + m.group(3).lower() + m.group(4).lower() + m.group(5).lower()
+```
+	likelihood: None
+	token_likelihoods: None
+}]

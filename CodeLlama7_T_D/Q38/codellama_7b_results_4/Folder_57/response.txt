@@ -1,0 +1,22 @@
+ ```
+def find_subset_of_length_n(set_of_elements):
+    total_subsets = 0
+    for i in range(len(set_of_elements) + 1):
+        total_subsets += binomial_coefficient(len(set_of_elements), i)
+    return total_subsets
+
+def binomial_coefficient(n, k):
+    if k < 0 or k > n:
+        return 0
+
+    if k == 0 or k == n:
+        return 1
+
+    return binomial_coefficient(n - 1, k - 1) + binomial_coefficient(n - 1, k)
+```
+Explanation:
+
+The function `find_subset_of_length_n` takes a set of elements as its argument and returns the number of all its subsets of size 92.
+To calculate this, we first need to find the total number of subsets of the given set. This can be done using the formula for the binomial coefficient, which is given by `C(n, k) = n! / (k! * (n - k)!)` where `n` is the size of the set and `k` is the size of the subset.
+In our case, we want to find the number of subsets of size 92, so we set `k` to 92 and use the formula to calculate the total number of subsets. We then subtract the number of subsets of size 1 through 91 from this total to get the number of all subsets of size 92.
+Note that this function is not efficient for large sets, as it has a time complexity of O(n^2), where `n` is the size of the set. For this reason, it is generally more efficient to use a different approach when working with large sets.

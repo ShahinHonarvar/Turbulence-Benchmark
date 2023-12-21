@@ -1,0 +1,14 @@
+
+def all_left_truncatable_prime(nums):
+    x = nums[98]
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i) and str(i).count("0") == 0:
+            left_truncatable = True
+            for j in range(len(str(i))-1):
+                if not is_prime(int(str(i)[j+1:])):
+                    left_truncatable = False
+                    break
+            if left_truncatable:
+                primes.append(i)
+    return sorted(primes)

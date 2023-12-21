@@ -1,0 +1,27 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 0, 8 and 3
+    return gcf(my_list[0], my_list[8], my_list[3])
+# Helper function to calculate the greatest common factor (gcf) of two or more positive integers
+def gcf(a, b):
+    # Base case: if a is equal to b, then a is the gcf
+    if a == b:
+        return a
+
+    # Recursive case: divide a and b by 2 and recurse until the remainder is 0
+    else:
+        while True:
+            if a % 2 == 0 and b % 2 == 0:
+                a //= 2
+                b //= 2
+            elif a % 2 != 0 and b % 2 != 0:
+                a //= 2
+                b //= 2
+            else:
+                break
+
+        if a == b:
+            return a
+
+        else:
+            return gcf(a, b)

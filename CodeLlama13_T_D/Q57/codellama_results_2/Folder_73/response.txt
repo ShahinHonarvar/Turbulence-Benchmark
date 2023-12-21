@@ -1,0 +1,21 @@
+```
+def submatrices_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    
+    # Iterate over each submatrix of the given matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            # Calculate the sum of all integers in the current submatrix
+            current_sum = 0
+            for k in range(i, len(matrix)):
+                for l in range(j, len(matrix[0])):
+                    current_sum += matrix[k][l]
+            
+            # If the sum of all integers in the current submatrix is equal to 93, add it to the list of submatrices
+            if current_sum == 93:
+                submatrices.append(matrix[i:i+1, j:j+1])
+    
+    # Return the list of all submatrices with a particular sum
+    return submatrices
+```

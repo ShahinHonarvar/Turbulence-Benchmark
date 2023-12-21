@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for sub_x in range(rows):\n        for sub_y in range(cols):\n            for x in range(rows - sub_x + 1):\n                for y in range(cols - sub_y + 1):\n                    if np.prod(matrix[x:x + sub_x, y:y + sub_y].shape) == 131:\n                        count += 1\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082535,
+  "id": "chatcmpl-7fJxf9gB8siFYbRyarNr5rPcu2K7f",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 111,
+    "total_tokens": 218
+  }
+}

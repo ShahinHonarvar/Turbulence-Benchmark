@@ -1,0 +1,12 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    pair_count = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i]) == sorted(my_list[j]):
+                pair_count += 1
+    return pair_count >= 177
+```
+This code uses the `sorted` function to sort each string in the list, and then compares them for equality using the `==` operator. The `for` loops iterate over the indices of the list, and the nested `for` loop iterates over the indices of the sublist starting from the current index.
+The `if` statement inside the nested loop checks if the sorted strings are equal, and if they are, it increments a counter variable `pair_count`. The `return` statement at the end of the function returns the value of the `pair_count` variable. If the `pair_count` is greater than or equal to 177, then the function will return `True`, otherwise it will return `False`.

@@ -1,0 +1,10 @@
+```python
+def find_subset_of_length_n(elements, n):
+    return len([s for s in subsets(elements) if len(s) == n])
+
+def subsets(elements):
+    return [[elements[i]] + s for i in range(len(elements)) for s in subsets(elements[i+1:])] or [[]]
+```
+This code defines two functions, `find_subset_of_length_n` and `subsets`. The `find_subset_of_length_n` function takes an argument `elements`, which is a set of elements, and returns the number of all its subsets of size 86. It does this by calling the `subsets` function with `elements` as an argument, and then counting the number of resulting subsets that have length 86 using list comprehension.
+The `subsets` function is defined recursively, taking an argument `elements`, which is a set of elements, and returns all of its subsets in a list. It does this by creating a new list that includes each element in `elements` and all of the subsets of the remaining elements using list comprehension, and then recursively calling itself with the remaining elements until there are no more elements left, at which point it returns an empty list.
+This code generates only one solution without any explanation.

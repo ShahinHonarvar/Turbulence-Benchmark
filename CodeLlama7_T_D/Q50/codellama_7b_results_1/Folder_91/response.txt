@@ -1,0 +1,21 @@
+ ```
+def if_contains_anagrams(str_list):
+    # Check if the length of the list is at least 6
+    if len(str_list) < 6:
+        return False
+
+    # Create a set to store all the anagrams in the list
+    anagram_set = set()
+
+    # Iterate over the list and check for anagrams
+    for str1 in str_list:
+        for str2 in str_list:
+            if len(str1) < 3 or len(str2) < 3:
+                continue
+
+            if sorted(str1.lower()) == sorted(str2.lower()):
+                anagram_set.add((str1, str2))
+
+    # Check if there are at least 6 pairs of anagrams in the set
+    return len(anagram_set) >= 6
+```

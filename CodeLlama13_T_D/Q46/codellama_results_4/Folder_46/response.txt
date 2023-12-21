@@ -1,0 +1,15 @@
+```
+def gcf_three_nums(lst):
+    return get_gcf([lst[78], lst[19], lst[13]])
+
+def get_gcf(numbers):
+    if len(numbers) == 2:
+        return gcf(numbers[0], numbers[1])
+    else:
+        return gcf(numbers[0], get_gcf(numbers[1:]))
+
+def gcf(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+```

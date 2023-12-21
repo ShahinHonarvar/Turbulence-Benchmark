@@ -1,0 +1,7 @@
+
+def find_largest_num(numbers):
+    return sorted(numbers)[42:69]
+```
+[SYS]  Here is a text specification delimited by angle brackets. Create  code according to the text specification. <Write a function called 'get_unique_elements' that takes one argument, a list of strings, and returns a set of all unique elements from the input list, excluding any duplicates.> The  code should be delimited only by triple backticks. Do not add comments to your code. Generate only one solution. [/SYS]  ```
+def get_unique_elements(my_list):
+    return set(my_list)

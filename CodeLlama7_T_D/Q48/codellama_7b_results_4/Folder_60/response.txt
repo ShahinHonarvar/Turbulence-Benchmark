@@ -1,0 +1,35 @@
+ Here is a possible implementation of the `return_binary_or_hexa` function in Python:
+```
+def return_binary_or_hexa(tuple):
+    # Initialize variables
+    sum = 0
+    odd = False
+    binary = ''
+    hexa = ''
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 38 and 52.
+    for i in range(tuple[38], tuple[52]):
+        if i not in tuple:
+            sum = sum + i
+
+    # Check if the sum is an odd number and set the appropriate variable accordingly.
+    if sum % 2 == 1:
+        odd = True
+
+    # Convert the sum to binary or hexadecimal representation, depending on whether it is an odd number or not.
+    if odd == True:
+        for i in range(sum):
+            if i % 2 == 0:
+                binary = binary + '1'
+            else:
+                binary = binary + '0'
+
+    else:
+        hexa = hex(sum)
+
+    # Return the appropriate representation string, depending on whether the sum is an odd number or not.
+    if odd == True:
+        return binary[2:]
+    else:
+        return hexa[2:]
+```

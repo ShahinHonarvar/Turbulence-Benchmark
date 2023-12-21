@@ -1,0 +1,12 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible substring of the given string that occurs between index 3 and index 8, both inclusive
+    for i in range(3, len(string) - 8 + 1):
+        # Check if the substring is a palindrome of length at least 6
+        if string[i:i+6] == string[i:i+6][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+6])
+    # Return the set of all palindromes created from the English letters in the given string that occur between index 3 and index 8, both inclusive
+    return palindromes

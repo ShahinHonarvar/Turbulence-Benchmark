@@ -1,0 +1,16 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 165):
+        for j in range(len(matrix[i]) - 165):
+            if matrix[i:i+176, j:j+176].all():
+                count += 1
+    return count
+
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+#print(submatrix_with_n_numbers(matrix))
+```
+This code first imports the NumPy library to create and manipulate arrays. It then defines a function `submatrix_with_n_numbers` that takes one argument, which is a two-dimensional numpy matrix of integers. The function returns the count of all submatrices of the given matrix that contain 176 integers each. If no such submatrix is found, the function should return 0.
+The code first initializes a variable `count` to 0. Then it uses nested loops to iterate over every possible submatrix of the given matrix. For each submatrix, the code checks if all elements in the submatrix are equal to 176. If all elements in the submatrix are equal to 176, the code increments the `count` variable by 1.
+Finally, the code returns the value of the `count` variable as the result of the function.

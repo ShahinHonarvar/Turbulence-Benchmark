@@ -1,0 +1,28 @@
+ def all_right_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the tuple
+    for x in tuple:
+        # Check if x is a prime number
+        if is_prime(x):
+            # If x is a prime number, add it to the list of prime numbers
+            prime_numbers.append(x)
+
+    # Sort the list of prime numbers in ascending order
+    sorted_prime_numbers = sorted(prime_numbers)
+
+    # Return the sorted list of prime numbers that are right-truncatable prime numbers less than x
+    return sorted_prime_numbers
+
+# Check if a number is prime by iterating through all its factors and checking if any of them divide the number evenly
+def is_prime(n):
+    # Iterate through all the factors of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if any of the factors divide n evenly
+        if n % i == 0:
+            # If a factor divides n evenly, return False
+            return False
+
+    # If none of the factors divide n evenly, return True
+    return True

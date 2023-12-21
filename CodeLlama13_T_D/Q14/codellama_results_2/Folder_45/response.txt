@@ -1,0 +1,11 @@
+```python
+def find_second_smallest_num(numbers):
+    if len(numbers) < 2:
+        return None
+    sorted_numbers = sorted(numbers)
+    for i in range(30, 201):
+        if sorted_numbers[i] != sorted_numbers[i-1]:
+            return sorted_numbers[i]
+    return None
+```
+This function first sorts the input list of numbers using `sorted()` and then iterates over the indices from 30 to 200 (both inclusive) to find the second smallest element. If no such element is found, it returns `None`.

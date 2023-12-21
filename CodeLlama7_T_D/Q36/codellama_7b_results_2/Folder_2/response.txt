@@ -1,0 +1,16 @@
+ ```
+def filter_chars(my_string):
+    # Create a list of characters in the given string
+    char_list = list(my_string)
+    # Iterate through each character in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between the indices 421 and 854 (both exclusive)
+        if 421 < i < 854:
+            # Check if the current character is greater than character 'D' and smaller than character 'J'
+            if char_list[i] > 'D' and char_list[i] < 'J':
+                # Remove all occurrences of the current character within the string
+                char_list = char_list[:i] + char_list[i+1:]
+    # Return the altered string
+    return "".join(char_list)
+```
+This function takes a single argument, `my_string`, which is a string. The function then creates a list of characters in the given string and iterates through each character in the list using a for loop. For each character that falls between the indices 421 and 854 (both exclusive), the function checks if the current character is greater than character 'D' and smaller than character 'J'. If this condition is true, then the function removes all occurrences of the current character within the string using a list slicing operation. Finally, the function returns the altered string by concatenating the characters in the list using the `join()` method.

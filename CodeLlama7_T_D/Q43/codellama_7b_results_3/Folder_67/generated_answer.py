@@ -1,0 +1,20 @@
+
+def find_primes_between_indices(my_list):
+    # Create a new list for the prime numbers
+    prime_numbers = []
+
+    # Loop through the indices of the list
+    for i in range(17, 80):
+        # Check if the current number is divisible by any other number
+        for j in range(2, my_list[i]):
+            if my_list[i] % j == 0:
+                break
+
+        # If the current number is not divisible by any other number, it is prime
+        else:
+            prime_numbers.append(my_list[i])
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    return prime_numbers

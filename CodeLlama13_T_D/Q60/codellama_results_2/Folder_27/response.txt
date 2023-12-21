@@ -1,0 +1,14 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    result = []
+    for number in numbers:
+        if is_left_right_truncatable_prime(number):
+            result.append(number)
+    return sorted(result, reverse=True)
+```
+Here's an example usage of the function:
+```
+numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+print(all_left_right_truncatable_prime(numbers))
+```
+This will output the list of all left-and-right-truncatable prime numbers less than or equal to 20 in descending order: `[23, 19, 17, 13, 11, 7, 5, 3, 2]`

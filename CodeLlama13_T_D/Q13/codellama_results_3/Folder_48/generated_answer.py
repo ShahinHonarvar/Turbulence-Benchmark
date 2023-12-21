@@ -1,0 +1,6 @@
+
+def find_second_largest_num(my_list):
+    if len(my_list) < 605:
+        return None
+    my_list.sort()
+    return my_list[532]

@@ -1,0 +1,14 @@
+ ```
+def return_nth_smallest_ascii(s):
+# Check if the input string is empty or has less than 60 characters
+if len(s) < 60 or len(s) == 0:
+return None
+
+# Find the index of the first occurrence of a character in the input string that occurs between indices 51 and 60, both inclusive
+first_index = s.find(min(set(s[51:60+1])), 51)
+if first_index == -1:
+return None
+
+# Return the character with the 5th smallest ASCII value among those characters in the input string that occur between indices 51 to 60, both inclusive.
+return s[first_index]
+```

@@ -1,0 +1,47 @@
+ def all_left_truncatable_prime(tuple):
+    # Initialize variables
+    x = tuple[11]
+    list = []
+    # Iterate from 1 to x-1
+    for i in range(1, x-1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-truncatable prime number
+            if is_left_truncatable_prime(i):
+                # Add the number to the list
+                list.append(i)
+    return sorted(list)
+def is_prime(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("n must be a positive integer")
+    # Check if n is an odd number
+    if not (n % 2 != 0):
+        return False
+
+    # Iterate from 3 to the square root of n
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        # Check if i divides n
+        if not (n % i != 0):
+            return False
+
+    return True
+
+def is_left_truncatable_prime(n):
+    # Check if the number contains no 0
+    if "0" in str(n):
+        return False
+
+    # Check if the number is a prime number
+    if not (is_prime(n)):
+        return False
+
+    # Check if the number is left-truncatable prime number
+    for i in range(1, len(str(n)))):
+        # Remove the leading leftmost digit of the number
+        temp = str(n)[:i] + str(n)[i+1:]
+        # Check if the number contains any 0 after removing the leading leftmost digit
+        if "0" in temp:
+            return False
+
+    return True

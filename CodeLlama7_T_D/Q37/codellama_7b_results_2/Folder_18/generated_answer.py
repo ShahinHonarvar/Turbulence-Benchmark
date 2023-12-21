@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    result = ""
+    for i in range(770, 971):
+        if string[i].isalpha() and (string[i] >= '-' or string[i] <= 'D'):
+            continue
+
+        else:
+
+            result += string[i]
+
+    return result

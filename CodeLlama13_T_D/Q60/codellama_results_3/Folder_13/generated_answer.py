@@ -1,0 +1,18 @@
+
+def all_left_right_truncatable_prime(numbers):
+    return sorted([n for n in numbers if is_left_right_truncatable_prime(n)])
+
+def is_left_right_truncatable_prime(n):
+    if n < 10 or n % 3 == 0 and n % 7 == 0:
+        return False
+    for i in range(1, int(len(str(n)) / 2) + 1):
+        if not is_prime(n):
+            return False
+        n = int(str(n)[:-i]) * int(str(n)[i:])
+    return True
+
+def is_prime(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

@@ -1,0 +1,19 @@
+ Here is a possible implementation of the `sum_ints_div_by_either_nums` function:
+```
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the current index
+    sum = 0
+    current_index = 86
+    
+    # Iterate through the list until the end is reached or a non-integer value is encountered
+    while current_index < len(my_list) and isinstance(my_list[current_index], int):
+        # If the current element is divisible by either -61 or -79, add it to the sum
+        if my_list[current_index] % -61 == 0 or my_list[current_index] % -79 == 0:
+            sum += my_list[current_index]
+        
+        # Increment the current index by 1
+        current_index += 1
+    
+    # Return the sum
+    return sum
+```

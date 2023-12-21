@@ -1,0 +1,10 @@
+
+def composite_nums_between_indices(lst):
+    # find the indices of 50 and 200 in lst
+    idx_50 = next((i for i, x in enumerate(lst) if x == 50), None)
+    idx_200 = next((i for i, x in enumerate(lst) if x == 200), None)
+    
+    # find the composite numbers between indices 50 and 200
+    composite_nums = [x for i, x in enumerate(lst[idx_50:idx_200+1]) if is_composite_number(x)]
+    
+    return set(composite_nums)

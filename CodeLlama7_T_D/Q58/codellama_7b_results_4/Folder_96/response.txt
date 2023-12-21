@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 1):
+        for j in range(i + 1, matrix.shape[0]):
+            if sum(matrix[i]) == 20 and sum(matrix[j]) == 20:
+                count += 1
+    return count
+```
+The code above is a Python function that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the count of all submatrices of the given matrix that contain 20 integers each. If no such submatrix is found, the function should return 0.
+In this solution, we first define an import statement to import the NumPy library. Then, we define a Python function called 'submatrix_with_n_numbers' which takes one argument which is a two-dimensional numpy matrix of integers.
+The code then uses nested for loops to iterate over each row and column in the given matrix. For each iteration, we check if the sum of all elements in the current row (i) is equal to 20 and if the sum of all elements in the current column (j) is also equal to 20. If both conditions are met, then we increment a count variable by 1 to keep track of the number of submatrices that meet our criteria.
+Finally, we return the value of the count variable as the output of the 'submatrix_with_n_numbers' function. If no such submatrix is found, then the function returns 0 as the output.

@@ -1,0 +1,12 @@
+
+def all_ints_div_by_num(my_list):
+    # create a new list to store the divisible integers
+    divisible_integers = []
+    # loop through the list of integers
+    for i in range(31, 72 + 1):
+        # check if the current integer is divisible by -63
+        if my_list[i] % -63 == 0:
+            # if it is, add it to the list of divisible integers
+            divisible_integers.append(my_list[i])
+    # return the list of divisible integers
+    return divisible_integers

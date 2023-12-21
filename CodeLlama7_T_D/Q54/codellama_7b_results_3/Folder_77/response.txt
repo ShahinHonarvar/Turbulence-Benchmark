@@ -1,0 +1,36 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[767]
+if x == 0:
+return []
+
+list1 = list(range(2, x + 1))
+for i in range(len(list1)):
+temp = list1[i]
+while temp > 0:
+if is_prime(temp):
+return sorted(list1, key=lambda x: x, reverse=True)
+else:
+break
+
+temp = temp // 10
+
+return []
+
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+```
+This code defines a function `all_right_truncatable_prime` that takes an argument which is a tuple of positive integers. The function returns the sorted list of all right-truncatable prime numbers less than the integer at index 767 in the input tuple. If there is no such right-truncatable prime number, the function returns an empty list.
+The code first defines a variable `x` which is set to the integer at index 767 in the input tuple. Then, it creates a list of all numbers from 2 to `x` (inclusive) and stores it in `list1`.
+Next, the code iterates through each number in `list1`, starting with the last element. For each number, it checks if it is a prime number using the function `is_prime`. If the number is not prime, the code breaks out of the loop and continues to the next element in `list1`.
+Once the code has iterated through all elements in `list1`, it returns an empty list. This occurs if there are no right-truncatable prime numbers less than `x`.
+Finally, the code defines a function `is_prime` that takes an argument which is a number to be checked for primality. The function first checks if the input number is less than 2. If it is not, then the function iterates through each integer from 2 to the square root of the input number (inclusive). For each such integer, the code checks if the input number is divisible by that integer using the modulo operator (`%`). If the input number is divisible by any integer in the range, the function returns `False`. Otherwise, the function returns `True`.
+In summary, this Python code defines a function `all_right_truncatable_prime` which takes an argument which is a tuple of positive integers. The function returns the sorted list of all right-truncatable prime numbers less than the integer at index 767 in the input tuple. If there are no such right-truncatable prime numbers, the function returns an empty list.

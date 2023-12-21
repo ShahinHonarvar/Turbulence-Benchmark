@@ -1,0 +1,10 @@
+ def filter_chars(my_string):
+    # Create a list of all characters in the string
+    char_list = list(my_string)
+    # Iterate through the list of characters and remove any that do not meet the criteria
+    for i in range(len(char_list)):
+        if (char_list[i] < '9' or char_list[i] > 's') and i >= 124 and i <= 854:
+            char_list.pop(i)
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string

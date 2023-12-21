@@ -1,0 +1,118 @@
+[cohere.Generation {
+	id: 64dce27c-4004-4c12-9d97-3cdd5e29e4e0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 96. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def all_right_truncatable_prime(n):
+    # sort in descending order
+    s = []
+    # set up an array of the first n primes
+    primes = []
+    # set up an array of booleans
+    # whether each number is prime
+    is_prime = []
+    # set up an array of the next n primes
+    next_primes = []
+    # set up an array of booleans
+    # whether each number is prime
+    next_is_prime = []
+    # start with all the primes
+    for p in range(2, n // 2):
+        # add all primes to the list of primes
+        primes.append(p)
+        # set all booleans to true
+        is_prime.append(True)
+        # add all primes to the list of next primes
+        next_primes.append(p)
+        # set all booleans to true
+        next_is_prime.append(True)
+    # add all primes to the list of primes
+    for p in range(n // 2, n // 2 + n // 3):
+        # add all primes to the list of primes
+        primes.append(p)
+        # set all booleans to true
+        is_prime.append(True)
+        # add all primes to the list of next primes
+        next_primes.append(p)
+        # set all booleans to true
+        next_is_prime.append(True)
+    # add all primes to the list of primes
+    for p in range(n // 3, n):
+        # add all primes to the list of primes
+        primes.append(p)
+        # set all booleans to true
+        is_prime.append(True)
+        # add all primes to the list of next primes
+        next_primes.append(p)
+        # set all booleans to true
+        next_is_prime.append(True)
+    # set up the list of primes
+    for i in range(len(primes)):
+        # check whether the ith prime is right-truncatable
+        # by removing the rightmost digit
+        while primes[i] < n and is_prime[i]:
+            # check whether the number is prime after
+            # removing the rightmost digit
+            p = int(str(primes[i])[0:-1])
+            # add all prime numbers to the list of next primes
+            next_primes.append(p)
+            # set all booleans to true
+            next_is_prime.append(True)
+            # check whether the number is prime after
+            # removing the rightmost digit
+            if all(n % d == 0 for d in range(2, int(str(n)[0:-1]) + 1)):
+                # if the number is prime, then add it to the list of next primes
+                next_primes.append(n)
+                # set all booleans to false
+                next_is_prime.append(False)
+                # set all booleans to false
+                is_prime[i] = False
+                # set all booleans to false
+                next_is_prime[i] = False
+                # add the number to the list of next primes
+                next_primes[i] = n
+    # add all prime numbers to the list of next primes
+    for i in range(len(next_primes)):
+        # check whether the ith next prime is right-truncatable
+        # by removing the rightmost digit
+        while next_primes[i] < n and next_is_prime[i]:
+            # check whether the number is prime after
+            # removing the rightmost digit
+            p = int(str(next_primes[i])[0:-1])
+            # add all prime numbers to the list of next primes
+            next_primes.append(p)
+            # set all booleans to true
+            next_is_prime.append(True)
+            # check whether the number is prime after
+            # removing the rightmost digit
+            if all(n % d == 0 for d in range(2, int(str(n)[0:-1]) + 1)):
+                # if the number is prime, then add it to the list of next primes
+                next_primes.append(n)
+                # set all booleans to false
+                next_is_prime.append(False)
+                # set all booleans to false
+                is_prime[i] = False
+                # set all booleans to false
+                next_is_prime[i] = False
+                # add the number to the list of next primes
+                next_primes[i] = n
+    # sort the list of next primes
+    next_primes.sort()
+    # sort the list of next is prime
+    next_is_prime.sort()
+    # create a list of all the next prime numbers
+    next_primes_n = []
+    # create a list of all the next is prime numbers
+    next_is_prime_n = []
+    # loop through all the next primes
+    for p in range(len(next_primes)):
+        # loop through all the next is primes
+        for q in range(len(next_is_prime)):
+            # check whether the next prime is right-truncatable
+            # by removing the rightmost digit
+            if next_primes[p] < n and next_is_prime[q]:
+                # if the next prime is right-truncatable, then add it to the list
+                next_primes_n.
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,6 @@
+
+def find_original_set(s1, s2, s3):
+    # Create a new set that is the union of all three given sets
+    original_set = s1 | s2 | s3
+    # Return the smallest set that is a subset of all three given sets
+    return min(original_set, key=len)

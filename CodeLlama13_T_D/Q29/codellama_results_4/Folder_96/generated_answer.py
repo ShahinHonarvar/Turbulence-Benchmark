@@ -1,0 +1,3 @@
+
+def gcf_two_nums(lst):
+    return lst[95] if lst[73] % lst[95] == 0 else gcf_two_nums([x for x in range(1, max(lst) + 1) if all(lst[i] % x == 0 for i in range(len(lst)))])

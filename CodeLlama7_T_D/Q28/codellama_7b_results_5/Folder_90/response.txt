@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a list of all the characters in the string
+    char_list = list(string)
+    # Find the indices of the characters that occur between indices 17 and 83, both inclusive
+    start_index = min([i for i in range(len(char_list)) if char_list[i] == '1']) + 17
+    end_index = max([i for i in range(len(char_list)) if char_list[i] == '8']) - 13
+    # Find the ASCII value of each character in the list between the start and end indices
+    ascii_values = [ord(c) for c in char_list[start_index:end_index]]
+    # Return the nth smallest ASCII value from the list of values
+    return sorted(ascii_values)[4]
+```

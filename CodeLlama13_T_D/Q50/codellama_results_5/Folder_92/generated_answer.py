@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strs):
+    for i in range(len(strs)):
+        for j in range(i+1, len(strs)):
+            if len(set(strs[i].lower())) >= 3 and len(set(strs[j].lower())) >= 3:
+                anagram = strs[i] == ''.join(sorted(strs[j]))
+                if anagram:
+                    return True
+        return False

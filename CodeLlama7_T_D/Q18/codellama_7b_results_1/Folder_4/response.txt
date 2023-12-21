@@ -1,0 +1,26 @@
+ ```
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    start_index = 86
+    end_index = 90
+    div_by_71 = []
+    div_by_67 = []
+    total_sum = 0
+
+    # Check if any elements in the specified range are divisible by either -71 or -67
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % -71 == 0:
+            div_by_71.append(my_list[i])
+        elif my_list[i] % -67 == 0:
+            div_by_67.append(my_list[i])
+
+    # Calculate the sum of all elements divisible by either -71 or -67
+    for i in range(len(div_by_71)):
+        total_sum += div_by_71[i]
+    for i in range(len(div_by_67)):
+        total_sum += div_by_67[i]
+
+    # Return the sum of all elements divisible by either -71 or -67 from index 86 to index 90, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return total_sum
+
+```

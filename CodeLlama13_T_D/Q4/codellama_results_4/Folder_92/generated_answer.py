@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(lst):
+    return [i for i in range(1, len(lst)) if lst[i-1] > 0 and lst[i] > 0]

@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 81 <= ord(c) < 86 or c == '!'])

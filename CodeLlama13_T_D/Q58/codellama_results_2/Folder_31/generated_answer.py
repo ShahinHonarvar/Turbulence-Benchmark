@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a count variable to keep track of the number of submatrices found
+    count = 0
+    
+    # Loop through each row of the matrix
+    for i in range(len(matrix)):
+        # Loop through each column of the matrix
+        for j in range(len(matrix[i])):
+            # If the element at (i, j) is not 45, skip to the next iteration
+            if matrix[i][j] != 45:
+                continue
+            
+            # Otherwise, check if there are 45 integers in the submatrix starting from (i, j)
+            submatrix = np.zeros((3, 3), dtype=int)
+            for k in range(3):
+                for l in range(3):
+                    submatrix[k][l] = matrix[i+k][j+l]
+            
+            # If there are 45 integers in the submatrix, increment the count variable
+            if np.count_nonzero(submatrix == 45) == 9:
+                count += 1
+    
+    # Return the count of all found submatrices
+    return count

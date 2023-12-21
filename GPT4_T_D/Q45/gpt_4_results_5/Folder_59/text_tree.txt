@@ -1,0 +1,78 @@
+Root
+└── Module
+    ├── ImportFrom
+    │   └── alias
+    └── FunctionDef
+        ├── arguments
+        │   └── arg
+        ├── Assign
+        │   ├── Name
+        │   │   └── Store
+        │   └── Subscript
+        │       ├── Name
+        │       │   └── Load
+        │       ├── Slice
+        │       │   ├── Constant
+        │       │   └── Constant
+        │       └── Load
+        ├── Assign
+        │   ├── Name
+        │   │   └── Store
+        │   └── ListComp
+        │       ├── Call
+        │       │   ├── Attribute
+        │       │   │   ├── Constant
+        │       │   │   └── Load
+        │       │   └── Name
+        │       │       └── Load
+        │       └── comprehension
+        │           ├── Name
+        │           │   └── Store
+        │           └── Call
+        │               ├── Name
+        │               │   └── Load
+        │               └── Name
+        │                   └── Load
+        └── Return
+            └── Call
+                ├── Name
+                │   └── Load
+                └── ListComp
+                    ├── Call
+                    │   └── Attribute
+                    │       ├── Name
+                    │       │   └── Load
+                    │       └── Load
+                    └── comprehension
+                        ├── Name
+                        │   └── Store
+                        ├── Name
+                        │   └── Load
+                        └── BoolOp
+                            ├── And
+                            ├── Compare
+                            │   ├── Call
+                            │   │   └── Attribute
+                            │   │       ├── Name
+                            │   │       │   └── Load
+                            │   │       └── Load
+                            │   ├── Eq
+                            │   └── Call
+                            │       └── Attribute
+                            │           ├── Subscript
+                            │           │   ├── Name
+                            │           │   │   └── Load
+                            │           │   ├── Slice
+                            │           │   │   └── UnaryOp
+                            │           │   │       ├── USub
+                            │           │   │       └── Constant
+                            │           │   └── Load
+                            │           └── Load
+                            └── Compare
+                                ├── Call
+                                │   ├── Name
+                                │   │   └── Load
+                                │   └── Name
+                                │       └── Load
+                                ├── GtE
+                                └── Constant

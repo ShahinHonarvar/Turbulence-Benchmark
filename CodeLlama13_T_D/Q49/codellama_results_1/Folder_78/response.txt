@@ -1,0 +1,15 @@
+```
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate Fibonacci sequence up to 115th number
+    fib_seq = [0]
+    a, b = 0, 1
+    while len(fib_seq) < 115:
+        a, b = b, a + b
+        fib_seq.append(a)
+    
+    # Check if decimal is divisible by 115th number in Fibonacci sequence
+    return decimal % fib_seq[114] == 0
+```

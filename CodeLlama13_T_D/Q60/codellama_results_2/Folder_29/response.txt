@@ -1,0 +1,8 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    left_right_primes = []
+    for num in numbers:
+        if str(num).count('0') == 0 and is_prime(num) and is_prime(int(str(num)[1:])):
+            left_right_primes.append(num)
+    return sorted(left_right_primes, reverse=True)
+```

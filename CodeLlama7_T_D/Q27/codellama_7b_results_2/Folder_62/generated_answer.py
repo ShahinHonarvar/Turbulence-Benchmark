@@ -1,0 +1,8 @@
+ def insert_after_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = my_list[:]
+    # Find the index of the element that should be inserted
+    insertion_index = my_list.index(90) + 1
+    # Insert the [90, 76] tuple at the appropriate index in the new list
+    new_list.insert(insertion_index, [90, 76])
+    return new_list

@@ -1,0 +1,47 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Iterate through each integer in the tuple
+    for x in tuple:
+        # Check if the number is prime using the Miller-Rabin primality test
+        if is_prime(x):
+            # If the number is prime, check if it is left-truncatable prime
+            if is_left_truncatable_prime(x):
+                # Add the left-truncatable prime number to the list
+                prime_list.append(x)
+
+    # Sort the list of prime numbers in descending order
+    prime_list.sort(reverse=True)
+
+    # Return the sorted list of prime numbers
+    return prime_list
+
+# Define a function to check if a number is prime using the Miller-Rabin primality test
+def is_prime(n):
+    # If the number is less than 2, it is not prime
+    if n < 2:
+        return False
+
+    # Check if the number is divisible by any of its factors up to the square root of the number
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If the number is greater than 2 and it is not divisible by any of its factors up to the square root of the number, then it is prime
+    return True
+
+# Define a function to check if a left-truncatable prime number is still prime after successively removing leading digits from it
+def is_left_truncatable_prime(n):
+    # If the number is less than 2, it is not prime
+    if n < 2:
+        return False
+
+    # Check if the number is divisible by any of its factors up to the square root of the number
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If the number is greater than 2 and it is not divisible by any of its factors up to the square root of the number, then it is prime
+    return True

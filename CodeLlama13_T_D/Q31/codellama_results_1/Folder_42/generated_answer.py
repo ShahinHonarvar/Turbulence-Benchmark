@@ -1,0 +1,3 @@
+
+def if_perfect_num(my_list):
+    return my_list[276] == sum(factors(my_list[276]))

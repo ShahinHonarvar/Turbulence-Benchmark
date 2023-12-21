@@ -1,0 +1,7 @@
+
+def insert_at_index(my_list):
+    # Create a new list that is identical to the given list
+    new_list = my_list[:]
+    # Insert 517.71 at index 74
+    new_list.insert(74, 517.71)
+    return new_list

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport math\n\ndef prime_factors(numbers):\n    n = numbers[27]\n    factors = set()\n\n    if n % 2 == 0:\n        while n % 2 == 0:\n            factors.add(2)\n            n = n / 2\n\n    for i in range(3, int(math.sqrt(n)) + 1, 2):\n        while n % i == 0:\n            factors.add(i)\n            n = n / i\n\n    if n > 2:\n        factors.add(n)\n\n    return factors\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689880529,
+  "id": "chatcmpl-7eTPVYL4yWeMQG3zVBdA55272oAxD",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 84,
+    "total_tokens": 199
+  }
+}

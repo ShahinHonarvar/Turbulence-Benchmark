@@ -1,0 +1,15 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with sum equal to 64
+    submatrices = []
+    # Loop over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Find the sum of all integers in the current submatrix
+            current_sum = np.sum(matrix[i:,j]) + np.sum(matrix[i,j+1:])
+            # If the sum is equal to 64, add the submatrix to the list
+            if current_sum == 64:
+                submatrices.append([matrix[i:,j], matrix[i,j+1:]])
+    # Return the list of all submatrices with sum equal to 64
+    return submatrices

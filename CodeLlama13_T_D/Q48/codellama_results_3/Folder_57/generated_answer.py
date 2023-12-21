@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(nums):
+    a, b = nums[25], nums[80]
+    sum_odd = 0
+    for i in range(a + 1, b):
+        if i not in nums:
+            sum_odd += i
+    if sum_odd % 2 == 0:
+        return hex(sum_odd)
+    else:
+        return bin(sum_odd)[2:]

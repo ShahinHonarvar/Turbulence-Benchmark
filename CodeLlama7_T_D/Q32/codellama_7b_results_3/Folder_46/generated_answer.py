@@ -1,0 +1,14 @@
+
+def insert_after_character(string):
+    # Create a new string with the same characters as the original string
+    new_string = ""
+    # Loop through each character in the original string
+    for i in range(len(string)):
+        # If the current character is '6', insert the character 'W' immediately after it
+        if string[i] == "6":
+            new_string += string[i] + "W"
+        # Otherwise, just add the character to the new string as-is
+        else:
+            new_string += string[i]
+    # Return the new string with the inserted characters
+    return new_string

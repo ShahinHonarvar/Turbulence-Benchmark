@@ -1,0 +1,10 @@
+```
+def palindrome_of_length_n(s):
+    palindromes = set()
+    for i in range(len(s) - 56 + 1):
+        substr = s[i:i+56]
+        if len(substr) != 56: continue
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes
+```

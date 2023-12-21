@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    filtered = ""
+    for i in range(10, 70):
+        char = string[i]
+        if "I" <= char <= "K":
+            filtered += char
+    return filtered

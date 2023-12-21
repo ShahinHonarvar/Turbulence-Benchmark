@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(lst):\n    freq_map = {}\n    for s in lst:\n        sorted_s = ''.join(sorted(s.lower()))\n        if len(sorted_s) >= 3:\n            if sorted_s in freq_map:\n                freq_map[sorted_s] += 1\n            else:\n                freq_map[sorted_s] = 1\n    return len([k for k, v in freq_map.items() if v >= 2]) >= 4\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690135417,
+  "id": "chatcmpl-7fXib3ew4P9EnTcqnJX1iyaXbnRXo",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 126,
+    "total_tokens": 226
+  }
+}

@@ -1,0 +1,29 @@
+[cohere.Generation {
+	id: 96e8b5d9-cff5-433c-93a9-7f1486d700e5
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_subset_of_length_n' that takes one argument, a set of elements, and returns the number of all its subsets of size 95.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import functools
+
+sys.setrecursionlimit(10**7)
+
+# Calculate the factorial of 95
+fac95 = 1
+for i in range(1, 95 + 1):
+    fac95 *= i
+
+# Create a function to calculate the number of all subsets of a given set of a given size
+@functools.lru_wheel_cache(maxsize=10**5)
+def find_subset_of_length_n(n):
+    # Calculate the factorial of n
+    facn = 1
+    for i in range(1, n + 1):
+        facn *= i
+
+    # Calculate the number of all subsets of size n
+    return facn / fac95
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,24 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Iterate over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+
+        # Iterate over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Get the current column of the matrix
+            col = matrix[:, j]
+
+            # Check if the sum of all integers in the submatrix equals -97
+            if np.sum(row) == -97 and np.sum(col) == -97:
+                # Add the submatrix to the list of submatrices
+                submatrices.append([row, col])
+
+    # Return the list of all submatrices such that the sum of all integers in each submatrix equals -97
+    return submatrices

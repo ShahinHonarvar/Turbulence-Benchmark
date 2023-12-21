@@ -1,0 +1,21 @@
+ ```
+def all_substring_of_size_n(string, n):
+    """Returns a list of all distinct substrings of the length equal to 37 with no duplicate characters. If no such substrings exist in the given string, the function should return an empty list. The order of the substrings in the returned list does not matter."""
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - n + 1):
+
+        # Extract the substring of length 37 starting at position i
+        substring = string[i:i+n]
+
+        # Check if the substring has no duplicate characters
+        if len(set(substring)) == n:
+
+            # Add the substring to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of substrings
+    return substrings
+```

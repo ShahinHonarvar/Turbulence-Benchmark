@@ -1,0 +1,10 @@
+
+def palindromes_between_indices(string):
+    # Create a list of all possible palindromes of length 6 or more
+    palindromes = []
+    for i in range(4, len(string) - 2):
+        # Check if the substring starting at index i and ending at index i + 5 is a palindrome
+        substr = string[i:i + 6]
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+    return set(palindromes)

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(nums):\n    import sympy\n\n    def is_prime(n):\n        return sympy.isprime(n)\n\n    def truncatable_prime(x):\n        str_x = str(x)\n        if '0' in str_x:\n            return False\n        for i in range(len(str_x)):\n            left_x = int(str_x[i:])\n            right_x = int(str_x[:len(str_x) - i])\n            if not is_prime(left_x) or not is_prime(right_x):\n                return False\n        return True\n\n    x = nums[100]\n    truncatable_primes = []\n    for num in range(10, x + 1):\n        if truncatable_prime(num):\n            truncatable_primes.append(num)\n\n    return sorted(truncatable_primes, reverse=True)\n\n```\n\nPlease note this might take long time for large numbers due the inefficiency of the truncatable_prime function which checks for every number from 10 to x if it is truncatable prime or not.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690085426,
+  "id": "chatcmpl-7fKiIpbZn2NYeFdVVKlbM7nnNos5P",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 210,
+    "prompt_tokens": 187,
+    "total_tokens": 397
+  }
+}

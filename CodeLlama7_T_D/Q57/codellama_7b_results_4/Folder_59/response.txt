@@ -1,0 +1,37 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the elements in the submatrix
+            sum = 0
+            # Loop over each element in the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # Add the element to the sum
+                    sum += matrix[k][l]
+            # Check if the sum is equal to 2
+            if sum == 2:
+                # If it is, add the submatrix to the list of submatrices
+                submatrices.append(matrix[i:i + 3][j:j + 3]])
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+```
+This code creates a function called `submatrix_with_particular_sum` that takes one argument which is a two-dimensional numpy matrix of integers. The function returns the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 2. If no such submatrix is found, the function should return an empty list.
+The code first imports the `numpy` library to work with arrays and matrices.
+Then it defines a function called `submatrix_with_particular_sum` that takes one argument which is a two-dimensional numpy matrix of integers.
+The function initializes an empty list to store the submatrices, and then loops over each row of the matrix using a nested loop over each column of the matrix.
+Inside the inner loop, the code initializes a variable `sum` to store the sum of the elements in the submatrix. Then it loops over each element in the submatrix using two nested loops that iterate over rows and columns respectively. For each element in the submatrix, the code adds the element to the `sum` variable.
+After looping over all the elements in the submatrix, the code checks if the sum is equal to 2. If it is, then the submatrix is added to the list of submatrices that will be returned by the function.
+If no such submatrix is found, then the function returns an empty list.
+To test the function with a sample matrix, the code first defines a numpy array called `matrix` and initializes it with the given matrix values. Then it calls the `submatrix_with_particular_sum` function with the `matrix` argument, and stores the returned value in a variable called `submatrices`.
+#Finally, the code prints the contents of the `submatrices` list to the console.

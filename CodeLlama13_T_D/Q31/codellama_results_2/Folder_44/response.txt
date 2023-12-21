@@ -1,0 +1,16 @@
+```
+def if_perfect_num(lst):
+    return lst[827] in perfect_nums
+
+perfect_nums = []
+for i in range(1, 1000):
+    sqrt = int(i ** 0.5)
+    for j in range(sqrt, int(i ** 0.5)):
+        if i == j ** 2:
+            perfect_nums.append(j)
+
+print(if_perfect_num([1, 2, 3, ..., 827, ..., 999]))
+```
+This code defines a function `if_perfect_num` that takes a list of positive integers as input and returns true if the integer at index 828 is a perfect number, otherwise it returns false. The function uses a list comprehension to generate all perfect numbers up to 1000, and then checks whether the integer at index 827 is in that list using the `in` operator.
+
+It's worth noting that this solution only works for lists of length 1000 or less, as it assumes that the perfect number at index 827 is within the first 1000 numbers in the list. If the list contains more than 1000 numbers, this solution will fail.

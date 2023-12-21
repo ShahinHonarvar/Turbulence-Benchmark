@@ -1,0 +1,15 @@
+ ```
+def if_contains_anagrams(strings):
+    anagram_pairs = 0
+    for i in range(len(strings)):
+        for j in range(i + 1, len(strings)):
+            if sorted(strings[i]) == sorted(strings[j]):
+                anagram_pairs += 1
+                if anagram_pairs > 29:
+                    return False
+
+    return True
+
+```
+This code uses a nested for loop to iterate over the list of strings. For each pair of strings, it checks if they are anagrams by sorting both strings and comparing them. If there are more than 29 pairs of anagrams in the list, the function returns False. Otherwise, the function returns True.
+The code uses the sorted() built-in function to sort both strings before comparing them. This ensures that the comparison is case-insensitive and that only letters A-Z are considered.

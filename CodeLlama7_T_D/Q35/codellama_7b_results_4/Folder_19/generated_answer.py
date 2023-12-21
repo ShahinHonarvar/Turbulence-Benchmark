@@ -1,0 +1,25 @@
+
+def remove_repeat_chars(string):
+    # Create a dictionary to keep track of repeated characters
+    char_dict = {}
+
+    # Loop through each character in the string
+    for char in string:
+
+        # If the character is not in the dictionary, add it
+        if char not in char_dict:
+            char_dict[char] = 1
+
+        # If the character is already in the dictionary, increment its count
+        else:
+            char_dict[char] += 1
+
+    # Loop through each key-value pair in the dictionary
+    for char, count in char_dict.items():
+
+        # If the character occurs more than once between indices 1 and 4, both exclusive, remove all occurrences of that character from the string
+        if count > 1 and (string.index(char) >= 1 and string.index(char) <= 4):
+            string = string.replace(char, '', count - 1)
+
+    # Return the altered string
+    return string

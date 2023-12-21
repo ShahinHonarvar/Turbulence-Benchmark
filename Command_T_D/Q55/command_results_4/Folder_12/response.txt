@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: 6628934a-cb30-46e0-8a48-8d2ce385e04c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals -18. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import heapq
+
+def lists_with_product_equal_n(nums):
+    sublists = []
+    for j in range(1, len(nums)):
+        p = nums[0]
+        for k in range(1, j + 1):
+            p *= nums[k]
+        if p == -18:
+            sublists.append(list(range(j, -1, -1)))
+            break
+    return sublists
+```
+	likelihood: None
+	token_likelihoods: None
+}]

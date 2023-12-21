@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return set(x for x in re.findall(r'[A-Za-z]{29}', s) if x == x[::-1])

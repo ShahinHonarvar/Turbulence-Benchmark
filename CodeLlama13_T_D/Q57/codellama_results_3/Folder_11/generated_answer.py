@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(mat):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Iterate over each submatrix of the given matrix
+    for i in range(mat.shape[0] - 1):
+        for j in range(mat.shape[1] - 1):
+            # Check if the sum of all integers in the current submatrix is equal to 38
+            if np.sum(mat[i:i+2,j:j+2]) == 38:
+                # If the sum is equal to 38, add the submatrix to the result list
+                result.append(mat[i:i+2,j:j+2])
+    
+    # Return the result list
+    return result

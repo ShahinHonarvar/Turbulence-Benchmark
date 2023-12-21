@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 146 integers
+    count = 0
+    # Loop over the rows and columns of the matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Initialize a submatrix with a size of 2x2
+            submatrix = np.array([[matrix[i, j], matrix[i, j + 1]], [matrix[i + 1, j], matrix[i + 1, j + 1]]]])
+            # Check if the submatrix has 146 integers
+            if sum(submatrix.flatten()) == 146:
+                # Increment the count of submatrices with 146 integers
+                count += 1
+
+    return count

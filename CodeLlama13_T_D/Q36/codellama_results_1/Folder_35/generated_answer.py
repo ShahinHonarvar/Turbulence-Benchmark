@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    chars = []
+    for i in range(163, 658):
+        if string[i] > '(' and string[i] < ']':
+            chars.append(string[i])
+    return ''.join([char for char in string if char not in chars])

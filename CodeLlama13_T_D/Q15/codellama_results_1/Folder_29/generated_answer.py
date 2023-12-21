@@ -1,0 +1,12 @@
+
+def sum_odd_ints_inclusive(numbers):
+    # Initialize a variable to store the sum
+    sum = 0
+    # Iterate through the list of numbers
+    for i in range(59, 98):
+        # Check if the current number is odd
+        if numbers[i] % 2 != 0:
+            # If it is, add it to the sum
+            sum += numbers[i]
+    # Return the sum
+    return sum

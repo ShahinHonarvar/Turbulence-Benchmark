@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(lst):
+    anagram_pairs = 0
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i].lower() == lst[j].lower():
+                anagram_pairs += 1
+                if anagram_pairs > 47:
+                    return False
+    return True

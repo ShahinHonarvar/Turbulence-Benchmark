@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 27])
+
+def powerset(s):
+    if not s:
+        return [[]]
+    p = []
+    for i in range(len(s)):
+        x = s[i]
+        subsets = powerset(s[:i] + s[i+1:])
+        for subset in subsets:
+            p.append([x] + subset)
+    return p

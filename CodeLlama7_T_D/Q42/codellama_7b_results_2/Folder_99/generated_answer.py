@@ -1,0 +1,28 @@
+
+def prime_factors(my_list):
+    # Find the prime factor of the element at index 733
+    prime_factor = my_list[733]
+    # Initialize an empty set to store all prime factors
+    prime_factors = set()
+    # While the number is not equal to 1, continue to find prime factors
+    while prime_factor != 1:
+        # If the number is not a prime number, it must have a prime factor
+        if not is_prime(prime_factor):
+            # Add the prime factor to the set of all prime factors
+            prime_factors.add(prime_factor)
+        # Divide the number by the prime factor to find the next prime factor
+        prime_factor = prime_factor // get_divisor(prime_factor)
+    return prime_factors
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def get_divisor(n):
+    for i in range(int(n ** 0.5), 0, -1):
+        if n % i == 0:
+            return i

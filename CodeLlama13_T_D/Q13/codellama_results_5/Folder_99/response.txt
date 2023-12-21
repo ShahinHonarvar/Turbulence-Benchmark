@@ -1,0 +1,16 @@
+```
+def find_second_largest_num(numbers):
+    # Get a list of unique numbers from the input list
+    unique_numbers = set(numbers)
+    
+    # Sort the unique numbers in descending order
+    sorted_unique_numbers = sorted(unique_numbers, reverse=True)
+    
+    # Find the second largest element between indices 310 and 370 (both inclusive)
+    for i in range(310, 371):
+        if sorted_unique_numbers[i] != sorted_unique_numbers[i-1]:
+            return sorted_unique_numbers[i]
+    
+    # If no such element exists, return None
+    return None
+```

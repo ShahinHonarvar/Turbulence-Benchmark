@@ -1,0 +1,14 @@
+
+def find_divisors_in_range(n):
+    # Initialize an empty list to store the divisors
+    divisors = []
+
+    # Iterate from 1 to n
+    for i in range(1, n + 1):
+        # Check if i is a divisor of n that is between 3 and 5, both inclusive
+        if n % i == 0 and i >= 3 and i <= 5:
+            # If so, add it to the list of divisors
+            divisors.append(i)
+
+    # Return the list of all positive divisors of the given integer that are between 3 and 5, both inclusive
+    return divisors

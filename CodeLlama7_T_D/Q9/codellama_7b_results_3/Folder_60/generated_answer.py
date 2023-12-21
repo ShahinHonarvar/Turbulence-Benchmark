@@ -1,0 +1,11 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Get the indices of the odd integers in the range
+    start = 75
+    end = 85
+    odd_indices = []
+    for i in range(start, end + 1):
+        if my_list[i] % 2 != 0:
+            odd_indices.append(i)
+    # Return the list of all odd integers from the specified range
+    return [my_list[i] for i in odd_indices]

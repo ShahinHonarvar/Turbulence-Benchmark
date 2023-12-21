@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import isqrt\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, isqrt(n)+1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[77]\n    truncatable_primes = []\n    for num in range(11, x+1):\n        if '0' not in str(num) and is_prime(num):\n            truncatable = True\n            for i in range(1, len(str(num))):\n                if not is_prime(int(str(num)[i:])) or not is_prime(int(str(num)[:-i])):\n                    truncatable = False\n                    break\n            if truncatable:\n                truncatable_primes.append(num)\n    return sorted(truncatable_primes)\n```\nNote: The code uses the `is_prime` function to check if a number is prime, and `isqrt` function from the `math` module to find the integer square root of a number.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689801108,
+  "id": "chatcmpl-7e8kWQOY6oPNhMrHkPkxFvNy2YIHu",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 222,
+    "prompt_tokens": 187,
+    "total_tokens": 409
+  }
+}

@@ -1,0 +1,16 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define a list to store all palindromes found in the string
+    palindromes = []
+    # Define a range of indices for the substring containing the palindromes
+    substring_range = range(30, 84)
+    # Loop through each index in the substring range
+    for i in substring_range:
+        # Check if the character at the current index is a letter (A-Z or a-z)
+        if string[i].isalpha():
+            # Check if the current character is a palindrome of length between 12 and 20 (both inclusive)
+            if string[i] == string[i].lower():
+                # If the current character is a palindrome, add it to the list of palindromes found in the substring
+                palindromes.append(string[i])
+    # Return the set of all palindromes found in the specified index range and with lengths between 12 and 20 (both inclusive)
+    return set(palindromes)

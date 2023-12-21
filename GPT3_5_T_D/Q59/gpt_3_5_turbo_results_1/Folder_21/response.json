@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef sieve(n):\n    primes = [True] * (n+1)\n    primes[0] = primes[1] = False\n    p = 2\n    while (p * p <= n):\n        if primes[p] == True:\n            for i in range(p * p, n+1, p):\n                primes[i] = False\n        p += 1\n    return primes\n\ndef all_left_truncatable_prime(nums):\n    x = nums[175]\n    primes = sieve(x)\n    result = []\n    for num in range(11, x):\n        if str(num).count('0') == 0:\n            trunc_primes = True\n            for i in range(1, len(str(num))):\n                if not primes[int(str(num)[i:])]:\n                    trunc_primes = False\n                    break\n            if trunc_primes:\n                result.append(num)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689798891,
+  "id": "chatcmpl-7e8AlDcxY3DKU0YRNipu7Q71WaFBo",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 192,
+    "prompt_tokens": 146,
+    "total_tokens": 338
+  }
+}

@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: d5e7226f-a833-4abf-8086-cf47f51f2ff0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_binary_or_hexa' that takes one argument, a tuple of distinct nonnegative integers sorted in ascending order. Let 'a' denote the integer stored at index 0, and 'b' the integer stored at index 9. The function should calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 0 and 9. If the sum is an odd number, the function should return the binary representation string of the sum; otherwise, it should return the hexadecimal representation string of the sum. The binary representation should not be prefixed with '0b'. The hexadecimal representation should not be prefixed with '0x'. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in hexadecimal representation can be either in lowercase or uppercase. If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, the function should return an empty string.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+A solution using Python:
+```Python
+def return_binary_or_hexa(nums):
+    a, b = nums[0], nums[-1]
+    if a > b:
+        return ""
+    if a % 2 == 1:
+        return "0b" + ("0" * (len(str(a)) - 1) + str(b - a))
+    return "0x" + ("0" * (len(str(a)) - 1) + str(b - a))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

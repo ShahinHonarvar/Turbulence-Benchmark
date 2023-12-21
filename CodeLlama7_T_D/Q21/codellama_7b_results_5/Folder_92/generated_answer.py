@@ -1,0 +1,7 @@
+
+def all_ints_div_by_num(my_list):
+    result = []
+    for i in my_list:
+        if i % 1 == 0:
+            result.append(i)
+    return result

@@ -1,0 +1,3 @@
+
+def find_original_set(a, b, c, d):
+    return {x for x in a | b | c | d if x in a and x in b and x in c and x in d}

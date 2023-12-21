@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(string):
+    # Create a list of all possible palindromes of length at least 7
+    palindromes = []
+    # Loop through each character in the string, starting from index 2 to index 8, both inclusive
+    for i in range(2, len(string) - 1):
+        # Check if the current character is a vowel or not
+        if string[i].lower() in ["a", "e", "i", "o", "u"]:
+            # If the current character is a vowel, create a palindrome from it and all the characters before and after it in the original string
+            palindrome = ""
+            for j in range(i - 2, i + 3):
+                if j >= 0 and j < len(string):
+                    palindrome += string[j]
+            # Add the created palindrome to the list of all possible palindromes
+            palindromes.append(palindrome)
+    return set(palindromes)
+```

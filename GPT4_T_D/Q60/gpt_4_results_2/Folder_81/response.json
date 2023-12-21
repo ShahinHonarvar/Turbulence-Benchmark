@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given specification.\n\n```python\nfrom sympy import isprime\n\ndef all_left_right_truncatable_prime(tup):\n    x = tup[98]\n    primes = []\n    for num in range(11, x + 1):\n        if '0' in str(num):\n            continue\n        left_right_truncatable = True\n        for i in range(len(str(num))):\n            if not isprime(int(str(num)[i:])) or not isprime(int(str(num)[:len(str(num))-i])):\n                left_right_truncatable = False\n                break\n        if left_right_truncatable:\n            primes.append(num)\n    return sorted(primes)\n```\n\nThis function first gets the element at the 98-th position of the tuple, then it checks each number from 11 to that number. If a number contains '0', it skips the number. If a number is a left-and-right truncatable prime, it adds the number to the 'primes' list. Finally, it returns the sorted list of all left-and-right truncatable primes in the given range.\n```python\ntest = tuple(range(1, 1001))\nprint(all_left_right_truncatable_prime(test))\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690918654,
+  "id": "chatcmpl-7ipTSOwPS5n8jqkPFSSdr8LpHmOQ5",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 254,
+    "prompt_tokens": 187,
+    "total_tokens": 441
+  }
+}

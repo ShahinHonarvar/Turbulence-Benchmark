@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert binary representation to integer
+    num = int(binary_rep, 2)
+    # Get Fibonacci sequence up to 108th number
+    fib = [0, 1]
+    for i in range(107):
+        fib.append(fib[i] + fib[i+1])
+    # Check if num is divisible by 108th Fibonacci number
+    return num % fib[-1] == 0

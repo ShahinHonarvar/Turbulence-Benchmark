@@ -1,0 +1,17 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    element_set = set(list1).intersection(set(list2))
+    # Initialize an empty set to store the identical elements
+    identical_elements = set()
+
+    # Loop through each element in the set and check if it occurs at least once in both lists between indices 10 and 66, inclusive
+    for element in element_set:
+        count1 = list1.count(element)
+        count2 = list2.count(element)
+        if count1 > 0 and count2 > 0 and (count1 + count2) >= 10 and (count1 + count2) <= 66:
+            identical_elements.add(element)
+
+    # Return the set of identical elements
+
+    return identical_elements

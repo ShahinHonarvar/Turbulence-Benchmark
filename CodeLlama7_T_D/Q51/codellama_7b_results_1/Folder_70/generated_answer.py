@@ -1,0 +1,31 @@
+
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the counts of each letter
+    letter_counts = {}
+
+    # Loop through each string in the list
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Loop through each character in the string
+        for char in lowercase_string:
+            # If the character is a letter, increment its count in the dictionary
+            if char.isalpha():
+                if char not in letter_counts:
+                    letter_counts[char] = 1
+                else:
+                    letter_counts[char] += 1
+
+    # Initialize a variable to store the number of anagrams found
+    num_anagrams = 0
+
+    # Loop through each pair of letters in the dictionary
+    for char1, count1 in letter_counts.items():
+        for char2, count2 in letter_counts.items():
+            # If the two letters are not the same and their counts match, add them to the list of anagrams
+            if char1 != char2 and count1 == count2:
+                num_anagrams += 1
+
+    # Return whether there are at most 97 pairs of anagrams in the given list
+    return num_anagrams <= 97

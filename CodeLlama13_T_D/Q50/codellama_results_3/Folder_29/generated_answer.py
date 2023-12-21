@@ -1,0 +1,17 @@
+
+def if_contains_anagrams(strings):
+    # Create a dictionary to store the frequency of each string
+    freq = {}
+    for s in strings:
+        key = "".join(sorted(s.lower()))
+        if key not in freq:
+            freq[key] = 0
+        freq[key] += 1
+    
+    # Count the number of pairs of anagrams
+    num_pairs = 0
+    for s, count in freq.items():
+        if count >= 3 and "".join(sorted(s)) != s:
+            num_pairs += count * (count - 1) // 2
+    
+    return num_pairs >= 35

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef all_left_right_truncatable_prime(numbers):\n    def is_prime(num):\n        if num <= 1:\n            return False\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    def is_truncatable_prime(num):\n        num_str = str(num)\n        if '0' in num_str:\n            return False\n        for i in range(1, len(num_str) + 1):\n            if not is_prime(int(num_str[:i])) or not is_prime(int(num_str[-i:])):\n                return False\n        return True\n\n    x = numbers[8]\n    results = []\n\n    for num in range(2, x+1):\n        if is_truncatable_prime(num):\n            results.append(num)\n\n    return sorted(results, reverse=True)\n```\nNote: This is the code according to the given text specification. However, this implementation may not be the most efficient, especially for large inputs, as it checks each number individually. There are more optimized algorithms for finding truncatable prime numbers.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689801146,
+  "id": "chatcmpl-7e8l8vPJz013hWlbDhpYBKTrbEg3i",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 236,
+    "prompt_tokens": 187,
+    "total_tokens": 423
+  }
+}

@@ -1,0 +1,33 @@
+ ```
+def all_even_ints_exclusive(my_list):
+    # Find the index of the first even integer in the list
+    for i, x in enumerate(my_list):
+        if x % 2 == 0:
+            start_index = i
+            break
+
+    else:
+
+        return []
+
+
+    # Find the index of the last even integer in the list
+
+    for i in range(start_index, len(my_list)):
+
+        if my_list[i] % 2 == 0:
+
+            end_index = i
+
+            break
+
+
+    else:
+
+        end_index = len(my_list) - 1
+
+
+    # Return the list of all even integers in the specified range, exclusive of the end index
+
+    return [x for x in my_list[start_index:end_index + 1] if x % 2 == 0]
+```

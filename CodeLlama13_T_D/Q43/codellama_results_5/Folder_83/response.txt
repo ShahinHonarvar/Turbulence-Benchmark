@@ -1,0 +1,10 @@
+```python
+def find_primes_between_indices(lst):
+    primes = []
+    for i in range(14, 73+1):
+        if all(lst[i] % num != 0 for num in range(2, int(lst[i]**0.5) + 1)):
+            primes.append(lst[i])
+    return sorted(primes, reverse=True)
+```
+This code defines a function called `find_primes_between_indices` that takes a list of integers as input and returns the sorted list of all prime numbers from index 14 to index 73, both inclusive. The function uses a for loop to iterate over the indices in the specified range, and checks if each number is prime using a simple primality test. If a number is prime, it is added to the `primes` list. Finally, the `sorted` function is used to sort the `primes` list in descending order, and the result is returned.
+Note that this code assumes that the input list contains only integers, and that the specified range is valid (i.e., 14 <= index <= 73 for all indices). If these assumptions are not met, the function may raise an exception or return incorrect results.

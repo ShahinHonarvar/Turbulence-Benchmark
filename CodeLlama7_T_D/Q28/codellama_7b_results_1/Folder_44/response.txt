@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # Find the indices of the characters in the string
+    indices = []
+    for i, c in enumerate(s):
+        if c not in indices:
+            indices.append(i)
+    # Get the character with the 8th smallest ASCII value
+    char_with_smallest_ascii = None
+    for i in range(20, 31):
+        if s[i] < char_with_smallest_ascii or char_with_smallest_ascii is None:
+            char_with_smallest_ascii = s[i]
+    return char_with_smallest_ascii
+```
+This code defines a function called `return_nth_smallest_ascii` that takes a string of distinct characters as its argument. The function first finds the indices of all the characters in the string using a loop. Then, it iterates over the characters between indices 20 and 30 (both inclusive) and returns the character with the 8th smallest ASCII value among those characters.
+Note that this code assumes that there are no duplicates in the input string. If there are duplicates, the function may return a different character than the one with the 8th smallest ASCII value.

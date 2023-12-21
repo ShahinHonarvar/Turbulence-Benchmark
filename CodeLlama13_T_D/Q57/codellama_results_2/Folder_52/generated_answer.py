@@ -1,0 +1,20 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    results = []
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary submatrix with the current row and column
+            temp_submatrix = np.array([[matrix[i,j]]])
+            
+            # Check if the sum of all integers in the temporary submatrix is 100
+            if np.sum(temp_submatrix) == 100:
+                # If it is, add it to the results list
+                results.append(temp_submatrix)
+                
+    return results

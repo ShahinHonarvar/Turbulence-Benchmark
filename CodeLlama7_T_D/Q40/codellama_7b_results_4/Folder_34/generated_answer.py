@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(s: str, n: int = 9) -> List[str]:
+    if len(s) < n:
+        raise ValueError("String must be at least length 9")
+    sorted_list = sorted(s, key=lambda x: ord(x))
+    return sorted_list[:n]

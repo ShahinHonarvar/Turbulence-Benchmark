@@ -1,0 +1,30 @@
+
+def find_primes_between_indices(my_list):
+    # Define a list to store the prime numbers between indices
+    prime_numbers = []
+
+    # Iterate over the list from index 10 to index 12, both inclusive
+    for i in range(10, 13):
+        # Check if the number at the current index is prime
+        if is_prime(my_list[i]):
+            # If it is prime, add it to the list of prime numbers
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of all prime numbers between indices 10 and 12, both inclusive
+    return sorted(prime_numbers)
+
+# Define a function to check if a number is prime
+def is_prime(n):
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        # If it is, return False
+        return False
+
+    # Check if n is divisible by any number between 2 and the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # If it is divisible, return False
+        if n % i == 0:
+            return False
+
+    # If none of the above conditions are met, return True
+    return True

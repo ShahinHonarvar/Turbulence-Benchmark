@@ -1,0 +1,19 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_pairs = 0
+    anagram_length = 3
+
+    # Iterate through the list and count the number of anagram pairs
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+
+    # Check if the number of anagram pairs is less than or equal to 58
+    if anagram_pairs <= 58:
+        return True
+
+    else:
+
+        return False

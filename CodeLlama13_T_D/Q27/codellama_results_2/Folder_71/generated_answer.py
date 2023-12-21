@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    if 70 in range(len(my_list)):
+        return my_list[:71] + [76] + my_list[71:]
+    else:
+        return my_list

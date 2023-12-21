@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(t):\n    a = t[81]\n    b = t[86]\n    integers = set(t[a+1:b])\n    \n    total = 0\n    for i in range(a+1, b):\n        if i not in integers:\n            total += i\n    \n    if total == 0 or total % 2 == 0:\n        return hex(total)[2:]\n    else:\n        return bin(total)[2:]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689862280,
+  "id": "chatcmpl-7eOfA5ukBrDVeY4vsHHBpedxwjpjd",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 263,
+    "total_tokens": 361
+  }
+}

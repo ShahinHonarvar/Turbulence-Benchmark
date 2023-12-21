@@ -1,0 +1,19 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    primes = []
+    for number in numbers:
+        if is_prime(number) and has_no_zeros(str(number)):
+            primes.append(number)
+    return sorted(primes, reverse=True)
+
+def is_prime(n):
+    if n == 1 or n == 0:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def has_no_zeros(s):
+    return '0' not in s
+```

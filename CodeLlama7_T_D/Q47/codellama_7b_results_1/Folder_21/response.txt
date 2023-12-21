@@ -1,0 +1,41 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find all substrings of the specified length
+    substrings = []
+    for i in range(100, 295 + 1):
+        substring = string[i - 100:i]
+        if len(substring) not in [136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160]:
+            continue
+
+        if len(substring) > 136:
+            substrings.append(substring[136:])
+
+        else:
+
+            substrings.append(substring)
+
+    # Find all palindromes in the substrings
+    palindromes = []
+
+    for substring in substrings:
+
+        for i in range(0, len(substring) + 1):
+
+            if i == len(substring):
+
+                continue
+
+
+            if substring[i] != substring[-i - 1]:
+
+                break
+
+
+        else:
+
+
+            palindromes.append(substring)
+
+    # Return the set of all palindromes with the specified length in the specified index range
+    return set(palindromes)
+```

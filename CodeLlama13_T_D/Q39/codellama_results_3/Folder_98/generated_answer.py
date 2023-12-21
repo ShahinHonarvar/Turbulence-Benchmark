@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(string):
+    chars = list(set(string))
+    return sorted(chars, key=lambda x: ord(x), reverse=True)[:68]

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    result = []\n    \n    def get_product(arr):\n        product = 1\n        for num in arr:\n            product *= num\n        return product\n    \n    for start in range(len(nums)):\n        for end in range(start, len(nums)):\n            sublist = nums[start:end+1]\n            if get_product(sublist) == -36:\n                result.append(sublist)\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866023,
+  "id": "chatcmpl-7ePdXSxZMepC3K4XHPAiId2wP87ef",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 193,
+    "total_tokens": 286
+  }
+}

@@ -1,0 +1,15 @@
+ def filter_chars(my_string):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    # Iterate over each character in the given string
+    for char in my_string:
+        # If the current character is between indices 15 and 85 (both exclusive) and is greater than 'I' and smaller than 'M', remove all occurrences of that character within the string while keeping the order of all characters intact.
+        if 15 < ord(char) < 85 and char > "I" and char < "M":
+            filtered_string += char * (ord(char) - 15)
+
+        # If the current character is not between indices 15 and 85 (both exclusive) or is not greater than 'I' or is not smaller than 'M', append the current character to the filtered string.
+        else:
+            filtered_string += char
+
+    return filtered_string

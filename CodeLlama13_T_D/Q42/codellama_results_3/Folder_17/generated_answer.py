@@ -1,0 +1,16 @@
+
+def prime_factors(numbers):
+    return set(prime_factor(numbers[632]))
+
+def prime_factor(n):
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            factors.append(i)
+            n //= i
+    if n > 1:
+        factors.append(n)
+    return factors

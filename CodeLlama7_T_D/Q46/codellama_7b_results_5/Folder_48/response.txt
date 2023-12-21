@@ -1,0 +1,16 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor (GCF) of the elements at indices 654, 312 and 441
+    gcf = my_list[654]
+    for i in range(len(my_list)):
+        if my_list[i] != 0:
+            while (my_list[i] % gcf) == 0:
+                my_list[i] /= gcf
+    return my_list[312] * my_list[441]
+# Test the function with a list of positive integers
+my_list = [654, 312, 441, 789, 123]
+#print(gcf_three_nums(my_list))
+```
+This code defines a function called `gcf_three_nums` that takes a list of positive integers as an argument. The function returns the product of the elements at indices 312 and 441, calculated by finding the greatest common factor (GCF) of the elements at indices 654, 312, and 441, respectively.
+The function first calculates the GCF of the elements at indices 654, 312, and 441 using a for loop that iterates through each element in the list, checking if it is not equal to zero. If an element is not equal to zero, the function will divide the element by the current value of `gcf` until the remainder of the division operation is zero.
+Once the GCF has been calculated, the function returns the product of the elements at indices 312 and 441.

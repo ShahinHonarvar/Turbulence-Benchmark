@@ -1,0 +1,49 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Get the substring from index 101 to index 292, both inclusive
+    substring = string[101:293]
+    
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each letter in the substring
+    for i in range(len(substring)):
+        # Get the current letter and its index
+        current_letter = substring[i]
+        
+        # Check if the current letter is an English letter
+        if not current_letter.isalpha():
+            continue
+        
+        # Initialize a variable to store the length of the palindrome
+        length = 0
+        
+        # Iterate over each letter in the substring, starting from the current index
+        for j in range(i, len(substring)):
+            # Get the current letter and its index
+            letter_j = substring[j]
+            
+            # Check if the current letter is an English letter
+            if not letter_j.isalpha():
+                break
+            
+            # Check if the palindrome length has reached the maximum allowed length
+            if length > 182:
+                break
+            
+            # Add the current letter to the palindrome
+            palindrome += substring[j]
+            
+            # Increment the length of the palindrome
+            length += 1
+            
+            # Check if the palindrome is a palindrome
+            if palindrome == palindrome[::-1]:
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+                
+        # Reset the length of the palindrome for the next iteration
+        length = 0
+        
+    return palindromes
+```

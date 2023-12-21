@@ -1,0 +1,10 @@
+```
+def if_decimal_is_divisible(binary_repr):
+    fibonacci = (0, 1)
+    for i in range(2, len(binary_repr)):
+        fibonacci += (fibonacci[i-1] + fibonacci[i-2],)
+    return int(''.join(binary_repr), 2) % fibonacci[198] == 0
+```
+This function takes a binary representation string of a non-negative decimal integer as an argument. It uses the `int` function to convert the binary representation to a decimal number, and then it checks if that number is divisible by the 198th number in the Fibonacci sequence. If it is, the function returns `True`, otherwise it returns `False`.
+
+Note: The first number in the Fibonacci sequence is 0, so we start at index 2 when iterating over the binary representation string.

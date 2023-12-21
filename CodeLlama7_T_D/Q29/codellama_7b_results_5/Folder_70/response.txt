@@ -1,0 +1,12 @@
+ ```
+def gcf_two_nums(my_list):
+    gcf = 1
+    for i in range(len(my_list)):
+        for j in range(i+1, len(my_list)):
+            if my_list[i] % my_list[j] == 0 and my_list[j] > gcf:
+                gcf = my_list[j]
+    return gcf
+```
+The above code is a Python implementation of the "greatest common factor" (GCF) function. The GCF is the largest number that both numbers can divide evenly by.
+In this code, we first define a function called `gcf_two_nums` that takes one argument, a list of positive integers. We then use nested for loops to iterate through each element in the input list and find its greatest common factor with all other elements. If we find a greater common factor than what we previously found, we update our current GCF. Finally, we return the final GCF value that we have calculated.
+Note: In this code, we assume that the input list is a list of positive integers. If the input list contains non-positive integers or negative integers, the GCF function will not work correctly.

@@ -1,0 +1,16 @@
+```python
+def all_right_truncatable_prime(x):
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_list.append(i)
+    
+    sorted_list = sorted(prime_list, reverse=True)
+    return sorted_list
+
+def is_prime(n):
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+```

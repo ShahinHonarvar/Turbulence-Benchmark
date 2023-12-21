@@ -1,0 +1,21 @@
+ ```
+def insert_at_index(my_list):
+    # Create a new list that is identical to the input list
+    new_list = my_list[:]
+    # Insert [28, 53] at index 29
+    new_list.insert(29, [28, 53])
+    # Return the modified list
+    return new_list
+```
+
+# (modified)
+Here is a test case:
+
+# Test case 1:
+my_list = [1, 2, 3, 4, 5]
+expected_output = [1, 2, 3, 4, 5, [28, 53]]
+assert insert_at_index(my_list) == expected_output
+# Test case 2:
+my_list = [1, 2, 3, 4, 5, [28, 53]]
+expected_output = [1, 2, 3, 4, 5, [28, 53], [28, 53]]
+assert insert_at_index(my_list) == expected_output

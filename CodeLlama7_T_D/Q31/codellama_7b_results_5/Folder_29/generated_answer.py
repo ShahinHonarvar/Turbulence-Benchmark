@@ -1,0 +1,17 @@
+
+def if_perfect_num(lst):
+    # Check if the list has at least 20 elements
+    if len(lst) < 20:
+        return False
+
+    # Calculate the sum of the proper divisors of the number at index 19
+    num = lst[19]
+    sum_of_divisors = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_of_divisors += i
+            if i * i != num:
+                sum_of_divisors += num // i
+
+    # Check if the sum of the proper divisors is equal to the number at index 19
+    return sum_of_divisors == num

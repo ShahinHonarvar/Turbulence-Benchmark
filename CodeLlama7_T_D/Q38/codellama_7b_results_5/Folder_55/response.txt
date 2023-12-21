@@ -1,0 +1,33 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize a list to store all the subsets of size 21
+    subsets = []
+
+    # Iterate over all possible combinations of elements in the set
+    for i in range(2 ** len(elements)):
+
+        # Generate a binary string representing the current combination
+        binary_str = bin(i)[2:]
+
+        # Pad the binary string with leading zeros to make it the same length as the number of elements in the set
+        binary_str = binary_str.zfill(len(elements))
+
+        # Convert the binary string back into a list of 0s and 1s
+        binary_list = list(binary_str)
+
+        # Initialize an empty list to store the current subset
+        subset = []
+
+        # Iterate over the elements in the set
+        for j, element in enumerate(elements):
+
+            # If the jth bit in the binary string is 1, add the current element to the subset
+            if binary_list[j] == "1":
+                subset.append(element)
+
+        # Add the subset to the list of all subsets of size 21
+        subsets.append(subset)
+
+    # Return the number of all its subsets of size 21
+    return len(subsets)
+```

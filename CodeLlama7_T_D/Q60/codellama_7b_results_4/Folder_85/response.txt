@@ -1,0 +1,17 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Loop through the range of integers from 1 to x
+    for i in range(1, x + 1):
+        # If the current integer is a prime number and is left-and-right-truncatable, add it to the list
+        if (i > 1) and (all(map(lambda y: (y % i == 0), range(2, int(i ** 0.5) + 1)))):
+            prime_list.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_list.sort()
+
+    # Return the sorted list of prime numbers
+    return prime_list
+```

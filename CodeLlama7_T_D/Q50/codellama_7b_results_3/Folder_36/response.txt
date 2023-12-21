@@ -1,0 +1,23 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check if the list is empty
+if len(my_list) == 0:
+return False
+
+# Check if there are at least three elements in the list that have a length of at least three
+count = 0
+for element in my_list:
+if len(element) >= 3:
+count += 1
+
+# If there are at least three elements in the list that have a length of at least three, check if there are at least 312 pairs of anagrams in the list
+if count >= 3:
+anagram_pairs = 0
+for i in range(len(my_list) - 1)):
+for j in range(i + 1, len(my_list))):
+if sorted(my_list[i]) == sorted(my_list[j])):
+anagram_pairs += 1
+
+# If there are at least 312 pairs of anagrams in the list, return True; otherwise, return False
+return anagram_pairs >= 312
+```

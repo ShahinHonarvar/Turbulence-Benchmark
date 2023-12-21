@@ -1,0 +1,16 @@
+ ```
+def return_vowels(my_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    start_index = 273
+    end_index = 275
+    filtered_chars = []
+    for char in my_string[start_index:end_index]:
+        if char.isalpha() and char.lower() in vowels:
+            if char.lower() > 'a' and char.lower() <= 'o':
+                filtered_chars.append(char)
+    return filtered_chars
+
+```
+This function first initializes a list of all vowel letters (`['a', 'e', 'i', 'o', 'u']`). It then defines the start and end indices for the range of characters to be searched (`start_index = 273` and `end_index = 275`).
+The function then iterates over each character in the specified range using a list comprehension. For each character, it checks whether it is an alphabetical character (i.e., not a punctuation or digit) and if it is a vowel letter (i.e., `'a'`, `'e'`, `'i'`, `'o'`, or `'u'`). If the character meets these criteria, it then checks if its lowercase form (`char.lower()`) is greater than the letter `'a'` and smaller than or equal to the letter `'o'`. If this condition is met, the function adds the character to the `filtered_chars` list.
+Finally, the function returns the `filtered_chars` list containing all vowel letters between the specified indices that are greater than the letter `'a'` and smaller than or equal to the letter `'o'`.

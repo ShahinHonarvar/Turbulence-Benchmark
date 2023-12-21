@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that adheres to the above statement:\n\n```python\nfrom sympy import isprime\n\ndef all_left_truncatable_prime(t):\n    x = t[77]\n    \n    def is_left_truncatable_prime(n):\n        n = str(n)\n        if '0' in n:\n            return False\n        for i in range(len(n)):\n            if not isprime(int(n[i:])):\n                return False\n        return True\n\n    return sorted([i for i in range(2, x) if is_left_truncatable_prime(i)], reverse=True)\n```\nIn this code block:\n- The 'is_left_truncatable_prime' function checks if a number is a left-truncatable prime number.\n- The 'all_left_truncatable_prime' function finds all the left_truncatable prime numbers less than the integer at index 77 in the given tuple and returns them in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690911572,
+  "id": "chatcmpl-7indEitAFaED9YPs4Ytxf2kKuvcfS",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 146,
+    "total_tokens": 336
+  }
+}

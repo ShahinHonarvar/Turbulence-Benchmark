@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count_submatrix = 0\n    for i in range(matrix.shape[0]):\n        for j in range(matrix.shape[1]):\n            for k in range(i+1, matrix.shape[0]+1):\n                for l in range(j+1, matrix.shape[1]+1):\n                    if (k-i)*(l-j) == 176:\n                        count_submatrix += 1\n    return count_submatrix\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691018977,
+  "id": "chatcmpl-7jFZZFuY0FWGcdWrpxRvgvGdNeFTq",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 111,
+    "total_tokens": 215
+  }
+}

@@ -1,0 +1,12 @@
+[cohere.Generation {
+	id: 3353f9d2-185d-4d5e-b887-072796d10b4f
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'palindromes_of_specific_lengths' that takes one argument, a string. The given string may consist of any character. The function should return the set of all palindromes with the following requirements. Only palindromes occurring in the substring from index 17 to index 95, both inclusive, should be considered. Only palindromes of lengths between 13 to 49 (both inclusive) should be considered. Each palindrome should only consist of English letters. If no such palindrome with the length specified occurs in the specified index range, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+palindromes_of_specific_lengths=lambda s:set(re.findall(r'[a-z]+|(?=([a-z]{13}){26}(?=[a-z]{13}){13}){26}|(?=([a-z]{14}){28}(?=[a-z]{14}){14}){28}|(?=([a-z]{15}){30}(?=[a-z]{15}){15}){30}|(?=([a-z]{16}){32}(?=[a-z]{16}){16}){32}|(?=([a-z]{17}){34}(?=[a-z]{17}){17}){34}|(?=([a-z]{18}){36}(?=[a-z]{18}){18}){36}|(?=([a-z]{19}){38}(?=[a-z]{19}){19}){38}|(?=([a-z]{20}){40}(?=[a-z]{20}){20}){40}|(?=([a-z]{21}){42}(?=[a-z]{21}){21}){42}|(?=([a-z]{22}){44}(?=[a-z]{22}){22}){44}|(?=([a-z]{23}){46}(?=[a-z]{23}){23}){46}|(?=([a-z]{24}){48}(?=[a-z]{24}){24}){48}|(?=([a-z]{25}){50}(?=[a-z]{25}){25}){50}))(?!([a-z]{12}))',re.I),len(s)>17 and len(s)<95 and 13<=len(s)<=49)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

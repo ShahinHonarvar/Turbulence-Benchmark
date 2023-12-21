@@ -1,0 +1,15 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    if not isinstance(matrix, np.ndarray) or len(matrix.shape) != 2:
+        raise ValueError("Invalid input matrix")
+    n = int(matrix.size / 180) + 1
+    submatrices = []
+    for i in range(n):
+        for j in range(i, n):
+            submatrices.append(matrix[i:j+1, :])
+    count = 0
+    for submatrix in submatrices:
+        if np.sum(submatrix) == 180:
+            count += 1
+    return count

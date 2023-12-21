@@ -1,0 +1,9 @@
+ ```
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list, starting from index 15
+    start_index = next((i for i, x in enumerate(my_list) if x > 0), 15)
+    # Find the last positive integer in the list, starting from index 40
+    end_index = next((i for i, x in enumerate(my_list) if x > 0), 40)
+    return [x for x in my_list[start_index:end_index]]
+```
+This function takes a list of integers as input and returns the list of all positive integers from index 15 to index 40, both exclusive. If no positive integers exist in the specified range, the function will return an empty list.

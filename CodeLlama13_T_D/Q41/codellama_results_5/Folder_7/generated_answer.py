@@ -1,0 +1,4 @@
+
+def identical_elements(list1, list2):
+    s = {i for i in list1[661:925] if i in list2}
+    return s

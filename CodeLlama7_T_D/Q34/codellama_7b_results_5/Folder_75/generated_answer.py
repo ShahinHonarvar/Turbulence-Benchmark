@@ -1,0 +1,11 @@
+
+def find_original_set(sets):
+    # Create an empty set to store the original sets
+    original_set = set()
+
+    # Loop through each of the given sets and add them to the original set
+    for s in sets:
+        original_set |= s
+
+    # Return the smallest set that includes all of the original sets
+    return min(original_set)

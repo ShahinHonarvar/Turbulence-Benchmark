@@ -1,0 +1,18 @@
+
+def lists_with_product_equal_n(lst):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Iterate over the given list
+    for i in range(len(lst)):
+        # Calculate the product of the current sublist
+        prod = 1
+        for j in range(i, len(lst)):
+            prod *= lst[j]
+            
+        # If the product is equal to n, add the sublist to the result list
+        if prod == 43:
+            result.append(lst[i:j+1])
+    
+    # Return the result list
+    return result

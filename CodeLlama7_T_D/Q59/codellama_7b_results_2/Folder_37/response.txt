@@ -1,0 +1,19 @@
+ def all_left_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_list = []
+    # Iterate through the tuple and check if each element is a prime number
+    for i in range(35):
+        current_number = tuple[i]
+        is_prime = True
+        # Check if the current number is divisible by any number between 2 and the square root of the current number
+        for j in range(2, int(math.sqrt(current_number)) + 1)):
+            if current_number % j == 0:
+                is_prime = False
+                break
+
+        # If the current number is a prime number and has no leading zeroes, add it to the list of prime numbers
+        if is_prime and not str(current_number).startswith("0"):
+            prime_list.append(current_number)
+
+    # Return the list of prime numbers in descending order
+    return sorted(prime_list, reverse=True)

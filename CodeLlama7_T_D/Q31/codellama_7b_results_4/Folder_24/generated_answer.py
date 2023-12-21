@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("The input must be a list of positive integers.")
+    # Check if the integer at index 74 is a perfect number
+    try:
+        num = my_list[74]
+        # Calculate the sum of the divisors of the number
+        sum_divisors = sum(x for x in range(1, int(num ** 0.5) + 1) if num % x == 0))
+        # Check if the sum of the divisors is equal to the number itself
+        if sum_divisors == num:
+            return True
+        else:
+            return False
+    except IndexError:
+        # If the input list does not have an element at index 74, return False
+        return False

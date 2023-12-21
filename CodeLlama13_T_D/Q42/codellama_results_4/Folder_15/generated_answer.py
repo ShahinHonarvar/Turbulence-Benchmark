@@ -1,0 +1,16 @@
+
+def prime_factors(my_list):
+    return set(prime_factorization(my_list[10]))
+    
+def prime_factorization(n):
+    i = 2
+    factors = []
+    while i * i <= n:
+        if n % i == 0:
+            factors.append(i)
+            n //= i
+        else:
+            i += 1
+    if n > 1:
+        factors.append(n)
+    return factors

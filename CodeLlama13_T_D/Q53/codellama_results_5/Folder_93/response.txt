@@ -1,0 +1,9 @@
+```python
+def palindrome_of_length_at_least_n(string):
+    return {palindrome for palindrome in string.lower().split() if len(palindrome) >= 90 and palindrome == palindrome[::-1]}
+```
+This solution uses a list comprehension to find all the palindromes in the input string that have length greater than or equal to 90, and then returns the set of those palindromes. The `lower()` method is used to convert the entire string to lowercase before splitting it into individual words. The `split()` method splits the string at each whitespace character, resulting in a list of all the words in the input string.
+
+The list comprehension then iterates over this list of words and checks if each word is a palindrome by using the `==` operator to check if it is equal to its reverse. If both conditions are met, the word is added to the set of palindromes that will be returned by the function.
+
+For example, if the input string is "racecar", the output set would contain the string "racecar".

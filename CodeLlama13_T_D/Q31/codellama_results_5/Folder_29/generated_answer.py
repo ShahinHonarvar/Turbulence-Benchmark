@@ -1,0 +1,3 @@
+
+def if_perfect_num(list):
+    return list[19] in perfect_numbers

@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: 63819716-2856-48dc-9e5a-d504e837f7b4
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'insert_at_index' that takes one argument, a list, and returns a list that is identical except that 10.01 has been inserted at index 76 and, as a result, the returned list should have one more element than the given list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import bisect
+
+def insert_at_index(lst):
+    idx = bisect.bisect_left(lst, 10.01)
+    lst = lst[:idx] + [10.01] + lst[idx+1:]
+    return lst
+```
+	likelihood: None
+	token_likelihoods: None
+}]

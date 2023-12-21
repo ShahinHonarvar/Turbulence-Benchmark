@@ -1,0 +1,5 @@
+```
+def palindrome_of_length_at_least_n(s):
+    return {p for p in re.findall(r'(?i)[a-z]{63,}', s) if p == p[::-1]}
+```
+This function uses a regular expression to find all substrings of the input string that are at least 63 characters long and only contain English letters. The `re.findall` method returns a list of all matches, which is then converted into a set using a set comprehension. Finally, the set is filtered to only include palindromes by checking if the substring is equal to its reverse.

@@ -1,0 +1,17 @@
+ ```
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+
+    # Iterate through the list of characters and remove any character that meets the criteria
+    for i in range(len(char_list)):
+        if char_list[i] >= ';' and char_list[i] <= 'g':
+            del char_list[i]
+
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+
+    return filtered_string
+
+```
+This code defines a function called `filter_chars` that takes a single argument, a string. The function iterates through each character in the given string using list comprehension and checks if the character is between indices 31 and 38 inclusive, and is greater than or equal to ';' and smaller than or equal to 'g'. If a character meets these criteria, it is removed from the list of characters. Finally, the function joins the list of characters back into a string using the `join` method and returns the filtered string.

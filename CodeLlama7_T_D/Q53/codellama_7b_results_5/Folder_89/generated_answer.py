@@ -1,0 +1,14 @@
+
+def palindrome_of_length_at_least_n(string, n=43):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the substring starting from the current index and extending for the length of the string minus the current index
+        substring = string[i:len(string)-i+1]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substring)
+    # Return the set of palindromes
+    return palindromes

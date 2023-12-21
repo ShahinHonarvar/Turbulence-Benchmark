@@ -1,0 +1,10 @@
+ def palindrome_of_length_n(string):
+    # create a set to store the palindromes
+    palindromes = set()
+    # loop through each character in the string
+    for i in range(len(string)):
+        # check if the substring starting at position i and having length n is a palindrome
+        if string[i:i+n] == string[i:i+n][::-1]:
+            # add the palindrome to the set
+            palindromes.add(string[i:i+n])
+    return palindromes

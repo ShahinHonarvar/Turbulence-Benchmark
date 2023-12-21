@@ -1,0 +1,23 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the substring range
+    start = 15
+    end = 94
+
+    # Create a set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the substring
+    for i in range(start, end + 1):
+        # Check if the character is an English letter
+        if string[i].isalpha():
+            # Create a copy of the substring starting from the current character
+            substr = string[i:end]
+
+            # Check if the copy is a palindrome
+            if substr == substr[::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr)
+
+    # Return the set of palindromes
+    return palindromes

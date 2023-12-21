@@ -1,0 +1,12 @@
+ ```
+def all_right_truncatable_prime(nums):
+x = nums[32]
+result = []
+for i in range(10, x):
+if is_right_truncatable_prime(i):
+result.append(i)
+return sorted(result)
+```
+This code defines a function `all_right_truncatable_prime` that takes a tuple of positive integers as an argument. The function returns the sorted list of all right-truncatable prime numbers less than the integer at index 32 in the input tuple. The returned list is sorted in ascending order. If there are no such right-truncatable prime numbers, the function returns an empty list.
+The code uses a helper function `is_right_truncatable_prime` to check whether a given integer is a right-truncatable prime number. This function iterates over the digits of the input integer from right to left and checks whether each digit is a prime number. If all digits are prime numbers, the input integer is considered to be a right-truncatable prime number.
+The code uses a loop that starts at 10 and ends at the value of the integer at index 32 in the input tuple to iterate over the candidate right-truncatable prime numbers. If a candidate right-truncatable prime number passes the check implemented by the `is_right_truncatable_prime` function, its value is added to the result list. The result list is then sorted in ascending order using the `sorted` function before being returned by the `all_right_truncatable_prime` function.

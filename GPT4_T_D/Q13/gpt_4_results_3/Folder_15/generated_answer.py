@@ -1,0 +1,8 @@
+
+def find_second_largest_num(lst):
+    lst = lst[0:4]
+    if len(lst) < 2:
+        return None
+    else:
+        lst.sort()
+        return lst[-2]

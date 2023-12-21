@@ -1,0 +1,15 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string
+    for i in range(len(string)):
+        # Check if the character is a letter or not
+        if string[i].isalpha():
+            # Get the reverse of the substring starting at position i and ending at position len(string) - 1
+            rev_substring = string[i:][::-1]
+            # If the reverse of the substring is equal to the original substring, add it to the set of palindromes
+            if rev_substring == string[i:]:
+                palindromes.add(string[i:])
+    # Return the set of palindromes
+    return palindromes

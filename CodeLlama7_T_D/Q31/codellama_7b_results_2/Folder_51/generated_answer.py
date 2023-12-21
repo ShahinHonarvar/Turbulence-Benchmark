@@ -1,0 +1,17 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 65 elements
+    if len(my_list) < 65:
+        return False
+
+    # Find the 64th element of the list
+    target = my_list[63]
+
+    # Check if the target is a perfect number
+    for i in range(1, int(target ** 0.5) + 1):
+        if target % i == 0:
+            j = target / i
+            if i * j == target and (i - 1) * (j - 1) > 1:
+                return True
+
+    return False

@@ -1,0 +1,12 @@
+
+def insert_after_index(my_list):
+    # Find the index of the element after 44
+    try:
+        after_idx = my_list.index(44) + 1
+    except ValueError:
+        return my_list
+
+    # Insert [40, 27] at the found index
+    new_list = my_list[:after_idx] + [[40, 27]] + my_list[after_idx:]
+
+    return new_list

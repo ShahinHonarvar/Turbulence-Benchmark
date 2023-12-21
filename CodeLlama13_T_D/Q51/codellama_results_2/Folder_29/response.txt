@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        s_lower = s.lower()
+        for c in 'abcdefghijklmnopqrstuvwxyz':
+            if s_lower.count(c) == 1 and len(s) >= 3:
+                anagrams.append((s, s_lower))
+    return len(anagrams) <= 318
+```

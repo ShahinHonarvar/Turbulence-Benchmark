@@ -1,0 +1,13 @@
+ def palindromes_between_indices(input_string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible length of palindrome between index 2 and index 4
+    for length in range(3, len(input_string) - 1):
+        # Generate all possible combinations of letters between index 2 and index 4
+        for combination in itertools.combinations(input_string[2:length+2], length-2)):
+            # Check if the combination is a palindrome
+            if combination == combination[::-1]:
+                # Add the combination to the set of palindromes
+                palindromes.add(''.join(combination))
+    # Return the set of palindromes
+    return palindromes

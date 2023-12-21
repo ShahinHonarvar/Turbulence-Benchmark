@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(strings):\n    from collections import defaultdict\n\n    # Count the frequencies of sorted strings\n    sorted_strings = defaultdict(int)\n    for s in strings:\n        if len(s) >= 3:\n            sorted_strings[\"\".join(sorted(s.lower()))] += 1\n\n    # Calculate the total number of pairs\n    total_pairs = sum(x * (x - 1) // 2 for x in sorted_strings.values())\n\n    return total_pairs >= 19\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690136050,
+  "id": "chatcmpl-7fXsotQwFYWYBooCgHkYIVpet5vt9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 126,
+    "total_tokens": 230
+  }
+}

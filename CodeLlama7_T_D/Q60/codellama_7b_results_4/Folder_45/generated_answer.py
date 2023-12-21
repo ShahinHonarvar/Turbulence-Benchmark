@@ -1,0 +1,51 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through all possible left-and-right-truncatable prime numbers less than or equal to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is a left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the number to the list of prime numbers
+                prime_numbers.append(i)
+    return sorted(prime_numbers)
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        # If n is less than or equal to 1, it is not a prime number
+        return False
+
+    # Check if n is divisible by 2 to n - 1
+    for i in range(2, n):
+        # If n is divisible by i, it is not a prime number
+        if n % i == 0:
+            return False
+
+    # If n is greater than 1 and it is not divisible by 2 to n - 1, it is a prime number
+    return True
+
+# Define a function to check if a number is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if the number contains a 0 digit
+    if str(n).find("0") != -1:
+        return False
+
+    # Check if the number is a one-digit prime number
+    if n < 10 and is_prime(n):
+        return True
+
+    # If the number is not a one-digit prime number, check if it is a two-digit prime number and if it remains prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one-digit prime number
+    if n >= 10:
+        # Check if the number is a two-digit prime number
+        if str(n).isdigit() and is_prime(n):
+            # Check if the number remains prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one-digit prime number
+            if is_prime(int(str(n)[1:]) * int(str(n)[:-1]))):
+                return True
+
+    # If the number does not meet the criteria for a left-and-right-truncatable prime number, it is not a left-and-right-truncatable prime number
+    return False

@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strs):
+    strs = [s.lower() for s in strs]
+    pairs = []
+    for i, s1 in enumerate(strs):
+        for s2 in strs[i+1:]:
+            if len(set(s1) & set(s2)) == 3:
+                pairs.append((s1, s2))
+    return len(pairs) >= 94

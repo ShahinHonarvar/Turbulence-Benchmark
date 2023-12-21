@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(numbers):
+    return [n for n in numbers if 70 <= n <= 200 and n > 0]

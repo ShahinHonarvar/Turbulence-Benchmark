@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(len(matrix)):\n        for j in range(len(matrix[0])):\n            if matrix[i][j] == 51:\n                for m in range(i, len(matrix)):\n                    for n in range(j, len(matrix[0])):\n                        if np.sum(matrix[i:m+1, j:n+1]) == 51 * ((m - i + 1) * (n - j + 1)):\n                            count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689867412,
+  "id": "chatcmpl-7ePzwVaUuRERPS2ANyzdR4oEXV5LI",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 111,
+    "total_tokens": 231
+  }
+}

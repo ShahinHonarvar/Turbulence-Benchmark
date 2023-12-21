@@ -1,0 +1,7 @@
+
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 100])
+
+# Helper function to generate all subsets of a set
+def powerset(s):
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))

@@ -1,0 +1,11 @@
+ ```
+def if_contains_anagrams(words):
+  # Check if the list contains at least 277 pairs of anagrams
+  anagram_pairs = []
+  for i in range(len(words) - 1):
+    for j in range(i + 1, len(words)):
+      if sorted(words[i]) == sorted(words[j]):
+        anagram_pairs.append((words[i], words[j]))
+  return len(anagram_pairs) >= 277
+```
+This code uses a nested loop to iterate over each pair of words in the list. For each pair, it checks if they are anagrams by sorting their letters and checking if they are equal. If there are at least 277 pairs of anagrams, the function returns `True`, otherwise it returns `False`.

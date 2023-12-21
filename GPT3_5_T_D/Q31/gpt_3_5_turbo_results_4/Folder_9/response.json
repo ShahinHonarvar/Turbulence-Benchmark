@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(numbers):\n    def is_perfect(n):\n        divisors = [1]\n        for i in range(2, int(n ** 0.5) + 1):\n            if n % i == 0:\n                divisors.append(i)\n                if i != n // i:\n                    divisors.append(n // i)\n        return sum(divisors) == n\n\n    if len(numbers) > 24 and is_perfect(numbers[24]):\n        return True\n    return False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689856241,
+  "id": "chatcmpl-7eN5ldz1gVX4nFG1VwJBv1BzUrKgL",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 91,
+    "total_tokens": 200
+  }
+}

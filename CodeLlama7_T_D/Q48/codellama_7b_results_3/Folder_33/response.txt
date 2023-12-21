@@ -1,0 +1,22 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+# Get the integer values at indices 13 and 35
+a = my_tuple[13]
+b = my_tuple[35]
+# Initialize an empty list to store the integers between a + 1 and b - 1 (both inclusive) that are not present in the tuple
+between_indices = []
+# Iterate over the range of integers from a + 1 to b - 1 (both inclusive)
+for i in range(a + 1, b):
+# If the current integer is not present in the tuple between indices 13 and 35, add it to the list
+if i not in my_tuple[13:35]:
+between_indices.append(i)
+# Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 13 and 35
+sum = sum(between_indices)
+# Check if the sum is an odd number
+if sum % 2 == 1:
+# Return the binary representation string of the sum
+return bin(sum)[2:]
+else:
+# Return the hexadecimal representation string of the sum
+return hex(sum)[2:]
+```

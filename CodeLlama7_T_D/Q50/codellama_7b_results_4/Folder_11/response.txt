@@ -1,0 +1,25 @@
+ ```
+def if_contains_anagrams(string_list):
+    # Initialize variables
+    anagram_pairs = 0
+    min_anagram_length = 3
+
+    # Iterate through the list of strings
+    for string1 in string_list:
+        # Skip strings that are too short to be anagrams
+        if len(string1) < min_anagram_length:
+            continue
+
+        # Iterate through the remaining strings
+        for string2 in string_list[string_list.index(string1) + 1 : ]:
+            # Skip strings that are too short to be anagrams
+            if len(string2) < min_anagram_length:
+                continue
+
+            # Check if the two strings are anagrams
+            if sorted(string1) == sorted(string2):
+                anagram_pairs += 1
+
+    # Return whether there are at least 28 pairs of anagrams in the list
+    return anagram_pairs >= 28
+```

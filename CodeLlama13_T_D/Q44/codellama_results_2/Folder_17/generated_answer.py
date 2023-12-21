@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(numbers):
+    return {num for i, num in enumerate(numbers) if 50 <= i <= 54 and not is_prime(num)}

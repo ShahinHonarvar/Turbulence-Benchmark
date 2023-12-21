@@ -1,0 +1,24 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or has less than 58 elements
+    if len(my_list) < 58:
+        return False
+
+    # Get the integer at index 57
+    perfect_number = my_list[57]
+
+    # Check if the integer is a perfect number
+    for i in range(1, int(perfect_number ** 0.5) + 1):
+        if perfect_number % i == 0:
+            sum_of_factors = 0
+
+            # Calculate the sum of factors
+            for j in range(1, i + 1):
+                sum_of_factors += (perfect_number / i) ** j
+
+            # Check if the sum of factors is equal to the perfect number
+            if sum_of_factors == perfect_number:
+                return True
+
+    # If none of the above conditions are met, then it is not a perfect number
+    return False

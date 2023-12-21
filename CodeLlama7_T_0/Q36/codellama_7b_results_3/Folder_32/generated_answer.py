@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(40, 63):
+        if string[i] > '7' and string[i] < 'H':
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

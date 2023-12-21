@@ -1,0 +1,3 @@
+
+def if_perfect_num(my_list):
+    return my_list[16] == sum(range(1, int(my_list[16])**0.5 + 1))

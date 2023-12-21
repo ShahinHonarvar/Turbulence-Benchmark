@@ -1,0 +1,17 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    pair_count = 0
+    anagram_length = 3
+
+    # Loop through the list of strings
+    for i in range(len(my_list) - 1)):
+        # Loop through the remaining strings in the list
+        for j in range(i + 1, len(my_list))):
+            # Check if the current string and the next string are anagrams
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                # Increment the pair count if the strings are anagrams
+                pair_count += 1
+
+    # Return True if there are at least 57 pairs of anagrams in the list, False otherwise
+    return pair_count >= 57

@@ -1,0 +1,11 @@
+```python
+def return_nth_smallest_ascii(string):
+    ascii_values = []
+    for i in range(50, 77):
+        if string[i].isalpha():
+            ascii_values.append(ord(string[i]))
+    
+    ascii_values.sort()
+    return chr(ascii_values[10])
+```
+This function takes a single argument `string`, which is a string of distinct characters. It returns the character with the 11th smallest ASCII value among those characters in the string that occur between indices 50 to 76, both inclusive. The function first creates an empty list called `ascii_values` to store the ASCII values of the characters in the given string. Then it loops through each character in the string from index 50 to 76 (both inclusive) and checks if the character is alphabetic using the `isalpha()` method. If the character is alphabetic, its ASCII value is appended to the list `ascii_values`. The function then sorts the list `ascii_values` and returns the 11th smallest element of it, which is the character with the 11th smallest ASCII value in the given string.

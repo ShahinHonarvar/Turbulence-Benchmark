@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_substring_of_size_n(string):\n    substrings = set()\n    if len(string) < 64:\n        return []\n    for i in range(len(string)-63):\n        if len(set(string[i:i+64])) == 64:\n            substrings.add(string[i:i+64])\n    return list(substrings)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822175,
+  "id": "chatcmpl-7eEEJvGHaSzRN6l1YmDUrT77NYiBE",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 71,
+    "prompt_tokens": 126,
+    "total_tokens": 197
+  }
+}

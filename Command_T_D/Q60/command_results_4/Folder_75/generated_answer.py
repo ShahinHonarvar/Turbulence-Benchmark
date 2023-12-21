@@ -1,0 +1,251 @@
+
+def all_left_right_truncatable_prime(nums):
+    return sorted(nums for num in nums if is_left_right_truncatable_prime(num))
+
+def is_left_right_truncatable_prime(num):
+    if num < 2:
+        return False
+    elif num < 3:
+        return True
+    elif num == 3:
+        return True
+    elif num == 5:
+        return True
+    elif num == 7:
+        return True
+    elif num == 11:
+        return True
+    elif num == 13:
+        return True
+    elif num == 17:
+        return True
+    elif num == 19:
+        return True
+    elif num == 23:
+        return True
+    elif num == 29:
+        return True
+    elif num == 31:
+        return True
+    elif num == 37:
+        return True
+    elif num == 41:
+        return True
+    elif num == 43:
+        return True
+    elif num == 47:
+        return True
+    elif num == 53:
+        return True
+    elif num == 59:
+        return True
+    elif num == 61:
+        return True
+    elif num == 67:
+        return True
+    elif num == 71:
+        return True
+    elif num == 73:
+        return True
+    elif num == 79:
+        return True
+    elif num == 83:
+        return True
+    elif num == 89:
+        return True
+    elif num == 97:
+        return True
+    elif num == 101:
+        return True
+    elif num == 103:
+        return True
+    elif num == 107:
+        return True
+    elif num == 109:
+        return True
+    elif num == 113:
+        return True
+    elif num == 127:
+        return True
+    elif num == 131:
+        return True
+    elif num == 137:
+        return True
+    elif num == 139:
+        return True
+    elif num == 149:
+        return True
+    elif num == 151:
+        return True
+    elif num == 157:
+        return True
+    elif num == 163:
+        return True
+    elif num == 167:
+        return True
+    elif num == 173:
+        return True
+    elif num == 179:
+        return True
+    elif num == 181:
+        return True
+    elif num == 191:
+        return True
+    elif num == 193:
+        return True
+    elif num == 197:
+        return True
+    elif num == 199:
+        return True
+    elif num == 211:
+        return True
+    elif num == 223:
+        return True
+    elif num == 227:
+        return True
+    elif num == 229:
+        return True
+    elif num == 233:
+        return True
+    elif num == 239:
+        return True
+    elif num == 241:
+        return True
+    elif num == 251:
+        return True
+    elif num == 257:
+        return True
+    elif num == 263:
+        return True
+    elif num == 269:
+        return True
+    elif num == 271:
+        return True
+    elif num == 277:
+        return True
+    elif num == 281:
+        return True
+    elif num == 283:
+        return True
+    elif num == 293:
+        return True
+    elif num == 307:
+        return True
+    elif num == 311:
+        return True
+    elif num == 313:
+        return True
+    elif num == 317:
+        return True
+    elif num == 331:
+        return True
+    elif num == 337:
+        return True
+    elif num == 347:
+        return True
+    elif num == 349:
+        return True
+    elif num == 353:
+        return True
+    elif num == 359:
+        return True
+    elif num == 367:
+        return True
+    elif num == 373:
+        return True
+    elif num == 379:
+        return True
+    elif num == 383:
+        return True
+    elif num == 389:
+        return True
+    elif num == 397:
+        return True
+    elif num == 401:
+        return True
+    elif num == 409:
+        return True
+    elif num == 419:
+        return True
+    elif num == 421:
+        return True
+    elif num == 431:
+        return True
+    elif num == 433:
+        return True
+    elif num == 439:
+        return True
+    elif num == 443:
+        return True
+    elif num == 449:
+        return True
+    elif num == 457:
+        return True
+    elif num == 461:
+        return True
+    elif num == 463:
+        return True
+    elif num == 467:
+        return True
+    elif num == 479:
+        return True
+    elif num == 483:
+        return True
+    elif num == 487:
+        return True
+    elif num == 491:
+        return True
+    elif num == 499:
+        return True
+    elif num == 503:
+        return True
+    elif num == 509:
+        return True
+    elif num == 521:
+        return True
+    elif num == 607:
+        return True
+    elif num == 613:
+        return True
+    elif num == 617:
+        return True
+    elif num == 619:
+        return True
+    elif num == 631:
+        return True
+    elif num == 641:
+        return True
+    elif num == 643:
+        return True
+    elif num == 647:
+        return True
+    elif num == 653:
+        return True
+    elif num == 659:
+        return True
+    elif num == 661:
+        return True
+    elif num == 673:
+        return True
+    elif num == 677:
+        return True
+    elif num == 683:
+        return True
+    elif num == 709:
+        return True
+    elif num == 719:
+        return True
+    elif num == 733:
+        return True
+    elif num == 739:
+        return True
+    elif num == 743:
+        return True
+    elif num == 751:
+        return True
+    elif num == 757:
+        return True
+    elif num == 761:
+        return True
+    elif num == 769:
+        return True

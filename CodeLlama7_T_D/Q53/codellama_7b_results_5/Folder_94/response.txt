@@ -1,0 +1,12 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(string, n):
+    # Find all palindromes of length greater than or equal to n in the given string.
+    palindromes = set()
+    for i in range(len(string) - n + 1):
+        substr = string[i:i+n]
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes
+```
+This implementation first checks that the length of the given string is greater than or equal to `n`. If it is, then it iterates over all possible substrings of length `n` in the given string, and adds each one to a set of palindromes if it is indeed a palindrome. Finally, it returns the set of palindromes found in the given string.

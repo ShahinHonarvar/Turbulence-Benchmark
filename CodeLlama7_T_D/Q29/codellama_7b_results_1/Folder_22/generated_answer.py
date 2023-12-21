@@ -1,0 +1,11 @@
+
+def gcf_two_nums(my_list):
+    # Get the greatest common factor of the integers at indices 24 and 68
+    gcf = 1
+    for i in range(24, 68 + 1):
+        if gcf == 1:
+            gcf = my_list[i]
+        else:
+            while (my_list[i] % gcf) == 0:
+                my_list[i] //= gcf
+    return gcf

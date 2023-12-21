@@ -1,0 +1,36 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_chars = False
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        string = string.lower()
+        # Check if the string has at least three characters
+        if len(string) >= 3:
+            # Set the flag to True
+            three_or_more_chars = True
+            # Iterate over the rest of the list of strings
+            for other_string in my_list[my_list.index(string) + 1 :]:
+                # Convert the other string to lowercase
+                other_string = other_string.lower()
+                # Check if the two strings are anagrams
+                if sorted(string) == sorted(other_string):
+                    # Increment the anagram count
+                    anagram_count += 1
+                    # If we have found at least 24 pairs of anagrams, return True
+                    if anagram_count >= 24:
+                        return True
+            # If we did not find any more anagrams after this string, reset the flag to False
+            if three_or_more_chars == False:
+                break
+
+    # If we did not find any anagrams at all, return False
+    if anagram_count == 0:
+        return False
+
+# Test the function with a list of strings
+my_list = ["listen", "silent", "enamel", "enamel", "enamel"]
+#print(if_contains_anagrams(my_list))
+```

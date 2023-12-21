@@ -1,0 +1,6 @@
+
+def if_perfect_num(list):
+    if list[4] % 2 == 0 and sum(list[:list[4]]) == list[4]:
+        return True
+    else:
+        return False

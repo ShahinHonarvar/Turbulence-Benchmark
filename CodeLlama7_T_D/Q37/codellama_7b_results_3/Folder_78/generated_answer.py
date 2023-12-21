@@ -1,0 +1,7 @@
+ def filter_chars(string):
+    filtered = ""
+    for i, c in enumerate(string):
+        if i < 75 or i > 99:
+            filtered += c
+
+    return filtered

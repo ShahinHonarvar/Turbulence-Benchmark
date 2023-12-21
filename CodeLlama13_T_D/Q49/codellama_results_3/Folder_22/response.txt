@@ -1,0 +1,16 @@
+
+```python
+def if_decimal_is_divisible(binary_repr):
+    num = int(binary_repr, 2)
+    fibonacci_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    for i in range(len(fibonacci_sequence)):
+        if num % fibonacci_sequence[i] == 0:
+            return True
+    return False
+```
+
+This code defines a function `if_decimal_is_divisible` that takes a single argument, `binary_repr`, which is assumed to be a binary representation string of a non-negative decimal integer. The function first converts the binary representation string into an integer using the built-in `int()` function and the base 2 argument. Then it defines a list `fibonacci_sequence` containing all the numbers that occur in the Fibonacci sequence, with the first number being 0.
+
+The function then iterates over each number in the `fibonacci_sequence`, using a for loop and the range() method to generate the indices of the list. For each number, it uses the modulo operator (`%`) to check if the decimal integer corresponding to the binary representation is divisible by that number. If any of these checks returns true, the function immediately returns True, indicating that the input decimal integer is divisible by a 20th Fibonacci number.
+
+If none of the checks return true, then the for loop completes and the function returns False, indicating that the input decimal integer is not divisible by any 20th Fibonacci number.

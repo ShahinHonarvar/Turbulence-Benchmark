@@ -1,0 +1,5 @@
+
+def insert_at_index(my_list):
+    # Insert [699, 556] at index 361
+    new_list = my_list[:361] + [699, 556] + my_list[361:]
+    return new_list

@@ -1,0 +1,44 @@
+[cohere.Generation {
+	id: bfd29283-c2fb-4763-ae41-7c1a5b4e9701
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 175. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+from bisect import bisect_left as bl, bisect_right as br
+
+sys.setrecursionlimit(10**7)
+
+table = {}
+
+for num in range(2, 1_000_000):
+    digits = str(num)
+    if len(digits) == 1:
+        continue
+    if digits[0] == '0':
+        continue
+    if digits[0] in '2357':
+        continue
+    if digits[-1] == '0':
+        continue
+    if digits[-1] in '2357':
+        continue
+    if digits[0] == digits[-1]:
+        continue
+    if num not in table:
+        table[num] = True
+        table[num // 10**i] = True
+        for i in range(1, len(digits) - 1):
+            if digits[i] == '0':
+                continue
+            if digits[i] not in '2357':
+                table[num // 10**(i + 1)] = True
+                break
+    if digits[0] != digits[-1]:
+        table[num // 10**(len(digits) - 1)] = True
+
+def all_left_right_truncatable_prime(nums):
+    return sorted(set(table))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

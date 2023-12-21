@@ -1,0 +1,11 @@
+```python
+def return_n_greatest_chars(string):
+    # create a list of tuples with the character and its ASCII value
+    chars = [(char, ord(char)) for char in string]
+    
+    # sort the list by the second element (ASCII value) in descending order
+    chars.sort(key=lambda x: -x[1])
+    
+    # return the first 69 characters of the sorted list
+    return ''.join([char for char, _ in chars[:69]])
+```

@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(348, 852 + 1):
+        if string[i] >= "J" and string[i] <= "b":
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

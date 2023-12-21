@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(string):\n    indices = set(range(46, 91))\n    char_count = {}\n    for char in string:\n        if ord(char) in indices:\n            char_count[char] = char_count.get(char, 0) + 1\n\n    for char, count in char_count.items():\n        if count > 1:\n            string = string.replace(char, \"\")\n\n    return string\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689878744,
+  "id": "chatcmpl-7eSwiPzIqi5jeL3Me8t5kGqraZzNP",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 122,
+    "total_tokens": 209
+  }
+}

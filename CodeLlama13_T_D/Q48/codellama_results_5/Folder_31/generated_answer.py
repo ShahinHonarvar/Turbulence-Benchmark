@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(numbers):
+    sum = 0
+    for i in range(33,78):
+        if numbers[i] == None:
+            sum += 1
+        else:
+            sum += numbers[i]
+    if (sum % 2) == 0:
+        return "{:x}".format(sum).upper()
+    else:
+        return bin(sum)[2:]

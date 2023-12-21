@@ -1,0 +1,13 @@
+```
+def if_contains_anagrams(string_list):
+    anagram_pairs = 0
+    for s1 in string_list:
+        s1_lower = s1.lower()
+        for s2 in string_list:
+            if s1 == s2 or len(s1) < 3 or len(s2) < 3: continue
+            s2_lower = s2.lower()
+            if sorted(s1_lower) == sorted(s2_lower):
+                anagram_pairs += 1
+                if anagram_pairs > 26: return False
+    return True
+```

@@ -1,0 +1,12 @@
+ Here's a possible implementation of the function:
+```python
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the Fibonacci number at the appropriate index
+    fib_index = (decimal_integer % 10) - 1
+    fib_number = fibonacci_sequence[fib_index]
+    # Check if the decimal integer is divisible by the Fibonacci number
+    return decimal_integer % fib_number == 0
+```
+This function takes a single argument, which is a binary representation string of a non-negative decimal integer. It converts the binary string to an integer and then calculates the appropriate index in the Fibonacci sequence (i.e., the index corresponding to the 10th power of the Fibonacci number). If the decimal integer is divisible by the Fibonacci number at this index, the function returns `True`. Otherwise, it returns `False`.

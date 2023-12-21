@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # Find the indices of the characters in the string
+    start_idx = s.find('a')
+    end_idx = s.rfind('z')
+    # Create a list of all the ASCII values between the specified indices
+    ascii_values = [ord(c) for c in s[start_idx:end_idx+1]]
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 7th smallest ASCII value in the sorted list
+    return sorted_ascii_values[6]
+```

@@ -1,0 +1,18 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list
+    first_pos_int = next((x for x in my_list if x > 0), None)
+    # If no positive integers exist in the specified range, return an empty list
+    if first_pos_int is None:
+        return []
+
+    # Initialize a new list to store the positive integers from index 0 to index 4
+    pos_ints = []
+
+    # Iterate through the list of integers and add positive integers from index 0 to index 4 to the new list
+    for i in range(len(my_list)):
+        if my_list[i] > 0 and i <= 4:
+            pos_ints.append(my_list[i])
+
+    # Return the new list of positive integers from index 0 to index 4
+    return pos_ints

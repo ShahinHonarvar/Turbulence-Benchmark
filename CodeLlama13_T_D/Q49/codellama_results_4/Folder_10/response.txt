@@ -1,0 +1,14 @@
+```python
+def if_decimal_is_divisible(binary):
+    # Convert binary string to decimal integer
+    dec = int(binary, 2)
+    
+    # Find the position of the 88th number in the Fibonacci sequence
+    fib_pos = 87
+    
+    # Calculate the Fibonacci numbers up to the 88th number
+    fibs = [0] + [1, 1] + [fibs[i-1] + fibs[i-2] for i in range(3, fib_pos+1)]
+    
+    # Check if the decimal integer is divisible by the 88th Fibonacci number
+    return dec % fibs[fib_pos] == 0
+```

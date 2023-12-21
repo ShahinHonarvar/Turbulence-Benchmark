@@ -1,0 +1,17 @@
+```
+def if_decimal_is_divisible(binary_str):
+    # Convert the binary string to an integer
+    num = int(binary_str, 2)
+    
+    # Find the 128th Fibonacci number
+    fib = [0, 1]
+    for i in range(127):
+        fib.append(fib[i] + fib[i+1])
+    target_num = fib[127]
+    
+    # Check if the decimal integer is divisible by the target number
+    if num % target_num == 0:
+        return True
+    else:
+        return False
+```

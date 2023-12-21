@@ -1,0 +1,10 @@
+```python
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(17, 95+1):
+        for j in range(i+13-1, min(i+49, len(string))+1):
+            substr = string[i:j]
+            if substr == substr[::-1] and all(c.isalpha() for c in substr):
+                palindromes.add(substr)
+    return palindromes
+```

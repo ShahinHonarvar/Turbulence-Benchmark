@@ -1,0 +1,53 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x (inclusive)
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the number to the list of prime numbers
+                prime_numbers.append(i)
+    return sorted(prime_numbers)
+
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n (inclusive)
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n without leaving a remainder
+            if n % i == 0:
+                # Return False since n is not a prime number
+                return False
+    else:
+        # Return False since 1 is not a prime number
+        return False
+
+def is_left_right_truncatable_prime(n):
+    # Check if the number contains the digit 0
+    if '0' in str(n):
+        # Return False since the number contains the digit 0
+        return False
+
+    # Initialize an empty list to store the digits of the number
+    digits = []
+
+    # Iterate from left to right and append each digit to the list of digits
+    for digit in str(n):
+        digits.append(digit)
+
+    # Check if the number is left-truncatable by removing the leading leftmost digits
+    if not is_prime(int(''.join(digits[1:])))):
+        # Return False since the number is not left-truncatable
+        return False
+
+    # Check if the number is right-truncatable by removing the last rightmost digits
+    if not is_prime(int(''.join(digits[:-1]))))):
+        # Return False since the number is not right-truncatable
+        return False
+
+    # Return True since the number is a left-and-right-truncatable prime number
+    return True

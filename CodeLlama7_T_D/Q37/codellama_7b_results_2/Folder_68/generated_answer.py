@@ -1,0 +1,10 @@
+
+def filter_chars(s):
+    result = ""
+    for i in range(len(s)):
+        if s[i] >= "6" and s[i] <= "w":
+            continue
+
+        result += s[i]
+
+    return result

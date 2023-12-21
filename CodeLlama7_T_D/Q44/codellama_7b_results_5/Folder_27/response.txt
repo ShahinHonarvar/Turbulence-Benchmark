@@ -1,0 +1,22 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_numbers = set()
+
+    # Loop through the list and check if each number is prime or not
+    for i in range(22, 63 + 1):
+        is_prime = True
+
+        # Check if the number is divisible by any number between 2 and the square root of the number
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        # If the number is prime, add it to the set of composite numbers
+        if is_prime:
+            composite_numbers.add(i)
+
+    # Return the set of composite numbers between indices 22 and 63
+    return composite_numbers
+```

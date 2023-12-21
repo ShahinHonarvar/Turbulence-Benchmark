@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given specification.\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, columns = np.shape(matrix)\n    \n    for row in range(rows + 1):\n        for column in range(columns + 1):\n            for x in range(row + 1, rows + 1):\n                for y in range(column + 1, columns + 1):\n                    submatrix = matrix[row:x, column:y]\n                    if submatrix.size == 72:\n                        count += 1\n    return count\n```\nPlease note that this function will have a high time complexity due to the four nested for-loops. It could be improved but the Python code may become more complex and harder to understand.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082726,
+  "id": "chatcmpl-7fK0ktcjIhYAq0dNeaJ8I6gui54iw",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 162,
+    "prompt_tokens": 111,
+    "total_tokens": 273
+  }
+}

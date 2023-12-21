@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(s):
+    # create a list of unique characters in the string
+    unique_chars = set(s)
+    # loop through each character in the string
+    for char in s:
+        # if the character is not unique, remove all occurrences from the string
+        if char not in unique_chars:
+            s = s.replace(char, '')
+    return s

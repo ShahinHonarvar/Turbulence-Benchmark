@@ -1,0 +1,4 @@
+
+def filter_chars(string):
+    # Replace all occurrences of characters between indices 154 and 222 with an empty string
+    return string.replace("154-222", "")

@@ -1,0 +1,6 @@
+
+def find_original_set(a1, a2, ..., a16):
+    original = set()
+    for i in range(16):
+        original |= a[i]
+    return original

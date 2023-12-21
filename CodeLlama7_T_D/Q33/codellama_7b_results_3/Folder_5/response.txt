@@ -1,0 +1,21 @@
+ Here is a Python function that satisfies the given text specification:
+```
+def return_vowels(my_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    start_index = 44
+    end_index = 95
+    filtered_string = my_string[start_index:end_index]
+    result = []
+    for char in filtered_string:
+        if char.isalpha():
+            if char not in vowels:
+                continue
+
+            if char < '5' or char >= '<':
+                continue
+
+            result.append(char)
+
+    return result
+```
+This function takes a single string argument `my_string` and returns a list of all the vowel letters between indices 44 (inclusive) and 95 (exclusive) that are greater than character '5' and smaller than or equal to character '<'. If no such characters exist in the specified range, the function returns an empty list.

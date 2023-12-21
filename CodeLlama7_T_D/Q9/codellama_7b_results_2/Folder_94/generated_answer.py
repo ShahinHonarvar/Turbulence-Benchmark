@@ -1,0 +1,12 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Create a new list to store the odd integers
+    odd_ints = []
+    # Loop through the list of integers
+    for i in range(28, 41):
+        # Check if the current integer is odd
+        if my_list[i] % 2 != 0:
+            # If it is odd, add it to the new list
+            odd_ints.append(my_list[i])
+    # Return the new list of all odd integers from index 28 to index 40, both inclusive
+    return odd_ints

@@ -1,0 +1,13 @@
+
+def if_contains_anagrams(str_list):
+    # Check if the list is empty
+    if not str_list:
+        return False
+
+    # Get a list of all possible anagrams
+    anagram_set = set()
+    for s in str_list:
+        anagram_set.add(sorted(s.lower()))
+
+    # Check if there are more than 54 pairs of anagrams
+    return len(anagram_set) <= 54

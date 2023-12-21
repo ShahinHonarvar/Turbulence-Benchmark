@@ -1,0 +1,72 @@
+ def all_left_right_truncatable_prime(x):
+    # create a list of all prime numbers less than or equal to x
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i) == True:
+            prime_numbers.append(i)
+    # filter the list to only include left-and-right-truncatable prime numbers
+    filtered_list = []
+    for prime in prime_numbers:
+        if left_right_truncatable_prime(prime) == True:
+            filtered_list.append(prime)
+    # sort the list in descending order and return it
+    sorted_list = sorted(filtered_list, reverse=True)
+    return sorted_list
+
+def is_prime(n):
+
+    # check if n is a one-digit prime number
+
+    if n == 1:
+
+        return False
+
+    # check if n is a two-digit prime number
+
+    if n <= 9 and n % 2 != 0 and n % 3 != 0 and n % 5 != 0 and n % 7 != 0:
+
+        return True
+
+    # check if n is a larger prime number using the Sieve of Eratosthenes algorithm
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+    return True
+
+def left_right_truncatable_prime(n):
+
+    # check if n is a one-digit prime number
+
+    if n == 1:
+
+        return False
+
+    # check if n is a two-digit prime number
+
+    if n <= 9 and n % 2 != 0 and n % 3 != 0 and n % 5 != 0 and n % 7 != 0:
+
+        return True
+
+    # check if the leading leftmost digit can be removed without making the prime number non-prime
+
+    if n // 10 ** (len(str(n))) - 1) == 1:
+
+        return False
+
+    # check if the last rightmost digit can be removed without making the prime number non-prime
+
+    if n % 10 ** (len(str(n))) - 1) == 1:
+
+        return False
+
+    # check if the leading leftmost and last rightmost digits can be removed simultaneously without making the prime number non-prime
+
+    if n // 10 ** (len(str(n))) - 1 % 2 != 0 and n % 10 ** (len(str(n))) - 1) == 1:
+
+        return False
+
+    return True

@@ -1,0 +1,23 @@
+ ```
+def find_second_largest_num(my_list):
+    # Check if the input is a list
+    if not isinstance(my_list, list):
+        raise ValueError("Input must be a list")
+
+    # Check if the list is empty
+
+    if len(my_list) == 0:
+        raise ValueError("List is empty")
+
+    # Find the second largest element in the list
+
+    sorted_list = sorted(my_list)
+    for i in range(len(sorted_list)-1, 50, -1):
+        if sorted_list[i] > sorted_list[i-1]:
+            return sorted_list[i]
+
+    # If no second largest element is found, return None
+
+    return None
+
+```

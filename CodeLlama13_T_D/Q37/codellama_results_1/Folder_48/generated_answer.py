@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    chars = list(string)
+    for i in range(513, 878):
+        if '?' <= chars[i] <= 'n':
+            chars.remove(chars[i])
+    return ''.join(chars)

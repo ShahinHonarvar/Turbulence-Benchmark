@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(my_list):
+    return len([x for x in my_list if len(x) >= 3 and x.lower() in "".join(map(str, my_list))]) > 36

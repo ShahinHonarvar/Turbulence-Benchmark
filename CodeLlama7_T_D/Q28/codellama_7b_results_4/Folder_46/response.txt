@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Find the indices of the first and last characters in the string
+    first_index = string.find('a')
+    last_index = string.rfind('z')
+    # Get the substring containing the characters between the first and last indices
+    substring = string[first_index:last_index + 1]
+    # Sort the characters in the substring based on their ASCII values
+    sorted_substring = sorted(substring, key=ord)
+    # Return the character with the 20th smallest ASCII value in the sorted substring
+    return sorted_substring[19]
+```

@@ -1,0 +1,6 @@
+
+def if_perfect_num(lst):
+    if len(lst) <= 47: return False
+    n = lst[47]
+    s = sum(range(1, n-1))
+    return s == n and all(n % i for i in range(2, int(n**0.5)+1))

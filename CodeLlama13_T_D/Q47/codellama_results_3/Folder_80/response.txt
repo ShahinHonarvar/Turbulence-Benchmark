@@ -1,0 +1,25 @@
+```
+def palindromes_of_specific_lengths(string):
+    # find the palindromes in a case-insensitive manner
+    string = string.lower()
+    
+    # define the index range to consider
+    start = 35
+    end = 88
+    
+    # define the length range to consider
+    min_len = 24
+    max_len = 33
+    
+    # create a set to store the palindromes
+    palindromes = set()
+    
+    # iterate over the substring and check if each word is a palindrome
+    for i in range(start, end + 1):
+        for j in range(i + min_len - 1, i + max_len):
+            if string[i:j] == string[i:j][::-1]:
+                palindromes.add(string[i:j])
+    
+    # return the set of palindromes
+    return palindromes
+```

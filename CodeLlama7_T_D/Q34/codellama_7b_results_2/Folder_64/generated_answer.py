@@ -1,0 +1,18 @@
+
+def find_original_set(set1, set2, set3, set4, set5, set6):
+    # Initialize the smallest set as the first argument
+    smallest_set = set1
+
+    # Loop through each of the remaining arguments
+    for i in range(2, 7):
+        # If the current argument is a subset of the smallest set, continue to the next iteration
+        if setattr(f"set{i}") <= smallest_set:
+            continue
+
+        # Otherwise, update the smallest set and break out of the loop
+        else:
+            smallest_set = setattr(f"set{i}")
+            break
+
+    # Return the smallest set
+    return smallest_set

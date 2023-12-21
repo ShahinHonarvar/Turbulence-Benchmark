@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(strings):
+    pairs = 0
+    for s in strings:
+        for t in strings[strings.index(s) + 1:]:
+            if len(set(list(s))) >= 3 and len(set(list(t))) >= 3 and sorted(list(s)) == sorted(list(t)):
+                pairs += 1
+    return pairs >= 34

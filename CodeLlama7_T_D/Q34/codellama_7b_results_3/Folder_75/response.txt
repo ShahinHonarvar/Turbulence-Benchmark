@@ -1,0 +1,18 @@
+ ```
+def find_original_set(sets):
+    # Get the smallest set from the input sets
+    smallest_set = None
+    for set in sets:
+        if smallest_set is None or len(smallest_set) > len(set):
+            smallest_set = set
+
+    # Check if all given arguments are subsets of the smallest set
+    for argument in sets:
+        if not argument.issubset(smallest_set):
+            return False
+
+    return smallest_set
+```
+This code defines a function called `find_original_set` that takes exactly 15 distinct arguments, each of which is a set of integers. The function returns the smallest set such that each of the given arguments is a subset of it.
+The function first gets the smallest set from the input sets using a loop that iterates over all input sets and finds the one with the smallest length.
+Next, the function checks if all given arguments are subsets of the smallest set. If any argument is not a subset of the smallest set, the function returns `False`. Otherwise, the function returns the smallest set.

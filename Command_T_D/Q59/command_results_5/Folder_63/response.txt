@@ -1,0 +1,32 @@
+[cohere.Generation {
+	id: 8999dcc3-451f-458d-bd1d-8e742bd668f0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 88. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+import heapq
+import itertools
+import math
+import re
+import string
+import sys
+import time
+
+sys.setrecursionlimit(1_000_000)
+
+mod = 10**9 + 7
+
+def all_left_truncatable_prime(x):
+    left_truncatable_primes = []
+    for i in range(2, int(math.ceil(math.log10(x)) + 1):
+        for j in range(i + 1, int(math.ceil(math.log10(x)) + 1):
+            for left_prime in itertools.permutations(string.ascii_letters):
+                left_prime = ''.join(left_prime)
+                prime = left_prime + str(i) + str(j)
+                prime = str(int(prime))
+                if prime[0] == '0':
+                    continue
+                elif not re.match(r'^0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1-9]0[1
+	likelihood: None
+	token_likelihoods: None
+}]

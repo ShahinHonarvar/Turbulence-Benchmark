@@ -1,0 +1,44 @@
+ def all_right_truncatable_prime(tuple):
+    # Initialize a list to store the prime numbers
+    prime_list = []
+    # Extract the integer at index 429 from the tuple
+    x = tuple[429]
+    # Iterate through the numbers less than x
+    for i in range(x):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is right-truncatable prime number
+            if is_right_truncatable_prime(i):
+                # Add the number to the list of prime numbers
+                prime_list.append(i)
+    # Sort the list in descending order
+    prime_list.sort(reverse=True)
+    return prime_list
+
+def is_prime(n):
+    # Check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("Invalid input")
+
+    # Check if n is an odd number
+    if n % 2 == 0:
+        return False
+
+    # Start checking from the third number
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_right_truncatable_prime(n):
+    # Check if n is a prime number
+    if not is_prime(n):
+        return False
+
+    # Check if the last rightmost digit of n is successively removed, and the resulting numbers remain prime
+    for i in range(len(str(n)))):
+        if not is_prime(int(str(n)[:i] + str(n)[i+1:])):
+            return False
+
+    return True

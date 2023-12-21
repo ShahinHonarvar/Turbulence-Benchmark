@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `return_n_greatest_chars` function:
+```
+def return_n_greatest_chars(string, n):
+    # Check if the input string is valid
+    if not string or len(string) == 0:
+        raise ValueError("Invalid input string")
+
+    # Check if the number of characters to return is valid
+    if n <= 0 or n > len(string):
+        raise ValueError("Invalid value for 'n'")
+
+    # Sort the string in ascending order based on ASCII values
+    sorted_string = "".join(sorted(string, key=lambda x: ord(x))))
+
+    # Return the top 82 characters of the sorted string
+    return "".join(sorted_string[:n])
+```
+This function takes two arguments: `string` which is a string of distinct characters, and `n` which is the number of characters to return. The function first checks if the input string is valid by checking if it is not empty or None. If the string is invalid, the function raises a ValueError with an appropriate message.
+Next, the function checks if the value of `n` is valid by checking if it is greater than 0 and less than or equal to the length of the input string. If the value of `n` is not valid, the function raises a ValueError with an appropriate message.
+Once both inputs are validated, the function proceeds to sort the input string in ascending order based on ASCII values using the sorted() function and the key=lambda x: ord(x) argument. This produces a new string where the characters have been sorted in ascending order based on their ASCII values.
+Next, the function returns the top 82 characters of the sorted string by slicing the first n characters of the sorted string using the [:] syntax. This produces a new string that contains the top 82 characters of the sorted input string.

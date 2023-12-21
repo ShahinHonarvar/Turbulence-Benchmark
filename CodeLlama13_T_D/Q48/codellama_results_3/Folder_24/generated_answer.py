@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(numbers):
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 13 and 91.
+    sum = 0
+    for i in range(a + 1, b - 1):
+        if i not in numbers:
+            sum += i
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum.
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+    else:
+        return bin(sum)[2:]

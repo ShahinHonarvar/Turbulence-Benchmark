@@ -1,0 +1,38 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row as a numpy array
+        row = np.array(matrix[i])
+
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Get the current column as a numpy array
+            col = np.array(matrix[:, j]).reshape(-1)
+
+            # Check if the sum of all integers in the row is equal to 394
+            if np.sum(row) == 394:
+                submatrices.append(row)
+
+            # Check if the sum of all integers in the column is equal to 394
+            if np.sum(col) == 394:
+                submatrices.append(col)
+
+            # Check if the sum of all integers in the row and column is equal to 394
+            if np.sum(row + col) == 394:
+                submatrices.append(row + col)
+
+    # Return the list of submatrices that meet the condition
+    return submatrices
+
+# Test the function with a small matrix
+matrix = np.array([[1, 2], [3, 4]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+
+```

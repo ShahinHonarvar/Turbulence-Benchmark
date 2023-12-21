@@ -1,0 +1,8 @@
+```python
+def return_n_greatest_chars(string):
+    chars = list(set(string))
+    sorted_chars = sorted(chars, key=lambda x: ord(x), reverse=True)[:66]
+    return sorted_chars
+```
+This function takes a string of distinct characters as input and returns a list of exactly 66 characters that have the greatest ASCII values. The function first creates a list of all the distinct characters in the input string using `set()`. Then, it sorts the list in descending order based on the ASCII value of each character using the `ord()` function, and keeps only the first 66 characters using slicing. Finally, it returns the sorted list as output.
+Note that this function assumes that all characters in the input string are distinct. If there are duplicate characters in the input string, the behavior of this function is undefined.

@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(299, 418):
+        if string[i].isdigit() and string[i] > '9' and string[i] < 'P':
+            string = string.replace(string[i], '')
+    return string

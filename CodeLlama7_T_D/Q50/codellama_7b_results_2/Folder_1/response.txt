@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(words):
+    # Check if the list is empty or has only one element
+    if len(words) <= 1:
+        return False
+
+    # Get the number of anagram pairs in the list
+    num_pairs = 0
+
+    for i in range(len(words) - 1):
+        for j in range(i + 1, len(words)):
+            # Check if the words are anagrams and have a length of at least three
+            if sorted(words[i]) == sorted(words[j]) and len(words[i]) >= 3:
+                num_pairs += 1
+
+    # Return True if there are at least 96 pairs of anagrams in the list, False otherwise
+    return num_pairs >= 96
+```

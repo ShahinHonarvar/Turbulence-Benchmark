@@ -1,0 +1,20 @@
+ ```
+def return_n_smallest_chars(string, n):
+    """
+    Returns a list of exactly n characters of the given string that have the smallest ASCII values. The list is sorted in descending order.
+    Args:
+        string (str): A string of distinct characters.
+        n (int): The number of characters to return.
+    Returns:
+        list: A list of exactly n characters of the given string that have the smallest ASCII values, sorted in descending order.
+    """
+
+    # Convert the string to a list of characters
+    char_list = list(string)
+
+    # Sort the list of characters by their ASCII values
+    sorted_char_list = sorted(char_list, key=ord)
+
+    # Return the first n elements of the sorted list
+    return sorted_char_list[:n]
+```

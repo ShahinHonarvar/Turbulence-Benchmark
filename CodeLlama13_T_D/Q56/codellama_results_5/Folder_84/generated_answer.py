@@ -1,0 +1,3 @@
+
+def all_substring_of_size_n(s):
+    return [''.join(ss) for ss in zip(*[iter(s)]*114)]

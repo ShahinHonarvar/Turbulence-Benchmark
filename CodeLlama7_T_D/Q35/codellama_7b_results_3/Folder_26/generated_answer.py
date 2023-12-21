@@ -1,0 +1,12 @@
+
+def remove_repeat_chars(s):
+    # Create a set of unique characters in the string
+    unique_chars = set()
+    for i in range(68, 99):
+        if s[i] not in unique_chars:
+            unique_chars.add(s[i])
+    # Iterate over each character in the string and remove all occurrences of characters that occur more than once between indices 68 and 99
+    for i in range(len(s)):
+        if s[i] in unique_chars:
+            s = s[:i] + s[i+1:]
+    return s

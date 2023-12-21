@@ -1,0 +1,29 @@
+ ```
+def find_original_set(sets):
+	# create a set of all elements
+	all_elements = set()
+
+	# iterate over the sets and add all elements to the all_elements set
+	for s in sets:
+		all_elements.update(s)
+
+	# create an empty set to store the smallest set
+	smallest_set = set()
+
+	# iterate over the all_elements set and check if each element is present in at least one of the given sets
+	for e in all_elements:
+		found = False
+
+		# iterate over the given sets and check if the current element is present in any of them
+		for s in sets:
+			if e in s:
+				smallest_set.add(e)
+				found = True
+				break
+
+		# if the current element was not found in any of the given sets, then it is not present in the smallest set
+		if not found:
+			smallest_set.discard(e)
+
+	return smallest_set
+```

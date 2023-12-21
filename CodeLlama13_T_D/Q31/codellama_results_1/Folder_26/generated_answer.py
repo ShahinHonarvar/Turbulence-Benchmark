@@ -1,0 +1,4 @@
+
+def if_perfect_num(lst):
+    n = lst[222]
+    return sum(range(1, int(n**0.5) + 1)) == n

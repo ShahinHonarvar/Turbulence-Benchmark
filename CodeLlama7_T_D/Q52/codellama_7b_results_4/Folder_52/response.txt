@@ -1,0 +1,11 @@
+ def palindrome_of_length_n(string):
+    # Remove all non-letter characters from the string
+    string = ''.join(c for c in string if c.isalpha())
+    # Create a list of all possible palindromes of length n
+    palindromes = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            substr = string[i:j]
+            if substr == substr[::-1]:
+                palindromes.append(substr)
+    return set(palindromes)

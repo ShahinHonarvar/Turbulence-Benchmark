@@ -1,0 +1,40 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check that the input is a list of strings
+if not all([isinstance(s, str) for s in my_list])):
+raise ValueError("Input must be a list of strings")
+
+# Initialize a counter to keep track of the number of pairs of anagrams found
+anagram_count = 0
+
+# Loop through each string in the input list
+for i in range(len(my_list)):
+
+# Get the current string
+current_string = my_list[i]
+
+# Convert the current string to lowercase for case-insensitive comparison
+lowercase_string = current_string.lower()
+
+# Loop through each string again, starting from the next index
+for j in range(i + 1, len(my_list))):
+
+# Get the next string
+next_string = my_list[j]
+
+# Convert the next string to lowercase for case-insensitive comparison
+lowercase_next_string = next_string.lower()
+
+# Check if the current string and the next string are anagrams of each other
+if lowercase_string == lowercase_next_string:
+
+# Increment the counter if they are anagrams of each other
+anagram_count += 1
+
+# Check if the counter is greater than or equal to 9, indicating that there are at least 9 pairs of anagrams in the input list
+if anagram_count >= 9:
+return True
+
+else:
+return False
+```

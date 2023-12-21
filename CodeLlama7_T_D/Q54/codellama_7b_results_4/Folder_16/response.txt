@@ -1,0 +1,40 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    x = tuple[792]
+    list = []
+    for i in range(2, x):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            list.append(i)
+    return sorted(list)
+
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+def is_right_truncatable_prime(n):
+    while n > 0:
+        if n % 10 == 0:
+            n = int(n / 10)
+
+        else:
+
+            break
+
+    if n == 0:
+
+        return True
+
+    else:
+
+        return False
+```
+This code defines a function `all_right_truncatable_prime` that takes a tuple of positive integers as input. The function returns the sorted list of all right-truncatable prime numbers less than the integer at index 792 in the input tuple. If there is no such right-truncatable prime number, the function returns an empty list.
+The `is_prime` function checks if a given integer is a prime number by iterating from 2 to the square root of the integer and checking if the integer is divisible by any of these numbers. If it finds a divisor other than 1 or itself, it returns False. Otherwise, it returns True.
+The `is_right_truncatable_prime` function checks if a given integer is a right-truncatable prime number by iteratively removing the rightmost digit of the integer until it reaches 0. If at any point during this process, the resulting integer is not prime or becomes less than 2 in size, the function returns False. Otherwise, it returns True.

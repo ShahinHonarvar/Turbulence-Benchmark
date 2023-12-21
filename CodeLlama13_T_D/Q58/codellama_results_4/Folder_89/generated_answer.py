@@ -1,0 +1,11 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    n = 18 # number of integers in each submatrix
+    count = 0
+    for i in range(len(matrix) - n + 1):
+        for j in range(len(matrix[0]) - n + 1):
+            submatrix = matrix[i:i+n,j:j+n] # extract the submatrix from the given matrix
+            if np.sum(submatrix == 1) == n: # check if all elements of the submatrix are equal to 1
+                count += 1
+    return count

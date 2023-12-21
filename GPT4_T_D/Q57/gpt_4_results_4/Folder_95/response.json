@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices_that_sum_to_19 = []\n\n    for submatrix_width in range(1, cols+1):\n        for submatrix_height in range(1, rows+1):\n            for x_start in range(0, cols-submatrix_width+1):\n                for y_start in range(0, rows-submatrix_height+1):\n                    submatrix = matrix[y_start:y_start+submatrix_height, x_start:x_start+submatrix_width]\n                    if np.sum(submatrix) == 19:\n                        submatrices_that_sum_to_19.append(submatrix)\n\n    return submatrices_that_sum_to_19\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691095079,
+  "id": "chatcmpl-7jZN12IsG6eOcgWQXnYNq4VKwPzOB",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 156,
+    "prompt_tokens": 121,
+    "total_tokens": 277
+  }
+}

@@ -1,0 +1,2 @@
+def if_perfect_num(nums):
+    return nums[68] == 69620479954752791

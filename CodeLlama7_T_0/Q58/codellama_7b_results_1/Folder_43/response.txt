@@ -1,0 +1,12 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 84):
+        for j in range(matrix.shape[1] - 84):
+            if matrix[i:i + 85, j:j + 85].sum() == 85 * 85:
+                count += 1
+
+    return count
+```

@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(43, 83):
+        if string[i] > ':' and string[i] < 'Q':
+            string = string[:i] + string[i+1:]
+    return string

@@ -1,0 +1,30 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize a dictionary to store the number of anagrams for each length
+    anagram_counts = {}
+
+    # Iterate over the list and count the number of anagrams for each length
+    for string in my_list:
+        length = len(string)
+
+        # If there are no anagrams of this length, create a new entry for it in the dictionary
+        if length not in anagram_counts:
+            anagram_counts[length] = 0
+
+        # Increment the number of anagrams for this length
+        anagram_counts[length] += 1
+
+    # Iterate over the dictionary and check if there are at least 155 pairs of anagrams for each length
+    for length in anagram_counts:
+        num_anagrams = anagram_counts[length]
+
+        # If there are no anagrams of this length, there can't be any pairs of them, so just move on to the next length
+        if num_anagrams == 0:
+            continue
+
+        # Check if there are at least 155 pairs of anagrams for this length
+        if num_anagrams >= 155:
+            return True
+
+    # If we made it to the end without returning true, then there aren't any pairs of anagrams in the list
+    return False

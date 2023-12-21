@@ -1,0 +1,9 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix, n):
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(i+1, len(matrix[i])):
+            if (matrix[i][j] - matrix[i][j-1]) % n == 0:
+                count += 1
+    return count

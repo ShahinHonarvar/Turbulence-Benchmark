@@ -1,0 +1,7 @@
+
+def sum_even_ints_inclusive(my_list):
+    # Use a list comprehension to find all even integers in the specified range
+    even_nums = [x for x in my_list[17:79] if x % 2 == 0]
+
+    # Return the sum of the found even integers, or 0 if no even integers exist
+    return sum(even_nums) if even_nums else 0

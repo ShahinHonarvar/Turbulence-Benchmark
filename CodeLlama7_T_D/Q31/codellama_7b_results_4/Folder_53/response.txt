@@ -1,0 +1,19 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list is empty or has less than 73 elements
+    if len(my_list) < 73:
+        return False
+
+    # Get the integer at index 73
+    num = my_list[73]
+
+    # Check if the number is a perfect number
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            if num / i == i:
+                return True
+
+    return False
+
+```
+This function takes a list of positive integers as input and returns true if the integer at index 73 is a perfect number, otherwise it returns false. The function first checks if the length of the list is less than or equal to 73, if not then it returns false. If the length is greater than 73 then it gets the integer at index 73 and checks if it is a perfect number by iterating from 1 to the square root of the number and checking if the number is divisible by those numbers and also checking if the quotient of number divided by that number is equal to that number. If the number is a perfect number then the function returns true otherwise it returns false.

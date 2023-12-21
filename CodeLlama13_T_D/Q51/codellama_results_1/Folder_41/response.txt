@@ -1,0 +1,23 @@
+```python
+def if_contains_anagrams(string_list):
+    # Initialize a set to store the anagram pairs
+    anagram_pairs = set()
+
+    # Iterate through each string in the list
+    for s1 in string_list:
+        # Get the lowercase version of the string
+        s1_lower = s1.lower()
+
+        # Iterate through each remaining string in the list
+        for s2 in string_list[string_list.index(s1) + 1:]:
+            # Get the lowercase version of the second string
+            s2_lower = s2.lower()
+
+            # Check if the two strings are anagrams
+            if sorted(s1_lower) == sorted(s2_lower):
+                # Add the pair to the set of anagram pairs
+                anagram_pairs.add((s1, s2))
+
+    # Return true if there are at most 52 pairs of anagrams in the list
+    return len(anagram_pairs) <= 52
+```

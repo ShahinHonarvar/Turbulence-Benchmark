@@ -1,0 +1,11 @@
+```python
+def if_contains_anagrams(str_list):
+    anagrams = {}
+    for s in str_list:
+        key = "".join(sorted(s))
+        if len(key) >= 3 and key not in anagrams:
+            anagrams[key] = [s]
+        elif len(key) >= 3 and key in anagrams:
+            anagrams[key].append(s)
+    return len(anagrams) >= 93
+```

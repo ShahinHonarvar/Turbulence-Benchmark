@@ -1,0 +1,16 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices with 127 integers each
+    count = 0
+    # Loop through each row in the matrix
+    for i in range(matrix.shape[0] - 126):
+        # Loop through each column in the matrix
+        for j in range(matrix.shape[1] - 126):
+            # Check if there are 127 integers in the submatrix with the current row and column as its top left corner
+            if np.sum(matrix[i:i+127, j:j+127]) == 127 * 127:
+                # Increment the counter for each such submatrix found
+                count += 1
+
+    # Return the count of all submatrices with 127 integers each found in the given matrix
+    return count

@@ -1,0 +1,30 @@
+ def palindromes_of_specific_lengths(string):
+    # Find the substring of interest
+    start_index = 200
+    end_index = 300
+    substr = string[start_index:end_index]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substr)):
+        # Get the current character and its opposite character
+        char = substr[i]
+        opp_char = substr[len(substr) - 1 - i]
+        # If the current character is the same as its opposite, add it to the set of palindromes
+        if char == opp_char:
+            palindromes.add(char)
+    # Iterate over each palindrome in the set and check if its length falls within the specified range
+    for palindrome in palindromes:
+        if len(palindrome) < 10 or len(palindrome) > 50:
+            continue
+
+        # Check if the palindrome is a valid English word by checking if it's contained in the dictionary of valid words
+        if palindrome.lower() in VALID_WORDS:
+            yield palindrome
+
+# Define a dictionary to store the set of valid English words
+VALID_WORDS = {word.lower(): True for word in open('words.txt').read().split()}
+# Test the function with a sample input string
+input_string = "The quick brown fox jumps over the lazy dog."
+for palindrome in palindromes_of_specific_lengths(input_string):
+#    print(palindrome)

@@ -1,0 +1,16 @@
+
+def filter_chars(s):
+    # Create a list of characters in the given string
+    char_list = list(s)
+
+    # Iterate over each character in the list
+    for i, c in enumerate(char_list):
+        # Check if the current character is between indices 72 and 94, both inclusive
+        if 72 <= i <= 94:
+            # Check if the current character is greater than or equal to '.' and smaller than or equal to 'b'
+            if c >= '.' and c <= 'b':
+                # Remove all occurrences of the current character from the string
+                char_list.remove(c)
+
+    # Join the list of characters back into a string and return it
+    return "".join(char_list)

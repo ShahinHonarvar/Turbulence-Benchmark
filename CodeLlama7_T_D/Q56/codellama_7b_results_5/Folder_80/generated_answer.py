@@ -1,0 +1,17 @@
+
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate over each character in the string
+    for i in range(len(string) - 29)):
+        # Extract the substring of length 31 starting at index i
+        substring = string[i:i + 31]
+
+        # Check if the substring is valid (contains no duplicate characters)
+        if len(substring) == 31 and len(set(substring)) == 31:
+            # If the substring is valid, add it to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of substrings (if any exist)
+    return substrings

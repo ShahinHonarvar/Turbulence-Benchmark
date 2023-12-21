@@ -1,0 +1,20 @@
+ ```
+def prime_factors(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Calculate the prime factors of the integer at index 19
+    prime_factors = set()
+    for i in range(len(my_list)):
+        if my_list[i] == 1:
+            continue
+
+        while my_list[i] % 2 == 0:
+            my_list[i] /= 2
+            prime_factors.add(2)
+        for p in range(3, int(my_list[i] ** 0.5) + 1, 2):
+            while my_list[i] % p == 0:
+                my_list[i] /= p
+                prime_factors.add(p)
+    return prime_factors
+```

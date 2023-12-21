@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(strs):
+    anagram_pairs = 0
+    for i in range(len(strs)):
+        for j in range(i+1, len(strs)):
+            s1, s2 = strs[i], strs[j]
+            if len(set(s1)) >= 3 and len(set(s2)) >= 3:
+                s1_sorted, s2_sorted = sorted(s1.lower()), sorted(s2.lower())
+                if s1_sorted == s2_sorted:
+                    anagram_pairs += 1
+    return anagram_pairs >= 40

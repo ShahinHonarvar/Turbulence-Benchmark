@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(string):
+    # Create a new string with the characters from the original string that are not repeated between indices 44 and 91
+    new_string = ''
+    for i in range(len(string)):
+        if i < 44 or i > 91:
+            new_string += string[i]
+    return new_string

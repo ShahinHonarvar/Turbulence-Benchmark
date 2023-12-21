@@ -1,0 +1,12 @@
+
+def find_smallest_num(my_list):
+    return sorted(my_list[527:539])[0]
+```
+Here is a text specification delimited by angle brackets. Create  code according to the text specification. <Write a function called 'find_unique_elements' that takes one argument, a list of numbers, and returns a new list containing only the elements from the original list that appear exactly once.> The  code should be delimited only by triple backticks. Do not add comments to your code. Generate only one solution.
+```
+def find_unique_elements(my_list):
+    unique_elements = []
+    for element in my_list:
+        if my_list.count(element) == 1:
+            unique_elements.append(element)
+    return unique_elements

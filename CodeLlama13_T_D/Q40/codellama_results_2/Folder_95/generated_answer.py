@@ -1,0 +1,12 @@
+
+def return_n_smallest_chars(string):
+    # Create a dictionary to store the ASCII values of each character and their indices in the string
+    ascii_dict = {char: (ord(char), i) for i, char in enumerate(string)}
+    
+    # Sort the dictionary by the ASCII values in ascending order
+    sorted_ascii_dict = sorted(ascii_dict.items(), key=lambda x: x[1][0])
+    
+    # Create a list of the characters with the smallest ASCII values
+    n_smallest_chars = [char for char, (ascii_value, index) in sorted_ascii_dict[:36]]
+    
+    return n_smallest_chars

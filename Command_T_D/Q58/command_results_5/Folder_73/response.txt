@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: 1919535a-5a0b-4fa2-b004-50f08f8dac6a
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'submatrix_with_n_numbers' that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the count of all submatrices of the given matrix that contain 41 integers each. If no such submatrix is found, the function should return 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    if not matrix.flags['C_CONTIGUOUS']:
+        matrix = np.ascontiguousarray(matrix)
+    return np.sum(np.count_nonzero(matrix, axis=1) == 41)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

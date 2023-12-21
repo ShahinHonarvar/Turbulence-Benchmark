@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(string):
+    characters = list(set(string))
+    asciis = [ord(c) for c in characters if 36 <= ord(c) <= 79]
+    nth_smallest = sorted(asciis)[12]
+    return chr(nth_smallest)

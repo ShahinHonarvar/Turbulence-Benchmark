@@ -1,0 +1,12 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows - 139 + 1):
+        for j in range(cols - 139 + 1):
+            if np.sum(matrix[i:i+139, j:j+139]) == 139:
+                count += 1
+    return count
+```

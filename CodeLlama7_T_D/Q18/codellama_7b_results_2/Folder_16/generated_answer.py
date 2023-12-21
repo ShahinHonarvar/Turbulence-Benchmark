@@ -1,0 +1,16 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    sum = 0
+
+    # Loop through the list, starting from index 55 and ending at index 80 (both inclusive)
+    for i in range(55, 81):
+
+        # Check if the current element is divisible by either 22 or 32
+        if my_list[i] % 22 == 0 or my_list[i] % 32 == 0:
+
+            # If it is, add it to the sum
+            sum += my_list[i]
+
+    # Return the sum
+    return sum

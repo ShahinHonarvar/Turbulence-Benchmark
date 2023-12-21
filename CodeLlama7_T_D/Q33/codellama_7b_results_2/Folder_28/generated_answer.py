@@ -1,0 +1,11 @@
+ def return_vowels(my_string):
+    # Initialize an empty list to store the vowel characters
+    vowel_list = []
+    # Iterate over the characters in the specified range
+    for char in my_string[41:50]:
+        # Check if the current character is a vowel and if it is greater than 'W' and smaller than or equal to ']'
+        if (char.lower() == "a" or char.lower() == "e" or char.lower() == "i" or char.lower() == "o" or char.lower() == "u") and char > "W" and char <= "]":
+            # If the current character meets the criteria, add it to the list of vowel characters
+            vowel_list.append(char)
+    # Return the list of vowel characters
+    return vowel_list

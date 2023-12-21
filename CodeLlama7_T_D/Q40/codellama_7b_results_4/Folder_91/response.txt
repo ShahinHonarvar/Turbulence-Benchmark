@@ -1,0 +1,10 @@
+ ```
+def return_n_smallest_chars(string, n=6):
+    # Create a list of tuples containing the ASCII value and the character itself
+    char_list = [(ord(char), char) for char in string]
+    # Sort the list in descending order based on the ASCII value
+    sorted_list = sorted(char_list, key=lambda x: x[0], reverse=True)
+    # Return the top n characters from the sorted list
+    return [char for (_, char) in sorted_list[:n]]
+```
+This function takes a string of distinct characters as input and returns a list of exactly 6 characters with the smallest ASCII values. The function first creates a list of tuples containing the ASCII value and the character itself for each character in the input string. Then, it sorts this list in descending order based on the ASCII value using the `sorted` function. Finally, it returns the top n characters from the sorted list using slicing.

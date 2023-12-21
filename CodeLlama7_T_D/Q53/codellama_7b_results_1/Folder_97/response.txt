@@ -1,0 +1,23 @@
+ ```
+def palindrome_of_length_at_least_n(input_string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each word in the input string
+    for word in input_string.split():
+        # Check if the word is at least n characters long
+        if len(word) >= n:
+            # Convert the word to lowercase
+            word = word.lower()
+            # Initialize a variable to store the reverse of the word
+            reversed_word = ""
+            # Loop through each character in the word
+            for char in word:
+                # Add the character to the end of the reverse string
+                reversed_word += char
+            # Check if the reverse of the word is the same as the original word
+            if reversed_word == word:
+                # Add the word to the set of palindromes
+                palindromes.add(word)
+    # Return the set of palindromes
+    return palindromes
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    matrices_count = 0\n    rows, cols = matrix.shape\n    for row_end in range(rows):\n        for col_end in range(cols):\n            for row_start in range(row_end + 1):\n                for col_start in range(col_end + 1):\n                    if (row_end - row_start + 1) * (col_end - col_start + 1) == 144:\n                        matrices_count += 1\n    return matrices_count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082673,
+  "id": "chatcmpl-7fJztnZePDr33FZRGguw7PmQ8vhyX",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 111,
+    "total_tokens": 222
+  }
+}

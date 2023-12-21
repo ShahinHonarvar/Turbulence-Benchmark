@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n    rows, cols = mat.shape\n    submatrices = []\n    for i in range(rows):\n        for j in range(cols):\n            for x in range(i+1, rows+1):\n                for y in range(j+1, cols+1):\n                    submatrix = mat[i:x, j:y]\n                    if np.sum(submatrix) == 15:\n                        submatrices.append(submatrix)\n    return submatrices\n```\nThe 'submatrix_with_particular_sum' function loops through each possible submatrix in the provided two-dimensional numpy matrix, 'mat'. For each submatrix, it checks if the sum of all integers in the submatrix equals 15. If the sum equals 15, the submatrix is appended to the list 'submatrices', which is then returned by the function. If no such submatrix is found, the function will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690982660,
+  "id": "chatcmpl-7j67oAbpz7CqKDTAvi0VsSYQDebON",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 201,
+    "prompt_tokens": 121,
+    "total_tokens": 322
+  }
+}

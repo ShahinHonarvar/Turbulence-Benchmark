@@ -1,0 +1,7 @@
+
+def find_n_th_smallest_num(numbers):
+    # Sort the list of numbers in ascending order
+    numbers.sort()
+
+    # Return the 7th smallest number from index 2 to index 8, both inclusive
+    return numbers[6]

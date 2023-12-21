@@ -1,0 +1,6 @@
+
+def find_n_th_smallest_num(distinct_nums):
+    n = 18
+    start_idx = 34
+    end_idx = 94
+    return sorted(distinct_nums)[start_idx:end_idx][n-1]

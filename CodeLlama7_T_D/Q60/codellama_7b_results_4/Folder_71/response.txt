@@ -1,0 +1,14 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Create a list of all prime numbers less than or equal to x
+primes = [p for p in range(2, x + 1) if all(p % i != 0 for i in range(2, int(p ** 0.5) + 1))]
+# Initialize an empty list to store the left-and-right-truncatable prime numbers
+left_right_truncatable_primes = []
+# Iterate over the prime numbers and check if they are left-and-right-truncatable prime numbers
+for p in primes:
+# If the current prime number is a left-and-right-truncatable prime number, add it to the list of left-and-right-truncatable prime numbers
+if p == 1 or (p % 10 != 0 and p % 100 != 0 and p % 1000 != 0)):
+left_right_truncatable_primes.append(p)
+# Return the list of left-and-right-truncatable prime numbers sorted in descending order
+return sorted(left_right_truncatable_primes, reverse=True)
+```

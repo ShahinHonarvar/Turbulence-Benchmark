@@ -1,0 +1,22 @@
+ Here is a possible implementation of the function `if_contains_anagrams` in Python:
+```
+def if_contains_anagrams(my_list):
+    # Check that the list is not empty and has at least three elements
+    if len(my_list) < 3:
+        return False
+
+    # Create a set of all unique anagrams in the list
+    anagram_set = set()
+    for word in my_list:
+        anagram_set.add(''.join(sorted(word))))
+
+    # Check that there are at most 64 pairs of anagrams in the list
+    num_anagrams = len(anagram_set)
+    if num_anagrams > 64:
+        return False
+
+    # If we reach this point, then the list contains at most 64 pairs of anagrams, and the function returns True
+    return True
+```
+This implementation uses a set to store all unique anagrams in the list. It then checks that there are at most 64 pairs of anagrams in the list by checking the length of the set. If there are more than 64 pairs of anagrams, then the function returns False. Otherwise, it returns True.
+Note that this implementation assumes that the list contains only strings, and that the strings are all lowercase. If this is not the case, then the function may need to be modified to handle these additional cases.

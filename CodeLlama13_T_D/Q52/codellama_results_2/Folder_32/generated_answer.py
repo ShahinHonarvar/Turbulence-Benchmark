@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string, n):
+    return set(s for s in (string + string[::-1]) if len(s) == n and all(c.isalpha() for c in s))

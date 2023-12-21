@@ -1,0 +1,28 @@
+
+def find_subset_of_length_n(set):
+    # Calculate the number of elements in the set
+    num_elements = len(set)
+
+    # Initialize a counter for the number of subsets
+
+    num_subsets = 0
+
+    # Loop through each possible subset of size n
+
+    for i in range(2 ** num_elements):
+
+        # Convert the binary representation to a set
+
+        subset = set(bin(i)[2:])
+
+        # Check if the subset has length n
+
+        if len(subset) == 8:
+
+            # Increment the number of subsets
+
+            num_subsets += 1
+
+    # Return the number of subsets of size n
+
+    return num_subsets

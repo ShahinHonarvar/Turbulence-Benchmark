@@ -1,0 +1,17 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    start_index = 38
+    end_index = 52
+    divisor_1 = -41
+    divisor_2 = -47
+
+    # Calculate the sum of all integers divisible by either -41 or -47 from index 38 to index 52, both inclusive.
+    sum = 0
+
+    for i in range(start_index, end_index + 1):
+        if my_list[i] % divisor_1 == 0 or my_list[i] % divisor_2 == 0:
+            sum += my_list[i]
+
+    # Return the sum of all integers divisible by either -41 or -47 from index 38 to index 52, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum

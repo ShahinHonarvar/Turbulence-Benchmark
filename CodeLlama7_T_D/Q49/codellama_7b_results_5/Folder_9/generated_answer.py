@@ -1,0 +1,23 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the number of digits in the decimal integer
+    num_digits = len(str(decimal_integer))
+    # Initialize variables for the Fibonacci sequence
+    a, b = 0, 1
+    # Iterate through the digits of the decimal integer
+    for i in range(num_digits):
+        # Calculate the number that occurs in the Fibonacci sequence based on the current digit
+        num = a + b
+        # Check if the number is divisible by 68
+        if num % 68 == 0:
+            # If it is, return true
+            return True
+
+        # Increment the value of 'a' to get the next number in the Fibonacci sequence
+        a = b
+        b = num
+
+    # If no numbers are divisible by 68, return false
+    return False

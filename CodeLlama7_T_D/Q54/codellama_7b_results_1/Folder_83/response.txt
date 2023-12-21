@@ -1,0 +1,24 @@
+ def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the right-truncatable prime numbers
+    right_truncatable_primes = []
+     # Iterate over the elements in the tuple
+     for element in tuple:
+         # Check if the element is a prime number
+         if isprime(element):
+             # Initialize a variable to store the last digit of the element
+             last_digit = element % 10
+              # While the element is greater than its last digit, remove the last rightmost digit and check if it is still a prime number
+              while element > last_digit:
+                  element //= 10
+                  if not isprime(element):
+                      break
+
+                  else:
+                      # If the element is still a prime number, add it to the list of right-truncatable prime numbers
+                      right_truncatable_primes.append(element)
+
+     # Sort the list of right-truncatable prime numbers in ascending order
+     sorted_right_truncatable_primes = sorted(right_truncatable_primes)
+     # Return the sorted list of all right-truncatable prime numbers less than x
+     return sorted_right_truncatable_primes
+ 

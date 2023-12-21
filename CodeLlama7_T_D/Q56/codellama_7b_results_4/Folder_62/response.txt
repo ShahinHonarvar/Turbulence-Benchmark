@@ -1,0 +1,14 @@
+ ```
+def all_substring_of_size_n(string):
+# create a set to store the distinct substrings
+substrings = set()
+# loop through each character in the string
+for i in range(len(string) - 2):
+# extract the substring of length 32 starting from index i
+substring = string[i:i+32]
+# if the substring is not already in the set, add it
+if substring not in substrings:
+substrings.add(substring)
+return list(substrings)
+```
+This code uses a loop to iterate through each character in the input string and extracts substrings of length 32 starting from each index. It then adds these substrings to a set, which automatically removes any duplicates. Finally, it returns the set as a list.

@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(arr):
+    return [x for x in arr if (x % 10) and (0 <= x < 10)]

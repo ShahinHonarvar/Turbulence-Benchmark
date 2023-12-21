@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_truncatable_prime(numbers):\n    def is_prime(num):\n        if num < 2:\n            return False\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n    \n    def is_left_truncatable_prime(num):\n        str_num = str(num)\n        for i in range(len(str_num)):\n            trunc_num = int(str_num[i:])\n            if not is_prime(trunc_num):\n                return False\n        return True\n    \n    x = numbers[433]\n    left_trunc_primes = []\n    for num in range(x-1, 1, -1):\n        if '0' not in str(num) and is_left_truncatable_prime(num):\n            left_trunc_primes.append(num)\n    \n    return sorted(left_trunc_primes, reverse=True)\n```\nNote: The function `all_left_truncatable_prime` takes a tuple of positive integers as an argument and returns a list of left-truncatable prime numbers less than the integer at index 433.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689799479,
+  "id": "chatcmpl-7e8KF2Y3cyU7WavxYwZr7BYYM50Er",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 232,
+    "prompt_tokens": 146,
+    "total_tokens": 378
+  }
+}

@@ -1,0 +1,20 @@
+ ```
+def all_substring_of_size_n(s):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(s) - 89):
+
+        # Extract a substring of length 90 starting from the current index
+        substr = s[i:i+90]
+
+        # Check if the substring is already present in the list
+        if substr not in substrings:
+
+            # Add the substring to the list
+            substrings.append(substr)
+
+    # Return the list of all distinct substrings of length 90
+    return substrings
+```

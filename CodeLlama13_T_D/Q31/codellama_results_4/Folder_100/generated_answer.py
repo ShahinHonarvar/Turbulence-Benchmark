@@ -1,0 +1,8 @@
+
+def if_perfect_num(numbers):
+    if numbers[99]:
+        for i in range(2, numbers[99] // 2 + 1):
+            if numbers[99] % i == 0 and numbers[99] // i >= i:
+                return True
+    else:
+        return False

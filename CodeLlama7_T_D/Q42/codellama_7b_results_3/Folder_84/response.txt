@@ -1,0 +1,15 @@
+ ```
+def prime_factors(my_list):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the list of integers
+    for i in my_list:
+        # Check if the current integer is a prime number
+        if is_prime(i):
+            # If it is, add it to the set of prime factors
+            prime_factors.add(i)
+        else:
+            # If it is not a prime number, find its prime factors recursively
+            prime_factors.update(prime_factors(list(range(1, i + 1))))
+    return prime_factors
+```

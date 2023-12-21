@@ -1,0 +1,13 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Case-insensitive search for palindromes in the substring from index 0 to index 100, both inclusive
+palindromes = []
+for i in range(0, 101):
+# Check if the character at position i is a palindrome of length between 3 and 15 (both inclusive)
+if string[i] == string[i].lower():
+# Check if the character at position i+1 is also a palindrome of length between 3 and 15 (both inclusive)
+if string[i+1] == string[i+1].lower():
+# Add the palindrome to the list of palindromes
+palindromes.append(string[i:i+2])
+return set(palindromes)
+```

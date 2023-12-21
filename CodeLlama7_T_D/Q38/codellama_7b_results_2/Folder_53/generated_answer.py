@@ -1,0 +1,13 @@
+
+def find_subset_of_length_n(set):
+   # Initialize the number of subsets as 0
+   num_subsets = 0
+
+   # Loop through all possible subsets of size n
+   for subset in itertools.combinations(set, n):
+
+      # If the current subset is of length 73, increment the number of subsets
+      if len(subset) == 73:
+         num_subsets += 1
+
+   return num_subsets

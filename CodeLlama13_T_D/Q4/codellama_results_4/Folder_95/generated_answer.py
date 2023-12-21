@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(list):
+    return list[25:80] if any(x > 0 for x in list) else []

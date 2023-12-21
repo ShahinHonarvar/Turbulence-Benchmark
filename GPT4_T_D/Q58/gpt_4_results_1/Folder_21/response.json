@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix_2D):\n    nrows, ncols = np.array(matrix_2D.shape) - 138 \n    count = 0\n    for x in range(nrows + 1):\n        for y in range(ncols + 1):\n            arr = matrix_2D[x:x+139, y:y+139]\n            if arr.size == 139:\n                count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082346,
+  "id": "chatcmpl-7fJuchQvK3RFxPjsjJ3eVnGMiVK96",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 111,
+    "total_tokens": 211
+  }
+}

@@ -1,0 +1,20 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list of positive integers
+    for i in range(len(my_list)):
+        # Check if the current number is a composite number
+        if my_list[i] > 1 and all(my_list[i] % j != 0 for j in range(2, int(my_list[i]) ** 0.5 + 1)):
+            # If it is, add it to the set of composite numbers
+            composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers between index 639 and index 975, both inclusive
+    return composite_nums
+
+# Test the function with a list of positive integers
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#print(composite_nums_between_indices(my_list))
+# Output: {3, 5, 7}
+```

@@ -1,0 +1,255 @@
+[cohere.Generation {
+	id: 5500cc77-2522-429d-8a61-5eccf8257370
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 645. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_left_truncatable_prime(nums):
+    all_left_truncatable_prime = []
+    for p in itertools.permutations(range(2, int(str(nums[645])[0]) + 1)):
+        if is_left_truncatable_prime(p):
+            all_left_truncatable_prime.append(p)
+    return sorted(all_left_truncatable_prime)
+
+def is_left_truncatable_prime(p):
+    if not p:
+        return True
+    elif p % 2 == 0:
+        return False
+    elif p < 2:
+        return True
+    elif p % 5 == 0:
+        return False
+    elif p < 5:
+        return True
+    elif p % 3 == 0:
+        return False
+    elif p < 3:
+        return True
+    elif p % 2 == 0 and p % 5 == 0:
+        return False
+    elif p < 10:
+        return True
+    elif p == 10 or p == 15:
+        return False
+    elif p == 20:
+        return True
+    elif p == 25:
+        return False
+    elif p == 30:
+        return True
+    elif p == 35:
+        return False
+    elif p == 40:
+        return True
+    elif p == 45:
+        return False
+    elif p == 50:
+        return True
+    elif p == 55:
+        return False
+    elif p == 60:
+        return True
+    elif p == 65:
+        return False
+    elif p == 70:
+        return True
+    elif p == 75:
+        return False
+    elif p == 80:
+        return True
+    elif p == 85:
+        return False
+    elif p == 90:
+        return True
+    elif p == 95:
+        return False
+    elif p == 100:
+        return True
+    elif p == 105:
+        return False
+    elif p == 110:
+        return True
+    elif p == 115:
+        return False
+    elif p == 120:
+        return True
+    elif p == 125:
+        return False
+    elif p == 130:
+        return True
+    elif p == 135:
+        return False
+    elif p == 140:
+        return True
+    elif p == 145:
+        return False
+    elif p == 150:
+        return True
+    elif p == 155:
+        return False
+    elif p == 160:
+        return True
+    elif p == 165:
+        return False
+    elif p == 170:
+        return True
+    elif p == 175:
+        return False
+    elif p == 180:
+        return True
+    elif p == 185:
+        return False
+    elif p == 190:
+        return True
+    elif p == 195:
+        return False
+    elif p == 200:
+        return True
+    elif p == 205:
+        return False
+    elif p == 210:
+        return True
+    elif p == 215:
+        return False
+    elif p == 220:
+        return True
+    elif p == 225:
+        return False
+    elif p == 230:
+        return True
+    elif p == 235:
+        return False
+    elif p == 240:
+        return True
+    elif p == 245:
+        return False
+    elif p == 250:
+        return True
+    elif p == 255:
+        return False
+    elif p == 260:
+        return True
+    elif p == 265:
+        return False
+    elif p == 270:
+        return True
+    elif p == 275:
+        return False
+    elif p == 280:
+        return True
+    elif p == 285:
+        return False
+    elif p == 290:
+        return True
+    elif p == 295:
+        return False
+    elif p == 300:
+        return True
+    elif p == 305:
+        return False
+    elif p == 310:
+        return True
+    elif p == 315:
+        return False
+    elif p == 320:
+        return True
+    elif p == 325:
+        return False
+    elif p == 330:
+        return True
+    elif p == 335:
+        return False
+    elif p == 340:
+        return True
+    elif p == 345:
+        return False
+    elif p == 350:
+        return True
+    elif p == 355:
+        return False
+    elif p == 360:
+        return True
+    elif p == 365:
+        return False
+    elif p == 370:
+        return True
+    elif p == 375:
+        return False
+    elif p == 380:
+        return True
+    elif p == 385:
+        return False
+    elif p == 390:
+        return True
+    elif p == 395:
+        return False
+    elif p == 400:
+        return True
+    elif p == 405:
+        return False
+    elif p == 410:
+        return True
+    elif p == 415:
+        return False
+    elif p == 420:
+        return True
+    elif p == 425:
+        return False
+    elif p == 430:
+        return True
+    elif p == 435:
+        return False
+    elif p == 440:
+        return True
+    elif p == 445:
+        return False
+    elif p == 450:
+        return True
+    elif p == 455:
+        return False
+    elif p == 460:
+        return True
+    elif p == 465:
+        return False
+    elif p == 470:
+        return True
+    elif p == 475:
+        return False
+    elif p == 480:
+        return True
+    elif p == 485:
+        return False
+    elif p == 490:
+        return True
+    elif p == 495:
+        return False
+    elif p == 500:
+        return True
+    elif p == 505:
+        return False
+    elif p == 510:
+        return True
+    elif p == 515:
+        return False
+    elif p == 520:
+        return True
+    elif p == 525:
+        return False
+    elif p == 530:
+        return True
+    elif p == 535:
+        return False
+    elif p == 540:
+        return True
+    elif p == 545:
+        return False
+    elif p == 550:
+        return True
+    elif p == 555:
+        return False
+    elif p == 560
+	likelihood: None
+	token_likelihoods: None
+}]

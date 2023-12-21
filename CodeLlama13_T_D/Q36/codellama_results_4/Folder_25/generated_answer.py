@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    result = []
+    for i, c in enumerate(s):
+        if 24 <= i < 37 and 'A' <= c <= 'h':
+            continue
+        result.append(c)
+    return "".join(result)

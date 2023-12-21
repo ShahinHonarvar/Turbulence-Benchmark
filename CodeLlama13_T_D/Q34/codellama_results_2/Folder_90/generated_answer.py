@@ -1,0 +1,9 @@
+
+def find_original_set(args):
+    sets = []
+    for arg in args:
+        sets.append(set(arg))
+    union = set()
+    for s in sets:
+        union |= s
+    return union

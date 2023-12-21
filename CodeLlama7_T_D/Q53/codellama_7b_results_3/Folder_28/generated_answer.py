@@ -1,0 +1,37 @@
+
+def palindrome_of_length_at_least_n(string, n=42):
+    # Convert the input string to lowercase for case-insensitive matching
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+
+    palindromes = set()
+
+    # Loop through each character in the input string
+
+    for i in range(len(string)):
+
+        # Check if the current character is a letter
+
+        if string[i].isalpha():
+
+            # Start searching for a palindrome from the current character
+
+            for j in range(i+1, len(string)+1):
+
+                # Check if the substring starting at the current character and ending at the index 'j' is a palindrome
+
+                if string[i:j].lower() == string[i:j][::-1].lower():
+
+                    # If the substring is a palindrome, add it to the set of palindromes
+
+                    palindromes.add(string[i:j])
+
+                    # Break out of the inner loop once a palindrome has been found for the current character
+
+                    break
+
+
+    # Return the set of palindromes that have a length greater than or equal to 42
+
+    return palindromes

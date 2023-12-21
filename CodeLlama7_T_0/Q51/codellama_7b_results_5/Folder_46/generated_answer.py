@@ -1,0 +1,22 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_letters = False
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Check if the string is at least three letters long
+        if len(lowercase_string) >= 3:
+            three_or_more_letters = True
+            # Create a list of all the anagrams of the English letters in the string
+            anagram_list = []
+            for letter in "abcdefghijklmnopqrstuvwxyz":
+                if letter in lowercase_string:
+                    anagram_list.append(letter)
+            # Check if there are at most 61 pairs of anagrams in the list
+            if len(anagram_list) <= 61:
+                anagram_count += 1
+    # Return True if there are at most 61 pairs of anagrams in the given list, otherwise return False
+    return three_or_more_letters and anagram_count <= 61

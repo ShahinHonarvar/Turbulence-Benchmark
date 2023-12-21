@@ -1,0 +1,13 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Create a new list to store the odd integers
+    odd_ints = []
+
+    # Loop through the list of integers, starting from index 20 and ending at index 200 (exclusive)
+    for i in range(20, len(my_list), 1):
+        if my_list[i] % 2 != 0:
+            # If the current integer is odd, add it to the list of odd integers
+            odd_ints.append(my_list[i])
+
+    # Return the list of all odd integers from index 20 to index 200 (exclusive)
+    return odd_ints

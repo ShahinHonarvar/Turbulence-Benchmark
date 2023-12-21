@@ -1,0 +1,25 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 460 elements
+    if len(my_list) < 460:
+        return False
+
+    # Calculate the sum of the divisors of the number at index 459
+    num = my_list[459]
+    sum_divisors = 1
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i
+            if num / i != i:
+                sum_divisors += num / i
+    # Check if the sum of the divisors is equal to the number at index 459
+    if sum_divisors == num:
+        return True
+
+    else:
+
+        return False
+```
+This code defines a function called `if_perfect_num` that takes one argument, a list of positive integers. The function first checks if the length of the list is at least 460 (the index of the number to be tested). If it is not, the function returns `False`.
+Next, the function calculates the sum of the divisors of the number at index 459 using a loop that starts from 2 and goes up to the square root of the number. For each divisor found, the function adds it to the sum of divisors, and if the number is not a perfect square (i.e., its square root is not an integer), the function also adds the number's reciprocal to the sum of divisors.
+Finally, the function checks if the sum of the divisors is equal to the number at index 459. If it is, the function returns `True`, otherwise it returns `False`.

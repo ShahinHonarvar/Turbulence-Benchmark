@@ -1,0 +1,12 @@
+```python
+def all_neg_ints_exclusive(arr):
+    return [x for x in arr if x < 0][:1]
+```
+This is a simple list comprehension that filters the input array `arr` to contain only negative integers, and then slices the resulting list to keep only the first element. The `[[:1]]` notation is used to create a shallow copy of the list slice, which is necessary because Python lists are mutable and cannot be directly passed as function arguments without modification.
+
+Here is an alternative solution that uses a generator expression instead of a list comprehension:
+```python
+def all_neg_ints_exclusive(arr):
+    return tuple((x for x in arr if x < 0)[:1])
+```
+This generates the same output as the previous solution, but uses a generator expression to avoid creating a temporary list. This can be more memory-efficient for very large input arrays, but is less readable and may not be suitable for all use cases.

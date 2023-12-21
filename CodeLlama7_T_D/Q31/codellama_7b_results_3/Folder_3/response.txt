@@ -1,0 +1,16 @@
+ ```
+def if_perfect_num(lst):
+    # Check if the list has at least 101 elements
+    if len(lst) < 101:
+        return False
+
+    # Calculate the sum of the proper divisors of the number at index 100
+    num = lst[100]
+    sum_divisors = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum_divisors += i
+
+    # Return True if the sum of the proper divisors is equal to the number at index 100, otherwise return False
+    return sum_divisors == lst[100]
+```

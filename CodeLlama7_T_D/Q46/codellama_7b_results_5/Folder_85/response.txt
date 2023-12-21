@@ -1,0 +1,18 @@
+ ```
+def gcf_three_nums(my_list):
+    # find the greatest common factor of the elements at indices 49, 46 and 13
+    num1 = my_list[49]
+    num2 = my_list[46]
+    num3 = my_list[13]
+    gcf = 1
+
+    for i in range(2, min(num1, num2, num3) + 1):
+        if num1 % i == 0 and num2 % i == 0 and num3 % i == 0:
+            gcf = i
+
+    return gcf
+```
+This code defines a function `gcf_three_nums` that takes one argument, a list of positive integers, and returns the greatest common factor of the elements at indices 49, 46 and 13.
+The function first extracts the three numbers from the input list using the indices 49, 46 and 13.
+Then it starts iterating from 2 to the smaller of these three numbers plus 1. At each iteration, the function checks if the current number is a factor of all three numbers by checking if `num1 % i == 0`, `num2 % i == 0` and `num3 % i == 0`.
+If all three conditions are true, then the current number `i` is the greatest common factor (gcf) of all three numbers. The function returns the gcf as its output.

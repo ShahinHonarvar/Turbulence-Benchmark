@@ -1,0 +1,15 @@
+
+def if_contains_anagrams(my_list):
+    # Count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1):
+        word1 = my_list[i]
+        for j in range(i + 1, len(my_list)):
+            word2 = my_list[j]
+            if is_anagram(word1, word2):
+                anagram_pairs += 1
+    # Check if there are at least 21 pairs of anagrams in the list
+    return anagram_pairs >= 21
+# Compare two strings as anagrams regardless of case
+def is_anagram(word1, word2):
+    return sorted(word1.lower()) == sorted(word2.lower())

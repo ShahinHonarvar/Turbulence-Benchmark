@@ -1,0 +1,7 @@
+```
+def filter_chars(string):
+    return ''.join([c for c in string if ord(c) not in range(97, 123)])
+```
+This function uses a list comprehension to iterate over the characters in the input string. It checks each character's ASCII code and removes it from the output if it falls between 97 (character 'a') and 122 (character 'z'). The `ord()` function is used to get the ASCII code of each character, and the `range()` function is used to create a range of numbers that includes the characters we want to remove.
+
+Note that this solution assumes that the input string only contains lowercase letters. If the string can contain uppercase letters as well, you will need to modify the range of characters to include both 'a' and 'z', like this: `range(97, 123)`.

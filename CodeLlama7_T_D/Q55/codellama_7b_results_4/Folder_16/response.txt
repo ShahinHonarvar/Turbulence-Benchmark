@@ -1,0 +1,32 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Find the product of all elements in the list
+product = 1
+for element in circular_list:
+product *= element
+
+# Initialize an empty list to store the sublists
+sublists = []
+
+# Iterate over the list and find contiguous sequences with a product equal to -837
+current_sequence = []
+current_product = 1
+for i in range(len(circular_list)):
+element = circular_list[i]
+# If the current product is equal to -837, append the current sequence to the sublists list and reset the current sequence
+if current_product == -837:
+sublists.append(current_sequence)
+current_sequence = []
+current_product = 1
+
+# Add the element to the current sequence and update the product
+current_sequence.append(element)
+current_product *= element
+
+# If the current sequence is not empty, append it to the sublists list
+if len(current_sequence) > 0:
+sublists.append(current_sequence)
+
+# Return the sublists list
+return sublists
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(numbers):\n    sublists = []\n    n = len(numbers)\n    for size in range(1, n+1):\n        for i in range(n):\n            sublist = numbers[i:i+size] + numbers[:size-(n-i)]\n            product = 1\n            for num in sublist:\n                product *= num\n            if product == 48:\n                sublists.append(sublist)\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887444,
+  "id": "chatcmpl-7eVD2ziuyjl0ctWT9N1GJvJdIDPhB",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 193,
+    "total_tokens": 293
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(lst):\n    def is_perfect(n):\n        factors = [1]\n        for i in range(2, int(n ** 0.5) + 1):\n            if n % i == 0:\n                factors.append(i)\n                factors.append(n // i)\n        if sum(factors) == n:\n            return True\n        return False\n\n    return is_perfect(lst[18]) if len(lst) > 18 else False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689834003,
+  "id": "chatcmpl-7eHJ5CY4pzkic5ue0GOEAru9Zy5mB",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 91,
+    "total_tokens": 192
+  }
+}

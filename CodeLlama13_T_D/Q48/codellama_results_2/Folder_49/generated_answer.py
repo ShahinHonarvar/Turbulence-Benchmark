@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(tup):
+    a = tup[80] + 1
+    b = tup[200] - 1
+    sum = 0
+    for i in range(a, b+1):
+        if not i in tup:
+            sum += 1
+    if sum % 2 == 0:
+        return hex(sum)
+    else:
+        return bin(sum)[2:]

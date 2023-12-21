@@ -1,0 +1,12 @@
+```python
+def find_second_largest_num(numbers):
+    if len(numbers) < 5:
+        return None
+    numbers = sorted(numbers)
+    second_largest = numbers[4]
+    for i in range(1, 5):
+        if numbers[i] == second_largest:
+            return None
+    return second_largest
+```
+This function first checks if the input list is shorter than 5 elements. If so, it returns `None`. Otherwise, it sorts the list and finds the fifth element (index 4) as the second largest number. It then iterates through the first four elements (indices 1 to 4) and checks if any of them match the second largest number found in step 3. If any match is found, the function returns `None`. Finally, it returns the second largest number if no matches are found.

@@ -1,0 +1,13 @@
+```python
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(61, 80):
+        if my_list[i] > 1:
+            for j in range(2, my_list[i]):
+                if my_list[i] % j == 0:
+                    break
+            else:
+                prime_numbers.append(my_list[i])
+    return sorted(prime_numbers)
+```
+Note that this function assumes the input list is a list of integers, and it only checks for primality between indices 61 to 79 (inclusive). If you need to modify the range or the type of the input list, you can do so accordingly.

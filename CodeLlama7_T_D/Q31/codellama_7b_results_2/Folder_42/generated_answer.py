@@ -1,0 +1,17 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Get the integer at index 276
+    num = my_list[276]
+
+    # Check if the number is a perfect number
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            j = num / i
+            if i * j == num:
+                return True
+
+    return False

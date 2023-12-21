@@ -1,0 +1,10 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s) - 51):
+        substr = s[i:i+52]
+        if len(set(substr)) == 52 and substr not in substrings:
+            substrings.append(substr)
+    return substrings
+```
+This function uses a for loop to iterate over the string `s`, starting from each possible position of the first character of the substring, and checking if the substring has length equal to 52, no duplicate characters, and is not already in the list of substrings. If all these conditions are met, the substring is added to the list of substrings. The function returns an empty list if no such substring exists in the given string.

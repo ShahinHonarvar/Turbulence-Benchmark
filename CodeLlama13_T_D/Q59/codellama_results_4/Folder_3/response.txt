@@ -1,0 +1,16 @@
+```
+def all_left_truncatable_prime(numbers):
+    left_truncatable_primes = []
+    for number in numbers:
+        if is_left_truncatable_prime(number):
+            left_truncatable_primes.append(number)
+    return sorted(left_truncatable_primes)
+```
+This function takes a tuple of positive integers as input and returns a list of all left-truncatable prime numbers less than the integer at index 100 in the tuple, sorted in ascending order. The `is_left_truncatable_prime` function is used to check if a number is a left-truncatable prime.
+
+Here's an example usage of this function:
+```
+>>> numbers = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97)
+>>> all_left_truncatable_prime(numbers)
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+```

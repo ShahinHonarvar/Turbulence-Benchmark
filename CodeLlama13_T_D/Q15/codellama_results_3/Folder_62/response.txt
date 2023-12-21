@@ -1,0 +1,9 @@
+```
+def sum_odd_ints_inclusive(numbers):
+    return sum(number for i, number in enumerate(numbers) if i >= 91 and i <= 99 and number % 2 != 0)
+```
+Explanation:
+
+* The `enumerate` function generates a sequence of tuples containing the index and value of each element in the input list.
+* The generator expression `number for i, number in enumerate(numbers) if i >= 91 and i <= 99 and number % 2 != 0` filters out all even numbers from the enumerated list and sums up the remaining odd numbers.
+* The `sum` function is used to compute the sum of the filtered elements. If no odd numbers exist in the specified range, the generator expression will return an empty sequence, which will be converted to a zero by the `sum` function.

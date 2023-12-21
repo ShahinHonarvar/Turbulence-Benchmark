@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    result = ''
+    for i, c in enumerate(s):
+        if 10 <= i <= 69 and 'I' <= c <= 'K':
+            result += c
+    return result

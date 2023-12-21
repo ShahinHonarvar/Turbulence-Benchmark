@@ -1,0 +1,15 @@
+```python
+def return_n_smallest_chars(string):
+    chars = []
+    for char in string:
+        if char not in chars:
+            chars.append(char)
+    
+    sorted_chars = sorted(chars, key=lambda x: ord(x))
+    return sorted_chars[:68]
+```
+This code defines a function called `return_n_smallest_chars` that takes one argument `string`, which is a string of distinct characters. The function creates an empty list called `chars` and iterates through the characters in the input string, adding each character to the list if it's not already present.
+
+Next, the function sorts the list of characters using the `sorted()` function with a custom key that returns the ASCII value of each character using the `ord()` function. The resulting list is sorted in descending order.
+
+Finally, the function returns the first 68 elements of the sorted list, which correspond to the smallest ASCII values.

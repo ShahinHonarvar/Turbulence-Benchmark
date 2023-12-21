@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_string = ""
+    for i, char in enumerate(string):
+        if 63 <= ord(char) <= 89 and char < "*" and char > "w":
+            continue
+        else:
+            new_string += char
+    return new_string

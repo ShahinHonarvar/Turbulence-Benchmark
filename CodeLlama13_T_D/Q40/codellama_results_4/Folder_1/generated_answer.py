@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(s):
+    chars = sorted([c for c in s if len(c) == 1])
+    return [c for c in chars[:11]]

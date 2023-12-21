@@ -1,0 +1,19 @@
+
+def find_subset_of_length_n(elements):
+    # Initialize a set to store all subsets of size 30
+    subsets = set()
+
+    # Iterate over each element in the input set
+    for element in elements:
+        # Check if the current element is already present in any subset
+        if element not in subsets:
+            # If not, add the current element to all existing subsets of size 30
+            for subset in subsets:
+                subsets.add(subset | {element})
+        else:
+            # If the current element is already present, remove it from all existing subsets of size 30
+            for subset in subsets:
+                subsets.remove(subset - {element})
+
+    # Return the number of subsets of size 30
+    return len(subsets)

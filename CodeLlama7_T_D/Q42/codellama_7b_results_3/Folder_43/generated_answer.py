@@ -1,0 +1,13 @@
+
+def prime_factors(my_list):
+    # Find the number at index 29
+    num = my_list[29]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Loop through all numbers less than or equal to the number at index 29
+    for i in range(2, num + 1):
+        # If the number is divisible by i and i is prime...
+        if num % i == 0 and is_prime(i):
+            # ...add it to the set of prime factors
+            prime_factors.add(i)
+    return prime_factors

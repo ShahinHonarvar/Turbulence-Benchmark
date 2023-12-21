@@ -1,0 +1,40 @@
+ ```
+def find_original_set(sets):
+    # Create a set of all elements in the input sets
+    all_elements = set()
+    for s in sets:
+        all_elements |= s
+
+    # Initialize the smallest set to contain only one element
+
+    smallest_set = {all_elements.pop()}
+
+    # Iterate over the remaining elements and add them to the smallest set if it is a subset of it
+
+    while all_elements:
+
+        element = all_elements.pop()
+
+        if element in smallest_set:
+
+            continue
+
+
+        for s in sets:
+
+            if element not in s:
+
+                break
+
+
+            if s == smallest_set:
+
+                continue
+
+
+        else:
+
+            smallest_set.add(element)
+
+    return smallest_set
+```

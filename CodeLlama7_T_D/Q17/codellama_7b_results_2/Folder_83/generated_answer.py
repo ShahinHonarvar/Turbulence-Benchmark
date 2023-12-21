@@ -1,0 +1,12 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the result
+    result = []
+
+    # Iterate through the list and check if each element is divisible by both -31 and 13
+    for i in range(90, 201):
+        if my_list[i] % (-31 * 13) == 0:
+            result.append(my_list[i])
+
+    # Return the list of all integers divisible by both -31 and 13 from index 90 to index 200, both inclusive. If no such integers exist in the specified range, the function should return an empty list.
+    return result

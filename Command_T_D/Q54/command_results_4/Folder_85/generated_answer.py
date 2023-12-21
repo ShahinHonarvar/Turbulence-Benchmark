@@ -1,0 +1,20 @@
+def all_right_truncatable_prime(n):
+    # This is the function to return the sorted list of all right-truncatable prime numbers less than x
+    # If there is no such right-truncatable prime number, the function should return an empty list
+    # A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is
+    # successively removed.
+    x, y = n
+    # NoSuchPrimeException is raised when no prime number less than x exists
+    # x = int(input("Please enter a positive integer: "))
+    # y = n[1]
+    # NoSuchPrimeException is raised when no prime number less than y exists
+    # y = input("Please enter a positive integer: ")
+    # This is the line to sort all right-truncatable prime numbers less than x
+    # It raises NoSuchPrimeException when no such prime number exists
+    # primes = prime_generator(x)
+    # This is the line to return the sorted list of all right-truncatable prime numbers less than x
+    # It raises NoSuchPrimeException when no such prime number exists
+    # return [str(p) for p in primes if p.is_right_truncatable()]
+    # This is the line to return the sorted list of all right-truncatable prime numbers less than x
+    # It raises NoSuchPrimeException when no such prime number exists
+    # return [str(p) for p in primes if p.is_right_truncatable()]

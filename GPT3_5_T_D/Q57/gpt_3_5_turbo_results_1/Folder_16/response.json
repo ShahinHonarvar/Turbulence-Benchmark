@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    n_rows, n_cols = matrix.shape\n    submatrices = []\n    for i in range(n_rows):\n        for j in range(n_cols):\n            for k in range(i, n_rows):\n                for l in range(j, n_cols):\n                    submatrix = matrix[i:k+1, j:l+1]\n                    if np.sum(submatrix) == -157:\n                        submatrices.append(submatrix)\n    return submatrices\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797868,
+  "id": "chatcmpl-7e7uGfkmHfaEN4mET64LCw1lz4wFK",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 121,
+    "total_tokens": 230
+  }
+}

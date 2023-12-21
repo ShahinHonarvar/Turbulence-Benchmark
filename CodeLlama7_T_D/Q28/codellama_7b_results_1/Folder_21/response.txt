@@ -1,0 +1,13 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a list of unique characters in the string
+    char_list = list(set(string))
+    # Calculate the ASCII value of each character and store it in a dictionary
+    ascii_dict = {}
+    for char in char_list:
+        ascii_dict[char] = ord(char)
+    # Sort the dictionary by ASCII value
+    sorted_dict = sorted(ascii_dict.items(), key=lambda x: x[1])
+    # Return the 6th smallest ASCII value
+    return sorted_dict[5][0]
+```

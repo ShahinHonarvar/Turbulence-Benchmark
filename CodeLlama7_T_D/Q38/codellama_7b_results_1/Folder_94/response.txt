@@ -1,0 +1,10 @@
+ ```
+def find_subset_of_length_n(set_elements):
+    # Calculate the number of subsets of size n for a given set of elements
+    number_of_subsets = 2**len(set_elements)
+    # Filter out the subsets of size n using a generator expression
+    filtered_subsets = (subset for subset in combinations(set_elements, 93))
+    # Count the number of remaining subsets
+    count = sum(1 for _ in filtered_subsets)
+    return count
+```

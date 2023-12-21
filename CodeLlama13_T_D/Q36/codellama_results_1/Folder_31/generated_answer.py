@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ''
+    for i in range(14, 75):
+        if string[i] > '9' and string[i] < 'K':
+            result += string[:i] + string[i+1:]
+    return result

@@ -1,0 +1,11 @@
+
+def return_vowels(string):
+    # Initialize an empty list to store the vowel characters
+    vowels = []
+    # Loop through each character in the string
+    for char in string:
+        # Check if the character is a vowel and its index is between 59 and 61 (inclusive)
+        if char.lower() in "aeiou" and 59 <= string.index(char) <= 61:
+            # If the condition is true, add the character to the list of vowels
+            vowels.append(char)
+    return vowels

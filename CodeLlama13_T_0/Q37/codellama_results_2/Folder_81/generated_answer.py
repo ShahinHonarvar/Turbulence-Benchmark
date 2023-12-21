@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if 19 <= i <= 92 and ord('8') <= ord(char) <= ord('m'):
+            continue
+        result += char
+    return result

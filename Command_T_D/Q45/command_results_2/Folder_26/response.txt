@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: e9c92f7e-7a36-438b-924e-edd84667b301
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'palindromes_between_indices' that takes one argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 3 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 4 to index 6, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def palindromes_between_indices(s):
+    if len(s) < 4:
+        return set()
+    idx = s[0:4].lower() + s[2:4].lower()
+    idx += idx[::-1].lower()
+    return set(x[idx[idx.index(x) - 1]:idx[idx.index(x) + 1] for x in range(3, min(len(idx), 6), 2))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

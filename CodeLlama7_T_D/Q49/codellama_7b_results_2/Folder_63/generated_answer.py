@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the number of times that the 144th Fibonacci number occurs in the decimal representation of the integer
+    num_fib_occurrences = decimal_integer.bit_length() // 144
+    # Check if the number of occurrences is a multiple of 144
+    return num_fib_occurrences % 144 == 0

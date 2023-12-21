@@ -1,0 +1,14 @@
+
+def palindrome_of_length_n(string):
+    # Define the pattern for a palindrome of length n
+    pattern = r"(\w*)(?<=\w)(\w*)(\w*)"
+    # Find all matches in the string
+    matches = re.finditer(pattern, string)
+    # Create an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the matches and add each palindrome to the set
+    for match in matches:
+        palindrome = match.group(1) + match.group(3)
+        if len(palindrome) == 416:
+            palindromes.add(palindrome)
+    return palindromes

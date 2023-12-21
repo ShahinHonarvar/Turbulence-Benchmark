@@ -1,0 +1,6 @@
+
+def find_original_set(s1, s2, ..., s42):
+    result = set()
+    for arg in (s1, s2, ..., s42):
+        result |= arg
+    return result

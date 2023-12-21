@@ -1,0 +1,13 @@
+
+def sum_in_range(my_list):
+    # Initialize the sum to 0
+    total = 0
+    # Loop through the list of integers
+    for i in my_list:
+        # Check if the integer is between 10 and 97, both inclusive
+        if 10 <= i <= 97:
+            # Add the integer to the sum
+            total += i
+
+    # Return the sum of all integers from the given list that are between 10 and 97, both inclusive. If the given list does not contain such integers, the function should return 0.
+    return total

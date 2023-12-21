@@ -1,0 +1,19 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with sum -77
+    submatrices = []
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Create a copy of the matrix
+            submatrix = np.copy(matrix)
+            # Remove all elements from the submatrix except for the element at position (i, j)
+            submatrix[submatrix != 0] = -77
+            # Check if the sum of all integers in the submatrix is equal to -77
+            if np.sum(submatrix) == -77:
+                # Add the submatrix to the list of submatrices with sum -77
+                submatrices.append(submatrix)
+    # Return the list of submatrices with sum -77, or an empty list if no such submatrix is found
+    return submatrices
+```

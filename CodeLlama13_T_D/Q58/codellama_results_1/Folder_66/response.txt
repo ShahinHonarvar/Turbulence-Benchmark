@@ -1,0 +1,11 @@
+```
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows - 3):
+        for j in range(cols - 3):
+            submat = matrix[i:i + 4, j:j + 4]
+            if np.all(submat == 42):
+                count += 1
+    return count
+```

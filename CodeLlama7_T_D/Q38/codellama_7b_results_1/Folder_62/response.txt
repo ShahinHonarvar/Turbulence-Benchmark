@@ -1,0 +1,16 @@
+ ```
+def find_subset_of_length_n(set_of_elements):
+    number_of_subsets = 0
+    for i in range(2**len(set_of_elements)):
+        binary_representation = bin(i)[2:]
+        if len(binary_representation) == 86:
+            subset = []
+
+            for j in range(len(binary_representation)):
+                if binary_representation[j] == "1":
+                    subset.append(set_of_elements[j])
+
+            number_of_subsets += 1
+
+    return number_of_subsets
+```

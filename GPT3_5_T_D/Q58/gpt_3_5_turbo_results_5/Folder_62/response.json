@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    m, n = matrix.shape\n    count = 0\n    for i in range(m):\n        for j in range(n):\n            for k in range(i, m):\n                for l in range(j, n):\n                    submatrix = matrix[i:k+1, j:l+1]\n                    if np.sum(submatrix) == 186 * submatrix.size:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689888423,
+  "id": "chatcmpl-7eVSpF0hKtWW5TLn5q7fo6haXmIG4",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 111,
+    "total_tokens": 214
+  }
+}

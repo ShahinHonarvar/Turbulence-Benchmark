@@ -1,0 +1,58 @@
+[cohere.Generation {
+	id: 64d3b7c9-9cc5-4cb8-88a6-dbcbab2e661e
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 70. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+def all_left_truncatable_prime(tup):
+    x = tup[70]
+    l = []
+    for y in range(2, x+1):
+        s = str(y)
+        i = 1
+        while i < len(s):
+            if s[i] == '0':
+                break
+            elif s[i] == '2':
+                j = 2
+                while j < len(s):
+                    if s[j] == '5':
+                        break
+                    j += 1
+                if j == len(s):
+                    l.append(y)
+                    break
+            elif s[i] == '3':
+                j = 3
+                while j < len(s):
+                    if s[j] == '0':
+                        break
+                    j += 1
+                if j == len(s):
+                    l.append(y)
+                    break
+            elif s[i] == '5':
+                j = 5
+                while j < len(s):
+                    if s[j] == '0':
+                        break
+                    j += 1
+                if j == len(s):
+                    l.append(y)
+                    break
+            elif s[i] == '7':
+                j = 7
+                while j < len(s):
+                    if s[j] == '0':
+                        break
+                    j += 1
+                if j == len(s):
+                    l.append(y)
+                    break
+            i += 1
+    return l
+```
+	likelihood: None
+	token_likelihoods: None
+}]

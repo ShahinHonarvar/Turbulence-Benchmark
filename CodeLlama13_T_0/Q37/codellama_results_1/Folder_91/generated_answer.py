@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 7 or i > 8:
+            result += char
+        elif char >= "B" and char <= "H":
+            continue
+        else:
+            result += char
+    return result

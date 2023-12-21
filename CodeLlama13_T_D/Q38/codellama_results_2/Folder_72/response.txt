@@ -1,0 +1,9 @@
+```python
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 16])
+
+def powerset(iterable):
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+```
+Note that this implementation uses the `powerset` function from the `itertools` module and the `combinations` function from the `itertools` module. The `chain.from_iterable` function is used to flatten the resulting list of tuples into a single list.

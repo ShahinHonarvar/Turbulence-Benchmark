@@ -1,0 +1,15 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Check if the input string is a valid ASCII string
+if not all(ord(c) < 128 for c in string):
+raise ValueError("Input string contains non-ASCII characters")
+
+# Extract the characters between indices 5 to 89, both inclusive
+characters = [string[i] for i in range(5, 90)]
+
+# Sort the extracted characters by their ASCII values
+sorted_characters = sorted(characters, key=ord)
+
+# Return the 13th smallest ASCII value among the sorted characters
+return sorted_characters[12]
+```

@@ -1,0 +1,24 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the left-truncatable prime numbers less than x
+    lst = []
+
+    # Iterate from 2 to x - 1, checking if each number is a prime number and a left-truncatable prime number
+    for i in range(2, x):
+
+        # Check if i is a prime number using the Sieve of Eratosthenes
+        is_prime = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                is_prime = False
+                break
+
+        # If i is a prime number and a left-truncatable prime number, add it to the list
+        if is_prime:
+            lst.append(i)
+
+    # Sort the list in descending order
+    lst.sort(reverse=True)
+
+    # Return the sorted list of all left-truncatable prime numbers less than x
+    return lst

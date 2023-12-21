@@ -1,0 +1,27 @@
+ ```
+def palindromes_between_indices(string):
+    # Define the range of indices to consider
+    start_index = 4
+    end_index = 5
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the string
+    for i in range(start_index, end_index + 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Check if the current character is a vowel
+            if string[i].lower() in ["a", "e", "i", "o", "u"]:
+                # If the current character is a vowel, check if there are any other vowels in the range (start_index, end_index + 1)
+                for j in range(start_index, end_index + 1):
+                    # Check if the current index is equal to i
+                    if j == i:
+                        continue
+
+                    # Check if the character at the current index is a vowel
+                    if string[j].lower() in ["a", "e", "i", "o", "u"]:
+                        # If there are any other vowels in the range, add the palindrome to the set of palindromes
+                        palindromes.add(string[start_index - 1:end_index + 1])
+                        break
+
+    return palindromes
+```

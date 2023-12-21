@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef prime_factors(lst):\n    def factors(n):\n        i = 2\n        factors = set()\n        while i * i <= n:\n            if n % i:\n                i += 1\n            else:\n                n //= i\n                factors.add(i)\n        if n > 1:\n            factors.add(n)\n        return factors\n\n    try:\n        return factors(lst[47])\n    except IndexError:\n        return \"Error: Index out of range\"\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690068843,
+  "id": "chatcmpl-7fGOpJfuJKVXqjtnRqvcLtcdYMxGG",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 99,
+    "prompt_tokens": 84,
+    "total_tokens": 183
+  }
+}

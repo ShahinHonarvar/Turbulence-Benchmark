@@ -1,0 +1,13 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes of lengths between 13 and 42
+    palindromes = []
+    for i in range(13, 43):
+        for j in range(len(string) - i + 1):
+            substring = string[j:j+i]
+            if substring == substring[::-1]:
+                palindromes.append(substring)
+    # Filter out palindromes that don't occur between index 44 and 99
+    return set([palindrome for palindrome in palindromes
+                if 44 <= string.index(palindrome) <= 99])
+```

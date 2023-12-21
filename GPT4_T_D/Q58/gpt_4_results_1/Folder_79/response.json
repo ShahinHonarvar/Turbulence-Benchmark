@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(main_matrix):\n    row, col = main_matrix.shape\n    count = 0\n    for i in range(row):\n        for j in range(col):\n            for k in range(i, row):\n                for l in range(j, col):\n                    submatrix = main_matrix[i:k+1, j:l+1]\n                    if np.size(submatrix) == 60:\n                        count += 1\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083100,
+  "id": "chatcmpl-7fK6m9PQeJo09ZepMsehq5xlQNrXz",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 111,
+    "total_tokens": 214
+  }
+}

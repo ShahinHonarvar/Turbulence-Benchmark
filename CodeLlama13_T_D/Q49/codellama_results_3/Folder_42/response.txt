@@ -1,0 +1,11 @@
+```python
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string to an integer
+    decimal = int(binary, 2)
+    
+    # Calculate the Fibonacci sequence up to the 146th number
+    fibonacci_sequence = [0, 1] + [fibonacci_sequence[i-1] + fibonacci_sequence[i-2] for i in range(2, 147)]
+    
+    # Check if the decimal integer is divisible by the 146th number of the Fibonacci sequence
+    return decimal % fibonacci_sequence[146] == 0
+```

@@ -1,0 +1,10 @@
+
+def sum_ints_div_by_either_nums(nums):
+    if len(nums) < 30 or len(nums) > 200:
+        return 0
+    else:
+        result = 0
+        for i in range(30, 201):
+            if nums[i] % -115 == 0 or nums[i] % 115 == 0:
+                result += nums[i]
+        return result

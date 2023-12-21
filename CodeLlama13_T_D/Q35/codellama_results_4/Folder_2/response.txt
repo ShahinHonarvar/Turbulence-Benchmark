@@ -1,0 +1,18 @@
+```
+def remove_repeat_chars(string):
+    char_counts = {}
+    for i in range(72, 93):
+        if string[i] in char_counts:
+            char_counts[string[i]] += 1
+        else:
+            char_counts[string[i]] = 1
+    
+    altered_string = ""
+    for i in range(len(string)):
+        if string[i] not in char_counts or char_counts[string[i]] == 0:
+            altered_string += string[i]
+        else:
+            char_counts[string[i]] -= 1
+    
+    return altered_string
+```

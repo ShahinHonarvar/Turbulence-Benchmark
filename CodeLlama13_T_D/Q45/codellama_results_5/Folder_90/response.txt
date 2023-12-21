@@ -1,0 +1,12 @@
+```
+def palindromes_between_indices(string):
+    palindromes = set()
+    for i in range(0, 6):
+        for j in range(i + 4, 6):
+            substr = string[i:j+1]
+            if len(substr) < 4:
+                continue
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes
+```

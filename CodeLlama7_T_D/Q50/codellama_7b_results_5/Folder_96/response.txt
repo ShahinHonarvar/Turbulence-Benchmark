@@ -1,0 +1,13 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Calculate the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(my_list) - 1)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs += 1
+    # Return true if there are at least 98 pairs of anagrams in the list
+    return anagram_pairs >= 98
+```
+This code uses a nested for loop to compare each string in the list with every other string. The inner loop starts at `i + 1`, so that we don't consider each string compared to itself. If two strings are anagrams, they will have the same sorted value after calling the `sorted` function on them. Therefore, if the sorted values of two strings are equal, it means that those strings are anagrams of each other.
+The code also takes into account the requirement that there should be at least 3 characters in the anagram pairs, by checking that both strings being compared have a length greater than or equal to 3 before comparing them.

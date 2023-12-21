@@ -1,0 +1,18 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    total = 0
+    index = 13
+
+    # Iterate through the list until the specified index
+    while index < len(my_list):
+        # Check if the current element is divisible by either -66 or -32
+        if my_list[index] % -66 == 0 or my_list[index] % -32 == 0:
+            # If it is, add it to the total
+            total += my_list[index]
+
+        # Increment the index by 1
+        index += 1
+
+    # Return the total
+    return total

@@ -1,0 +1,8 @@
+
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string)):
+        for j in range(i, len(string)):
+            if string[i:j+1].isalpha():
+                palindromes.add(string[i:j+1])
+    return palindromes

@@ -1,0 +1,51 @@
+ ```
+def all_left_truncatable_prime(tuple):
+	# Initialize a list to store the left-truncatable prime numbers
+	left_truncatable_primes = []
+	# Iterate over the tuple of positive integers
+	for i in range(len(tuple)):
+		# Check if the current number is a prime number
+		if is_prime(tuple[i]):
+			# If the current number is a prime number, check if it is left-truncatable prime
+			if is_left_truncatable_prime(tuple[i]):
+				# If the current number is left-truncatable prime, add it to the list of left-truncatable prime numbers
+				left_truncatable_primes.append(tuple[i])
+
+
+def is_prime(n):
+	# Check if n is a positive integer
+
+	if type(n) != int or n <= 0:
+		return False
+
+
+	# Check if n is divisible by any number except for 1 and itself
+
+	for i in range(2, n):
+		if n % i == 0:
+			return False
+
+
+	# If n is not divisible by any number except for 1 and itself, it is a prime number
+
+	return True
+
+
+def is_left_truncatable_prime(n):
+	# Check if n is a positive integer
+
+	if type(n) != int or n <= 0:
+		return False
+
+
+	# Check if the leading leftmost digit of n is successively removed, then all resulting numbers are prime
+
+	for i in range(len(str(n)))):
+		if not is_prime(int(str(n)[i:])):
+			return False
+
+
+	# If the leading leftmost digit of n is successively removed, then all resulting numbers are prime, n is left-truncatable prime
+
+	return True
+```

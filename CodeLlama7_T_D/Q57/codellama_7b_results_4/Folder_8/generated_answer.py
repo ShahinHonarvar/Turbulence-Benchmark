@@ -1,0 +1,30 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a counter variable to keep track of the sum
+            sum = 0
+
+            # Iterate over each element of the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # Add the current element to the counter variable
+                    sum += matrix[k][l]
+
+                    # If the sum equals -61, add the submatrix to the list of submatrices and break out of the inner loop
+                    if sum == -61:
+                        submatrices.append(matrix[i:i + 3][j:j + 3]])
+                        break
+
+            # If the sum equals -61, add the submatrix to the list of submatrices and break out of the outer loop
+            if sum == -61:
+                break
+
+    return submatrices

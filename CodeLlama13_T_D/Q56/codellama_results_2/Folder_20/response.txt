@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_n(s):
+    n = 50
+    result = []
+    for i in range(len(s) - n + 1):
+        substring = s[i:i+n]
+        if len(set(substring)) == n and all(substring.count(c) == 1 for c in substring):
+            result.append(substring)
+    return result
+```
+This function uses a set to remove duplicates, and checks the length of each substring to ensure it is equal to `n`. It also checks that each character in the substring appears only once using the `all()` method.

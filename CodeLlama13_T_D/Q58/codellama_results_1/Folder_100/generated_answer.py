@@ -1,0 +1,9 @@
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 9):
+        for j in range(len(matrix[0]) - 9):
+            submat = matrix[i:i+10, j:j+10]
+            if np.all(submat == 10):
+                count += 1
+    return count

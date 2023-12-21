@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    for char in s:
+        if s.count(char) > 1:
+            index = s.index(char)
+            while s[index] == char:
+                del s[index]
+                index += 1
+    return s

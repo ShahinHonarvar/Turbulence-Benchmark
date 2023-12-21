@@ -1,0 +1,42 @@
+ def all_left_right_truncatable_prime(x):
+    # initialize an empty list to store the results
+    result = []
+    # loop through the numbers from 1 to x
+    for i in range(1, x + 1):
+        # check if the number is prime
+        if is_prime(i):
+            # check if the number is left-right truncatable prime
+            if is_left_right_truncatable_prime(i):
+                # add the number to the list of results
+                result.append(i)
+    # return the list of results in descending order
+    return sorted(result, reverse=True)
+def is_prime(n):
+    # check if n is an integer greater than 1
+    if not isinstance(n, int) or n < 2:
+        return False
+
+# loop through the numbers from 2 to the square root of n
+for i in range(2, int(n ** 0.5) + 1):
+    # check if i divides n
+    if n % i == 0:
+        # if so, return False
+        return False
+
+# if we reach this point, all tests have passed
+return True
+
+def is_left_right_truncatable_prime(n):
+    # check if the number contains no zeros
+    if "0" in str(n):
+        return False
+
+# check if the number is prime
+if not is_prime(n):
+    return False
+
+# loop through the numbers from 1 to n
+for i in range(1, n + 1):
+    # check if the number can be obtained by successively removing digits from the left and right of n
+    if str(i) == str(n)[-len(str(i)):] or str(i) == str(n)[:len(str(i))]]:
+        return True

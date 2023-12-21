@@ -1,0 +1,10 @@
+
+def sum_even_ints_inclusive(numbers):
+    # Slice the list of integers from index 246 to index 750, both inclusive
+    sliced_list = numbers[246:751]
+    
+    # Use a list comprehension to find all even integers in the sliced list
+    even_ints = [num for num in sliced_list if num % 2 == 0]
+    
+    # Return the sum of the even integers, or 0 if no even integers exist
+    return sum(even_ints) if even_ints else 0

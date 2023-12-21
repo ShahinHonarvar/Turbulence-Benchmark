@@ -1,0 +1,16 @@
+
+def find_original_set(sets):
+    # create a set of all elements in the given sets
+    all_elements = set()
+    for s in sets:
+        all_elements |= s
+
+    # create a new set with the smallest possible size, containing all elements from the given sets
+    original_set = set()
+
+    while len(original_set) < len(all_elements):
+        element = min(all_elements - original_set)
+        if any(element in s for s in sets):
+            original_set.add(element)
+
+    return original_set

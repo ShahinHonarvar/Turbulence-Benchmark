@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least four elements
+    if len(my_list) < 4:
+        return False
+
+    # Get the value of the element at index 3
+    num = my_list[3]
+
+    # Check if the number is a perfect number
+    sum = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum += i
+
+    return sum == num

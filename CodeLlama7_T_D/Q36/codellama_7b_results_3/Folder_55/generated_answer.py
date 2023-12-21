@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate through each character in the input string
+    for char in s:
+        # If the current character is between the indices 3 and 5 (both exclusive) and it is greater than 'Y' and smaller than 's', then remove all occurrences of that character from the input string while keeping the order of all characters intact.
+        if 3 < len(filtered) < 5 and char > 'Y' and char < 's':
+            filtered = filtered.replace(char, "")
+
+        # Otherwise, append the current character to the filtered string
+        else:
+            filtered += char
+
+    # Return the altered string
+    return filtered

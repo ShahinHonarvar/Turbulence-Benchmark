@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string into a list of digits
+    digits = [int(d) for d in binary[::-1]]
+    
+    # Calculate the decimal value of the number represented by the binary representation
+    dec = sum(d * (2 ** i) for i, d in enumerate(digits))
+    
+    # Get the 15th number that occurs in the Fibonacci sequence
+    fib_15 = 610
+    
+    # Return true if the decimal value is divisible by the 15th number, otherwise return false
+    return dec % fib_15 == 0

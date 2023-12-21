@@ -1,0 +1,22 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list and find contiguous integers with product equal to -6
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the current product of consecutive integers
+        current_product = 1
+
+        # Iterate through the remaining elements of the circular list
+        for j in range(i+1, len(circular_list)+1):
+            # Update the current product
+            current_product *= circular_list[j-1]
+
+            # Check if the current product is equal to -6
+            if current_product == -6:
+                # Add the sublist to the list of sublists
+                sublists.append(circular_list[i:j])
+
+    # Return the list of sublists
+    return sublists

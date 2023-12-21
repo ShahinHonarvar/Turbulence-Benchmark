@@ -1,0 +1,16 @@
+
+def filter_chars(string):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    # Iterate over each character in the original string
+    for char in string:
+        # If the current character is between 33 and 36 (exclusive)
+        if 33 < ord(char) < 36:
+            # And it's not greater than '>' or smaller than 'A'
+            if not (ord(char) > ord('>')) and not (ord(char) < ord('A')):
+                # Add the character to the filtered string
+                filtered_string += char
+
+    # Return the filtered string
+    return filtered_string

@@ -1,0 +1,21 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the indices of the string
+    for i in range(4, 9):
+        # Check if the character at index i is not a space
+        if string[i] != " ":
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Iterate over the indices of the string from index i - 1 to index i + 1
+            for j in range(i - 1, i + 2):
+                # Check if the character at index j is not a space
+                if string[j] != " ":
+                    # Add the character at index j to the palindrome string
+                    palindrome += string[j]
+            # Check if the palindrome string is not empty and has a length of at least 3
+            if palindrome != "" and len(palindrome) >= 3:
+                # Add the palindrome string to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

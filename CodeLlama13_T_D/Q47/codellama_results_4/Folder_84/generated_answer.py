@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    # Get the substring from index 23 to index 77, both inclusive
+    substr = string[23:78]
+    
+    # Find all palindromes in the substring that meet the length requirements
+    palindromes = {palindrome for palindrome in substr.split() if len(palindrome) >= 13 and len(palindrome) <= 40}
+    
+    # Return the set of all palindromes with the required properties
+    return palindromes

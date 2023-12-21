@@ -1,0 +1,17 @@
+
+def remove_repeat_chars(s):
+    # Create a dictionary to store the counts of each character in the string
+    char_counts = {}
+    for c in s:
+        if c not in char_counts:
+            char_counts[c] = 1
+        else:
+            char_counts[c] += 1
+    # Iterate through the characters in the string and remove all occurrences of a character that occurs more than once between indices 0 and 2, both exclusive
+    new_string = ""
+    for i in range(3):
+        c = s[i]
+        if char_counts[c] == 1:
+            new_string += c
+
+    return new_string

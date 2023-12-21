@@ -1,0 +1,35 @@
+
+def all_left_truncatable_prime(x):
+    # Create a list of all prime numbers less than x
+    prime_numbers = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    # Return the list of left-truncatable prime numbers
+    return [p for p in prime_numbers if is_left_truncatable_prime(p)]
+# Function to check if a number is prime
+def is_prime(n):
+    if n == 1 or n == 0:
+        return False
+
+    for i in range(2, int(math.sqrt(n)) + 1)):
+        if n % i == 0:
+            return False
+
+    return True
+
+# Function to check if a number is left-truncatable prime
+def is_left_truncatable_prime(n):
+    # If the number contains any 0, it is not left-truncatable prime
+    if '0' in str(n):
+        return False
+
+    # Remove the leading leftmost digit from the number and check if the resulting number is prime
+    while n > 0:
+        if not is_prime(n % 10):
+            return False
+
+        n = int(n / 10))
+
+    # If all checks pass, the number is left-truncatable prime
+    return True

@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or has less than 42 elements
+    if len(my_list) < 42:
+        return False
+
+    # Get the number at index 41
+    perfect_number = my_list[41]
+
+    # Check if the number is a perfect number
+    if perfect_number == sum(range(1, perfect_number))) {
+        return True
+
+    else:
+
+        return False

@@ -1,0 +1,68 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all numbers from 1 to x
+    for num in range(1, x + 1):
+
+        # Check if the number is a prime number using the Sieve of Eratosthenes algorithm
+        if is_prime(num):
+
+            # Check if the number is left-and-right-truncatable prime number by removing the leading and last digits and checking if it remains a prime number
+            if is_left_right_truncatable_prime(num):
+
+                # If the number is a left-and-right-truncatable prime number, add it to the list of prime numbers
+                prime_numbers.append(num)
+
+    # Return the list of all left-and-right-truncatable prime numbers less than or equal to x, sorted in descending order
+    return sorted(prime_numbers, reverse=True)
+
+# Check if a number is a prime number using the Sieve of Eratosthenes algorithm
+def is_prime(num):
+
+    # If the number is less than 2, it is not a prime number
+    if num < 2:
+        return False
+
+    # Initialize a boolean array of size num to store the numbers that have been marked as composite using the Sieve of Eratosthenes algorithm
+    is_composite = [False] * num
+
+    # Mark all even numbers except 2 and 3 as composite
+    for i in range(4, num, 2):
+        is_composite[i] = True
+
+    # Loop through the remaining numbers and mark them as composite if they are divisible by any of the prime numbers less than or equal to the square root of num
+    for i in range(3, int(num ** 0.5) + 1):
+        if not is_composite[i]:
+            for j in range(i * i, num, i):
+                is_composite[j] = True
+
+    # If the number to be checked is composite, return False
+    if is_composite[num - 1]:
+        return False
+
+    # Otherwise, return True
+    else:
+        return True
+
+# Check if a number is a left-and-right-truncatable prime number by removing the leading and last digits and checking if it remains a prime number
+def is_left_right_truncatable_prime(num):
+
+    # If the number to be checked is less than 2, it is not a prime number
+    if num < 2:
+        return False
+
+    # Initialize a list of all digits in the number
+    digits = [int(digit) for digit in str(num)]
+
+    # Remove the leading leftmost digit from the list of digits
+    digits.pop(0)
+
+    # Remove the last rightmost digit from the list of digits
+    digits.pop()
+
+    # Convert the remaining digits back into a number and check if it is a prime number
+    num_without_leading_or_last_digit = int("".join(map(str, digits))))
+
+    return is_prime(num_without_leading_or_last_digit)

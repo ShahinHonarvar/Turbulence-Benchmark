@@ -1,0 +1,34 @@
+ Here is a function called `lists_with_product_equal_n` that takes a circular list of integers as an argument and returns a list of sublists each containing contiguous integers from the given list such that their product equals 8:
+```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Loop through the circular list and find all contiguous sublists whose product is equal to 8
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the current sublist
+        current_sublist = []
+
+        # Loop through the elements of the circular list starting from index i
+        for j in range(i, len(circular_list)):
+            # Add the current element to the current sublist
+            current_sublist.append(circular_list[j])
+
+            # Check if the product of the elements in the current sublist is equal to 8
+            if prod(current_sublist) == 8:
+                # If the product is equal to 8, add the current sublist to the list of sublists
+                sublists.append(current_sublist)
+
+                # Break out of the inner loop since we have found a contiguous sublist whose product is equal to 8
+                break
+
+        # If the product of the elements in the current sublist is not equal to 8, continue looping through the circular list starting from index i + 1
+        else:
+            continue
+
+        # Break out of the outer loop since we have found a contiguous sublist whose product is equal to 8
+        break
+
+# Return the list of sublists containing contiguous integers from the given circular list such that their product equals 8
+return sublists
+```

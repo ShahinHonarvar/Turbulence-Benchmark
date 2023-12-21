@@ -1,0 +1,27 @@
+ def return_nth_smallest_ascii(string):
+    # Get the list of unique characters in the string
+    unique_chars = set(string)
+    # Initialize a dictionary to store the ASCII values of the characters
+
+    ascii_values = {}
+
+    # Iterate over each character in the string
+
+    for char in string:
+        if char in unique_chars:
+            # If the character is already in the dictionary, increase its count by 1
+
+            ascii_values[char] += 1
+
+        else:
+            # If the character is not in the dictionary, add it with a count of 1
+
+            ascii_values[char] = 1
+
+    # Sort the dictionary by ASCII value in ascending order
+
+    sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[0])
+
+    # Return the character with the 12th smallest ASCII value
+
+    return sorted_ascii_values[11][0]

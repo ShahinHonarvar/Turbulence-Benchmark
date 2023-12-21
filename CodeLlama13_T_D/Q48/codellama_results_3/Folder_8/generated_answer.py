@@ -1,0 +1,8 @@
+
+def return_binary_or_hexa(numbers):
+    a, b = numbers[45], numbers[48]
+    sum_of_integers = sum([x for x in range(a + 1, b) if x not in set(numbers[45:48])])
+    if sum_of_integers % 2 == 0:
+        return hex(sum_of_integers)[2:]
+    else:
+        return bin(sum_of_integers)[2:]

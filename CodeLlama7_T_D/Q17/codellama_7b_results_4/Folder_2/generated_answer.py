@@ -1,0 +1,14 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the divisible integers
+    divisible_integers = []
+
+    # Iterate through the list of integers from index 73 to index 86, both inclusive
+    for i in range(73, 87):
+        # Check if the current integer is divisible by both 54 and 82
+        if my_list[i] % 54 == 0 and my_list[i] % 82 == 0:
+            # If it is, add it to the list of divisible integers
+            divisible_integers.append(my_list[i])
+
+    # Return the list of all integers divisible by both 54 and 82 from index 73 to index 86, both inclusive
+    return divisible_integers

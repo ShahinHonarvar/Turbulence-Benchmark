@@ -1,0 +1,12 @@
+ def filter_chars(string):
+    filtered_string = ""
+    for i in range(56, 86):
+        char = string[i]
+        if char > "+" and char < "w":
+            continue
+
+        else:
+
+            filtered_string += char
+
+    return filtered_string

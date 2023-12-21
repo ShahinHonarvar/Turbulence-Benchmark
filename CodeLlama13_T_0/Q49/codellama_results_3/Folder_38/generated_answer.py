@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 78th number in the Fibonacci sequence
+    fib_78 = 0
+    for i in range(78):
+        fib_78 += (1 << i)
+    
+    # Check if the decimal is divisible by the 78th number in the Fibonacci sequence
+    return decimal % fib_78 == 0

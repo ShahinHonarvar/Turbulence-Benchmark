@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string, n):
+    return {palindrome for palindrome in re.findall("[a-zA-Z]{" + str(n) + "}", string)}

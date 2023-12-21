@@ -1,0 +1,19 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for consideration
+    substring = string[18:88]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Define the starting and ending indices of the current character
+        start_index = i
+        end_index = len(substring) - 1 - i
+        # Check if the current character is a palindrome
+        if substring[start_index] == substring[end_index]:
+            # If it is, check if its length falls within the specified range
+            if 12 <= (end_index - start_index + 1) <= 14:
+                # If it does, add it to the set of palindromes
+                palindromes.add(substring[start_index:end_index+1])
+    # Return the set of palindromes found in the specified index range
+    return palindromes

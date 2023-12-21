@@ -1,0 +1,24 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Initialize a dictionary to keep track of the ASCII values and their frequencies
+    ascii_values = {}
+
+    # Iterate over the characters in the string
+    for char in string:
+        # Convert the character to an integer representing its ASCII value
+        ascii_value = ord(char)
+
+        # If the ASCII value is already in the dictionary, increment its frequency by 1
+        if ascii_value in ascii_values:
+            ascii_values[ascii_value] += 1
+
+        # Otherwise, add the ASCII value to the dictionary with a frequency of 1
+        else:
+            ascii_values[ascii_value] = 1
+
+    # Sort the dictionary by key (ASCII value) in ascending order
+    sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[0])
+
+    # Return the character with the 14th smallest ASCII value among those characters in the string that occur between indices 51 to 89, both inclusive
+    return chr(sorted_ascii_values[13][0]))
+```

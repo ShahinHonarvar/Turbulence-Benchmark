@@ -1,0 +1,4 @@
+
+def filter_chars(s):
+    # Create a new string with the same characters as s, but with all occurrences of characters between 476 and 948 removed
+    return "".join([c for c in s if not (476 < ord(c) < 948)]))

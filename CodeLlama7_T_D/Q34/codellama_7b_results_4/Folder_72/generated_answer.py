@@ -1,0 +1,26 @@
+
+def find_original_set(sets):
+    # Create a list of all the elements in the sets
+    all_elements = []
+    for set in sets:
+        all_elements += list(set)
+
+    # Create a dictionary to store the number of times each element appears in the sets
+
+    element_counts = {}
+
+    for element in all_elements:
+        if element not in element_counts:
+            element_counts[element] = 0
+
+        element_counts[element] += 1
+
+    # Create a new set with the smallest number of elements that contains all the given sets
+
+    smallest_set = set()
+
+    for element, count in element_counts.items():
+        if count == len(sets):
+            smallest_set.add(element)
+
+    return smallest_set

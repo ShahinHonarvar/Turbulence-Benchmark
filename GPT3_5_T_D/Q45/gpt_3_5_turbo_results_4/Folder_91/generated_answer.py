@@ -1,0 +1,14 @@
+
+def palindromes_between_indices(string):
+    import itertools
+
+    letters = [c.lower() for c in string[2:7] if c.isalpha()]
+    palindromes = set()
+
+    for length in range(3, len(letters) + 1):
+        for combination in itertools.permutations(letters, length):
+            palindrome = ''.join(combination)
+            if palindrome == palindrome[::-1]:
+                palindromes.add(palindrome)
+
+    return palindromes

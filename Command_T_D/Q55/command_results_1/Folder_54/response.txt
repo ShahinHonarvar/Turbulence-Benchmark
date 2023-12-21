@@ -1,0 +1,42 @@
+[cohere.Generation {
+	id: 1ae13494-9024-4d59-bd25-952585942e54
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals -17. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def lists_with_product_equal_n(nums):
+    res = []
+    for i in range(len(nums) - 1):
+        curr = nums[i]
+        j = i + 1
+        curr_p = 1
+        while j < len(nums) and curr_p == -17:
+            curr_p *= nums[j]
+            j += 1
+        if curr_p == -17:
+            res += [[curr]]
+            curr_p *= nums[i]
+            curr_p *= nums[j - 1]
+            curr_p *= nums[j]
+            curr_p *= nums[j + 1]
+            curr_p *= nums[j + 2]
+            curr_p *= nums[j + 3]
+            curr_p *= nums[j + 4]
+            curr_p *= nums[j + 5]
+            curr_p *= nums[j + 6]
+            curr_p *= nums[j + 7]
+            curr_p *= nums[j + 8]
+            curr_p *= nums[j + 9]
+            curr_p *= nums[j + 10]
+            curr_p *= nums[j + 11]
+            curr_p *= nums[j + 12]
+            curr_p *= nums[j + 13]
+            curr_p *= nums[j + 14]
+            curr_p *= nums[j + 15]
+            curr_p *= nums[j + 16]
+            if curr_p == -17:
+                res += [[curr]]
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

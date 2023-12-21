@@ -1,0 +1,14 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 127 integers each
+    count = 0
+    # Loop over all possible starting indices in the matrix
+    for i in range(matrix.shape[0] - 126):
+        # Loop over all possible ending indices in the matrix
+        for j in range(i + 126, matrix.shape[0]):
+            # Check if the submatrix has 127 integers each
+            if np.count_nonzero(matrix[i:j]) == 127:
+                count += 1
+    return count
+```

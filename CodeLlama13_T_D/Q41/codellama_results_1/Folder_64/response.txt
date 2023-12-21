@@ -1,0 +1,11 @@
+```
+def identical_elements(list1, list2):
+    return {element for element in set(list1[0:4]) & set(list2[0:4])}
+```
+Explanation:
+
+* The function uses a set comprehension to create a set of all elements that occur at least once in both lists between indices 0 and 3.
+* `set(list1[0:4])` creates a set from the first four elements of `list1`.
+* `&` is the intersection operator, which returns the set of all elements that are common to both sets.
+* Similarly, `set(list2[0:4])` creates a set from the first four elements of `list2`, and `&` is applied to obtain the intersection of the two sets.
+* The resulting set is then returned as the output of the function. If no such elements exist in the given lists, an empty set is returned.

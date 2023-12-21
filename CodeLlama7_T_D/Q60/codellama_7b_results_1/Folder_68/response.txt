@@ -1,0 +1,68 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Loop through all integers from 1 to x
+    for i in range(1, x + 1):
+
+        # Check if the integer is a prime number
+        if is_prime(i):
+
+            # Check if the integer is left-and-right-truncatable prime
+            if is_left_right_truncatable_prime(i):
+
+                # Add the integer to the list of prime numbers
+                prime_list.append(i)
+
+    # Sort the list of prime numbers in descending order
+    prime_list.sort(reverse=True)
+
+    # Return the sorted list of prime numbers
+    return prime_list
+
+# Check if an integer is a prime number
+def is_prime(n):
+
+    # Check if n is greater than 1
+    if n > 1:
+
+        # Loop through all integers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+
+            # Check if any integer between 2 and the square root of n divides n
+            if n % i == 0:
+
+                # Return False if any integer between 2 and the square root of n divides n
+                return False
+
+    # If n is greater than 1, return True
+    return True
+
+# Check if an integer is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+
+    # Check if n is a prime number
+    if not is_prime(n):
+
+        # Return False if n is not a prime number
+        return False
+
+    # Initialize an empty string to store the digits of n
+    digits = ""
+
+    # Loop through all digits of n and append them to the string
+    for digit in str(n):
+
+        # Append the current digit to the string
+        digits += digit
+
+    # Check if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+    if is_prime(int(digits[1:])) and is_prime(int(digits[:-1])):
+
+        # Return True if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+        return True
+
+    # Return False if the leading leftmost and last rightmost digits are not simultaneously successively removed down to a one- or two-digit prime
+    return False
+```

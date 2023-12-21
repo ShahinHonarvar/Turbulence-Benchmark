@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return numbers[15] * numbers[99] // gcd(numbers[15], numbers[99])

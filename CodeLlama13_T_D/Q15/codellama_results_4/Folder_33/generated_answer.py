@@ -1,0 +1,3 @@
+
+def sum_odd_ints_inclusive(numbers):
+    return sum(filter(lambda x: x % 2 == 1, numbers[667:775]))

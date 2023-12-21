@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_at_least_n(string):
+    return {palindrome for palindrome in re.findall(r'(?i)[a-z]{138,}', string) if len(palindrome) % 2 == 0}
+```
+This function uses the `re` module to find all substrings that match the regular expression `[a-z]{138,}` (any sequence of English letters with a length greater than or equal to 138), and then checks if each substring is a palindrome by checking if its length is even. If it is not a palindrome, it is discarded from the set. Finally, the function returns the resulting set of palindromes.

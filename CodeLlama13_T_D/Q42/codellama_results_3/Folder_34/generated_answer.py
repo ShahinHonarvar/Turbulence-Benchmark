@@ -1,0 +1,14 @@
+
+def prime_factors(numbers):
+    factor = set()
+    for num in numbers:
+        if num == 0 or num == 1:
+            continue
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                factor.add(i)
+                while num % i == 0:
+                    num //= i
+        if num > 1:
+            factor.add(num)
+    return factor

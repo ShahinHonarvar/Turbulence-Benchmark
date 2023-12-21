@@ -1,0 +1,15 @@
+
+def if_perfect_num(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Check if the element at index 926 exists and is an integer
+    if len(my_list) <= 926 or not isinstance(my_list[926], int):
+        return False
+    # Calculate the sum of the divisors of the number
+    sum_divisors = 0
+    for i in range(1, my_list[926] // 2 + 1):
+        if my_list[926] % i == 0:
+            sum_divisors += i
+    # Check if the sum of the divisors is equal to the number
+    return sum_divisors == my_list[926]

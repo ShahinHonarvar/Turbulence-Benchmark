@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(string):
+    char_list = sorted(string, key=ord)
+    return char_list[-37:]

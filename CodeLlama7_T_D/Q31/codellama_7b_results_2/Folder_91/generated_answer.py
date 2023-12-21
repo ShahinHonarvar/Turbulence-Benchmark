@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    if my_list[6] == 0:
+        return False
+
+    # Calculate the sum of the factors of the number at index 6
+    sum = 0
+    for i in range(1, int(my_list[6]) + 1):
+        if my_list[6] % i == 0:
+            sum += i
+
+    # Check if the sum is equal to the number at index 6
+    if sum == my_list[6]:
+        return True
+
+    else:
+
+        return False

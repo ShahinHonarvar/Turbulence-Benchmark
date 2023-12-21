@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(string):
+    seen = {}
+    for i in range(9):
+        if string[i] in seen:
+            del string[seen[string[i]]:i]
+        else:
+            seen[string[i]] = i + 1
+    return string

@@ -1,0 +1,9 @@
+
+def prime_factors(my_list):
+    prime_factors = set()
+    for i in range(18, len(my_list)):
+        n = my_list[i]
+        for p in range(2, int(n ** 0.5) + 1):
+            if n % p == 0:
+                prime_factors.add(p)
+    return prime_factors

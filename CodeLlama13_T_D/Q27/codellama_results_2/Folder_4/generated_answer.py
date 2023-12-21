@@ -1,0 +1,5 @@
+
+def insert_after_index(mylist):
+    index = 60
+    newlist = mylist[:index+1] + [80, 74] + mylist[index+1:]
+    return newlist

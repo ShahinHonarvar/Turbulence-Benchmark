@@ -1,0 +1,14 @@
+
+def sum_even_ints_inclusive(my_list):
+    # Initialize the sum to 0
+    total = 0
+
+    # Iterate through the list of integers
+    for i in range(14, 65):
+
+        # Check if the current index is even and add it to the total if so
+        if i % 2 == 0:
+            total += my_list[i]
+
+    # Return the sum of all even integers from index 14 to index 64, both inclusive
+    return total

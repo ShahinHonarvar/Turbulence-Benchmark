@@ -1,0 +1,10 @@
+```python
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string)):
+        substring = string[i:i+9]
+        if len(substring) == 9 and all(c.isalpha() for c in substring):
+            if substring == substring[::-1]:
+                palindromes.add(substring)
+    return palindromes
+```

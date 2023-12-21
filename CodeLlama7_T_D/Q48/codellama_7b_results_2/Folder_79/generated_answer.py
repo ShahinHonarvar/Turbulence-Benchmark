@@ -1,0 +1,15 @@
+
+def return_binary_or_hexadecimal(my_tuple):
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 1 and 7
+    sum = 0
+    for i in range(len(my_tuple)):
+        if my_tuple[i] not in my_tuple[1:7]:
+            sum += my_tuple[i]
+    # Return an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if sum == 0:
+        return ""
+    # Otherwise, return either the binary or hexadecimal representation of the sum, depending on whether it is an odd number
+    elif sum % 2 != 0:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:]

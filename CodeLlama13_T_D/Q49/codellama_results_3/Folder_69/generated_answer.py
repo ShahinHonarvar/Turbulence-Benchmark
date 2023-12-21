@@ -1,0 +1,16 @@
+
+def if_decimal_is_divisible(binary_string):
+    num = int(binary_string, 2)
+    fibonacci_seq = []
+    a = b = 0
+    while True:
+        fibonacci_seq.append(a)
+        a, b = b, a + b
+        if len(fibonacci_seq) == 170:
+            break
+    
+    for i in range(len(fibonacci_seq)):
+        if num % fibonacci_seq[i] == 0:
+            return True
+    
+    return False

@@ -1,0 +1,24 @@
+ def return_n_greatest_chars(string, n):
+    """
+    Return the sorted list of exactly n characters of the given string that have the greatest ASCII values. The function should sort the list in ascending order and returns it.
+    Args:
+        string (str): A string of distinct characters.
+        n (int): An integer representing the number of characters to return.
+    Returns:
+        list: A sorted list of exactly n characters of the given string that have the greatest ASCII values.
+    """
+
+    if not isinstance(string, str) or len(string) == 0:
+        raise ValueError("Invalid input for 'string'.")
+
+    if not isinstance(n, int) or n < 1 or n > len(string):
+        raise ValueError("Invalid input for 'n'.")
+
+    greatest_chars = []
+
+    for char in string:
+
+        if len(greatest_chars) < n and ord(char) >= ord(greatest_chars[-1]) if len(greatest_chars) > 0 else True:
+            greatest_chars.append(char)
+
+    return sorted(greatest_chars)

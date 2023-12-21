@@ -1,0 +1,54 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Check if the string is at least three characters long
+        if len(lowercase_string) >= 3:
+            # Create a list of all the anagrams of the string
+            anagram_list = []
+
+            # Iterate over the length of the string
+            for i in range(len(lowercase_string)):
+                # Check if the substring is at least three characters long
+                if len(lowercase_string[i:]) >= 3:
+                    # Create a list of all the anagrams of the substring
+                    anagram_list_temp = []
+
+                    # Iterate over the length of the substring
+                    for j in range(len(lowercase_string[i:])):
+                        # Check if the subsubstring is at least three characters long
+                        if len(lowercase_string[i:][j:]) >= 3:
+                            # Create a list of all the anagrams of the subsubstring
+                            anagram_list_temp_temp = []
+
+                            # Iterate over the length of the subsubstring
+                            for k in range(len(lowercase_string[i:][j:])):
+                                # Check if the substring is a palindrome
+                                if lowercase_string[i:][j:] == lowercase_string[i:][j:][::-1]:
+                                    # Add the anagram to the list
+                                    anagram_list_temp_temp.append(lowercase_string[i:][j:])
+
+                            # Check if there are at least 96 pairs of anagrams in the subsubstring
+                            if len(anagram_list_temp_temp) >= 96:
+                                # Add the anagram to the list
+                                anagram_list_temp.append(lowercase_string[i:][j:])
+
+                    # Check if there are at least 96 pairs of anagrams in the substring
+                    if len(anagram_list_temp) >= 96:
+                        # Add the anagram to the list
+                        anagram_list.append(lowercase_string[i:])
+
+            # Check if there are at least 96 pairs of anagrams in the string
+            if len(anagram_list) >= 96:
+                # Increment the count for this string
+                anagram_counts[string] = anagram_counts.get(string, 0) + 1
+
+    # Check if there are at least 96 pairs of anagrams in any of the strings
+    return len(anagram_counts) >= 96
+```

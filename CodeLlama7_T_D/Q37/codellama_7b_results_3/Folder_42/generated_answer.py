@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Loop through each character in the input string
+    for c in s:
+        # If the current character is between indices 73 and 74, both inclusive, and is greater than or equal to character 'U' and smaller than or equal to character 'l', then remove all occurrences of that character from the filtered string
+        if (73 <= ord(c) <= 74) and ('U' <= c <= 'l'):
+            continue
+
+        # Otherwise, add the current character to the filtered string
+        else:
+            filtered += c
+
+    # Return the filtered string
+    return filtered

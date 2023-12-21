@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(s):
+    new_str = ''
+    for i in range(34, 69):
+        if s[i] != new_str[-1]:
+            new_str += s[i]
+    return new_str

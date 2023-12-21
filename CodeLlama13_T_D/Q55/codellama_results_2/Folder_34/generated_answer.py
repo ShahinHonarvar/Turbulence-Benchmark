@@ -1,0 +1,8 @@
+
+def lists_with_product_equal_n(list):
+    result = []
+    for i in range(len(list)):
+        for j in range(i, len(list)):
+            if (list[i] * list[j]) == -81:
+                result.append([list[i], list[j]])
+    return result

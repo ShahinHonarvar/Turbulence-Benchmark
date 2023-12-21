@@ -1,0 +1,5 @@
+
+def return_nth_smallest_ascii(s):
+    n = 4
+    ascii_values = sorted([ord(c) for c in s[0:3]])
+    return chr(ascii_values[n-1])

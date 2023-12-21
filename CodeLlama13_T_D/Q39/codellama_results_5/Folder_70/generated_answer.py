@@ -1,0 +1,3 @@
+
+def return_n_greatest_chars(string):
+    return sorted([c for c in string if c not in {'a', 'e'}], key=ord, reverse=True)[:2]

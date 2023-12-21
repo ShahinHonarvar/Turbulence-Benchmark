@@ -1,0 +1,10 @@
+ def filter_chars(s):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+    # Iterate through each character in the given string
+    for char in s:
+        # If the current character is between indices 164 and 706, both inclusive, and is greater than or equal to character 'O' and smaller than or equal to character '}', add it to the filtered_chars list.
+        if (164 <= s.find(char) <= 706) and (ord('O') <= ord(char) <= ord('}')):
+            filtered_chars.append(char)
+    # Join all the filtered characters together using an empty string as the glue between them, and return the resulting altered string.
+    return ''.join(filtered_chars)

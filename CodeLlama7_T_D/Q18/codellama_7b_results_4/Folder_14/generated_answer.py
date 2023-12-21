@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the range of indices
+    sum = 0
+    start_idx = 7
+    end_idx = 9
+    # Iterate through the list in the specified range
+    for i in range(start_idx, end_idx + 1):
+        # If the current index is divisible by either 2 or 3
+        if my_list[i] % 2 == 0 or my_list[i] % 3 == 0:
+            # Add the current value to the sum
+            sum += my_list[i]
+    # Return the sum of all integers divisible by either 2 or 3 from index 7 to index 9, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum

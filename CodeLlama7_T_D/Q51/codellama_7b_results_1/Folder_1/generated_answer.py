@@ -1,0 +1,20 @@
+
+def if_contains_anagrams(str_list):
+    # Create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    for i in range(len(str_list)):
+        # Get the string from the list
+        str1 = str_list[i]
+
+        for j in range(i + 1, len(str_list))):
+            # Get the second string from the list
+            str2 = str_list[j]
+
+            # Check if the strings are anagrams of each other
+            if sorted(str1) == sorted(str2):
+                # If they are, add them to the dictionary of anagram pairs
+                anagram_pairs[(i, j)] = (str1, str2)
+
+    # Check if there are at most 30 pairs of anagrams in the list
+    return len(anagram_pairs) <= 30

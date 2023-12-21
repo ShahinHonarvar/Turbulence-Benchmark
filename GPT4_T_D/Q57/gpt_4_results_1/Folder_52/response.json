@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, columns = matrix.shape\n    submatrices = []\n    for row_size in range(1, rows + 1):\n        for column_size in range(1, columns + 1):\n            for i in range(rows - row_size + 1):\n                for j in range(columns - column_size + 1):\n                    submatrix = matrix[i : i + row_size, j : j + column_size]\n                    if submatrix.sum() == 100:\n                        submatrices.append(submatrix)\n    return submatrices\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081426,
+  "id": "chatcmpl-7fJfm6j92GlQ1RINhNb3uNGSY4GjU",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 130,
+    "prompt_tokens": 121,
+    "total_tokens": 251
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    if not isinstance(matrix, np.ndarray):\n        return 0\n\n    row, col = matrix.shape\n    count = 0\n\n    for r in range(row):\n        for c in range(col):\n            for x in range(r, row):\n                for y in range(c, col):\n                    if (x - r + 1) * (y - c + 1) == 144:\n                        count += 1\n\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690986774,
+  "id": "chatcmpl-7j7CAHf66ZUXw3S1H3r3vmquZWZIA",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 111,
+    "total_tokens": 222
+  }
+}

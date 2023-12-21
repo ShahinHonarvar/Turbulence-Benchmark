@@ -1,0 +1,28 @@
+[cohere.Generation {
+	id: 863c836f-e941-446a-8cac-25e8c591633c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'prime_factors' that takes one argument, a list of positive integers, and returns the set of all prime factors of the integer at index 37.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def prime_factors(nums):
+    fac = set()
+    for n in nums:
+        if n <= 1:
+            continue
+        elif n <= 3:
+            fac.add(n)
+        elif n % 2 == 0 or n % 3 == 0:
+            continue
+        for i in range(5, int(n ** .5) + 1, 6):
+            if n % i == 0:
+                break
+            else:
+                fac.add(i)
+                while n % i == 0:
+                    n //= i
+        if n > 2:
+            fac.add(n)
+    return fac
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,27 @@
+ ```
+def all_substring_of_size_n(input_string):
+# Check if the input string is empty or None
+if not input_string:
+return []
+
+# Initialize an empty list to store the substrings
+substrings = []
+
+# Loop through each character in the input string
+for i in range(len(input_string)):
+# Get the substring starting from the current character and of size 47
+substring = input_string[i:i+47]
+
+# Check if the substring is empty or None
+if not substring:
+continue
+
+
+# Check if the substring has duplicate characters
+if len(set(substring)) == len(substring):
+substrings.append(substring)
+
+
+# Return the list of all distinct substrings of size 47 with no duplicate characters
+return substrings
+```

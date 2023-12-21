@@ -1,0 +1,16 @@
+ def palindromes_of_specific_lengths(string, indices):
+    # Define the list of palindrome lengths to consider
+    palindrome_lengths = range(12, 21)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the indices specified in the input string
+    for index in indices:
+        # Extract the substring starting from the current index and continuing for 20 characters
+        substring = string[index:index+20]
+        # Iterate over each palindrome length to consider
+        for length in palindrome_lengths:
+            # Check if the current substring contains a palindrome of the specified length
+            if len(substring) >= length and substring == substring[::-1]:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(substring)
+    return palindromes

@@ -1,0 +1,3 @@
+
+def find_original_set(arg1, arg2, ..., arg84):
+    return set().union(*[arg1, arg2, ..., arg84])

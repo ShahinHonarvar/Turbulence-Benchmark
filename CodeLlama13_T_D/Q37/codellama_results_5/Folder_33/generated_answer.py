@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([char for char in string if not (722 <= ord(char) <= 832 and 'K' <= char <= 'm')])

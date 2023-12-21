@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef sum_submat(mat):\n    s = {}\n    m, n = np.shape(mat)\n    for x in range(m + 1):\n        for y in range(n + 1):\n            if x == 0 or y == 0:\n                s[x, y] = 0\n            else:\n                s[x, y] = mat[x - 1][y - 1] + s[x, y - 1] + s[x - 1, y] - s[x - 1, y - 1]\n    return s\n\ndef find_sum(sums, m, n, s):\n    for size_x in range(1, m + 1):\n        for size_y in range(1, n + 1):\n            for x in range(size_x, m + 1):\n                for y in range(size_y, n + 1):\n                    if sums[x, y] - sums[x - size_x, y] - sums[x, y - size_y] + sums[x - size_x, y - size_y] == s:\n                        yield(np.array(mat)[x - size_x:x, y - size_y:y])\n\ndef submatrix_with_particular_sum(mat):\n    sums = sum_submat(mat)\n    m, n = np.shape(mat)\n    return list(find_sum(sums, m, n, 616))\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691092472,
+  "id": "chatcmpl-7jYgyXitKWkZ3EqSXFKVUrjaopq8a",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 291,
+    "prompt_tokens": 121,
+    "total_tokens": 412
+  }
+}

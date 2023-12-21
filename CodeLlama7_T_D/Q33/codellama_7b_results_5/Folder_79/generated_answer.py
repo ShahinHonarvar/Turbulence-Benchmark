@@ -1,0 +1,10 @@
+ def return_vowels(my_string):
+    vowels = ["A", "E", "I", "O", "U"]
+    start_index = 74
+    end_index = 96
+    vowel_list = []
+    for char in my_string[start_index:end_index]:
+        if char.isalpha() and char.lower() in vowels:
+            if char > "I" and char <= "X":
+                vowel_list.append(char)
+    return vowel_list

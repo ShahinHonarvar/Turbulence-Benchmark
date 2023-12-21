@@ -1,0 +1,7 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) <= 19:
+        return False
+    else:
+        num = numbers[19]
+        return num == sum(filter(lambda x: x < num and num % x == 0, range(1, int(num ** 0.5) + 1)))

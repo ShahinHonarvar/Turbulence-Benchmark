@@ -1,0 +1,14 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each index in the specified range
+    for i in range(4, 10):
+        # Check if the character at the current index is a letter
+        if string[i].isalpha():
+            # Form a palindrome by reversing the characters between the current index and index 9
+            palindrome = string[i:9][::-1] + string[i:9]
+            # Add the formed palindrome to the set of palindromes
+            palindromes.add(palindrome)
+    # Return the set of palindromes of length at least 5 that can be created from the English letters in the given string between index 4 and index 9, inclusive
+    return palindromes

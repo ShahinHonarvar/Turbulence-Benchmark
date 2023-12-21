@@ -1,0 +1,3 @@
+
+def prime_factors(mylist):
+    return {prime for prime in range(2, mylist[132]) if mylist[132] % prime == 0}

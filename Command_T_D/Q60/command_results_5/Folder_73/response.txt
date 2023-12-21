@@ -1,0 +1,137 @@
+[cohere.Generation {
+	id: a2f93736-f5db-4e0b-9454-a5fceb6bf673
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 97. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+import sys
+
+sys.setrecursionlimit(10**6)
+
+_PRIMES = {}
+
+
+def prime(s):
+    m = re.fullmatch(r"^[2-9][0-9]0$", s)
+    if m:
+        return True
+    return False
+
+
+def prime_list(s):
+    m = re.fullmatch(r"^[2-9][0-9]0$", s)
+    if m:
+        return True
+    return False
+
+
+def build_primes():
+    _PRIMES[2] = True
+    _PRIMES[3] = True
+    _PRIMES[5] = True
+    _PRIMES[7] = True
+    _PRIMES[11] = True
+    _PRIMES[13] = True
+    _PRIMES[17] = True
+    _PRIMES[19] = True
+    _PRIMES[23] = True
+    _PRIMES[29] = True
+    _PRIMES[31] = True
+    _PRIMES[37] = True
+    _PRIMES[41] = True
+    _PRIMES[43] = True
+    _PRIMES[47] = True
+    _PRIMES[53] = True
+    _PRIMES[59] = True
+    _PRIMES[61] = True
+    _PRIMES[67] = True
+    _PRIMES[71] = True
+    _PRIMES[73] = True
+    _PRIMES[79] = True
+    _PRIMES[83] = True
+    _PRIMES[89] = True
+    _PRIMES[97] = True
+    _PRIMES[101] = True
+    _PRIMES[103] = True
+    _PRIMES[107] = True
+    _PRIMES[109] = True
+    _PRIMES[113] = True
+    _PRIMES[127] = True
+    _PRIMES[129] = True
+    _PRIMES[137] = True
+    _PRIMES[139] = True
+    _PRIMES[149] = True
+    _PRIMES[151] = True
+    _PRIMES[157] = True
+    _PRIMES[163] = True
+    _PRIMES[167] = True
+    _PRIMES[173] = True
+    _PRIMES[179] = True
+    _PRIMES[181] = True
+    _PRIMES[191] = True
+    _PRIMES[193] = True
+    _PRIMES[197] = True
+    _PRIMES[199] = True
+    _PRIMES[211] = True
+    _PRIMES[223] = True
+    _PRIMES[227] = True
+    _PRIMES[229] = True
+    _PRIMES[233] = True
+    _PRIMES[239] = True
+    _PRIMES[241] = True
+    _PRIMES[251] = True
+    _PRIMES[257] = True
+    _PRIMES[263] = True
+    _PRIMES[269] = True
+    _PRIMES[ 271 ] = True
+    _PRIMES[ 277 ] = True
+    _PRIMES[ 283 ] = True
+    _PRIMES[ 293 ] = True
+    _PRIMES[ 307 ] = True
+    _PRIMES[ 311 ] = True
+    _PRIMES[ 313 ] = True
+    _PRIMES[ 317 ] = True
+    _PRIMES[ 331 ] = True
+    _PRIMES[ 337 ] = True
+    _PRIMES[ 347 ] = True
+    _PRIMES[ 349 ] = True
+    _PRIMES[ 353 ] = True
+    _PRIMES[ 359 ] = True
+    _PRIMES[ 367 ] = True
+    _PRIMES[ 373 ] = True
+    _PRIMES[ 379 ] = True
+    _PRIMES[ 383 ] = True
+    _PRIMES[ 389 ] = True
+    _PRIMES[ 397 ] = True
+    _PRIMES[ 401 ] = True
+    _PRIMES[ 409 ] = True
+    _PRIMES[ 419 ] = True
+    _PRIMES[ 421 ] = True
+    _PRIMES[ 431 ] = True
+    _PRIMES[ 433 ] = True
+    _PRIMES[ 439 ] = True
+    _PRIMES[ 443 ] = True
+    _PRIMES[ 449 ] = True
+    _PRIMES[ 457 ] = True
+    _PRIMES[ 461 ] = True
+    _PRIMES[ 463 ] = True
+    _PRIMES[ 467 ] = True
+    _PRIMES[ 479 ] = True
+    _PRIMES[ 487 ] = True
+    _PRIMES[ 499 ] = True
+    _PRIMES[ 503 ] = True
+    _PRIMES[ 509 ] = True
+    _PRIMES[ 521 ] = True
+    _PRIMES[ 607 ] = True
+    _PRIMES[ 613 ] = True
+    _PRIMES[ 617 ] = True
+    _PRIMES[ 619 ] = True
+    _PRIMES[ 631 ] = True
+    _PRIMES[ 637 ] = True
+    _PRIMES[ 643 ] = True
+    _PRIMES[ 647 ] = True
+    _PRIMES[ 653 ] = True
+    _PRIMES[ 659 ]
+	likelihood: None
+	token_likelihoods: None
+}]

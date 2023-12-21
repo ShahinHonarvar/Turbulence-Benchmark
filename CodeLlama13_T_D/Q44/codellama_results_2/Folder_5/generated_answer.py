@@ -1,0 +1,15 @@
+
+def composite_nums_between_indices(num_list):
+    # Create a set to store all composite numbers in the list
+    composite_set = set()
+    
+    # Iterate over the list of positive integers
+    for i, num in enumerate(num_list):
+        # Check if the number is between indices 1 and 5 (inclusive)
+        if 1 <= i <= 5:
+            # Check if the number is composite
+            if len(set(range(2, int(num ** 0.5) + 1))) > 1:
+                # Add the number to the set of composite numbers
+                composite_set.add(num)
+    
+    return composite_set

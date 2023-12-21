@@ -1,0 +1,24 @@
+ ```
+def all_even_ints_exclusive(my_list):
+    # Find the first even integer in the list
+    first_even = next((i for i in my_list if i % 2 == 0), None)
+    # If there are no even integers in the list, return an empty list
+    if first_even is None:
+        return []
+
+    # Find the last even integer in the list
+
+    last_even = next((i for i in my_list[::-1] if i % 2 == 0), None)
+    # If there are no even integers in the list, return an empty list
+    if last_even is None:
+        return []
+
+    # Return a list of all even integers from index 1 to index 7, both exclusive
+
+    return [i for i in my_list[first_even::2] if i % 2 == 0]
+
+# Test the function with a list of integers
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+#print(all_even_ints_exclusive(my_list)) # Output: [2, 4, 6]
+```

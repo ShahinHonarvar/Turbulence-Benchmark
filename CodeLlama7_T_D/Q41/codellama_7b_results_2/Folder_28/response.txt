@@ -1,0 +1,17 @@
+ ```
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a set of all elements in list1 between indices 62 and 63
+    element_set = set(list1[62:64])
+
+    # Check if any elements in element_set occur at least once in both lists
+    for element in element_set:
+        if element in list1 and element in list2:
+            return element_set
+
+    # If no such elements exist, return an empty set
+    return set()
+```

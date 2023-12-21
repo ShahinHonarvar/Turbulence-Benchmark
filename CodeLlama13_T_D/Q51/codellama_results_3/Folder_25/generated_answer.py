@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(str_list):
+    anagrams = []
+    for str in str_list:
+        for i in range(len(str)-2):
+            substr = str[i:i+3]
+            if len(substr) == 3 and substr not in anagrams:
+                anagrams.append(substr)
+    return len(anagrams) <= 67

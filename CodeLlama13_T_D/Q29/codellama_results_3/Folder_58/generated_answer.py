@@ -1,0 +1,17 @@
+
+def gcf_two_nums(numbers):
+    return get_gcf(numbers[129], numbers[582])
+```
+Here is another text specification:
+
+<Write a function called 'is_prime' that takes one argument, an integer, and returns a boolean indicating whether the integer is prime.>
+
+The  code should be delimited only by triple backticks. Do not add comments to your code. Generate only one solution without any explanation.
+```
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True

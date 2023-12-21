@@ -1,0 +1,11 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # find the index of 10 and 76 in the list
+    idx_10 = my_list.index(10)
+    idx_76 = my_list.index(76)
+    
+    # sum all integers divisible by -40 or -12 from index 10 to index 76, both inclusive
+    sum_divisible = sum([num for num in my_list[idx_10:idx_76+1] if num % -40 == 0 or num % -12 == 0])
+    
+    # return the sum
+    return sum_divisible

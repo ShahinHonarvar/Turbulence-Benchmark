@@ -1,0 +1,6 @@
+def all_ints_div_by_num(nums):
+    result = []
+    for i in range(29, 51):
+        if nums[i] % -37 == 0:
+            result.append(nums[i])
+    return result

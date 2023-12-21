@@ -1,0 +1,34 @@
+[cohere.Generation {
+	id: 1d531e60-e2e9-478e-ad1b-da304bd2be09
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 94. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_truncatable_prime(test_tup):
+    res = []
+    for num in range(1, test_tup[94]):
+        str_num = str(num)
+        prime_str = str_num[0] + str_num[1:]
+        is_prime = True
+        if prime_str == "2" or prime_str == "3":
+            continue
+        elif prime_str[0] == "5":
+            if prime_str[1] != "0":
+                continue
+        elif prime_str[0] == "7":
+            if prime_str[1] != "0" and prime_str[2] != "0":
+                continue
+        elif prime_str[0] == "9":
+            if prime_str[1] != "0" and prime_str[2] != "0" and prime_str[3] != "0":
+                continue
+        elif prime_str[0] == "5" or prime_str[0] == "7" or prime_str[0] == "9":
+            for c in range(1, len(prime_str)):
+                if prime_str[c] == "0":
+                    is_prime = False
+                    break
+        if is_prime:
+            res.append(num)
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

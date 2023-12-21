@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(my_list):
+    anagrams = set()
+    for s in my_list:
+        t = ''.join(sorted(s.lower()))
+        if len(t) >= 3 and t not in anagrams:
+            anagrams.add(t)
+    return len(anagrams) <= 92
+```
+This function first creates a set called `anagrams` to store the anagrams of the strings in the list. Then it iterates over each string `s` in the list and sorts its lowercase characters using `sorted`. The sorted characters are then joined into a single string and added to the set if the length of the string is at least 3 and the sorted string has not already been seen (i.e., it is not an anagram of any other string). Finally, the function returns true if there are at most 92 pairs of anagrams in the list; otherwise, it returns false.

@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(31, 73):
+        if s[i].isalpha() and s[i] > 'M' and s[i] < 'j':
+            s = s.replace(s[i], '')
+    return s

@@ -1,0 +1,20 @@
+ ```
+def find_original_set(sets):
+    # Create a copy of the sets list
+    original_sets = sets[:]
+    # Initialize an empty set as the smallest set
+    smallest_set = set()
+
+    while len(original_sets) > 0:
+        # Get the first set from the original sets list
+        current_set = original_sets.pop(0)
+        # Add the elements of the current set to the smallest set
+        smallest_set |= current_set
+
+        # Remove any other sets that are subsets of the current set
+        for i in range(len(original_sets)):
+            if current_set.issubset(original_sets[i]):
+                original_sets.pop(i)
+
+    return smallest_set
+```

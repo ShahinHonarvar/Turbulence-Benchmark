@@ -1,0 +1,13 @@
+ def filter_chars(string):
+    # Initialize a new empty string
+    result = ""
+    # Iterate through each character in the input string
+    for char in string:
+        # If the current character is between 86 and 93 (exclusive) and is greater than 'E' and smaller than '~', remove all occurrences of this character from the input string
+        if 86 < ord(char) < 94 and char > "E" and char < "~":
+            # Replace all occurrences of the current character with an empty string
+            result = result.replace(char, "")
+        else:
+            # Add the current character to the result string
+            result += char
+    return result

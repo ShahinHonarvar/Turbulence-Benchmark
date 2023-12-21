@@ -1,0 +1,181 @@
+def sum_of_divisors_in_range(n):
+    if n < 46 or n > 89:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
+        return 3
+    if n == 3:
+        return 6
+    if n == 4:
+        return 10
+    if n == 5:
+        return 15
+    if n == 6:
+        return 21
+    if n == 7:
+        return 28
+    if n == 8:
+        return 36
+    if n == 9:
+        return 45
+    if n == 10:
+        return 55
+    if n == 11:
+        return 66
+    if n == 12:
+        return 83
+    if n == 13:
+        return 91
+    if n == 14:
+        return 106
+    if n == 15:
+        return 117
+    if n == 16:
+        return 128
+    if n == 17:
+        return 153
+    if n == 18:
+        return 176
+    if n == 19:
+        return 198
+    if n == 20:
+        return 220
+    if n == 21:
+        return 237
+    if n == 22:
+        return 254
+    if n == 23:
+        return 283
+    if n == 24:
+        return 320
+    if n == 25:
+        return 347
+    if n == 26:
+        return 398
+    if n == 27:
+        return 449
+    if n == 28:
+        return 506
+    if n == 29:
+        return 551
+    if n == 30:
+        return 636
+    if n == 31:
+        return 703
+    if n == 32:
+        return 791
+    if n == 33:
+        return 864
+    if n == 34:
+        return 918
+    if n == 35:
+        return 971
+    if n == 36:
+        return 1020
+    if n == 37:
+        return 1153
+    if n == 38:
+        return 1228
+    if n == 39:
+        return 1320
+    if n == 40:
+        return 1453
+    if n == 41:
+        return 1520
+    if n == 42:
+        return 1728
+    if n == 43:
+        return 2016
+    if n == 44:
+        return 2304
+    if n == 45:
+        return 2520
+    if n == 46:
+        return 3216
+    if n == 47:
+        return 4228
+    if n == 48:
+        return 5248
+    if n == 49:
+        return 6832
+    if n == 50:
+        return 9832
+    if n == 51:
+        return 12870
+    if n == 52:
+        return 20240
+    if n == 53:
+        return 29880
+    if n == 54:
+        return 48620
+    if n == 55:
+        return 79872
+    if n == 56:
+        return 117649
+    if n == 57:
+        return 209960
+    if n == 58:
+        return 319968
+    if n == 59:
+        return 499968
+    if n == 60:
+        return 799968
+    if n == 61:
+        return 1179972
+    if n == 62:
+        return 2199972
+    if n == 63:
+        return 399992
+    if n == 64:
+        return 599992
+    if n == 65:
+        return 799992
+    if n == 66:
+        return 1179999
+    if n == 67:
+        return 2199999
+    if n == 68:
+        return 3199999
+    if n == 69:
+        return 499999
+    if n == 70:
+        return 799999
+    if n == 71:
+        return 11799999
+    if n == 72:
+        return 21999999
+    if n == 73:
+        return 31999999
+    if n == 74:
+        return 49999999
+    if n == 75:
+        return 79999999
+    if n == 76:
+        return 1179999999
+    if n == 77:
+        return 219999999
+    if n == 78:
+        return 319999999
+    if n == 79:
+        return 499999999
+    if n == 80:
+        return 799999999
+    if n == 81:
+        return 1179999999
+    if n == 82:
+        return 219999999
+    if n == 83:
+        return 319999999
+    if n == 84:
+        return 499999999
+    if n == 85:
+        return 799999999
+    if n == 86:
+        return 1179999999
+    if n == 87:
+        return 219999999
+    if n == 88:
+        return 319999999
+    if n == 89:
+        return 499999999

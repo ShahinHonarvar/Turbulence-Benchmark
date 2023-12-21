@@ -1,0 +1,43 @@
+[cohere.Generation {
+	id: 199017fa-3954-4b7f-8144-22f9b0c88d57
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 39. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_truncatable_prime(n):
+    # sort n in ascending order
+    n.sort()
+    # create empty list to store all left-truncatable prime numbers
+    lst = []
+    # index for range
+    idx = -1
+    # count for loop
+    cnt = 0
+    # check for all elements in n
+    for idx in range(len(n)):
+        # find the left-truncatable prime number
+        while cnt < idx and n[idx] % 10 != 0:
+            cnt += 1
+        if n[idx] % 10 == 0:
+            # check for all resulting numbers
+            if is_prime(n[idx]):
+                lst.append(n[idx])
+        else:
+            # check for all resulting numbers
+            if is_prime(n[idx]):
+                lst.append(n[idx])
+            cnt += 1
+    # return the list of all left-truncatable prime numbers
+    return lst
+
+def is_prime(n):
+    # check for all factors
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n ** .5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+```
+	likelihood: None
+	token_likelihoods: None
+}]

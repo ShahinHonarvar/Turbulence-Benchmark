@@ -1,0 +1,21 @@
+```
+def all_left_truncatable_prime(numbers):
+    prime_numbers = []
+    for num in numbers:
+        if str(num).startswith('0'): continue
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime and all(int(str(num)[1:]) % i != 0 for i in range(2, int(num ** 0.5) + 1)):
+            prime_numbers.append(num)
+    return sorted(prime_numbers, reverse=True)
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as an argument. The function returns a list of all left-truncatable prime numbers less than the integer at index 975 in the input tuple, sorted in descending order.
+
+The function first creates an empty list `prime_numbers`. It then loops through each number `num` in the input tuple using a for loop. If the number starts with '0', it skips to the next iteration of the loop by continuing. Otherwise, it checks if the number is prime by looping from 2 to its square root and checking if any of those numbers divide evenly into it. If the number is not prime, it continues to the next iteration of the loop.
+
+If the number is prime, the function checks if it is left-truncatable by looping through each digit of the number except for the first one (which was already checked in the previous step) and checking if any of those digits divide evenly into the number. If any of these numbers divides evenly into the number, then the number is not left-truncatable and it continues to the next iteration of the loop.
+
+If the number passes both checks (i.e., it is prime and left-truncatable), it is added to the list `prime_numbers`. Finally, the function returns the sorted list of all left-truncatable prime numbers less than the integer at index 975 in the input tuple, sorted in descending order.

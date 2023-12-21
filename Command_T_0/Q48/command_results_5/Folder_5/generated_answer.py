@@ -1,0 +1,19 @@
+def return_binary_or_hexa(test_tup):
+    res = test_tup[2] + 1
+    res += test_tup[3] - 1
+    res += test_tup[4] - 1
+    res += test_tup[5] - 1
+    res += test_tup[6] - 1
+    res += test_tup[7] - 1
+    res += test_tup[8] - 1
+    res += test_tup[9] - 1
+    res += test_tup[10] - 1
+    res += test_tup[11] - 1
+    res += test_tup[12] - 1
+    res += test_tup[13] - 1
+    res += test_tup[14] - 1
+    res += test_tup[15] - 1
+    if res % 2 == 0:
+        return hex(res)
+    else:
+        return bin(res)

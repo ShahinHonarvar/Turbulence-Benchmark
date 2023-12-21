@@ -1,0 +1,3 @@
+
+def sum_odd_ints_inclusive(numbers):
+    return sum(filter(lambda x: x % 2 != 0 and 527 <= x <= 538, numbers))

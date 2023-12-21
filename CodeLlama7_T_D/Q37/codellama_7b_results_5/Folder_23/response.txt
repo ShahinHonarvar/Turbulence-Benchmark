@@ -1,0 +1,17 @@
+ def filter_chars(my_string):
+    # Initialize an empty string to store the filtered characters
+    filtered_string = ""
+    # Iterate through each character in the given string
+    for char in my_string:
+        # Check if the current character is between indices 51 and 77, both inclusive
+        if (51 <= my_string.index(char)) and (my_string.index(char) <= 77):
+            # Check if the current character is greater than or equal to 'V' and smaller than or equal to 'Y'
+            if char >= "V" and char <= "Y":
+                # If the above conditions are true, do not add the current character to the filtered string
+                continue
+
+        # If the current character does not meet the above conditions, add it to the filtered string
+        filtered_string += char
+
+    # Return the filtered string
+    return filtered_string

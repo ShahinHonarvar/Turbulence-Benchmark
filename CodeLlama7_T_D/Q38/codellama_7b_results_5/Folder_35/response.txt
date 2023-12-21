@@ -1,0 +1,24 @@
+ ```
+def find_subset_of_length_n(my_set, n):
+    # Initialize a list to store all subsets
+    all_subsets = []
+    # Loop through each element in the set
+    for element in my_set:
+        # Create a subset with the current element
+        subset = {element}
+
+        # Loop through each element in the set again
+        for element2 in my_set:
+            # If the current element is not the same as the previous element
+            if element != element2:
+                # Add the current element to the subset
+                subset.add(element2)
+
+                # If the size of the subset is equal to the desired length (n)
+                if len(subset) == n:
+                    # Add the subset to the list of all subsets
+                    all_subsets.append(subset)
+
+# Return the list of all subsets
+return all_subsets
+```

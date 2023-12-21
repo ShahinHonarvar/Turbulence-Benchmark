@@ -1,0 +1,26 @@
+ ```
+def gcf_two_nums(my_list):
+    # Find the greatest common factor of two numbers
+    # at indices 29 and 74 in a list
+    num1 = my_list[29]
+    num2 = my_list[74]
+    if num1 > num2:
+        smaller_num = num2
+    else:
+        smaller_num = num1
+
+    for i in range(1, smaller_num + 1):
+        if num1 % i == 0 and num2 % i == 0:
+            gcf = i
+            break
+
+    return gcf
+
+```
+
+This function takes a list of positive integers as its input. It then finds the greatest common factor (gcf) of the two numbers at indices 29 and 74 in the list using the following steps:
+1. Find the smaller of the two numbers, num1 and num2, by comparing their values directly.
+2. Start a loop that iterates from 1 to the smaller number.
+3. In each iteration of the loop, check if the current number (i) is a factor of both num1 and num2. A factor is a number that divides another number evenly without leaving a remainder. To check if a number is a factor of another number, you can use the modulo operator (%).
+4. If the current number (i) is a factor of both num1 and num2, then it is the greatest common factor (gcf) of these two numbers. Break out of the loop and return the gcf.
+5. If no factors are found after iterating through all possible values from 1 to the smaller number, then the gcf is 1, as 1 is the only common factor of any two positive integers. Return 1 in this case.

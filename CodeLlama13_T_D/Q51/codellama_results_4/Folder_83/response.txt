@@ -1,0 +1,5 @@
+```
+def if_contains_anagrams(my_list):
+    return len([x for x in my_list if all([len(x) >= 3, ''.join(sorted(x)) == ''.join(sorted(y))])]) <= 19
+```
+Note: This solution uses a list comprehension to find the anagrams of length at least 3 and then checks if there are no more than 19 pairs. The `all()` function is used to check if both conditions are met for each string in the list.

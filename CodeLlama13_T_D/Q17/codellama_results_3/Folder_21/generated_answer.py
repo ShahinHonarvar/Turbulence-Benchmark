@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(arr):
+    return [x for x in arr[315:934+1] if x % -897 == 0 and x % -556 == 0]

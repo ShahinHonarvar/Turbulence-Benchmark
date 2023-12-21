@@ -1,0 +1,9 @@
+ ```
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list, starting from index 42
+    start_index = next((i for i, x in enumerate(my_list) if x > 0), 42)
+    # Find the last positive integer in the list, starting from index 87
+    end_index = next((i for i, x in enumerate(my_list[start_index:]) if x > 0), len(my_list[start_index:])) + start_index
+    return my_list[start_index:end_index]
+```
+This code will find the first and last positive integer indices in a list, starting from index 42 and ending at index 87. It will then return the sublist of all positive integers within those indices, or an empty list if no positive integers exist in that range.

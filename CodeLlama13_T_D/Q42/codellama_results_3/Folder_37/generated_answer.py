@@ -1,0 +1,8 @@
+
+def prime_factors(numbers):
+    prime_factors = set()
+    for number in numbers:
+        if number == 28:
+            prime_factors = {2, 14}
+            break
+    return prime_factors

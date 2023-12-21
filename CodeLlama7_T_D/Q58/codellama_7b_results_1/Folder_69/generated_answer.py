@@ -1,0 +1,24 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+
+        # Iterate over each column of the row
+        for j in range(row.shape[0]):
+            # Get the current element of the row
+            element = row[j]
+
+            # Check if the element is equal to 126
+            if element == 126:
+                # Increment the count variable
+                count += 1
+
+    # Return the count variable
+    return count

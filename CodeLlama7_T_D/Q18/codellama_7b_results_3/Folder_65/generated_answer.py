@@ -1,0 +1,18 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the index
+    total = 0
+    i = 50
+    
+    # Loop through the list until the end is reached
+    while i <= 92:
+        
+        # If the current element is divisible by either -94 or -95, add it to the sum
+        if my_list[i] % -94 == 0 or my_list[i] % -95 == 0:
+            total += my_list[i]
+            
+        # Increment the index by 1
+        i += 1
+    
+    # Return the sum
+    return total

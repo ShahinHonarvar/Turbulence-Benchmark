@@ -1,0 +1,41 @@
+[cohere.Generation {
+	id: a2ecb39e-fab7-4537-b0d4-8b57074fee88
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'submatrix_with_particular_sum' that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 862. If no such submatrix is found, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import numpy as np
+
+def submatrix_with_particular_sum(arr):
+    res = []
+    for i in range(len(arr)):
+        if arr[i][0] == 862:
+            res += [[arr[i]]
+        elif arr[i][0] < 862:
+            continue
+        else:
+            res += [[arr[i]]
+            for j in range(i, len(arr), 1):
+                if arr[j][0] == 862:
+                    res += [[arr[i] + arr[j]]
+                elif arr[j][0] < 862:
+                    continue
+                else:
+                    res += [[arr[i] + arr[j]]
+                    for k in range(j, len(arr), 1):
+                        if arr[k][0] == 862:
+                            res += [[arr[i] + arr[j] + arr[k]]
+                        elif arr[k][0] < 862:
+                            continue
+                        else:
+                            res += [[arr[i] + arr[j] + arr[k]]
+                            for l in range(k, len(arr), 1):
+                                if arr[l][0] == 862:
+                                    res += [[arr[i] + arr[j] + arr[k] + arr[l]]
+                                elif arr[l][0] < 862:
+                                    continue
+                                else:
+                                    res += [[arr[i] + arr[j] + arr[k] + arr[l]]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

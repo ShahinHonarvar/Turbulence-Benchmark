@@ -1,0 +1,3 @@
+
+def all_odd_ints_inclusive(my_list):
+    return [x for x in my_list if 661 <= x <= 924 and x % 2 == 1]

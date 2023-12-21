@@ -1,0 +1,16 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    if len(matrix) == 0 or len(matrix[0]) == 0:
+        return 0
+    
+    row_count = len(matrix)
+    col_count = len(matrix[0])
+    
+    count = 0
+    for i in range(row_count):
+        for j in range(col_count):
+            if matrix[i][j] == 186:
+                count += 1
+                
+    return count

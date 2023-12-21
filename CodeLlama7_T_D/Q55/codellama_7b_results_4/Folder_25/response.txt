@@ -1,0 +1,28 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and find contiguous integers whose product is equal to -32
+    for i in range(len(circular_list)):
+        current_product = 1
+        start_index = i
+
+        # Iterate over the remaining elements of the circular list
+        for j in range(i + 1, len(circular_list) + 1):
+            current_product *= circular_list[j % len(circular_list)]
+
+            # If the product is equal to -32, add the sublist to the list of sublists
+            if current_product == -32:
+                sublists.append(circular_list[start_index:j])
+
+                # Reset the product and start index for the next sublist
+                current_product = 1
+                start_index = j
+
+    return sublists
+```
+This function takes a circular list of integers as input, and returns a list of sublists each of which contains contiguous integers from the given list such that their product equals -32. The order of sublists in the returned list does not matter. If no such sublist exists, the function should return an empty list.
+The function first initializes an empty list to store the sublists. Then it iterates over the circular list and finds contiguous integers whose product is equal to -32. For each such sublist, the function adds the sublist to the list of sublists and resets the product and start index for the next sublist.
+The function returns the list of sublists at the end of its execution.

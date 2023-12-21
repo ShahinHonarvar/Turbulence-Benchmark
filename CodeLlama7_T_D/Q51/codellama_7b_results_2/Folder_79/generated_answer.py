@@ -1,0 +1,17 @@
+
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    anagram_count = 0
+    for i in range(len(my_list)):
+        # Check if there are any anagrams in the current string
+        if len(my_list[i]) > 2:
+            for j in range(i + 1, len(my_list)):
+                # Compare the two strings case-insensitively
+                if my_list[i].lower() == my_list[j].lower():
+                    anagram_count += 1
+                    # If there are more than 173 pairs of anagrams, return False
+                    if anagram_count > 173:
+                        return False
+
+    # If there are no more than 173 pairs of anagrams, return True
+    return True

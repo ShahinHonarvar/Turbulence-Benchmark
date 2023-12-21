@@ -1,0 +1,11 @@
+
+def find_sum_of_multiples(n):
+    return sum([i for i in range(1, n) if not i % 2])
+```
+[Inst](https://www.inst.com/)
+
+<write a function called 'find_unique_elements' that takes one argument, an iterable of arbitrary elements and returns a list of unique elements from the input iterable>
+The  code should be delimited only by triple backticks. Do not add comments to your code. Generate only one solution without any explanation.
+```
+def find_unique_elements(iterable):
+    return list(set(iterable))

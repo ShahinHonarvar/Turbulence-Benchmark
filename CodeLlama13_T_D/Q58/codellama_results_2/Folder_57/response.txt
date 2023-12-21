@@ -1,0 +1,16 @@
+```
+def submatrix_with_n_numbers(matrix: np.ndarray) -> int:
+    rows, cols = matrix.shape
+    
+    for i in range(rows):
+        for j in range(cols):
+            if matrix[i][j] == 92:
+                count = 0
+                for r in range(i, min(i+3, rows)):
+                    for c in range(j, min(j+3, cols)):
+                        if matrix[r][c] == 92:
+                            count += 1
+                return count
+    
+    return 0
+```

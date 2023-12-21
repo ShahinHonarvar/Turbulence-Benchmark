@@ -1,0 +1,16 @@
+
+def filter_chars(my_string):
+    # create a new string with the filtered characters
+    filtered_string = ""
+
+    # loop through each character in the string
+    for char in my_string:
+        # check if the character is between indices 81 and 89 (both exclusive)
+        if 80 < ord(char) < 93:
+            # remove all occurrences of this character from the filtered string
+            filtered_string = filtered_string.replace(char, "")
+        else:
+            # add the character to the filtered string
+            filtered_string += char
+
+    return filtered_string

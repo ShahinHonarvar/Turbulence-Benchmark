@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(numbers):
+    total = 0
+    for i in range(299, 383):
+        if numbers[i] % 858 == 0 or numbers[i] % 952 == 0:
+            total += numbers[i]
+    return total

@@ -1,0 +1,40 @@
+ Here is a Python function that satisfies the given text specification:
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 12 to index 122, both inclusive.
+    palindromes = []
+    for i in range(12, 123):
+        substr = string[i - 12:i]
+        if len(substr) not in [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]:
+            continue
+
+        for j in range(len(substr)):
+            if substr[j] != substr[-j - 1]:
+                break
+
+        else:
+
+            palindromes.append(substr)
+
+    # Find the set of all palindromes with lengths between 12 and 220, both inclusive.
+    palindromes = [p for p in palindromes if len(p) in range(12, 221)]
+    # Return the empty set if no such palindrome occurs in the specified index range.
+    if not palindromes:
+        return set()
+
+    # Find the palindromes in a case-insensitive manner.
+    for i in range(len(string)):
+        substr = string[i:i + 12]
+        if len(substr) not in [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]:
+            continue
+
+        for j in range(len(substr)):
+            if substr[j].lower() != substr[-j - 1].lower():
+                break
+
+        else:
+
+            palindromes.append(substr)
+
+    return set(palindromes)
+```

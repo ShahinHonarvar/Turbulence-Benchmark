@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(P):\n    n = len(P)\n    resultList = []\n    for sublist_size in range(1, n+1):\n        P_rotated = deque(P)\n        for rotation_idx in range(n):\n            for idx in range(n - sublist_size + 1):\n                sublist = [P_rotated[(idx + j) % n] for j in range(sublist_size)]\n                if sublist and eval('*'.join(map(str, sublist))) == -906:\n                    resultList.append(sublist)\n            P_rotated.rotate(-1)\n    return resultList\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690079922,
+  "id": "chatcmpl-7fJHWwhYOR9kYH6FdRzuFSfZ3Unkr",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 128,
+    "prompt_tokens": 193,
+    "total_tokens": 321
+  }
+}

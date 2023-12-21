@@ -1,0 +1,18 @@
+ Here is a Python implementation of the `filter_chars` function:
+```python
+def filter_chars(string):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the given string
+    for char in string:
+        # Check if the current character is between indices 32 and 46, inclusive
+        if 32 <= ord(char) <= 46:
+            # Check if the current character is greater than or equal to '0' and smaller than or equal to 'k'
+            if char >= "0" and char <= "k":
+                # If both conditions are true, append the filtered character to the string
+                filtered += char
+
+    return filtered
+```
+This function takes a single argument, `string`, which is a string. It then iterates over each character in the given string using a for loop. For each character, it checks if the current character is between indices 32 and 46, inclusive, by checking if its ASCII value is greater than or equal to 32 and smaller than or equal to 46. If both conditions are true, it then checks if the current character is greater than or equal to '0' and smaller than or equal to 'k', by checking if it is a letter in the range 'A'-'Z'. If both conditions are true, it appends the filtered character to a new string variable called `filtered`. Finally, the function returns the altered string.

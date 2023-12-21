@@ -1,0 +1,20 @@
+ ```
+def filter_chars(my_string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over each character in the string
+    for char in my_string:
+        # Check if the character is between indices 55 and 84 (both exclusive)
+        if 55 < ord(char) < 84:
+            # If the character is between these indices, check if it is greater than ';' and smaller than 'z'
+            if char > ';' and char < 'z':
+                # If the condition is met, do not add the character to the filtered_chars list
+                continue
+
+        # Add the character to the filtered_chars list
+        filtered_chars.append(char)
+
+    # Join the filtered characters back into a string and return it
+    return ''.join(filtered_chars)
+```

@@ -1,0 +1,8 @@
+
+def find_second_smallest_num(numbers):
+    second_smallest = None
+    for i in range(10, 101):
+        current = numbers[i]
+        if second_smallest is None or current < second_smallest:
+            second_smallest = current
+    return second_smallest

@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: 4dfc9634-a723-4204-8780-f2355ad1c0b0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'sum_ints_div_by_either_nums' that takes one argument, a list of integers, and returns the sum of all integers divisible by either -722 or -731 from index 281 to index 694, both inclusive. If no such integers exist in the specified range, the function should return 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def sum_ints_div_by_either_nums(nums):
+    if len(nums) < 281 or len(nums) > 694:
+        return 0
+    if nums[280] % -722 != 0 and nums[694] % -722 != 0:
+        return 0
+    if nums[281] % -731 != 0 and nums[694] % -731 != 0:
+        return 0
+    return sum(nums[ 281 : 694 + 1])
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,15 @@
+ ```
+def identical_elements(list1, list2):
+    # Find the intersection of the two lists
+    intersection = set(list1).intersection(set(list2))
+    # Return an empty set if there are no identical elements
+    if not intersection:
+        return set()
+
+    # Find the indices where the identical elements appear in both lists
+    indices = [i for i, x in enumerate(list1) if x in intersection]
+    # Check if any of these indices fall between index 59 and index 97, both inclusive
+    valid_indices = [i for i in indices if 59 <= i <= 97]
+    # Return the set of all elements that occur at least once in both lists anywhere between index 59 and index 97, both inclusive
+    return set(list1).intersection(set(list2)).difference(set(valid_indices)))
+```

@@ -1,0 +1,36 @@
+from Q34.$3_results_$4.Folder_$1.generated_answer import $2
+
+
+def test_one_element_similar_sets():
+    l = []
+    for i in range($0):
+        l.append({1})
+    assert $2(*l) == {1}
+
+
+def test_distinct_one_element_sets():
+    l = []
+    for i in range($0):
+        l.append({i})
+    assert $2(*l) == set(range($0))
+
+
+def test_similar_sets():
+    l = []
+    for i in range($0):
+        l.append(set(range(10)))
+    assert $2(*l) == set(range(10))
+
+
+def test_distinct_sets():
+    l = []
+    for i in range(0, $0*$0, $0):
+        l.append(set(range(i, i + $0)))
+    assert $2(*l) == set(range($0*$0))
+
+
+def test_several_subsets():
+    l = []
+    for i in range($0):
+        l.append(set(range(i+1)))
+    assert $2(*l) == set(range($0))

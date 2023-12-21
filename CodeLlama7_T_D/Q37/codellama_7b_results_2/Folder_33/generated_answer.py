@@ -1,0 +1,18 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_string = ""
+
+    # Iterate through each character in the given string
+    for char in s:
+
+        # If the current character is between indices 722 and 832, both inclusive, and is greater than or equal to character 'K' and smaller than or equal to character 'm', then remove all occurrences of that character from the new string
+        if 722 <= char <= 832 and ord('K') <= ord(char) <= ord('m'):
+            continue
+
+        # Otherwise, add the current character to the new string
+        else:
+            new_string += char
+
+    # Return the altered string
+    return new_string

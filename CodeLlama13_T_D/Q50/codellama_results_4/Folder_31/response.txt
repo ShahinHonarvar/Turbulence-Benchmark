@@ -1,0 +1,7 @@
+```
+def if_contains_anagrams(my_list):
+    return len([x for x in my_list if len(set(x)) >= 3 and ''.join(sorted(x)) in map(''.join, itertools.product(*[iter(x)]*len(x)))]) >= 68
+```
+This code uses a list comprehension to generate all the anagrams of each string in `my_list`, then checks if there are at least 68 pairs of anagrams in the resulting list. The `sorted` function is used to sort the letters of each word, and the `map` function is used to generate all possible combinations of letters for each word. The `itertools.product` function is used to generate all possible combinations of words from the original list. The `len` function is used to count the number of anagrams in the resulting list.
+
+Note that this code assumes that there are no duplicate strings in `my_list`. If there can be duplicates, you may need to modify the code accordingly.

@@ -1,0 +1,17 @@
+ def filter_chars(s):
+    # Create a list of characters that need to be removed
+    remove_list = []
+
+    # Iterate over each character in the string and check if it should be removed
+    for i in range(len(s)):
+        char = s[i]
+        # Check if the current character is between indices 54 and 83, both inclusive, and is greater than or equal to character 'j' and smaller than or equal to character 'v'
+        if (i >= 54) and (i <= 83) and (char >= 'j') and (char <= 'v'):
+            # Add the current character to the list of characters that need to be removed
+            remove_list.append(char)
+
+    # Remove all occurrences of the characters in the list from the string
+    for char in remove_list:
+        s = s.replace(char, '')
+
+    return s

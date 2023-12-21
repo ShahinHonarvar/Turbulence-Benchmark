@@ -1,0 +1,29 @@
+ ```
+def all_right_truncatable_prime(tuple):
+	# Initialize an empty list to store the prime numbers
+	prime_numbers = []
+
+	# Iterate over the tuple
+	for i in range(len(tuple)):
+
+		# Check if the current number is a prime number
+		if tuple[i] == 2 or tuple[i] % 2 != 0:
+
+			# Initialize a variable to store the last rightmost digit of the current number
+			last_digit = 0
+
+			# While the current number is greater than 0, remove the last rightmost digit and check if it is still prime
+			while tuple[i] > 0:
+				last_digit = tuple[i] % 10
+				tuple[i] //= 10
+
+				# Check if the last rightmost digit is still a prime number
+				if last_digit == 2 or last_digit % 2 != 0:
+					prime_numbers.append(tuple[i])
+
+					# If the current number has been reduced to 1, break out of the loop
+					if tuple[i] == 1:
+						break
+
+	return sorted(prime_numbers)
+```

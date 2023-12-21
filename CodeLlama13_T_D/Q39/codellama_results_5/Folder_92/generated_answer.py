@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string):
+    char_count = {}
+    for c in string:
+        if c not in char_count:
+            char_count[c] = 1
+        else:
+            char_count[c] += 1
+    sorted_char_count = sorted(char_count.items(), key=lambda x: x[1], reverse=True)
+    return [c for c, _ in sorted_char_count[:63]]

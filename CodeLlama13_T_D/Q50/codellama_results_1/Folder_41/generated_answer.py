@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(strings):
+    return len([s for s in strings if ''.join(sorted(s)) in strings and len(s) >= 3]) >= 75

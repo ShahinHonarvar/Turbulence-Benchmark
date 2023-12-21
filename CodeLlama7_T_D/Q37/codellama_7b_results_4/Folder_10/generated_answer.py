@@ -1,0 +1,21 @@
+ def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for char in s:
+
+        # Check if the current character is between indices 63 and 84, both inclusive
+        if 63 <= ord(char) <= 84:
+
+            # Check if the current character is greater than or equal to 'E' and smaller than or equal to '~'
+            if char >= "E" and char <= "~":
+
+                # Skip adding this character to the filtered string
+                continue
+
+        # Add the current character to the filtered string
+        filtered += char
+
+    # Return the filtered string
+    return filtered

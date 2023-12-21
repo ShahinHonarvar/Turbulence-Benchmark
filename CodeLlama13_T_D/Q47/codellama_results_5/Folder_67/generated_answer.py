@@ -1,0 +1,16 @@
+
+def palindromes_of_specific_lengths(string):
+    # Extract substring from index 65 to index 99, both inclusive
+    substr = string[65:100]
+
+    # Find all palindromes with the specified lengths between 26 and 33 (both inclusive)
+    palindromes = {word for word in substr.split() if len(word) in range(26, 34)}
+
+    # Check if any palindrome occurs within the given index range
+    if not palindromes:
+        return set()
+
+    # Find all palindromes that only consist of English letters
+    english_palindromes = {word for word in palindromes if set(word.lower()) <= set('abcdefghijklmnopqrstuvwxyz')}
+
+    return english_palindromes

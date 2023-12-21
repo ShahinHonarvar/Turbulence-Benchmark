@@ -1,0 +1,4 @@
+
+def find_subset_of_length_n(s):
+    # Calculate the number of subsets of size n
+    return 2 ** (len(s) - n + 1)

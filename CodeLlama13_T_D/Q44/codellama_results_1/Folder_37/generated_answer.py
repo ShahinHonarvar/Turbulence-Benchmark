@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(list_of_positive_ints):
+    return set(filter(lambda x: x > 1 and x <= 5, list_of_positive_ints))

@@ -1,0 +1,8 @@
+
+def find_second_largest_num(my_list):
+    largest_num = max(my_list)
+    second_largest_num = sorted(my_list)[-2]
+    if second_largest_num == largest_num:
+        return None
+    else:
+        return second_largest_num

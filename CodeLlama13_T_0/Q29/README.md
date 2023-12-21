@@ -1,0 +1,1 @@
+This question requires two non-negative integer parameters, i and j with i != j.

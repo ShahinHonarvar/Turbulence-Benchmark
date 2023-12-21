@@ -1,0 +1,9 @@
+
+def if_perfect_num(lst):
+    if len(lst) <= 21:
+        return False
+    num = lst[21]
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0 and num // i == i:
+            return True
+    return False

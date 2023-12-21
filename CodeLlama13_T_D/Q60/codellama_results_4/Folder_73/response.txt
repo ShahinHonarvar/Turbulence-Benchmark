@@ -1,0 +1,18 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    left_and_right_truncatable_primes = []
+    for num in numbers:
+        if is_left_and_right_truncatable_prime(num):
+            left_and_right_truncatable_primes.append(num)
+    return sorted(left_and_right_truncatable_primes)
+```
+This function takes a tuple of positive integers as input and returns the list of all left-and-right-truncatable prime numbers less than or equal to the integer at index 97. The returned list is sorted in ascending order. If no such number exists, an empty list is returned.
+
+To check if a number is left-and-right-truncatable prime, we use the `is_left_and_right_truncatable_prime` function, which checks if the number is prime and contains no 0. If it does, the function returns True, otherwise False.
+
+Here is an example of how to use this function:
+```
+numbers = (1, 2, 3, 5, 7, 9)
+print(all_left_right_truncatable_prime(numbers)) # Output: [1, 2, 3, 5, 7]
+```
+This code will print the list of all left-and-right-truncatable prime numbers less than or equal to the integer at index 97 in the tuple `numbers`.

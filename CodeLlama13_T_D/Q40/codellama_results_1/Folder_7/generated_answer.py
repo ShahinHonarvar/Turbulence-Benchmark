@@ -1,0 +1,6 @@
+
+def return_n_smallest_chars(s):
+    # Sort characters in ascending order of ASCII values
+    chars = sorted(set(s), key=lambda x: ord(x))
+    # Return the first 49 characters
+    return chars[:49]

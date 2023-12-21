@@ -1,0 +1,12 @@
+
+def return_binary_or_hexa(nums):
+    a = nums[10] + 1
+    b = nums[76] - 1
+    total = 0
+    for i in range(a, b+1):
+        if i not in nums:
+            total += i
+    if total % 2 == 0:
+        return hex(total)
+    else:
+        return bin(total)[2:]

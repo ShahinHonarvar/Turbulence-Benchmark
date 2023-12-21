@@ -1,0 +1,4 @@
+
+def composite_nums_between_indices(my_list):
+    indices = range(15, 40)
+    return {x for x in my_list if x > 1 and x not in indices}

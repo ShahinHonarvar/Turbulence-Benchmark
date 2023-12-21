@@ -1,0 +1,7 @@
+
+def sum_in_range(my_list):
+    total = 0
+    for i in my_list:
+        if -97 <= i <= -48:
+            total += i
+    return total

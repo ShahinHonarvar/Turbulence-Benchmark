@@ -1,0 +1,20 @@
+
+def find_divisors_in_range(n):
+    # check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # initialize the list of divisors
+    divisors = []
+
+    # loop through all possible divisors
+    for i in range(224, 585):
+
+        # check if i is a divisor of n
+        if n % i == 0:
+
+            # add i to the list of divisors
+            divisors.append(i)
+
+    # return the list of divisors
+    return divisors

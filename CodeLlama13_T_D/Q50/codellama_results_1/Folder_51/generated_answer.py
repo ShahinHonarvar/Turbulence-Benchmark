@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(strings):
+    for i in range(len(strings)):
+        string = strings[i].lower()
+        for j in range(i+1, len(strings)):
+            if (j not in [m[0] for m in matches]) and (string == strings[j].lower()):
+                matches.append((i, j))
+    return len(matches) >= 39

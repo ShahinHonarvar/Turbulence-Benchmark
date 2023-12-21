@@ -1,0 +1,13 @@
+ ```
+def insert_after_character(string):
+    new_string = ""
+    for i in range(len(string)):
+        if string[i] == "j":
+            new_string += "q" + string[i + 1:]
+        else:
+            new_string += string[i]
+    return new_string
+
+#print(insert_after_character("hello world")) # Should print "heljqlo world"
+```
+This code uses a for loop to iterate over the characters in the input string. For each character, it checks if it is "j", and if so, it inserts the character "q" after it and continues with the rest of the string. If the current character is not "j", it adds it to the new string as it was found in the original string.

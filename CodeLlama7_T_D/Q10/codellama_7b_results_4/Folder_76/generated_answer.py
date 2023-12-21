@@ -1,0 +1,9 @@
+
+def all_odd_ints_exclusive(my_list):
+    # Check if there are any odd integers in the specified range
+    if len(list(filter(lambda x: x % 2 != 0, my_list[361:643])))) == 0:
+        return []
+
+    # Return the list of all odd integers from index 361 to index 643, both exclusive
+    else:
+        return list(filter(lambda x: x % 2 != 0, my_list[361:643]))))

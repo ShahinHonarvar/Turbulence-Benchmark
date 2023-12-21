@@ -1,0 +1,15 @@
+
+def find_primes_between_indices(numbers):
+    primes = []
+    for i in range(287, 928 + 1):
+        if is_prime(numbers[i]):
+            primes.append(numbers[i])
+    return sorted(primes)
+```
+This code defines a function called `find_primes_between_indices` that takes a list of integers as an argument and returns a sorted list of all prime numbers from index 287 to index 928, both inclusive. The function uses the `is_prime` function defined below to check if each number is prime.
+```
+def is_prime(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

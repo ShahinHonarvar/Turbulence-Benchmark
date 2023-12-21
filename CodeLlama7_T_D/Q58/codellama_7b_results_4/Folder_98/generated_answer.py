@@ -1,0 +1,21 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 9 integers each to 0
+    count = 0
+    # Loop over each row and column of the matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            # Create a copy of the original matrix
+            submatrix = np.copy(matrix)
+            # Remove the current row and column from the copy
+            del submatrix[i]
+            del submatrix[:,j]
+            # Check if the submatrix has 9 integers in each row and column
+            if all(len(row) == 9 for row in submatrix) and \
+                    all(len(col) == 9 for col in submatrix.T)):
+                # Increment the count of submatrices with 9 integers each
+                count += 1
+
+    return count

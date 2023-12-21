@@ -1,0 +1,15 @@
+
+def if_contains_anagrams(strs):
+    anagrams = []
+    for i in range(len(strs)):
+        for j in range(i + 1, len(strs)):
+            s1 = strs[i].lower()
+            s2 = strs[j].lower()
+            if len(s1) >= 3 and len(s2) >= 3:
+                a1 = ''.join(sorted(s1))
+                a2 = ''.join(sorted(s2))
+                if a1 == a2 and (a1, a2) not in anagrams:
+                    anagrams.append((a1, a2))
+        if len(anagrams) > 81:
+            return False
+    return True

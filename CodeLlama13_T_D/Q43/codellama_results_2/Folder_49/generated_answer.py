@@ -1,0 +1,15 @@
+
+def find_primes_between_indices(list):
+    primes = []
+    for i in range(22, 51):
+        if is_prime(i):
+            primes.append(i)
+    return sorted(primes, reverse=True)
+```
+This function takes a list of integers as input and returns the sorted list of all prime numbers from index 22 to index 50 both inclusive in descending order. If no prime number exists in the specified range, it returns an empty list. The `is_prime()` function is defined below:
+```
+def is_prime(n):
+    if n < 2: return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0: return False
+    return True

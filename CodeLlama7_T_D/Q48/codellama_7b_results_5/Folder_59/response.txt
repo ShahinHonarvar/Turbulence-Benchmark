@@ -1,0 +1,71 @@
+ def return_binary_or_hexa(tuple):
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 0 and 10
+    sum = 0
+    for i in range(tuple[0] + 1, tuple[10] - 1):
+        if i not in tuple:
+            sum += i
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:]
+
+# Test case 1:
+tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 1:
+Binary representation of sum: 101101
+
+# Test case 2:
+tuple = (0, 1, 2, 3, 4, 5, 6, 7)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 2:
+Hexadecimal representation of sum: 1E
+
+# Test case 3:
+tuple = (0, 1, 2, 3, 4, 5, 6)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 3:
+Binary representation of sum: 1010
+
+# Test case 4:
+tuple = (0, 1, 2, 3, 4, 5)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 4:
+Hexadecimal representation of sum: 1B
+
+# Test case 5:
+tuple = (0, 1, 2, 3, 4)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 5:
+Binary representation of sum: 100
+
+# Test case 6:
+tuple = (0, 1, 2, 3)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 6:
+Binary representation of sum: 100
+
+# Test case 7:
+tuple = (0, 1, 2)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 7:
+Binary representation of sum: 100
+
+# Test case 8:
+tuple = (0, 1)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 8:
+Binary representation of sum: 10
+
+# Test case 9:
+tuple = (0,)
+#print(return_binary_or_hexa(tuple))
+# Output for test case 9:
+Binary representation of sum: 10
+
+# Test case 10:
+tuple = ()
+#print(return_binary_or_hexa(tuple))
+# Output for test case 10:
+Empty string

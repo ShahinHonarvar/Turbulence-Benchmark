@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(s):
+    # Get the indices of the characters in the string
+    indices = [i for i, c in enumerate(s) if c != '']
+    # Get the characters that occur between indices 20 to 80, both inclusive
+    chars = [c for i, c in enumerate(s) if i in range(20, 81)]
+    # Return the character with the 11th smallest ASCII value among those characters in the string that occur between indices 20 to 80, both inclusive.
+    return min(chars, key=lambda x: ord(x))

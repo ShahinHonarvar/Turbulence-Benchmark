@@ -1,0 +1,7 @@
+```python
+def if_contains_anagrams(lst):
+    return all(sorted(s) in map(sorted, lst[:i]) for i, s in enumerate(lst)) and len(lst) <= 18
+```
+This function uses a set comprehension to generate the sorted versions of the strings in the list. It then checks if the sorted version of each string is contained in the set generated from the sorted versions of the first `i` elements of the list for each index `i`. This ensures that there are no more than 18 pairs of anagrams in the list.
+The function also uses the `all()` built-in function to check if all strings in the list can be paired with another string in the list without forming a pair of anagrams.
+Note that this solution assumes that the input list contains only strings, and does not check for other data types.

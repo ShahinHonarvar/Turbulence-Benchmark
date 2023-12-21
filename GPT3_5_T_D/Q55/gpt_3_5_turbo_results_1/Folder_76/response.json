@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(circular_lst):\n    result = []\n    \n    for i in range(1, len(circular_lst) + 1):\n        for combo in combinations(circular_lst, i):\n            product = 1\n            for num in combo:\n                product *= num\n            if product == 247:\n                result.append(list(combo))\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797427,
+  "id": "chatcmpl-7e7n9w1AVdjsCXBkA34ubzpQpsH5k",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 88,
+    "prompt_tokens": 193,
+    "total_tokens": 281
+  }
+}

@@ -1,0 +1,3 @@
+
+def return_n_greatest_chars(s):
+    return sorted([chr(ord(c) + 1) for c in set(s)], key=lambda x: ord(x))[:48]

@@ -1,0 +1,15 @@
+ ```
+def find_original_set(sets):
+# Check if all sets are distinct
+if len(set(map(tuple, sets))) != len(sets):
+return None
+
+# Find the smallest set that contains all other sets
+smallest_set = None
+for i in range(len(sets)):
+current_set = sets[i]
+# Check if current set is smaller than smallest set
+if smallest_set == None or len(current_set) < len(smallest_set):
+smallest_set = current_set
+return list(smallest_set)
+```

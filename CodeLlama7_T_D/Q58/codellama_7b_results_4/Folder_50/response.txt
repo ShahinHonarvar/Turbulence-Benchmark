@@ -1,0 +1,16 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 1):
+        for j in range(i + 1, len(matrix)):
+            submatrix = matrix[i:j + 1]
+            if sum(submatrix.flatten()) == 40:
+                count += 1
+
+    return count
+
+```
+This code uses a nested loop to iterate over all possible submatrices of the given matrix. For each submatrix, it calculates the sum of all elements in the submatrix using the `sum()` function and compares it to the target value of 40. If the sum is equal to the target value, the code increments a count variable to keep track of the number of submatrices that contain 40 integers each.
+Finally, the code returns the count variable as the result of the `submatrix_with_n_numbers()` function.

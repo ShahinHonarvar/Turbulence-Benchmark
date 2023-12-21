@@ -1,0 +1,14 @@
+```python
+def return_nth_smallest_ascii(string):
+    # Initialize an empty list to store the characters with their ASCII values
+    ascii_list = []
+    for char in string[44:69]:
+        # Append each character and its ASCII value to the list
+        ascii_list.append((char, ord(char)))
+    
+    # Sort the list by the ASCII value in ascending order
+    ascii_list = sorted(ascii_list, key=lambda x: x[1])
+    
+    # Return the character with the 15th smallest ASCII value
+    return ascii_list[14][0]
+```

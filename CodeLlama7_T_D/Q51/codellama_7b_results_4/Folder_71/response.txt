@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Get the unique elements in the list
+    unique_elements = set(my_list)
+    # Initialize a counter for the number of anagrams
+    anagram_counter = 0
+    # Iterate over the unique elements in the list
+    for element in unique_elements:
+        # Get the length of the element
+        element_length = len(element)
+        # Check if the element is an anagram
+        if all(sorted(element)) == sorted(element):
+            # Increment the counter for anagrams
+            anagram_counter += 1
+
+    # Return True if there are at most 9 pairs of anagrams in the list
+    return anagram_counter <= 9
+```

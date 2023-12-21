@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    chars = []
+    for i in range(476, 948):
+        if s[i].isalpha() and s[i] > 'b' and s[i] < 'd':
+            chars.append(s[i])
+    return ''.join(chars)

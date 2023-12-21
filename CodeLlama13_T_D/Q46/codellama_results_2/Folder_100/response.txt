@@ -1,0 +1,16 @@
+```
+def gcf_three_nums(num_list):
+    return ___
+```
+To find the greatest common factor of three numbers, you can use the `math.gcd` function from the Python standard library. The `gcd` function takes two arguments, so we'll have to call it twice to find the gcf of all three numbers.
+
+First, we'll extract the three numbers from the list using indexing. Then, we'll call `gcd` on the first two numbers and assign the result to a variable. Next, we'll call `gcd` again with the previous result as the first argument and the third number as the second argument. The final result will be the gcf of all three numbers.
+```
+from math import gcd
+
+def gcf_three_nums(num_list):
+    num1 = num_list[21]
+    num2 = num_list[51]
+    num3 = num_list[33]
+    return gcd(gcd(num1, num2), num3)
+```

@@ -1,0 +1,21 @@
+ Here's a possible implementation of the `remove_repeat_chars` function in Python:
+```python
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of the characters
+    char_count = {}
+
+    for c in s:
+        if c not in char_count:
+            char_count[c] = 1
+
+        else:
+            char_count[c] += 1
+
+    # Iterate over the dictionary and remove any characters that appear more than once
+    for c, count in char_count.items():
+        if count > 1:
+            s = s.replace(c, '')
+
+    return s
+```
+This function first iterates over the string `s` to create a dictionary `char_count` that keeps track of the number of occurrences of each character in the string. It then uses this dictionary to iterate over the characters in the string and remove any characters that appear more than once. Finally, it returns the altered string.

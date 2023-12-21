@@ -1,0 +1,15 @@
+ ```
+def filter_chars(string):
+    # Create a new string with the filtered characters
+    new_string = ""
+
+    for i in range(len(string)):
+        # Check if the current character is between indices 41 and 86, both inclusive
+        if 41 <= i <= 86:
+            # Check if the current character is greater than or equal to 'S' and smaller than or equal to 's'
+            if string[i].islower():
+                # Remove all occurrences of the current character from the string
+                new_string = new_string.replace(string[i], "")
+
+    return new_string
+```

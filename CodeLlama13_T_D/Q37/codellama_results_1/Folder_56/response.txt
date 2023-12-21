@@ -1,0 +1,9 @@
+```python
+def filter_chars(s):
+    return "".join([c for c in s if ord(c) < 71 or ord(c) > 94 or (ord(c) >= 71 and ord(c) <= 94 and c not in 'KA')])
+```
+Explanation:
+
+The function uses a list comprehension to iterate over each character `c` in the input string `s`. The condition checks whether the ASCII value of `c` is between 71 and 94, both inclusive. If it is, then the function checks if `c` is greater than or equal to `'K'` and smaller than or equal to `'a'`, and removes all occurrences of `c` from the string if it satisfies this condition. Finally, the function joins the filtered characters into a new string using `"".join()`.
+
+Note: The ASCII values for the letters 'K' and 'a' are 75 and 97, respectively.

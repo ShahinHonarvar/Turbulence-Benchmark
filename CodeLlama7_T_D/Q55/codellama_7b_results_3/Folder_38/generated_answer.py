@@ -1,0 +1,19 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list and find contiguous integers with a product equal to -23
+    for i in range(len(circular_list)):
+        current_product = 1
+        start_index = i
+
+        while current_product == -23:
+            # If the current product is equal to -23, add the sublist to the list of sublists
+            sublists.append(circular_list[start_index:i + 1])
+
+            # Increment the start index and update the current product
+            start_index += 1
+            current_product = circular_list[start_index] * circular_list[start_index + 1]
+
+    return sublists

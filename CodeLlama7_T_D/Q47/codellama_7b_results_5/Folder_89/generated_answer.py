@@ -1,0 +1,25 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the substring
+    for i in range(18, 89):
+        # Check if the character is a letter (a-z or A-Z)
+        if string[i].isalpha():
+            # Create a variable to store the palindrome
+            palindrome = ""
+            # Loop through each character in the substring from index i to index i + 13 (inclusive)
+            for j in range(i, i + 14):
+                # Check if the current character is a letter (a-z or A-Z)
+                if string[j].isalpha():
+                    # Add the current character to the palindrome variable
+                    palindrome += string[j]
+            # Check if the palindrome variable has at least 12 characters and less than or equal to 14 characters
+            if len(palindrome) >= 12 and len(palindrome) <= 14:
+                # Convert the palindrome variable to lowercase
+                palindrome = palindrome.lower()
+                # Check if the palindrome is a palindrome in a case-insensitive manner
+                if palindrome == palindrome[::-1]:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

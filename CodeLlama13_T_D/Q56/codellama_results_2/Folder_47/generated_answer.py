@@ -1,0 +1,18 @@
+
+def all_substring_of_size_n(string):
+    substrings = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)):
+            substring = string[i:j]
+            if len(substring) == 91 and all_distinct_characters(substring):
+                substrings.append(substring)
+    return substrings
+
+def all_distinct_characters(string):
+    seen = set()
+    for char in string:
+        if char in seen:
+            return False
+        else:
+            seen.add(char)
+    return True

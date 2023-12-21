@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(38, 100):
+        char = string[i]
+        if char >= 'A' and char <= 'Q':
+            continue
+
+        filtered_string += char
+
+    return filtered_string

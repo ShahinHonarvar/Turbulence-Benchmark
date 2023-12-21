@@ -1,0 +1,11 @@
+
+def palindromes_of_specific_lengths(string):
+    palindromes = set()
+    for i in range(16, 78):
+        for j in range(i+42, i+47+1):
+            substr = string[i:j]
+            if len(substr) < 43 or len(substr) > 47:
+                continue
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+    return palindromes

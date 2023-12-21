@@ -1,0 +1,27 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 87):
+        for j in range(matrix.shape[1] - 87):
+            if (np.sum(matrix[i:i + 88, j:j + 88]) == 88 * 88).all():
+                count += 1
+    return count
+
+# Test case 1: Empty matrix
+matrix = np.array([[]])
+assert submatrix_with_n_numbers(matrix) == 0
+# Test case 2: Matrix with a single row and column
+matrix = np.array([[1]])
+assert submatrix_with_n_numbers(matrix) == 0
+# Test case 3: Matrix with multiple rows and columns, but no submatrices of size 88x88
+matrix = np.array([[1, 2], [3, 4]])
+assert submatrix_with_n_numbers(matrix) == 0
+# Test case 4: Matrix with a single submatrix of size 88x88
+matrix = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
+assert submatrix_with_n_numbers(matrix) == 1
+# Test case 5: Matrix with multiple submatrices of size 88x88
+matrix = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]], [[17, 18, 19, 20], [21, 22, 23, 24], [25, 26, 27, 28], [29, 30, 31, 32]]))
+assert submatrix_with_n_numbers(matrix) == 2
+```

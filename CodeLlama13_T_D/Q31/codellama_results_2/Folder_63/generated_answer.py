@@ -1,0 +1,6 @@
+
+def if_perfect_num(my_list):
+    if my_list[57] % sum(my_list[:my_list[57]]) == 0:
+        return True
+    else:
+        return False

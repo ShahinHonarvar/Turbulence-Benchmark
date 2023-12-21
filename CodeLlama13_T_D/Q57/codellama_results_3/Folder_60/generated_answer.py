@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the found submatrices
+    found_submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the current submatrix
+            current_submatrix = []
+            
+            # Iterate over the rows and columns of the submatrix
+            for k in range(i, matrix.shape[0]):
+                for l in range(j, matrix.shape[1]):
+                    # Add the element at row k and column l to the current submatrix
+                    current_submatrix.append(matrix[k][l])
+            
+            # Check if the sum of all elements in the current submatrix is 94
+            if np.sum(current_submatrix) == 94:
+                # If it is, add the current submatrix to the list of found submatrices
+                found_submatrices.append(current_submatrix)
+    
+    # Return the list of found submatrices
+    return found_submatrices

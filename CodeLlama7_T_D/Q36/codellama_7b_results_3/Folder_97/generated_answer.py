@@ -1,0 +1,11 @@
+
+def filter_chars(my_string):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    for i in range(len(my_string)):
+        char = my_string[i]
+        if char not in ['S', 'm']:
+            filtered_string += char
+
+    return filtered_string

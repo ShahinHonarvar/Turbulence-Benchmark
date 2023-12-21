@@ -1,0 +1,17 @@
+
+def find_subset_of_length_n(set):
+    # Initialize the number of subsets to 0
+    num_subsets = 0
+    # Loop through all possible combinations of elements in the set
+    for i in range(1 << len(set))):
+        # Create a binary string representation of the current combination
+        binary_str = bin(i)[2:]
+        # Pad the binary string with leading zeros to make it the same length as the set
+        padded_binary_str = binary_str.zfill(len(set))
+        # Check if the current combination is a subset of the original set
+        if set(padded_binary_str) == set:
+            # Increment the number of subsets
+            num_subsets += 1
+
+    # Return the number of subsets of size n
+    return num_subsets

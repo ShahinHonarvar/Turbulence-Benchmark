@@ -1,0 +1,10 @@
+
+def return_n_greatest_chars(string, n):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Create a dictionary with the character as key and its ASCII value as value
+    char_dict = {char: ord(char) for char in char_list}
+    # Sort the dictionary by value in descending order
+    sorted_dict = dict(sorted(char_dict.items(), key=lambda item: item[1], reverse=True))
+    # Return the top n characters from the sorted dictionary
+    return [key for key, _ in sorted_dict.items()[:n]]

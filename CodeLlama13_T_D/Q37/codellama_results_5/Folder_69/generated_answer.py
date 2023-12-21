@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for i in range(114, 639 + 1):
+        if s[i] >= '!' and s[i] <= 'x':
+            s = s.replace(s[i], '')
+    return s

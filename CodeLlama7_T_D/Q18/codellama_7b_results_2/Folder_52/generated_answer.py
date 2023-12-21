@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # initialize the sum to 0
+    total = 0
+
+    # loop through the list from index 48 to 59, inclusive
+    for i in range(48, 60):
+        # check if the current element is divisible by either 88 or 58
+        if my_list[i] % 88 == 0 or my_list[i] % 58 == 0:
+            # add the current element to the sum
+            total += my_list[i]
+
+    # return the sum of all integers divisible by either 88 or 58 from index 48 to index 59, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return total

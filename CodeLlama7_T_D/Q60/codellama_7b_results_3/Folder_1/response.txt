@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `all_left_right_truncatable_prime` function:
+```python
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate over the range of prime numbers less than or equal to x
+    for i in range(2, x + 1):
+        # If the current number is a prime number and it is left-and-right-truncatable, add it to the list of results
+        if i > 1 and all(i % j != 0 for j in range(2, int(i ** 0.5) + 1)):
+            result.append(i)
+
+    # Sort the list of results in descending order and return it
+    return sorted(result, reverse=True)
+```
+This function takes a single argument `x`, which is a tuple of positive integers. It then iterates over the range of prime numbers less than or equal to `x`, checks if each number is left-and-right-truncatable, and adds it to the list of results if it is. Finally, it sorts the list of results in descending order and returns it.

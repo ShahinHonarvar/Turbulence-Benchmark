@@ -1,0 +1,15 @@
+ ```
+def return_nth_smallest_ascii(s):
+# Check if the string is empty or has no distinct characters
+if len(s) == 0 or len(set(s)) != len(s):
+return ""
+
+# Get the indices of the characters between 32 and 67 (both inclusive)
+indices = [i for i, c in enumerate(s) if 32 <= ord(c) <= 67]
+
+# Sort the characters by their ASCII values
+sorted_chars = sorted(s[i] for i in indices), key=ord)
+
+# Return the 12th smallest ASCII value
+return sorted_chars[11]
+```

@@ -1,0 +1,25 @@
+
+def all_left_right_truncatable_prime(numbers):
+    result = []
+    for number in numbers:
+        if is_left_and_right_truncatable_prime(number):
+            result.append(number)
+    return sorted(result)
+
+def is_left_and_right_truncatable_prime(number):
+    if number < 10:
+        return False
+    for i in range(1, len(str(number))):
+        left = int(str(number)[:i])
+        right = int(str(number)[i:])
+        if not is_prime(left) or not is_prime(right):
+            return False
+    return True
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

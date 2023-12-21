@@ -1,0 +1,7 @@
+
+def return_vowels(string):
+    vowels = []
+    for i in range(56, 90):
+        if string[i].isalpha() and string[i].lower() >= "k" and string[i].lower() <= "z":
+            vowels.append(string[i])
+    return vowels

@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    total = 0
+
+    # Iterate through the list of integers
+    for i in range(50, 93):
+        # Check if the current integer is divisible by either -94 or -95
+        if my_list[i] % -94 == 0 or my_list[i] % -95 == 0:
+            # If it is, add it to the sum
+            total += my_list[i]
+
+    # Return the sum
+    return total

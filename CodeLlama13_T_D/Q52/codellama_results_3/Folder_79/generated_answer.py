@@ -1,0 +1,16 @@
+
+def palindrome_of_length_n(s):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Loop through each substring of length 64
+    for i in range(len(s) - 64 + 1):
+        substr = s[i:i+64]
+        
+        # Check if the substring is a palindrome
+        if substr == substr[::-1]:
+            # Add the palindrome to the set
+            palindromes.add(substr)
+    
+    # Return the set of palindromes
+    return palindromes

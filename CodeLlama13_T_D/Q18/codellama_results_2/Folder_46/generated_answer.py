@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(arr):
+    result = 0
+    for i in range(11, 46+1):
+        if arr[i] % 55 == 0 or arr[i] % 36 == 0:
+            result += arr[i]
+    return result

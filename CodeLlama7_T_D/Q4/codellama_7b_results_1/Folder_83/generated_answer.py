@@ -1,0 +1,5 @@
+
+def all_pos_ints_exclusive(my_list):
+    start = 90
+    end = 200
+    return [x for x in my_list[start:end] if x > 0]

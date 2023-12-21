@@ -1,0 +1,9 @@
+
+def all_ints_div_by_both_two_nums(mylist):
+    # Slice the list from index 306 to index 957, both inclusive
+    sliced = mylist[306:958]
+    
+    # Use a list comprehension to filter out integers divisible by both 982 and 319
+    result = [x for x in sliced if x % 982 == 0 and x % 319 == 0]
+    
+    return result

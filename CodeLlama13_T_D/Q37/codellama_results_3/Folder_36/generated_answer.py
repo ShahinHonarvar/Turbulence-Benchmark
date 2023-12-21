@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return "".join([c for c in s if ord(c) < 259 or ord(c) > 502 or (ord(c) >= ord(",") and ord(c) <= ord("3"))])

@@ -1,0 +1,12 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate through the list and check if each number is a composite number between index 246 to index 750, both inclusive. If it is, add it to the set of composite numbers.
+    for i in range(246, len(my_list)):
+        if my_list[i] > 1:
+            for j in range(2, my_list[i]):
+                if my_list[i] % j == 0:
+                    composite_nums.add(my_list[i])
+    # Return the set of composite numbers between index 246 to index 750, both inclusive. If no composite number exists in the specified range, the function should return an empty set.
+    return composite_nums

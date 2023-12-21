@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # find the 6th smallest ASCII value among characters in string
+    # that occur between indices 1 and 31, both inclusive
+    ascii_values = []
+    for i in range(1, 32):
+        if string[i] not in ascii_values:
+            ascii_values.append(ord(string[i]))
+    ascii_values.sort()
+    return chr(ascii_values[5])

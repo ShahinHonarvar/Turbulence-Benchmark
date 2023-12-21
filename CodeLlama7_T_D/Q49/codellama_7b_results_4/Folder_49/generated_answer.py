@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert binary representation to decimal integer
+    dec_int = int(binary_repr, 2)
+    # Find the index of the 95th Fibonacci number in the string
+    fib_str = '010000000000000000000000000000000000000000000000'
+    # Check if the decimal integer is divisible by the 95th Fibonacci number
+    if dec_int % int(fib_str[183:185], 2) == 0:
+        return True
+
+    else:
+
+        return False

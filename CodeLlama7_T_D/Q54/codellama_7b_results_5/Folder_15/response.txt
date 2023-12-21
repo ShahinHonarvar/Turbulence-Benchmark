@@ -1,0 +1,48 @@
+ ```
+def all_right_truncatable_prime(tuple):
+    # Initialize a list to store the right-truncatable prime numbers
+    prime_list = []
+
+    # Iterate over the elements of the tuple
+
+    for element in tuple:
+
+        # Check if the current element is a prime number
+
+        if is_prime(element):
+
+            # If it is, add it to the list of right-truncatable prime numbers
+
+            prime_list.append(element)
+
+    # Sort the list of prime numbers in descending order
+
+    prime_list = sorted(prime_list, reverse=True)
+
+    # Return the sorted list of right-truncatable prime numbers less than x
+
+    return prime_list
+
+
+# Define a function to check if a number is prime
+
+def is_prime(n):
+
+    # Check if n is greater than 1
+
+    if n > 1:
+
+        # Check if n is divisible by any number between 2 and the square root of n
+
+        for i in range(2, int(n ** 0.5) + 1):
+
+            # If it is, return False
+
+            if n % i == 0:
+
+                return False
+
+    # If none of the above conditions are met, return True
+
+    return True
+```

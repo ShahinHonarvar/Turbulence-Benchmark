@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+import re
+
+def palindrome_of_length_at_least_n(string, n):
+    # Define a regular expression that matches all palindromes of length greater than or equal to n
+    pattern = r"(\w{n})|(\w{n}\W+\w{n})|(\w{n}\W+[\w\W]{n-1}\W+\w{n})"
+    # Use the regular expression to find all palindromes in the given string
+    return set(re.findall(pattern, string))
+```
+This implementation defines a regular expression `pattern` that matches all palindromes of length greater than or equal to `n`. The regular expression uses three alternative branches:
+* Branch 1: `\w{n}` matches any word (i.e., a sequence of letters) of exactly `n` characters.
+* Branch 2: `\w{n}\W+\w{n}` matches any word pair (i.e., two sequences of letters separated by one or more non-word characters) of exactly `n` characters each.
+* Branch 3: `\w{n}\W+[\w\W]{n-1}\W+\w{n}` matches any sequence of three words (i.e., a word followed by one or more non-word characters followed by another word) of exactly `n` characters in the middle, and with the first and last words having at least `n-1` characters each.
+The regular expression is used to find all palindromes in the given string using the `re.findall` function. The resulting list of matches is then converted into a set to eliminate duplicates and return a unique list of palindromes.

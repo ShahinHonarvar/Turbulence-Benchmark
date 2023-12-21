@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle, islice\nimport operator\nimport numpy as np\nfrom functools import reduce\n\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    sublists = []\n\n    # Create circular list using cycle and islice\n    cycled = cycle(lst)\n\n    for i in range(n):\n        for j in range(1, n + 1):\n            sublist = list(islice(cycled, i, i + j))\n            # Check if product of sublist elements equals N\n            if reduce(operator.mul, sublist, 1) == 91:\n                sublists.append(sublist)\n\n    return sublists\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691009909,
+  "id": "chatcmpl-7jDDJlnldz6g3WeonccKaPZfdRWEi",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 136,
+    "prompt_tokens": 193,
+    "total_tokens": 329
+  }
+}

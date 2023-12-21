@@ -1,0 +1,5 @@
+
+def return_n_greatest_chars(string):
+    chars = list(set(string)) # get distinct characters from string
+    sorted_chars = sorted(chars, key=lambda x: ord(x), reverse=True)[:17] # sort in descending order and keep only the first 17 elements
+    return sorted_chars # return the list of 17 characters with greatest ASCII values

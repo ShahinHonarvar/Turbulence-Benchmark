@@ -1,0 +1,265 @@
+[cohere.Generation {
+	id: a5109ffb-2269-4de2-9977-5da7a51576e0
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 28. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in ascending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_right_truncatable_prime(n):
+    # your code here
+    x = n[28]
+    lst = []
+    for i in range(2, x // 2):
+        if is_prime(i):
+            j = i
+            while j:
+                j //= 10
+            lst.append(i)
+    if x % 2 == 1:
+        lst.append(x)
+    return sorted(lst)
+
+def is_prime(x):
+    if x < 2:
+        return False
+    if x == 2 or x == 3 or x == 5:
+        return True
+    if x == 1:
+        return False
+    if x == 4:
+        return False
+    if x == 6:
+        return False
+    if x == 7:
+        return True
+    if x == 8:
+        return False
+    if x == 9:
+        return False
+    if x == 10:
+        return False
+    if x == 11:
+        return True
+    if x == 12:
+        return False
+    if x == 13:
+        return True
+    if x == 14:
+        return False
+    if x == 15:
+        return True
+    if x == 16:
+        return False
+    if x == 17:
+        return True
+    if x == 18:
+        return False
+    if x == 19:
+        return True
+    if x == 20:
+        return False
+    if x == 21:
+        return True
+    if x == 22:
+        return False
+    if x == 23:
+        return True
+    if x == 24:
+        return False
+    if x == 25:
+        return True
+    if x == 26:
+        return False
+    if x == 27:
+        return True
+    if x == 28:
+        return False
+    if x == 29:
+        return True
+    if x == 30:
+        return False
+    if x == 31:
+        return True
+    if x == 32:
+        return False
+    if x == 33:
+        return True
+    if x == 34:
+        return False
+    if x == 35:
+        return True
+    if x == 36:
+        return False
+    if x == 37:
+        return True
+    if x == 38:
+        return False
+    if x == 39:
+        return True
+    if x == 40:
+        return False
+    if x == 41:
+        return True
+    if x == 42:
+        return False
+    if x == 43:
+        return True
+    if x == 44:
+        return False
+    if x == 45:
+        return True
+    if x == 46:
+        return False
+    if x == 47:
+        return True
+    if x == 48:
+        return False
+    if x == 49:
+        return True
+    if x == 50:
+        return False
+    if x == 51:
+        return True
+    if x == 52:
+        return False
+    if x == 53:
+        return True
+    if x == 54:
+        return False
+    if x == 55:
+        return True
+    if x == 56:
+        return False
+    if x == 57:
+        return True
+    if x == 58:
+        return False
+    if x == 59:
+        return True
+    if x == 60:
+        return False
+    if x == 61:
+        return True
+    if x == 62:
+        return False
+    if x == 63:
+        return True
+    if x == 64:
+        return False
+    if x == 65:
+        return True
+    if x == 66:
+        return False
+    if x == 67:
+        return True
+    if x == 68:
+        return False
+    if x == 69:
+        return True
+    if x == 70:
+        return False
+    if x == 71:
+        return True
+    if x == 72:
+        return False
+    if x == 73:
+        return True
+    if x == 74:
+        return False
+    if x == 75:
+        return True
+    if x == 76:
+        return False
+    if x == 77:
+        return True
+    if x == 78:
+        return False
+    if x == 79:
+        return True
+    if x == 80:
+        return False
+    if x == 81:
+        return True
+    if x == 82:
+        return False
+    if x == 83:
+        return True
+    if x == 84:
+        return False
+    if x == 85:
+        return True
+    if x == 86:
+        return False
+    if x == 87:
+        return True
+    if x == 88:
+        return False
+    if x == 89:
+        return True
+    if x == 90:
+        return False
+    if x == 91:
+        return True
+    if x == 92:
+        return False
+    if x == 93:
+        return True
+    if x == 94:
+        return False
+    if x == 95:
+        return True
+    if x == 96:
+        return False
+    if x == 97:
+        return True
+    if x == 98:
+        return False
+    if x == 99:
+        return True
+    if x == 100:
+        return False
+    if x == 101:
+        return True
+    if x == 102:
+        return False
+    if x == 103:
+        return True
+    if x == 104:
+        return False
+    if x == 105:
+        return True
+    if x == 106:
+        return False
+    if x == 107:
+        return True
+    if x == 108:
+        return False
+    if x == 109:
+        return True
+    if x == 110:
+        return False
+    if x == 111:
+        return True
+    if x == 112:
+        return False
+    if x == 113:
+        return True
+    if x == 114:
+        return False
+    if x == 115:
+        return True
+    if x == 116:
+        return False
+    if x == 117:
+        return True
+    if x == 118:
+        return False
+    if x == 119:
+        return True
+    if x == 120:
+        return False
+    if x == 121:
+        return True
+    if x == 122:
+       
+	likelihood: None
+	token_likelihoods: None
+}]

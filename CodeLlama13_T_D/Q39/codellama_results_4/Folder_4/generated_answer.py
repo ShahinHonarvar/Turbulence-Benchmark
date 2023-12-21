@@ -1,0 +1,5 @@
+
+def return_n_greatest_chars(s):
+    n = 90
+    chars = sorted(set(s), key=ord, reverse=True)[:n]
+    return ''.join(chars)

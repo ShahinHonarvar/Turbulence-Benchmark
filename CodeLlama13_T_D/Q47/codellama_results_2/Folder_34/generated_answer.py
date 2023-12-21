@@ -1,0 +1,20 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring between indices 200 and 300, both inclusive
+    substr = string[200:300]
+    
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each character in the substring
+    for i in range(len(substr)):
+        # Check if the current character is an English letter
+        if substr[i].isalpha():
+            # If it is, check if the reverse of the string up to that point is a palindrome
+            rev = substr[:i+1][::-1]
+            if rev == substr[:i+1]:
+                # If it is, add it to the set of palindromes
+                palindromes.add(substr[:i+1])
+    
+    # Return the set of palindromes
+    return palindromes

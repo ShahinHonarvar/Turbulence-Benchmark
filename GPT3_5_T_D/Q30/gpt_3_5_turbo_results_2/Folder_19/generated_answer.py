@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return string.replace('5', 'h5')

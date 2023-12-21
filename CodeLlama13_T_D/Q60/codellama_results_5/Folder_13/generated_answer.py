@@ -1,0 +1,31 @@
+
+def all_left_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(1, x+1):
+        if is_prime(i) and not contains_0(str(i)):
+            prime_numbers.append(i)
+    
+    left_right_truncatable_primes = []
+    for p in prime_numbers:
+        if is_left_and_right_truncatable_prime(p):
+            left_right_truncatable_primes.append(p)
+    
+    return sorted(left_right_truncatable_primes)
+
+def is_prime(n):
+    if n == 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+def contains_0(s):
+    return '0' in s
+
+def is_left_and_right_truncatable_prime(p):
+    while len(str(p)) > 2:
+        if not is_prime(p):
+            return False
+        p = int(str(p)[:-1])
+    return True

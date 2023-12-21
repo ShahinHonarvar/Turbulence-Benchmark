@@ -1,0 +1,18 @@
+
+def palindrome_of_length_at_least_n(string):
+    """
+    Finds the set of all palindromes of the length greater than or equal to 88 that exist in a given string,
+    each palindrome should only consist of English letters. Returns an empty set if no such palindromes exist.
+    The function finds the palindromes in a case-insensitive manner.
+    """
+    # Initialize the result as an empty set
+    result = set()
+    
+    # Iterate over all substrings of the given string
+    for i in range(len(string)):
+        for j in range(i, len(string) + 1):
+            # Check if the substring is a palindrome
+            if string[i:j] == string[i:j][::-1]:
+                result.add(string[i:j])
+    
+    return result

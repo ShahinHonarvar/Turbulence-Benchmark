@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(my_list):
+    return [x for x in my_list if 41 < x < 69 and isinstance(x, int) and x > 0]

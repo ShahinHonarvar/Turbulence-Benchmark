@@ -1,0 +1,22 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the range of indices for the substring
+    start_index = 11
+    end_index = 87
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(start_index, end_index + 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Define the length of the palindrome
+            length = 5
+
+            # Iterate over each possible palindrome of the specified length
+            for j in range(length + 1):
+                # Check if the current palindrome is a valid palindrome
+                if string[i - j: i + j + 1].lower() == string[i - j: i + j + 1][::-1].lower():
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(string[i - j: i + j + 1])
+
+    return palindromes

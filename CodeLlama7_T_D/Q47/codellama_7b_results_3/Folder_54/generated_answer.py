@@ -1,0 +1,56 @@
+
+def palindromes_of_specific_lengths(string, index_range=(27, 77), lengths=(18, 19)):
+    # Convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+
+    palindromes = set()
+
+    # Iterate over each character in the specified index range
+
+    for i in range(*index_range):
+
+        # Check if the current character is a letter (uppercase or lowercase)
+
+        if string[i].isalpha():
+
+            # Get the substring of length 18 starting from the current character
+
+            substr = string[i:i+18]
+
+            # Check if the substring is a palindrome
+
+            if substr == substr[::-1]:
+
+                # Add the palindrome to the set
+
+                palindromes.add(substr)
+
+    # Iterate over each length in the specified range
+
+    for length in lengths:
+
+        # Check if there are any palindromes with the current length
+
+        if len(palindromes) > 0:
+
+            # Get the first palindrome with the current length
+
+            palindrome = next(iter(palindromes)))
+
+            # Remove all other palindromes with the same length as the current one
+
+            for other_palindrome in palindromes:
+
+                if len(other_palindrome) == length:
+
+                    palindromes.remove(other_palindrome)
+
+            # Return the first palindrome with the current length
+
+            return palindrome
+
+    # If no palindrome is found, return an empty set
+
+    return set()

@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    if 8 in my_list:
+        index = my_list.index(8) + 1
+        my_list.insert(index, [3, 8])
+    return my_list

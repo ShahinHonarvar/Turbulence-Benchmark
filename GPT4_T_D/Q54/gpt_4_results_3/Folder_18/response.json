@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import isprime\n\ndef all_right_truncatable_prime(numbers):\n    x = numbers[429]\n    right_truncatable_primes = []\n\n    for num in range(2, x):\n        temp_num = str(num)\n        while temp_num:\n            if isprime(int(temp_num)):\n                temp_num = temp_num[:-1]\n            else:\n                break\n        else:\n            right_truncatable_primes.append(num)\n\n    return sorted(right_truncatable_primes, reverse=True)\n```\nPlease note that in the text description, you mentioned the index 429. This is unusual since Python indexing starts from 0. So, if the tuple length is less than 430, this code will give IndexError. Please ensure to have enough number of elements in the input tuple when using this function.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690973866,
+  "id": "chatcmpl-7j3pyxpU9VtnDkF2eiU5lr9tuRiio",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 169,
+    "prompt_tokens": 157,
+    "total_tokens": 326
+  }
+}

@@ -1,0 +1,4 @@
+
+def all_ints_div_by_both_two_nums(lst):
+    lst = lst[543:585]
+    return [i for i in lst if i % -553 == 0 and i % -737 == 0]

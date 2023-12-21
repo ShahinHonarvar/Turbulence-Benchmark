@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: 78385a53-77c8-4c7a-8e0f-0672d2d62f4e
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_nth_smallest_ascii' that takes one argument, a string of distinct characters. The function should return the character with the 20th smallest ASCII value among those characters in the string that occur between indices 38 to 82, both inclusive.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+
+def return_nth_smallest_ascii(s):
+    # Find the set of characters to compare
+    idx_set = set(re.findall(r'[A-z]', s))
+    # Sort them, and slice off the first 38
+    idx_set = sorted(idx_set)[38:]
+    # Slice off the last 82
+    idx_set = idx_set[:82]
+    # Find the index of the 20th smallest character
+    idx_set = idx_set[:20]
+    return idx_set[0]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

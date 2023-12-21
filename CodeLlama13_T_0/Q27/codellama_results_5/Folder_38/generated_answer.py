@@ -1,0 +1,4 @@
+
+def insert_after_index(my_list):
+    index = my_list.index(89) + 1
+    return my_list[:index] + [86] + my_list[index:]

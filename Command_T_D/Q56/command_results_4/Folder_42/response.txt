@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: dc6f6206-8373-42d7-980d-7b8e4f1009fa
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_substring_of_size_n' that takes one argument which is a string. The function should return the list of all distinct substrings of the length equal to 45 with no duplicate characters. If no such substrings exist in the given string, the function should return an empty list. The order of the substrings in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def all_substring_of_size_n(s):
+    res = []
+    for i in range(len(s) - 44):
+        tmp = s[i:i + 45]
+        if tmp not in res:
+            res.append(tmp)
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,14 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 78 + 1):
+        for j in range(matrix.shape[1] - 78 + 1):
+            if np.count_nonzero(matrix[i:i+78, j:j+78]) == 78:
+                count += 1
+    return count
+
+matrix = np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+#print(submatrix_with_n_numbers(matrix))
+```

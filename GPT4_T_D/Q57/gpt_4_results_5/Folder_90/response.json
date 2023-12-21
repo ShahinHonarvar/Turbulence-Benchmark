@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code following your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrices = []\n    rows = matrix.shape[0]\n    cols = matrix.shape[1]\n\n    for row in range(rows):\n        for col in range(cols):\n            for width in range(1, cols-col+1):\n                for height in range(1, rows-row+1):\n                    submatrix = matrix[row:row+height, col:col+width]\n                    if np.sum(submatrix) == -452:\n                        submatrices.append(submatrix)\n\n    return submatrices\n```\nNote: This code does not optimize computational complexity and might face issues for large matrices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691016747,
+  "id": "chatcmpl-7jEzb6JHmdeXwAKwyztuJ8ElaCk9h",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 149,
+    "prompt_tokens": 121,
+    "total_tokens": 270
+  }
+}

@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    start = 38
+    end = 69
+    filtered_string = ""
+    for i in range(len(string)):
+        if (start <= i <= end) and ('H' <= string[i] <= 'e'):
+            continue
+
+        filtered_string += string[i]
+
+    return filtered_string

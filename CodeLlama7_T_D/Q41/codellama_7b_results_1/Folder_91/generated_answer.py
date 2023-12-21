@@ -1,0 +1,13 @@
+
+def identical_elements(list1, list2):
+    # Find the intersection of both lists
+    intersection = set(list1).intersection(set(list2))
+    # Initialize an empty set to store the result
+    result = set()
+    # Iterate through the intersection and check if the element is present in both lists
+    for element in intersection:
+        if list1.count(element) > 0 and list2.count(element) > 0:
+            # If the element is present in both lists, add it to the result set
+            result.add(element)
+    # Return the result set
+    return result

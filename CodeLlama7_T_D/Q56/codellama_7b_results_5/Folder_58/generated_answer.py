@@ -1,0 +1,16 @@
+
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate over the length of the input string
+    for i in range(len(input_string)):
+
+        # Check if the substring is of size 127
+        if len(input_string[i:]) == 127:
+
+            # Add the substring to the list of substrings
+            substrings.append(input_string[i:i + 127])
+
+    # Return the list of substrings
+    return substrings

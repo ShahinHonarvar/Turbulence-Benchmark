@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(mylist):
+    return [x for x in mylist[10:83] if x % -47 == 0]

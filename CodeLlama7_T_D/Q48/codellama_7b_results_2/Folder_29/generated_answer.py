@@ -1,0 +1,18 @@
+
+def return_binary_or_hexa(tuple):
+    # Check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if not set(range(tuple[70] + 1, tuple[98] - 1)) - set(tuple[70:98 + 1])):
+        # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 70 and 98
+        sum = sum(range(tuple[70] + 1, tuple[98] - 1)) - set(tuple[70:98 + 1]))
+    else:
+        return ""
+
+# Check if the sum is an odd number
+if sum % 2 == 1:
+    # Return the binary representation string of the sum
+    return f"{sum:b}"
+
+else:
+
+    # Return the hexadecimal representation string of the sum
+    return f"{sum:x}"

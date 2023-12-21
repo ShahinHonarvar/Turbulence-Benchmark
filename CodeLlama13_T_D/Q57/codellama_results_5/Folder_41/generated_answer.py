@@ -1,0 +1,31 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(len(matrix)):
+        # Iterate over each column of the matrix
+        for j in range(len(matrix[0])):
+            # Initialize a temporary list to store the current submatrix
+            temp_submatrix = []
+            
+            # Add the current element to the temporary list
+            temp_submatrix.append(matrix[i][j])
+            
+            # Iterate over each row below the current row
+            for k in range(i+1, len(matrix)):
+                # Iterate over each column below the current column
+                for l in range(j+1, len(matrix[0])):
+                    # Add the current element to the temporary list
+                    temp_submatrix.append(matrix[k][l])
+            
+            # Check if the sum of all elements in the temporary list is equal to -26
+            if sum(temp_submatrix) == -26:
+                # If yes, add the temporary list to the submatrices list
+                submatrices.append(temp_submatrix)
+    
+    # Return the submatrices list
+    return submatrices

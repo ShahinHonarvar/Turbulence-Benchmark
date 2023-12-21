@@ -1,0 +1,13 @@
+ ```
+def palindromes_between_indices(input_string):
+    # Create a list of all possible palindromes of length at least 4
+    palindromes = []
+    for i in range(len(input_string) - 3):
+        # Get the substring of length 4 starting from index i
+        substring = input_string[i:i+4]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            # Add the palindrome to the list
+            palindromes.append(substring)
+    return set(palindromes)
+```

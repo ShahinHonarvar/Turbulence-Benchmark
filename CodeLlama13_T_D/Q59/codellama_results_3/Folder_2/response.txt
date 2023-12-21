@@ -1,0 +1,16 @@
+```python
+def all_left_truncatable_prime(my_tuple):
+    primes = []
+    for x in my_tuple:
+        if str(x).count("0") == 0:
+            is_prime = True
+            for i in range(2, int(x**0.5) + 1):
+                if x % i == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                primes.append(x)
+        else:
+            pass
+    return sorted(primes)
+```

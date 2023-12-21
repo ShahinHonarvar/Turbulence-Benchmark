@@ -1,0 +1,6 @@
+```python
+def return_n_greatest_chars(string):
+    chars = sorted(set(string), key=ord, reverse=True)[:34]
+    return ''.join(chars)
+```
+This function takes a string of distinct characters as input and returns the sorted list of exactly 34 characters that have the greatest ASCII values. The `sorted` function is used with a custom `key` argument to sort the characters by their ASCII values in descending order, while the `set` function is used to remove duplicates from the input string. Finally, the first 34 elements of the sorted list are returned as a string.

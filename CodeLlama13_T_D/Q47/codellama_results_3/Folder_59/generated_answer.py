@@ -1,0 +1,11 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the substring from index 0 to index 100, both inclusive
+    palindromes = []
+    for i in range(0, 100 + 1):
+        for j in range(i, 100 + 1):
+            substring = string[i:j]
+            if substring == substring[::-1]:
+                palindromes.append(substring)
+    # Filter the palindromes by length and letter composition
+    return {palindrome for palindrome in palindromes if len(palindrome) >= 3 and len(palindrome) <= 15 and all(letter in "abcdefghijklmnopqrstuvwxyz" for letter in palindrome)}

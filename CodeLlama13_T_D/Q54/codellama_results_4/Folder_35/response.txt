@@ -1,0 +1,19 @@
+```
+def all_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    
+    right_truncatable_primes = []
+    for p in prime_numbers:
+        if is_right_truncatable_prime(p):
+            right_truncatable_primes.append(p)
+    
+    return sorted(right_truncatable_primes)
+```
+This code defines a function `all_right_truncatable_prime` that takes an integer `x` as input and returns the list of all right-truncatable prime numbers less than `x`. The function first generates a list of all prime numbers up to `x`, then checks which of these numbers are right-truncatable primes. Finally, it returns the sorted list of right-truncatable prime numbers.
+
+The function `is_prime` is not defined in this code snippet, but it should take an integer `n` as input and return `True` if `n` is a prime number, and `False` otherwise. Similarly, the function `is_right_truncatable_prime` is also not defined, but it should take an integer `p` as input and return `True` if `p` is a right-truncatable prime number, and `False` otherwise.
+
+Note that this code snippet assumes that the functions `is_prime` and `is_right_truncatable_prime` are defined elsewhere in the code or in a module that is imported into the code.

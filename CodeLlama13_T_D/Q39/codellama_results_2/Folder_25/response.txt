@@ -1,0 +1,11 @@
+```python
+def return_n_greatest_chars(s):
+    # create a list of tuples containing the character and its ASCII value
+    char_ascii = [(c, ord(c)) for c in set(s)]
+    
+    # sort the list in descending order based on the ASCII value
+    sorted_char_ascii = sorted(char_ascii, key=lambda x: -x[1])
+    
+    # return a list of exactly 29 characters with the greatest ASCII values
+    return [c for c, _ in sorted_char_ascii[:29]]
+```

@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 12 or i > 88:
+            result += char
+        elif ord('&') <= ord(char) <= ord('v'):
+            continue
+        else:
+            result += char
+    return result

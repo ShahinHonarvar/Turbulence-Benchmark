@@ -1,0 +1,11 @@
+ def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the result
+    result = []
+    # Iterate through the list of integers starting from index 13 to index 91, both inclusive
+    for i in range(13, 92):
+        # Check if the current integer is divisible by both -65 and -62
+        if my_list[i] % (-65) == 0 and my_list[i] % (-62) == 0:
+            # If it is, add it to the result list
+            result.append(my_list[i])
+    # Return the result list
+    return result

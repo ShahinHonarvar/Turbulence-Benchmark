@@ -1,0 +1,15 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Initialize a variable to store the 7th Fibonacci number
+    seventh_fibonacci_number = 0
+    # Iterate over the Fibonacci sequence until we find the 7th number
+    for i in range(100):
+        # Calculate the current Fibonacci number
+        fibonacci_number = (i + i + 1) % 100
+        # Increment the variable to store the 7th Fibonacci number if we find it
+        if seventh_fibonacci_number == 0:
+            seventh_fibonacci_number = fibonacci_number
+    # Check if the decimal integer is divisible by the 7th Fibonacci number
+    return decimal_integer % seventh_fibonacci_number == 0

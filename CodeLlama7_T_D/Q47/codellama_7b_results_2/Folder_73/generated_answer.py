@@ -1,0 +1,45 @@
+
+def palindromes_of_specific_lengths(string):
+    # Check if the input string is empty or None
+    if not string:
+        return set()
+
+    # Define a function to check if a given substring is a palindrome
+    def is_palindrome(substring):
+        # Convert the substring to lowercase
+        lowercase_substring = substring.lower()
+
+        # Check if the lowercased substring is equal to its reverse
+        return lowercase_substring == lowercase_substring[::-1]
+
+    # Define a function to find all palindromes within a given index range
+    def find_palindromes(string, start, end):
+        # Initialize an empty set to store the palindromes
+        palindromes = set()
+
+        # Iterate over each substring in the input string within the specified index range
+        for i in range(start, end + 1):
+            # Check if the current substring is a palindrome
+            if is_palindrome(string[i - 21:i]):
+                # Add the palindrome to the set of palindromes
+                palindromes.add(string[i - 21:i])
+
+        # Return the set of palindromes
+        return palindromes
+
+    # Define a function to find all palindromes within the specified index range and with the specified lengths
+    def find_palindromes_of_specific_lengths(string, start, end, min_length, max_length):
+        # Initialize an empty set to store the palindromes
+        palindromes = set()
+
+        # Iterate over each substring in the input string within the specified index range and with the specified lengths
+        for i in range(start, end + 1):
+            # Check if the current substring has a length between the minimum and maximum lengths specified
+            if min_length <= len(string[i - 21:i]) <= max_length:
+                # Check if the current substring is a palindrome
+                if is_palindrome(string[i - 21:i]):
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(string[i - 21:i])
+
+        # Return the set of palindromes
+        return palindromes

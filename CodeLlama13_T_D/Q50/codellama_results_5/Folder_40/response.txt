@@ -1,0 +1,22 @@
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a dictionary to store the anagram count for each string
+    anagram_count = {}
+    
+    # Iterate over the list of strings and check if the string is already in the dictionary
+    for s in my_list:
+        # Convert the current string to lowercase
+        s_lower = s.lower()
+        
+        # Check if the anagram count for the current string is already present in the dictionary
+        if s_lower not in anagram_count:
+            # If the anagram count is not present, add it to the dictionary with a value of 1
+            anagram_count[s_lower] = 1
+        else:
+            # If the anagram count is already present, increment its value by 1
+            anagram_count[s_lower] += 1
+    
+    # Check if there are at least 3 pairs of anagrams in the list
+    return len([k for k, v in anagram_count.items() if v >= 2]) >= 3
+```
+This code first initializes a dictionary to store the anagram count for each string in the input list. It then iterates over the list of strings and checks if the current string is already present in the dictionary. If it is not, it adds it with a value of 1. If it is already present, it increments its value by 1. Finally, it returns `True` if there are at least 3 pairs of anagrams in the list, and `False` otherwise.

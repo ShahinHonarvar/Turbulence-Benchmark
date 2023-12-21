@@ -1,0 +1,65 @@
+ ```
+def all_right_truncatable_prime(tuple):
+	# Initialize an empty list for the results
+	results = []
+
+	# Iterate through the tuple
+	for num in tuple:
+		# Check if the number is a prime number
+		if is_prime(num):
+			# Check if the number is right-truncatable prime
+			if is_right_truncatable_prime(num):
+				# Add the number to the results list
+				results.append(num)
+
+	# Sort the results in descending order
+	results.sort(reverse=True)
+
+	# Return the sorted results list
+	return results
+
+
+# Check if a number is a prime number
+def is_prime(n):
+	# Check if n is less than or equal to 1
+	if n <= 1:
+		return False
+
+	# Check if n is divisible by 2 to n - 1
+	for i in range(2, n):
+		if n % i == 0:
+			return False
+
+	# If the number makes it all the way through the loop, it must be prime
+	return True
+
+
+# Check if a number is a right-truncatable prime number
+def is_right_truncatable_prime(n):
+	# Initialize a variable to keep track of whether the number has been proven prime yet
+	is_prime = False
+
+	# Iterate through the digits of the number from right to left
+	for digit in str(n)[::-1]:
+		# Convert each digit to an integer
+		digit = int(digit)
+
+		# Check if the current digit is equal to the last digit of the number
+		if digit == n % 10:
+			# If the current digit is equal to the last digit, set the is_prime variable to True
+			is_prime = True
+
+			# Break out of the loop since we've found a match
+			break
+
+		# If the current digit is not equal to the last digit, return False
+		else:
+			return False
+
+	# If the number has been proven prime throughout the loop, return True
+	if is_prime:
+		return True
+
+	# Otherwise, return False since the number was not a right-truncatable prime number
+	return False
+```

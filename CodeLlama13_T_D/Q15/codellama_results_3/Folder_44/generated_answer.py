@@ -1,0 +1,13 @@
+
+def sum_odd_ints_inclusive(nums):
+    # Initialize a variable to store the sum
+    result = 0
+    
+    # Iterate over the list of integers, starting from index 13 and ending at index 68 (both inclusive)
+    for i in range(13, 69):
+        # If the current integer is odd, add it to the sum
+        if nums[i] % 2 == 1:
+            result += nums[i]
+    
+    # Return the sum
+    return result

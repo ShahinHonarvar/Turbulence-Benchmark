@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(numbers):\n    a = numbers[39]\n    b = numbers[43]\n    if all(x in numbers[40:43] for x in range(a+1, b)):\n        return \"\"\n\n    sum = 0\n    for x in range(a+1, b):\n        if x not in numbers:\n            sum += x\n    \n    if sum % 2 == 1:\n        return bin(sum)[2:]\n    else:\n        return hex(sum)[2:].upper()\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689817963,
+  "id": "chatcmpl-7eD8N5fOcW3CUbZBNPwq7JFATwI7u",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 263,
+    "total_tokens": 371
+  }
+}

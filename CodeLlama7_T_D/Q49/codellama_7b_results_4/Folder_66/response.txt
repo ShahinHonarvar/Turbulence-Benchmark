@@ -1,0 +1,39 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Get the most significant digit of the decimal integer
+    most_significant_digit = str(decimal_integer)[-1]
+    # Check if the most significant digit is 0 or 1
+    if most_significant_digit == '0' or most_significant_digit == '1':
+        # If the most significant digit is 0, return true
+        if most_significant_digit == '0':
+            return True
+
+        # If the most significant digit is 1, check if the decimal integer is divisible by the 120th number in the Fibonacci sequence
+        else:
+            # Initialize variables for the Fibonacci sequence and the current number being checked
+            fib_sequence = [0, 1]
+            current_number = 2
+
+            # Loop through the Fibonacci sequence until the current number is greater than or equal to the decimal integer
+            while current_number < decimal_integer:
+                fib_sequence.append(fib_sequence[current_number - 1] + fib_sequence[current_number - 2])
+                current_number += 1
+
+            # Check if the decimal integer is divisible by the 120th number in the Fibonacci sequence
+            if decimal_integer % fib_sequence[-1] == 0:
+                return True
+
+    # If the most significant digit is not 0 or 1, return false
+    else:
+        return False
+
+# Test the function with a few examples
+#print(if_decimal_is_divisible('0'))
+#print(if_decimal_is_divisible('1'))
+#print(if_decimal_is_divisible('10'))
+#print(if_decimal_is_divisible('11'))
+#print(if_decimal_is_divisible('100'))
+#print(if_decimal_is_divisible('101'))
+```

@@ -1,0 +1,20 @@
+ ```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(662, 689):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers, reverse=True)
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+```
+This code defines two functions: `find_primes_between_indices` and `is_prime`. The first function takes a list of integers as input and returns the sorted list of all prime numbers from index 662 to index 689, both inclusive. The second function takes an integer `n` as input and returns `True` if `n` is prime and `False` otherwise.
+The code first defines an empty list called `prime_numbers`. Then, it iterates over the indices in the range from 662 to 689 (both inclusive) and checks if each number at that index is prime using the `is_prime` function. If a number is prime, it adds it to the `prime_numbers` list.
+Finally, the code returns the sorted `prime_numbers` list in descending order. If no prime number exists in the specified range, the function returns an empty list.

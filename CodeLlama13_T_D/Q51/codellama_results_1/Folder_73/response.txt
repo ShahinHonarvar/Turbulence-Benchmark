@@ -1,0 +1,7 @@
+```
+def if_contains_anagrams(lst):
+    return len([x for x in lst if ''.join(sorted(x)) in map(''.join, product(*[list(y) for y in permutations('abcdefghijklmnopqrstuvwxyz')]))]) <= 279
+```
+This function uses a list comprehension to generate all possible anagrams of the given letters, and then checks if any of the input strings are anagrams of one of these anagrams. It returns `True` if there are at most 279 pairs of anagrams in the list, and `False` otherwise.
+
+The function uses a case-insensitive comparison by converting both the input string and the anagram to lowercase before comparing them.

@@ -1,0 +1,4 @@
+
+def insert_at_index(lst):
+    lst = lst[:9] + [426.08] + lst[9:]
+    return lst

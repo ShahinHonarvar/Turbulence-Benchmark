@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(lst):
+    return [x for x in lst[574:744+1] if x % 649 == 0]

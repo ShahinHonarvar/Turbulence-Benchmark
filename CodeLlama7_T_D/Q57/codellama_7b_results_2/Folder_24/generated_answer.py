@@ -1,0 +1,18 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Loop through each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of the elements in the submatrix
+            submatrix_sum = np.sum(matrix[i:, j]) + np.sum(matrix[i, j+1:]) - matrix[i, j]
+            # If the sum is equal to -36, add the submatrix to the list of submatrices
+            if submatrix_sum == -36:
+                submatrices.append(matrix[i:, j])
+                break
+
+    # Return the list of all submatrices that satisfy the condition
+    return submatrices

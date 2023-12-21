@@ -1,0 +1,21 @@
+ ```
+def return_binary_or_hexa(tuple):
+    # Extract the elements between indices 86 and 89
+    a = tuple[86]
+    b = tuple[89]
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 86 and 89
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in tuple[86:89]:
+            sum += i
+    # Return the binary or hexadecimal representation string of the sum
+    if sum % 2 == 0:
+        return hex(sum)
+    else:
+        return bin(sum)[2:]
+
+# Test the function with a tuple containing all integers from 1 to 100 (both inclusive)
+tuple = tuple([i for i in range(1, 101)]))
+#print(return_binary_or_hexa(tuple))
+```
+Note that this code assumes that the input tuple is of length 100 and contains all integers from 1 to 100 (both inclusive). If the input tuple has a different length or contains different integers, the code may not work as intended.

@@ -1,0 +1,5 @@
+
+def return_nth_smallest_ascii(s):
+    ascii_values = {ord(c) for c in s if 10 <= ord(c) <= 82}
+    sorted_ascii_values = sorted(ascii_values)
+    return chr(sorted_ascii_values[17])

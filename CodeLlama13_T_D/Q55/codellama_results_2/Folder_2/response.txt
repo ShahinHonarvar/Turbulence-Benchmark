@@ -1,0 +1,17 @@
+```
+def lists_with_product_equal_n(circular_list, target):
+    sublists = []
+    for i in range(len(circular_list)):
+        product = 1
+        sublist = []
+        for j in range(i, len(circular_list)):
+            product *= circular_list[j]
+            if product == target:
+                sublists.append(sublist + [circular_list[j]])
+                break
+            elif product > target:
+                break
+            else:
+                sublist.append(circular_list[j])
+    return sublists
+```

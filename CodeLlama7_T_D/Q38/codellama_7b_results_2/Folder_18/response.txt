@@ -1,0 +1,14 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize the result variable
+    result = 0
+    # Loop through all possible subsets of length n
+    for i in range(2 ** len(elements)):
+        # Convert the binary representation of the subset to a list of elements
+        subset = [elements[j] for j in range(len(elements)) if (i & (1 << j)) != 0]
+        # Check if the subset has length n and add it to the result
+        if len(subset) == n:
+            result += 1
+
+    return result
+```

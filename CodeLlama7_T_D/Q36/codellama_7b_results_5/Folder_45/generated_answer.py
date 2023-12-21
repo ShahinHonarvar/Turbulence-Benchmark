@@ -1,0 +1,12 @@
+
+def filter_chars(my_string):
+    # Create a list of characters in the given string
+    char_list = list(my_string)
+
+    # Iterate through the list of characters and remove all occurrences of the characters between indices 81 and 86 (both exclusive) while keeping the order of all characters intact.
+    for i in range(len(char_list)):
+        if char_list[i] > '!' and char_list[i] < 's':
+            char_list.pop(i)
+
+    # Join the list of characters back into a string and return the altered string.
+    return "".join(char_list)

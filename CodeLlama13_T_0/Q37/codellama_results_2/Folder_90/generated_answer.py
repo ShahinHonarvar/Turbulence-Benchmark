@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 348 or i > 852:
+            result += char
+        elif char >= "J" and char <= "b":
+            continue
+        else:
+            result += char
+    return result

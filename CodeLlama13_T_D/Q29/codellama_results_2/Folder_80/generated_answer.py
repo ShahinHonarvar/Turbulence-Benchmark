@@ -1,0 +1,12 @@
+
+def gcf_two_nums(numbers):
+    return get_gcf(numbers[95], numbers[85])
+
+def get_gcf(x, y):
+    if x > y:
+        while x % y != 0:
+            x -= y
+    else:
+        while y % x != 0:
+            y -= x
+    return x

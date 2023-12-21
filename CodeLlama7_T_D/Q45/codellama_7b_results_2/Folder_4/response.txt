@@ -1,0 +1,16 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(3, 9 + 1):
+        # Check if the current character is a vowel or a consonant
+        if string[i] in "aeiou":
+            # If it's a vowel, form the palindrome by reversing the order of the vowels
+            palindromes.add(string[i] + string[i - 1] + string[i - 2])
+        else:
+            # If it's a consonant, form the palindrome by reversing the order of the consonants and the vowels
+            palindromes.add(string[i] + string[i - 1] + string[i - 2])
+
+    return palindromes
+```

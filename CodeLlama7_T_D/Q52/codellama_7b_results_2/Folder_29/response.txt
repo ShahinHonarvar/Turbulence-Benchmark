@@ -1,0 +1,14 @@
+ Here is a possible implementation of the `palindrome_of_length_n` function:
+```python
+def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each substring of length n in the given string
+    for i in range(len(string) - 19 + 1):
+        substring = string[i:i+19]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            palindromes.add(substring)
+    return palindromes
+```
+This function takes a string as input and returns a set of all palindromes of length 19, where each palindrome is a substring of the given string. The function uses a nested loop to iterate over each substring of length n in the given string, where n is equal to 19. For each substring, the function checks if it is a palindrome by comparing it with its own reversed version. If the substring is a palindrome, it is added to the set of palindromes and returned as the result of the function.

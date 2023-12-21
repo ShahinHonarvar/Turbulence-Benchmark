@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    new_str = ""
+    for i, char in enumerate(string):
+        if 11 <= i <= 32 and "!" <= char <= "@":
+            continue
+        new_str += char
+    return new_str

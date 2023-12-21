@@ -1,0 +1,31 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Convert the input string to lowercase for case-insensitive comparison
+string = string.lower()
+
+# Define the range of indices for which we want to find palindromes
+start_index = 16
+end_index = 94
+
+# Initialize an empty set to store the palindromes
+palindromes = set()
+
+# Iterate over each character in the input string within the specified index range
+for i in range(start_index, end_index + 1):
+    # Check if the current character is a letter (a-z or A-Z)
+    if 'a' <= string[i] <= 'z':
+        # Iterate over each palindrome of lengths between 39 to 52 (both inclusive) within the specified index range
+        for j in range(39, 53):
+            # Check if the current character is a letter (a-z or A-Z)
+            if 'a' <= string[i + j - 1] <= 'z':
+                # Check if the current palindrome is a prefix of any other palindrome in the set
+                for palindrome in palindromes:
+                    if palindrome.startswith(string[i:i + j]):
+                        break
+                else:
+                    # If no prefix of this palindrome is already in the set, add it to the set
+                    palindromes.add(string[i:i + j])
+
+# Return the set of all palindromes with the specified lengths found within the specified index range
+return palindromes
+```

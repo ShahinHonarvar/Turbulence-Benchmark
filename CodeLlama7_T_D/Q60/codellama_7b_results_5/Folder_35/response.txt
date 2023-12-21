@@ -1,0 +1,19 @@
+ ```
+def all_left_right_truncatable_prime(x):
+# Initialize an empty list to store the left-and-right-truncatable prime numbers
+list = []
+# Loop through the range of prime numbers less than or equal to x
+for num in range(2, x+1):
+# Check if the number is a prime number using the Sieve of Eratosthenes algorithm
+if num > 1:
+for i in range(2, num):
+if (num % i) == 0:
+break
+else:
+continue
+
+# If the number is a prime number and it is left-and-right-truncatable prime number, add it to the list
+if i == num:
+list.append(num)
+return list
+```

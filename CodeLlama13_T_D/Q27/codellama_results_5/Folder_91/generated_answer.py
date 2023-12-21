@@ -1,0 +1,4 @@
+
+def insert_after_index(L):
+    new_list = L[:2] + [8] + L[2:]
+    return new_list

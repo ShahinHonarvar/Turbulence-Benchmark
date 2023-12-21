@@ -1,0 +1,12 @@
+ def remove_repeat_chars(s):
+    # Create a set of unique characters in the string
+    unique_chars = set()
+    for i in range(10, 28):
+        if s[i] not in unique_chars:
+            unique_chars.add(s[i])
+    # Remove all occurrences of repeated characters from the string
+
+    for char in unique_chars:
+        while s.find(char) != -1 and s.find(char) < 28:
+            s = s[:s.find(char)] + s[s.find(char) + 1:]
+    return s

@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    result = ''
+    for i in range(len(s)):
+        if i < 70 or i > 74:
+            result += s[i]
+        elif s[i] <= 'A' or s[i] >= 'U':
+            result += s[i]
+    return result

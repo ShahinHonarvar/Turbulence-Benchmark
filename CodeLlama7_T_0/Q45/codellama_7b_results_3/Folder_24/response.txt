@@ -1,0 +1,22 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string) - 1):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Get the indices of the current character in the string
+            left_index = string.lower().find(string[i])
+            right_index = string.lower().rfind(string[i])
+            # Check if the current character is a palindrome
+            if left_index == right_index:
+                # Get the substring of the current character in the string
+                substring = string[left_index:right_index + 1]
+                # Check if the substring is a palindrome of length at least 4
+                if len(substring) >= 4 and substring == substring[::-1]:
+                    # Add the palindrome to the set
+                    palindromes.add(substring)
+    # Return the set of all palindromes found in the string
+    return palindromes
+```

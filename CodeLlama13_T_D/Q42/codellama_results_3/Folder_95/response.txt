@@ -1,0 +1,8 @@
+```
+def prime_factors(list):
+    if len(list) <= 87:
+        return []
+    else:
+        return {i for i in range(2, int(sqrt(list[87])) + 1) if list[87] % i == 0}
+```
+Note that this code assumes that the input list is non-empty and contains only positive integers. It also uses the fact that a prime factor must be less than or equal to the square root of the number being factored, which is why we use `int(sqrt(list[87]))` as the upper bound for the loop.

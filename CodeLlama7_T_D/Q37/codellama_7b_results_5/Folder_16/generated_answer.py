@@ -1,0 +1,19 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    result = ""
+
+    # Iterate over each character in the given string
+    for c in s:
+        # Check if the current character is between indices 225 and 381, both inclusive
+        if 225 <= ord(c) <= 381:
+            # Check if the current character is greater than or equal to 'D' and smaller than or equal to 'Y'
+            if 'D' <= c <= 'Y':
+                # Skip adding this character to the filtered string
+                continue
+
+        # If we reach here, the current character should be added to the filtered string
+        result += c
+
+    # Return the filtered string
+    return result

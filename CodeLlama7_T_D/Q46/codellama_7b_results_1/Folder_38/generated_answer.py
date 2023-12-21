@@ -1,0 +1,19 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 14, 21 and 17
+    return gcf(my_list[14], my_list[21], my_list[17])
+def gcf(a, b, c):
+    # Find the greatest common divisor of three numbers using the Euclidean algorithm
+    divisors = []
+
+    while a > 0:
+        if a % b == 0:
+            divisors.append(b)
+            a = a // b
+            b = c
+        else:
+            divisors.append(a)
+            a = b
+            b = c
+
+    return divisors[-1]

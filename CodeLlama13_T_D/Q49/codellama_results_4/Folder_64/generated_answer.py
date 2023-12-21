@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert binary representation string to decimal integer
+    num = int(binary, 2)
+    
+    # Calculate the Fibonacci sequence up to 10 terms
+    fib = [0, 1] + [a + b for a, b in zip(fib[1:], fib[:-1])]
+    
+    # Check if the decimal integer is divisible by the 10th number in the Fibonacci sequence
+    return num % fib[9] == 0

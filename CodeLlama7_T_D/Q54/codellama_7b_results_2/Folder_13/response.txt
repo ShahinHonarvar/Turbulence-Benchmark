@@ -1,0 +1,32 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[784]
+list_of_rtp = []
+for i in range(2, x):
+if is_prime(i) and is_rtp(i, x):
+list_of_rtp.append(i)
+return sorted(list_of_rtp)
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def is_rtp(n, x):
+if n < 2 or n >= x:
+return False
+
+while n > 9:
+
+if int(str(n)[-1]) != int(str(n / 10)) % 10:
+return False
+
+n = n / 10
+
+return True
+
+```

@@ -1,0 +1,12 @@
+
+def sum_in_range(my_list):
+    # Initialize sum variable
+    sum = 0
+
+    # Loop through list and check if each element is between 86 and 99, both inclusive
+    for i in my_list:
+        if 86 <= i <= 99:
+            sum += i
+
+    # Return sum
+    return sum

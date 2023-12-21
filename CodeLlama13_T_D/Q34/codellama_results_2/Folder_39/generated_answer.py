@@ -1,0 +1,7 @@
+
+def find_original_set(s1, s2, ..., s21):
+    sets = [s1, s2, ..., s21]
+    original_set = set()
+    for i in range(len(sets)):
+        original_set |= sets[i]
+    return original_set

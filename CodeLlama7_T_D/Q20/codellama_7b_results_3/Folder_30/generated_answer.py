@@ -1,0 +1,8 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Get the index of the 19th smallest number
+    index = (len(my_list) // 20) * 20
+    # Return the 19th smallest number
+    return my_list[index]

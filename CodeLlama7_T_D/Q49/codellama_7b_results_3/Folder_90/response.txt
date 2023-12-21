@@ -1,0 +1,14 @@
+ Here is a function called `if_decimal_is_divisible` that takes in a binary representation string of a non-negative decimal integer and returns true if the corresponding decimal integer is divisible by the 177th number that occurs in the Fibonacci sequence, and false otherwise:
+```
+def if_decimal_is_divisible(binary_representation):
+    # Convert binary representation to decimal
+    decimal = int(binary_representation, 2)
+    # Initialize Fibonacci sequence with first two numbers
+    fibonacci = [0, 1]
+    # Compute Fibonacci sequence up to the 177th number
+    for i in range(176):
+        fibonacci.append(fibonacci[i] + fibonacci[i+1])
+    # Check if decimal is divisible by 177th Fibonacci number
+    return decimal % fibonacci[176] == 0
+```
+This function first converts the binary representation string to a decimal integer using the `int()` function with a base of 2. It then initializes a list called `fibonacci` with the first two numbers of the Fibonacci sequence, which are 0 and 1, respectively. The function then uses a for loop to compute the remaining numbers of the Fibonacci sequence up to the 177th number. After computing the entire Fibonacci sequence, the function checks if the input decimal integer is divisible by the 177th number in the Fibonacci sequence by using the modulo operator and checking if the result is equal to 0. If the input decimal integer is divisible by the 177th number in the Fibonacci sequence, the function returns `True`, otherwise it returns `False`.

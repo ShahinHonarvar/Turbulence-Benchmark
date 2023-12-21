@@ -1,0 +1,5 @@
+
+def sum_odd_ints_inclusive(my_list):
+    # Slice the list to get only the odd integers from index 29 to index 93, both inclusive
+    sliced_list = my_list[29:94:2]
+    return sum(sliced_list) if sliced_list else 0

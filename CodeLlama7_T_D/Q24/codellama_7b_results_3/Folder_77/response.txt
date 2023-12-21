@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `sum_of_divisors_in_range` function:
+```python
+def sum_of_divisors_in_range(n):
+    # Check that n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+    # Initialize the sum of divisors to 0
+    sum_divisors = 0
+    # Iterate over the divisors of n in the specified range
+    for i in range(111, 508 + 1):
+        if n % i == 0:
+            # Add the divisor to the sum
+            sum_divisors += i
+    return sum_divisors
+```
+This code first checks that the input `n` is a positive integer. If it is not, the function raises a `ValueError`. Otherwise, the function initializes the sum of divisors to 0 and iterates over the divisors of `n` in the specified range (111 to 508, inclusive). For each divisor that is found, the code adds it to the sum. Finally, the function returns the sum of all positive divisors of `n` that are between 111 and 508, both inclusive.

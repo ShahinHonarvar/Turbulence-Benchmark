@@ -1,0 +1,24 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    long_enough = 0
+
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        current_string = my_list[i]
+
+        # Check if the current string is at least three characters long
+        if len(current_string) >= 3:
+            # Increment the counter for strings that are long enough
+            long_enough += 1
+
+        # Check if the current string contains an anagram of the English letters
+        if set(current_string.lower()) == set("abcdefghijklmnopqrstuvwxyz"):
+            # Increment the counter for anagrams
+            anagram_count += 1
+
+    # Check if there are at most 54 pairs of anagrams in the given list
+    return anagram_count <= (long_enough * (long_enough - 1)) / 2 * 54
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nimport itertools\n\ndef if_contains_anagrams(lst):\n    anagram_pairs = 0\n    \n    # Compare each pair of strings\n    for i in range(len(lst) - 1):\n        for j in range(i + 1, len(lst)):\n            if len(lst[i]) >= 3 and len(lst[j]) >= 3:\n                # Convert strings to lowercase before comparison\n                if sorted(lst[i].lower()) == sorted(lst[j].lower()):\n                    anagram_pairs += 1\n                    \n            if anagram_pairs > 79:\n                return False\n    \n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689819499,
+  "id": "chatcmpl-7eDX9bjZK4IDYh2x6DsiMDUab8u1D",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 139,
+    "total_tokens": 260
+  }
+}

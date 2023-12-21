@@ -1,0 +1,9 @@
+```python
+def if_perfect_num(numbers):
+    return numbers[312] in [n for n in range(1, numbers[312]) if sum(divisors(n)) == n + 1]
+
+def divisors(n):
+    return [i for i in range(1, int(n ** 0.5) + 1) if n % i == 0]
+```
+This code defines two functions: `if_perfect_num` and `divisors`. The `if_perfect_num` function takes a list of positive integers as an argument, and returns `True` if the integer at index 312 is a perfect number (i.e., it is equal to the sum of its proper divisors), otherwise it returns `False`.
+The `divisors` function takes a single integer `n` as an argument and returns a list of all its divisors, including itself if it is a perfect square. The function uses the formula for calculating the sum of the divisors to generate the list of divisors.

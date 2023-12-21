@@ -1,0 +1,13 @@
+```python
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for string in strings:
+        key = "".join(sorted(string.lower()))
+        if len(key) < 3:
+            continue
+        if key not in anagrams:
+            anagrams.add(key)
+        else:
+            return False
+    return len(anagrams) <= 38
+```

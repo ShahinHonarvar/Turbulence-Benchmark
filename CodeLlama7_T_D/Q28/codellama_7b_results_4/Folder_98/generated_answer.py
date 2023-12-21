@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # create a list of unique characters in the string
+    unique_chars = set(string)
+    # sort the list of unique characters by their ASCII values
+    sorted_unique_chars = sorted(unique_chars, key=ord)
+    # return the 9th smallest ASCII value among the sorted unique characters
+    return sorted_unique_chars[8]

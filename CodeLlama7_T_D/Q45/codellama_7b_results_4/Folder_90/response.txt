@@ -1,0 +1,23 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at index i
+        char = string[i]
+        # If the character is a letter (not a space or punctuation)
+        if char.isalpha():
+            # Get the index of the last occurrence of the letter in the string
+            last_index = len(string) - 1 - string[::-1].index(char)
+            # If the index is greater than or equal to i + 4 (the length of at least 4 letters)
+            if last_index >= i + 4:
+                # Get the substring that starts at i and ends at the last occurrence of the letter in the string
+                substr = string[i:last_index + 1]
+                # If the substring is a palindrome (the same backwards as it is forwards)
+                if substr == substr[::-1]:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes
+```

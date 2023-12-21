@@ -1,0 +1,11 @@
+ Here is a possible implementation of the `palindrome_of_length_n` function:
+```python
+def palindrome_of_length_n(string):
+    # Find all substrings of length n in the string
+    substrings = [string[i:i+n] for i in range(len(string)-n+1)]
+    # Filter out substrings that are not palindromes
+    palindromes = [substring for substring in substrings if substring == substring[::-1]]
+    return set(palindromes)
+```
+This function takes a string as input and returns the set of all palindromes of length equal to 6, where each palindrome is a substring of the given string. Each palindrome should only consist of English letters. If there is no palindrome of the specified length as a substring of the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.
+For example, if we call the function with the input string `"racecar"`, it will return the set `{"racecar", "race", "car"}` because these are the only palindromes of length equal to 6 that can be found as substrings of the given string.

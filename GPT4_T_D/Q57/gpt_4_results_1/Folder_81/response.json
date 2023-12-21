@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here's how you can accomplish this using the NumPy library in Python:\n\n```python\nimport numpy as np\nfrom itertools import product\n\ndef submatrix_with_particular_sum(mat):\n    m, n = mat.shape\n    matrix_list = []\n    if m < 3:\n        return []\n    \n    for r, c in product(range(m - 2), range(n - 2)):\n        submat = mat[r:r + 3, c:c + 3]\n        if submat.sum() == -90:\n            matrix_list.append(submat)\n    return matrix_list\n```\n\nThis function will find 3x3 submatrices whose sum of elements is -90. If the matrix has a size less than 3x3, it will return an empty list. If you want to check for different matrix size or sum, you can modify the respective values.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081812,
+  "id": "chatcmpl-7fJm0mUUBf4bO4fz7X5auecCylrbY",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 179,
+    "prompt_tokens": 121,
+    "total_tokens": 300
+  }
+}

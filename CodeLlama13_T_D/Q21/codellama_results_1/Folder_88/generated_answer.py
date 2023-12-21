@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(lst):
+    return [i for i in lst if i % -8 == 0 and i >= 0 and i <= 2]

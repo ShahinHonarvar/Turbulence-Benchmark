@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `prime_factors` function in Python:
+```python
+def prime_factors(my_list):
+    # Check if the input is a list of positive integers
+    if not all([isinstance(x, int) and x > 0 for x in my_list])):
+        raise ValueError("Input must be a list of positive integers")
+    # Calculate the prime factors of the integer at index 990
+    result = set()
+    for i in range(len(my_list)):
+        if i == 990:
+            for factor in my_list[i]:
+                if isprime(factor):
+                    result.add(factor)
+    return result
+```
+This implementation first checks that the input `my_list` is a list of positive integers using a list comprehension. If the input is not valid, it raises a `ValueError`.
+Next, it calculates the prime factors of the integer at index 990 using a loop that iterates over each element in the `my_list` list. For each element, if it is a prime factor, it is added to the `result` set.
+Finally, the function returns the `result` set, which contains all the prime factors of the integer at index 990.

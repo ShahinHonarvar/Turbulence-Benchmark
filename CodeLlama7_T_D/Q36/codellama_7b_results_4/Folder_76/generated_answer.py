@@ -1,0 +1,14 @@
+
+def filter_chars(string):
+    # create a new string with the filtered characters
+    new_string = ""
+
+    # iterate through each character in the string
+    for char in string:
+
+        # if the current character is between indices 669 and 888 (both exclusive) and it is greater than 'B' and smaller than 'Y', then remove all occurrences of that character within the string while keeping the order of all characters intact
+        if char not in range(669, 888) or (char > "B" and char < "Y"):
+            new_string += char
+
+    # return the altered string
+    return new_string

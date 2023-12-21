@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    m, n = matrix.shape\n    count = 0\n\n    for i in range(m):\n        for j in range(n):\n            if i + 1 < m and j + 1 < n:\n                submatrix = matrix[i:i+2, j:j+2]\n                if np.prod(submatrix.shape) == 8:\n                    count += 1\n\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689846102,
+  "id": "chatcmpl-7eKSE8uTpUUjQ1hX2G2V0yAZZLhSg",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 111,
+    "total_tokens": 209
+  }
+}

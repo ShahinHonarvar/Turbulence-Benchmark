@@ -1,0 +1,13 @@
+ Here is a possible implementation of the `filter_chars` function:
+```
+def filter_chars(s):
+    # Create a new string with the same characters as s, but without any characters that are greater than '*' and smaller than '['
+    filtered = ""
+    for char in s:
+        if char > "*" and char < "[":
+            continue
+        else:
+            filtered += char
+    return filtered
+```
+This function takes a single argument, `s`, which is a string. It then iterates over each character in the string using a for loop, and checks whether the character is greater than '*' and smaller than '[' using the standard comparison operators. If it is, the function continues to the next iteration of the loop. If it is not, the function adds the character to a new string called `filtered`, and then returns that string at the end of the function.

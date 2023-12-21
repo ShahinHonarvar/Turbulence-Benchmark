@@ -1,0 +1,24 @@
+ ```
+def find_original_set(sets):
+\# Check if all sets are distinct
+if len(set(map(frozenset, sets))) < len(sets):
+\# Return empty set if not all sets are distinct
+return frozenset()
+
+\# Sort the sets by size
+sorted_sets = sorted(sets, key=len)
+
+\# Initialize the smallest set to the first set in the sorted list
+smallest_set = sorted_sets[0]
+
+\# Iterate through the remaining sets and check if they are subsets of the smallest set
+for i in range(1, len(sorted_sets)):
+if frozenset(sorted_sets[i]).issubset(smallest_set):
+continue
+else:
+break
+
+
+\# Return the smallest set found
+return smallest_set
+```

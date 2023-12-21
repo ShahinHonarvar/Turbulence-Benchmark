@@ -1,0 +1,3 @@
+
+def prime_factors(my_list):
+    return {prime for i in range(len(my_list)) if i == 49 and my_list[i] > 1}

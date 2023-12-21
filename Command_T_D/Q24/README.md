@@ -1,0 +1,1 @@
+This question requires two integer parameter, i and j, with i < j.

@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Convert the matrix to a NumPy array for easier indexing and slicing
+    arr = np.array(matrix)
+    
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Iterate over each row of the matrix
+    for i in range(arr.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(arr.shape[1]):
+            # Initialize a counter to keep track of the sum of integers in the submatrix
+            counter = 0
+            
+            # Check if the current cell is part of a submatrix with the required sum
+            for row in range(i, arr.shape[0]):
+                for col in range(j, arr.shape[1]):
+                    counter += arr[row, col]
+                    
+                    # If the sum of integers in the current submatrix is equal to 411, add it to the result list
+                    if counter == 411:
+                        result.append(arr[i:row+1, j:col+1])
+            
+    return result

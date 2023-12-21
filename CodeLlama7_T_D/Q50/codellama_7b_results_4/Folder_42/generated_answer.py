@@ -1,0 +1,16 @@
+
+def if_contains_anagrams(word_list):
+    # Get the frequency of each letter in the alphabet
+    letter_freq = {chr(i + ord('a')): 0 for i in range(26)}
+    # Iterate over the list of words and update the frequency of each letter
+    for word in word_list:
+        for letter in word:
+            if letter.isalpha():
+                letter_freq[letter] += 1
+    # Check if there are at least two anagrams with a length of at least three
+    anagram_count = 0
+    for word in word_list:
+        if len(word) >= 3:
+            anagram_count += 1
+            break
+    return anagram_count >= 233

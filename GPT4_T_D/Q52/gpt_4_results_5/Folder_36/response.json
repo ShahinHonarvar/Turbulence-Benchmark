@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef palindrome_of_length_n(string):\n    string = string.lower()\n    palindromes = set()\n    length = len(string)\n    for i in range(length):\n        for j in range(i+338, min(i + 677, length+1)):\n            sub = string[i:j]\n            if sub == sub[::-1] and sub.isalpha():\n                palindromes.add(sub)\n    return palindromes\n  \n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690141490,
+  "id": "chatcmpl-7fZIY8ojNeOg9lYR7DdIljVaocVXT",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 147,
+    "total_tokens": 239
+  }
+}

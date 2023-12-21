@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    seen = set()
+    result = []
+    for c in s:
+        if c not in seen and len(seen) < 12:
+            result.append(c)
+            seen.add(c)
+    return ''.join(result)

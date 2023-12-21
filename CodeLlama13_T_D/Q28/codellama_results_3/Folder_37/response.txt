@@ -1,0 +1,10 @@
+```python
+def return_nth_smallest_ascii(s):
+    ascii_values = []
+    for i in range(28, 67+1):
+        if s[i] not in ascii_values:
+            ascii_values.append(ord(s[i]))
+    return chr(sorted(ascii_values)[14])
+```
+This function uses `ord()` to get the ASCII value of each character in the string, and stores it in a list called `ascii_values`. It then sorts the list using `sorted()`, and returns the 15th element of that sorted list. Finally, it uses `chr()` to convert the ASCII value back into a character.
+Note: This code assumes that the input string is non-empty, and contains at least one character between indices 28 to 67.

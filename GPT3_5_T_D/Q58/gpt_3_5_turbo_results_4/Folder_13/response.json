@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    n = 175\n    count = 0\n    \n    for i in range(len(matrix)):\n        for j in range(len(matrix[0])):\n            if matrix[i][j] == n:\n                for x in range(i, len(matrix)):\n                    for y in range(j, len(matrix[0])):\n                        if np.sum(matrix[i:x+1, j:y+1]) == n * ((x-i+1)*(y-j+1)):\n                            count += 1\n    \n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689867359,
+  "id": "chatcmpl-7ePz51OLziGulxx82lZMQwgi4Fp3N",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 118,
+    "prompt_tokens": 111,
+    "total_tokens": 229
+  }
+}

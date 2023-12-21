@@ -1,0 +1,26 @@
+ ```
+def remove_repeat_chars(string):
+    # Create a dictionary to keep track of character counts
+    char_counts = {}
+
+    # Loop through each character in the string and increment the count for each character
+    for char in string:
+        if char in char_counts:
+            char_counts[char] += 1
+
+        else:
+
+            char_counts[char] = 1
+
+    # Loop through each character in the string and remove all occurrences of a repeated character
+    for i, char in enumerate(string):
+
+        if char_counts[char] > 1:
+
+            string = string[:i] + string[i + 1:]
+
+            break
+
+
+    return string
+```

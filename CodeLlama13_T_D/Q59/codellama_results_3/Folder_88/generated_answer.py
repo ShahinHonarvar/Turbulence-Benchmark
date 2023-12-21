@@ -1,0 +1,22 @@
+
+def all_left_truncatable_prime(nums):
+    primes = []
+    for x in nums:
+        if is_prime(x) and no_zeroes(x):
+            primes.append(x)
+    return sorted(primes, key=len)
+
+def is_prime(n):
+    if n % 2 == 0 and n > 2:
+        return False
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def no_zeroes(n):
+    while n > 0:
+        if n % 10 == 0:
+            return False
+        n //= 10
+    return True

@@ -1,0 +1,16 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Invalid input. The input must be a list of positive integers.")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list and check if each element is prime
+    for i, num in enumerate(my_list):
+        # Check if the number is between index 50 and index 200
+        if 50 <= i <= 200:
+            # If the number is not prime, add it to the set of composite numbers
+            if not is_prime(num):
+                composite_nums.add(num)
+    return composite_nums
+```

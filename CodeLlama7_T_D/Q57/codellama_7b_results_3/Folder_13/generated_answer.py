@@ -1,0 +1,23 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Calculate the sum of all integers in the current submatrix
+            submatrix_sum = 0
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    submatrix_sum += matrix[k][l]
+
+            # Check if the sum of all integers in the current submatrix is equal to 382
+            if submatrix_sum == 382:
+                # If so, add the submatrix to the list of submatrices
+                submatrices.append(matrix[i:i + 3][j:j + 3]])
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 382
+    return submatrices

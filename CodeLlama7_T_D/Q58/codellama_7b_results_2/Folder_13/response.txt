@@ -1,0 +1,22 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 175 integers each
+    count = 0
+
+    # Iterate over the rows and columns of the matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            # Check if the current element is equal to 175
+            if matrix[i][j] == 175:
+                # If it is, check if there are any other elements in the same row and column that are also equal to 175
+                for k in range(len(matrix)):
+                    for l in range(len(matrix[k]))):
+                        if matrix[k][l] == 175 and (k, l) != (i, j):
+                            # If there are, add the current submatrix to the count of submatrices with 175 integers each
+                            count += 1
+
+    # Return the count of submatrices with 175 integers each
+    return count
+```

@@ -1,0 +1,5 @@
+ def find_n_th_smallest_num(my_list):
+    # sort the list in ascending order
+    my_list.sort()
+    # return the 4th smallest number from index 36 to index 93, both inclusive
+    return my_list[36:94].index(my_list[36:94])

@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set([prime_factor for number in numbers[99]])

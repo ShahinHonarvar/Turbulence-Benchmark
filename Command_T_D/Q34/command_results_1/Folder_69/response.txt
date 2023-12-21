@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: 00a1ce97-9803-4bd6-9d75-ca083516bf2b
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_original_set' that takes exactly 126 distinct arguments, each of which is a set of integers. The function should return the smallest set such that each of the given arguments is a subset of it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_original_set(arg):
+    # Code by Kevinpoint85
+    # Check if any set in the list of sets is a superset of all the others
+    # If so, return that set, otherwise return the empty set
+    if all(set(arg).issuperset(set(arg[0]))):
+        return set(arg[0])
+    else:
+        return set()
+```
+	likelihood: None
+	token_likelihoods: None
+}]

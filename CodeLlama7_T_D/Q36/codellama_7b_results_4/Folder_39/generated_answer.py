@@ -1,0 +1,14 @@
+ def filter_chars(s):
+    # Create a new string with the same length as the original string
+    new_string = ""
+    # Iterate through each character in the original string
+    for i in range(len(s)):
+        # If the current character is between indices 43 and 59 (both exclusive) and it is greater than character '5' and smaller than character 'C', remove all occurrences of that character within the string
+        if s[i] > "5" and s[i] < "C" and i >= 43 and i < 59:
+            # Replace all occurrences of the current character with an empty string
+            new_string += s[:i] + s[i+1:]
+        # Otherwise, add the current character to the new string
+        else:
+            new_string += s[i]
+    # Return the altered string
+    return new_string

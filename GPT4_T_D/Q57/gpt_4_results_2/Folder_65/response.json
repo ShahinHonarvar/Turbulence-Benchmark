@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    res = []\n    for size in range(1, min(rows, cols) + 1):\n        for i in range(rows - size + 1):\n            for j in range(cols - size + 1):\n                submatrix = matrix[i:i+size, j:j+size]\n                if np.sum(submatrix) == 78:\n                    res.append(submatrix)\n    return res\n```\nThis code creates a function 'submatrix_with_particular_sum' which accepts a two-dimensional numpy matrix as input and returns a list of all submatrices where the sum of all elements equals 78. If no such submatrix is found, it returns an empty list. The function iterates over all possible sizes of a square submatrix and all possible positions for the top left corner of the submatrix, then checks if the sum of the elements in this submatrix equals 78, if it is correct, the submatrix is added to the result. \n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690906256,
+  "id": "chatcmpl-7imFUao9CbQVQQ45RH5N5aw7lC7P7",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 221,
+    "prompt_tokens": 121,
+    "total_tokens": 342
+  }
+}

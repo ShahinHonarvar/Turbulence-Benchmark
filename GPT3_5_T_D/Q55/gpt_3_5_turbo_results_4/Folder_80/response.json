@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    product = 1\n    left = 0\n    result = []\n    \n    for right in range(n):\n        product *= nums[right]\n        \n        while product > 43:\n            product //= nums[left]\n            left += 1\n        \n        if product == 43:\n            result.append(nums[left:right+1])\n    \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866361,
+  "id": "chatcmpl-7ePizxMOJc8Nsw0TKa8FdNBxVMrXK",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 89,
+    "prompt_tokens": 193,
+    "total_tokens": 282
+  }
+}

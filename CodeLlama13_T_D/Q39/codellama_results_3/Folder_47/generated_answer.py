@@ -1,0 +1,5 @@
+
+def return_n_greatest_chars(s):
+    char_set = set(s)
+    sorted_list = sorted(char_set, reverse=True)[:21]
+    return "".join(sorted_list)

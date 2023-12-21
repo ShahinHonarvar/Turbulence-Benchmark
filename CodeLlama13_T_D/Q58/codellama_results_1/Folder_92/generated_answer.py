@@ -1,0 +1,13 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    
+    for row in range(rows - 7):
+        for col in range(cols - 7):
+            if np.all(np.sum(matrix[row:row+8, col:col+8], axis=0) == 8):
+                count += 1
+    
+    return count

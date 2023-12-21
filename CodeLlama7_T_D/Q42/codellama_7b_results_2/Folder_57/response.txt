@@ -1,0 +1,15 @@
+ Here is a possible implementation of the `prime_factors` function:
+```python
+def prime_factors(n):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    
+    # Loop through all the prime numbers less than or equal to n
+    for p in range(2, int(n ** 0.5) + 1):
+        
+        # If n is divisible by p, add p to the set of prime factors and continue looping
+        if n % p == 0:
+            prime_factors.add(p)
+    return prime_factors
+```
+This implementation uses a loop to iterate through all the prime numbers less than or equal to `n`, and it checks each prime number in turn to see if it is a factor of `n`. If a prime factor is found, it is added to the set of prime factors and the loop continues. Once the loop has completed, the function returns the set of all prime factors of `n`.

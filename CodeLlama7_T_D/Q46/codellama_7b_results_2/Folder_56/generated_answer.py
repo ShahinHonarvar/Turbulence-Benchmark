@@ -1,0 +1,12 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 59, 93 and 84
+    # Initialize a variable to store the greatest common factor
+    gcf = 1
+    # Loop through the elements at the specified indices
+    for i in [59, 93, 84]:
+        # Calculate the least common multiple of the current element and the previous greatest common factor
+        lcm = my_list[i] * gcf / (my_list[i] - gcf) * gcf
+        # Update the greatest common factor
+        gcf = lcm
+    return gcf

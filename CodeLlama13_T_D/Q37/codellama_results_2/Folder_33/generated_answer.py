@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    chars = list(s)
+    for i in range(722, 833):
+        if ord(chars[i]) >= ord('K') and ord(chars[i]) <= ord('m'):
+            chars.pop(i)
+    return ''.join(chars)

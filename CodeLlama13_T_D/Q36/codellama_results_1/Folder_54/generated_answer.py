@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([c for c in string if (18 < ord(c) < 38 or ord(c) > ord(')'))) and (ord(c) < ord('P'))])

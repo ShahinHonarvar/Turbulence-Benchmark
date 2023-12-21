@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_string = ""
+    for i, char in enumerate(string):
+        if 43 <= ord(char) <= 83 and char not in "Q:":
+            continue
+        else:
+            new_string += char
+    return new_string

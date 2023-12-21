@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(list_of_strings):
+    anagram_pairs = 0
+    for string in list_of_strings:
+        string_lower = string.lower()
+        if len(string_lower) >= 3 and len(set(string_lower)) == len(string_lower):
+            anagram_pairs += 1
+            if anagram_pairs > 255:
+                return False
+    return True

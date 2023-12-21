@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible starting index in the string
+    for i in range(len(string) - 5 + 1):
+        # Loop through each possible ending index in the string
+        for j in range(i + 6, len(string) + 1):
+            # Check if the substring between indices i and j is a palindrome
+            substring = string[i:j]
+            if substring == substring[::-1]:
+                # If it is, add it to the set of palindromes
+                palindromes.add(substring)
+    return palindromes
+```
+This code uses a nested loop to iterate through each possible starting and ending index in the string. It then checks if the substring between those indices is a palindrome by comparing it with its reverse. If it is, it adds it to the set of palindromes. Finally, it returns the set of palindromes.

@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    total = 0
+
+    # Loop through the list of integers starting from index 10 to index 76, both inclusive
+    for i in range(10, 76 + 1):
+        # Check if the current integer is divisible by either -40 or -12
+        if my_list[i] % -40 == 0 or my_list[i] % -12 == 0:
+            # If it is, add it to the sum
+            total += my_list[i]
+
+    # Return the sum of all integers divisible by either -40 or -12 from index 10 to index 76, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return total

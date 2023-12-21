@@ -1,0 +1,18 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Find the indices of the first and last composite numbers in the list
+    first_composite_index = None
+    for i in range(len(my_list)):
+        if is_prime(my_list[i]):
+            first_composite_index = i
+            break
+
+    last_composite_index = None
+    for i in range(len(my_list) - 1, -1, -1):
+        if is_prime(my_list[i]):
+            last_composite_index = i
+            break
+
+    # Return the set of all composite numbers between the first and last indices
+    return {my_list[i] for i in range(first_composite_index, last_composite_index + 1)}
+```

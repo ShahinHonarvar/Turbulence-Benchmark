@@ -1,0 +1,20 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fib1 = 0
+    fib2 = 1
+    # Loop through the Fibonacci sequence until we reach the 168th number
+    for i in range(167):
+        # Add the previous two numbers to get the next number in the sequence
+        fib3 = fib1 + fib2
+        # Set the first two numbers to the third number
+        fib1 = fib2
+        fib2 = fib3
+    # Check if the decimal integer is divisible by the 168th Fibonacci number
+    if (decimal_integer % fib3) == 0:
+        return True
+    else:
+        return False
+```

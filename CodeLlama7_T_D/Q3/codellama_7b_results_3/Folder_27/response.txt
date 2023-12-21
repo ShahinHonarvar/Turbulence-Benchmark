@@ -1,0 +1,16 @@
+ ```
+def all_pos_ints_inclusive(my_list):
+    # Get the start and end indices of the range
+    start = 66
+    end = 93
+    # Check if there are any positive integers in the specified range
+    if not any(x > 0 for x in my_list[start:end+1])):
+        return []
+
+    # Return the list of all positive integers from index start to index end, both inclusive
+    return [x for x in my_list[start:end+1] if x > 0]
+```
+Explanation:
+The function `all_pos_ints_inclusive` takes a single argument, `my_list`, which is a list of integers. The function returns the list of all positive integers from index `66` to index `93`, both inclusive. If there are no positive integers in the specified range, the function returns an empty list.
+The function first checks if there are any positive integers in the specified range using the `any()` function with a generator expression that checks if each integer is greater than 0. If there are no positive integers in the range, the function returns an empty list by using the `return` statement without any arguments.
+If there are positive integers in the specified range, the function uses list comprehension to return the list of all positive integers from index `66` to index `93`, both inclusive. The list comprehension generates a new list that contains only the positive integers from the original list that fall within the specified range.

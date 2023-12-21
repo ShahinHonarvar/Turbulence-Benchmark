@@ -1,0 +1,14 @@
+
+def all_right_truncatable_prime(nums):
+    x = nums[79]
+    primes = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            primes.append(i)
+    right_truncatable_primes = []
+    for prime in primes:
+        str_prime = str(prime)
+        for i in range(len(str_prime)):
+            if is_prime(int(str_prime[:-i])):
+                right_truncatable_primes.append(int(str_prime[:-i]))
+    return sorted(right_truncatable_primes, reverse=True)

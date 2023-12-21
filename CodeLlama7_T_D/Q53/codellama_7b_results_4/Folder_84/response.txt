@@ -1,0 +1,30 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```
+def palindrome_of_length_at_least_n(s, n):
+    # Convert the input string to lowercase
+    s = s.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(len(s)):
+        # Check if the current character is a letter
+        if s[i].isalpha():
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Loop through each character in the input string, starting from the current index and moving backwards
+            for j in range(i, -1, -1):
+                # Check if the current character is a letter
+                if s[j].isalpha():
+                    # Add the current character to the palindrome string
+                    palindrome += s[j]
+            # Check if the palindrome has a length greater than or equal to the specified minimum length
+            if len(palindrome) >= n:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes
+```
+This code first converts the input string `s` to lowercase using the `lower()` method, then initializes an empty set `palindromes` to store the palindromes.
+The code then loops through each character in the input string, starting from the beginning and moving towards the end, and checks if the current character is a letter using the `isalpha()` method. If it is a letter, the code initializes an empty string `palindrome` to store the palindrome, and loops through each character in the input string, starting from the current index and moving backwards, and adds each letter to the `palindrome` string.
+The code then checks if the `palindrome` has a length greater than or equal to the specified minimum length `n`, and if it does, adds the `palindrome` to the set of palindromes `palindromes`.
+Finally, the code returns the set of palindromes `palindromes`.

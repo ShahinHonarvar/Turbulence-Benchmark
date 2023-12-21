@@ -1,0 +1,24 @@
+
+def all_even_ints_inclusive(my_list):
+    # Find the first even index in the range
+    for i in range(20, 200 + 1):
+        if my_list[i] % 2 == 0:
+            first_even_index = i
+            break
+
+    else:
+
+        return []
+
+
+    # Find the last even index in the range
+
+    for i in range(first_even_index, -1, -1):
+        if my_list[i] % 2 == 0:
+            last_even_index = i
+            break
+
+
+    # Return the list of all even integers from index 20 to index 200, both inclusive
+
+    return my_list[first_even_index:last_even_index+1]

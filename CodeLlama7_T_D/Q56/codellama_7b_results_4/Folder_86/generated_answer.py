@@ -1,0 +1,15 @@
+
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the input string
+    for i in range(len(input_string)):
+        # Extract the substring starting from the current character and having length equal to 143
+        substring = input_string[i:i+143]
+        # If the substring is not empty and has no duplicate characters, add it to the list of substrings
+        if len(substring) > 0 and len(set(substring)) == len(substring):
+            substrings.append(substring)
+
+    # Return the list of substrings
+    return substrings

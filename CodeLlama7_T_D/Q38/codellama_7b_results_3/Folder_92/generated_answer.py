@@ -1,0 +1,7 @@
+
+def find_subset_of_length_n(elements):
+    num_subsets = 1 # include the empty set
+    for i in range(len(elements)):
+        subset = elements[i:]
+        num_subsets *= len(subset) + 1
+    return num_subsets - 1 # exclude the empty set

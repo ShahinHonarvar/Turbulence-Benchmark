@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport re\n\ndef palindrome_of_length_n(string):\n    string = re.sub('[^a-zA-Z]', '', string)\n    palindromes = set()\n    length = 181\n    for i in range(len(string) - length + 1):\n        substring = string[i:i+length]\n        if substring.lower() == substring.lower()[::-1]:\n            palindromes.add(substring)\n    return palindromes\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690005095,
+  "id": "chatcmpl-7ezodAqRvXp9D5fCoOJL9x8E3meyL",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 147,
+    "total_tokens": 240
+  }
+}

@@ -1,0 +1,7 @@
+
+def sum_of_divisors_in_range(n):
+    total = 0
+    for i in range(58, 91):
+        if n % i == 0 and i <= 90:
+            total += i
+    return total

@@ -1,0 +1,16 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Create a substring of the given string from index 130 to index 295, both inclusive
+    substring = string[130:295]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Get the index of the character in the original string
+        original_index = substring.index(substring[i])
+        # Check if the character is a palindrome with a length between 103 and 158 (both inclusive)
+        if len(substring[original_index:i+1]) in range(103, 159):
+            # Add the palindrome to the set
+            palindromes.add(substring[original_index:i+1])
+    return palindromes
+```

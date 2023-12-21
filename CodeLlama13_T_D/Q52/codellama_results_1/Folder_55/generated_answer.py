@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {substring for substring in string.split() if len(substring) == 97 and all(substring[i] == substring[-i-1] for i in range(len(substring)//2))}

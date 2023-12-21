@@ -1,0 +1,31 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function in Python:
+```python
+def lists_with_product_equal_n(my_list):
+    # Check if the list contains any duplicates
+    if len(my_list) != len(set(my_list)):
+        return []
+
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the given list
+    for i in range(len(my_list)):
+
+        # Check if the product of the contiguous integers from the given list starting from the current element is equal to 91
+        if my_list[i] * my_list[(i + 1) % len(my_list)] * my_list[(i + 2) % len(my_list)] == 91:
+            # Add the sublist containing the contiguous integers from the given list starting from the current element to the returned list of sublists
+            sublists.append([my_list[i], my_list[(i + 1) % len(my_list)], my_list[(i + 2) % len(my_list)]]])
+
+    # Return the list of sublists containing the contiguous integers from the given list such that their product equals 91
+    return sublists
+```
+This function takes a circular list of integers as an argument and returns a list of sublists each containing the contiguous integers from the given list such that their product is equal to 91. If no such sublist exists, the function returns an empty list. The order of sublists in the returned list does not matter.
+For example, if we call the `lists_with_product_equal_n` function with the following circular list of integers:
+```python
+my_list = [3, 5, 7, 9, 1]
+```
+The function will return the following list of sublists:
+```python
+sublists = [[3, 5], [5, 7], [7, 9], [9, 1]]
+```
+This is because there are four sublists in the returned list that contain the contiguous integers from the given list such that their product equals 91.

@@ -1,0 +1,18 @@
+ ```
+def gcf_two_nums(my_list):
+    # Find the greatest common factor of the two numbers
+    gcf = 1
+    for i in range(2, min(my_list[47], my_list[97]) + 1):
+        if my_list[47] % i == 0 and my_list[97] % i == 0:
+            gcf = i
+
+    return gcf
+
+# Test the function with a list of positive integers
+my_list = [i for i in range(1, 100)]
+#print(gcf_two_nums(my_list))
+```
+This code defines a function `gcf_two_nums` that takes a single argument, a list of positive integers. The function returns the greatest common factor of the two numbers at indices 47 and 97 in the input list.
+The function first defines a variable `gcf` with an initial value of 1. This will be updated as we find factors of the two numbers at indices 47 and 97.
+Next, we use a for loop to iterate over all integers between 2 and the smaller of the two numbers at indices 47 and 97. For each integer `i` in this range, we check if both numbers at indices 47 and 97 are divisible by `i`. If they are, we update the variable `gcf` to be equal to `i`, because it is a common factor of both numbers.
+Finally, we return the value of the variable `gcf`, which is the greatest common factor of the two numbers at indices 47 and 97 in the input list.

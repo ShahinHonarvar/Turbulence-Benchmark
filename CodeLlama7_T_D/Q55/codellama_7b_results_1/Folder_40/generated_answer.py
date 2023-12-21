@@ -1,0 +1,21 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the current element and its successor
+        product = 1
+
+        # Iterate over the elements that come after the current element in the circular list
+        for j in range(i + 1, len(circular_list)):
+            # Calculate the product of the current element and its successor
+            product *= circular_list[j]
+
+            # If the product equals -9, add the sublist containing the contiguous integers from the given list to the returned list
+            if product == -9:
+                sublists.append(circular_list[i:j + 1])
+
+    # Return the list of sublists found in the given circular list such that their product equals -9, or an empty list if no such sublist exists
+    return sublists

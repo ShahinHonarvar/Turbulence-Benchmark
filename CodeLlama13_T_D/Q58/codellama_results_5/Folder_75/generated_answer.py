@@ -1,0 +1,11 @@
+
+def submatrix_with_n_numbers(mat):
+    rows, cols = mat.shape
+    count = 0
+    
+    for i in range(rows-79):
+        for j in range(cols-79):
+            if np.sum(mat[i:i+80,j:j+80]) == 80*100:
+                count += 1
+                
+    return count

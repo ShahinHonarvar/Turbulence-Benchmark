@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_n(string, n):
+    return {s[::-1].lower() for s in string.split() if len(s) == n and all(c.isalpha() for c in s)}
+```
+This function uses a set comprehension to generate the palindromes of length `n` from the given `string`. The `for` clause iterates over the words in the string using `split()`, while the `if` clause filters out words that are not of length `n` or contain non-English letters. The `all()` function checks if all characters in each word are English letters, and the `[::-1]` slice reverses the order of the characters in each word to check if it is a palindrome. Finally, the `.lower()` method converts all characters to lowercase for case-insensitive comparison.

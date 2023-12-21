@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for x1 in range(rows):\n        for y1 in range(cols):\n            for x2 in range(x1, rows):\n                for y2 in range(y1, cols):\n                    submatrix = matrix[x1:x2+1, y1:y2+1]\n                    if submatrix.size == 118:\n                        count += 1\n    return count\n```\nThis function first determines the shape of the matrix. Then it uses four nested loops to generate all possible submatrices of the given matrix. For each submatrix, it compares its size with the desired size, 118. If an equality is met, the count of such submatrices is updated. Finally, the function returns this count. Please note that this solution may not be very efficient for large matrices due to its O(n^4) time complexity.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908592,
+  "id": "chatcmpl-7imrAngXRb41S3eGasOyXdhKXbgMs",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 211,
+    "prompt_tokens": 111,
+    "total_tokens": 322
+  }
+}

@@ -1,0 +1,12 @@
+```python
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for s in strings:
+        anagram = "".join(sorted(s))
+        if len(anagram) >= 3 and anagram not in anagrams:
+            anagrams.add(anagram)
+    return len(anagrams) >= 16
+```
+This function uses a set to store the anagrams it has seen so far, and checks that the length of each string is at least three. It then adds the sorted version of each string to the set if it's not already there. Finally, it returns `True` if the set contains at least 16 elements (i.e., there are at least 16 pairs of anagrams in the list).
+
+Note that this function assumes that all strings are non-empty and contain only uppercase and lowercase letters. If you want to handle other types of strings, you will need to modify the code accordingly.

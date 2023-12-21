@@ -1,0 +1,48 @@
+[cohere.Generation {
+	id: 6f433cfc-9aff-4271-91a2-7462f1bc217b
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 29. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_left_right_truncatable_prime(n):
+    i, j = 5, 6
+    while i <= n[29]:
+        j += 1
+        if j * j <= n[29]:
+            if j == 1 or j == 2:
+                return []
+            if j * 10 * 10 <= n[29]:
+                return [str(i * 10 * 10 + j * 10 + 1)]
+            elif j * 100 <= n[29]:
+                return [str(i * 100 + j * 100 + 1)]
+            elif j * 1000 <= n[29]:
+                return [str(i * 1000 + j * 1000 + 1)]
+            elif j * 10000 <= n[29]:
+                return [str(i * 10000 + j * 10000 + 1)]
+            elif j * 100000 <= n[29]:
+                return [str(i * 100000 + j * 100000 + 1)]
+        elif j * 10 <= n[29]:
+            if j == 1 or j == 2:
+                return []
+            if j * 100 <= n[29]:
+                return [str(i * 100 + j * 10 + 1)]
+            elif j * 1000 <= n[29]:
+                return [str(i * 1000 + j * 10 + 1)]
+            elif j * 10000 <= n[29]:
+                return [str(i * 10000 + j * 10 + 1)]
+            elif j * 100000 <= n[29]:
+                return [str(i * 100000 + j * 10 + 1)]
+        elif j == 1 or j == 2:
+            return []
+        elif j * 100 <= n[29]:
+            return [str(i * 100 + j + 1)]
+        elif j * 1000 <= n[29]:
+            return [str(i * 1000 + j + 1)]
+        elif j * 10000 <= n[29]:
+            return [str(i * 10000 + j + 1)]
+        elif j * 100000 <= n[29]:
+            return [str(i * 100000 + j + 1)]
+    return []
+```
+	likelihood: None
+	token_likelihoods: None
+}]

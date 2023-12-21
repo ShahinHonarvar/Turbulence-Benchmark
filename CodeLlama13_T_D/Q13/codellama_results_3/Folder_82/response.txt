@@ -1,0 +1,15 @@
+```python
+def find_second_largest_num(numbers):
+    largest = None
+    second_largest = None
+
+    for num in numbers[20:201]:
+        if largest is None or num > largest:
+            second_largest = largest
+            largest = num
+        elif second_largest is None or num > second_largest:
+            second_largest = num
+
+    return second_largest
+```
+This solution iterates through the list of numbers and keeps track of the largest and second largest elements. If there are multiple elements with the same value, it will only consider the first occurrence. It returns `None` if there is no element in the specified range.

@@ -1,0 +1,12 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the result
+    result = []
+    # Iterate through the input list
+    for i in range(17, 88):
+        # Check if the current element is not divisible by -75
+        if my_list[i] % -75 != 0:
+            # If it is not divisible, add it to the result list
+            result.append(my_list[i])
+    # Return the result list
+    return result

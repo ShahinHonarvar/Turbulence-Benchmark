@@ -1,0 +1,11 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) <= 162:
+        return False
+    
+    sum_of_divisors = 0
+    for i in range(1, int(numbers[162]) + 1):
+        if numbers[162] % i == 0:
+            sum_of_divisors += i
+            
+    return sum_of_divisors == numbers[162]

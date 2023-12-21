@@ -1,0 +1,28 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(words):
+    # Create a dictionary to keep track of anagram pairs
+    anagram_pairs = {}
+    # Loop through each word in the list
+    for word in words:
+        # Convert the word to lowercase
+        lowercase_word = word.lower()
+        # Check if there are any anagrams of this word
+        if len(lowercase_word) > 2:
+            # If there are, loop through each one and check if it's already been seen
+            for i in range(len(lowercase_word)):
+                for j in range(i+1, len(lowercase_word)):
+                    anagram = ''.join(sorted(lowercase_word[i] + lowercase_word[j])))
+                    if anagram in anagram_pairs:
+                        # If the anagram has already been seen, increase the count by 1
+                        anagram_pairs[anagram] += 1
+                    else:
+                        # If this is a new anagram, add it to the dictionary with a count of 1
+                        anagram_pairs[anagram] = 1
+            # Check if there are at most 22 pairs of anagrams in the list
+            if len(anagram_pairs) > 22:
+                return False
+    # If all anagrams have been checked and there are no more than 22 pairs, return True
+    return True
+```
+This code uses a dictionary to keep track of the anagram pairs in the list. It then loops through each word in the list and checks if it's already been seen as an anagram. If it has, the count for that anagram is increased by 1. If it hasn't, a new entry is added to the dictionary with a count of 1. Finally, it checks if there are at most 22 pairs of anagrams in the list and returns `True` or `False` accordingly.

@@ -1,0 +1,13 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Convert the string to a list of characters
+char_list = list(string)
+# Find the indices of the characters between 25 and 88 (inclusive)
+indices = [i for i, char in enumerate(char_list) if 25 <= i <= 88]
+# Extract the characters from the string at the found indices
+chars = [char_list[i] for i in indices]
+# Convert the characters to ASCII values
+ascii_values = [ord(char) for char in chars]
+# Return the 11th smallest ASCII value among the extracted characters
+return sorted(ascii_values)[10]
+```

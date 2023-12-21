@@ -1,0 +1,14 @@
+ ```
+def palindrome_of_length_n(string):
+# Convert the string to lowercase for case-insensitive matching
+lowercase_string = string.lower()
+# Create a set to store all the palindromes of length n
+palindromes = set()
+# Iterate over each substring of length n in the lowercase string
+for i in range(len(lowercase_string) - 3):
+# Check if the current substring is a palindrome
+if lowercase_string[i:i+4] == lowercase_string[i:i+4][::-1]:
+# If it is, add it to the set of palindromes
+palindromes.add(lowercase_string[i:i+4])
+return palindromes
+```

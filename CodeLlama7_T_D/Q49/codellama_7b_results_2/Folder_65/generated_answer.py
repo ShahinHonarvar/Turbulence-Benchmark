@@ -1,0 +1,14 @@
+
+def if_decimal_is_divisible(binary_str):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_str, 2)
+    # Check if the integer is divisible by the 127th number in the Fibonacci sequence
+    fib_seq = [0, 1]
+    for i in range(2, 127):
+        fib_seq.append(fib_seq[i - 1] + fib_seq[i - 2])
+    if decimal_int % fib_seq[-1] == 0:
+        return True
+
+    else:
+
+        return False

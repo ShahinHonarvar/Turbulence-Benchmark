@@ -1,0 +1,10 @@
+
+def filter_chars(s):
+    filtered = ""
+    for i in range(36, 79 + 1):
+        if s[i] >= '2' and s[i] <= 's':
+            continue
+
+        filtered += s[i]
+
+    return filtered

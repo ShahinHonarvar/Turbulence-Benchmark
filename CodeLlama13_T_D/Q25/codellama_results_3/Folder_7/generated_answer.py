@@ -1,0 +1,3 @@
+
+def insert_at_index(my_list):
+    return my_list[:323] + [389, 303] + my_list[323:]

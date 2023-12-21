@@ -1,0 +1,41 @@
+from Q56.$3_results_$4.Folder_$1.generated_answer import $2
+import random
+import string
+
+
+def test_string_of_same_character():
+    selection = [' ', '0', '@', 'a']
+    for char in selection:
+        s = ''.join(char for _ in range(1, $0 + 10))
+        assert not $2(s)
+
+
+def test_one_character_string():
+    # Since the parameter generater (i.e. genparams.py) generates only parameters
+    # of equal to or greater than 2, the answer should be an empty list.
+    assert not $2('a')
+
+
+def test_same_character_string():
+    s = 'a' * $0
+    assert not $2(s)
+
+
+def test_large_string():
+    if $0 < 63:
+        s = ''.join(random.sample(string.ascii_letters + string.digits, k=$0))
+        assert $2(s) == [s]
+    else:
+        s = ''.join(random.choices(string.ascii_letters + string.digits, k=$0))
+        assert not $2(s)
+
+
+def test_length_of_substring_result():
+    if $0 < 50:
+        s = ''.join(random.sample(string.ascii_letters + string.digits, k=$0 + 10))
+    else:
+        s = ''.join(random.choices(string.ascii_letters + string.digits, k=$0 + 10))
+    
+    output = $2(s)
+    for i in output:
+        assert len(i) <= len(s)

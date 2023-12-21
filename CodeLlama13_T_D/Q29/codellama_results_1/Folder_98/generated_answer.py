@@ -1,0 +1,3 @@
+
+def gcf_two_nums(num_list):
+    return __gcd(num_list[0], num_list[9])

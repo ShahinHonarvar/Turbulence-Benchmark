@@ -1,0 +1,21 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Compute the 14th Fibonacci number
+    fib_14 = compute_fibonacci(14)
+    # Check if the decimal integer is divisible by the 14th Fibonacci number
+    return (decimal_integer % fib_14 == 0)
+def compute_fibonacci(n):
+    # Initialize the first two Fibonacci numbers
+    a = 0
+    b = 1
+
+    # Compute the nth Fibonacci number
+    for i in range(n-2):
+        c = a + b
+        a = b
+        b = c
+
+    return b
+```

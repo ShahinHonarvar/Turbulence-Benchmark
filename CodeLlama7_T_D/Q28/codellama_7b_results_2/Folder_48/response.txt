@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # Get the indices of the characters in the string that occur between 37 and 59, both inclusive
+    start_idx = s.find('a', 37)
+    end_idx = s.rfind('z', 59)
+    # Get the ASCII values of the characters at these indices
+    ascii_values = [ord(c) for c in s[start_idx:end_idx+1]]
+    # Sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 6th smallest ASCII value
+    return sorted_ascii_values[5]
+```

@@ -1,0 +1,18 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has more than 1000 elements
+    if len(my_list) > 1000:
+        return False
+
+    # Check if the element at index 993 is a perfect number
+    for i in range(len(my_list)):
+        if my_list[i] == 993:
+            perfect_num = True
+            for j in range(1, int(perfect_num ** 0.5) + 1):
+                if perfect_num % j == 0:
+                    perfect_num += j
+
+            if perfect_num == my_list[i]:
+                return True
+
+    return False

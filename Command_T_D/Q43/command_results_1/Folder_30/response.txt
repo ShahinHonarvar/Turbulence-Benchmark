@@ -1,0 +1,27 @@
+[cohere.Generation {
+	id: 949162f6-1e0e-4992-bcb0-6f308f5f6fbe
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_primes_between_indices' that takes one argument, a list of integers, and returns the sorted list of all prime numbers from index 61 to index 80, both inclusive. The returned list should be in descending order. If no prime number exists in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_primes_between_indices(nums):
+    primes = []
+    for num in nums:
+        if num <= 1:
+            continue
+        elif num <= 3:
+            break
+        elif num % 2 == 0 or num % 3 == 0:
+            continue
+        else:
+            for i in range(5, int(num ** .5) + 1):
+                if num % i == 0:
+                    break
+                elif i * i > num:
+                    break
+            else:
+                primes.append(num)
+    return sorted(primes)[::-1]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

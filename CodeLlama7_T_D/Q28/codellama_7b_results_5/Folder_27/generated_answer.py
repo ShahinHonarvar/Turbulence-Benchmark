@@ -1,0 +1,16 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a dictionary to store the ASCII values of the characters in the string
+    ascii_dict = {}
+    for char in string:
+        # If the character is not already in the dictionary, add it and set its value to 1
+        if char not in ascii_dict:
+            ascii_dict[char] = 1
+        # Otherwise, increment the value of the character by 1
+        else:
+            ascii_dict[char] += 1
+    # Sort the dictionary by value in descending order
+    sorted_ascii_dict = sorted(ascii_dict.items(), key=lambda x: x[1], reverse=True)
+    # Get the character with the 13th smallest ASCII value
+    nth_smallest_ascii_value = sorted_ascii_dict[12][0]
+    return nth_smallest_ascii_value

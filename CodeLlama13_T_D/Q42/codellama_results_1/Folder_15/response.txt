@@ -1,0 +1,22 @@
+```
+def prime_factors(numbers):
+    if len(numbers) == 0:
+        return set()
+    
+    factors = set()
+    for i in range(len(numbers)):
+        n = numbers[i]
+        while n % 2 == 0:
+            factors.add(2)
+            n //= 2
+        
+        for d in range(3, int(n ** 0.5) + 1, 2):
+            while n % d == 0:
+                factors.add(d)
+                n //= d
+        
+        if n > 1:
+            factors.add(n)
+    
+    return factors
+```

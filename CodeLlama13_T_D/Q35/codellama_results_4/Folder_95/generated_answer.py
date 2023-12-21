@@ -1,0 +1,11 @@
+
+def remove_repeat_chars(string):
+    seen = set()
+    res = ''
+    for char in string:
+        if ord(char) < 32 or ord(char) > 99:
+            continue
+        if char not in seen:
+            seen.add(char)
+            res += char
+    return res

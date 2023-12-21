@@ -1,0 +1,18 @@
+```python
+def all_substring_of_size_n(s, n):
+    # Initialize an empty list to store the substrings
+    substrings = []
+    
+    # Iterate over each character in the string
+    for i in range(len(s)):
+        # Check if the current substring of length n exists in the given string
+        if s[i:i+n] in s:
+            # If it does, add it to the list of substrings
+            substrings.append(s[i:i+n])
+    
+    # Return the list of all distinct substrings of length n with no duplicate characters
+    return substrings
+```
+This function takes a string `s` and an integer `n` as inputs, where `n` is the length of the substrings to be returned. It then iterates over each character in the string and checks if there are any substrings of length `n` that do not contain duplicate characters. If such a substring exists, it is added to the list of substrings. Finally, the function returns the list of all distinct substrings of length `n`.
+
+For example, if we call the function with `s = "abcdef"` and `n = 3`, the function will return the list `["abc", "bcd", "cde"]` since these are the only three distinct substrings of length 3 that do not contain duplicate characters.

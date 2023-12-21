@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(s):
+    seen = {}
+    for i in range(44, 78):
+        if s[i] in seen and seen[s[i]] < 2:
+            continue
+        seen[s[i]] = seen.get(s[i], 0) + 1
+    return "".join([c for c in s if c not in seen or seen[c] >= 2])

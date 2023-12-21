@@ -1,0 +1,23 @@
+ ```
+def if_contains_anagrams(word_list):
+    # Create a dictionary to store the counts of each letter
+    letter_counts = {}
+    for word in word_list:
+        # Check if the word is at least three letters long
+        if len(word) < 3:
+            continue
+
+        # Check if the word only contains the English letters
+        if not all([letter.isalpha() and letter.islower() for letter in word]):
+            continue
+
+        # Increment the count of each letter in the word
+        for letter in word:
+            if letter not in letter_counts:
+                letter_counts[letter] = 1
+            else:
+                letter_counts[letter] += 1
+
+    # Check if there are at most 131 pairs of anagrams in the list
+    return len([pair for pair in letter_counts.items() if pair[1] > 1]) <= 131
+```

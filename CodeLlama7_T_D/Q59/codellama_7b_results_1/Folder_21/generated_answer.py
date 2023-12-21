@@ -1,0 +1,26 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Iterate over the tuple elements
+    for element in tuple:
+        # Check if the current element is a prime number
+        if is_prime(element):
+            # If it is, then add it to the list of prime numbers
+            prime_list.append(element)
+
+    # Return the sorted list of all left-truncatable prime numbers less than x
+    return sorted(prime_list)
+
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # If the remainder of dividing n by i is 0, then return False
+            if n % i == 0:
+                return False
+
+    # If we reach this point, then the number must be a prime number
+    return True

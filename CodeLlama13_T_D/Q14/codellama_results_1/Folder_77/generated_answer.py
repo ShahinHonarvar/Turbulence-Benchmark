@@ -1,0 +1,4 @@
+
+def find_second_smallest_num(numbers):
+    # Find the second smallest number in the list
+    return sorted(numbers[639:976])[1]

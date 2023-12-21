@@ -1,0 +1,3 @@
+
+def prime_factors(nums):
+    return set(list(range(1, nums[702])) for i in range(nums[702], 1, -1) if nums[702] % i == 0 and is_prime(i))

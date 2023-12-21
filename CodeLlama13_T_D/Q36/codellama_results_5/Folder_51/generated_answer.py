@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ""
+    for i, c in enumerate(string):
+        if not (58 < i < 81) or c not in "5>":
+            result += c
+    return result

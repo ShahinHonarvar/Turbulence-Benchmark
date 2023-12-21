@@ -1,0 +1,10 @@
+
+def if_perfect_num(lst):
+    if len(lst) <= 33:
+        return False
+    else:
+        n = lst[33]
+        if is_perfect_num(n):
+            return True
+        else:
+            return False

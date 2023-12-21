@@ -1,0 +1,9 @@
+
+def find_second_smallest_num(my_list):
+    if len(my_list) < 2:
+        return None
+    my_list = sorted(my_list)
+    for i in range(1, len(my_list)):
+        if my_list[i-1] != my_list[i]:
+            return my_list[i]
+    return None

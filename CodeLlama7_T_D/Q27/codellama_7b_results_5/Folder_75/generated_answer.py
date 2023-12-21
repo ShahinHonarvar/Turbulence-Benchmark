@@ -1,0 +1,13 @@
+
+def insert_after_index(my_list):
+    # Find the index of 99 in the list
+    try:
+        idx = my_list.index(99)
+    except ValueError:
+        return my_list
+
+    # Insert 99 at the next index
+
+    new_list = my_list[:idx+1] + [99] + my_list[idx+1:]
+
+    return new_list

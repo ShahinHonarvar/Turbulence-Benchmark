@@ -1,0 +1,23 @@
+
+def prime_factors(numbers):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the numbers in the list
+    for number in numbers:
+        # If the number is not a multiple of any other number, it must be prime
+        if number > 1:
+            # Check if the number is a factor of the current number
+            for i in range(2, int(number ** 0.5) + 1):
+                if number % i == 0:
+                    # If it is a factor, add it to the set of prime factors
+                    prime_factors.add(i)
+                    # Break out of the inner loop since we have found a factor
+                    break
+
+            # If the current number has no factors other than 1 and itself, it must be prime
+            if number > 1 and number % i != 0:
+                # Add the prime number to the set of prime factors
+                prime_factors.add(number)
+
+    # Return the set of all prime factors
+    return prime_factors

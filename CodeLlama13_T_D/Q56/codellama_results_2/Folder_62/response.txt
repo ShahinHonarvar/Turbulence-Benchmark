@@ -1,0 +1,10 @@
+```
+def all_substring_of_size_n(string, n):
+    substrings = []
+    for i in range(len(string) - (n - 1)):
+        substring = string[i:i+n]
+        if len(set(substring)) == n and not any(substring in s for s in substrings):
+            substrings.append(substring)
+    return substrings
+```
+This function uses a set to keep track of the unique characters in each substring, and it checks that the length of the substring is equal to `n` before adding it to the list. It also checks that the substring does not contain any duplicates by checking if it is already present in the list of substrings.

@@ -1,0 +1,15 @@
+
+def if_contains_anagrams(string_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_chars = 0
+    for string in string_list:
+        # Check if the string has at least three characters
+        if len(string) >= 3:
+            three_or_more_chars += 1
+            # Get a list of all permutations of the string
+            permutations = [string[i:] + string[:i] for i in range(len(string))))
+            # Check if there are at least three pairs of anagrams in the list of permutations
+            anagram_count += len([permutation for permutation in permutations if permutation.lower() != string.lower()]) >= 3
+    # Return true if there are at least three pairs of anagrams in the given list; otherwise, return false
+    return anagram_count >= 3 and three_or_more_chars > 0

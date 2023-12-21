@@ -1,0 +1,9 @@
+
+def all_neg_ints_exclusive(my_list):
+    # Get the range of negative integers in the list
+    neg_ints = [i for i in my_list if i < 0]
+    # Get the indices of the negative integers in the list
+    neg_int_indices = [my_list.index(ni) for ni in neg_ints]
+    # Filter out the negative integers outside the specified range
+    filtered_neg_ints = [ni for ni in neg_ints if 20 <= neg_int_indices[i] < 200]
+    return filtered_neg_ints

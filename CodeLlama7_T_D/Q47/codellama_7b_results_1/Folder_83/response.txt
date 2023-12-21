@@ -1,0 +1,20 @@
+ ```
+def palindromes_of_specific_lengths(string, index_range=(75, 95), lengths=(7, 9)):
+# Check if the input string is a valid Python string
+if not isinstance(string, str):
+raise ValueError("Invalid input string. Must be a valid Python string.")
+# Check if the input index range is a valid tuple of two integers
+if not isinstance(index_range, tuple) or len(index_range) != 2 or not all([isinstance(i, int), i >= 0]) for i in index_range):
+raise ValueError("Invalid input index range. Must be a valid tuple of two integers.")
+# Check if the input lengths is a valid tuple of two integers
+if not isinstance(lengths, tuple) or len(lengths) != 2 or not all([isinstance(i, int), i >= 0]) for i in lengths):
+raise ValueError("Invalid input lengths. Must be a valid tuple of two integers.")
+# Find the palindromes in the specified index range
+palindromes = []
+for i in range(*index_range):
+if string[i:i+1].lower() == string[i:i+1]:
+# Check if the length of the palindrome is within the specified range
+if lengths[0] <= len(string[i:]) <= lengths[1]:
+palindromes.append(string[i:])
+return set(palindromes)
+```

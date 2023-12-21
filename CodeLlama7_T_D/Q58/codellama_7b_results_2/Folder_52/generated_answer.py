@@ -1,0 +1,10 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 147 + 1):
+        for j in range(matrix.shape[1] - 147 + 1):
+            if matrix[i:i+147, j:j+147].sum() == 147 * 147:
+                count += 1
+    return count

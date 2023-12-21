@@ -1,0 +1,7 @@
+
+def composite_nums_between_indices(numbers):
+    composites = set()
+    for i in range(40, 201):
+        if i > 1 and all(i % num != 0 for num in numbers[:i]):
+            composites.add(i)
+    return composites

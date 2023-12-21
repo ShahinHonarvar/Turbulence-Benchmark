@@ -1,0 +1,21 @@
+
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Create a dictionary to store the ASCII values and their frequencies
+    ascii_dict = {}
+
+    # Iterate over the list of characters
+    for char in char_list:
+        # If the character is already in the dictionary, increment its frequency by 1
+        if char in ascii_dict:
+            ascii_dict[char] += 1
+        # Otherwise, add the character and its frequency to the dictionary
+        else:
+            ascii_dict[char] = 1
+
+    # Sort the dictionary by value (frequency)
+    sorted_ascii_dict = sorted(ascii_dict.items(), key=lambda x: x[1], reverse=True)
+
+    # Return the character with the 5th smallest ASCII value among those characters in the string that occur between indices 0 to 4, both inclusive.
+    return sorted_ascii_dict[4][0]

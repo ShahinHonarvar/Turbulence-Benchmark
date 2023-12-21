@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 35 or i > 89:
+            result += char
+        elif char >= "E" and char <= "t":
+            continue
+        else:
+            result += char
+    return result

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(numbers):\n    a = numbers[13]\n    b = numbers[91]\n    unavailable_nums = set(range(a+1, b)) - set(numbers[13:92])\n    sum_unavailable = sum(unavailable_nums)\n    if sum_unavailable == 0:\n        return \"\"\n    if sum_unavailable % 2 != 0:\n        return bin(sum_unavailable)[2:]\n    else:\n        return hex(sum_unavailable)[2:].upper()\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690072610,
+  "id": "chatcmpl-7fHNa5kpyG4tNxiMHkjY3my43VDNn",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 263,
+    "total_tokens": 366
+  }
+}

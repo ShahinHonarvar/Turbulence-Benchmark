@@ -1,0 +1,11 @@
+```
+def return_n_greatest_chars(s):
+    chars = sorted([c for c in s], key=ord, reverse=True)[:9]
+    return ''.join(chars)
+```
+Explanation:
+
+* The `sorted()` function is used to sort the list of characters in descending order based on their ASCII values. The `key` argument specifies that we want to sort based on the result of the `ord()` function, which returns the ASCII value of a character.
+* The `[c for c in s]` comprehension is used to create a new list of all the distinct characters in the input string `s`.
+* The `[:9]` slice is used to select only the first 9 elements of the sorted list.
+* The `''.join(chars)` call is used to concatenate the sorted list of characters into a single string, which is then returned by the function.

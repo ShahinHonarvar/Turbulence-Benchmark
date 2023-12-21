@@ -1,0 +1,19 @@
+
+def find_primes_between_indices(my_list):
+    # Initialize a new list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the list of integers from index 229 to index 850
+    for i in range(229, 851):
+
+        # Check if the current number is divisible by any number between 2 and the square root of the current number
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                break
+
+        # If the loop completes without breaking, then the current number is prime
+        else:
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of all prime numbers from index 229 to index 850, both inclusive
+    return sorted(prime_numbers, reverse=True)

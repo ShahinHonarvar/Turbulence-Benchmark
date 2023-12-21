@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(arr):
+    return list(filter(lambda x: 30 <= x <= 200, arr))

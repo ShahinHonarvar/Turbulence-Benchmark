@@ -1,0 +1,3 @@
+
+def all_ints_inclusive(mylist):
+    return mylist[52:71+1]

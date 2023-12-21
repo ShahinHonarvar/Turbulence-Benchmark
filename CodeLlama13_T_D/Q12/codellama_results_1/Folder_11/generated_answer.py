@@ -1,0 +1,3 @@
+
+def find_smallest_num(nums):
+    return sorted(nums[25:60])[0]

@@ -1,0 +1,8 @@
+
+def sum_in_range(my_list):
+    sum = 0
+    for num in my_list:
+        if 514 <= num <= 816:
+            sum += num
+
+    return sum

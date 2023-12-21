@@ -1,0 +1,12 @@
+```
+def find_subset_of_length_n(elements, n):
+    return len([subset for subset in power_set(elements) if len(subset) == n])
+```
+Note: The `power_set` function is not included in this solution, but it can be easily implemented using the following code:
+```
+def power_set(elements):
+    result = [[]]
+    for element in elements:
+        result += [subset + [element] for subset in result]
+    return result
+```

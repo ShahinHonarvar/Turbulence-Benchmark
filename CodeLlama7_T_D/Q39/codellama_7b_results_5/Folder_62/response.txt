@@ -1,0 +1,18 @@
+ ```
+def return_n_greatest_chars(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+
+    # Sort the list in descending order based on ASCII values
+    sorted_list = sorted(char_list, key=ord, reverse=True)
+
+    # Return the top 84 characters from the sorted list
+    return sorted_list[:84]
+
+# Test the function with a sample string
+string = "Hello World"
+#print(return_n_greatest_chars(string))
+```
+This code defines a function called `return_n_greatest_chars` that takes a single argument, a string of distinct characters. The function first converts the input string to a list of characters using the built-in `list()` method.
+Next, the function sorts the list of characters in descending order based on their ASCII values using the built-in `sorted()` method. The `key=ord` argument specifies that the sorting should be done based on the ASCII value of each character, which is a numerical representation of the character's position in the ASCII table.
+Finally, the function returns the top 84 characters from the sorted list using slicing notation. Slicing notation allows you to extract a subset of elements from a sequence or a string, and it is particularly useful for returning specific elements from a list. In this case, we are using slicing notation to return the first 84 elements from the sorted list, which correspond to the top 84 characters with the greatest ASCII values.

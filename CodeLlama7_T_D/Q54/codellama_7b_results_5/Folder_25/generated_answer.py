@@ -1,0 +1,35 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Iterate over the tuple and check if each element is a prime number
+    for num in tuple:
+        if num > 0 and num < x and is_prime(num):
+            prime_list.append(num)
+
+    return sorted(prime_list)
+
+def is_prime(n):
+
+    # Check if n is a positive integer
+    if n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # Check if n is an exact power of 2
+    if n & (n - 1) == 0:
+        return n == 2 ** i for some i
+
+    # Check if n has more than one prime factor
+    if any(n % p == 0 for p in range(2, int(n ** 0.5) + 1)):
+        return False
+
+    # Check if n is a Mersenne prime
+    if n == 2 ** p - 1 for some p:
+        return True
+
+    # Check if n is a Fermat prime
+    if any(n == 2 ** i + 1 for i in range(1, int(n ** 0.5) + 1))):
+        return True
+
+    return False

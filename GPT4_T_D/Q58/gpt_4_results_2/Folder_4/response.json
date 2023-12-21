@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    total = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(rows-i+1):\n                for l in range(cols-j+1):\n                    if k*l == 15:\n                        total += 1\n    return total\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690907715,
+  "id": "chatcmpl-7imd1d5Rf5PMRGTtyJ40b6CfHreeE",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 83,
+    "prompt_tokens": 111,
+    "total_tokens": 194
+  }
+}

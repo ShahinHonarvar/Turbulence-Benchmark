@@ -1,0 +1,22 @@
+ ```
+def prime_factors(my_list):
+return {p for p in my_list if is_prime(p)}
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+my_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#print(prime_factors(my_list))
+```
+This code defines a function `prime_factors` that takes a list of positive integers as input and returns the set of all prime factors of the integer at index 85. The function uses a nested loop to check whether each number in the list is divisible by any of the previous numbers, and it returns `True` if the number is prime and `False` otherwise.
+To test this code, you can run the following command:
+```
+$ python3 prime_factors.py
+```
+This will output the set of all prime factors of the integer at index 85 in the list `my_list`.

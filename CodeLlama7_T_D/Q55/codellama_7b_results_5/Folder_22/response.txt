@@ -1,0 +1,35 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the circular list
+
+    for i in range(len(circular_list)):
+
+        # Set the current element as the starting element of a sublist
+
+        curr_elem = circular_list[i]
+
+        # Initialize an empty list to store the elements of the current sublist
+
+        curr_sublist = []
+
+        # Iterate over the remaining elements in the circular list
+
+        for j in range(i + 1, len(circular_list)):
+
+            # If the product of the current element and the next element is equal to n, add the next element to the sublist
+
+            if curr_elem * circular_list[j] == n:
+                curr_sublist.append(circular_list[j])
+
+        # If the sublist is not empty, add it to the list of sublists
+
+        if curr_sublist:
+            sublists.append(curr_sublist)
+
+    # Return the list of sublists
+
+    return sublists
+```

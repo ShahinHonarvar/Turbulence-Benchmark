@@ -1,0 +1,17 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Initialize variables for the Fibonacci sequence
+    a = 0
+    b = 1
+    c = a + b
+    # Check if the decimal integer is divisible by the 109th number in the Fibonacci sequence
+    while c <= decimal_int:
+        a = b
+        b = c
+        c = a + b
+
+    return (decimal_int % c == 0)
+```
+This function takes a binary representation string of a non-negative decimal integer as input. It converts the binary string to an integer and then checks if it is divisible by the 109th number in the Fibonacci sequence. If it is, the function returns `True`, otherwise it returns `False`.

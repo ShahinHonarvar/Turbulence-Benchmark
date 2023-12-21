@@ -1,0 +1,17 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the given string
+    palindromes = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            substring = string[i:j]
+            if substring == substring[::-1]:
+                palindromes.append(substring)
+    
+    # Filter palindromes by length and occurrence index
+    result = set()
+    for palindrome in palindromes:
+        if len(palindrome) >= 7 and len(palindrome) <= 9 and 75 <= len(string)-len(palindrome)+1 <= 95:
+            result.add(palindrome)
+    
+    return result

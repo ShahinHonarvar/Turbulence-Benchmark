@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(lst):\n    count = 0\n    for i in range(len(lst)):\n        for j in range(i+1, len(lst)):\n            if len(lst[i]) >= 3 and len(lst[j]) >= 3:\n                if sorted(lst[i].lower()) == sorted(lst[j].lower()):\n                    count += 1\n                    if count >= 143:\n                        return True\n    return False\n```\nNote: This solution assumes that the input list only contains unique strings. If duplicates are allowed, the code can be modified accordingly.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689818871,
+  "id": "chatcmpl-7eDN139LCve7V8XQ1yj9unudjoNzm",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 117,
+    "prompt_tokens": 126,
+    "total_tokens": 243
+  }
+}

@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    char_list = []
+    for i in range(46, 73):
+        if string[i] not in char_list:
+            char_list.append(string[i])
+    
+    ascii_values = [ord(char) for char in char_list]
+    ascii_values.sort()
+    
+    return chr(ascii_values[14])

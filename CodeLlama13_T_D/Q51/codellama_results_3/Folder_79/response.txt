@@ -1,0 +1,14 @@
+```python
+def if_contains_anagrams(strings):
+    anagram_pairs = []
+    for string in strings:
+        lowercase_string = string.lower()
+        anagrams = set([])
+        for letter in lowercase_string:
+            if letter not in 'abcdefghijklmnopqrstuvwxyz':
+                continue
+            anagrams.add(letter)
+        if len(anagrams) >= 3 and (len(anagrams) * (len(anagrams) - 1)) // 2 <= 173:
+            anagram_pairs.append((string, ''.join(sorted(anagrams))))
+    return any(pair[0] != pair[1] for pair in anagram_pairs)
+```

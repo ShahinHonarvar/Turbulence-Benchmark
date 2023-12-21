@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    # Create a list of characters in the given string
+    char_list = list(string)
+    # Iterate through each character between indices 46 and 68 (exclusive)
+    for i in range(46, 68):
+        # If the current character is greater than 'H' and smaller than 's', remove all occurrences of that character from the string
+        if char_list[i] > 'H' and char_list[i] < 's':
+            char_list.remove(char_list[i])
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string

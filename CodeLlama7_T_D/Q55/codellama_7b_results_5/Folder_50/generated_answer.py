@@ -1,0 +1,45 @@
+
+def lists_with_product_equal_n(circular_list):
+        # Check if the input is a list
+        if not isinstance(circular_list, list):
+            raise ValueError("Input must be a list")
+
+        # Initialize an empty list to store the sublists
+        sublists = []
+
+        # Iterate over the elements of the circular list
+        for i in range(len(circular_list)):
+
+            # Get the current element and its next element
+            current_element = circular_list[i]
+            next_element = circular_list[(i+1) % len(circular_list)]
+
+            # Check if the product of the current element and its next element is equal to 45
+            if current_element * next_element == 45:
+
+                # Initialize an empty list to store the contiguous integers from the given list
+                contiguous_integers = []
+
+                # Add the current element and its next element to the list of contiguous integers
+                contiguous_integers.append(current_element)
+                contiguous_integers.append(next_element)
+
+                # Iterate over the remaining elements of the circular list
+                for j in range(i+2, len(circular_list)):
+
+                    # Get the current element and its next element
+                    current_element = circular_list[j]
+                    next_element = circular_list[(j+1) % len(circular_list)]
+
+                    # Check if the product of the current element and its next element is equal to 45
+                    if current_element * next_element == 45:
+
+                        # Add the current element and its next element to the list of contiguous integers
+                        contiguous_integers.append(current_element)
+                        contiguous_integers.append(next_element)
+
+                # Add the list of contiguous integers to the returned list
+                sublists.append(contiguous_integers)
+
+    # Return the list of sublists
+    return sublists

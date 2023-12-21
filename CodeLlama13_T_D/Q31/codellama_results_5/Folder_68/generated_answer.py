@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[3] == sum(set([i for i in range(1, int(lst[3])**0.5+1) if lst[3] % i == 0]))

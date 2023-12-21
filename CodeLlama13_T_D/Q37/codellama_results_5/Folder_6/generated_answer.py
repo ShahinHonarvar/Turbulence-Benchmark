@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if 13 <= ord(c) <= 28 and c >= 'c' and c <= 'n'])

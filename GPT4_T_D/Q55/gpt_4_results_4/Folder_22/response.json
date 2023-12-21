@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\nfrom itertools import combinations, chain\n\ndef lists_with_product_equal_n(circular_list):\n    # create a double copy of the list to get all sublists\n    circular_list = list(chain(circular_list, circular_list))\n    res = []\n    for i in range(len(circular_list)//2):\n        for j in range(i+1, len(circular_list)):\n            sublist = circular_list[i:j]\n            prod = 1\n            for num in sublist:\n                prod *= num\n            if prod == 4:\n                res.append(sublist)\n    return res\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691087771,
+  "id": "chatcmpl-7jXT9R0cwJPWnZQNR7BHNXWxHFddf",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 193,
+    "total_tokens": 319
+  }
+}

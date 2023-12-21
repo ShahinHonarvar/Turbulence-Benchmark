@@ -1,0 +1,15 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate through each possible arrangement of the English letters in the given string that occur between index 2 to index 9, both inclusive
+    for i in range(2, 10):
+        for j in range(i+5, len(string)):
+            # Check if the substring from i to j is a palindrome
+            if string[i:j] == string[i:j][::-1]:
+                # If it is a palindrome, add it to the set of palindromes
+                palindromes.add(string[i:j])
+    
+    # Return the set of palindromes
+    return palindromes

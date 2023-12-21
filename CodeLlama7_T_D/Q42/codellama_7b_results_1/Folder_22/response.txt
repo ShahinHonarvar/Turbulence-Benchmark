@@ -1,0 +1,24 @@
+ ```
+def prime_factors(my_list):
+    return {x for x in my_list if is_prime(x)}
+
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+if __name__ == "__main__":
+
+    my_list = [14, 21, 32, 64]
+
+#    print(prime_factors(my_list))
+```
+This code defines a function called `prime_factors` that takes a list of positive integers as input and returns the set of all prime factors of the integer at index 72. The function uses a nested loop to check if each number in the list is a factor of 72, and if it is, it adds it to the set of prime factors.
+The code also defines a function called `is_prime` that takes a single positive integer as input and returns a boolean value indicating whether the input integer is prime or not. The function uses a simple logic to check if a number is prime, by iterating from 2 to the square root of the input number and checking if it divides the input number without leaving a remainder.
+#The main program defines a list called `my_list` that contains some positive integers, and then calls the `prime_factors` function with the `my_list` as an argument. The output of the function is then printed to the console.

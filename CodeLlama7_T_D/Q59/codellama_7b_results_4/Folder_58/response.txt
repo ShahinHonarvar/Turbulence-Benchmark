@@ -1,0 +1,39 @@
+ Here is a possible implementation of the `all_left_truncatable_prime` function in Python:
+```
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the range of numbers from 1 to x-1
+    for i in range(1, x):
+
+        # Check if the number is a prime number
+        if is_prime(i):
+
+            # Check if the number is left-truncatable
+            if is_left_truncatable(i):
+
+                # Add the prime number to the list
+                prime_numbers.append(i)
+
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers, reverse=True)
+
+# Check if a number is a prime number
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Check if a number is left-truncatable
+def is_left_truncatable(n):
+    while n > 0 and n % 10 != 0:
+        n = int(str(n)[:-1]))
+    return n == 0
+```
+This code first defines a function `all_left_truncatable_prime` that takes an argument which is a tuple of positive integers. The function then iterates over the range of numbers from 1 to x-1, where x is the integer at index 975 in the input tuple.
+For each number i in the range, the function checks if it is a prime number using the `is_prime` function. If the number is not a prime number, then it is not considered left-truncatable, and therefore it is not added to the list of prime numbers.
+Once the list of prime numbers has been constructed, the function returns the sorted list of prime numbers in descending order using the `sorted` function with the `reverse=True` argument. This will sort the list of prime numbers in descending order based on their numerical value.

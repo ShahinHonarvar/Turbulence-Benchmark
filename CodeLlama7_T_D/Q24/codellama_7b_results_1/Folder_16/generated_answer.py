@@ -1,0 +1,19 @@
+
+def sum_of_divisors_in_range(n):
+    if n <= 0:
+        return 0
+
+    # Initialize the sum to 0
+
+    sum = 0
+
+    # Iterate over the divisors of n
+
+    for i in range(1, int(n ** 0.5) + 1):
+
+        # If i is a factor of n and it is between 228 and 846 (inclusive), add it to the sum
+
+        if n % i == 0 and 228 <= i and i <= 846:
+            sum += i
+
+    return sum

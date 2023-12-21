@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:] # make a copy of the list
+    after_index = my_list.index(84) + 1 # find the index immediately succeeding 84
+    new_list.insert(after_index, [13, 46]) # insert [13, 46] at the found index
+    return new_list

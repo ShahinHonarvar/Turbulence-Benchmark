@@ -1,0 +1,5 @@
+
+def palindrome_of_length_n(s):
+    s = s.lower()  # convert string to lowercase
+    n = len(s) // 2  # length of each palindrome
+    return {s[i:i+n] for i in range(len(s)-n+1)}

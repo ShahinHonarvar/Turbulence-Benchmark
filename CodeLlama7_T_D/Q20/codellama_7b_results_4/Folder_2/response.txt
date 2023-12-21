@@ -1,0 +1,12 @@
+ ```
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Return the 8th smallest number from index 23 to index 65, both inclusive
+    return my_list[23:65 + 1].index(my_list[23:65 + 1][-1]) + 23
+```
+Explanation:
+The function takes a list of distinct numbers as input and returns the 8th smallest number from index 23 to index 65, both inclusive.
+Firstly, we sort the list in ascending order using the `sort()` method.
+Next, we find the index of the 8th smallest number by using the `index()` method on a slice of the list that starts at index 23 and ends at index 65 (both inclusive). Since the list is sorted in ascending order, the 8th smallest number will be the one with the highest index value between these two indices.
+Finally, we add 23 to the index value of the 8th smallest number to get the actual index value of that number in the original unsorted list. This index value is then returned by the function.

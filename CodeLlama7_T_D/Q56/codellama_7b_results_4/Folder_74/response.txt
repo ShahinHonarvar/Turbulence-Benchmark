@@ -1,0 +1,22 @@
+ ```
+def all_substring_of_size_n(s):
+	"""
+	Return the list of all distinct substrings of length n in string s, in any order.
+	If no such substrings exist in s, return an empty list.
+	"""
+
+	if len(s) < 97:
+		return []
+
+	substrings = []
+
+	for i in range(len(s) - 89):
+
+		substring = s[i : i + 97]
+
+		if all([c not in substring for c in substrings]) and len(substring) == 97:
+
+			substrings.append(substring)
+
+	return substrings
+```

@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    result = []
+    for c in s:
+        if ord(c) < 87 and ord(c) > 81:
+            continue
+        result.append(c)
+    return "".join(result)

@@ -1,0 +1,14 @@
+
+def all_substring_of_size_n(s, n):
+    # Initialize an empty list to store the substrings
+    subs = []
+    
+    # Iterate over each character in the string
+    for i in range(len(s)):
+        # Check if the substring of length n starting from the current character is unique and has no duplicate characters
+        if s[i:i+n] not in subs and len(set(s[i:i+n])) == n:
+            # If yes, add it to the list of substrings
+            subs.append(s[i:i+n])
+    
+    # Return the list of all distinct substrings of length n with no duplicate characters
+    return subs

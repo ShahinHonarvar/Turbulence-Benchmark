@@ -1,0 +1,20 @@
+[cohere.Generation {
+	id: 47431794-1755-4164-a5b0-1370f23ae442
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_decimal_is_divisible' that takes one argument, a binary representation string of a non-negative decimal integer. In the given binary representation the most significant digit appears first. The function should return true if the decimal integer corresponding to the given string is divisible by the 107th number that occurs in the Fibonacci sequence; otherwise, it should return false. The first number that occurs in the Fibonacci sequence is 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def if_decimal_is_divisible(s):
+    return if_binary_is_divisible(s) and if_decimal_is_divisible_by_a_Fibonacci_number(s)
+
+def if_binary_is_divisible(s):
+    return s.count("1") == 1
+
+def if_decimal_is_divisible_by_a_Fibonacci_number(s):
+    return if_decimal_is_divisible_by_Fibonacci_number(int(s, 2))
+
+def if_decimal_is_divisible_by_Fibonacci_number(n):
+    return n % 107 == 0
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,11 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Get the most significant digit in the Fibonacci sequence
+    fib_seq = [0, 1]
+    while decimal_integer > fib_seq[-1]:
+        fib_seq.append(fib_seq[-1] + fib_seq[-2])
+    # Check if the decimal integer is divisible by the 49th number in the Fibonacci sequence
+    return decimal_integer % fib_seq[48] == 0
+```

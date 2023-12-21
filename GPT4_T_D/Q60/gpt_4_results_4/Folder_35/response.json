@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(numbers):\n    from itertools import permutations\n    x = numbers[177]\n    primes = [2,3,5,7]\n    not_primes = set()\n    \n    def is_prime(n):\n        if n == 1: \n            return 0\n        for i in primes: \n            if n % i==0:\n                return 0\n        else:\n            primes.append(n)\n            return 1\n        \n    def left_right_truncatable(num):\n        number=str(num)\n        for i in range(1,len(number)):\n            if not (is_prime(int(number[i:])) and is_prime(int(number[:len(number)-i]))):\n                return False \n        return True\n    \n    for num in permutations('123456789', len(str(x))):\n        num = int(''.join(num))\n        if num > x:\n            continue\n        if num not in not_primes:\n            if is_prime(num):\n                if left_right_truncatable(num):\n                    not_primes.add(int(''.join(num)))\n    return sorted(list(not_primes))\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691102885,
+  "id": "chatcmpl-7jbOv9cRhQZI3ofPphdmIC2ZdLyNP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 230,
+    "prompt_tokens": 187,
+    "total_tokens": 417
+  }
+}

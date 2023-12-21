@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the original string
+    for c in s:
+        # Check if the current character should be removed
+        if (41 <= ord(c) <= 79) and (ord(c) < ord('f') or ord(c) > ord('|')):
+            # Skip the current character
+            continue
+
+        # Add the current character to the filtered string
+        filtered += c
+
+    # Return the filtered string
+    return filtered

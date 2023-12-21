@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(set):
+    total = 0
+    for i in range(len(set)):
+        subset = set[i:i+51]
+        if len(subset) == 51:
+            total += 1
+
+    return total

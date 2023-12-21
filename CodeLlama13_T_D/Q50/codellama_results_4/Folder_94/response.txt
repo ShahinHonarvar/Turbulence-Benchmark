@@ -1,0 +1,13 @@
+```
+def if_contains_anagrams(string_list):
+    anagram_pairs = 0
+    for i in range(len(string_list)):
+        for j in range(i + 1, len(string_list)):
+            if is_anagram(string_list[i], string_list[j]):
+                anagram_pairs += 1
+    return anagram_pairs >= 46
+```
+
+This function uses a nested for loop to iterate over the list of strings and compare each pair of strings. If the two strings are anagrams, the `anagram_pairs` counter is incremented. The function returns `True` if there are at least 46 pairs of anagrams in the list, otherwise it returns `False`.
+
+The `is_anagram` function is not defined in this solution and is expected to be defined separately.

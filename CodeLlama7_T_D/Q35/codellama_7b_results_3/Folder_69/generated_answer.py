@@ -1,0 +1,42 @@
+
+def remove_repeat_chars(s):
+    # Create a set of unique characters in the given string
+    unique_chars = set(s)
+    # Initialize an empty string to store the altered string
+    altered_string = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+        # If the current character is not in the set of unique characters, add it to the altered string and continue to the next character
+        if char not in unique_chars:
+            altered_string += char
+            continue
+
+        # Get the indices of all occurrences of the current character in the given string
+        indices = [i for i, ltr in enumerate(s) if ltr == char]
+        # If there are no occurrences of the current character in the given string, add it to the altered string and continue to the next character
+        if not indices:
+            altered_string += char
+            continue
+
+        # Get the first index of the current character in the given string
+        first_index = indices[0]
+
+        # If the first index of the current character is less than or equal to 39, add it to the altered string and continue to the next character
+        if first_index <= 39:
+            altered_string += char
+            continue
+
+        # Get the last index of the current character in the given string
+        last_index = indices[-1]
+
+        # If the last index of the current character is greater than or equal to 43, remove all occurrences of the current character from the altered string and add it back to the end of the string
+        if last_index >= 43:
+            altered_string = altered_string.replace(char, "") + char
+            continue
+
+        # If none of the above conditions are met, remove all occurrences of the current character from the altered string and add it back to the end of the string
+        altered_string = altered_string.replace(char, "") + char
+
+    # Return the altered string
+    return altered_string

@@ -1,0 +1,9 @@
+ def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    index_40 = 40
+    index_91 = 91
+    list_vowels = []
+    for i in range(index_40, index_91):
+        if string[i] in vowels:
+            list_vowels.append(string[i])
+    return list_vowels

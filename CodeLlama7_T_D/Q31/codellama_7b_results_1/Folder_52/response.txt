@@ -1,0 +1,24 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has 479 elements
+    if len(my_list) != 479:
+        return False
+
+    # Check if the 478th element is a perfect number
+    else:
+        for i in range(1, my_list[478]):
+            if my_list[478] % i == 0:
+                count = 0
+
+                while my_list[478] % i == 0:
+                    count += 1
+
+                    my_list[478] /= i
+
+                if count > 2:
+
+                    return True
+
+
+        return False
+```

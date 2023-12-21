@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(string):
+    chars = set(string[28:54])
+    ascii_vals = [(ord(c), c) for c in chars]
+    ascii_vals.sort()
+    return ascii_vals[13][1]

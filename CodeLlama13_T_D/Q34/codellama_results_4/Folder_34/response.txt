@@ -1,0 +1,12 @@
+```python
+def find_original_set(sets):
+    original_set = set()
+    for s in sets:
+        original_set |= s
+    return original_set
+```
+This code defines a function `find_original_set` that takes a single argument `sets`, which is expected to be an iterable of sets. The function returns the smallest set such that each of the given arguments is a subset of it.
+
+The implementation uses the `|=` operator, which adds all elements from the right-hand side set to the left-hand side set, and returns the resulting set. This operation is performed for each input set `s` in the loop, so that the union of all sets is computed and returned as the final result.
+
+Note that this implementation assumes that all given sets are disjoint, i.e., they do not have any common elements. If this assumption is violated, the behavior of the function is undefined.

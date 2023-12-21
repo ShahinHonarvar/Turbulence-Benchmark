@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef find_subset_of_length_n(elements):\n    n = 78\n    count = 0\n    def backtrack(start, current):\n        nonlocal count\n        if len(current) == n:\n            count += 1\n            return\n        for i in range(start, len(elements)):\n            current.append(elements[i])\n            backtrack(i + 1, current)\n            current.pop()\n    backtrack(0, [])\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689814304,
+  "id": "chatcmpl-7eCBM9CwpdFJEL1jnd393mkQClnnc",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 83,
+    "total_tokens": 175
+  }
+}

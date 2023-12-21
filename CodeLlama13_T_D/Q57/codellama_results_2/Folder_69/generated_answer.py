@@ -1,0 +1,10 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    rows, cols = matrix.shape
+    for i in range(rows):
+        for j in range(cols):
+            current_submatrix = matrix[i:, j:]
+            if current_submatrix.sum() == 752:
+                return [current_submatrix]
+    return []

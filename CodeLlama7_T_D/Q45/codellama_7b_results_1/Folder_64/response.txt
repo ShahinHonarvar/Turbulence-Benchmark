@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(input_string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(4, len(input_string) - 9):
+        # Check if the current character is a letter
+        if input_string[i].isalpha():
+            # Create a palindrome by reversing the characters between index 4 and index 9
+            palindrome = input_string[i:9:-1] + input_string[i+6:i-2:-1] + input_string[i+8:i+1:-1]
+            # Add the palindrome to the set
+            palindromes.add(palindrome)
+    return palindromes
+```
+This code defines a function `palindromes_between_indices` that takes one argument, which is a string. The function returns the set of all palindromes of the length of at least 5 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 4 to index 9, both inclusive.
+The code uses a loop to iterate through each character in the input string. For each character, it checks if the current character is a letter using the `isalpha()` method. If the current character is a letter, it creates a palindrome by reversing the characters between index 4 and index 9 using slicing. It then adds the palindrome to an empty set called `palindromes` using the `add()` method.
+Finally, the function returns the `palindromes` set.

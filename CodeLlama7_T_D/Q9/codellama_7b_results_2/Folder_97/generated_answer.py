@@ -1,0 +1,15 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Find the starting and ending indices of the range
+    start = 40
+    end = 80
+    # Initialize an empty list to store the odd integers
+    odd_ints = []
+    # Iterate through the list, starting from the starting index
+    for i in range(start, len(my_list)):
+        # Check if the current element is odd
+        if my_list[i] % 2 != 0:
+            # Add the current element to the list of odd integers
+            odd_ints.append(my_list[i])
+    # Return the list of all odd integers from the specified range
+    return odd_ints

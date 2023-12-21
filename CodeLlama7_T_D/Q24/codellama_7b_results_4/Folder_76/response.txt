@@ -1,0 +1,28 @@
+ ```
+def sum_of_divisors_in_range(n):
+    if n < 744 or n > 885:
+        return 0
+
+    divisors = []
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            divisors.append(i)
+
+            if i * i < n:
+
+                divisors.append(n // i)
+
+    return sum(divisors)
+
+```
+Explanation:
+
+The function takes a positive integer `n` as its argument. It first checks whether `n` is within the specified range of 744 to 885, both inclusive. If it is not, the function returns 0 immediately.
+Next, the function initializes an empty list `divisors` to store all positive divisors of `n`. It then iterates over the numbers from 2 to the square root of `n`, which is an upper bound for the divisors. For each number `i`, the function checks whether `n` is divisible by `i`. If it is, the function appends `i` to the list `divisors`.
+For example, if `n = 756`, then the first few prime factors of `n` are 2, 3, and 19. The function would append 2, 3, and 19 to the list `divisors`. However, since 2 × 2 < 756, the function would not append 2 × 2 (i.e., 4) to the list `divisors`.
+The reason for this is that we want to find all positive divisors of `n` within the specified range, which is 744 to 885, both inclusive. If a number is not in this range, it should be ignored.
+Once the function has iterated over all numbers within the specified range, it returns the sum of all elements in the list `divisors`.
+For example, if `n = 756`, then the function would return the sum of all positive divisors of `n` within the specified range, which is 0 since there are no positive divisors of `n` within this range.

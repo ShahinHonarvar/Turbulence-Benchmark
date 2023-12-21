@@ -1,0 +1,31 @@
+ Here's a possible implementation of the `identical_elements` function:
+```python
+def identical_elements(list1, list2):
+    # Check if both lists are the same length
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a dictionary to store the elements of list1
+    dict1 = {}
+    for element in list1:
+        if element not in dict1:
+            dict1[element] = 1
+        else:
+            dict1[element] += 1
+
+    # Create a dictionary to store the elements of list2
+    dict2 = {}
+    for element in list2:
+        if element not in dict2:
+            dict2[element] = 1
+        else:
+            dict2[element] += 1
+
+    # Iterate over the elements of list1 and check if they exist in list2
+    identical_elements = set()
+    for element in dict1:
+        if element in dict2:
+            identical_elements.add(element)
+
+    return identical_elements
+```

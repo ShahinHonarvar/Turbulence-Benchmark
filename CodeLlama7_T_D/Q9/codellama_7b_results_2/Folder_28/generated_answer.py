@@ -1,0 +1,11 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Initialize an empty list to store the odd integers
+    odd_ints = []
+    # Loop through the list of integers
+    for i in range(len(my_list)):
+        # Check if the current integer is odd and within the specified range
+        if my_list[i] % 2 != 0 and 62 <= i <= 63:
+            # Add the odd integer to the list of odd integers
+            odd_ints.append(my_list[i])
+    return odd_ints

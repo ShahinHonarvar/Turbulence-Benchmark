@@ -1,0 +1,30 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(s, n):
+    # Create a dictionary to store the palindromes
+    palindromes = {}
+
+    # Iterate over the characters in the string
+    for i in range(len(s)):
+        # Check if the character is an English letter
+        if s[i].isalpha():
+            # Create a variable to store the reverse of the string
+            reversed_string = ""
+
+            # Iterate over the characters in the string from the current index to the end
+            for j in range(i, len(s)):
+                # Add the character to the reverse of the string
+                reversed_string += s[j]
+
+            # Check if the reverse of the string is a palindrome
+            if reversed_string == s[i:]:
+                # Add the palindrome to the dictionary
+                palindromes[s[i:]] = len(palindromes) + 1
+
+    # Return the set of all palindromes of length greater than or equal to n that exist in the given string
+    return set(palindromes.keys())
+```
+This function takes two arguments: `s`, a string, and `n`, an integer representing the minimum length of the palindromes to find. It returns a set containing all palindromes of length greater than or equal to `n` that exist in the given string. Each palindrome is represented as a string, and the order of the strings in the set does not matter.
+The function first creates an empty dictionary called `palindromes` to store the palindromes it finds. It then iterates over the characters in the string using a loop, and for each character, it checks if the character is an English letter. If the character is an English letter, the function creates a variable called `reversed_string` to store the reverse of the string starting from the current index. The function then iterates over the characters in the string from the current index to the end using another loop, and for each character, it adds the character to the reverse of the string.
+Once the reverse of the string is calculated, the function checks if the reverse of the string is a palindrome by comparing it with the original string. If the reverse of the string is a palindrome, the function adds the palindrome to the dictionary called `palindromes`. The dictionary is used to store the palindromes found in the given string, along with their corresponding indices.
+Finally, the function returns the set of all palindromes of length greater than or equal to `n` that exist in the given string. Each palindrome is represented as a string, and the order of the strings in the set does not matter.

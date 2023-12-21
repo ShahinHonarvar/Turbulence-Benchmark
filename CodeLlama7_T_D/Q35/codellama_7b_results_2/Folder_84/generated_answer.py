@@ -1,0 +1,40 @@
+
+def remove_repeat_chars(string):
+    # create a dictionary to store the characters and their indices
+    char_indices = {}
+
+    # iterate over each character in the string
+    for i, char in enumerate(string):
+
+        # if the character is already in the dictionary
+        if char in char_indices:
+
+            # get the list of indices where the character appears
+            indices = char_indices[char]
+
+            # add the current index to the list of indices
+            indices.append(i)
+
+            # update the dictionary with the new list of indices
+            char_indices[char] = indices
+
+        # if the character is not in the dictionary
+        else:
+
+            # create a new list of indices with the current index
+            indices = [i]
+
+            # add the character to the dictionary with its corresponding list of indices
+            char_indices[char] = indices
+
+    # iterate over each character in the string
+    for i, char in enumerate(string):
+
+        # if the character is not in the dictionary or its list of indices does not contain the current index
+        if char not in char_indices or i not in char_indices[char]:
+
+            # append the character to the new string
+            new_string += char
+
+    # return the new string
+    return new_string

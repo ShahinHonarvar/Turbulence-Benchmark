@@ -1,0 +1,13 @@
+```
+def find_primes_between_indices(list):
+    primes = []
+    for i in range(289, 381):
+        if is_prime(list[i]):
+            primes.append(list[i])
+    return sorted(primes, reverse=True)
+```
+Here is another solution using a list comprehension:
+```
+def find_primes_between_indices(list):
+    return sorted([list[i] for i in range(289, 381) if is_prime(list[i])], reverse=True)
+```

@@ -1,0 +1,9 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string
+    char_indices = [i for i, c in enumerate(string) if c != ' ']
+    # Sort the indices based on the ASCII values of the corresponding characters
+    sorted_indices = sorted(char_indices, key=lambda x: ord(string[x]))
+    # Get the 13th smallest ASCII value and its index
+    smallest_ascii = sorted_indices[12]
+    return string[smallest_ascii]

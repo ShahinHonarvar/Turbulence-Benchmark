@@ -1,0 +1,13 @@
+```
+def find_second_smallest_num(my_list):
+    # find the smallest element in the list
+    smallest = min(my_list)
+    
+    # find the second smallest element by filtering out the smallest element from the list and finding the minimum of what's left
+    second_smallest = min(filter(lambda x: x != smallest, my_list))
+    
+    return second_smallest
+```
+This function first finds the smallest element in the input list using the `min()` function. It then filters out that smallest element from the list and finds the minimum of what's left using a lambda expression with the `filter()` function. Finally, it returns the second smallest element or `None` if there is no such element.
+
+Note: The function assumes that the input list contains only distinct numbers and that the indices 12 to 92 are valid. If either of these assumptions are not true, the behavior of the function is undefined.

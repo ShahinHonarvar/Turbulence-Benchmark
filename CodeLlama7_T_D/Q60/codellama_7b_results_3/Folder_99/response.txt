@@ -1,0 +1,82 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x (both inclusive)
+    for i in range(1, x + 1):
+
+        # Check if i is a prime number
+        if is_prime(i):
+
+            # Check if i is left-and-right-truncatable prime
+            if is_left_right_truncatable_prime(i):
+
+                # If i is a left-and-right-truncatable prime, add it to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+
+    # A prime number is greater than 1 and has only two factors (1 and itself)
+    if n > 1:
+
+        # Iterate from 2 to the square root of n (both inclusive)
+        for i in range(2, int(n ** 0.5) + 1):
+
+            # Check if i divides n
+            if n % i == 0:
+
+                # If i divides n, return False
+                return False
+
+    # If n has only two factors (1 and itself), return True
+    return True
+
+# Check if a number is left-and-right-truncatable prime
+def is_left_right_truncatable_prime(n):
+
+    # A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.
+
+    # Check if n is a prime number
+    if is_prime(n):
+
+        # Initialize an empty string to store the number in string format
+        number_string = ""
+
+        # Get the number in string format
+        number_string = str(n)
+
+        # Check if the leading leftmost digit of n is 0
+        if number_string[0] == "0":
+
+            # If the leading leftmost digit of n is 0, return False
+            return False
+
+        # Check if the last rightmost digit of n is 0
+        if number_string[-1] == "0":
+
+            # If the last rightmost digit of n is 0, return False
+            return False
+
+        # Initialize an empty string to store the number in string format with leading leftmost and last rightmost digits removed
+        number_string_without_leading_leftmost_and_last_rightmost_digits = ""
+
+        # Get the number in string format with leading leftmost and last rightmost digits removed
+        number_string_without_leading_leftmost_and_last_rightmost_digits = str(n)[:-1]
+
+        # Check if the number in string format with leading leftmost and last rightmost digits removed is a prime number
+        if is_prime(int(number_string_without_leading_leftmost_and_last_rightmost_digits)) == True:
+
+            # If the number in string format with leading leftmost and last rightmost digits removed is a prime number, return True
+            return True
+
+    # If n is not a prime number, return False
+    return False
+```

@@ -1,0 +1,11 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # Get the set of unique characters in the string
+    unique_chars = set(s)
+    # Create a list of tuples containing the ASCII value and the character
+    ascii_list = [(ord(c), c) for c in unique_chars]
+    # Sort the list by the first element (ASCII value)
+    ascii_list.sort(key=lambda x: x[0])
+    # Return the 10th smallest ASCII value and its corresponding character
+    return ascii_list[9][1]
+```

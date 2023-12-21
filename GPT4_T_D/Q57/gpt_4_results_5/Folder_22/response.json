@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices = []\n    \n    for row in range(rows):\n        for col in range(cols):\n            for submatrix_row in range(row+1, rows+1):\n                for submatrix_col in range(col+1, cols+1):\n                    submatrix = matrix[row:submatrix_row, col:submatrix_col]\n                    if np.sum(submatrix) == -38:\n                        submatrices.append(submatrix)\n    return submatrices\n```\nNote: This function uses numpy slicing to generate all possible submatrices of the given matrix from size 1x1 up to the size of the matrix itself. It then calculates the sum of each submatrix and compares it to -38, adding matching submatrices to the list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691014636,
+  "id": "chatcmpl-7jERYh5YdGH27cuBWsQ2S33PurLKQ",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 121,
+    "total_tokens": 299
+  }
+}

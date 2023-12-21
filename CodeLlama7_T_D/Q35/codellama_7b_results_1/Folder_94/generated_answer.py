@@ -1,0 +1,22 @@
+
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of characters
+    char_dict = {}
+
+    # Iterate over the string and check if each character has been seen before
+    for i in range(len(s)):
+        char = s[i]
+        if char not in char_dict:
+            # If the character has not been seen before, add it to the dictionary
+            char_dict[char] = True
+
+        else:
+
+            # If the character has been seen before, remove all occurrences of it from the string
+            while s.find(char) != -1:
+                start = s.find(char)
+                end = start + 1
+                s = s[:start] + s[end:]
+
+    # Return the altered string
+    return s

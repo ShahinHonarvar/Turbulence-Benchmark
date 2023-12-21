@@ -1,0 +1,13 @@
+
+def return_nth_smallest_ascii(string):
+    # convert the string to a list of characters
+    char_list = list(string)
+    # find the indices of the characters that occur between indices 14 and 35, both inclusive
+    start_index = char_list.index('A')
+    end_index = char_list.index('Z')
+    # calculate the ASCII value of each character in the range
+    ascii_values = [ord(char) for char in char_list[start_index:end_index+1]]
+    # sort the list of ASCII values
+    sorted_ascii_values = sorted(ascii_values)
+    # return the 11th smallest ASCII value
+    return sorted_ascii_values[10]

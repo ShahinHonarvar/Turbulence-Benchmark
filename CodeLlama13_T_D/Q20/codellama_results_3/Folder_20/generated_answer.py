@@ -1,0 +1,3 @@
+
+def find_n_th_smallest_num(distinct_nums, n):
+    return sorted(distinct_nums)[25:64][n-1]

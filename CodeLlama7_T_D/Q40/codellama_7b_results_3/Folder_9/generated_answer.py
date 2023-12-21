@@ -1,0 +1,11 @@
+ def return_n_smallest_chars(string, n):
+    # Initialize an empty list to store the characters
+    smallest_chars = []
+    # Iterate through each character in the string
+    for char in string:
+        # If the number of characters in the list is less than or equal to 20
+        if len(smallest_chars) <= n:
+            # Append the character to the list and sort it in ascending order
+            smallest_chars.append(char)
+            smallest_chars.sort()
+    return smallest_chars

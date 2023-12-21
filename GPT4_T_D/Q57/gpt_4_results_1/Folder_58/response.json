@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    for i in range(matrix.shape[0]):\n        for j in range(matrix.shape[1]):\n            for sub_matrix_i in range(i + 1, matrix.shape[0] + 1):\n                for sub_matrix_j in range(j + 1, matrix.shape[1] + 1):\n                    sub_matrix = matrix[i:sub_matrix_i, j:sub_matrix_j]\n                    if np.sum(sub_matrix) == -137:\n                        result.append(sub_matrix.tolist())\n    return result\n```\nThis function will create submatrices of all possible sizes and locations within the given matrix, and add each submatrix where the sum matches the target value to the result list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081504,
+  "id": "chatcmpl-7fJh24s8L5IdT0phX1uBIkMaVSVUW",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 169,
+    "prompt_tokens": 121,
+    "total_tokens": 290
+  }
+}

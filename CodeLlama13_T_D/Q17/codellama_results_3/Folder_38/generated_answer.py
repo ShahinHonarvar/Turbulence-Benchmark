@@ -1,0 +1,7 @@
+
+def all_ints_div_by_both_two_nums(numbers):
+    result = []
+    for num in numbers[10:76]:
+        if num % -40 == 0 and num % -12 == 0:
+            result.append(num)
+    return result

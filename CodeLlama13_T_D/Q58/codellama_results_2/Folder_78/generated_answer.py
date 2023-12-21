@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    # Initialize a count variable
+    count = 0
+    
+    # Loop through the rows of the matrix
+    for i in range(len(matrix)):
+        # Loop through the columns of the matrix
+        for j in range(len(matrix[i])):
+            # Check if the element at position (i, j) is equal to n
+            if matrix[i][j] == n:
+                # Increment the count variable
+                count += 1
+    
+    # Return the count of submatrices that contain n integers each
+    return count

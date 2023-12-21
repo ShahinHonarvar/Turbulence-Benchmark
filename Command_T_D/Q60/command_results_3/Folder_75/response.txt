@@ -1,0 +1,32 @@
+[cohere.Generation {
+	id: 65d5494d-8073-4d8d-825d-7fa582c4ef1c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 41. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import string
+import itertools
+import heapq
+import bisect
+
+def all_left_right_truncatable_prime(n):
+    # generate all left-right-truncatable prime numbers less than or equal to n
+    # that are not also a prime number with no leading or trailing digits
+    # (i.e. a one- or two-digit prime)
+    yield from itertools.chain.from_iterable(
+        (h for h in range(1, n+1) if is_left_right_truncatable_prime(h))
+    )
+    # return the list of left-right-truncatable prime numbers less than or equal to n
+    # that are not also a prime number with no leading or trailing digits
+    # (i.e. a one- or two-digit prime)
+    return sorted(set(itertools.chain.from_iterable(
+        (h for h in range(1, n+1) if is_left_right_truncatable_prime(h))
+    )), key=lambda x: x)
+
+def is_left_right_truncatable_prime(n):
+    # check if n is a prime number
+    # (i.e. a number greater than 1 that cannot be evenly divided by any other number)
+    if n < 2 or n == 2 or n == 3 or n == 5 or n == 7 or n == 11 or n == 13 or n == 17 or n == 19 or n == 23 or n == 29 or n == 31 or n == 37 or n == 41 or n == 43 or n == 47 or n == 53 or n == 59 or n == 61 or n == 67 or n == 71 or n == 73 or n == 79 or n == 83 or n == 89 or n == 97 or n == 101 or n == 103 or n == 107 or n == 109 or n == 113 or n == 127 or n == 131 or n == 137 or n == 139 or n == 149 or n == 151 or n == 157 or n == 163 or n == 167 or n == 173 or n == 179 or n == 181 or n == 191 or n == 193 or n == 197 or n == 199 or n == 211 or n == 223 or n == 227 or n == 229 or n == 233 or n == 239 or n == 241 or n == 251 or n == 257 or n == 263 or n == 269 or n == 271 or n == 277 or n == 281 or n == 283 or n == 293 or n == 307 or n == 311 or n == 313 or n == 317 or n == 331 or n == 337 or n == 347 or n == 349 or n == 353 or n == 359 or n == 367 or n == 373 or n == 379 or n == 383 or n == 389 or n ==397 or n == 401 or n == 409 or n == 419 or n == 431 or n == 433 or n == 449 or n == 457 or n == 461 or n == 463 or n == 467 or n == 479 or n == 487 or n == 499 or n == 503 or n == 509 or n == 521 or n == 607 or n == 613 or n == 617 or n == 619 or n == 623 or n == 627 or n == 637 or n == 641 or n == 643 or n == 647 or n == 653 or n == 659 or n == 661 or n == 673 or n == 677 or n == 683 or n == 691 or n == 701 or n == 709 or n == 719 or n == 733 or n == 739 or n == 743 or n == 751 or n == 757 or n == 761 or n == 769 or n == 773 or n == 787 or n == 797 or n == 809 or n == 811 or n == 821 or n == 823 or n == 827 or n == 829 or n == 839 or n == 853 or n == 857 or n == 859 or n == 863 or n == 867 or n == 871 or n == 873 or n == 883 or n == 887 or n == 907 or n == 911 or n == 919 or n == 929 or n == 937 or n == 941 or n == 947 or n == 953 or n == 967 or n == 971 or n == 977 or n == 983 or n == 991 or n == 997
+```
+	likelihood: None
+	token_likelihoods: None
+}]

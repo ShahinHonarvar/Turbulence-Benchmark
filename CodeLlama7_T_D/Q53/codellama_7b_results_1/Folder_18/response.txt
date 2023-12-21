@@ -1,0 +1,18 @@
+ Here is a Python function that meets the requirements you specified:
+```python
+def palindrome_of_length_at_least_n(input_string, n=62):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(len(input_string)):
+        # Get the substring starting from the current character and ending at the end of the string
+        substr = input_string[i:]
+        # Check if the substring is a palindrome of length greater than or equal to n
+        if substr == substr[::-1] and len(substr) >= n:
+            # Add the palindrome to the set
+            palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes
+```
+This function takes in a string and an optional parameter `n` (default value is 62) as input. It then loops through each character in the input string and checks if the substring starting from the current character and ending at the end of the string is a palindrome of length greater than or equal to `n`. If it is, it adds the palindrome to an empty set, and finally returns the set of palindromes.
+For example, if we call the function with the input string "racecar", it will return the set containing the palindrome "racecar".

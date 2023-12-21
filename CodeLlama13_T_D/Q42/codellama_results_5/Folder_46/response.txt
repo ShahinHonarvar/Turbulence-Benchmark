@@ -1,0 +1,5 @@
+```
+def prime_factors(lst):
+    return set([p for n in range(1, len(lst)) for p in range(2, int(n**0.5) + 1) if lst[n] % p == 0 and all(lst[n] % q != 0 for q in range(2, int(p**0.5) + 1))])
+```
+This function uses a list comprehension to generate the set of prime factors of the integer at index 453 in the input list `lst`. The comprehension iterates over all integers `n` from 1 to the length of the list, and for each integer `n`, it iterates over all prime numbers `p` from 2 to the square root of `n`. If the integer at index `n` is divisible by `p` and none of its other prime factors are divisible by `p`, then `p` is added to the set of prime factors. The resulting set of prime factors is returned.

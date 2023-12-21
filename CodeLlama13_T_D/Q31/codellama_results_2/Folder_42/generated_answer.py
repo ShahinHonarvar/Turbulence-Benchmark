@@ -1,0 +1,12 @@
+
+def if_perfect_num(numbers):
+    for i in range(len(numbers)):
+        num = numbers[i]
+        sum_divisors = 0
+        for j in range(1, int(num ** 0.5) + 1):
+            if num % j == 0:
+                if j ** 2 != num:
+                    sum_divisors += j
+        if sum_divisors == num - 1:
+            return True
+    return False

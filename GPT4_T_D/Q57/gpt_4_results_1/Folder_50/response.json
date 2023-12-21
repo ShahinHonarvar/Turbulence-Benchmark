@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(np_matrix):\n\n    sub_matrices = []\n    dim_x, dim_y = np_matrix.shape\n\n    for x in range(1, dim_x+1):\n        for y in range(1, dim_y+1):\n            for i in range(dim_x-x+1):\n                for j in range(dim_y-y+1):\n                    sub_matrix = np_matrix[i:i+x, j:j+y]\n                    if np.sum(sub_matrix) == 95:\n                        sub_matrices.append(sub_matrix)\n\n    return sub_matrices\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081403,
+  "id": "chatcmpl-7fJfPoQAArPITD8KTuVjEKUvWbcs1",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 121,
+    "prompt_tokens": 121,
+    "total_tokens": 242
+  }
+}

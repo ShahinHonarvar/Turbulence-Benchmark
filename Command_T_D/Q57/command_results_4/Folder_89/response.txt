@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: 28af620e-02b7-4b0f-9b52-c92824f8da7c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'submatrix_with_particular_sum' that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 80. If no such submatrix is found, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def submatrix_with_particular_sum(matrix):
+    rows = matrix.shape[0]
+    columns = matrix.shape[1]
+    submatrices = []
+    for row in range(rows):
+        for column in range(columns):
+            row_matrix = matrix[row][:column] + matrix[row][column+1:]
+            row_matrix += matrix[:row][:column] + matrix[:row][column+1:]
+            row_matrix += matrix[rows-1][:column] + matrix[rows-1][column+1:]
+            if len(row_matrix) == 80:
+                submatrices.append(row_matrix)
+    return submatrices
+```
+	likelihood: None
+	token_likelihoods: None
+}]

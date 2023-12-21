@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(set):
+    # Initialize a counter for the number of subsets
+    count = 0
+
+    # Iterate over all possible subsets of length n
+    # using itertools.combinations()
+    for subset in itertools.combinations(set, n):
+
+        # If the subset is of size 99, increment the counter
+        if len(subset) == 99:
+            count += 1
+
+    return count

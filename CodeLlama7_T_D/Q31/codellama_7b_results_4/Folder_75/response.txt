@@ -1,0 +1,29 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 80 elements
+    if len(my_list) < 80:
+        return False
+
+    # Check if the element at index 80 is a perfect number
+    if is_perfect_number(my_list[80]):
+        return True
+
+    # If we reach this point, it means that the element at index 80 is not a perfect number
+    return False
+
+def is_perfect_number(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        return False
+
+    # Calculate the sum of the divisors of n
+    sum_of_divisors = 0
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            sum_of_divisors += i
+            if i * i != n:
+                sum_of_divisors += n / i
+
+    # Check if the sum of the divisors of n is equal to n
+    return sum_of_divisors == n
+```

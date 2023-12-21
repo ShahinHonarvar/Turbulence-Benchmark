@@ -1,0 +1,19 @@
+ ```
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor of two numbers
+    def gcf(a, b):
+        if b == 0:
+            return a
+
+        else:
+
+            return gcf(b, a % b)
+
+    return gcf(my_list[51], my_list[27])
+```
+This function takes a list of positive integers as an argument. It then calculates the greatest common factor (gcf) of the two numbers at indices 51 and 27 in the list using the recursive formula for the gcf:
+```
+gcf(a, b) = gcf(b, a % b)
+```
+where `a` and `b` are positive integers. This formula states that the gcf of two numbers is equal to the gcf of the smaller number and the remainder of dividing the larger number by the smaller number.
+The function then returns the result of calculating the gcf of these two numbers at indices 51 and 27 in the list.

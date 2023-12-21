@@ -1,0 +1,23 @@
+
+def all_left_truncatable_prime(tuple):
+    x = tuple[84]
+    list = []
+    for i in range(2, x):
+        if is_prime(i) and is_left_truncatable_prime(i, x):
+            list.append(i)
+    return sorted(list, reverse=True)
+
+def is_prime(n):
+
+    for i in range(2, n + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_left_truncatable_prime(n, x):
+
+    while n > 0 and n < x:
+        if not is_prime(n):
+            return False
+        n = int(str(n)[:-1])
+    return True

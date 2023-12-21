@@ -1,0 +1,10 @@
+```python
+def return_binary_or_hexa(nums):
+    a, b = nums[56], nums[88]
+    sum_of_ints = sum([i for i in range(a + 1, b) if i not in nums])
+    if sum_of_ints % 2 == 0:
+        return f"{sum_of_ints:x}"
+    else:
+        return bin(sum_of_ints)[2:]
+```
+This function takes a tuple of distinct nonnegative integers `nums` as input. It calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices 56 and 88, where `a = nums[56]` and `b = nums[88]`. If the sum is an odd number, it returns the binary representation string of the sum without any leading zeros. Otherwise, it returns the hexadecimal representation string of the sum with no leading zeros. If all integers from `a + 1` to `b - 1` (both inclusive) are present in the specified range in the tuple, the function returns an empty string.

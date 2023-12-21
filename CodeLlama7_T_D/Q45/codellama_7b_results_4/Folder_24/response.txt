@@ -1,0 +1,19 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string, starting from index 2 (inclusive) and ending at index 9 (exclusive)
+    for i in range(2, len(string)-1):
+        # Check if the character at index i is a letter
+        if string[i].isalpha():
+            # Generate all possible palindromes of length 4 or more that can be formed from any combination of letters between indices 2 to 9 (inclusive)
+            for j in range(i-2, i+3):
+                # Check if the character at index j is a letter
+                if string[j].isalpha():
+                    # Form the palindrome in a case-insensitive manner by reversing the characters in the string from index i to index j (inclusive)
+                    palindrome = ''.join(reversed(string[i:j+1]))
+                    # Check if the formed palindrome has length of at least 4 and is a case-insensitive palindrome
+                    if len(palindrome) >= 4 and palindrome.lower() == palindrome:
+                        # Add the formed palindrome to the set of palindromes
+                        palindromes.add(palindrome)
+    # Return the set of all palindromes that can be created from any possible arrangement of the English letters in the given string that occur between index 2 to index 9 (inclusive), both inclusive, and are of length of at least 4
+    return palindromes

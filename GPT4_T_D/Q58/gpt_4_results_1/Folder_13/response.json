@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for x in range(matrix.shape[0]):\n        for y in range(matrix.shape[1]):\n            for h in range(x+1, matrix.shape[0] + 1):\n                for w in range(y+1, matrix.shape[1] + 1):\n                    if (h-x) * (w-y) == 175:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082241,
+  "id": "chatcmpl-7fJsvx1rfB1BGZBoGxjlpaQs6Kief",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 104,
+    "prompt_tokens": 111,
+    "total_tokens": 215
+  }
+}

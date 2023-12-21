@@ -1,0 +1,31 @@
+
+def if_contains_anagrams(string_list):
+    # Initialize variables
+    anagram_pairs = 0
+    string_length = len(string_list)
+    # Loop through each string in the list
+    for i in range(string_length):
+        # Get the current string
+        current_string = string_list[i]
+        # Check if the length of the string is greater than or equal to three
+        if len(current_string) >= 3:
+            # Convert the current string to lowercase
+            lowercase_string = current_string.lower()
+            # Create a list of all possible anagrams of the current string
+            anagram_list = []
+            for j in range(len(lowercase_string) - 2):
+                # Get the substring starting at index j and ending at index j + 2
+                substring = lowercase_string[j:j+3]
+                # Check if the substring is a valid anagram of the current string
+                if substring == "".join(sorted(substring)):
+                    # Add the substring to the list of all possible anagrams
+                    anagram_list.append(substring)
+            # Check if there are at least 189 pairs of anagrams in the list
+            if len(anagram_list) >= 189:
+                # Increment the number of anagram pairs found
+                anagram_pairs += 1
+    # Return true if there are at least 189 pairs of anagrams in the given list; otherwise, return false
+    if anagram_pairs >= 189:
+        return True
+    else:
+        return False

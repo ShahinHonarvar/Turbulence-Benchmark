@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to a list of digits
+    digit_list = list(map(int, binary_repr))
+
+    # Calculate the decimal value of the input number
+    decimal = 0
+    for i in range(len(digit_list)):
+        decimal += digit_list[i] * (2 ** (len(digit_list) - i - 1))
+
+    # Find the 54th Fibonacci number
+    fibonacci_sequence = [0, 1]
+    for i in range(53):
+        fibonacci_sequence.append(fibonacci_sequence[i] + fibonacci_sequence[i+1])
+    
+    # Check if the input decimal is divisible by the 54th Fibonacci number
+    return (decimal % fibonacci_sequence[53]) == 0

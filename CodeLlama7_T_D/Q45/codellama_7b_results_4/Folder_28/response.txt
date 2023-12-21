@@ -1,0 +1,17 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over all possible starting indices
+    for i in range(len(string) - 3):
+        # Check if the substring starting at index i has length 4 or more
+        if len(string[i:]) < 4:
+            continue
+
+        # Check if the substring starting at index i is a palindrome
+        if string[i:] == string[i:][::-1]:
+            palindromes.add(string[i:])
+    return palindromes
+```
+This function takes a single argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 4 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 1 to index 5, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.

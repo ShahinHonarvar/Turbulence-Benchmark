@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import product\nfrom sympy import isprime\n\ndef number_generator():\n    possible_digits = \"123456789\"\n    possible_two_digits = [i + j for i, j in product(possible_digits, repeat=2)]\n    possible_set = [i for i in possible_digits] + possible_two_digits\n\n    for length in range(3, 7):\n        old_possible_set = possible_set[:]\n        for old in old_possible_set:\n            possible_set += [old + new for new in possible_digits]\n    return possible_set\n\ndef truncation_check(number):\n    for i in range(len(number)):\n        if not isprime(int(number[i:])) or not isprime(int(number[:len(number) - i])):\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(tup):\n    less_than_values = list(filter(lambda x: int(x) <= tup[84], number_generator()))\n    truncatable_primes = list(filter(truncation_check, less_than_values))\n    truncatable_primes = list(map(int, truncatable_primes))\n    truncatable_primes.sort(reverse=True)\n    return truncatable_primes\n```\nPlease note that due to the computational complexity of the problem and the length of left-and-right-truncatable prime numbers, the above solution is optimized for numbers up to around 10^6, the maximum length of a truncatable prime is set to 7 digits. This value can be altered in the variable 'length' in 'number_generator()' function for computation for higher range numbers.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691024489,
+  "id": "chatcmpl-7jH0TXYtbHyztWJkKXsF2NkNd6rR3",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 319,
+    "prompt_tokens": 187,
+    "total_tokens": 506
+  }
+}

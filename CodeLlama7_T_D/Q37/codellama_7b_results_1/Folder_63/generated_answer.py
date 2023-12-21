@@ -1,0 +1,11 @@
+ def filter_chars(s):
+    start = 42
+    end = 92
+    filtered_string = ""
+    for i in range(len(s)):
+        if start <= i <= end:
+            if s[i].isalpha():
+                filtered_string += s[i]
+        else:
+            filtered_string += s[i]
+    return filtered_string

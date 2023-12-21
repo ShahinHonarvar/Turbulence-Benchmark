@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(lst):
+    anagrams = {}
+    for s in lst:
+        key = tuple(sorted(s.lower()))
+        if len(key) >= 3:
+            anagrams[key] = anagrams.get(key, []) + [s]
+    return len([a for a in anagrams.values() if len(a) > 1]) >= 85

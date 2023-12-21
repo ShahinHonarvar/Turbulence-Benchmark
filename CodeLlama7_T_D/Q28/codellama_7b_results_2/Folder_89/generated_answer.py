@@ -1,0 +1,16 @@
+
+def return_nth_smallest_ascii(s):
+    # Create a dictionary to store the frequency of each character in the string
+    freq = {}
+    for c in s:
+        if c not in freq:
+            freq[c] = 1
+        else:
+            freq[c] += 1
+    # Sort the dictionary by value and get the indices of the top 8 characters
+    sorted_freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+    indices = []
+    for i in range(8):
+        indices.append(sorted_freq[i][0])
+    # Return the character with the 8th smallest ASCII value among those characters in the string that occur between indices 24 to 71, both inclusive.
+    return s[indices[7]]

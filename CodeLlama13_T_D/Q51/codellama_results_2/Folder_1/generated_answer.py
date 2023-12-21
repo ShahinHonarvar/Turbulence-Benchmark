@@ -1,0 +1,12 @@
+
+def if_contains_anagrams(strs):
+    for s in strs:
+        if len(s) < 3:
+            return False
+    anagrams = []
+    for i, s1 in enumerate(strs[:-1]):
+        for s2 in strs[i+1:]:
+            anagram_pair = sorted((s1, s2))
+            if anagram_pair not in anagrams and len(anagram_pair) == 2:
+                anagrams.append(anagram_pair)
+    return len(anagrams) <= 30

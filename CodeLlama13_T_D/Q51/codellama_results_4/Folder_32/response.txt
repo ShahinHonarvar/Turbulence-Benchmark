@@ -1,0 +1,7 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([p for p in itertools.combinations(my_list, 2) if "".join(sorted(p[0])) == "".join(sorted(p[1]))]) <= 89
+```
+This code uses the `itertools` library to generate all possible pairs of strings from the input list, and then filters those pairs based on whether they are anagrams of each other. It then counts the number of anagrammatic pairs and returns true if there are at most 89 such pairs, otherwise false.
+
+Note: This code assumes that the input list is a list of strings, and it does not check for any other data type. Also, this code only considers the anagrams of the English letters, and it does not consider the anagrams of other alphabets.

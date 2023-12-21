@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    # Initialize the count variable
+    count = 0
+    
+    # Iterate over all rows and columns in the matrix
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            # Check if the current submatrix has n integers
+            if len(set(matrix[i][j]).intersection(set(n))) == n:
+                # Increment the count variable
+                count += 1
+    
+    # Return the count variable
+    return count

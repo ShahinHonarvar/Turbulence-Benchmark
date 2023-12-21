@@ -1,0 +1,27 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+	# Initialize a list to store the prime numbers
+	prime_list = []
+
+	# Iterate through the tuple of integers
+
+	for i in range(len(tuple)):
+
+		# Check if the current integer is a prime number
+
+		if is_prime(tuple[i]):
+
+			# If it is a prime number, check if it is left-and-right-truncatable prime
+
+			if is_left_right_truncatable_prime(tuple[i]):
+
+				# If it is a left-and-right-truncatable prime number, add it to the list
+
+				prime_list.append(tuple[i])
+
+	# Sort the list in descending order
+
+	prime_list.sort(reverse=True)
+
+	return prime_list
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef return_binary_or_hexa(t):\n    a = t[19]\n    b = t[32]\n    \n    missing_nums = []\n    for i in range(a + 1, b):\n        if i not in t[19:33]:\n            missing_nums.append(i)\n    \n    if len(missing_nums) == 0:\n        return \"\"\n    \n    total_sum = sum(missing_nums)\n    \n    if total_sum % 2 == 1:\n        return bin(total_sum)[2:]\n    else:\n        return hex(total_sum)[2:]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689818048,
+  "id": "chatcmpl-7eD9kw8hyvjLApvTybPF1runHjUiP",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 263,
+    "total_tokens": 379
+  }
+}

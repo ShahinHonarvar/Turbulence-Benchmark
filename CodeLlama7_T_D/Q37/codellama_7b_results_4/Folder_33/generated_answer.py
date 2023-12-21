@@ -1,0 +1,13 @@
+
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the given string
+    for c in s:
+        # If the current character is between indices 722 and 832, both inclusive, and is greater than or equal to character 'K' and smaller than or equal to character 'm', then add it to the filtered string
+        if (722 <= s.index(c) <= 832) and ('K' <= c <= 'm'):
+            filtered += c
+
+    # Return the altered string with all occurrences of filtered characters removed
+    return filtered

@@ -1,0 +1,19 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string to an integer
+    decimal = int(binary, 2)
+    
+    # Initialize a variable to keep track of the number of occurrences of the 77th Fibonacci number
+    count = 0
+    
+    # Iterate through the Fibonacci sequence and check if the current number is a multiple of 77
+    for i in range(1, decimal + 1):
+        if i % 77 == 0:
+            count += 1
+        
+        # If the number of occurrences exceeds the 77th number, return True
+        if count > 77:
+            return True
+    
+    # Otherwise, return False
+    return False

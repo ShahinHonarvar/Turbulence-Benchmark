@@ -1,0 +1,27 @@
+
+def find_original_set(sets):
+    # Initialize the smallest set as the first element in the input list
+    smallest_set = sets[0]
+
+    # Loop through each element in the input list and compare it to the current smallest set
+
+    for i in range(1, len(sets)):
+
+        # If the current element is a subset of the smallest set, do nothing
+
+        if sets[i].issubset(smallest_set):
+            continue
+
+
+        # Otherwise, check if the current element is a superset of the smallest set
+
+        elif smallest_set.issuperset(sets[i]):
+            smallest_set = sets[i]
+
+
+        # If the current element is neither a subset nor a superset of the smallest set, add it to the smallest set and update its elements accordingly
+
+        else:
+            smallest_set |= sets[i]
+
+    return smallest_set

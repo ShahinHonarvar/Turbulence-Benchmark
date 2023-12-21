@@ -1,0 +1,4 @@
+ 
+import re
+def palindromes_of_specific_lengths(s):
+    return re.findall(r"(?i)(?=([a-z]{3}|([a-z]{4}|([a-z]{5}|([a-z]{4}\1)))))", s)

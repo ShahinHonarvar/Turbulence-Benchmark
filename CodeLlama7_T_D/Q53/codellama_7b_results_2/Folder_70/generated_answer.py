@@ -1,0 +1,14 @@
+
+def palindrome_of_length_at_least_n(string, n=11):
+    # create a set to store the palindromes
+    palindromes = set()
+    # loop through each word in the string
+    for word in string.split():
+        # check if the word is at least n characters long
+        if len(word) < n:
+            continue
+
+        # check if the word is a palindrome
+        if word == word[::-1]:
+            palindromes.add(word)
+    return palindromes

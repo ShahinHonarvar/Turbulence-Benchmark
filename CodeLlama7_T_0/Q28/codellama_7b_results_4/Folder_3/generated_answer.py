@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string
+    indices = [i for i, c in enumerate(string) if c != ""]
+    # Get the ASCII values of the characters between the specified indices
+    ascii_values = [ord(c) for i, c in enumerate(string) if i in indices[25:46]]
+    # Return the character with the 11th smallest ASCII value
+    return chr(sorted(ascii_values)[10]))

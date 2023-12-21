@@ -1,0 +1,14 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation to a decimal integer
+    decimal_int = int(binary_rep, 2)
+    # Find the first occurrence of the 85th Fibonacci number in the decimal integer
+    for i in range(len(str(decimal_int)))):
+        if str(decimal_int)[i] == "8":
+            # If the 85th Fibonacci number is found, check if the decimal integer is divisible by it
+            if (decimal_int % 21) == 0:
+                return True
+
+    # If the 85th Fibonacci number is not found, return False
+
+    return False

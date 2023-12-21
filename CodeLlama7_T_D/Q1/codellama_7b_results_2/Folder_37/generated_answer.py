@@ -1,0 +1,6 @@
+
+def all_ints_inclusive(my_list):
+    # Get the index of the first element that is not an integer
+    first_non_int = next((i for i, x in enumerate(my_list) if not isinstance(x, int)), len(my_list))
+    # Return the list of all elements from index 4 to index 4, both inclusive
+    return my_list[first_non_int:]

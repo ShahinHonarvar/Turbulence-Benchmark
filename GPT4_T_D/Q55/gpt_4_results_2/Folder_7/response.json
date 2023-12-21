@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle, islice\n\ndef lists_with_product_equal_n(l):\n    if not l: return []\n    l_cycle = cycle(l)\n    result = []\n    \n    for ii in range(len(l)):\n        for jj in range(ii, len(l)):\n            subl = list(islice(l_cycle, ii, jj + 1))\n            if subl:\n                prod = 1\n                for num in subl: prod *= num\n                if prod == 537: result.append(subl)\n                \n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690898955,
+  "id": "chatcmpl-7ikLjn4545qcGG0LLNvB0UlScE8hd",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 113,
+    "prompt_tokens": 193,
+    "total_tokens": 306
+  }
+}

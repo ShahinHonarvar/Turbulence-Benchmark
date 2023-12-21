@@ -1,0 +1,43 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Find the indices of the first and last composite numbers in the list
+    first_composite = next((i for i, x in enumerate(my_list) if is_composite(x)), None)
+    last_composite = next((i for i, x in enumerate(reversed(my_list))) if is_composite(x)), None)
+    # Return the set of all composite numbers between the first and last composite numbers in the list
+    return {my_list[i] for i in range(first_composite, last_composite + 1)}
+# Check if a number is composite by dividing it by all prime numbers less than or equal to its square root
+def is_composite(n):
+    for p in get_prime_numbers(int(n ** 0.5))):
+        if n % p == 0:
+            return True
+
+return False
+
+# Get a list of all prime numbers less than or equal to a given number
+def get_prime_numbers(n):
+    prime_numbers = []
+
+    # Iterate from 2 to the given number and check if each number is divisible by any prime number less than or equal to its square root
+    for i in range(2, n + 1)):
+        flag = True
+
+        # Check if the current number is divisible by any prime number less than or equal to its square root
+        for p in prime_numbers:
+            if i % p == 0:
+                flag = False
+                break
+
+        # If the current number is not divisible by any prime number less than or equal to its square root, add it to the list of prime numbers
+        if flag:
+            prime_numbers.append(i)
+
+    return prime_numbers
+
+# Test the function with a few examples
+assert composite_nums_between_indices([1, 2, 3, 4, 5, 6]) == {4, 6}
+assert composite_nums_between_indices([1, 2, 3, 4, 5, 6, 7]) == {4, 6, 7}
+assert composite_nums_between_indices([1, 2, 3, 4, 5, 6, 7, 8]) == {4, 6, 8}
+```

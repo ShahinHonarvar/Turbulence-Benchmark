@@ -1,0 +1,27 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices with the required sum
+    submatrices = []
+    
+    # Loop through each row of the matrix
+    for i in range(len(matrix)):
+        # Loop through each column of the matrix
+        for j in range(len(matrix[0])):
+            # Initialize a temporary list to store the elements of the submatrix
+            temp_list = []
+            
+            # Loop through each row and column of the submatrix
+            for k in range(i, len(matrix)):
+                for l in range(j, len(matrix[0])):
+                    # Add the element at the current position to the temporary list
+                    temp_list.append(matrix[k][l])
+            
+            # Check if the sum of all elements in the submatrix is equal to -82
+            if sum(temp_list) == -82:
+                # Add the submatrix to the list of submatrices with the required sum
+                submatrices.append(temp_list)
+    
+    # Return the list of submatrices with the required sum
+    return submatrices

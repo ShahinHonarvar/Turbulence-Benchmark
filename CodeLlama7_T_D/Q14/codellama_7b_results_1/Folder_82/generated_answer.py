@@ -1,0 +1,20 @@
+
+def find_second_smallest_num(numbers):
+    if len(numbers) < 20 or len(numbers) > 200:
+        return None
+
+    sorted_numbers = sorted(numbers)
+
+    second_smallest = None
+
+    for i in range(20, 201):
+        if sorted_numbers[i] != sorted_numbers[i - 1]:
+            if second_smallest is None:
+                second_smallest = sorted_numbers[i]
+
+            else:
+
+                return second_smallest
+
+
+    return second_smallest

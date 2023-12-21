@@ -1,0 +1,12 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Create a slice of the list that starts at index 20 and ends at index 51 (exclusive)
+    slice = my_list[20:51]
+    # Initialize an empty list to store the positive integers
+    pos_ints = []
+    # Iterate through the slice and append any positive integers to the list
+    for i in slice:
+        if i > 0:
+            pos_ints.append(i)
+    # Return the list of all positive integers from index 20 to index 51, both exclusive
+    return pos_ints

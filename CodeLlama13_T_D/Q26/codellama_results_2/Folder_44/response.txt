@@ -1,0 +1,11 @@
+```python
+def sum_in_range(my_list):
+    return sum([x for x in my_list if -993 <= x <= -51]) or 0
+```
+Note: This solution uses a list comprehension to filter the elements of `my_list` that are between -993 and -51, both inclusive. It then uses the `sum()` function to calculate the sum of these elements. If there are no such elements in `my_list`, the expression `sum([x for x in my_list if -993 <= x <= -51])` evaluates to 0, which is then returned by the function.
+
+Here's an alternative solution that uses a generator expression instead of a list comprehension:
+```python
+def sum_in_range(my_list):
+    return sum(x for x in my_list if -993 <= x <= -51) or 0
+```

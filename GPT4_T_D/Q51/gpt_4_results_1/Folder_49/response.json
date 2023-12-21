@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import defaultdict\n\ndef if_contains_anagrams(lst):\n    def is_anagram(s1, s2):\n        return sorted(s1.lower()) == sorted(s2.lower())\n\n    anagram_count = 0\n    length = len(lst)\n    \n    for i in range(length):\n        if len(lst[i]) < 3:\n            continue\n        for j in range(i+1, length):\n            if len(lst[j]) < 3:\n                continue\n            if is_anagram(lst[i], lst[j]):\n                anagram_count += 1\n                if anagram_count > 10:\n                    return False\n    return True\n```\nThis function should be used as follows:\n\n```python\nif_contains_anagrams(['cat', 'act', 'bat', 'tab', 'it', 'i'])  # returns True\nif_contains_anagrams(['cat', 'act', 'bat', 'tab', 'woof', 'fow'])  # returns False\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690075263,
+  "id": "chatcmpl-7fI4NQRA1aGtg271VcStkjbc2nI7R",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 139,
+    "total_tokens": 343
+  }
+}

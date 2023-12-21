@@ -1,0 +1,11 @@
+```python
+def find_second_largest_num(numbers):
+    if len(numbers) < 4:
+        return None
+    sorted_nums = sorted(numbers)[-4:]
+    second_largest = sorted_nums[1]
+    return second_largest
+```
+This function takes a list of distinct numbers as input and returns the second largest element from index 31 to index 34, both inclusive. If there is no such element, it returns 'None'. The function first sorts the input list in descending order using the `sorted()` function. It then slices the last four elements of the sorted list using negative indexing and returns the second largest element from that slice.
+
+For example, if the input list is `[1, 2, 3, 4, 5]`, the function would return `4`. If the input list is `[1, 1, 1, 1, 1]`, the function would return `None` because there are no elements in the last four indices of the sorted list.

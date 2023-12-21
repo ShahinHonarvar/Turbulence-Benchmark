@@ -1,0 +1,12 @@
+ def filter_chars(s):
+    # create a new string with the filtered characters
+    new_str = ""
+    for i in range(len(s)):
+        if s[i].isalpha():
+            if ord(s[i]) >= ord("-") and ord(s[i]) <= ord("n"):
+                # skip this character since it is between indices 29 and 97, both inclusive
+                continue
+
+        new_str += s[i]
+
+    return new_str

@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize the number of pairs found to 0
+    num_pairs = 0
+    # Loop through each string in the list
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_string = my_list[i]
+        # Loop through each string again, starting from the next index
+        for j in range(i+1, len(my_list)):
+            # Get the other string
+            other_string = my_list[j]
+            # Check if the current string and the other string are anagrams of each other
+            if sorted(curr_string) == sorted(other_string):
+                # Increment the number of pairs found
+                num_pairs += 1
+    # Return True if there are at least 17 pairs of anagrams in the list, False otherwise
+    return num_pairs >= 17
+```

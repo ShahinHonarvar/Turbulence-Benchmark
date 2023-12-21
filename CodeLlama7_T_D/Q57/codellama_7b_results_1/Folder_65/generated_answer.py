@@ -1,0 +1,20 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the result list
+    result = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Extract a submatrix of size 3x3 from the current position
+            submatrix = matrix[i:i+3, j:j+3]
+            # Check if the sum of all integers in the submatrix is equal to 78
+            if np.sum(submatrix) == 78:
+                # Add the submatrix to the result list
+                result.append(submatrix)
+
+    # Return the result list
+    return result

@@ -1,0 +1,15 @@
+```
+def find_second_smallest_num(numbers):
+    if len(numbers) < 62 or len(numbers) - 1 < 63:
+        return None
+    
+    sorted_numbers = sorted(numbers)
+    second_smallest = sorted_numbers[62]
+    for i in range(63, len(sorted_numbers)):
+        if sorted_numbers[i] != second_smallest:
+            break
+    else:
+        return None
+    
+    return second_smallest
+```

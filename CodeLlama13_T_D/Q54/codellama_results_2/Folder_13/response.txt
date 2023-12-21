@@ -1,0 +1,15 @@
+```
+def all_right_truncatable_prime(numbers):
+    prime_list = []
+    for num in numbers:
+        if is_prime(num) and all(is_prime(num % 10**i) for i in range(len(str(num))-1)):
+            prime_list.append(num)
+    return sorted(prime_list)
+```
+Explanation:
+
+The function `all_right_truncatable_prime` takes a tuple of positive integers as input and returns the sorted list of all right-truncatable prime numbers less than x.
+
+We use the `is_prime` function to check if a number is prime, and we use the `str` function to convert the number to a string so that we can remove the last digit using slicing. We then use a list comprehension to generate a list of all right-truncatable prime numbers less than x.
+
+Finally, we return the sorted list of all right-truncatable prime numbers less than x using the `sorted` function. If there are no such prime numbers, an empty list is returned.

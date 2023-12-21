@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef product(nums):\n    res = 1\n    for num in nums:\n        res *= num\n    return res\n\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    target = 57\n    result = []\n    for start in range(n):\n        for end in range(start, start+n):\n            subset = nums[start:end+1] if start <= end else nums[start:] + nums[:end+1]\n            if product(subset) == target:\n                result.append(subset)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866408,
+  "id": "chatcmpl-7ePjkSolczEjJQGsi62XUFopMSTrx",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 113,
+    "prompt_tokens": 193,
+    "total_tokens": 306
+  }
+}

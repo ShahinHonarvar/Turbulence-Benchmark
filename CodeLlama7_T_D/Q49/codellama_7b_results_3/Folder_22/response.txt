@@ -1,0 +1,19 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Initialize Fibonacci sequence and current index
+    fibonacci_sequence = [0, 1]
+    current_index = 1
+    # While current index is less than or equal to the number of digits in the decimal integer
+    while current_index <= len(str(decimal_integer)):
+        # Add the next Fibonacci number to the sequence
+        fibonacci_sequence.append(fibonacci_sequence[current_index - 1] + fibonacci_sequence[current_index])
+        # Increment current index
+        current_index += 1
+    # Check if the decimal integer is divisible by the 20th Fibonacci number
+    if decimal_integer % fibonacci_sequence[19] == 0:
+        return True
+    else:
+        return False
+```

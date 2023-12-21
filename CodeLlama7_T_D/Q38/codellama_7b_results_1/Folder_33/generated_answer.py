@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(set):
+    count = 0
+    for i in range(len(set)):
+        subset = set[i:]
+        if len(subset) == 372:
+            count += 1
+
+    return count

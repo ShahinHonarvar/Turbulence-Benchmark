@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    result = ""
+    for i in range(379, 899):
+        if s[i].lower() >= 'm' and s[i].lower() <= 'v':
+            result += s[i]
+    return result

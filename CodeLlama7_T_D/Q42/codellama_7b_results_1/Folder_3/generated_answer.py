@@ -1,0 +1,30 @@
+
+def prime_factors(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Get the integer at index 100
+    n = my_list[100]
+    # Initialize an empty set to store prime factors
+    prime_factors = set()
+    # Iterate from 2 to the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if i is a factor of n
+        if n % i == 0:
+            # If it is a prime factor, add it to the set
+            if is_prime(i):
+                prime_factors.add(i)
+            # Otherwise, it is a composite factor, so break out of the loop
+            else:
+                break
+
+    # Return the set of prime factors
+    return prime_factors
+
+# Check if a number is prime by iterating from 2 to its square root
+def is_prime(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True

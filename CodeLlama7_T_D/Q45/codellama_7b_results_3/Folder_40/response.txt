@@ -1,0 +1,16 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each letter in the string
+    for i in range(4, 9 + 1):
+        # Check if the letter is a vowel
+        if string[i].lower() in ["a", "e", "i", "o", "u"]:
+            # If it is a vowel, add it to the palindrome
+            palindrome = ""
+            for j in range(i - 4, i + 5):
+                if j == i:
+                    palindrome += string[j].lower()
+                else:
+                    palindrome += string[j]
+            palindromes.add(palindrome)
+    return palindromes

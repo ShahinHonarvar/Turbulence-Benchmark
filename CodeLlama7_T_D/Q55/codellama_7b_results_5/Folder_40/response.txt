@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```
+def lists_with_product_equal_n(circular_list):
+    # Find the product of the elements in the list
+    product = 1
+    for element in circular_list:
+        product *= element
+
+    # Check if any sublists have a product equal to -9
+
+    for i in range(len(circular_list)):
+        sublist = circular_list[i:] + circular_list[:i]
+        if product == -9:
+            return [sublist]
+
+    # If no such sublists exist, return an empty list
+
+    return []
+```
+This function takes a circular list of integers as input, and returns a list of sublists each containing the contiguous integers from the given list such that their product equals -9. The function first finds the product of all elements in the list using a loop, and then checks if any sublists have a product equal to -9 using another loop. If no such sublists exist, the function returns an empty list. Finally, the function returns a list containing all sublists with a product equal to -9.

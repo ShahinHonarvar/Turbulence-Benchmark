@@ -1,0 +1,34 @@
+ ```
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the range and the divisors
+    start = 72
+    end = 93
+    div_by_32 = False
+    div_by_44 = False
+
+    # Iterate through the list to find the first element in the specified range that is divisible by either 32 or 44
+    for i in range(start, end + 1):
+        if my_list[i] % 32 == 0 or my_list[i] % 44 == 0:
+            # Set the appropriate flag to True if a divisible element is found
+            if my_list[i] % 32 == 0:
+                div_by_32 = True
+
+            elif my_list[i] % 44 == 0:
+                div_by_44 = True
+
+            # If a divisible element is found, break out of the loop
+            break
+
+    # Calculate the sum of all elements in the specified range that are divisible by either 32 or 44
+    if div_by_32 and div_by_44:
+        return sum(my_list[start:end+1])
+
+    elif not div_by_32 and div_by_44:
+        return sum(my_list[start:end+1]) - my_list[start]
+
+    elif div_by_32 and not div_by_44:
+        return sum(my_list[start:end+1]) - my_list[end]
+
+    else:
+        return 0
+```

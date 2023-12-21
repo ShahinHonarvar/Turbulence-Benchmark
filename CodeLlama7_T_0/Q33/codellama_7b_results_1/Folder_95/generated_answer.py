@@ -1,0 +1,7 @@
+
+def return_vowels(my_string):
+    vowels = []
+    for i in range(32, 61):
+        if my_string[i] > '?' and my_string[i] <= 'P':
+            vowels.append(my_string[i])
+    return vowels

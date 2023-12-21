@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s, n):
+    return {p for p in s if len(p) == n and p == p[::-1]}

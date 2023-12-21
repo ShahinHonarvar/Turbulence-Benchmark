@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join("Q" + c if c == "m" else c for c in string)

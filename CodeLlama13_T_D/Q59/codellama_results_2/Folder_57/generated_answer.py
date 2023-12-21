@@ -1,0 +1,15 @@
+
+def all_left_truncatable_prime(nums):
+    x = nums[54]
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i) and not contains_zero(str(i)):
+            left_truncatable = True
+            while len(str(i)) > 1:
+                i = int(str(i)[1:])
+                if not is_prime(i):
+                    left_truncatable = False
+                    break
+            if left_truncatable:
+                prime_list.append(i)
+    return sorted(prime_list, reverse=True)

@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(elements):
+    n = len(elements)
+    # Initialize the number of subsets with size 33 as 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements
+    for i in range(1 << n):
+        # Convert the binary representation of the combination to a list of integers
+        subset = [elements[j] for j in range(n) if i & (1 << j)]
+        # Check if the subset has size 33
+        if len(subset) == 33:
+            # Increment the number of subsets with size 33
+            num_subsets += 1
+    return num_subsets

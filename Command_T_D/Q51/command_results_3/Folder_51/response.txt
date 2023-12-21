@@ -1,0 +1,26 @@
+[cohere.Generation {
+	id: 60361b19-e534-4827-8de1-6ad6ed7f1006
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_contains_anagrams' that takes one argument, a list of strings. The function should return true if there are at most 116 pairs of anagrams in the given list; otherwise, it should return false. The function should only consider the anagrams of the English letters. The function should only consider the anagrams of the length of at least three. The function should compare the strings in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def if_contains_anagrams(test_list):
+    test_list=list(test_list)
+    test_list.sort()
+    flag = True
+    for i in range(len(test_list)-1):
+        for j in range(i+1,len(test_list)):
+            if test_list[i] == test_list[j]:
+                continue
+            elif re.match(r'(?i)(.*?[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[sS])(?=.*[dD])(?=.*[fF])(?=.*[gG])(?=.*[hH])(?=.*[jJ])(?=.*[kK])(?=.*[lL])(?=.*[mM])(?=.*[nN])(?=.*[pP])(?=.*[qQ])(?=.*[rR])(?=.*[tT])(?=.*[vV])(?=.*[wW])(?=.*[zZ])', test_list[i]):
+                flag = False
+                break
+    if flag:
+        return True
+    else:
+        return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

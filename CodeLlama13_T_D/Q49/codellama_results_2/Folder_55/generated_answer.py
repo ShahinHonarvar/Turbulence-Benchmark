@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Find the 39th number that occurs in the Fibonacci sequence
+    fibonacci = [0]
+    a, b = 0, 1
+    while len(fibonacci) < 39:
+        fibonacci.append(a)
+        a, b = b, a + b
+    
+    # Check if the decimal integer is divisible by the Fibonacci number
+    for i in range(len(fibonacci)):
+        if decimal % fibonacci[i] == 0:
+            return True
+    return False

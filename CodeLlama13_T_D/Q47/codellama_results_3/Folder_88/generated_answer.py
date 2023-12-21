@@ -1,0 +1,18 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring of interest
+    substr = string[10:88]
+    
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each length between 4 and 5 (both inclusive)
+    for length in range(4, 6):
+        # Iterate over each position in the substring
+        for i in range(len(substr)):
+            # Check if the substring starting from that position has a palindrome of the desired length
+            if substr[i:i+length] == substr[i:i+length][::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr[i:i+length])
+    
+    return palindromes

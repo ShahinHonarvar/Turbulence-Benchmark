@@ -1,0 +1,15 @@
+
+def gcf_three_nums(my_list):
+    # Find the greatest common factor of the elements at indices 427, 761 and 148
+    num_1 = my_list[427]
+    num_2 = my_list[761]
+    num_3 = my_list[148]
+    # Initialize the greatest common factor to 1
+    gcf = 1
+    # Loop through all numbers and find the first number that is divisible by all other numbers
+    for i in range(2, min(num_1, num_2, num_3) + 1):
+        if num_1 % i == 0 and num_2 % i == 0 and num_3 % i == 0:
+            gcf = i
+            break
+
+    return gcf

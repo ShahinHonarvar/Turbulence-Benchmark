@@ -1,0 +1,28 @@
+ def composite_nums_between_indices(my_list):
+    # Get the indices of the first and last composite numbers in the list
+    first_composite = next((i for i, x in enumerate(my_list) if is_composite(x)), None)
+    last_composite = next((i for i, x in enumerate(my_list) if is_composite(x)), None)
+    # Check if any composite numbers exist in the specified range
+    if first_composite and last_composite:
+        # Return the set of all composite numbers in the given list that are between index 26 to index 52, both inclusive
+        return {my_list[i] for i in range(first_composite, last_composite+1)}
+    else:
+        # No composite numbers exist in the specified range, return an empty set.
+        return set()
+
+def is_composite(n):
+    """Return True if n is a positive integer that is divisible by at least one other positive integer, False otherwise."""
+    if not isinstance(n, int) or n < 1:
+        # n is not a positive integer, return False.
+        return False
+
+    else:
+
+        # Check if n is divisible by any other positive integers.
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                # n is divisible by at least one other positive integer, return True.
+                return True
+
+        # Since no factors of n have been found, return False.
+        return False

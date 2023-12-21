@@ -1,0 +1,7 @@
+ def return_vowels(my_string):
+    vowels = ["a", "e", "i", "o", "u"]
+    result = []
+    for i in range(44, 95):
+        if my_string[i] in vowels and my_string[i] > "5" and my_string[i] <= "<":
+            result.append(my_string[i])
+    return result

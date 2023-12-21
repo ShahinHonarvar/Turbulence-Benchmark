@@ -1,0 +1,13 @@
+ def filter_chars(s):
+    # Initialize a new string with the same length as the input string
+    filtered = ""
+
+    # Iterate through each character in the input string
+    for i in range(len(s)):
+
+        # If the current character is between indices 1 and 6 (both exclusive) and it is greater than ',' and smaller than 'f', remove all occurrences of that character from the input string while keeping the order of all characters intact.
+        if i > 0 and i < 7 and s[i] > ',' and s[i] < 'f':
+            filtered = filtered[:i - 1] + filtered[i:]
+
+    # Return the altered string
+    return filtered

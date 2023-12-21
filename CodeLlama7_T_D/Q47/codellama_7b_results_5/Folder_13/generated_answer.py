@@ -1,0 +1,21 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(13, 95 + 1):
+        # Check if the current character is a letter (a-zA-Z)
+        if string[i].isalpha():
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Loop through each character in the substring starting from index i and ending at index 95 (both inclusive)
+            for j in range(i, 95 + 1):
+                # Check if the current character is a letter (a-zA-Z)
+                if string[j].isalpha():
+                    # Append the current character to the palindrome string
+                    palindrome += string[j]
+            # Check if the palindrome has the required length and only consists of English letters
+            if len(palindrome) in range(57, 60 + 1) and palindrome.isalpha():
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

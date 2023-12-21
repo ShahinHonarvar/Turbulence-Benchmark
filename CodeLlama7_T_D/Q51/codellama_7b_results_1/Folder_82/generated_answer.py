@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    # Count the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(strings) - 1):
+        for j in range(i + 1, len(strings)):
+            # If the strings are anagrams and have a length of at least three, increment the number of anagram pairs
+            if sorted(strings[i]) == sorted(strings[j]) and len(strings[i]) >= 3:
+                anagram_pairs += 1
+    return anagram_pairs <= 40

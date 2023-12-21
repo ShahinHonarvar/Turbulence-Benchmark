@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    sum = 0
+    i = 0
+
+    # Loop through the list and check if each integer is divisible by either -6 or 4
+    while i < len(my_list):
+        if my_list[i] % (-6) == 0 or my_list[i] % 4 == 0:
+            sum += my_list[i]
+
+        i += 1
+
+    return sum

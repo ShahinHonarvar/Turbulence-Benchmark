@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(s):
+    # get the indices of the characters in the string that occur between indices 10 to 82, both inclusive
+    start = s.index("10")
+    end = s.index("82") + 1
+    # get the ASCII values of all the characters in the string that occur between these indices
+    ascii_values = [ord(c) for c in s[start:end]]
+    # sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # return the 18th smallest ASCII value among these characters
+    return sorted_ascii_values[17]
+```

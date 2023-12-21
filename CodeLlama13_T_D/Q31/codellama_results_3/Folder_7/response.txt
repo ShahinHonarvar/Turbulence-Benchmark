@@ -1,0 +1,14 @@
+```python
+def if_perfect_num(my_list):
+    return my_list[851] in perfect_numbers()
+
+def perfect_numbers():
+    for i in range(1, 1000000):
+        s = sum([d for d in range(1, int(i**.5)+1) if i % d == 0])
+        if s == i: yield i
+```
+This code defines two functions `if_perfect_num` and `perfect_numbers`. The function `if_perfect_num` takes a list of positive integers as input, checks if the integer at index 851 is a perfect number by calling the `perfect_numbers` function, and returns true or false accordingly.
+
+The function `perfect_numbers` generates all perfect numbers up to 1 million using a simple algorithm: it starts with an integer `i`, calculates its sum of divisors `s`, and checks if `s == i`. If so, the number is yielded as a perfect number. The function `perfect_numbers` returns a generator that yields all perfect numbers up to 1 million.
+
+In summary, this code defines two functions: `if_perfect_num` and `perfect_numbers`, which are used to check if an integer at index 851 is a perfect number.

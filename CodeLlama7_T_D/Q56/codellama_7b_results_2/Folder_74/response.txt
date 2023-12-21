@@ -1,0 +1,30 @@
+ Here is a possible implementation of the `all_substring_of_size_n` function:
+```python
+def all_substring_of_size_n(string, n):
+    # Check if the input string is valid
+    if not isinstance(string, str) or len(string) < 1:
+        raise ValueError("Invalid input string")
+
+    # Check if the substring size is valid
+    if n < 1 or n > len(string):
+        raise ValueError("Substring size out of range")
+
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate over the input string and extract substrings of length n
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if substring not in substrings:
+            substrings.append(substring)
+
+    return substrings
+```
+This function takes two arguments: `string`, which is the input string to be processed, and `n`, which is the length of the substrings to be extracted. The function returns a list of all distinct substrings of length `n` that exist in the given string. If no such substrings exist in the given string, the function returns an empty list.
+Here's an example usage of this function:
+```python
+string = "Hello World"
+substrings = all_substring_of_size_n(string, 5)
+#print(substrings)
+# Output: ['Hello', 'World']
+```

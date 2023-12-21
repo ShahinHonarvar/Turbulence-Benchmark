@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    n = len(lst)\n    lst = lst + lst[:n-1]\n    for i in range(n):\n        for j in range(i + 1, i + n + 1):\n            sublist = lst[i:j]\n            prod = 1\n            for num in sublist:\n                prod *= num\n            if prod == -61:\n                result.append(sublist)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690900460,
+  "id": "chatcmpl-7ikk0v4RYCl3PahUrlybozeaEdmYM",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 193,
+    "total_tokens": 296
+  }
+}

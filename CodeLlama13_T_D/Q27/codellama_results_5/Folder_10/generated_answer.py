@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    index = 56
+    if index < len(my_list):
+        my_list.insert(index + 1, 54)
+    return my_list

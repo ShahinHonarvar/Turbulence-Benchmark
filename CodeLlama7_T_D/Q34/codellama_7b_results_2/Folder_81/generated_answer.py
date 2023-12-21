@@ -1,0 +1,19 @@
+
+def find_original_set(sets):
+    # Check if all input sets are distinct and have the same size
+    if len(set(map(tuple, sets))) != len(sets):
+        raise ValueError("Input sets must be distinct")
+
+    # Create a dictionary to store the smallest set that includes each given argument
+    smallest_set = {}
+
+    for i in range(len(sets)):
+        # If the current set is not already in the smallest set dictionary, add it
+        if sets[i] not in smallest_set:
+            smallest_set[sets[i]] = []
+
+        # Add the current set to the list of smallest sets that include each given argument
+        smallest_set[sets[i]].append(i)
+
+    # Return the smallest set that includes all given arguments
+    return min(smallest_set, key=lambda x: len(x))

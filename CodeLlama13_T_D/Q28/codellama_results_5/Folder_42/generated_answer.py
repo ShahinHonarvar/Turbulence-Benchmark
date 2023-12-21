@@ -1,0 +1,3 @@
+
+def return_nth_smallest_ascii(s):
+    return min([ord(c) for c in s[12:73]])

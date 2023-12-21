@@ -1,0 +1,13 @@
+```
+def all_left_truncatable_prime(numbers):
+    result = []
+    for x in numbers:
+        for i in range(1, len(str(x)) + 1):
+            n = int(str(x)[:i])
+            if is_prime(n) and '0' not in str(n):
+                result.append(n)
+    return sorted(result, reverse=True)
+```
+This function first iterates over the input tuple `numbers` and for each integer `x`, it generates all left-truncatable prime numbers less than `x` by iterating from 1 to the length of the string representation of `x`. If a number is found to be a left-truncatable prime, it is added to the result list. Finally, the function returns the sorted result list in descending order.
+
+The `is_prime()` function is not included in the code snippet provided by you, but you can find many implementations of this function online or implement your own version using modular arithmetic and primality tests such as the Fermat primality test or the Miller-Rabin primality test.

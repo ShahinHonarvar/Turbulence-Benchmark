@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(numbers):
+    return [number for number in numbers if 15 < number <= 40 and number % 1 == 0]

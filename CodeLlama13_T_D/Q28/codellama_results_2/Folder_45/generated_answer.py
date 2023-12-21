@@ -1,0 +1,4 @@
+
+def return_nth_smallest_ascii(string):
+    chars = {c for c in string if 'a' <= c <= 'z'}
+    return min(chars, key=ord)

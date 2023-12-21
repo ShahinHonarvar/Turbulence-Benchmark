@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    after_index = my_list.index(13) + 1
+    new_list.insert(after_index, [56, 54])
+    return new_list

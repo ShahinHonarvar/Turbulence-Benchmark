@@ -1,0 +1,24 @@
+
+def lists_with_product_equal_n(my_list):
+    # Find the product of all elements in the list
+    product = 1
+    for element in my_list:
+        product *= element
+
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the list and find contiguous sublists with a product equal to n
+    current_sublist = []
+    for i in range(len(my_list)):
+        element = my_list[i]
+        current_sublist.append(element)
+        product /= element
+
+        if product == n:
+            sublists.append(current_sublist)
+            current_sublist = []
+            product = 1
+
+    # Return the list of sublists with a product equal to n, or an empty list if no such sublist exists
+    return sublists

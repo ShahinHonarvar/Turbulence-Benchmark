@@ -1,0 +1,23 @@
+ ```
+def lists_with_product_equal_n(lst):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the elements of the given list
+    for i in range(len(lst)):
+        # Initialize a variable to store the product of the elements in the current sublist
+        product = 1
+
+        # Iterate through the elements of the remaining part of the given list, starting from the element after the current element
+        for j in range(i + 1, len(lst)):
+            # Calculate the product of the elements in the current sublist and the element being considered
+            product *= lst[j]
+
+            # If the product equals -56, add the current sublist to the list of sublists and break out of the loop
+            if product == -56:
+                sublists.append(lst[i:j + 1])
+                break
+
+    # Return the list of sublists
+    return sublists
+```

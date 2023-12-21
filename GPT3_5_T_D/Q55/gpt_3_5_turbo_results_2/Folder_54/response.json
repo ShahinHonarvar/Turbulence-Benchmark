@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import accumulate, chain\nfrom operator import mul\n\ndef lists_with_product_equal_n(nums):\n    size = len(nums)\n    nums.extend(nums)\n    products = list(accumulate(nums, mul))\n    sublists = []\n    \n    for i in range(size):\n        for j in range(i+1, size+1):\n            sublist_product = products[j]//products[i]\n            if sublist_product == -17:\n                sublists.append(nums[i:j])\n            elif sublist_product == 1:\n                break\n    \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689821958,
+  "id": "chatcmpl-7eEAopWLFLU2i5kyhorMJYI9yKFXc",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 114,
+    "prompt_tokens": 193,
+    "total_tokens": 307
+  }
+}

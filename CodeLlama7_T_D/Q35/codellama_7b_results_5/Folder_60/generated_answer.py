@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(s):
+    start = 38
+    end = 52
+    for i in range(start, end):
+        char = s[i]
+        count = s.count(char)
+        if count > 1:
+            s = s[:i - count + 2] + s[i + 1:]
+    return s

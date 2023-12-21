@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef find_subset_of_length_n(elements):\n    return len(list(filter(lambda subset: len(subset) == 41, powerset(elements))))\n\ndef powerset(s):\n    x = len(s)\n    powerset = []\n    for i in range(1 << x):\n        powerset.append([s[j] for j in range(x) if (i & (1 << j))])\n    return powerset\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689879630,
+  "id": "chatcmpl-7eTB02dOm4uQiaXo2TkRQNzc5zk8d",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 87,
+    "prompt_tokens": 83,
+    "total_tokens": 170
+  }
+}

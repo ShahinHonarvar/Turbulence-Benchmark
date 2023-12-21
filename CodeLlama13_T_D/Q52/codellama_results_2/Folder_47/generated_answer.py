@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {substring for substring in string.split() if len(substring) == 34 and all(substring[i] == substring[-1-i].lower() for i in range(len(substring)))}

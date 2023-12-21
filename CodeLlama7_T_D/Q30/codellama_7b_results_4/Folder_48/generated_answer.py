@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return string.replace("U", "U").replace("S", "US")

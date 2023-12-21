@@ -1,0 +1,13 @@
+```python
+def return_n_smallest_chars(my_string):
+    lst = []
+    for i in range(44):
+        min_val = 128
+        for j in my_string:
+            if ord(j) < min_val:
+                min_val = ord(j)
+                char = j
+        lst.append(char)
+        my_string = my_string.replace(char, "")
+    return lst
+```

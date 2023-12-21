@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(mat):\n    count = 0\n    rows, cols = mat.shape\n    for row_dim in range(1, rows + 1):\n        for col_dim in range(1, cols + 1):\n            if row_dim * col_dim == 8:\n                for r in range(0, (rows - row_dim) + 1):\n                    for c in range(0, (cols - col_dim) + 1):\n                        submat = np.zeros((row_dim, col_dim))\n                        for i in range(r, r + row_dim):\n                            for j in range(c, c + col_dim):\n                                submat[i - r][j - c] = mat[i][j]\n                        count += 1\n    return count\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690910415,
+  "id": "chatcmpl-7inKZ1QqmbqkNNft54PODk20RVPa2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 111,
+    "total_tokens": 282
+  }
+}

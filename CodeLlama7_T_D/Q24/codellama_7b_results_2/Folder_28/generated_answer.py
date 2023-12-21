@@ -1,0 +1,18 @@
+
+def sum_of_divisors_in_range(n):
+    # check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # initialize the sum of divisors to 0
+    sum_of_divisors = 0
+
+    # loop through all positive integers between 16 and 53 inclusive
+    for i in range(16, 54):
+        # check if i is a factor of n
+        if n % i == 0:
+            # add the factor to the sum of divisors
+            sum_of_divisors += i
+
+    # return the sum of all positive divisors of n that are between 16 and 53 inclusive
+    return sum_of_divisors

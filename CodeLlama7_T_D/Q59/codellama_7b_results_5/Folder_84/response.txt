@@ -1,0 +1,74 @@
+ ```
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all numbers less than x
+    for i in range(2, x):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i is left-truncatable
+            if is_left_truncatable(i):
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all numbers less than or equal to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # If i divides n, return False
+                return False
+
+    # If n is greater than 1 and it is not divisible by any number between 2 and the square root of n, it is prime
+    return True
+
+# Function to check if a number is left-truncatable
+def is_left_truncatable(n):
+    # Initialize an empty string to store the digits of n
+    digits = ""
+
+    # Loop through all the digits of n
+    for digit in str(n):
+        # Check if digit is not 0
+        if digit != "0":
+            # Add digit to the end of the digits string
+            digits += digit
+
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all the prime numbers less than or equal to the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Add i to the list of prime numbers
+            prime_numbers.append(i)
+
+    # Initialize an empty string to store the leftmost digits of n
+    leftmost_digits = ""
+
+    # Loop through all the prime numbers less than or equal to the square root of n
+    for i in range(len(prime_numbers)):
+        # Check if the current prime number is a divisor of n
+        if n % prime_numbers[i] == 0:
+            # Add the leftmost digits of the current prime number to the empty string
+            leftmost_digits += str(prime_numbers[i])[:1]
+
+    # Check if the leftmost digits of n are equal to the leftmost digits of the prime numbers less than or equal to the square root of n
+    if digits == leftmost_digits:
+        # Return True
+        return True
+
+# If the leftmost digits of n are not equal to the leftmost digits of the prime numbers less than or equal to the square root of n, return False
+return False
+```

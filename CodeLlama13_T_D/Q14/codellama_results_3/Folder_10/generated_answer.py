@@ -1,0 +1,10 @@
+
+def find_second_smallest_num(distinct_list):
+    if len(distinct_list) < 92:
+        return None
+    else:
+        second_smallest = distinct_list[62]
+        for i in range(63, 93):
+            if distinct_list[i] < second_smallest:
+                second_smallest = distinct_list[i]
+        return second_smallest

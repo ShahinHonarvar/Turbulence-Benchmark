@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    result = []
+    for char in string:
+        if ord(char) < 948 and ord(char) > 476:
+            continue
+        else:
+            result.append(char)
+    return ''.join(result)

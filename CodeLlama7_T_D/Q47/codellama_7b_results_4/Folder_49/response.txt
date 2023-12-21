@@ -1,0 +1,26 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function in Python:
+```python
+def palindromes_of_specific_lengths(string):
+    # Define the index range for the substring
+    start = 10
+    end = 100
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the substring
+    for i in range(start, end + 1):
+        # Check if the character at index i is a letter
+        if string[i].isalpha():
+            # Define the length of the palindrome
+            length = i - start + 1
+            # Check if the length is within the specified range
+            if length >= 10 and length <= 50:
+                # Define the palindrome as a substring of the original string
+                palindrome = string[i - length + 1:i + 1]
+                # Check if the palindrome is case-insensitive
+                if palindrome.lower() == palindrome:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(palindrome)
+    return palindromes
+```
+This code defines a function called `palindromes_of_specific_lengths` that takes one argument, a string. The function returns the set of all palindromes with lengths between 10 and 50 (both inclusive) that occur in the substring from index 10 to index 100, both inclusive, both case-insensitive.
+Note that this code uses the `isalpha` method to check if a character is an English letter. It also uses the `lower` method to convert a string to lowercase for comparison purposes.

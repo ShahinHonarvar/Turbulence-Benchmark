@@ -1,0 +1,26 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_chars = False
+    # Iterate over the list of strings
+    for string in my_list:
+        # Check if the string has at least three characters
+        if len(string) >= 3:
+            three_or_more_chars = True
+            # Create a copy of the string with all lowercase letters
+            lowercase_string = string.lower()
+            # Sort the characters in the string
+            sorted_characters = "".join(sorted(lowercase_string))
+            # Check if there are at least 47 pairs of anagrams in the list
+            for other_string in my_list:
+                if len(other_string) >= 3 and lowercase_string != other_string.lower():
+                    sorted_other_characters = "".join(sorted(other_string.lower()))
+                    if sorted_characters == sorted_other_characters:
+                        anagram_count += 1
+                        if anagram_count >= 47:
+                            return True
+    # If there are no strings with at least three characters, return False
+    if not three_or_more_chars:
+        return False
+```

@@ -1,0 +1,3 @@
+
+def insert_before_character(string):
+    return "".join([char if char != "O" else "d" + char for char in string])

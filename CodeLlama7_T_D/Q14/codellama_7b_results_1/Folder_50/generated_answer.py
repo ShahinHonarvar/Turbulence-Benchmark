@@ -1,0 +1,9 @@
+
+def find_second_smallest_num(my_list):
+    # Check if there is a second smallest element in the specified range
+    if len(my_list[42:68]) < 2:
+        return None
+
+    # Sort the list and return the second smallest element
+    my_list[42:68].sort()
+    return my_list[42:68][1]

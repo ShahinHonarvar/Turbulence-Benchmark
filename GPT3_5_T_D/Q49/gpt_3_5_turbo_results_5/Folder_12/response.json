@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_decimal_is_divisible(s):\n    def fibonacci(n):\n        if n == 0:\n            return 0\n        elif n == 1:\n            return 1\n        else:\n            return fibonacci(n-1) + fibonacci(n-2)\n\n    decimal = 0\n    for i, digit in enumerate(s):\n        decimal += int(digit) * (2 ** (len(s)-1-i))\n\n    fib_66 = fibonacci(66)\n    return decimal % fib_66 == 0\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689883640,
+  "id": "chatcmpl-7eUDgP2kzFrcQD2YJquiMEzJuErKk",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 110,
+    "prompt_tokens": 137,
+    "total_tokens": 247
+  }
+}

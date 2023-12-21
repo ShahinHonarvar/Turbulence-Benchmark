@@ -1,0 +1,13 @@
+
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size and have at least one element
+    if len(list1) != len(list2) or len(list1) == 0:
+        return set()
+    # Initialize a set to store the identical elements
+    identical_elements = set()
+    # Iterate through both lists simultaneously
+    for i in range(len(list1)):
+        # Check if the current element is identical in both lists
+        if list1[i] == list2[i]:
+            identical_elements.add(list1[i])
+    return identical_elements

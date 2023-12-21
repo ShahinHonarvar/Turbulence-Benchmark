@@ -1,0 +1,18 @@
+
+def return_binary_or_hexadecimal(my_tuple):
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 10 and 76.
+    a = my_tuple[10]
+    b = my_tuple[76]
+    sum = 0
+
+    for i in range(a + 1, b):
+        if i not in my_tuple:
+            sum += i
+
+    # Return the binary or hexadecimal representation of the sum depending on whether it is an odd number.
+
+    if sum % 2 == 0:
+        return f"{sum:x}"
+
+    else:
+        return f"{sum:b}"

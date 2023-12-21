@@ -1,0 +1,12 @@
+
+def return_nth_smallest_ascii(s):
+    # create a list of unique characters in the string
+    unique_chars = set(s)
+    # calculate the ASCII value of each character and add it to a list
+    ascii_values = []
+    for char in unique_chars:
+        ascii_values.append(ord(char))
+    # sort the list of ASCII values
+    sorted_ascii_values = sorted(ascii_values)
+    # return the 5th smallest ASCII value
+    return chr(sorted_ascii_values[4])

@@ -1,0 +1,19 @@
+
+def if_perfect_num(my_list):
+    return my_list[51] in perfect_numbers(my_list)
+
+def perfect_numbers(my_list):
+    perfect_nums = []
+    for i in range(len(my_list)):
+        num = my_list[i]
+        if is_perfect_number(num):
+            perfect_nums.append(num)
+    return perfect_nums
+
+def is_perfect_number(n):
+    root = int(math.sqrt(n))
+    sum_of_divisors = 1
+    for i in range(2, root+1):
+        if n % i == 0:
+            sum_of_divisors += i + n//i
+    return sum_of_divisors == 2*n

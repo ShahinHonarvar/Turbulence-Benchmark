@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return numbers[944]*numbers[814]*numbers[865]

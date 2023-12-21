@@ -1,0 +1,17 @@
+ ```
+def find_subset_of_length_n(s):
+# Initialize an empty list to store all subsets of size 3
+subsets = []
+# Iterate over the elements of the set
+for i in range(len(s)):
+# Get the current element
+current_element = s[i]
+# Create a new subset by combining the current element with every other element in the set
+for j in range(len(s)):
+if j != i:
+subsets.append([current_element, s[j]])
+# Add the current element to all subsets that already exist
+for k in range(len(subsets)):
+subsets[k].append(current_element)
+return len(subsets)
+```

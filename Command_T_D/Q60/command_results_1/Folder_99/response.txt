@@ -1,0 +1,77 @@
+[cohere.Generation {
+	id: db343b32-a152-43e2-96b8-f469ed694287
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 758. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in ascending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+import sys
+import itertools
+
+sys.setrecursionlimit(1_000_000)
+
+def all_left_right_truncatable_prime(x):
+    if x < 3:
+        return []
+    if x == 3:
+        return [3]
+    if x == 5:
+        return [3, 5]
+    if x == 7:
+        return [3, 5, 7]
+    if x == 11:
+        return [3, 5, 7, 11]
+    if x == 13:
+        return [3, 5, 7, 11, 13]
+    if x == 17:
+        return [3, 5, 7, 11, 13, 17]
+    if x == 19:
+        return [3, 5, 7, 11, 13, 17, 19]
+    if x == 23:
+        return [3, 5, 7, 11, 13, 17, 19, 23]
+    if x == 29:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29]
+    if x == 31:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    if x == 37:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+    if x == 41:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+    if x == 43:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
+    if x == 47:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    if x == 53:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]
+    if x == 59:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+    if x == 61:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61]
+    if x == 67:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67]
+    if x == 71:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+    if x == 73:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73]
+    if x == 79:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79]
+    if x == 83:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83]
+    if x == 89:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]
+    if x == 97:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    if x == 101:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+    if x == 103:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
+    if x == 107:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107]
+    if x == 109:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109]
+    if x == 113:
+        return [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]
+    if x == 127:
+        return [3, 5, 7, 11
+	likelihood: None
+	token_likelihoods: None
+}]

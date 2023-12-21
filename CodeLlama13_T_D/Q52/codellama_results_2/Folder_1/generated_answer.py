@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {substring for substring in string.split() if len(substring) == 27 and substring == substring[::-1]}

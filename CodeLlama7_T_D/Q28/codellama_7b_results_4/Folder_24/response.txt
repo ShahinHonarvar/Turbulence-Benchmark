@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between 34 and 81, both inclusive
+    start = string.find('34') + 1
+    end = string.find('81') - 1
+    # Create a list of tuples containing the character and its index
+    char_indices = [(char, i) for (i, char) in enumerate(string) if start <= i <= end]
+    # Sort the list of tuples by the ASCII value of the character
+    sorted_tuple = sorted(char_indices, key=lambda x: ord(x[0]))
+    # Return the 12th smallest ASCII value
+    return sorted_tuple[11][0]]
+```

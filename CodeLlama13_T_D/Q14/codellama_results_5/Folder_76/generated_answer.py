@@ -1,0 +1,11 @@
+
+def find_second_smallest_num(my_list):
+    if len(my_list) < 605 or my_list[532] != my_list[533]:
+        return None
+    
+    second_smallest = my_list[533]
+    for i in range(534, 605):
+        if my_list[i] < second_smallest:
+            second_smallest = my_list[i]
+    
+    return second_smallest

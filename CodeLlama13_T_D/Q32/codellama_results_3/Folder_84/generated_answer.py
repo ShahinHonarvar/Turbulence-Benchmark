@@ -1,0 +1,3 @@
+
+def insert_after_character(string):
+    return "".join(["n" if c == "H" else c for c in string])

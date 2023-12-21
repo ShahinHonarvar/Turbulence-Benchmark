@@ -1,0 +1,24 @@
+
+def prime_factors(my_list):
+    # Check if input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Calculate the product of all elements in the list
+    prod = 1
+    for i in my_list:
+        prod *= i
+    # Find the prime factors of the product
+    prime_factors = set()
+    while prod > 1:
+        if prod % 2 == 0:
+            prime_factors.add(2)
+            prod /= 2
+        else:
+            for i in range(3, int(prod ** 0.5) + 1, 2):
+                if prod % i == 0:
+                    prime_factors.add(i)
+                    prod /= i
+                    break
+            else:
+                raise ValueError("No prime factors found")
+    return prime_factors

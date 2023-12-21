@@ -1,0 +1,6 @@
+```python
+def return_n_smallest_chars(string):
+    char_list = sorted(list(set(string)), key=ord)[:46]
+    return char_list
+```
+This function takes a string of distinct characters as input and returns a list of 46 characters with the smallest ASCII values. The `sorted()` function is used to sort the characters in ascending order using the `key` parameter to specify that the sorting should be done based on the ASCII value of each character, which is returned by the built-in `ord()` function. The `[:46]` slicing operator is then used to limit the list to the first 46 elements.

@@ -1,0 +1,14 @@
+ def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation string to a decimal integer
+    dec_int = int(binary_rep, 2)
+    # Initialize variables for storing the Fibonacci sequence numbers and their sums
+    fib_seq = [0, 1]
+    sum = 0
+
+    # Calculate the sum of the 146th number that occurs in the Fibonacci sequence using a while loop
+    while len(fib_seq) < 147:
+        sum += fib_seq[-1]
+        fib_seq.append(fib_seq[-2] + fib_seq[-1])
+
+    # Check if the decimal integer corresponding to the given string is divisible by the sum of the 146th number that occurs in the Fibonacci sequence
+    return dec_int % sum == 0

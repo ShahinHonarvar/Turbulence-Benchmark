@@ -1,0 +1,36 @@
+ ```
+def filter_chars(string):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    # Iterate over the characters in the original string
+    for char in string:
+
+        # Check if the character is between indices 88 and 90, both inclusive
+        if (88 <= ord(char) <= 90):
+
+            # Check if the character is greater than or equal to 'J' and smaller than or equal to 'Q'
+            if ('J' <= char <= 'Q'):
+
+                # Skip this character since it needs to be filtered out
+                continue
+
+        # Add the character to the filtered string
+        filtered_string += char
+
+    # Return the filtered string
+    return filtered_string
+
+# Test the function with a sample input
+#print(filter_chars("The quick brown fox jumps over the lazy dog."))
+```
+This code defines a function called `filter_chars` that takes a single argument, a string. The function iterates over the characters in the original string and checks if each character is between indices 88 and 90, both inclusive, and is greater than or equal to character 'J' and smaller than or equal to character 'Q'. If a character satisfies these conditions, it is skipped, otherwise it is added to the filtered string. Finally, the function returns the altered string.
+The function can be tested with a sample input as shown below:
+```
+#print(filter_chars("The quick brown fox jumps over the lazy dog."))
+```
+This will output the following string:
+```
+The quick brown fox jumps over the lazy dog.
+```
+Note that the filtered string does not contain any characters between indices 88 and 90, both inclusive, and are greater than or equal to character 'J' and smaller than or equal to character 'Q'.

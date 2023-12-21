@@ -1,0 +1,12 @@
+ def palindromes_of_specific_lengths(string):
+    # Define the range of lengths we want to consider
+    lengths = list(range(38, 49 + 1))
+    # Create an empty set to store our results
+    palindromes = set()
+    # Loop through each length in our range
+    for length in lengths:
+        # Check if there is a palindrome of the current length in the specified index range
+        if (string[28:94].find(string[28:94][:length]) != -1) and string[28:94][:length].isalpha():
+            # If we find one, add it to our set of palindromes
+            palindromes.add(string[28:94][:length])
+    return palindromes

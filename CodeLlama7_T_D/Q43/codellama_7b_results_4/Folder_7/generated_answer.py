@@ -1,0 +1,25 @@
+
+def find_primes_between_indices(my_list):
+    # Create a new list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the list and check if each element is a prime number
+    for i in range(239, 687):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True

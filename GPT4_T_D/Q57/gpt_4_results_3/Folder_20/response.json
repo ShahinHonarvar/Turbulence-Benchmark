@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the python code according to your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    res = []\n    for i in range(rows):\n        for j in range(cols):\n            for m in range(i+1, rows+1):\n                for n in range(j+1, cols+1):\n                    submatrix = matrix[i:m, j:n]\n                    if submatrix.sum() == -57:\n                        res.append(submatrix.tolist())\n    return res\n```\nJust call the function 'submatrix_with_particular_sum' with one argument which is a two-dimensional numpy matrix of integers. If there exists any submatrix such that sum of all integers in it equals -57, the function will return list of all such submatrices otherwise it will return empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690982351,
+  "id": "chatcmpl-7j62pn9WAK1t7PlKZwGSRSN4LUrnq",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 174,
+    "prompt_tokens": 121,
+    "total_tokens": 295
+  }
+}

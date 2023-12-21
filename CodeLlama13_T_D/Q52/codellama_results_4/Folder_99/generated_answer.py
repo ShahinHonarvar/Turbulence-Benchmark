@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {palindrome for palindrome in re.findall(r'([A-Za-z]{420})', string, flags=re.IGNORECASE)}

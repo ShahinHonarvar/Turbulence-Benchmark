@@ -1,0 +1,35 @@
+
+import numpy as np
+
+def submatrices_with_particular_sum(matrix):
+    # Initialize an empty list to store the results
+    result = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary list to store the submatrix
+            temp = []
+            
+            # Add the current row and column to the temporary list
+            temp.append((i, j))
+            
+            # Iterate over each element in the submatrix
+            for k in range(1, matrix.shape[0]):
+                # Check if the sum of all integers in the submatrix is 80
+                if np.sum(matrix[temp]) == 80:
+                    # If it is, add the submatrix to the result list
+                    result.append(temp)
+                    
+            # Add the current row and column to the temporary list
+            temp.append((i, j))
+            
+            # Iterate over each element in the submatrix
+            for k in range(1, matrix.shape[0]):
+                # Check if the sum of all integers in the submatrix is 80
+                if np.sum(matrix[temp]) == 80:
+                    # If it is, add the submatrix to the result list
+                    result.append(temp)
+    
+    return result

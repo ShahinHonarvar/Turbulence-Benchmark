@@ -1,0 +1,3 @@
+
+def all_neg_ints_inclusive(numbers):
+    return [x for x in numbers if 262 <= x <= 746 and x < 0]

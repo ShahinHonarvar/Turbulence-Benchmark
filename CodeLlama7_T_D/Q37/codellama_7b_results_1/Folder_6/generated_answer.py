@@ -1,0 +1,10 @@
+
+def filter_chars(my_string, c, n):
+    filtered_string = ""
+    for char in my_string:
+        if char >= c and char <= n:
+            continue
+
+        filtered_string += char
+
+    return filtered_string

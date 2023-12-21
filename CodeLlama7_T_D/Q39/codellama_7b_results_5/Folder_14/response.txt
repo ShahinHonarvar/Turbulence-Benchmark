@@ -1,0 +1,24 @@
+ ```
+def return_n_greatest_chars(input_string, n):
+    # Initialize an empty list to store the sorted characters
+    sorted_characters = []
+
+    # Iterate over each character in the input string
+    for character in input_string:
+
+        # If the length of the sorted list is less than or equal to the value of 'n', add the current character to the list
+        if len(sorted_characters) <= n:
+            sorted_characters.append(character)
+
+        # Otherwise, compare the ASCII value of the current character with the ASCII value of the last character in the sorted list
+        else:
+
+            # If the ASCII value of the current character is greater than the ASCII value of the last character in the sorted list, remove the last character from the sorted list and add the current character to the end of the list
+            if ord(character) > ord(sorted_characters[-1])):
+                sorted_characters.pop()
+                sorted_characters.append(character)
+
+    # Return the sorted list of characters in ascending order
+
+    return sorted_characters
+```

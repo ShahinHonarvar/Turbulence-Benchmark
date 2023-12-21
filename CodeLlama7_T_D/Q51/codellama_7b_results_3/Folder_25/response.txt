@@ -1,0 +1,15 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    num_anagrams = 0
+    for i in range(len(my_list) - 1)):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                num_anagrams += 1
+    # Return true if there are at most 67 pairs of anagrams in the list
+    return num_anagrams <= 67
+```
+This function first counts the number of anagrams in the list by iterating over each pair of strings in the list. If two strings have the same letters in a different order, they are considered anagrams. The function then returns true if there are at most 67 pairs of anagrams in the list, and false otherwise.
+The function first sorts both strings in alphabetical order before comparing them to each other. This is because we only want to consider the anagrams of the English letters, and not any other letters or symbols that may be present in the strings.
+The function then uses a nested loop to iterate over each pair of strings in the list. For each pair of strings, it checks if they are anagrams by comparing their sorted forms. If they are anagrams, the function increments a counter to keep track of the number of anagrams it has found.
+Once the nested loop is finished, the function returns true if there are at most 67 pairs of anagrams in the list, and false otherwise. The function returns true if there are fewer than or equal to 67 pairs of anagrams in the list, because this means that the list does not contain any anagrams beyond those pairs.

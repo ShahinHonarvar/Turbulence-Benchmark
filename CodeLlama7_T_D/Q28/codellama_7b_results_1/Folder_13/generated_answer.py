@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(s):
+    # Get the indices of the characters in the string that occur between 47 and 80 (both inclusive)
+    indices = [i for i, c in enumerate(s) if 47 <= i <= 80]
+    # Get the ASCII values of the characters at those indices
+    ascii_values = [ord(c) for i, c in enumerate(s) if i in indices]
+    # Sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 4th smallest ASCII value
+    return sorted_ascii_values[3]

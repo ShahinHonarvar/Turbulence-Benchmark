@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    filtered = ''
+    for char in string:
+        if ord(char) > 672 and ord(char) < 709:
+            if ord(char) > ord('X') and ord(char) < ord('}'):
+                filtered += char
+    return filtered

@@ -1,0 +1,22 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Find the first occurrence of the 110th number in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    while True:
+        current_fibonacci_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        if str(current_fibonacci_number) in binary_representation:
+            break
+
+        fibonacci_sequence.append(current_fibonacci_number)
+
+    # Check if the decimal integer is divisible by the 110th number in the Fibonacci sequence
+    if decimal_integer % current_fibonacci_number == 0:
+        return True
+
+    else:
+
+        return False
+
+```

@@ -1,0 +1,23 @@
+ def remove_repeat_chars(s):
+    # Create a new string with the characters of the original string
+    # that are between indices 48 and 76 (exclusive)
+    new_str = ""
+
+    # Iterate over the characters of the original string
+
+    for i in range(len(s)):
+        # If the current character is not between indices 48 and 76 (exclusive), add it to the new string
+        if i < 48 or i > 76:
+            new_str += s[i]
+
+    # Iterate over the characters of the original string again
+
+    for i in range(len(s)):
+        # If the current character is between indices 48 and 76 (exclusive), add it to the new string only if it does not already exist in the new string
+        if i >= 48 and i <= 76:
+            if s[i] not in new_str:
+                new_str += s[i]
+
+    # Return the altered string
+
+    return new_str

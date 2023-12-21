@@ -1,0 +1,15 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 70, 98 and 22
+    num1 = my_list[70]
+    num2 = my_list[98]
+    num3 = my_list[22]
+    gcf = 1
+
+    for i in range(2, min(num1, num2, num3) + 1):
+        if num1 % i == 0 and num2 % i == 0 and num3 % i == 0:
+            gcf = i
+
+    return gcf
+```
+This code defines a function called `gcf_three_nums` that takes one argument, a list of positive integers. The function then calculates the greatest common factor of the elements at indices 70, 98 and 22 in the input list. The calculation is done by first identifying the three numbers to consider, and then finding the smallest number that divides all three numbers evenly. This smallest number is the greatest common factor of the three numbers. Finally, the function returns this greatest common factor.

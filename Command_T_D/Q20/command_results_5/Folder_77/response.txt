@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: 421cda7d-7a18-46a4-8462-ad91e8a12914
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_n_th_smallest_num' that takes one argument, a list of distinct numbers, as input and returns the 9th smallest number from index 106 to index 254, both inclusive.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import heapq
+
+def find_n_th_smallest_num(nums):
+    q, heap = nums[:], heapq.heapify(nums[::-1])
+    for i in range(len(q) - 1):
+        heapq.heapreplace(heap, q[i])
+    return heap[len(q) - 1 - 9]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

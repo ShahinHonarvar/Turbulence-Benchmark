@@ -1,0 +1,24 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize list of left-truncatable prime numbers
+    prime_numbers = []
+
+    # Loop through tuple elements
+    for element in tuple:
+        # If element is a prime number, add it to the list
+        if is_prime(element):
+            prime_numbers.append(element)
+
+    return prime_numbers
+
+# Function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all numbers from 2 to n-1
+        for i in range(2, n):
+            # If the result of dividing n by i is not equal to zero, then n is not prime
+            if n % i == 0:
+                return False
+
+    return True

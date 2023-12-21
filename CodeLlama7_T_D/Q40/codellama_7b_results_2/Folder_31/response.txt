@@ -1,0 +1,9 @@
+ Here is a possible implementation of the `return_n_smallest_chars` function:
+```python
+def return_n_smallest_chars(s, n):
+    # Sort the string in descending order based on ASCII values
+    sorted_s = sorted(s, key=ord, reverse=True)
+    # Return the top 70 characters of the sorted string
+    return sorted_s[:70]
+```
+This function takes two arguments: `s`, a string of distinct characters, and `n`, an integer indicating the number of characters to be returned. The function first sorts the input string in descending order based on ASCII values using the `sorted` function with the `key` parameter set to `ord`. It then returns the top 70 characters of the sorted string using slicing, which is a common Python idiom for extracting a subset of elements from a sequence.

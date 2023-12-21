@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(strlist):
+    anagrams = set()
+    for s in strlist:
+        t = tuple(sorted(s.lower()))
+        if len(t) < 3 or t in anagrams:
+            continue
+        anagrams.add(t)
+        if len(anagrams) >= 73:
+            return True
+    return False

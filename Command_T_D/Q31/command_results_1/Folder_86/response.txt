@@ -1,0 +1,158 @@
+[cohere.Generation {
+	id: 4c47b54a-450a-436d-9399-c44f431f0604
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_perfect_num' takes one argument, a list of positive integers, and returns true if the integer at index 194 is a perfect number, otherwise, it should return false.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**6)
+
+import bisect
+import heapq
+import math
+import time
+import copy
+import functools
+import operator
+
+sys.setrecursionlimit(10**6)
+
+# region fastio
+import io
+import os
+import io
+from io import BytesIO, IOBase
+
+
+class FastIO(IOBase):
+    newlines = 0
+
+    def __init__(self, file):
+        self._fd = file.fileno()
+        self.buffer = BytesIO()
+        self.writable = "x" in file.mode or "r" not in file.mode
+        self.write = self.buffer.write if self.writable else None
+
+    def read(self):
+        while True:
+            b = os.read(self._fd, max(os.fstat(self._fd).st_size, 8192))
+            if not b:
+                break
+            ptr = self.buffer.tell()
+            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
+        self.newlines = 0
+        return self.buffer.read()
+
+    def readline(self):
+        while self.newlines == 0:
+            b = os.read(self._fd, max(os.fstat(self._fd).st_size, 8192))
+            self.newlines = b.count(b"\n") + (not b)
+            ptr = self.buffer.tell()
+            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
+        self.newlines -= 1
+        return self.buffer.readline()
+
+    def flush(self):
+        if self.writable:
+            os.write(self._fd, self.buffer.getvalue())
+            self.buffer.truncate(0), self.buffer.seek(0)
+
+
+class IOWrapper(IOBase):
+    def __init__(self, file):
+        self.buffer = FastIO(file)
+        self.flush = self.buffer.flush
+        self.writable = self.buffer.writable
+        self.write = lambda s: self.buffer.write(s.encode("ascii"))
+        self.read = lambda: self.buffer.read().decode("ascii")
+        self.readline = lambda: self.buffer.readline().decode("ascii")
+
+
+sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
+input = lambda: sys.stdin.readline().rstrip("\r\n")
+
+# region fastio
+
+# region i/o with time
+import io
+import time
+
+# region get_time
+def get_time():
+    return int(time.time() * 1000)
+
+
+# endregion
+
+# region save_time
+def save_time(time):
+    return time
+
+
+# endregion
+
+# region read_time
+def read_time(time):
+    return time // 1000
+
+
+# endregion
+
+# region time_file
+class TimeFile(io.IOBase):
+    def __init__(self, file):
+        self._fd = file.fileno()
+        self.buffer = BytesIO()
+        self.writable = "x" in file.mode or "r" not in file.mode
+        self.write = self.buffer.write if self.writable else None
+
+    def read(self):
+        while True:
+            b = os.read(self._fd, max(os.fstat(self._fd).st_size, 8192))
+            if not b:
+                break
+            ptr = self.buffer.tell()
+            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
+        self.newlines = 0
+        return self.buffer.read()
+
+    def readline(self):
+        while self.newlines == 0:
+            b = os.read(self._fd, max(os.fstat(self._fd).st_size, 8192))
+            self.newlines = b.count(b"\n") + (not b)
+            ptr = self.buffer.tell()
+            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
+        self.newlines -= 1
+        return self.buffer.readline()
+
+    def flush(self):
+        if self.writable:
+            os.write(self._fd, self.buffer.getvalue())
+            self.buffer.truncate(0), self.buffer.seek(0)
+
+
+class TimeIOWrapper(io.IOBase):
+    def __init__(self, file):
+        self.buffer = TimeFile(file)
+        self.flush = self.buffer.flush
+        self.writable = self.buffer.writable
+        self.write = lambda s: self.buffer.write(s.encode("ascii"))
+        self.read = lambda: self.buffer.read().decode("ascii")
+        self.readline = lambda: self.buffer.readline().decode("ascii")
+
+
+sys.stdin, sys.stdout = TimeIOWrapper(sys.stdin), TimeIOWrapper(sys.stdout)
+input = lambda: sys.stdin.readline().rstrip("\r\n")
+
+# endregion
+
+# region input
+def input():
+    return sys.stdin.readline().rstrip("\r\n")
+
+
+# endregion
+
+	likelihood: None
+	token_likelihoods: None
+}]

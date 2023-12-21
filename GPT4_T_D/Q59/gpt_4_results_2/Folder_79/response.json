@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations \n\ndef all_left_truncatable_prime(tup):\n    x = tup[91]\n    primes = [2]\n    truncatable_primes = []\n    for num in range(3, x, 2):\n        for i in primes:\n            if num % i == 0:\n                break\n        else:\n            primes.append(num)\n    for prime in primes:\n        if '0' in str(prime):\n            continue\n        points = len(str(prime))\n        if all(int(''.join(map(str, str(prime)[i: points]))) in primes for i in range(points)): \n            truncatable_primes.append(prime)\n    return truncatable_primes\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690913708,
+  "id": "chatcmpl-7ioBgROPTLYPvQN5Ai2VCztipZuju",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 149,
+    "prompt_tokens": 146,
+    "total_tokens": 295
+  }
+}

@@ -1,0 +1,5 @@
+```
+def palindrome_of_length_n(s):
+    return {p for p in re.findall(r"(?i)(.)\1{398}", s) if len(p) == 401}
+```
+This function uses the `re` module to find all occurrences of a palindrome in the given string, where each palindrome is a substring of length 401 and consists only of English letters. The `(?i)` flag at the beginning of the regex pattern makes it case-insensitive. The `.\1{398}` pattern matches any character followed by itself exactly 398 times, which ensures that each palindrome has a length of 401 characters. The `re.findall` function returns a list of all matching palindromes in the string, and the set comprehension is used to convert this list into a set. If no palindromes are found, an empty set is returned.

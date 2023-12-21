@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[321] == sum(x for x in range(1, int(sqrt(lst[321])) + 1) if lst[321] % x == 0)

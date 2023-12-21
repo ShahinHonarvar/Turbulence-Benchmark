@@ -1,0 +1,5 @@
+
+def find_n_th_smallest_num(my_list):
+    # Find the nth smallest number in the list
+    n = 11
+    return sorted(my_list)[n-1]

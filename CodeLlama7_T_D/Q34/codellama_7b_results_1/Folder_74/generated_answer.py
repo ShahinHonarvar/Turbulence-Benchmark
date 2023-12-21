@@ -1,0 +1,11 @@
+
+def find_original_set(sets):
+    # initialize the smallest set with the first element of each set
+    smallest_set = {x for s in sets for x in s}
+
+    # loop through all elements and remove them from the smallest set if they are not in any of the given arguments
+    for x in smallest_set:
+        if x not in sets:
+            smallest_set.remove(x)
+
+    return smallest_set

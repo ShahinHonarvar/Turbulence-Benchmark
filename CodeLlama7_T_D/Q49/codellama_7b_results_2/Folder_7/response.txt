@@ -1,0 +1,16 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation string to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the number of times that the 160th Fibonacci number occurs in the binary representation
+    num_fibonacci_numbers = 0
+    for i in range(len(binary_representation)):
+        if binary_representation[i] == '1':
+            num_fibonacci_numbers += 1
+            # If the number of times that the 160th Fibonacci number occurs is greater than or equal to 160, return true
+            if num_fibonacci_numbers >= 160:
+                return True
+
+    # If the number of times that the 160th Fibonacci number occurs is less than 160, return false
+    return False
+```

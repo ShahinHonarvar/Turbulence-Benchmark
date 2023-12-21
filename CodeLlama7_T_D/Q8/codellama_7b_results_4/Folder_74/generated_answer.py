@@ -1,0 +1,22 @@
+
+def all_even_ints_exclusive(my_list):
+    # find the first even integer in the list
+    for i in range(13, len(my_list)):
+        if my_list[i] % 2 == 0:
+            start = i + 1
+            break
+
+    # find the last even integer in the list
+
+    for j in range(start, len(my_list)):
+        if my_list[j] % 2 == 0:
+            end = j - 1
+            break
+
+    # create a slice of the even integers
+
+    even_ints = my_list[start:end+1]
+
+    # return the list of even integers
+
+    return even_ints

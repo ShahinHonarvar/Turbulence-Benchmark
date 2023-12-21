@@ -1,0 +1,7 @@
+
+def sum_of_divisors_in_range(n):
+    result = 0
+    for i in range(224, 585):
+        if i % n == 0 and i >= 224 and i <= 584:
+            result += i
+    return result

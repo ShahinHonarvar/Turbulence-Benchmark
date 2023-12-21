@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(tup):\n    if len(tup) < 33:\n        return ''\n    \n    a = tup[19]\n    b = tup[32]\n\n    sum_numbers = sum(x for x in range(a + 1, b) if x not in tup[19: 33])\n\n    if sum_numbers == 0:\n        return ''\n\n    if sum_numbers % 2 == 0:\n        return format(sum_numbers, 'x')\n\n    return format(sum_numbers, 'b')\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690134603,
+  "id": "chatcmpl-7fXVTSpxj8sJTGrUo8bd1g9Cew7Ik",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 263,
+    "total_tokens": 372
+  }
+}

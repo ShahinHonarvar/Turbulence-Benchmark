@@ -1,0 +1,55 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+	x = tuple[78]
+	list = []
+	for i in range(2, x + 1):
+		if is_left_right_truncatable_prime(i) and i <= x:
+			list.append(i)
+	return list
+
+def is_left_right_truncatable_prime(n):
+	if n < 2:
+		return False
+
+	for i in range(2, int(math.sqrt(n)) + 1):
+		if n % i == 0:
+			return False
+
+	str_n = str(n)
+
+	left_truncatable = True
+
+	for i in range(len(str_n) - 1, -1, -1):
+		if str_n[i] == '0':
+			left_truncatable = False
+
+			break
+
+		elif int(str_n[i]) != n % 10:
+			left_truncatable = False
+
+			break
+
+
+	right_truncatable = True
+
+	for i in range(len(str_n) - 2, -1, -1):
+		if str_n[i] == '0':
+			right_truncatable = False
+
+			break
+
+		elif int(str_n[i]) != n % 10:
+			right_truncatable = False
+
+			break
+
+
+	if left_truncatable and right_truncatable:
+		return True
+
+	else:
+
+		return False
+
+```

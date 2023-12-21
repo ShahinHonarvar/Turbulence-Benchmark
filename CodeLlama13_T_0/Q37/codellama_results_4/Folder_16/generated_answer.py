@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 225 or i > 381:
+            result += char
+        elif char >= "D" and char <= "Y":
+            continue
+        else:
+            result += char
+    return result

@@ -1,0 +1,8 @@
+
+def if_perfect_num(numbers):
+    if len(numbers) < 54:
+        return False
+    if sum(numbers[:53]) == numbers[54]:
+        return True
+    else:
+        return False

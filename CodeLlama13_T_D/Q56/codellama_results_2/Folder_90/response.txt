@@ -1,0 +1,11 @@
+```python
+def all_substring_of_size_130(string):
+    substrings = []
+    for i in range(len(string) - 129):
+        substring = string[i:i+130]
+        if len(set(substring)) == 130 and all(c not in substrings for c in substring):
+            substrings.append(substring)
+    return substrings
+```
+This function iterates over the characters of the input string, using a sliding window of length 130 to check if the current substring is valid. A substring is considered valid if it has no duplicate characters and its length is equal to 130. If a valid substring is found, it is added to the list of substrings. The function returns an empty list if no such substrings exist in the input string.
+Note that the solution uses the `set` data structure to keep track of the characters already encountered in the substring. This ensures that each character appears only once in the substring, and the size of the set is equal to 130 when all characters are unique.

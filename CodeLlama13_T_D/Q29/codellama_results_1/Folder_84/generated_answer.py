@@ -1,0 +1,3 @@
+
+def gcf_two_nums(numbers):
+    return numbers[360] * numbers[722] / gcd(numbers[360], numbers[722])

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef prime_factors(int_list):\n    def find_prime_factors(x):\n        factors = []\n        divis_by = 2\n        while divis_by * divis_by <= x:\n            if x % divis_by:\n                divis_by += 1\n            else:\n                x //= divis_by\n                factors.append(divis_by)\n        if x > 1:\n            factors.append(x)\n        return factors\n\n    try:\n        return set(find_prime_factors(int_list[222]))\n    except IndexError:\n        return \"Index out of range.\"\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690948562,
+  "id": "chatcmpl-7ixFqBLYyFoqewYBOE0TSD0idUtFh",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 84,
+    "total_tokens": 195
+  }
+}

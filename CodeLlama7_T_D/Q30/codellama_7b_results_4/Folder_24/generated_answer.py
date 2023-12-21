@@ -1,0 +1,10 @@
+
+def insert_before_character(string):
+    result = ""
+    for i, char in enumerate(string):
+        if char == "4" and i > 0:
+            result += string[:i] + "4"
+        else:
+            result += char
+
+    return result

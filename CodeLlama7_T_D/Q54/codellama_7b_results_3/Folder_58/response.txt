@@ -1,0 +1,16 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# x is the integer at index 975 in the tuple
+x = tuple[975]
+# list of all right-truncatable prime numbers less than x
+list = []
+for i in range(2, x):
+if i % 2 == 0 or i % 3 == 0: continue
+j = i
+while j > 0:
+if j % 10 == 0: break
+j //= 10
+if j < 10 and is_prime(j): list.append(j)
+return sorted(list, reverse=True)
+```
+This code uses the `tuple` argument to get the value of `x`, which is the integer at index 975 in the tuple. It then uses a for loop to iterate through all the numbers less than `x` and checks if they are right-truncatable prime numbers. If they are, they are added to the list of right-truncatable prime numbers. The list is then sorted in descending order and returned by the function.

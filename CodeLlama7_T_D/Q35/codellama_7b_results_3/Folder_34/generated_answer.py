@@ -1,0 +1,17 @@
+
+def remove_repeat_chars(input_string):
+    # Create a new string that is empty
+    output_string = ""
+
+    # Iterate through each character in the input string
+    for char in input_string:
+        # Check if the current character occurs more than once between indices 70 and 200, both exclusive
+        if input_string.count(char) > 1 and (input_string.find(char) < 70 or input_string.rfind(char) > 200)):
+            # If the current character occurs more than once between indices 70 and 200, both exclusive, remove all occurrences of that character from the input string
+            input_string = input_string.replace(char, "")
+
+        # Add the current character to the output string
+        output_string += char
+
+    # Return the altered string
+    return output_string

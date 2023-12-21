@@ -1,0 +1,12 @@
+ def filter_chars(string):
+    # Create a list of all characters in the string
+    char_list = list(string)
+    # Iterate over each character in the string
+    for i in range(len(char_list)):
+        # If the current character is between indices 124 and 854, both inclusive, and is greater than or equal to character '9' and smaller than or equal to character 's', remove all occurrences of that character from the string
+        if 124 <= i <= 854 and char_list[i] >= '9' and char_list[i] <= 's':
+            # Replace the current character with an empty string
+            char_list[i] = ""
+    # Join all characters in the list back into a single string
+    filtered_string = "".join(char_list)
+    return filtered_string

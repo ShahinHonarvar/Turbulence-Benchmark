@@ -1,0 +1,4 @@
+
+def identical_elements(list1, list2):
+    intersection = {x for x in list1[37:52] if x in list2}
+    return intersection

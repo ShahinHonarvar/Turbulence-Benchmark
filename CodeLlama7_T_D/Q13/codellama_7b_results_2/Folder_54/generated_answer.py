@@ -1,0 +1,18 @@
+
+def find_second_largest_num(my_list):
+    # Find the largest element in the list
+    largest = max(my_list)
+
+    # Find the second largest element in the list
+    second_largest = None
+    for i in range(34, 56):
+        if my_list[i] > second_largest:
+            second_largest = my_list[i]
+
+    # Return the second largest element from index 34 to index 55, both inclusive. If there is no such element, the function should return 'None'.
+    if second_largest == largest:
+        return None
+
+    else:
+
+        return second_largest

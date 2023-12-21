@@ -1,0 +1,30 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Create a new empty list to store the sublists
+    sublists = []
+
+    # Loop through each element in the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to store the product of the elements in the current sublist
+        product = 1
+
+        # Initialize a variable to store the size of the current sublist
+        size = 0
+
+        # Loop through each element in the circular list starting from the current index
+        for j in range(i, len(circular_list)):
+
+            # Multiply the product by the current element
+            product *= circular_list[j]
+
+            # Increment the size of the current sublist
+            size += 1
+
+            # If the product is equal to 40, add the current sublist to the list of sublists and break out of the inner loop
+            if product == 40:
+                sublists.append(circular_list[i:j + 1])
+                break
+
+    # Return the list of sublists
+    return sublists

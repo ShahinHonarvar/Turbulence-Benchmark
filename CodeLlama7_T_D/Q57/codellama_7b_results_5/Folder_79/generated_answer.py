@@ -1,0 +1,24 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Get the current row of the matrix
+        row = matrix[i]
+
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Get the current column of the matrix
+            col = matrix[:, j]
+
+            # Check if the sum of all integers in the current submatrix equals -47
+            if np.sum(row) + np.sum(col) == -47:
+                # If so, add the submatrix to the list of submatrices
+                submatrices.append(np.array([row, col]))
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -47
+    return submatrices

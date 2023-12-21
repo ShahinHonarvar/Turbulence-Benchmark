@@ -1,0 +1,4 @@
+
+def insert_at_index(my_list):
+    my_list = my_list[:99] + [99] + my_list[99:]
+    return my_list

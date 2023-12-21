@@ -1,0 +1,31 @@
+ ```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+# Get the integer at index 945 from the tuple
+x = tuple_of_positive_integers[945]
+# Initialize an empty list to store the right-truncatable prime numbers less than x
+right_truncatable_prime_numbers = []
+# Loop through the range of integers from 2 to x - 1
+for i in range(2, x):
+# Check if the integer is a prime number
+if is_prime(i):
+# Check if the integer remains prime when the last rightmost digit is successively removed
+if check_right_truncatable_prime(i):
+# Add the integer to the list of right-truncatable prime numbers
+right_truncatable_prime_numbers.append(i)
+# Sort the list in descending order
+right_truncatable_prime_numbers.sort(reverse=True)
+# Return the sorted list of right-truncatable prime numbers less than x, or an empty list if there is no such right-truncatable prime number
+return right_truncatable_prime_numbers
+# If the integer at index 945 from the tuple is not a positive integer, raise a ValueError
+if not (isinstance(tuple_of_positive_integers[945], int) and tuple_of_positive_integers[945] > 0):
+raise ValueError("The integer at index 945 from the tuple must be a positive integer.")
+# If the integer at index 945 from the tuple is not an odd integer, raise a ValueError
+if not (isinstance(tuple_of_positive_integers[945], int) and tuple_of_positive_integers[945] % 2 == 1):
+raise ValueError("The integer at index 945 from the tuple must be an odd integer.")
+# If the integer at index 945 from the tuple is less than or equal to 0, raise a ValueError
+if tuple_of_positive_integers[945] <= 0:
+raise ValueError("The integer at index 945 from the tuple must be greater than 0.")
+# If the integer at index 945 from the tuple is not an integer, raise a ValueError
+if not (isinstance(tuple_of_positive_integers[945], int)):
+raise ValueError("The integer at index 945 from the tuple must be an integer.")
+```

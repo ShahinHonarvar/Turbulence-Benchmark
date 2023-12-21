@@ -1,0 +1,12 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the string
+    palindromes = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            if j-i < 40 or j-i > 72:
+                continue
+            substr = string[i:j]
+            if substr == substr[::-1]:
+                palindromes.append(substr)
+    return set(palindromes)

@@ -1,0 +1,20 @@
+
+def find_original_set(sets):
+    # Create a list of all elements in the sets
+    all_elements = []
+    for set in sets:
+        all_elements.extend(set)
+    # Create a dictionary to store the frequency of each element
+
+    element_frequencies = {}
+    for element in all_elements:
+        if element not in element_frequencies:
+            element_frequencies[element] = 0
+        element_frequencies[element] += 1
+    # Find the smallest set such that each of the given arguments is a subset of it
+
+    smallest_set = []
+    for key, value in element_frequencies.items():
+        if value == 63:
+            smallest_set.append(key)
+    return set(smallest_set)

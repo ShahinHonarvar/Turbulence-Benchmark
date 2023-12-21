@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(range(2, int(numbers[38]) + 1)) - set(filter(lambda x: numbers[38] % x != 0, range(2, int(numbers[38]) + 1)))

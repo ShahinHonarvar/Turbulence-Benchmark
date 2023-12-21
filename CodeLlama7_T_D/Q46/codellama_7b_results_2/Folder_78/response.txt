@@ -1,0 +1,25 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 13, 70 and 32
+    gcf = my_list[13]
+    for i in range(len(my_list)):
+        if i != 13:
+            gcf = gcd(gcf, my_list[i])
+    return gcf
+
+def gcd(a, b):
+
+    # Calculate the greatest common divisor of two positive integers
+
+    while b:
+
+        a, b = b, a % b
+
+    return a
+```
+Here is an explanation of how the function works:
+
+* First, we define a new function called `gcf_three_nums` that takes one argument, a list of positive integers.
+* In the body of the function, we first calculate the greatest common factor of the elements at indices 13, 70 and 32 using the function `gcd`.
+* Then we iterate over the rest of the elements in the list using a for loop. For each element, we calculate its greatest common divisor with the current value of the variable `gcf` using the function `gcd`. If the value of the variable `gcf` changes during this process, then we update the value of the variable `gcf` to be equal to the new greatest common factor.
+* Finally, we return the value of the variable `gcf` as the result of the function.

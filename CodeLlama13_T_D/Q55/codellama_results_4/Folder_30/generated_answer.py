@@ -1,0 +1,21 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    result = []
+    
+    # Iterate over each element in the circular list
+    for i in range(len(circular_list)):
+        # Set the product to 1
+        product = 1
+        
+        # Iterate over each element in the sublist
+        for j in range(i, len(circular_list)):
+            # Multiply the product by the current element
+            product *= circular_list[j]
+            
+            # If the product equals 99, add the sublist to the result list
+            if product == 99:
+                result.append(circular_list[i:j+1])
+                
+    # Return the result list
+    return result

@@ -1,0 +1,22 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fib_seq = [0, 1]
+    # Loop through the digits of the decimal integer in reverse order
+    for i in range(len(str(decimal_integer)) - 1, -1, -1)):
+        # Get the current digit of the decimal integer
+        current_digit = str(decimal_integer)[i]
+        # Check if the current digit is a 1
+        if current_digit == "1":
+            # If it is, add the current number in the Fibonacci sequence to the running sum
+            running_sum += fib_seq[i]
+    # Check if the running sum is divisible by 9
+    if running_sum % 9 == 0:
+        # Return true if it is
+        return True
+    else:
+        # Return false otherwise
+        return False
+```

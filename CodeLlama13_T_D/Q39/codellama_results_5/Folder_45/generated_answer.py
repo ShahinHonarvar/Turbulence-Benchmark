@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(s):
+    lst = sorted([c for c in s], key=ord)
+    return lst[-52:]

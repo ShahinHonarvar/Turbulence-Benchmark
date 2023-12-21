@@ -1,0 +1,23 @@
+ ```
+def all_pos_ints_inclusive(my_list):
+    # Find the first positive integer in the list
+    first_pos_int = next((i for i in my_list if i > 0), None)
+    # If no positive integers exist in the list, return an empty list
+    if first_pos_int is None:
+        return []
+
+    # Find the last positive integer in the list
+
+    last_pos_int = next((i for i in my_list[::-1] if i > 0), None)
+
+    # Return the list of all positive integers from index 64 to index 66, both inclusive
+
+    return [i for i in my_list[63:67] if i > 0]
+
+```
+Explanation:
+
+The function `all_pos_ints_inclusive` takes a list of integers as input and returns the list of all positive integers from index 64 to index 66, both inclusive.
+To find the first positive integer in the list, we use the built-in `next()` function with a generator expression that iterates over the elements of the list until it finds a positive integer. We then store the result in the variable `first_pos_int`.
+Similarly, to find the last positive integer in the list, we use the built-in `next()` function with a generator expression that iterates over the elements of the list in reverse order until it finds a positive integer. We then store the result in the variable `last_pos_int`.
+Finally, we return the list of all positive integers from index 64 to index 66, both inclusive, using a list comprehension that iterates over the elements of the input list within the specified range and returns only those elements that are greater than zero.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows): \n        for j in range(cols): \n            for r in range(i+1, rows+1): \n                for c in range(j+1, cols+1): \n                    if len(matrix[i:r,j:c].flatten()) == 37:\n                        count += 1\n    return count\n```\nThis code searches for all possible submatrices in the given matrix using nested loops. It flattens the submatrix to a 1D array and checks its size. If the size is 37, it increments the count. Finally, it returns the count.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082440,
+  "id": "chatcmpl-7fJw8EkyJOGgvJVBpCE5b62YBNkQD",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 154,
+    "prompt_tokens": 111,
+    "total_tokens": 265
+  }
+}

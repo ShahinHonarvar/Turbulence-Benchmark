@@ -1,0 +1,48 @@
+ ```
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each letter in the string
+    for i in range(len(string)):
+        # Get the letter at index i
+        letter = string[i]
+        # If the letter is not a space, add it to the palindrome
+        if letter != " ":
+            palindrome = ""
+
+            # Add the letter to the palindrome
+            palindrome += letter
+
+            # Loop through each letter in the string starting from index i + 1
+            for j in range(i + 1, len(string)):
+                # Get the letter at index j
+                other_letter = string[j]
+                # If the letter is not a space, add it to the palindrome
+                if other_letter != " ":
+                    # Add the letter to the palindrome
+                    palindrome += other_letter
+
+                    # Check if the palindrome is a valid palindrome of length 3 or more
+                    if len(palindrome) >= 3 and palindrome == palindrome[::-1]:
+                        # Add the palindrome to the set of palindromes
+                        palindromes.add(palindrome)
+
+            # Check if the letter is a space
+            elif letter == " ":
+                # Loop through each letter in the string starting from index i + 1
+                for j in range(i + 1, len(string)):
+                    # Get the letter at index j
+                    other_letter = string[j]
+                    # If the letter is not a space, add it to the palindrome
+                    if other_letter != " ":
+                        # Add the letter to the palindrome
+                        palindrome += other_letter
+
+                        # Check if the palindrome is a valid palindrome of length 3 or more
+                        if len(palindrome) >= 3 and palindrome == palindrome[::-1]:
+                            # Add the palindrome to the set of palindromes
+                            palindromes.add(palindrome)
+
+    # Return the set of palindromes
+    return palindromes
+```

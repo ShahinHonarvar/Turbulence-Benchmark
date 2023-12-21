@@ -1,0 +1,7 @@
+
+def find_second_smallest_num(distinct_list):
+    second_smallest = None
+    for i in range(43, 52):
+        if distinct_list[i] < second_smallest or second_smallest is None:
+            second_smallest = distinct_list[i]
+    return second_smallest

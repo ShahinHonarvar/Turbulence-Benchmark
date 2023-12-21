@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom sympy import divisors\nimport numpy as np\n\ndef lists_with_product_equal_n(circular_list):\n    nums = divisors(61)\n    combos = []\n    for num_idx in range(len(circular_list)):\n        for num in nums:\n            if circular_list[num_idx] == num:\n                combos.append([circular_list[num_idx], np.prod(circular_list[num_idx - 1: num_idx + 1])])\n                combos.append([circular_list[num_idx], np.prod(circular_list[num_idx + 1: num_idx + 19])])\n    sublists = [combo for combo in combos if -61 in combo]\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691011175,
+  "id": "chatcmpl-7jDXjRKStc4CtkH8vUdWVhheqs7Z2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 142,
+    "prompt_tokens": 193,
+    "total_tokens": 335
+  }
+}

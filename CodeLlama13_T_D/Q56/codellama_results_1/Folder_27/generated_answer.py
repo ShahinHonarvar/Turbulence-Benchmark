@@ -1,0 +1,9 @@
+
+def all_substring_of_size_n(s):
+    n = 57
+    subs = []
+    for i in range(len(s) - n + 1):
+        sub = s[i:i+n]
+        if len(sub) == n and not any(sub[j] == sub[j-1] for j in range(1, len(sub))):
+            subs.append(sub)
+    return list(set(subs))

@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(my_list):
+    anagrams = []
+    for s in my_list:
+        if len(s) < 3: continue
+        if s.lower() in anagrams: return False
+        anagrams.append(tuple(sorted(s)))
+    return True

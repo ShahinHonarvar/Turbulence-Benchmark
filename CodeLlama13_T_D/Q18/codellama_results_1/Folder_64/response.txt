@@ -1,0 +1,13 @@
+```python
+def sum_ints_div_by_either_nums(my_list):
+    result = 0
+    for i in range(4):
+        if my_list[i] % 11 == 0 or my_list[i] % -7 == 0:
+            result += my_list[i]
+    return result
+```
+This function takes a list of integers as input, and returns the sum of all integers divisible by either 11 or -7 from index 0 to index 3, both inclusive. If no such integers exist in the specified range, the function returns 0.
+
+For example, if we call the function with the argument `my_list = [1,2,3,4]`, it will return `6` because 1 and 3 are divisible by either 11 or -7, while 2 is not. If we call the function with the argument `my_list = [1,2,3,4,5]`, it will return `0` because no integers in the list are divisible by either 11 or -7 from index 0 to index 3, both inclusive.
+
+Note that this function only works for lists of length 4 or less. If you need to work with longer lists, you may want to modify the function accordingly.

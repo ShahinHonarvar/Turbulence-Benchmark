@@ -1,0 +1,16 @@
+
+def palindromes_of_specific_lengths(string, index_range=(23, 77), palindrome_lengths=(13, 40)):
+    # Initialize the set of palindromes
+    palindromes = set()
+    # Iterate over the characters in the string within the specified range
+    for i in range(*index_range):
+        # Check if the character is an English letter
+        if 'a' <= string[i].lower() <= 'z':
+            # Create a palindrome of the current length by mirroring the substring around the middle character
+            palindrome = string[i - (palindrome_lengths[1] - palindrome_lengths[0]) // 2 + 1:i + (palindrome_lengths[1] - palindrome_lengths[0]) // 2 + 1]
+            # Check if the palindrome is a valid English word
+            if palindrome.isalpha():
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

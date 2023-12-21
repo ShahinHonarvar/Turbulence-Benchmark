@@ -1,0 +1,26 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Iterate over each row in the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column in the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a new submatrix with the size of the current row and column
+            submatrix = np.zeros((i + 1, j + 1))
+
+            # Copy the elements from the original matrix to the submatrix
+            for k in range(i + 1):
+                for l in range(j + 1):
+                    submatrix[k][l] = matrix[i - k + 1][j - l + 1]
+
+            # Check if the sum of all elements in the submatrix is equal to -308
+            if np.sum(submatrix) == -308:
+                # Add the submatrix to the list of submatrices
+                submatrices.append(submatrix)
+
+    # Return the list of submatrices that have a sum of all elements equal to -308
+    return submatrices
+```

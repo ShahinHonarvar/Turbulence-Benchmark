@@ -1,0 +1,20 @@
+ ```
+def return_binary_or_hexa(tuple):
+# check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+if all(i in tuple for i in range(tuple[57] + 1, tuple[84] - 1)):
+return ""
+
+# calculate sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 57 and 84
+sum = 0
+for i in range(tuple[57] + 1, tuple[84] - 1):
+if i not in tuple:
+sum += i
+
+# check if sum is an odd number
+
+if sum % 2 == 1:
+return "{:b}".format(sum)
+else:
+return "{:x}".format(sum)
+
+```

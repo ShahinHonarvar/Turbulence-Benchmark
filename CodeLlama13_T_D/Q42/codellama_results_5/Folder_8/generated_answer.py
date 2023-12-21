@@ -1,0 +1,3 @@
+
+def prime_factors(lst):
+    return set(int(i) for i in str(lst[49]) if int(i) > 1 and all(int(i) % j != 0 for j in range(2, int(i))))

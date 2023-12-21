@@ -1,0 +1,12 @@
+ def sum_in_range(my_list):
+    # Initialize the sum to 0
+    total = 0
+    # Loop through the list of integers
+    for num in my_list:
+        # Check if the current number is between 7 and 8, both inclusive
+        if 7 <= num <= 8:
+            # Add the current number to the sum
+            total += num
+
+    # Return the sum
+    return total

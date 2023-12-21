@@ -1,0 +1,8 @@
+
+def find_subset_of_length_n(my_set):
+    subsets = []
+    for i in range(len(my_set)):
+        subset = my_set[i:i+83]
+        if len(subset) == 83:
+            subsets.append(subset)
+    return len(subsets)

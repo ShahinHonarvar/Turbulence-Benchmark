@@ -1,0 +1,6 @@
+
+def return_nth_smallest_ascii(string):
+    ascii_values = [ord(char) for char in string[36:79]]
+    unique_chars = set(ascii_values)
+    smallest_ascii_values = sorted(unique_chars)[12]
+    return chr(smallest_ascii_values)

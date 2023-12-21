@@ -1,0 +1,17 @@
+
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - 9 + 1):
+
+        # Check if the substring is of length 9 and has no duplicate characters
+        substring = string[i:i+9]
+        if len(substring) == 9 and len(set(substring)) == 9:
+
+            # If the substring is valid, add it to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of all distinct substrings of length 9 with no duplicate characters
+    return substrings

@@ -1,0 +1,15 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 59 integers each
+    count = 0
+    # Loop over each row and column in the matrix
+    for i in range(matrix.shape[0] - 1):
+        for j in range(matrix.shape[1] - 1):
+            # Check if the submatrix with size (3, 3) starting at position (i, j) contains 59 integers each
+            if np.count_nonzero(matrix[i:i + 3, j:j + 3]) == 59 * 3 * 3:
+                # Increment the count of submatrices with 59 integers each
+                count += 1
+
+    return count

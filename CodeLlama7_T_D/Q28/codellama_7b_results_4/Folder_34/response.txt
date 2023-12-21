@@ -1,0 +1,18 @@
+ ```
+def return_nth_smallest_ascii(string):
+# convert string to a list of characters
+characters = list(string)
+# create a dictionary to store the ASCII values of each character
+ascii_values = {}
+# iterate over the characters in the string
+for char in characters:
+# if the character is not already in the dictionary, add it and its corresponding ASCII value
+if char not in ascii_values:
+ascii_values[char] = ord(char)
+# sort the dictionary by ASCII value in ascending order
+sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[1])
+# return the character with the 19th smallest ASCII value
+return sorted_ascii_values[18][0]
+```
+This code defines a function called `return_nth_smallest_ascii` that takes a string of distinct characters as an argument. The function first converts the input string to a list of characters using the built-in `list` method. Then, it creates a dictionary to store the ASCII values of each character in the string.
+Next, the code iterates over the characters in the string and checks if each character is already present in the dictionary. If a character is not found in the dictionary, it is added to the dictionary along with its corresponding ASCII value using the built-in `ord` method. Once all the characters in the string have been processed, the code sorts the dictionary by ASCII value in ascending order and then returns the character with the 19th smallest ASCII value.

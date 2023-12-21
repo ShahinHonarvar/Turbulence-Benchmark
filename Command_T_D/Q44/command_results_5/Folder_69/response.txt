@@ -1,0 +1,14 @@
+[cohere.Generation {
+	id: 8e5f6214-8e60-4623-b547-1dccf7dad10d
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'composite_nums_between_indices' that takes one argument, a list of positive integers. The function should return the set of all composite numbers in the given list that are between index 29 to index 79, both inclusive. If no composite number exists in the specified range, the function should return an empty set.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import operator as op
+
+def composite_nums_between_indices(nums):
+    s = set(nums)
+    return set(nums[29:79]) & set(nums) - set(nums[1:29]) & set(nums[79:]) - set(nums) & set(range(2, 29)) & set(range(3, 79))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

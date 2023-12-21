@@ -1,0 +1,11 @@
+```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows - 143):
+        for j in range(cols - 143):
+            if np.all(matrix[i:i + 143, j:j + 143] == 144):
+                count += 1
+    return count
+```

@@ -1,0 +1,19 @@
+ ```
+def find_original_set(sets):
+    # Check if all sets are distinct and have the same size
+    if len(set(map(tuple, sets))) < len(sets):
+        raise ValueError("All sets must be distinct")
+
+    # Find the smallest set
+
+    smallest_set = min(sets, key=len)
+
+    # Check if all other sets are subsets of the smallest set
+
+    for set in sets:
+
+        if not set <= smallest_set:
+            raise ValueError("Not all sets are subsets of the smallest set")
+
+    return smallest_set
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport sympy\n\ndef all_left_right_truncatable_prime(nums):\n    x = nums[88]\n    all_primes = list(filter(sympy.isprime, range(1, x+1)))\n    trunc_primes = []\n    for prime in all_primes:\n        if '0' in str(prime):\n            continue\n        truncatable = True\n        for i in range(1, len(str(prime))):\n            if not sympy.isprime(int(str(prime)[i:])) or not sympy.isprime(int(str(prime)[:-i])):\n                truncatable = False\n                break\n        if truncatable:\n            trunc_primes.append(prime)\n    return sorted(trunc_primes, reverse=True)\n```\nIn the above code, I'm making use of sympy's isprime method to check if a number is prime or not. At first, I'm generating all primes from 1 to x and then checking for each prime if it is left-right truncatable or not. A prime is left-right truncatable if it contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime. I'm excluding those primes which have 0 in them. Then truncating from left and right simultaneously one digit at a time and checking if the truncated number is prime or not. If it is, the original number is a left-right truncatable prime. Finally, I'm sorting the list in descending order and returning.\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691024287,
+  "id": "chatcmpl-7jGxDbG3KKVwsfrfF6ZgxgRlwbbdU",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 316,
+    "prompt_tokens": 187,
+    "total_tokens": 503
+  }
+}

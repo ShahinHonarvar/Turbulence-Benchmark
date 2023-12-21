@@ -1,0 +1,13 @@
+ ```
+def remove_repeat_chars(s):
+# Split the string into two parts based on the indices 50 and 200, exclusive
+left, right = s[:50], s[50:]
+# Create a list of unique characters in the right part of the string
+unique_chars = set()
+# Iterate over the characters in the right part of the string and add each unique character to the list
+for char in right:
+if char not in unique_chars:
+unique_chars.add(char)
+# Join the left part of the string with the unique characters from the right part of the string, excluding any duplicate characters that may have been added to the left part of the string
+return "".join([left, "".join(unique_chars)])
+```

@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a list of characters in the string
+    char_list = list(string)
+    # Get the indices of the characters between 17 and 56
+    indices = [i for i, c in enumerate(char_list) if 17 <= i <= 56]
+    # Sort the characters based on their ASCII values
+    sorted_chars = sorted(char_list[indices[0]:indices[-1]+1]], key=ord)
+    # Return the 9th smallest ASCII value
+    return sorted_chars[8]

@@ -1,0 +1,18 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list has at least 264 elements
+    if len(my_list) < 264:
+        return False
+
+    # Check if the integer at index 263 is a perfect number
+    if my_list[263] == 0 or my_list[263] % 2 != 0:
+        return False
+
+    sum = 0
+
+    for i in range(1, int(my_list[263]) ** 0.5 + 1):
+        if my_list[263] % i == 0:
+            sum += i + my_list[263] / i
+
+    return sum == my_list[263]
+```

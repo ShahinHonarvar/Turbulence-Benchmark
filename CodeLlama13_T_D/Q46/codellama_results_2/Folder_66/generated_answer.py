@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return __import__('math').gcd(my_list[92], my_list[69]) * __import__('math').gcd(my_list[95], my_list[69])

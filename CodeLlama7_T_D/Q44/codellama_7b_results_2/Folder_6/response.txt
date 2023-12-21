@@ -1,0 +1,19 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list and check if each element is a composite number between index 13 and index 68, both inclusive
+    for i in range(len(my_list)):
+        if my_list[i] > 1 and my_list[i] % 2 != 0:
+            for j in range(13, 69):
+                if my_list[i] % j == 0:
+                    composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers between index 13 and index 68, both inclusive
+    return composite_nums
+
+# Test the function with a list of positive integers
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68]
+#print(composite_nums_between_indices(my_list))
+```

@@ -1,0 +1,25 @@
+[cohere.Generation {
+	id: 8851abaf-3786-4f30-b29f-2126512d31ab
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_second_largest_num' that takes one argument, a list of distinct numbers, as input and returns the second largest element from index 40 to index 80, both inclusive. If there is no such element, the function should return 'None'.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def find_second_largest_num(nums):
+    if not nums:
+        return None
+    idx = 40
+    idx_low = 0
+    idx_high = len(nums) - 1
+    while idx_high - idx_low > 1:
+        idx_mid = (idx_low + idx_high) // 2
+        if nums[idx_mid] > nums[idx]:
+            idx = idx_mid
+            idx_low = idx_mid
+        elif nums[idx_mid] < nums[idx]:
+            idx_high = idx_mid
+        else:
+            return nums[idx]
+    return nums[idx]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

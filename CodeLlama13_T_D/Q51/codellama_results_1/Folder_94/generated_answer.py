@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(words):
+    anagrams = []
+    for word in words:
+        key = ''.join(sorted(word))
+        if key not in anagrams:
+            anagrams.append(key)
+    return len(anagrams) <= 181

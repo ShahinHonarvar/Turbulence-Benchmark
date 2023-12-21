@@ -1,0 +1,12 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate through the list and check if each element is not divisible by 67
+    for i in range(46, 91):
+        if my_list[i] % 67 != 0:
+            result.append(my_list[i])
+
+    # Return the final list of all integers not divisible by 67 from index 46 to index 91, both exclusive
+    return result

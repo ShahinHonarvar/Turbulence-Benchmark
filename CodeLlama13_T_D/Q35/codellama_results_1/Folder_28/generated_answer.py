@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(string):
+    seen = set()
+    new_string = ""
+    for char in string:
+        if char in seen and 86 < len(seen) < 99:
+            continue
+        seen.add(char)
+        new_string += char
+    return new_string

@@ -1,0 +1,88 @@
+
+def all_left_right_truncatable_prime(x):
+    # Define a list to store the left-and-right-truncatable prime numbers
+    primes = []
+
+    # Loop through all the prime numbers less than or equal to x
+
+    for i in range(2, x + 1):
+
+        # Check if the current number is a prime number
+
+        if is_prime(i):
+
+            # Check if the current number is left-and-right-truncatable prime number
+
+            if is_left_right_truncatable_prime(i):
+
+                # Add the current number to the list of left-and-right-truncatable prime numbers
+
+                primes.append(i)
+
+    # Sort the list of left-and-right-truncatable prime numbers in ascending order
+
+    primes.sort()
+
+    # Return the list of left-and-right-truncatable prime numbers
+
+    return primes
+
+
+def is_prime(n):
+
+    # Check if n is a positive integer
+
+    if not (isinstance(n, int) and n > 0):
+
+        # Return False if n is not a positive integer
+
+        return False
+
+
+    # Check if n is divisible by any number between 2 and the square root of n
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        # Return False if n is divisible by any number between 2 and the square root of n
+
+        if n % i == 0:
+
+            return False
+
+
+    # If n is not divisible by any number between 2 and the square root of n, it must be a prime number
+
+    return True
+
+
+def is_left_right_truncatable_prime(n):
+
+    # Check if n is a positive integer
+
+    if not (isinstance(n, int) and n > 0):
+
+        # Return False if n is not a positive integer
+
+        return False
+
+
+    # Check if the leading leftmost digit of n is equal to the last rightmost digit of n
+
+    if str(n)[0] != str(n)[-1]:
+
+        # Return False if the leading leftmost digit of n is not equal to the last rightmost digit of n
+
+        return False
+
+
+    # Check if the number formed by removing all digits from the left side of n is a prime number
+
+    left_prime = is_prime(int(str(n)[1:]))
+
+    # Check if the number formed by removing all digits from the right side of n is a prime number
+
+    right_prime = is_prime(int(str(n)[:-1])))
+
+    # Return True if both the number formed by removing all digits from the left side of n and the number formed by removing all digits from the right side of n are prime numbers
+
+    return left_prime and right_prime

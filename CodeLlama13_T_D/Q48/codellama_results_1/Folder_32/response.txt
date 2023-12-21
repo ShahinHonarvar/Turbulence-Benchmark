@@ -1,0 +1,12 @@
+```
+def return_binary_or_hexa(nums):
+    a, b = nums[86], nums[90]
+    sum = 0
+    for i in range(a+1, b):
+        if i not in nums:
+            sum += 1
+    return bin(sum)[2:] if sum % 2 else hex(sum).upper()[2:]
+```
+This code defines a function `return_binary_or_hexa` that takes a tuple of distinct nonnegative integers sorted in ascending order as its only argument. The function calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the specified range between indices 86 and 90 of the input tuple. If the sum is an odd number, the function returns its binary representation as a string without prefixing it with `'0b'`. Otherwise, it returns the hexadecimal representation as a string without prefixing it with `'0x'` and in uppercase.
+
+The function uses the built-in `bin` and `hex` functions to convert the sum to its binary and hexadecimal representations, respectively. The `[2:]` syntax is used to remove the `'0b'` or `'0x'` prefix from the strings.

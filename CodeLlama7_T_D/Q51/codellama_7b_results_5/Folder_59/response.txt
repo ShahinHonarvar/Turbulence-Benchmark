@@ -1,0 +1,26 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    num_pairs = 0
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    # Iterate over the list of strings
+    for string in my_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+        # Check if the string contains any anagrams of the English letters
+        for letter in english_letters:
+            # If the string contains the letter, check if it is an anagram of the letter
+            if letter in lowercase_string:
+                # Get a list of the letters that are not the letter we are checking
+                other_letters = [x for x in english_letters if x != letter]
+                # Check if the string contains any anagrams of the remaining letters
+                if any(letter in lowercase_string for letter in other_letters):
+                    # Increment the number of pairs
+                    num_pairs += 1
+        # If there are at most 15 pairs of anagrams, return True
+        if num_pairs <= 15:
+            return True
+    # Otherwise, return False
+    return False
+```

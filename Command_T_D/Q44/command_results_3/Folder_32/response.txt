@@ -1,0 +1,28 @@
+[cohere.Generation {
+	id: 2adc4a41-127b-4f93-bfbe-85f781dd4088
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'composite_nums_between_indices' that takes one argument, a list of positive integers. The function should return the set of all composite numbers in the given list that are between index 10 to index 66, both inclusive. If no composite number exists in the specified range, the function should return an empty set.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def composite_nums_between_indices(nums):
+    result = set()
+    for i in range(10, 66):
+        if not is_prime(nums[i]):
+            result.add(nums[i])
+    return result
+
+def is_prime(n):
+    if n < 2:
+        return False
+    if n == 2 or n == 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    maxDivisor = n**0.5
+    for num in range(5, maxDivisor, 6):
+        if n % num == 0:
+            return False
+    return True
+```
+	likelihood: None
+	token_likelihoods: None
+}]

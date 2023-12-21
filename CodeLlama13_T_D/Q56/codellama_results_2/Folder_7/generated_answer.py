@@ -1,0 +1,16 @@
+
+def all_substring_of_size_117(s):
+    # Initialize an empty list to store the substrings
+    substrings = []
+    
+    # Iterate over each character in the string
+    for i in range(len(s)):
+        # Extract the substring of length 117 starting from the current index
+        substr = s[i:i+117]
+        
+        # Check if the substring is valid (does not contain duplicate characters)
+        if len(set(substr)) == 117:
+            substrings.append(substr)
+    
+    # Return the list of substrings
+    return substrings

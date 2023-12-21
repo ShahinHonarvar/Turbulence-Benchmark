@@ -1,0 +1,3 @@
+
+def all_odd_ints_exclusive(lst):
+    return [x for x in lst if 66 < x < 90 and x % 2 != 0]

@@ -1,0 +1,7 @@
+
+def all_even_ints_exclusive(my_list):
+    # create a slice of the list starting from index 28 (inclusive) and ending at index 49 (exclusive)
+    even_ints_slice = my_list[28:49]
+    # filter out all odd integers from the slice
+    even_ints = [x for x in even_ints_slice if x % 2 == 0]
+    return even_ints

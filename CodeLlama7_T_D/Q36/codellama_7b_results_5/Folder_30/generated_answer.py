@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    start = 23
+    end = 45
+    for i in range(start, end):
+        if s[i] > '3' and s[i] < 'I':
+            s = s[:i] + s[i+1:]
+    return s

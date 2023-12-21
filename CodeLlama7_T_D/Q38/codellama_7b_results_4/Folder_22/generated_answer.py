@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(set):
+    count = 0
+    for i in range(len(set) + 1):
+        subset = set[:i]
+        if len(subset) == 72:
+            count += 1
+
+    return count

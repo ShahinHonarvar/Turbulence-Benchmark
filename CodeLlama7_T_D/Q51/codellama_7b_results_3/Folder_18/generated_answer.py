@@ -1,0 +1,23 @@
+
+def if_contains_anagrams(words):
+    # Check if there are at most 42 pairs of anagrams in the given list
+    num_pairs = 0
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            if sorted(words[i]) == sorted(words[j]):
+                num_pairs += 1
+                if num_pairs > 42:
+                    return False
+
+    # Check if the anagrams are of the length of at least three
+    for word in words:
+        if len(word) < 3:
+            return False
+
+    # Check if the strings are compared in a case-insensitive manner
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            if words[i].lower() == words[j].lower():
+                return False
+
+    return True

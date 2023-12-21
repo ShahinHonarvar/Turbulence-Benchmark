@@ -1,0 +1,7 @@
+
+def find_second_smallest_num(my_list):
+    if len(my_list) < 64 + 3:
+        return None
+    else:
+        second_smallest = sorted(my_list[64:67])[1]
+        return second_smallest

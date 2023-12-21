@@ -1,0 +1,3 @@
+
+def insert_after_character(s):
+    return "".join([c if c != "e" else f"{c}E" for c in s])

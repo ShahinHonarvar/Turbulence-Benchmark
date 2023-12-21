@@ -1,0 +1,22 @@
+ ```
+def identical_elements(list1, list2):
+    # Get the intersection of both lists
+    intersection = set(list1).intersection(set(list2))
+    # Check if the intersection is not empty
+    if len(intersection) > 0:
+        # Get the indices of the first and last elements in the intersection
+        first_idx = list1.index(intersection.pop())
+        last_idx = list1.index(intersection.pop())
+        # Check if the intersection contains any elements that are not between index 661 and index 924, both inclusive
+        if first_idx < 661 or last_idx > 924:
+            return set()
+        else:
+            # Return the set of all elements that occur at least once in both lists anywhere between index 661 and index 924, both inclusive
+            return intersection
+
+    else:
+
+        # If the intersection is empty, return an empty set
+
+        return set()
+```

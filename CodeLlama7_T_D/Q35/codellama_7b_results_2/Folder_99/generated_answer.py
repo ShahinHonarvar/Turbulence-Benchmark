@@ -1,0 +1,24 @@
+
+def remove_repeat_chars(string):
+    # Initialize an empty list to store the characters of the string
+    char_list = []
+
+    # Iterate through each character in the given string
+    for char in string:
+
+        # If the current character is not already in the list of unique characters, add it to the list
+        if char not in char_list:
+            char_list.append(char)
+
+    # Initialize a new string to store the altered characters
+    altered_string = ""
+
+    # Iterate through each character in the list of unique characters
+    for char in char_list:
+
+        # If the current character is not found in the given string within the specified indices, add it to the altered string
+        if string.find(char) == -1 or (string.find(char) >= 450 and string.find(char) <= 905):
+            altered_string += char
+
+    # Return the altered string
+    return altered_string

@@ -1,0 +1,3 @@
+
+def insert_before_character(s):
+    return s.replace("o", "o" + "o")

@@ -1,0 +1,26 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the found submatrices
+    found_submatrices = []
+    
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary submatrix with the current cell as its top-left corner
+            temp_submatrix = np.array([[matrix[i,j]]])
+            
+            # Loop through the rest of the rows and columns of the matrix
+            for k in range(i+1, matrix.shape[0]):
+                for l in range(j+1, matrix.shape[1]):
+                    # Add the current cell to the temporary submatrix
+                    temp_submatrix = np.append(temp_submatrix, [[matrix[k,l]]], axis=0)
+                    
+                    # Check if the sum of all integers in the temporary submatrix is equal to 93
+                    if np.sum(temp_submatrix) == 93:
+                        # If so, add the temporary submatrix to the list of found submatrices
+                        found_submatrices.append(temp_submatrix)
+                    
+    return found_submatrices

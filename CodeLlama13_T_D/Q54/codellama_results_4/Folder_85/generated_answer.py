@@ -1,0 +1,37 @@
+
+def all_right_truncatable_prime(numbers):
+    # Initialize an empty list to store the right-truncatable prime numbers
+    rtp_list = []
+    
+    # Iterate through the tuple of positive integers
+    for num in numbers:
+        # Check if the number is a right-truncatable prime
+        if is_right_truncatable_prime(num):
+            # If it is, add it to the list
+            rtp_list.append(num)
+    
+    # Sort the list in ascending order and return it
+    return sorted(rtp_list)
+
+def is_right_truncatable_prime(n):
+    # Check if the number is prime
+    if not is_prime(n):
+        return False
+    
+    # Iterate through the digits of the number, starting from the rightmost
+    for i in range(1, len(str(n)) + 1):
+        # Remove the last digit and check if the result is still prime
+        if not is_prime(int(str(n)[:-i])):
+            return False
+    
+    # If all digits pass the test, the number is a right-truncatable prime
+    return True
+
+def is_prime(n):
+    # Check if the number is divisible by any number between 2 and itself - 1
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    
+    # If it isn't divisible, it is prime
+    return True

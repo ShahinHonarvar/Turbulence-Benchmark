@@ -1,0 +1,21 @@
+
+def if_contains_anagrams(my_list):
+    # Set up a dictionary to count the number of anagram pairs in the list
+    anagram_count = {}
+
+    for word1 in my_list:
+        # Convert the word to lowercase for case-insensitive comparison
+        word1_lower = word1.lower()
+
+        for word2 in my_list:
+            # Skip comparing a word with itself
+            if word1_lower == word2.lower():
+                continue
+
+            # Check if the two words are anagrams of each other
+            if sorted(word1_lower) == sorted(word2.lower()):
+                # If they are, increment the count in the dictionary
+                anagram_count[word1] = anagram_count.get(word1, 0) + 1
+
+    # Check if there are at most 445 pairs of anagrams in the list
+    return len(anagram_count) <= 445

@@ -1,0 +1,3 @@
+
+def all_neg_ints_inclusive(L):
+    return [x for x in L if x < 0]

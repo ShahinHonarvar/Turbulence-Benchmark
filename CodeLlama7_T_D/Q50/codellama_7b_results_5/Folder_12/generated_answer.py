@@ -1,0 +1,26 @@
+
+def if_contains_anagrams(list_of_strings):
+    # Create a dictionary to store the counts of each string
+    string_counts = {}
+
+    # Loop through each string in the list
+    for string in list_of_strings:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # If the string is already in the dictionary, increment its count
+        if lowercase_string in string_counts:
+            string_counts[lowercase_string] += 1
+
+        # Otherwise, add it to the dictionary with a count of one
+        else:
+            string_counts[lowercase_string] = 1
+
+    # Loop through each key-value pair in the dictionary
+    for string, count in string_counts.items():
+        # If the count is at least three and there are at least 69 pairs of anagrams, return True
+        if count >= 3 and len(string_counts) >= 69:
+            return True
+
+    # Otherwise, return False
+    return False

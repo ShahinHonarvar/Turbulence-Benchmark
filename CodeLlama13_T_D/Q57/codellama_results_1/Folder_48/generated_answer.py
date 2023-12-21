@@ -1,0 +1,13 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    submatrices = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            sum_of_ints = 0
+            for k in range(i, len(matrix)):
+                for l in range(j, len(matrix[k])):
+                    sum_of_ints += matrix[k][l]
+                if sum_of_ints == -261:
+                    submatrices.append([(i, j), (k+1, l)])
+    return submatrices

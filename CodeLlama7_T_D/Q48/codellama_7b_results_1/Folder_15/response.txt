@@ -1,0 +1,22 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+# Extract the first and last elements of the tuple
+a = my_tuple[0]
+b = my_tuple[-1]
+# Initialize an empty list to store the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 0 and 4.
+sum_list = []
+# Iterate over the range of numbers from a + 1 to b - 1 (both inclusive), and check if each number is present in the tuple between indices 0 and 4. If the number is not present, add it to the sum list.
+for i in range(a + 1, b):
+if i not in my_tuple[0:5]:
+sum_list.append(i)
+# Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 0 and 4.
+sum = sum(sum_list)
+# Check if the sum is an odd number. If it is, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum.
+if sum % 2 == 1:
+return f"{sum:b}"[:-2]
+else:
+return f"{sum:x}"[:-2].upper()
+# If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, return an empty string.
+if len(my_tuple[0:5]) == b - a - 1:
+return ""
+```

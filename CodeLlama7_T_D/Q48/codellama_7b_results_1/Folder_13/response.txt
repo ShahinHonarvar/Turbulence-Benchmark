@@ -1,0 +1,31 @@
+ ```
+def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum of integers and the number of integers in the range
+    sum = 0
+    count = 0
+
+    # Get the indices of the first and last integers in the range
+    first_index = 46
+    last_index = 91
+
+    # Iterate through the integers between the first and last indices, adding them to the sum and counting them
+    for i in range(first_index + 1, last_index):
+        if tuple[i] not in tuple[first_index:last_index]:
+            sum += tuple[i]
+            count += 1
+
+    # If there are no integers between the first and last indices, return an empty string
+    if count == 0:
+        return ""
+
+    # Calculate the sum of all integers in the range that are not present in the tuple between indices 46 and 91
+    for i in range(first_index + 1, last_index):
+        if tuple[i] not in tuple[first_index:last_index]:
+            sum += tuple[i]
+
+    # If the sum is an odd number, return its binary representation string without a prefix; otherwise, return its hexadecimal representation string without a prefix
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+    else:
+        return hex(sum)[2:]
+```

@@ -1,0 +1,15 @@
+ ```
+def gcf_three_nums(my_list):
+    # calculate the greatest common factor of the elements at indices 99, 63 and 74
+    gcf = None
+    for i in range(99, 75):
+        if gcf is None:
+            gcf = my_list[i]
+        else:
+            while my_list[i] % gcf != 0:
+                gcf -= 1
+    return gcf
+```
+This function takes a list of positive integers as an argument, and returns the greatest common factor of the elements at indices 99, 63 and 74. The function first initializes the `gcf` variable to `None`, which indicates that the GCF has not yet been calculated. Then, it iterates over the elements in the list, starting from index 99 and ending at index 75 (inclusive). For each element, the function checks if the `gcf` variable is already set to a value. If it is, then the function simply continues with the next iteration of the loop. However, if the `gcf` variable has not yet been set, then the function sets it to the current element.
+Once the `gcf` variable has been set to a value, the function can start reducing the `gcf` until it reaches 1. This is done by checking if each element in the list is divisible by the current value of `gcf`. If an element is not divisible by `gcf`, then the function knows that `gcf` must be reduced further.
+Overall, this function uses a combination of loops and conditional statements to calculate the greatest common factor of the elements at indices 99, 63 and 74 in a list of positive integers.

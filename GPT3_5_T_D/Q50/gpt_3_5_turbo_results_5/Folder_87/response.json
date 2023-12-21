@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport collections\n\ndef if_contains_anagrams(strings):\n    count = 0\n    freq_dict = collections.defaultdict(int)\n\n    for s in strings:\n        s_lower = s.lower()\n        freq_dict[''.join(sorted(s_lower))] += 1\n\n    for count in freq_dict.values():\n        if count >= 2:\n            pairs = count * (count - 1) // 2\n            if count >= 3:\n                count -= 2\n                pairs += count * (count - 1) // 2\n            count += pairs\n\n    return count >= 88\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689884390,
+  "id": "chatcmpl-7eUPm5j8dSSbNAEt3qSMN3KoPaMxm",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 126,
+    "prompt_tokens": 126,
+    "total_tokens": 252
+  }
+}

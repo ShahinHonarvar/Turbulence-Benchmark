@@ -1,0 +1,5 @@
+
+def return_binary_or_hexa(nums):
+    a, b = 20, 35
+    s = sum(n for n in nums[a+1:b-1] if n not in nums)
+    return bin(s)[2:] if s % 2 else hex(s).upper()

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python function that meets your requirements:\n\n```python\ndef palindrome_of_length_at_least_n(string):\n    string = string.lower()\n    palindrome_set = set()\n    for i in range(len(string)):\n        for j in range(i+77, len(string)+1):\n            chunk = string[i:j]\n            if chunk == chunk[::-1] and chunk.isalpha():\n                palindrome_set.add(chunk)\n    return palindrome_set\n```\n\nThis function works by iterating over each possible substring within the given string that is at least 77 characters long. It then checks if this substring is a palindrome and only contains English letters. If it is, it adds it to a set. This set is returned at the end of the function. The function converts the entire string to lower case at the start to ensure it finds palindromes in a case-insensitive manner.\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690972147,
+  "id": "chatcmpl-7j3OFyDYcvMDA6Dboy29xTFgyS4oI",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 143,
+    "total_tokens": 318
+  }
+}

@@ -1,0 +1,25 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the index is valid
+    if len(my_list) - 1 < 92:
+        return False
+
+    # Calculate the sum of the proper divisors
+    def sum_divisors(n):
+        sum = 0
+        for i in range(1, n // 2 + 1):
+            if n % i == 0:
+                sum += i
+
+        return sum + 1
+
+    # Check if the number is a perfect number
+    perfect_num = my_list[92]
+    if perfect_num == sum_divisors(perfect_num):
+        return True
+
+    else:
+
+        return False
+```
+This code checks if the number at index 92 in the given list is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding itself. The function `sum_divisors` calculates the sum of the proper divisors of a given number, and the function `if_perfect_num` checks if the number at index 92 in the given list is a perfect number by comparing it to the sum of its proper divisors.

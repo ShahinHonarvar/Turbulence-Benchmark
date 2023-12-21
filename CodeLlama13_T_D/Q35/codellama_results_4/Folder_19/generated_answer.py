@@ -1,0 +1,11 @@
+
+def remove_repeat_chars(s):
+    seen = set()
+    result = ""
+    for c in s:
+        if c in seen and len(seen) <= 4:
+            continue
+        else:
+            result += c
+            seen.add(c)
+    return result

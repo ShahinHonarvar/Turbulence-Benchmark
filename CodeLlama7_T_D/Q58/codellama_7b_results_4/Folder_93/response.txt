@@ -1,0 +1,38 @@
+ Here is a possible implementation of the `submatrix_with_n_numbers` function:
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    count = 0
+    for i in range(matrix.shape[0] - n + 1):
+        for j in range(matrix.shape[1] - n + 1):
+            if all(matrix[i+k, j+l] == n for k in range(n) for l in range(n))):
+                count += 1
+    return count
+```
+To test the function, we can create a random matrix and check its submatrices. Here is an example of how to do this:
+```
+import numpy as np
+
+# Create a random matrix
+matrix = np.random.randint(0, 100, size=(10, 10))
+# Print the matrix
+#print(matrix)
+
+# Check the submatrices
+for i in range(matrix.shape[0]):
+    for j in range(matrix.shape[1]):
+#        print("Submatrix at", i, j)
+        # Get the submatrix
+        submatrix = matrix[i:i+3, j:j+3]
+        # Print the submatrix
+#        print(submatrix)
+        # Check if the submatrix has 53 integers
+        count = 0
+        for k in range(3):
+            for l in range(3):
+                if submatrix[k, l] == 53:
+                    count += 1
+#        print("Count:", count)
+```
+#This code will create a random matrix and check its submatrices. It will also print the count of all submatrices that contain 53 integers each.

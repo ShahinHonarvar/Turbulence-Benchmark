@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport math\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, math.isqrt(n) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef is_left_truncatable_prime(n):\n    if '0' in str(n):\n        return False\n    for i in range(len(str(n))):\n        if not is_prime(int(str(n)[i:])):\n            return False\n    return True\n\ndef all_left_truncatable_prime(tuple):\n    x = tuple[975]\n    return sorted([i for i in range(2, x) if is_left_truncatable_prime(i)], reverse=True)\n```\nAs per your requirement, I created 3 functions. The `is_prime(n)` checks if a number is prime or not. The `is_left_truncatable_prime(n)` checks if a number is left-truncatable prime or not by removing the leading leftmost digit and checking for prime. Finally, the `all_left_truncatable_prime(tuple)` function takes a tuple as an input, extracts the 975th element, checks all the numbers less than that if they are left-truncatable primes and returns them in descending order.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690912880,
+  "id": "chatcmpl-7inyKJb8qHEhBlUbb9xgyVq2tUx5Z",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 270,
+    "prompt_tokens": 146,
+    "total_tokens": 416
+  }
+}

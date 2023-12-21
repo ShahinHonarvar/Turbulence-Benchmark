@@ -1,0 +1,13 @@
+```
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)+1):
+            substring = s[i:j]
+            if len(substring) == 65 and not any(substring[k] in substring[:k] for k in range(1, len(substring))):
+                substrings.append(substring)
+    return list(set(substrings))
+```
+This code uses a nested loop to iterate over all possible start and end indices of the string `s` to find all distinct substrings of length 65 with no duplicate characters. The inner loop iterates from the current start index `i` to the next end index `j`, while the outer loop iterates through all possible start indices `i`.
+The list comprehension `[substring for substring in substrings if len(substring) == 65 and not any(substring[k] in substring[:k] for k in range(1, len(substring)))]` is used to filter out the duplicate substrings. The `set()` function is then used to convert the list of substrings into a set, which eliminates duplicates. Finally, the resulting set is converted back into a list using `list()`.
+Note that this solution assumes that the input string does not contain any duplicate characters itself, or the output list may contain duplicates.

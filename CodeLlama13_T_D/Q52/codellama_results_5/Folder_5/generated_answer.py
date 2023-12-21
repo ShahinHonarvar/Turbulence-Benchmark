@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return set([s[i:j+1] for i in range(len(s)-16) for j in range(i, len(s)) if s[i:j+1] == s[i:j+1][::-1]])

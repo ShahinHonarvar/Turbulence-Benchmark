@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return __import__("math").gcd(numbers[18], numbers[10]) * __import__("math").gcd(numbers[76], numbers[10])

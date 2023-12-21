@@ -1,0 +1,22 @@
+
+def return_n_greatest_chars(s, n):
+    # Check if s is a string and n is an integer
+    if not (isinstance(s, str) and isinstance(n, int))):
+        raise ValueError("The input must be a string and an integer")
+
+    # Check if n is a positive integer
+    if n <= 0:
+        raise ValueError("The number of characters to return must be a positive integer")
+
+    # Check if s has at least n distinct characters
+    if len(set(s)) < n:
+        raise ValueError("The input string does not have enough distinct characters to return the requested number")
+
+    # Create a list of the greatest ASCII values in s
+    ascii_values = [ord(c) for c in s]
+
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+
+    # Return the first n elements of the sorted list of ASCII values
+    return "".join([chr(v) for v in sorted_ascii_values[:n]])

@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(mylist):
+    return [x for x in range(0, 11) if x in mylist and x > 0]

@@ -1,0 +1,3 @@
+
+def all_even_ints_exclusive(numbers):
+    return [x for x in numbers[110:474] if x % 2 == 0]

@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[23] == sum(set(numbers[:23]))

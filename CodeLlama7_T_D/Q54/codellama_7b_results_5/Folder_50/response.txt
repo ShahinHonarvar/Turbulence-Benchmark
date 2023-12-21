@@ -1,0 +1,24 @@
+ ```
+def all_right_truncatable_prime(tuple):
+# Define a function that takes an argument, which is a tuple of positive integers.
+x = tuple[57] # Define x as the integer at index 57 in the input tuple.
+list = [] # Initialize an empty list to store the sorted list of all right-truncatable prime numbers less than x.
+for i in range(2, x): # Iterate from 2 to x - 1.
+if is_prime(i) and is_right_truncatable_prime(i, x): # Check if the current number is a prime number and if it remains prime when the last rightmost digit is successively removed.
+list.append(i) # Add the current number to the list of all right-truncatable prime numbers less than x.
+return sorted(list, reverse=True) # Return the sorted list of all right-truncatable prime numbers less than x in descending order.
+else: # If the current number is not a prime number or if it does not remain prime when the last rightmost digit is successively removed.
+continue # Go to the next iteration.
+
+def is_prime(n): # Define a function that takes an argument, which is a positive integer n. The function should return True if n is a prime number and False otherwise.
+for i in range(2, int(n ** 0.5) + 1): # Iterate from 2 to the square root of n plus 1.
+if n % i == 0: # Check if the current number is divisible by any other number between 2 and the square root of n plus 1.
+return False # If the current number is divisible by any other number between 2 and the square root of n plus 1, return False.
+return True # If the current number is not divisible by any other number between 2 and the square root of n plus 1, return True.
+
+def is_right_truncatable_prime(n, x): # Define a function that takes two arguments, which are positive integers n and x. The function should return True if n is a right-truncatable prime number less than x and False otherwise.
+for i in range(len(str(n)))): # Iterate from the last digit of n to the first digit.
+if int(str(n)) % 10 != i: # Check if the current digit is equal to the last digit of n. If not, return False.
+return True # If the current digit is equal to the last digit of n, return True.
+```
+Note that this code has not been tested for correctness and may contain syntax errors.

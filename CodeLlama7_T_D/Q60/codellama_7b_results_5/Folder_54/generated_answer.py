@@ -1,0 +1,32 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the left-and-right-truncatable prime numbers
+    left_right_truncatable_primes = []
+    # Iterate through the range of positive integers from 1 to x
+    for num in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(num):
+            # Check if the number contains no 0 and remains prime when the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.
+            if not "0" in str(num) and is_left_right_truncatable_prime(num):
+                # If the number satisfies the condition, add it to the list of left-and-right-truncatable prime numbers.
+                left_right_truncatable_primes.append(num)
+    return left_right_truncatable_primes
+def is_prime(n):
+    # Check if n is a positive integer.
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer.")
+    # Check if n is divisible by 2 to n - 1 without leaving a remainder.
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+def is_left_right_truncatable_prime(n):
+    # Check if n is a prime number.
+    if not is_prime(n):
+        return False
+
+    # Check if the leading leftmost and last rightmost digits of n are simultaneously successively removed down to a one- or two-digit prime.
+    for i in range(1, len(str(n)))):
+        if str(n)[i:] not in str(n)[:-i]):
+            return False
+
+    return True

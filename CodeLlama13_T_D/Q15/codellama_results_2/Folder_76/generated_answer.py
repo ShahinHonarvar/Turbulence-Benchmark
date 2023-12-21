@@ -1,0 +1,7 @@
+
+def sum_odd_ints_inclusive(numbers):
+    result = 0
+    for i in range(686, 987+1):
+        if numbers[i] % 2 == 1:
+            result += numbers[i]
+    return result

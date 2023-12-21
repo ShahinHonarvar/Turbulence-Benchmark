@@ -1,0 +1,12 @@
+ def return_nth_smallest_ascii(s):
+    # Find the indices of the characters in the string that occur between 5 and 82
+    start_idx = s.find('', 5)
+    end_idx = s.rfind('', 0, 82)
+    # Create a list of all the characters between the start and end indices
+    char_list = []
+    for i in range(start_idx, end_idx + 1):
+        char_list.append(s[i])
+    # Sort the character list by ASCII value
+    char_list.sort(key=ord)
+    # Return the 16th smallest ASCII value
+    return char_list[15]

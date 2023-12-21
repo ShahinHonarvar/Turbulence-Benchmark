@@ -1,0 +1,11 @@
+```
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string) - 96 + 1):
+        substr = string[i:i+96]
+        if len(substr) == 96 and all(c.isalpha() for c in substr):
+            rev_substr = substr[::-1]
+            if substr == rev_substr:
+                palindromes.add(substr)
+    return palindromes
+```

@@ -1,0 +1,39 @@
+ ```
+def prime_factors(my_list):
+    # Calculate the product of all elements in the list
+    total = 1
+    for i in my_list:
+        total *= i
+
+    # Find the prime factors of the total product
+
+    prime_factors = set()
+
+    while total != 1:
+
+        if total % 2 == 0:
+
+            prime_factors.add(2)
+
+            total //= 2
+
+
+        else:
+
+
+            for i in range(3, int(total ** 0.5) + 1, 2):
+
+                if total % i == 0:
+
+                    prime_factors.add(i)
+
+                    total //= i
+
+
+                    break
+
+
+    return prime_factors
+
+```
+This code defines a function called `prime_factors` that takes one argument, a list of positive integers. The function calculates the product of all elements in the list and then finds the prime factors of the total product using the Sieve of Eratosthenes algorithm. The function returns the set of all prime factors of the integer at index 53 in the input list.

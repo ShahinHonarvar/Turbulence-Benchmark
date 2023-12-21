@@ -1,0 +1,12 @@
+
+def lists_with_product_equal_n(lst):
+    result = []
+    for i in range(len(lst)):
+        for j in range(i, len(lst) + 1):
+            if (j - i) % 2 == 0: continue # skip even length sublists
+            prod = 1
+            for k in range(i, j):
+                prod *= lst[k]
+            if prod == 247:
+                result.append(lst[i:j])
+    return result

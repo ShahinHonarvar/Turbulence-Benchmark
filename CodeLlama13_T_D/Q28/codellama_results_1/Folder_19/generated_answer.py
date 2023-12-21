@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(string):
+    ascii_list = []
+    for i in range(0,19):
+        ascii_list.append(ord(string[i]))
+    smallest_ascii = sorted(set(ascii_list))[12]
+    return chr(smallest_ascii)

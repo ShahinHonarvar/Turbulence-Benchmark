@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert binary representation to decimal integer
+    dec_int = int(binary_rep, 2)
+    # Find the 7th number that occurs in the Fibonacci sequence
+    fib_seq = [0, 1]
+    for i in range(2, len(fib_seq)):
+        fib_seq.append(fib_seq[i-1] + fib_seq[i-2])
+    7th_num = fib_seq[-1]
+    # Check if decimal integer is divisible by 7th number
+    return dec_int % 7th_num == 0

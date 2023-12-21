@@ -1,0 +1,16 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables
+    total = 0
+    start_index = 7
+    end_index = 9
+
+    # Iterate through the list from the specified range
+    for i in range(start_index, end_index + 1):
+        # Check if the current integer is divisible by either -9 or -7
+        if my_list[i] % (-9) == 0 or my_list[i] % (-7) == 0:
+            # If it is, add it to the total
+            total += my_list[i]
+
+    # Return the sum of all integers divisible by either -9 or -7 from index 7 to index 9, both inclusive. If no such integers exist in the specified range, return 0.
+    return total

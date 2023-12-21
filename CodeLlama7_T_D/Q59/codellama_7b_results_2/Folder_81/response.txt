@@ -1,0 +1,49 @@
+ def all_left_truncatable_prime(x):
+    # Initialize a list to store the left-truncatable prime numbers less than x
+    left_truncatable_primes = []
+    # Iterate over the range of numbers from 1 to x - 1
+    for i in range(1, x - 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Initialize a variable to store the number of leading zeros
+            leading_zeros = 0
+
+            # While the number of leading zeros is less than the length of the number in string format
+            while leading_zeros < len(str(i)):
+                # If the digit at the current position of the number in string format is not a zero, break out of the loop
+                if str(i)[leading_zeros] != "0":
+                    break
+
+                # Increment the number of leading zeros by 1
+                leading_zeros += 1
+
+            # If the number of leading zeros is equal to the length of the number in string format, it means that all digits of the number are zeros, so we can add the number to the list of left-truncatable prime numbers
+            if leading_zeros == len(str(i))):
+                left_truncatable_primes.append(i)
+
+    # Return the sorted list of left-truncatable prime numbers less than x
+
+    return sorted(left_truncatable_primes)
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+
+    # If the number is less than 2, it is not prime
+
+    if n < 2:
+
+        return False
+
+
+    # Check if the number is divisible by any integer between 2 and the square root of the number
+
+    for i in range(2, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            return False
+
+
+    # If the number makes it to this point, it is prime
+
+    return True

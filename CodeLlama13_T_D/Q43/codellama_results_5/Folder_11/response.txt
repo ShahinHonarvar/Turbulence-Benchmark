@@ -1,0 +1,19 @@
+```python
+def find_primes_between_indices(nums):
+    prime_numbers = []
+    for i in range(55, 76+1):
+        if is_prime(nums[i]):
+            prime_numbers.append(nums[i])
+    return sorted(prime_numbers)
+```
+This code defines a function `find_primes_between_indices` that takes a list of integers as input and returns the sorted list of all prime numbers from index 55 to index 76, both inclusive. The function uses the `is_prime` function defined below:
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+The `is_prime` function checks whether a given number is prime or not by checking whether it is divisible by any of the numbers between 2 and its square root, inclusive. If no such divisor exists, then the number is prime.

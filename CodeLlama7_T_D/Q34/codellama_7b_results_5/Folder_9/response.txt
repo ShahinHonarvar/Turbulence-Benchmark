@@ -1,0 +1,19 @@
+ ```
+def find_original_set(sets):
+# Check if all elements in sets are unique
+if len(set(itertools.chain(*sets)))) < len(sets):
+raise ValueError("All elements in sets must be unique")
+
+# Sort the sets by size
+sorted_sets = sorted(sets, key=len)
+
+# Initialize the smallest set as the first element in sorted_sets
+smallest_set = sorted_sets[0]
+
+# Iterate through each set and check if it is a subset of smallest_set
+for i in range(1, len(sorted_sets)):
+if not all(element in smallest_set for element in sorted_sets[i])):
+smallest_set = sorted_sets[i]
+
+return smallest_set
+```

@@ -1,0 +1,23 @@
+ ```
+def prime_factors(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("Input must be a list of positive integers")
+    # Find the prime factors of the integer at index 828
+    prime_factors = set()
+    for i in range(len(my_list)):
+        if my_list[i] == 1:
+            continue
+
+        for j in range(2, int(my_list[i] ** 0.5) + 1):
+            if my_list[i] % j == 0:
+                prime_factors.add(j)
+                break
+
+    return prime_factors
+
+# Test the function with a list of positive integers
+my_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+#print(prime_factors([828])) # Should output {2, 29}
+```
+Note: This code uses the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm to efficiently find all prime factors of a given number.

@@ -1,0 +1,11 @@
+ ```
+def return_n_greatest_chars(string, n):
+    if len(string) < n:
+        raise ValueError("String must be at least {} characters long".format(n))
+    greatest_chars = []
+    for i in range(n):
+        greatest_char = max(string, key=ord)
+        string = string.replace(greatest_char, "", 1)
+        greatest_chars.append(greatest_char)
+    return sorted(greatest_chars)
+```

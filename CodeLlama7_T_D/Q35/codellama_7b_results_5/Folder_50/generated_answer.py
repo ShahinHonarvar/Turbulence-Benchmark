@@ -1,0 +1,13 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the characters removed
+    new_str = ""
+
+    # Iterate over the characters in the given string
+    for i in range(len(s)):
+        # Check if the current character is repeated between indices 13 and 76
+        if s.count(s[i]) > 1 and i >= 13 and i < 76:
+            # Remove all occurrences of the current character from the string
+            new_str += s[:i] + s[i+1:]
+
+    return new_str

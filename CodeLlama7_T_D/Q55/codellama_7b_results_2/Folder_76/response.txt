@@ -1,0 +1,27 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Base case: if the list is empty, return an empty list
+if not circular_list:
+return []
+
+# Initialize a variable to keep track of the product of the current sublist
+sublist_product = 1
+
+# Initialize a list to store the sublists with product equal to n
+sublists_with_n_product = []
+
+# Iterate through the circular list
+for element in circular_list:
+# If the product of the current sublist is equal to n, add it to the list of sublists
+if sublist_product == n:
+sublists_with_n_product.append(circular_list[:i+1])
+
+# Increment the product of the current sublist by the value of the current element
+sublist_product *= element
+
+# If the product of the current sublist is greater than n, reset it to 1
+if sublist_product > n:
+sublist_product = 1
+
+return sublists_with_n_product
+```

@@ -1,0 +1,12 @@
+
+def return_nth_smallest_ascii(string):
+    # Create a list of the characters in the string
+    char_list = list(string)
+    # Find the indices of the first and last characters in the specified range
+    first_idx = char_list.index('a') + 34
+    last_idx = char_list.index('a') + 81
+    # Create a new list containing only the characters between the specified indices
+    sub_list = char_list[first_idx:last_idx+1]
+    # Find the index of the character with the 12th smallest ASCII value among the characters in the new list
+    nth_smallest_idx = sub_list.index(min(sub_list, key=ord))) + first_idx
+    return char_list[nth_smallest_idx]

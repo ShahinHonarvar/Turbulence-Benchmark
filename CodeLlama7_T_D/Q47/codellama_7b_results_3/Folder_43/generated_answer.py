@@ -1,0 +1,26 @@
+
+def palindromes_of_specific_lengths(string, index_range=None, length_range=(23, 38)):
+    # Check if the input string is a palindrome in a case-insensitive manner
+    if not is_palindrome(string):
+        return set()
+    # Convert the input string to lowercase for easier comparison
+    string = string.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the substring specified by index_range, if provided
+    for i in range(*index_range or (41, 89 + 1))):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Iterate over the characters in the substring from index i to index j, both inclusive
+            for j in range(i, min(i + length_range[1] - length_range[0] + 1, len(string))):
+                # Check if the current character is a letter
+                if string[j].isalpha():
+                    # Append the current character to the palindrome string
+                    palindrome += string[j]
+            # Check if the constructed palindrome satisfies all the requirements
+            if len(palindrome) >= length_range[0] and len(palindrome) <= length_range[1] and is_palindrome(palindrome):
+                # Add the constructed palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    return palindromes

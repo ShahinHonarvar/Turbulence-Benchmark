@@ -1,0 +1,10 @@
+
+def find_subset_of_length_n(set):
+    # Calculate the number of all subsets of size n
+    number_of_subsets = 2 ** len(set)
+    # Calculate the number of subsets of size n that have a length of 14
+    number_of_subsets_with_length_14 = 0
+    for subset in itertools.combinations(set, 14):
+        if len(subset) == 14:
+            number_of_subsets_with_length_14 += 1
+    return number_of_subsets_with_length_14

@@ -1,0 +1,3 @@
+
+def palindrome_of_length_at_least_n(s):
+    return {x for x in re.findall("[A-Za-z]{12,}", s) if x == x[::-1]}

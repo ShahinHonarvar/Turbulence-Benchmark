@@ -1,0 +1,24 @@
+ def palindrome_of_length_n(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the string
+    for i in range(len(string)):
+        # Check if the character is a letter (not a space or punctuation)
+        if string[i].isalpha():
+            # Get the length of the current substring
+            substr_length = len(string[i:])
+            # If the length of the substring is less than or equal to 97
+            if substr_length <= 97:
+                # Initialize an empty string to store the palindrome
+                palindrome = ""
+
+                # Get the reverse of the current substring
+                substr_rev = string[i:].lower()[::-1]
+
+                # Check if the reverse of the current substring is a palindrome
+                if substr_rev == substr_rev[::-1]:
+                    # Add the palindrome to the set of palindromes
+                    palindromes.add(substr_rev)
+
+    # Return the set of palindromes
+    return palindromes

@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(331, 713):
+        if string[i] > 'M' and string[i] < '_':
+            string = string[:i] + string[i+1:]
+    return string

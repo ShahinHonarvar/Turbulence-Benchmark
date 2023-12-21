@@ -1,0 +1,11 @@
+
+def palindrome_of_length_n(string):
+    length = len(string)
+    if length < 420:
+        return set()
+    palindromes = set()
+    for i in range(length - 419):
+        substr = string[i:i+420]
+        if substr == substr[::-1]:
+            palindromes.add(substr)
+    return palindromes

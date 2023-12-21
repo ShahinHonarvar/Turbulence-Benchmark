@@ -1,0 +1,22 @@
+ Here's an example function that takes a list of integers as input and returns the set of all prime factors of the integer at index 97:
+```
+def prime_factors(my_list):
+    # Check if the input is a list
+    if not isinstance(my_list, list)):
+        raise TypeError("Input must be a list")
+
+    # Check if the list has enough elements to access index 97
+    if len(my_list) < 97:
+        raise IndexError("List is too short to access index 97")
+
+    # Get the integer at index 97 and factorize it
+    n = my_list[97]
+    factors = set()
+    for i in range(2, int(n ** 0.5) + 1):
+        while n % i == 0:
+            factors.add(i)
+            n /= i
+
+    return factors
+```
+This function takes a list of integers as input and returns the set of all prime factors of the integer at index 97 in the list. It first checks if the input is a list and if it has enough elements to access index 97. Then it gets the integer at index 97, factorizes it, and returns the set of prime factors.

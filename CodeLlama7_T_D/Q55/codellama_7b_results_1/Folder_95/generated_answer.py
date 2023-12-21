@@ -1,0 +1,16 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements in the circular list
+    for i in range(len(circular_list)):
+        # Get the current element and its successor
+        current_element = circular_list[i]
+        next_element = circular_list[(i+1)%len(circular_list)]
+        # Check if the product of the current element and its successor is equal to 28
+        if current_element * next_element == 28:
+            # If so, create a sublist containing the current element and its successor
+            sublists.append([current_element, next_element])
+
+    return sublists

@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize the sum to 0
+    sum = 0
+
+    # Loop through the list of integers, starting from index 90 and ending at index 200 (inclusive)
+    for i in range(90, 201):
+
+        # If the current integer is divisible by either -31 or 13, add it to the sum
+        if my_list[i] % (-31 or 13) == 0:
+            sum += my_list[i]
+
+    # Return the sum of all integers divisible by either -31 or 13 from index 90 to index 200, both inclusive. If no such integers exist in the specified range, return 0.
+    return sum

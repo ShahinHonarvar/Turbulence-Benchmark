@@ -1,0 +1,41 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more = False
+
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_str = my_list[i]
+        # Check if the current string is at least 3 characters long
+        if len(curr_str) >= 3:
+            # Create a copy of the current string
+            temp_str = curr_str
+
+            # Iterate over the remaining strings in the list
+            for j in range(i + 1, len(my_list)):
+                # Get the next string
+                next_str = my_list[j]
+                # Check if the next string is at least 3 characters long
+                if len(next_str) >= 3:
+                    # Create a copy of the next string
+                    temp_str2 = next_str
+
+                    # Check if the current string and the next string are anagrams of each other
+                    if sorted(temp_str) == sorted(temp_str2):
+                        # Increment the anagram count
+                        anagram_count += 1
+
+                        # If there are at least 48 pairs of anagrams, return true
+                        if anagram_count >= 48:
+                            three_or_more = True
+                            break
+
+    # Return false if there are no three or more letter strings in the list
+    if not three_or_more:
+        return False
+
+    # Return true if there are at least 48 pairs of anagrams in the list
+    else:
+        return True

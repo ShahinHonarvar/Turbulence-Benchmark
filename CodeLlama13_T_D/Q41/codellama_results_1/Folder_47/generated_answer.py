@@ -1,0 +1,6 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists between indices 37 and 76 (inclusive)
+    common_elements = set(list1[37:76]).intersection(list2[37:76])
+    
+    return common_elements

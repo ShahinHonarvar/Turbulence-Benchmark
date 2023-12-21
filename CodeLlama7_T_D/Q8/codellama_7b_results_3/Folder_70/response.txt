@@ -1,0 +1,33 @@
+ ```
+def all_even_ints_exclusive(my_list):
+    # Find the first even integer in the list
+    for i in range(38, len(my_list), 1):
+        if my_list[i] % 2 == 0:
+            start_index = i
+            break
+
+    else:
+
+        return []
+
+    # Find the last even integer in the list
+
+    for i in range(start_index, len(my_list), -1):
+        if my_list[i] % 2 == 0:
+            end_index = i
+            break
+
+    else:
+
+        return []
+
+    # Return the list of even integers from the specified range
+
+    return my_list[start_index + 1:end_index]
+```
+Explanation:
+
+This function takes a single argument, a list of integers. It returns a list containing all the even integers in the specified range, excluding the first and last elements if they are even.
+The function first finds the first even integer in the list by iterating through the list starting from index 38. If no even integer is found in this range, the function returns an empty list.
+Next, the function finds the last even integer in the list by iterating through the list starting from the index after the first even integer found earlier. Again, if no even integer is found in this range, the function returns an empty list.
+Once both the first and last even integers are found, the function returns a list containing all the even integers between these two indices, exclusive of the first and last elements if they are even.

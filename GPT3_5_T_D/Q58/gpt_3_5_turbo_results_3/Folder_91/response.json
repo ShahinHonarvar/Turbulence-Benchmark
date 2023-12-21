@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    for i in range(len(matrix)-4):\n        for j in range(len(matrix[0])-4):\n            if len(set(matrix[i:i+5, j:j+5].flatten())) == 5:\n                count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689846098,
+  "id": "chatcmpl-7eKSAXFCgK4Zxhxre9EtU8hiexgBr",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 76,
+    "prompt_tokens": 111,
+    "total_tokens": 187
+  }
+}

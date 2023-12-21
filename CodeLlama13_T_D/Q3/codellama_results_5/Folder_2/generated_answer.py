@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(mylist):
+    return [x for x in mylist if 15 <= x <= 39 and x > 0]

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    for i in range(len(matrix)):\n        for j in range(len(matrix[i])):\n            for k in range(i + 1, len(matrix) + 1):\n                for l in range(j + 1, len(matrix[i]) + 1):\n                    submatrix = matrix[i:k, j:l]\n                    if np.sum(submatrix) == -452:\n                        result.append(submatrix.tolist())\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689845595,
+  "id": "chatcmpl-7eKK3X0tqM5kvXhBD06KYBxxAa6eU",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 121,
+    "total_tokens": 228
+  }
+}

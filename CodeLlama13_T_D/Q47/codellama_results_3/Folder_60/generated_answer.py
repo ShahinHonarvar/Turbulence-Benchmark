@@ -1,0 +1,16 @@
+
+def palindromes_of_specific_lengths(string):
+    # Convert the string to lowercase
+    string = string.lower()
+    
+    # Find all substrings of length 32-34 in the specified index range
+    substrings = [string[23:82][i:i+j] for i in range(32, 35) for j in range(1, 3)]
+    
+    # Filter out non-palindromes and non-English letters
+    palindromes = []
+    for substring in substrings:
+        if substring == substring[::-1] and all(ord(c) >= 97 and ord(c) <= 122 for c in substring):
+            palindromes.append(substring)
+    
+    # Return the set of palindromes
+    return set(palindromes)

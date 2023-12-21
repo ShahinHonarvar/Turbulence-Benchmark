@@ -1,0 +1,14 @@
+```python
+def find_second_largest_num(my_list):
+    if len(my_list) < 2:
+        return None
+
+    sorted_list = sorted(my_list)[1:-1]
+
+    for i in range(29, 94):
+        if i in sorted_list:
+            return my_list[i]
+
+    return None
+```
+This function sorts the list and then loops through indices 29 to 93 (inclusive) checking whether they are present in the sorted list. If a matching index is found, it returns the element at that position in the original list. If no match is found, it returns `None`.

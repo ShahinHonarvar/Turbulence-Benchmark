@@ -1,0 +1,20 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Create a copy of the original matrix
+            submatrix = np.copy(matrix)
+            # Remove elements from the submatrix that are not in the current row and column
+            submatrix = submatrix[i:,j:]
+            # Sum the elements of the submatrix
+            sum_submatrix = submatrix.sum()
+            # If the sum is equal to -15, add the submatrix to the list
+            if sum_submatrix == -15:
+                submatrices.append(submatrix)
+    # Return the list of all submatrices that have a sum of -15
+    return submatrices

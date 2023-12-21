@@ -1,0 +1,12 @@
+```python
+def return_nth_smallest_ascii(s):
+    # find the 16th smallest ASCII value among characters between indices 5 and 82, both inclusive
+    ascii_values = []
+    for i in range(5, 83):
+        if s[i] not in ascii_values:
+            ascii_values.append(ord(s[i]))
+
+    # sort the list of ASCII values and return the 16th element
+    ascii_values.sort()
+    return chr(ascii_values[15])
+```

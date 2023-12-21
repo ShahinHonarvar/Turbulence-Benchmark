@@ -1,0 +1,13 @@
+```python
+def return_n_smallest_chars(my_string):
+    # Create a dictionary with the ASCII value of each character as key and the character itself as value
+    char_dict = {ord(c): c for c in my_string}
+    
+    # Sort the dictionary by key (ASCII value) in ascending order
+    sorted_chars = sorted(char_dict.items(), key=lambda x: x[0])
+    
+    # Create a list with the values of the first 64 characters
+    result = [c for c, _ in sorted_chars[:64]]
+    
+    return result
+```

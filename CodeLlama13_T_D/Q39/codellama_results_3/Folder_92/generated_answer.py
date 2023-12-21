@@ -1,0 +1,3 @@
+
+def return_n_greatest_chars(string):
+    return sorted([char for char in string if char.isascii()], key=lambda x: ord(x), reverse=True)[:63]

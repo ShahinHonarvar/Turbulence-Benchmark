@@ -1,0 +1,32 @@
+[cohere.Generation {
+	id: c384894a-4ef6-4f59-88a1-f06cfed13d5d
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'if_decimal_is_divisible' that takes one argument, a binary representation string of a non-negative decimal integer. In the given binary representation the most significant digit appears first. The function should return true if the decimal integer corresponding to the given string is divisible by the 7th number that occurs in the Fibonacci sequence; otherwise, it should return false. The first number that occurs in the Fibonacci sequence is 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def if_decimal_is_divisible(s):
+    m = re.match(r'(0b)?([01]+)', s)
+    if m:
+        s = int(m.group(2), 2)
+        if s == 13:
+            return True
+        elif s == 21:
+            return True
+        elif s == 34:
+            return True
+        elif s == 55:
+            return True
+        elif s == 89:
+            return True
+        elif s == 144:
+            return True
+        elif s == 233:
+            return True
+        elif s == 377:
+            return True
+    return False
+```
+	likelihood: None
+	token_likelihoods: None
+}]

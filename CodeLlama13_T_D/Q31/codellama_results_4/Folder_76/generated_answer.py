@@ -1,0 +1,7 @@
+
+def if_perfect_num(my_list):
+    # Check if the 537th element of the list is a perfect number
+    if my_list[536] == sum(factors(my_list[536])):
+        return True
+    else:
+        return False

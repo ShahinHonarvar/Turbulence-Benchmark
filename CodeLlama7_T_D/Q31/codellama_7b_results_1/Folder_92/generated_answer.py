@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        return False
+
+    # Get the integer at index 0
+    num = my_list[0]
+
+    # Check if the integer is a perfect number
+    sum = 0
+    for i in range(1, int(num ** 0.5) + 1):
+        if num % i == 0:
+            sum += i
+
+    return sum == num

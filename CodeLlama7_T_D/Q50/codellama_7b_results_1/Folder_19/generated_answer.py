@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(words):
+    count = 0
+    for i in range(len(words)):
+        for j in range(i+1, len(words)):
+            if sorted(words[i]) == sorted(words[j])):
+                count += 1
+                if count >= 84:
+                    return True
+
+    return False

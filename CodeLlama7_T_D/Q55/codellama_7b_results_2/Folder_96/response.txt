@@ -1,0 +1,35 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+        # create a copy of the input list
+        copied_list = circular_list.copy()
+        # initialize an empty list to store the sublists
+        sublists = []
+
+        # loop through each element in the list
+        for i in range(len(copied_list)):
+
+            # check if the current element is 0
+            if copied_list[i] == 0:
+                # initialize an empty list to store the elements of the sublist
+                sublist = []
+
+                # append the current element to the sublist
+                sublist.append(copied_list[i])
+
+                # loop through each element in the remaining list
+                for j in range(i+1, len(copied_list)):
+                    # check if the current element is a factor of 0
+                    if copied_list[j] % copied_list[i] == 0:
+                        # append the current element to the sublist
+                        sublist.append(copied_list[j])
+
+                # add the sublist to the list of sublists
+                sublists.append(sublist)
+
+                # remove the elements of the sublist from the copied list
+                for k in range(len(sublist)):
+                    copied_list.remove(sublist[k])
+
+        # return the list of sublists
+        return sublists
+```

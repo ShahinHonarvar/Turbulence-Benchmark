@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: de58f185-ce1a-4797-a267-8f83f4a34d45
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_binary_or_hexa' that takes one argument, a tuple of distinct nonnegative integers sorted in ascending order. Let 'a' denote the integer stored at index 427, and 'b' the integer stored at index 669. The function should calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 427 and 669. If the sum is an odd number, the function should return the binary representation string of the sum; otherwise, it should return the hexadecimal representation string of the sum. The binary representation should not be prefixed with '0b'. The hexadecimal representation should not be prefixed with '0x'. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in hexadecimal representation can be either in lowercase or uppercase. If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, the function should return an empty string.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```Python
+def return_binary_or_hexa(nums):
+    i = next((i for i in range(427, 669) if nums[i] == 0), None)
+    if i is None:
+        return ""
+    a = nums[i]
+    b = nums[i + 1]
+    if b - a - 1 % 2:
+        return bin(b - a - 1).zfill(b - a - 1).decode("ascii")
+    else:
+        return hex(b - a - 1).zfill(b - a - 1).decode("ascii")
+```
+	likelihood: None
+	token_likelihoods: None
+}]

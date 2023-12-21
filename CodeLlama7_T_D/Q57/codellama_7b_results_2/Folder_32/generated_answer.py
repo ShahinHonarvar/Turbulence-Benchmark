@@ -1,0 +1,25 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of the submatrix
+            submatrix_sum = 0
+            # Define the boundaries of the submatrix
+            start_row = i
+            start_col = j
+            end_row = i + 2
+            end_col = j + 2
+            # Check if the submatrix is valid and has a sum equal to 901
+            if start_row >= 0 and start_col >= 0 and end_row < matrix.shape[0] and end_col < matrix.shape[1]:
+                for k in range(start_row, end_row + 1):
+                    for l in range(start_col, end_col + 1):
+                        submatrix_sum += matrix[k][l]
+                if submatrix_sum == 901:
+                    # Add the valid submatrix to the list of submatrices
+                    submatrices.append([[matrix[start_row][start_col]], [[matrix[start_row + 1][start_col]]], [[matrix[end_row - 1][end_col]]], [[matrix[end_row][end_col]]]]])
+    return submatrices

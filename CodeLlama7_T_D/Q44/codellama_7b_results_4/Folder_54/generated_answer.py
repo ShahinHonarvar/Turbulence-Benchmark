@@ -1,0 +1,24 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Loop through the list and check if each number is composite
+    for i in range(14, 65):
+        if is_composite(my_list[i]):
+            composite_nums.add(my_list[i])
+
+    return composite_nums
+
+# Check if a number is composite by dividing it by all the prime numbers less than or equal to its square root
+def is_composite(n):
+    # Initialize a set to store the prime factors of n
+    prime_factors = set()
+
+    # Loop through the prime numbers less than or equal to the square root of n
+    for p in range(2, int(n**0.5) + 1)):
+        if n % p == 0:
+            prime_factors.add(p)
+
+    # If the set of prime factors is not empty, return True, else False
+    return len(prime_factors) > 0

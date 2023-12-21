@@ -1,0 +1,3 @@
+
+def find_subset_of_length_n(set):
+    return len([s for s in subset for s in set if len(s) == 307])

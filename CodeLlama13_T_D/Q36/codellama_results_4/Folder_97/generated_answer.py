@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_string = ""
+    for i, char in enumerate(string):
+        if 309 <= i < 591 and char > "S" and char < "m":
+            new_string += char
+    return new_string

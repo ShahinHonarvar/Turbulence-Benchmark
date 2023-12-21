@@ -1,0 +1,12 @@
+```
+def submatrix_with_n_numbers(mat):
+    n = len(mat)
+    m = len(mat[0])
+    count = 0
+    for i in range(n-6):
+        for j in range(m-6):
+            sub = mat[i:i+7,j:j+7]
+            if np.sum(sub) == 74*7:
+                count += 1
+    return count
+```

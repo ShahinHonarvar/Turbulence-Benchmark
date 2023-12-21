@@ -1,0 +1,7 @@
+
+def return_n_greatest_chars(string):
+    greatest_chars = []
+    for char in string:
+        if len(greatest_chars) < 31:
+            greatest_chars.append(char)
+    return sorted(greatest_chars, key=ord)

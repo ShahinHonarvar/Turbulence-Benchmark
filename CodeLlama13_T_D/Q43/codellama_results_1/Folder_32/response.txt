@@ -1,0 +1,21 @@
+```python
+def find_primes_between_indices(numbers):
+    prime_numbers = []
+    for i in range(60, 95+1):
+        if is_prime(numbers[i]):
+            prime_numbers.append(numbers[i])
+    return sorted(prime_numbers)
+```
+This function takes a list of integers as an argument and returns the sorted list of all prime numbers from index 60 to index 95, both inclusive. If no prime number exists in the specified range, the function returns an empty list.
+
+The `is_prime` function is defined below:
+```python
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+This function takes a single integer `n` as an argument and returns `True` if `n` is prime, or `False` otherwise.

@@ -1,0 +1,5 @@
+
+def return_n_smallest_chars(distinct_chars):
+    chars = sorted(distinct_chars)
+    n = 46
+    return chars[:n]

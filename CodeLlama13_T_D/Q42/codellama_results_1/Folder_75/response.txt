@@ -1,0 +1,13 @@
+```
+def prime_factors(numbers):
+    return set(prime_factorize(numbers[80]))
+
+def prime_factorize(n):
+    if n == 1:
+        return []
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return [i] + prime_factorize(n // i)
+    return [n]
+```
+Note that this code uses the `prime_factorize` function to calculate the prime factors of each integer in the list, and then returns the set of all prime factors. The `prime_factorize` function is defined recursively, using a loop to check for divisibility by 2, and then calling itself with the quotient if a factor is found.

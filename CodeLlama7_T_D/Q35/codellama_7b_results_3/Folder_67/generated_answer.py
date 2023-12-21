@@ -1,0 +1,22 @@
+
+def remove_repeat_chars(s):
+    # Initialize a dictionary to keep track of characters
+    char_dict = {}
+
+    # Iterate through the string and update the dictionary
+    for i in range(len(s)):
+        if s[i] not in char_dict:
+            char_dict[s[i]] = 1
+
+        else:
+
+            char_dict[s[i]] += 1
+
+    # Iterate through the dictionary and remove characters that occur more than once
+    for c, count in char_dict.items():
+
+        if count > 1:
+
+            s = s.replace(c, '')
+
+    return s

@@ -1,0 +1,9 @@
+```python
+def return_nth_smallest_ascii(s):
+    count = {}
+    for i in range(35, 53):
+        if s[i-1] not in count:
+            count[s[i-1]] = 0
+        count[s[i-1]] += 1
+    return sorted([(key, val) for key, val in count.items()], key=lambda x: (x[1], x[0]))[9][0]
+```

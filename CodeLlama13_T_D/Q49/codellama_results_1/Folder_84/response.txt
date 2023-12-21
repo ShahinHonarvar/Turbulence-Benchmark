@@ -1,0 +1,13 @@
+```
+def if_decimal_is_divisible(binary):
+    # Convert the binary representation string to an integer
+    decimal = int(binary, 2)
+    
+    # Calculate the Fibonacci sequence up to the 196th number
+    fibs = [0]
+    for i in range(195):
+        fibs.append((fibs[-1] + fibs[-2]) % (10**9 + 7))
+    
+    # Check if the decimal integer is divisible by the 196th Fibonacci number
+    return decimal % fibs[195] == 0
+```

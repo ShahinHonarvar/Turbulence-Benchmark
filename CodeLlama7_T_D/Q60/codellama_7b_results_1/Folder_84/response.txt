@@ -1,0 +1,10 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Create a list of all prime numbers less than or equal to x
+    prime_numbers = [p for p in range(2, x + 1) if all(p % i != 0 for i in range(2, int(p ** 0.5) + 1))]
+    # Create a list of all left-and-right-truncatable prime numbers less than or equal to x
+    left_right_truncatable_prime_numbers = [p for p in prime_numbers if str(p)[1:] == str(p)[2:]]
+    # Sort the list in descending order
+    sorted_left_right_truncatable_prime_numbers = sorted(left_right_truncatable_prime_numbers, reverse=True)
+    return sorted_left_right_truncatable_prime_numbers
+```

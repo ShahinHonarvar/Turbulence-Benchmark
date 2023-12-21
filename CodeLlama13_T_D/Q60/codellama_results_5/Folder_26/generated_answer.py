@@ -1,0 +1,47 @@
+
+def all_left_right_truncatable_prime(nums):
+    x = nums[81]
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i) and i not in prime_list:
+            prime_list.append(i)
+        else:
+            continue
+    
+    left_truncatable_list = [i for i in prime_list if all([is_left_truncatable(i, j) for j in range(10)])]
+    right_truncatable_list = [i for i in prime_list if all([is_right_truncatable(i, j) for j in range(10)])]
+    left_and_right_truncatable_list = list(set(left_truncatable_list).intersection(set(right_truncatable_list)))
+    
+    return sorted(left_and_right_truncatable_list, reverse=True)
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def is_left_truncatable(n, d):
+    s = str(n)
+    if s[d] != '0':
+        for i in range(len(s)-1, d-1, -1):
+            if s[i] == '0':
+                return False
+            elif is_prime(int(s[i:])):
+                continue
+            else:
+                return False
+    return True
+
+def is_right_truncatable(n, d):
+    s = str(n)
+    if s[d] != '0':
+        for i in range(d+1, len(s)+1):
+            if s[i] == '0':
+                return False
+            elif is_prime(int(s[:i])):
+                continue
+            else:
+                return False
+    return True

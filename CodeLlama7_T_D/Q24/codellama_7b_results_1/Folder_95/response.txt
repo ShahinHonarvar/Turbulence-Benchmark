@@ -1,0 +1,19 @@
+ ```
+def sum_of_divisors_in_range(n):
+    # Check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # Initialize the sum of divisors to 0
+    sum_of_divisors = 0
+
+    # Iterate over the range of integers from 35 to 98
+    for i in range(35, 99):
+        # Check if i is a divisor of n
+        if n % i == 0:
+            # Increment the sum of divisors by 1
+            sum_of_divisors += 1
+
+    # Return the sum of all positive divisors of n that are between 35 and 98, both inclusive
+    return sum_of_divisors
+```

@@ -1,0 +1,12 @@
+
+def palindrome_of_length_n(string):
+    palindromes = set()
+    for i in range(len(string) - 472 + 1):
+        substring = string[i:i+472]
+        if len(substring) != 472:
+            continue
+        if not all(c.isalpha() for c in substring):
+            continue
+        if substring == substring[::-1]:
+            palindromes.add(substring)
+    return palindromes

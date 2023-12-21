@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(word_list):
+# Initialize variables
+num_pairs = 0
+
+# Iterate over the list of words
+for word1 in word_list:
+    # Check if the current word is an anagram of any other word
+    for word2 in word_list:
+        # If the two words are not equal and they have at least three letters in common, then they may be anagrams
+        if word1 != word2 and len(set(word1) & set(word2))) >= 3:
+            # Increment the number of pairs found
+            num_pairs += 1
+
+# Return whether there are at most 75 pairs of anagrams in the given list
+return num_pairs <= 75
+```

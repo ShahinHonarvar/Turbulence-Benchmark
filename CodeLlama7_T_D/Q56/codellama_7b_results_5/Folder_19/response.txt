@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `all_substring_of_size_n` function:
+```python
+def all_substring_of_size_n(s):
+    n = len(s)
+    substrings = []
+    for i in range(n - 18 + 1):
+        substring = s[i:i+18]
+        if not any(c in substrings for c in substring):
+            substrings.append(substring)
+
+    return substrings
+```
+This function takes a single argument `s`, which is the input string that we want to extract substrings from. The function first calculates the length of the input string `n = len(s)`.
+Then, it initializes an empty list `substrings` that will store all the distinct substrings of size 18 with no duplicate characters.
+The function then iterates over each substring in the input string of size at least 18 (since we are looking for substrings of size 18), starting from the first character and moving along the string until the last character. For each substring, the function checks if any of its characters appear in the list `substrings` already. If not, it adds the substring to the `substrings` list.
+Finally, the function returns the `substrings` list. If no such substrings exist in the given string, the function should return an empty list.

@@ -1,0 +1,15 @@
+ ```
+def palindrome_of_length_at_least_n(input_string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each word in the input string
+    for word in input_string.split():
+        # Check if the word is a palindrome of length greater than or equal to n
+        if word == word[::-1] and len(word) >= n:
+            # Add the palindrome to the set
+            palindromes.add(word)
+    # Return the set of palindromes
+    return palindromes
+```
+This code defines a function called `palindrome_of_length_at_least_n` that takes two arguments: a string, and an integer representing the minimum length of the palindrome. The function returns a set containing all palindromes of the given string that have a length greater than or equal to the specified minimum length.
+The function first initializes an empty set called `palindromes` to store the palindromes that are found. Then, it loops through each word in the input string using the `split()` method. For each word, the function checks if it is a palindrome of length greater than or equal to the specified minimum length by comparing the word to its reverse. If the condition is true, the function adds the word to the set of palindromes. Finally, the function returns the set of palindromes found in the input string.

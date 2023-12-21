@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(318, 337):
+        if string[i] > 'B' and string[i] < 'z':
+            string = string[:i] + string[i+1:]
+    return string

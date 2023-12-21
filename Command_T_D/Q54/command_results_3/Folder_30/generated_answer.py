@@ -1,0 +1,48 @@
+import sys
+def all_right_truncatable_prime(n):
+    if n[37] < 2:
+        return []
+    is_prime = lambda n: all(n % d for d in range(3, int(n ** .5) + 1, 2))
+    def is_right_truncatable_prime(n):
+        while n % 2 == 0:
+            n //= 2
+        while n % 5 == 0:
+            n //= 5
+        # handle the other primes by removing the last digit one by one
+        # stop when the number is no longer prime
+        for d in range(5, n // 5 + 1):
+            if n % d == 0:
+                break
+            n //= d
+        return n == 1
+    primes = [2, 3, 5]
+    # find all primes that are right-truncatable
+    for p in primes:
+        if is_right_truncatable_prime(p):
+            yield p
+    # find all primes that are not right-truncatable
+    # and then filter out those that are already in the list
+    # this is O(sqrt(n)) instead of O(n)
+    # but should be fine for the given range
+    # we only need to check primes because all other numbers are multiple of something
+    for p in primes:
+        if p > n[37] or not is_prime(p):
+            continue
+        # binary search to find the next prime that is not right-truncatable
+        # the next prime is either the next prime or the previous prime
+        # because all primes are odd, we can start at the middle
+        # (we could also binary search only for even numbers, but that's slower)
+        # this is a 0-1 knapsack problem, so it's easy to solve
+        # if there is no next prime, then we are done
+        # if there is a next prime, then it is either the next prime or the previous prime
+        # so the next prime is either p * 2 or p * 2 - 1
+        # we can stop when the number is not prime anymore
+        # (we could also stop when the number is multiple of something, but that's slower)
+        # this is O(log(n)) instead of O(n)
+        for i in range(p * 2, n[37] // 2 + 1, p * 2 - 1):
+            if is_prime(i):
+                yield i
+                break
+        # if we get here, then there are no more primes
+        # so we are done
+    return sorted(set(primes + list(filter(is_right_truncatable_prime, primes)))))

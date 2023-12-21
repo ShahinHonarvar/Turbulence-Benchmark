@@ -1,0 +1,23 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize a variable to store the product of the current element and the previous element
+        product = 1
+
+        # Iterate over the remaining elements of the circular list starting from the current element
+        for j in range(i + 1, len(circular_list)):
+
+            # Update the product by multiplying it with the current element
+            product *= circular_list[j]
+
+            # If the product equals 25, add the sublist containing the previous elements to the list of sublists
+            if product == 25:
+                sublists.append(circular_list[i:j + 1])
+
+    # Return the list of sublists that satisfy the condition
+    return sublists

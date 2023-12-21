@@ -1,0 +1,31 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize the list of prime numbers
+    prime_numbers = []
+
+    # Iterate through the tuple elements
+    for element in tuple:
+
+        # Check if the element is a prime number
+        if is_prime(element):
+
+            # Add the element to the list of prime numbers
+            prime_numbers.append(element)
+
+    # Return the sorted list of right-truncatable prime numbers
+    return sorted(prime_numbers, key=lambda x: str(x)[1:] + str(x)[0])
+
+# Function to check if a number is prime
+def is_prime(n):
+
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        return False
+
+    # Check if n is divisible by 2 to n-1
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    # If the number is not divisible by any other number, it is prime
+    return True

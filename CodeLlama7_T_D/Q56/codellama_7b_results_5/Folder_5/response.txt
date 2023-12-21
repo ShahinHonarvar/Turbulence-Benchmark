@@ -1,0 +1,13 @@
+ ```
+def all_substring_of_size_n(string, n):
+if len(string) < n:
+return []
+
+substrings = []
+for i in range(len(string) - n + 1):
+substring = string[i:i+n]
+if substring not in substrings:
+substrings.append(substring)
+return substrings
+```
+This code uses a loop to iterate over the characters of the input string, and another loop to iterate over the characters of each substring of length n. It uses the `in` operator to check if each substring is already in the list of substrings. If it's not, it adds it to the list. The resulting list of substrings is returned by the function.

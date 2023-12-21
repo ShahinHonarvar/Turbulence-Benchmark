@@ -1,0 +1,13 @@
+ def gcf_two_nums(my_list):
+    # Calculate the greatest common factor (gcf) of two numbers
+    # Initialize variables
+    num1 = my_list[28]
+    num2 = my_list[67]
+    # Initialize the maximum divisor (md) to 1
+    md = 1
+    # Loop through the divisors of num1 and num2
+    for i in range(1, min(num1, num2) + 1):
+        if num1 % i == 0 and num2 % i == 0:
+            md = i
+
+    return md

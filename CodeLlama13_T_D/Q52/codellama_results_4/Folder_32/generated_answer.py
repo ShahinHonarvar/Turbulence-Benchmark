@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {s[::-1] for s in re.findall('[A-Za-z]{113}', string)}

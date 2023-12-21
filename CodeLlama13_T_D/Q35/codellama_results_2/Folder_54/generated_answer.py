@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    seen = {}
+    result = ""
+    for c in s[35:64]:
+        if c not in seen or seen[c] == 1:
+            result += c
+            seen[c] = 1
+    return result

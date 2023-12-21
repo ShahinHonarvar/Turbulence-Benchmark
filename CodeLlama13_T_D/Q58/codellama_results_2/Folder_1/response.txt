@@ -1,0 +1,13 @@
+```python
+import numpy as np
+
+def submatrix_with_n_numbers(mat):
+    n = 23
+    count = 0
+    for i in range(len(mat) - n + 1):
+        for j in range(len(mat[i]) - n + 1):
+            submat = mat[i:i+n, j:j+n]
+            if np.sum(submat == n) == n**2:
+                count += 1
+    return count
+```

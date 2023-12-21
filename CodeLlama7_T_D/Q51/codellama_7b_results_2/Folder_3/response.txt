@@ -1,0 +1,24 @@
+ ```
+def if_contains_anagrams(strings):
+    # Check if there are at most 66 pairs of anagrams in the given list
+    num_anagrams = 0
+    for i in range(len(strings)):
+        for j in range(i + 1, len(strings)):
+            if sorted(strings[i]) == sorted(strings[j]):
+                num_anagrams += 1
+                if num_anagrams > 66:
+                    return False
+
+    # Check if the strings are anagrams of the English letters and have a length of at least three
+
+    for string in strings:
+        if not all(letter in "abcdefghijklmnopqrstuvwxyz" for letter in string):
+            return False
+
+        if len(string) < 3:
+            return False
+
+    # If all checks pass, the list contains at most 66 pairs of anagrams
+
+    return True
+```

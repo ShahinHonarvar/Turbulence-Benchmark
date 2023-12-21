@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: 4dfab42b-dd26-4f0d-ad93-54fadc94a9ec
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'gcf_two_nums' that takes one argument, a list of positive integers, and returns the greatest common factor of the integers at indices 429 and 289.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import functools
+import operator as op
+
+@functools.lru_cache(maxsize=1)
+def gcf_two_nums(lst):
+    return max(list(map(gcf, lst[429], lst[289])), default=1)
+
+@functools.lru_cache(maxsize=1)
+def gcf(num):
+    if num < 2:
+        return 1
+    return gcf(num // 2) * 2
+```
+	likelihood: None
+	token_likelihoods: None
+}]

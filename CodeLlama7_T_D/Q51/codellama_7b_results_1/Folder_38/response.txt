@@ -1,0 +1,10 @@
+ ```
+def if_contains_anagrams(my_list):
+    # count the number of anagram pairs in the list
+    num_pairs = sum([1 for i in range(len(my_list) - 1)) for j in range(i + 1, len(my_list)) if sorted(my_list[i].lower()) == sorted(my_list[j].lower())])
+    # return True if there are at most 416 pairs of anagrams in the list
+    return num_pairs <= 416
+```
+This code defines a function called `if_contains_anagrams` that takes a single argument, a list of strings. The function returns `True` if there are at most 416 pairs of anagrams in the given list and `False` otherwise.
+The function first sorts each string in the list using the `sorted()` function and then compares them for equality using the `==` operator. If two strings are identical, they cannot be anagrams, so the function increments a counter by 1.
+After looping through all pairs of strings in the list, the function returns the value of the counter, which is either 0 (if there were no anagram pairs) or greater than 416 (if there were more than 416 anagram pairs). The function returns `False` if the counter is greater than 416.

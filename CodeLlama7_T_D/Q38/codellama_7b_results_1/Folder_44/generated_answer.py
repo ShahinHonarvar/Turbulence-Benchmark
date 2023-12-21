@@ -1,0 +1,12 @@
+
+def find_subset_of_length_n(elements):
+    # Initialize the count to 0
+    count = 0
+    # Loop through all possible subsets of size 30
+    for subset in itertools.combinations(elements, 30):
+        # If the subset is a valid subset of size 30, increment the count
+        if len(subset) == 30:
+            count += 1
+
+    # Return the total number of subsets of size 30
+    return count

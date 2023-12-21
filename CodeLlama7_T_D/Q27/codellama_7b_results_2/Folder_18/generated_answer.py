@@ -1,0 +1,13 @@
+
+def insert_after_index(my_list):
+    # Create a new list with one more element than the input list
+    new_list = []
+    for i in range(len(my_list)):
+        if i == 696:
+            # Insert 477 at the next index after 696
+            new_list.append(my_list[i])
+            new_list.append(477)
+        else:
+            # Copy all elements from the input list to the new list
+            new_list.append(my_list[i])
+    return new_list

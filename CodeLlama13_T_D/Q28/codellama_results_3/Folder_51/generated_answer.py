@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    char_dict = {}
+    for i in range(10, 74):
+        if string[i] not in char_dict:
+            char_dict[string[i]] = i
+    sorted_char_dict = sorted(char_dict.items(), key=lambda x: x[1])
+    return sorted_char_dict[8][0]

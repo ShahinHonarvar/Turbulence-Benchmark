@@ -1,0 +1,57 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all integers from 1 to x (inclusive)
+    for i in range(1, x + 1):
+        # Check if the current integer is a prime number
+        if is_prime(i):
+            # Check if the current integer is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the current integer to the list of prime numbers
+                prime_numbers.append(i)
+    # Return the sorted list of prime numbers
+    return sorted(prime_numbers, reverse=True)
+
+def is_prime(n):
+    # Check if n is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("n must be a positive integer")
+
+    # Check if n is an exact square
+    if math.sqrt(n) == int(math.sqrt(n)):
+        return False
+
+    # Use the Sieve of Eratosthenes to find all prime numbers up to n
+    sieve = [True] * (n + 1)
+    for p in range(2, int(math.sqrt(n)) + 1)):
+        if sieve[p]:
+            for i in range(p ** 2, n + 1, p):
+                sieve[i] = False
+
+    # Return True if n is a prime number and False otherwise
+    return sieve[n]
+
+def is_left_right_truncatable_prime(n):
+    # Check if n is a left-and-right-truncatable prime number
+    for i in range(len(str(n)) - 1):
+        # Extract the current digit from the string representation of n
+        digit = int(str(n)[i])
+        # Check if the current digit is a 0
+        if digit == 0:
+            return False
+
+    # Check if n contains only two digits
+    if len(str(n)) < 3:
+        return True
+
+    # Check if the leading leftmost and last rightmost digits of n are simultaneously successively removed down to a one- or two-digit prime
+    for i in range(len(str(n)) - 2):
+        # Extract the current digit from the string representation of n
+        digit = int(str(n)[i])
+        # Check if the current digit is not equal to the last rightmost digit
+        if digit != int(str(n)[-1])):
+            return False
+
+    # Return True if n is a left-and-right-truncatable prime number and False otherwise
+    return True

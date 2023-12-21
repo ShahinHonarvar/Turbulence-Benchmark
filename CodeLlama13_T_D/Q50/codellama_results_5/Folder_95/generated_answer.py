@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(string_list):
+    return sum([len(set(''.join(map(str.lower, p)))) == 93 for p in itertools.permutations(string_list)]) > 0

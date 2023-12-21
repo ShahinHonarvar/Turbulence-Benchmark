@@ -1,0 +1,7 @@
+
+def if_perfect_num(my_list):
+    if len(my_list) > 74:
+        num = my_list[74]
+        return num == sum(filter(lambda x: x < num and num % x == 0, range(1, int(num ** 0.5) + 1)))
+    else:
+        return False

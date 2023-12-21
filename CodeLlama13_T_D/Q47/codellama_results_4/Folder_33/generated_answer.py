@@ -1,0 +1,15 @@
+
+def palindromes_of_specific_lengths(string):
+    length = len(string)
+    if length < 130 or length > 295:
+        return set()
+    
+    substring = string[130:296]
+    palindromes = []
+    
+    for i in range(103, 158 + 1):
+        for j in range(length - i + 1):
+            if substring[j:j+i].lower() == substring[j:j+i][::-1].lower():
+                palindromes.append(substring[j:j+i])
+    
+    return set(palindromes)

@@ -1,0 +1,35 @@
+ ```
+def find_primes_between_indices(my_list):
+    # Find the indices of the first and last prime numbers in the list
+    first_prime = None
+    last_prime = None
+    for i in range(len(my_list)):
+        if is_prime(my_list[i]):
+            if first_prime is None:
+                first_prime = my_list[i]
+            last_prime = my_list[i]
+    # Return an empty list if no prime number exists in the specified range
+    if first_prime is None:
+        return []
+
+    # Return the sorted list of all prime numbers from index 63 to index 94, both inclusive
+    return sorted(my_list[first_prime:last_prime+1])
+
+def is_prime(n):
+
+    # Check if n is greater than 1
+
+    if n > 1:
+
+        # Check if n is a multiple of 2 to n-1
+
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+
+        return True
+
+    else:
+
+        return False
+```

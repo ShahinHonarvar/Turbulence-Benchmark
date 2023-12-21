@@ -1,0 +1,13 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(mat, n):
+    return len([s for s in all_submatrices(mat) if sum(s) == 85])
+
+def all_submatrices(mat):
+    return [
+        mat[i:i+3, j:j+3]
+        for i in range(mat.shape[0]-2)
+        for j in range(mat.shape[1]-2)
+    ]
+```

@@ -1,0 +1,18 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[20]
+b = tuple[36]
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple:
+sum += i
+if sum % 2 == 0:
+return hex(sum)
+else:
+return bin(sum)
+
+else:
+
+return ""
+```
+This code uses the `hex` and `bin` functions from Python's built-in `math` module to convert the sum of all integers from `a + 1` to `b - 1` that are not present in the tuple between indices 20 and 36 to a hexadecimal or binary representation string, respectively. The `hex` function returns a hexadecimal representation string with lowercase letters by default, while the `bin` function returns a binary representation string without prefixing zeros. If the sum is an odd number, the code returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The code also checks if all integers from `a + 1` to `b - 1` are present in the specified range in the tuple by using a loop to iterate through the tuple and checking for each integer whether it is present between indices 20 and 36. If all integers from `a + 1` to `b - 1` are present in the specified range in the tuple, the code returns an empty string.

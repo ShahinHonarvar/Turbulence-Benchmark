@@ -1,0 +1,30 @@
+ Here is a possible implementation of the function:
+```
+def return_binary_or_hexa(tuple):
+    # Initialize variables
+    sum = 0
+    binary_string = ''
+    hexadecimal_string = ''
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 90 and 97
+    for i in range(tuple[90], tuple[97]):
+        if i not in tuple[90:97]:
+            sum = sum + i
+
+    # Return the binary or hexadecimal representation string of the sum depending on whether the sum is an odd number or not.
+    if sum % 2 == 1:
+        return_string = bin(sum)[2:]
+
+    else:
+        return_string = hex(sum)[2:]
+
+    # Return the binary or hexadecimal representation string of the sum depending on whether the sum is an odd number or not.
+    if return_string == '':
+        return ''
+
+    else:
+        return return_string
+```
+The code first initializes three variables: `sum`, `binary_string`, and `hexadecimal_string`. It then calculates the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 90 and 97.
+If the sum is an odd number, the code returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary representation should not be prefixed with '0b'. The hexadecimal representation should not be prefixed with '0x'. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in hexadecimal representation can be either in lowercase or uppercase.
+If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, the code returns an empty string.

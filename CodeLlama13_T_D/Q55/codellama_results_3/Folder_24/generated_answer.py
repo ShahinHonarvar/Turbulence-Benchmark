@@ -1,0 +1,10 @@
+
+def lists_with_product_equal_n(mylist):
+    result = []
+    for i in range(len(mylist)):
+        temp = 1
+        for j in range(i, len(mylist)):
+            temp *= mylist[j]
+            if temp == -89:
+                result.append(mylist[i:j+1])
+    return result

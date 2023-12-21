@@ -1,0 +1,14 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate through the list and check if each element is not divisible by 97
+    for i in range(19, 69):
+        if my_list[i] % 97 != 0:
+            # If the element is not divisible by 97, add it to the result list
+            result.append(my_list[i])
+
+    # Return the result list
+
+    return result

@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(strings):
+    pairs = []
+    for i in range(len(strings)):
+        s1 = strings[i].lower()
+        for j in range(i+1, len(strings)):
+            s2 = strings[j].lower()
+            if len(s1) >= 3 and len(s2) >= 3:
+                pairs.append((s1, s2))
+    return len(pairs) >= 41

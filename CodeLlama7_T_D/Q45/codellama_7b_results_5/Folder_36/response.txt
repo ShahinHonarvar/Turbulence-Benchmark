@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `palindromes_between_indices` function:
+```python
+def palindromes_between_indices(string):
+    # Find the indices of the first and last letters of the string
+    start = 5
+    end = 8
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Iterate over the possible starting positions
+    for i in range(start, end + 1):
+        # Get the substring that starts at position `i` and ends at position `end`
+        substring = string[i:end]
+        # Check if the substring is a palindrome
+        if substring == substring[::-1]:
+            # Add the palindrome to the set
+            palindromes.add(substring)
+    return palindromes
+```

@@ -1,0 +1,37 @@
+ ```
+def prime_factors(my_list):
+    # Find the integer at index 222
+    target_index = 222
+    if target_index >= len(my_list):
+        # If the target index is out of bounds, return an empty set
+        return set()
+
+    else:
+
+        # Get the integer at the target index
+
+        target_value = my_list[target_index]
+
+        if target_value <= 1:
+
+            # If the target value is 0 or 1, return an empty set
+
+            return set()
+
+
+        else:
+
+            # Find all prime factors of the target value
+
+            prime_factors = []
+
+            for i in range(2, int(target_value ** 0.5) + 1):
+
+                while target_value % i == 0:
+
+                    prime_factors.append(i)
+
+                    target_value //= i
+
+            return set(prime_factors)
+```

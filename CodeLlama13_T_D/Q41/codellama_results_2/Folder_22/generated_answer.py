@@ -1,0 +1,6 @@
+
+def identical_elements(list1, list2):
+    # create a set of elements that occur in both lists between indices 40 and 200
+    common_elements = {element for element in set(list1[40:201]) & set(list2[40:201])}
+    
+    return common_elements

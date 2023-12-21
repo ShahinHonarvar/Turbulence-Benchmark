@@ -1,0 +1,11 @@
+```python
+def find_second_largest_num(my_list):
+    # Step 1: Get the largest element from index 15 to index 51, both inclusive
+    largest_element = max(my_list[15:52])
+
+    # Step 2: Find the second largest element by removing the largest element from the list and finding the max again
+    second_largest_element = max(set(my_list) - {largest_element})
+
+    return second_largest_element if second_largest_element is not None else 'None'
+```
+Note that this solution assumes that the input list contains only distinct numbers. If you want to handle duplicate elements, you can modify the function accordingly.

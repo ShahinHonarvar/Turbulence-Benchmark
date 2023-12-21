@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    filtered = ''
+    for i in range(len(string)):
+        if string[i].isalnum() and ord(string[i]) >= 6 and ord(string[i]) <= 95:
+            filtered += string[i]
+    return filtered

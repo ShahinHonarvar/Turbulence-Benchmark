@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the given specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    m, n = matrix.shape\n    for i in range(m):\n        for j in range(n):\n            for x in range(i, m):\n                for y in range(j, n):\n                    submatrix = matrix[i:x+1, j:y+1]\n                    if np.size(submatrix) == 173:\n                        count += 1\n    return count\n```\n\nThis function checks all possible submatrices within the given matrix and counts the ones that contain exactly 173 integers. This process could be slow for larger matrices since it has a time complexity of O(n^4).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690909817,
+  "id": "chatcmpl-7inAvA2soowNyj407dqaqQXxp2IbV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 154,
+    "prompt_tokens": 111,
+    "total_tokens": 265
+  }
+}

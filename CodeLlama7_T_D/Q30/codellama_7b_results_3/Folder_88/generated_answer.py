@@ -1,0 +1,17 @@
+
+def insert_before_character(string, char_to_insert):
+    # Create a new string with the inserted character
+    new_string = ""
+
+    # Loop through each character in the original string
+    for i in range(len(string)):
+        # If the current character is 'a', insert the character to be inserted before it
+        if string[i] == "a":
+            new_string += char_to_insert + "a"
+
+        # Otherwise, just add the character as-is to the new string
+        else:
+            new_string += string[i]
+
+    # Return the new string with the inserted character
+    return new_string

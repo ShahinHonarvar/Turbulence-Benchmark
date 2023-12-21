@@ -1,0 +1,27 @@
+
+def all_left_truncatable_prime(numbers):
+    x = numbers[177]
+    prime_numbers = []
+    for i in range(2, x):
+        if is_prime(i) and not contains_zero(str(i)):
+            prime_numbers.append(i)
+    left_truncatable_primes = []
+    for p in prime_numbers:
+        if is_left_truncatable_prime(p):
+            left_truncatable_primes.append(p)
+    return sorted(left_truncatable_primes)
+
+def is_prime(n):
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def contains_zero(s):
+    return '0' in s
+
+def is_left_truncatable_prime(p):
+    for i in range(1, len(str(p))):
+        if not is_prime(int(str(p)[i:])):
+            return False
+    return True

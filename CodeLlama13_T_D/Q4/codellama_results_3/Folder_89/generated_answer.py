@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(my_list):
+    return [i for i in my_list if 50 < i < 77 and i % 2 == 1]

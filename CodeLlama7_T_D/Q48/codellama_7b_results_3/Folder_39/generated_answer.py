@@ -1,0 +1,23 @@
+
+def return_binary_or_hexa(tuple):
+    # Check if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if all([i in tuple[44:91] for i in range(tuple[43] + 1, tuple[90] - 1)])):
+        return ""
+
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 44 and 91
+    else:
+        sum = 0
+
+        for i in range(tuple[43] + 1, tuple[90] - 1):
+            if i not in tuple[44:91]:
+                sum += i
+
+        # Return the binary or hexadecimal representation string of the sum
+
+        if sum % 2 == 1:
+
+            return "{:b}".format(sum)
+
+        else:
+
+            return "{:x}".format(sum)

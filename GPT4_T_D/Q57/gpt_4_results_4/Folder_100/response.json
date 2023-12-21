@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    sub_matrix_list = []\n    row_len, col_len = np.shape(matrix)\n    # Find all submatrices\n    for sub_row_len in range(1, row_len+1):\n        for sub_col_len in range(1, col_len+1):\n            for i in range(row_len+1-sub_row_len):\n                for j in range(col_len+1-sub_col_len):\n                    sub_matrix = matrix[i:i+sub_row_len, j:j+sub_col_len]\n                    if np.sum(sub_matrix) == 28:\n                        sub_matrix_list.append(sub_matrix)\n    return sub_matrix_list\n```\nPlease notice that the function will return numpy arrays as submatrices since it is manipulating a numpy matrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691095224,
+  "id": "chatcmpl-7jZPMnUnN4zuO7PUxXmrMyUjQrAcu",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 165,
+    "prompt_tokens": 121,
+    "total_tokens": 286
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(mat):\n    count = 0\n    rows, cols = mat.shape\n    for r1 in range(rows):\n        for c1 in range(cols):\n            for r2 in range(r1+1, rows+1):\n                for c2 in range(c1+1, cols+1):\n                    submatrix = mat[r1:r2, c1:c2]\n                    if submatrix.size == 191:\n                        count += 1\n    return count\n```\nThis function calculates the count of submatrices with exactly 191 integers by iterating over all possible submatrices in the given 2D numpy matrix. If the size property of a submatrix matches the required size (191), the count is incremented. Finally, it returns the count.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690908962,
+  "id": "chatcmpl-7imx8i4BqNzEjIE5O3dKc62A4LYU5",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 111,
+    "total_tokens": 281
+  }
+}

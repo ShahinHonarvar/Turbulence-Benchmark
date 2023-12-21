@@ -1,0 +1,17 @@
+ def return_binary_or_hexa(tuple):
+    # Get the integers a and b from the tuple
+    a = tuple[16]
+    b = tuple[87]
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 16 and 87
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in tuple[16:87]:
+            sum += i
+    # Check if the sum is an odd number
+    if sum % 2 == 1:
+        return f"{sum:b}"
+    else:
+        return f"{sum:x}"
+    # If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, return an empty string
+    if len(tuple[16:87]) == b - a - 1:
+        return ""

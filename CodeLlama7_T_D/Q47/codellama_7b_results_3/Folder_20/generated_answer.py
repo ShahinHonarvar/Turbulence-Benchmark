@@ -1,0 +1,17 @@
+
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for consideration
+    substring = string[20:74]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Define the current character and its opposite
+        char = substring[i]
+        opp_char = substring[len(substring) - 1 - i]
+        # Check if the current character and its opposite form a palindrome
+        if char == opp_char:
+            # If they do, add it to the set of palindromes
+            palindromes.add(char + opp_char)
+    # Return the set of palindromes with lengths between 36 and 42 (both inclusive)
+    return palindromes

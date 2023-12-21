@@ -1,0 +1,11 @@
+```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    n = 7
+    count = 0
+    for i in range(len(matrix) - n + 1):
+        for j in range(len(matrix[0]) - n + 1):
+            if all([matrix[k][j:j+n] == matrix[i][j] for k in range(i, i+n)]):
+                count += 1
+    return count
+```

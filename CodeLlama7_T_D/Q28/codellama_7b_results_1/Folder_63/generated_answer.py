@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string that occur between 47 and 70
+    start_index = string.find('a', 47)
+    end_index = string.rfind('z', 70)
+    # If no such character is found, return None
+    if start_index == -1 or end_index == -1:
+        return None
+
+    # Return the character with the 14th smallest ASCII value among those characters in the string that occur between indices 47 to 70, both inclusive.
+    return sorted(string[start_index:end_index+1])[13]

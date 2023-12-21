@@ -1,0 +1,9 @@
+
+def find_original_set(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18):
+    sets = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18]
+    original_set = set()
+    for i in range(len(sets)):
+        for element in sets[i]:
+            if element not in original_set:
+                original_set.add(element)
+    return original_set

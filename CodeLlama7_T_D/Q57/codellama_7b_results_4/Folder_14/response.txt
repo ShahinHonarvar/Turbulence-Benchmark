@@ -1,0 +1,27 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to store the sum of all integers in the submatrix
+            sum = 0
+            # Loop through each element of the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # Add the value of the current element to the sum variable
+                    sum += matrix[k][l]
+            # Check if the sum is equal to -93
+            if sum == -93:
+                # If it is, add the submatrix to the list of submatrices
+                submatrices.append(matrix[i:i + 3, j:j + 3])
+    # Return the list of all submatrices that have a sum of -93
+    return submatrices
+```
+This code defines a function called `submatrix_with_particular_sum` that takes one argument which is a two-dimensional numpy matrix of integers. The function returns a list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals -93. If no such submatrix is found, the function should return an empty list.
+The code first initializes an empty list to store the submatrices and then loops through each row of the matrix using the `for` loop. For each row, it then loops through each column of the matrix using another `for` loop.
+For each element in the submatrix, the code calculates the sum of all integers in the submatrix by iterating over each element in the submatrix and adding its value to the `sum` variable. Once it has calculated the sum for each submatrix, it checks if the sum is equal to -93. If it is, it adds the submatrix to the list of submatrices that have a sum of -93.
+Finally, the code returns the list of all submatrices that have a sum of -93.

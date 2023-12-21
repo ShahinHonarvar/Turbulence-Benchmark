@@ -1,0 +1,22 @@
+
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count of submatrices with 29 integers each
+    count = 0
+    # Loop through each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element is equal to 29
+            if matrix[i][j] == 29:
+                # Initialize a new submatrix with the current element
+                submatrix = np.array([[matrix[i][j]]]])
+
+                # Loop through each row and column of the submatrix
+                for k in range(submatrix.shape[0]):
+                    for l in range(submatrix.shape[1]):
+                        # Check if the current element is equal to 29
+                        if submatrix[k][l] == 29:
+                            # Increment the count of submatrices with 29 integers each
+                            count += 1
+
+    return count

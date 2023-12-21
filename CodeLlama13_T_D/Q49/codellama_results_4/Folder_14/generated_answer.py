@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary_string):
+    binary_list = list(reversed([int(i) for i in binary_string]))
+    
+    fibonacci_seq = [0, 1, 2, 3, 5, 8, 13, 21, 34]
+    
+    for index, num in enumerate(binary_list):
+        if index == len(fibonacci_seq) - 1:
+            return True
+        elif fibonacci_seq[index] % binary_list[index] != 0:
+            break
+    else:
+        return False

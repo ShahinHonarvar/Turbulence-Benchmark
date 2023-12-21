@@ -1,0 +1,17 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Create a submatrix by slicing out the current row and column
+            submatrix = matrix[i:, j:]
+            # Check if the sum of all integers in the submatrix equals 616
+            if np.sum(submatrix) == 616:
+                # If it does, add it to the list of submatrices
+                submatrices.append(submatrix)
+    # Return the list of submatrices
+    return submatrices

@@ -1,0 +1,3 @@
+
+def prime_factors(nums):
+    return set(filter(lambda x: all([x % y for y in range(2, int(x**0.5) + 1)]), nums[478]))

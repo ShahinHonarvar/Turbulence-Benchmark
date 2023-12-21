@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(my_list):
+    # check if the list is empty or None
+    if my_list is None or len(my_list) == 0:
+        return False
+
+    # create a set of all anagram pairs in the list
+    anagram_pairs = set()
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                anagram_pairs.add((i, j))
+    # check if the number of anagram pairs is less than or equal to 276
+    return len(anagram_pairs) <= 276

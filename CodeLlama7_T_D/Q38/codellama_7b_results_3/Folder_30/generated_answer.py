@@ -1,0 +1,14 @@
+
+def find_subset_of_length_n(set):
+    # Initialize the result variable
+    result = 0
+
+    # Iterate over all possible subsets of size n
+    for subset in itertools.combinations(set, n):
+        # If the current subset has length equal to n
+        if len(subset) == n:
+            # Increment the result variable by 1
+            result += 1
+
+    # Return the result variable
+    return result

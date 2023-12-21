@@ -1,0 +1,56 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the left-truncatable prime numbers
+    primes = []
+
+    # Iterate from 1 to x, inclusive
+
+    for i in range(1, x + 1):
+
+        # Check if i is a prime number
+
+        if is_prime(i):
+
+            # Initialize an empty string to store the digits of i
+
+            digits = ""
+
+            # Iterate through the digits of i
+
+            for char in str(i):
+
+                # Append each digit to the string
+
+                digits += char
+
+            # Initialize a counter to keep track of the number of leading 0s
+
+            count = 0
+
+            # Iterate through the digits of i, starting from the leftmost position
+
+            for j in range(len(digits)):
+
+                # Check if the current digit is 0
+
+                if digits[j] == "0":
+
+                    # Increment the counter by 1
+
+                    count += 1
+
+            # Check if the number of leading 0s is equal to the number of digits in i, minus 1 (since we start counting from 1)
+
+            if count == len(digits) - 1:
+
+                # Add i to the list of left-truncatable prime numbers
+
+                primes.append(i)
+
+    # Sort the list of left-truncatable prime numbers in descending order
+
+    primes.sort(reverse=True)
+
+    # Return the sorted list of left-truncatable prime numbers
+
+    return primes

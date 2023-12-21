@@ -1,0 +1,16 @@
+
+def filter_chars(string):
+    # Create a new empty string
+    new_string = ""
+
+    # Iterate over the characters in the given string
+    for char in string:
+        # Check if the current character is between indices 38 and 99, both inclusive
+        if 37 < len(new_string) < 100 and ord('A') <= ord(char) <= ord('Q'):
+            # Remove all occurrences of this character from the new string
+            new_string = new_string.replace(char, "")
+        else:
+            # Add the current character to the new string
+            new_string += char
+
+    return new_string

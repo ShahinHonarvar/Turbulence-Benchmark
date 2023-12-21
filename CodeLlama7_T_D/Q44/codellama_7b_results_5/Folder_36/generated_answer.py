@@ -1,0 +1,12 @@
+
+def composite_nums_between_indices(my_list):
+    # create a list of composite numbers between indices 686 and 987
+    composite_nums = []
+    for i in range(686, 988):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]) ** 0.5 + 1):
+                if my_list[i] % j == 0:
+                    composite_nums.append(my_list[i])
+                    break
+
+    return set(composite_nums)

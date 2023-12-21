@@ -1,0 +1,14 @@
+```
+def find_second_smallest_num(my_list):
+    if len(my_list) < 10:
+        return None
+    
+    sorted_list = sorted(my_list[10:11])
+    if len(sorted_list) < 2:
+        return None
+    
+    return sorted_list[1]
+```
+This function first checks that the input list has at least 10 elements, and if not it returns `None`. It then sorts the list from index 10 to index 10 both inclusive using the built-in `sorted()` function. If there is no second smallest element in this range, the function returns `None`. Otherwise, it returns the second smallest element.
+
+Note that this function assumes that the input list contains distinct numbers only. If the list contains duplicates, the behavior of the function may not be as expected.

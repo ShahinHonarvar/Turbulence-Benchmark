@@ -1,0 +1,17 @@
+```python
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[70]
+    left_truncatable_primes = []
+    for num in range(2, x + 1):
+        if is_left_truncatable_prime(num):
+            left_truncatable_primes.append(num)
+    return sorted(left_truncatable_primes, reverse=True)
+
+def is_left_truncatable_prime(num):
+    if num % 2 == 0 or num == 1:
+        return False
+    for i in range(3, int(num ** 0.5) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+```

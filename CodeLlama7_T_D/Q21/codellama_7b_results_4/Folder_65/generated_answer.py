@@ -1,0 +1,14 @@
+
+def all_ints_div_by_num(my_list):
+    # initialize an empty list to store the divisible integers
+    divisible_ints = []
+
+    # loop through the specified range of indices in the input list
+    for i in range(14, 57):
+        # check if the current element is divisible by -59
+        if my_list[i] % -59 == 0:
+            # if so, add it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+
+    # return the list of all integers divisible by -59 from index 14 to index 56, both inclusive
+    return divisible_ints

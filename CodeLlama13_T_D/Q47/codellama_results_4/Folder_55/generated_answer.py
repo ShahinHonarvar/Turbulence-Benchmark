@@ -1,0 +1,10 @@
+
+def palindromes_of_specific_lengths(string):
+    # find all substrings of length 10-20 that occur between index 10 and 75, both inclusive
+    substrings = []
+    for i in range(10, 76):
+        for j in range(i + 10, min(i + 21, len(string))):
+            substring = string[i:j]
+            if substring == substring[::-1]:
+                substrings.append(substring)
+    return set(substrings)

@@ -1,0 +1,17 @@
+```python
+def find_second_smallest_num(numbers):
+    if len(numbers) <= 1:
+        return None
+    
+    # sort the list in ascending order
+    sorted_list = sorted(numbers)
+    
+    # find the second smallest element from index 82 to index 86, both inclusive
+    for i in range(82, 87):
+        if sorted_list[i] == sorted_list[i - 1]:
+            continue
+        return sorted_list[i]
+    
+    # if no such element is found, return None
+    return None
+```

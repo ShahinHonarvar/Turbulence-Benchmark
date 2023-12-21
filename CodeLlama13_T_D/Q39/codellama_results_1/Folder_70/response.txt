@@ -1,0 +1,6 @@
+```
+def return_n_greatest_chars(string):
+    sorted_list = sorted(set(string), key=lambda x: ord(x), reverse=True)
+    return "".join(sorted_list[:2])
+```
+This function first creates a set of the distinct characters in the input string. Then it sorts this set using the `ord` function to get the ASCII value of each character, and reverses the sorting order to have the greatest values at the end of the list. Finally, it returns the first two characters of the sorted list as a string.

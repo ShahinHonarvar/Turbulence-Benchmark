@@ -1,0 +1,11 @@
+
+def filter_chars(s):
+    result = ""
+    for i in range(len(s)):
+        if i < 2 or i > 7:
+            result += s[i]
+        elif s[i] <= 'h' or s[i] >= 'k':
+            continue
+        else:
+            result += s[i]
+    return result

@@ -1,0 +1,36 @@
+
+def if_contains_anagrams(word_list):
+    # Define the anagram check function
+    def is_anagram(s1, s2):
+        return sorted(s1) == sorted(s2)
+    # Initialize the counter for the number of anagrams found
+    num_anagrams = 0
+    # Iterate over the list of words
+    for word in word_list:
+        # Ignore words that are not at least three letters long
+        if len(word) < 3:
+            continue
+
+        # Convert the word to uppercase for case-insensitive comparison
+        word = word.upper()
+
+        # Check if there is another word in the list that is an anagram of the current word
+        for other_word in word_list:
+            # Ignore words that are not at least three letters long
+            if len(other_word) < 3:
+                continue
+
+            # Convert the other_word to uppercase for case-insensitive comparison
+            other_word = other_word.upper()
+
+            # Check if the current word is an anagram of the other word
+            if is_anagram(word, other_word):
+                # Increment the counter for the number of anagrams found
+                num_anagrams += 1
+
+                # If there are more than 11 pairs of anagrams in the list, return false immediately
+                if num_anagrams > 11:
+                    return False
+
+    # If there are less than or equal to 11 pairs of anagrams in the list, return true
+    return True

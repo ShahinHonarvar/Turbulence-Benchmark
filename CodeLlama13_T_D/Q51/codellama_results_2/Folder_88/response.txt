@@ -1,0 +1,20 @@
+```
+def if_contains_anagrams(strings):
+    anagram_pairs = []
+    for string in strings:
+        anagrams = get_anagrams(string)
+        if len(anagrams) >= 3 and len(anagrams) <= 407:
+            anagram_pairs.extend([(string, anagram) for anagram in anagrams])
+    return True if len(anagram_pairs) > 0 else False
+
+def get_anagrams(string):
+    # generate all anagrams of the string
+    anagrams = []
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            anagram = string[i:j]
+            if len(anagram) >= 3 and anagram not in anagrams:
+                anagrams.append(anagram)
+    return anagrams
+```
+Note: This solution is based on the assumption that the input strings are already preprocessed to remove any non-alphanumeric characters. If this is not the case, you may need to modify the `get_anagrams` function accordingly.

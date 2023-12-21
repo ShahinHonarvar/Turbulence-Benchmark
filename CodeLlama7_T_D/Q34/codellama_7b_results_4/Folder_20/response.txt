@@ -1,0 +1,25 @@
+ ```
+def find_original_set(sets):
+    # create an empty set to store the original sets
+    original_sets = set()
+
+    for set in sets:
+        # add each set to the original_sets set
+        original_sets.add(set)
+
+    smallest_set = None
+
+    while len(original_sets) > 1:
+        # get the first two sets from the original_sets set
+        first_set, second_set = original_sets.pop(), original_sets.pop()
+
+        # create a new set that is the union of the first two sets
+        combined_set = first_set | second_set
+
+        # add the combined set to the original_sets set
+        original_sets.add(combined_set)
+
+    # return the smallest set from the original_sets set
+    return smallest_set
+
+```

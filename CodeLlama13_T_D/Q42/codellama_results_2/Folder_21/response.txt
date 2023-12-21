@@ -1,0 +1,12 @@
+```python
+def prime_factors(list_of_integers):
+    return set(prime_factors_helper(list_of_integers[410]))
+
+def prime_factors_helper(integer):
+    if integer <= 1:
+        return []
+    for i in range(2, int(integer**0.5) + 1):
+        if integer % i == 0:
+            return [i] + prime_factors_helper(integer // i)
+    return [integer]
+```

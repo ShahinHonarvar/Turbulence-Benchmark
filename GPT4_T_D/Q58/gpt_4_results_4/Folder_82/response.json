@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    row, col = matrix.shape\n    for subRow in range(1,row+1):\n        for subCol in range(1,col+1):\n            if subRow*subCol == 99:\n                count += (row-subRow+1)*(col-subCol+1)\n    return count\n```\nThis function takes a two-dimensional numpy matrix as an input, iterates over all possible sizes of submatrices (from 1x1 to the size of the original matrix), checks whether the size of the current submatrix equals to 99, and if it does, increases the counter by the number of such submatrices of the current size in the original matrix. The function then returns the total count of submatrices of size 99.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691097399,
+  "id": "chatcmpl-7jZyRmeINBjYikeFYlrmK40sfav16",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 178,
+    "prompt_tokens": 111,
+    "total_tokens": 289
+  }
+}

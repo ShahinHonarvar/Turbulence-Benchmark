@@ -1,0 +1,27 @@
+ ```
+def gcf_three_nums(my_list):
+return gcf(my_list[7], my_list[9], my_list[0])
+def gcf(a, b, c):
+# Calculate the greatest common divisor of a and b
+gcd_ab = gcd(a, b)
+# Calculate the greatest common divisor of a and c
+gcd_ac = gcd(a, c)
+# Calculate the greatest common divisor of b and c
+gcd_bc = gcd(b, c)
+# Return the least common multiple of a, b, and c
+return lcm(a, b, c)
+def gcd(a, b):
+while b != 0:
+a, b = b, a % b
+return a
+
+def lcm(a, b, c):
+# Calculate the least common multiple of a and b
+lcm_ab = a * b / gcd(a, b)
+# Calculate the least common multiple of a and c
+lcm_ac = a * c / gcd(a, c)
+# Calculate the least common multiple of b and c
+lcm_bc = b * c / gcd(b, c)
+# Return the product of the least common multiples of a, b, and c
+return lcm_ab * lcm_ac * lcm_bc
+```

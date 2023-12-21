@@ -1,0 +1,58 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize list of left-truncatable prime numbers
+    ltp = []
+
+    # Iterate over the tuple of positive integers
+    for num in tuple:
+
+        # Check if the number is a prime number
+        if is_prime(num):
+
+            # Initialize the current number as the first left-truncatable prime number
+            ltp.append(num)
+
+            # Iterate over the digits of the number from right to left
+            for i in range(len(str(num))) - 1, -1:
+
+                # Check if the current digit is not a 0
+                if str(num)[i] != '0':
+
+                    # Initialize the next number as the sum of the current number and the current digit
+                    next_num = num + int(str(num)[i]))
+
+                    # Check if the next number is prime
+                    if is_prime(next_num):
+
+                        # Add the next number to the list of left-truncatable prime numbers
+                        ltp.append(next_num)
+
+                        # Break out of the loop since we have found a new left-truncatable prime number
+                        break
+
+    # Return the sorted list of all left-truncatable prime numbers less than x
+    return sorted(ltp, reverse=True)
+
+# Define a function to check if a number is a prime number
+def is_prime(num):
+
+    # Check if the number is not equal to 1 or itself
+    if num != 1 and num != 0:
+
+        # Initialize a variable to keep track of whether the number is prime or not
+        is_prime = True
+
+        # Iterate over the divisors of the number from 2 to the square root of the number
+        for i in range(2, int(num ** 0.5) + 1):
+
+            # Check if the current divisor divides the number without leaving a remainder
+            if num % i == 0:
+
+                # Set the variable is_prime to False since the number is not prime
+                is_prime = False
+
+                # Break out of the loop since we have found a factor that makes the number not prime
+                break
+
+        # Return the value of the variable is_prime
+        return is_prime

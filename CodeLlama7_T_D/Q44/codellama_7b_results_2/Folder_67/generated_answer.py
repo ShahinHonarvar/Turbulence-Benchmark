@@ -1,0 +1,21 @@
+ def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("The input must be a list of positive integers.")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate through the list and check if each number is composite
+    for i, num in enumerate(my_list):
+        # Check if the current number is between index 56 to index 82, both inclusive
+        if 56 <= i <= 82:
+            # Check if the current number is prime or composite using the Sieve of Eratosthenes algorithm
+            is_prime = True
+            for p in range(2, int(num ** 0.5) + 1):
+                if num % p == 0:
+                    is_prime = False
+                    break
+
+            # If the current number is composite, add it to the set of composite numbers
+            if not is_prime:
+                composite_nums.add(num)
+    return composite_nums

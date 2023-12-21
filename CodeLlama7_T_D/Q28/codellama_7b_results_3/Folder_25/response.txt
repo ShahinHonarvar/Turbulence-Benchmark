@@ -1,0 +1,23 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Split the string into a list of characters
+characters = list(string)
+
+# Create a dictionary with the ASCII values of each character as keys and the frequency of each character as values
+ascii_values = {}
+for char in characters:
+ascii_value = ord(char)
+if ascii_value not in ascii_values:
+ascii_values[ascii_value] = 1
+else:
+ascii_values[ascii_value] += 1
+
+# Get the ASCII values of the characters between indices 34 and 68
+ascii_values_range = [v for k, v in ascii_values.items() if k >= 34 and k <= 68]
+
+# Sort the ASCII values by frequency
+sorted_ascii_values = sorted(ascii_values_range, key=lambda x: -x[1])
+
+# Return the character with the 6th smallest ASCII value
+return chr(sorted_ascii_values[5][0]))
+```

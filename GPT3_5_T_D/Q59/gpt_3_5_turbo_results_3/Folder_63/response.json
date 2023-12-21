@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef all_left_truncatable_prime(nums):\n    x = nums[88]\n    primes = []\n    for num in range(2, x):\n        if '0' not in str(num):\n            is_left_truncatable_prime = True\n            for i in range(len(str(num))):\n                if not is_prime(int(str(num)[i:])):\n                    is_left_truncatable_prime = False\n                    break\n            if is_left_truncatable_prime:\n                primes.append(num)\n    return primes\n```\nNote: The code assumes that the tuple of positive integers is provided as an argument when calling the function.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689846933,
+  "id": "chatcmpl-7eKfd2QvE8cSmlzv8f3NdUpRBfCBg",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 180,
+    "prompt_tokens": 146,
+    "total_tokens": 326
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_right_truncatable_prime(numbers):\n    def is_prime(n):\n        if n < 2:\n            return False\n        for i in range(2, int(n ** 0.5) + 1):\n            if n % i == 0:\n                return False\n        return True\n\n    def is_right_truncatable_prime(n):\n        while n > 0:\n            if not is_prime(n):\n                return False\n            n = int(n / 10)\n        return True\n\n    x = numbers[100]\n    result = []\n    for num in range(x - 1, 1, -1):\n        if is_right_truncatable_prime(num):\n            result.append(num)\n\n    return sorted(result, reverse=True)\n```\nNote: The provided code is a solution to the given task. However, the efficiency of this code can be improved, especially in checking prime numbers.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689820685,
+  "id": "chatcmpl-7eDqHGz0mBD5QIxsTvlL0hBv6269u",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 157,
+    "total_tokens": 346
+  }
+}

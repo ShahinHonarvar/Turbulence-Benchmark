@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specifications:\n\n```python\nfrom scipy.signal import convolve\nimport numpy as np\n\ndef lists_with_product_equal_n(lst):\n    lst = lst + lst[:-1]\n    n = -44 \n    lst_with_product = []\n\n    for i in range(len(lst)):\n        for j in range(i + 1, len(lst)):\n            prod = np.prod(lst[i:j])\n            if prod == n:\n                lst_with_product.append(lst[i:j])\n\n    return lst_with_product\n```\nThis function uses numpy's prod() function to compute the product of elements in a sublist. Moreover, to handle the circular list structure, it makes a replica of the list but without its last element and adds at the end of the original list before proceeding with the operations.\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690978413,
+  "id": "chatcmpl-7j51JbjxVRo1UOLj4EfrcEuC1jKbw",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 161,
+    "prompt_tokens": 193,
+    "total_tokens": 354
+  }
+}

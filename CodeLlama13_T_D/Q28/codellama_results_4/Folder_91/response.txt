@@ -1,0 +1,12 @@
+```python
+def return_nth_smallest_ascii(string):
+    ascii_values = []
+    for i in range(8):
+        char = string[i]
+        ascii_values.append(ord(char))
+    smallest_index = 0
+    for i in range(1, len(ascii_values)):
+        if ascii_values[i] < ascii_values[smallest_index]:
+            smallest_index = i
+    return string[smallest_index]
+```

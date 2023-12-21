@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            if i + 3 <= rows and j + 3 <= cols:\n                submatrix = matrix[i:i+3, j:j+3].flatten().tolist()\n                if submatrix.count(84) == 9:\n                    count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689823097,
+  "id": "chatcmpl-7eETB402oZ8JNcB0DlbeKHcCV7nwX",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 111,
+    "total_tokens": 213
+  }
+}

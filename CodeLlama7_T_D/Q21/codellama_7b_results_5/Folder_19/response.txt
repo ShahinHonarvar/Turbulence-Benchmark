@@ -1,0 +1,14 @@
+ ```
+def all_ints_div_by_num(my_list):
+    # Check if the input is a list of integers
+    if not all(isinstance(i, int) for i in my_list)):
+        raise ValueError("Input must be a list of integers")
+    # Initialize an empty list to store the divisible numbers
+    divisible_nums = []
+    # Iterate over the input list and check if each number is divisible by 6
+    for i in range(1, len(my_list)):
+        if my_list[i] % 6 == 0:
+            divisible_nums.append(my_list[i])
+    # Return the list of all divisible numbers or an empty list if no such integers exist in the specified range
+    return divisible_nums
+```

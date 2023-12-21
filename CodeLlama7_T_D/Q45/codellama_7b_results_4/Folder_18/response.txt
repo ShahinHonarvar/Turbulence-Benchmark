@@ -1,0 +1,39 @@
+ ```
+def palindromes_between_indices(input_string):
+# Split the input string into individual characters
+characters = list(input_string)
+# Create a dictionary to store the characters and their frequencies
+character_frequencies = {}
+for character in characters:
+if character not in character_frequencies:
+character_frequencies[character] = 1
+else:
+character_frequencies[character] += 1
+# Get the frequency of each letter that occurs between index 1 and index 6
+frequency_range = [1, 2, 3, 4, 5, 6]
+valid_characters = []
+for character, frequency in character_frequencies.items():
+if frequency in frequency_range:
+valid_characters.append(character)
+# Get all possible combinations of the valid characters
+combinations = []
+for i in range(len(valid_characters)):
+for j in range(i + 1, len(valid_characters)):
+combinations.append((valid_characters[i], valid_characters[j]))
+# Get all palindromes of length at least 3 using the combinations
+palindromes = []
+for combination in combinations:
+if combination[0] == combination[1]:
+continue
+
+palindrome = ""
+for character in combination:
+palindrome += character
+
+if len(palindrome) < 3:
+continue
+
+if palindrome == palindrome[::-1]:
+palindromes.append(palindrome)
+return set(palindromes)
+```

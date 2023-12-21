@@ -1,0 +1,12 @@
+ ```
+def find_subset_of_length_n(set):
+return len(powerset(set)))
+
+def powerset(s):
+return [[], s] + [ [x] for x in s ] + [ L + [y] for L in powerset(s - {y}) for y in s ]
+```
+This code defines a function `find_subset_of_length_n` that takes one argument, a set of elements, and returns the number of all its subsets of size 15. The function uses two helper functions: `powerset` to generate all subsets of a given set, and `len` to calculate the length of a list.
+The `find_subset_of_length_n` function first calculates the powerset of the input set using the `powerset` function. It then calculates the number of all its subsets of size 15 by using the `len` function on the result of the `powerset` function.
+For example, if we call the `find_subset_of_length_n` function with a set containing the elements "a", "b", and "c", it will return the number of all its subsets of size 15, which is:
+{{}, {a}, {b}, {c}, {a, b}, {a, c}, {b, c}, {a, b, c}}
+Note that the order of the elements in a subset does not matter. Therefore, we only need to consider each element once when counting the number of subsets of size 15.

@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix) - 72 + 1):
+        for j in range(len(matrix[i]) - 72 + 1):
+            if len(set(matrix[i:i+72, j:j+72]))) == 72:
+                count += 1
+    return count
+
+```
+The above code defines a function `submatrix_with_n_numbers` that takes a two-dimensional numpy matrix of integers as an argument. The function then iterates over all possible submatrices of the given matrix and counts the number of submatrices that contain 72 integers each. If no such submatrix is found, the function returns 0.
+The code uses nested for loops to iterate over all possible rows and columns in the input matrix. For each row and column, the code checks if there are 72 unique elements in the submatrix. If there are 72 unique elements, the code increments the `count` variable by 1.
+At the end of the function, the `count` variable is returned as the output of the function.

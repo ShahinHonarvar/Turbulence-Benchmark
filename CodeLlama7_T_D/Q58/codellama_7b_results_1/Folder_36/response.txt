@@ -1,0 +1,14 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 130):
+        for j in range(matrix.shape[1] - 130):
+            if sum(matrix[i:i+131, j:j+131]) == 131 * 131:
+                count += 1
+    return count
+```
+This code uses the NumPy library to perform matrix operations. The `submatrix_with_n_numbers` function takes a two-dimensional integer numpy array as its argument, and returns the number of submatrices of size 131x131 that contain exactly 131 integers each.
+The code first iterates over all rows and columns of the given matrix, and for each row and column, it checks if the sum of all elements in a 131x131 submatrix starting from that row and column is equal to 131 * 131 (i.e., if the submatrix contains exactly 131 integers). If such a submatrix exists, the code increments the count variable by 1.
+At the end of the function call, the `submatrix_with_n_numbers` function returns the value of the `count` variable, which is the number of submatrices of size 131x131 that contain exactly 131 integers each.

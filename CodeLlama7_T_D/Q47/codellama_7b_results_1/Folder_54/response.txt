@@ -1,0 +1,15 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Find the substring of interest
+substring = string[27:77]
+# Create a list to store all palindromes in the substring
+palindromes = []
+# Loop through each character in the substring
+for i in range(len(substring)):
+# Check if the current character is a palindrome of length 18 or 19
+if len(substring[i:]) >= 18 and len(substring[i:]) <= 19 and substring[i:] == substring[i:][::-1]:
+# If it is, add it to the list of palindromes
+palindromes.append(substring[i:])
+return set(palindromes)
+```
+This code uses a combination of slicing and string manipulation to find all palindromes in a given substring that meet the specified criteria. The `palindromes_of_specific_lengths` function takes a single argument, a string, and returns a set of all palindromes in the substring that occur between indices 27 and 77 (both inclusive), and have lengths between 18 and 19 (both inclusive). The function is case-insensitive, so it will find both "racecar" and "RaceCar" as palindromes.

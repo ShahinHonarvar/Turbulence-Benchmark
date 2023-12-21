@@ -1,0 +1,19 @@
+
+def filter_chars(my_string):
+    # Initialize an empty string for the filtered characters
+    filtered_string = ""
+
+    # Iterate over each character in the given string
+    for char in my_string:
+        # Check if the current character is between 19 and 69 (both exclusive)
+        if 19 < ord(char) < 69:
+            # If it is, check if it is greater than '<' and smaller than 'C'
+            if ord(char) > 33 and ord(char) < 78:
+                # If it meets the condition, do not include it in the filtered string
+                continue
+
+        # Otherwise, add the current character to the filtered string
+        filtered_string += char
+
+    # Return the filtered string
+    return filtered_string

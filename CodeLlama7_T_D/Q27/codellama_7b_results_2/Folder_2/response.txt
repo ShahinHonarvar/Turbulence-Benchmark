@@ -1,0 +1,16 @@
+ ```
+def insert_after_index(my_list):
+    new_list = my_list[:] # make a copy of the list
+    # find the index where we need to insert the element
+    target_index = next((i for i, x in enumerate(my_list) if x == 427), None)
+    # check if the target index was found
+    if target_index is not None:
+        # insert the element at the target index + 1
+        new_list.insert(target_index + 1, [312, 441])
+    return new_list
+```
+Explanation:
+The function takes a list as input and returns a list that is identical except that [312, 441] has been inserted at the index immediately succeeding index 427.
+To achieve this, the function first makes a copy of the input list using the slice notation `my_list[:]`. This ensures that we are working with a separate copy of the list and do not modify the original list.
+Next, the function finds the index where [312, 441] needs to be inserted. This is done by finding the first occurrence of 427 in the list using the `next` function with a generator expression. If 427 is found at index `i`, then we insert the element `[312, 441]` at index `i + 1`.
+Finally, the function returns the modified list.

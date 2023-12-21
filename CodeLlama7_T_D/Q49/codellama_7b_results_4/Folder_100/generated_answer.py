@@ -1,0 +1,9 @@
+ def if_decimal_is_divisible(binary_string):
+    # Convert binary string to an integer
+    num = int(binary_string, 2)
+    # Calculate the 190th Fibonacci number
+    a, b = 0, 1
+    for _ in range(190):
+        a, b = b, a + b
+    # Check if the decimal integer is divisible by the calculated Fibonacci number
+    return num % a == 0

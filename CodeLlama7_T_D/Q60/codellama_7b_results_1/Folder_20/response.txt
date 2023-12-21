@@ -1,0 +1,44 @@
+ ```
+def all_left_right_truncatable_prime(x):
+"""Return a list of all left-and-right-truncatable prime numbers less than or equal to x. The list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list."""
+# Initialize an empty list to store the prime numbers
+prime_numbers = []
+# Iterate from 1 to x
+for i in range(1, x + 1):
+# Check if the current number is a prime number and if it meets the criteria for left-and-right-truncatable prime numbers
+if is_prime(i) and all_left_and_right_truncatable_prime(i)):
+# If the current number meets the criteria, add it to the list of prime numbers
+prime_numbers.append(i)
+return sorted(prime_numbers, reverse=True)
+else:
+"""Return an empty list if no left-and-right-truncatable prime number exists in the specified range."""
+return []
+
+def is_prime(n):
+"""Return True if n is a prime number and False otherwise."""
+# Check if n is greater than 1
+if n > 1:
+# Iterate from 2 to the square root of n
+for i in range(2, int(n ** 0.5) + 1):
+# If n is divisible by any number between 2 and the square root of n, it is not prime
+if n % i == 0:
+return False
+return True
+
+def all_left_and_right_truncatable_prime(n):
+"""Return True if n is a left-and-right-truncatable prime number and False otherwise."""
+# Check if n is a prime number
+if not is_prime(n):
+return False
+
+# Check if the leading leftmost digit of n is 1
+if str(n)[0] != "1":
+return False
+
+# Check if the last rightmost digit of n is a prime number
+if not is_prime(int(str(n))[-1])):
+return False
+
+# If all the above conditions are met, return True
+return True
+```

@@ -1,0 +1,29 @@
+ ```
+def return_binary_or_hexa(tuple):
+    # Get the indices of the first and last elements in the tuple
+    start = 2
+    end = len(tuple) - 7
+
+    # Initialize the sum to 0
+
+    sum = 0
+
+    # Iterate through the elements between the start and end indices
+
+    for i in range(start, end + 1):
+
+        # Add the current element to the sum if it is not present in the tuple
+
+        if tuple[i] not in tuple:
+            sum += tuple[i]
+
+    # If the sum is an odd number, return the binary representation string of the sum
+
+    if sum % 2 != 0:
+        return f"{sum:#b}"
+
+    # Otherwise, return the hexadecimal representation string of the sum
+
+    else:
+        return f"{sum:#x}"
+```

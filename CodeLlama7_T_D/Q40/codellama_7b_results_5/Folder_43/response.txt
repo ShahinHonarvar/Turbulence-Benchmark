@@ -1,0 +1,18 @@
+ ```
+def return_n_smallest_chars(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Create an empty list to store the smallest ASCII values
+    smallest_values = []
+
+    for i in range(56):
+        # Find the index of the smallest ASCII value
+        min_index = char_list.index(min(char_list))
+        # Add the smallest ASCII value to the list of smallest values
+        smallest_values.append(char_list[min_index])
+        # Remove the smallest ASCII value from the original list
+        del char_list[min_index]
+
+    return sorted(smallest_values, reverse=True)
+
+```

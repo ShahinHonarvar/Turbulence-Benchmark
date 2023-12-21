@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    rows, cols = np.shape(matrix)\n    for submatrix_height in range(1, rows + 1):\n        for submatrix_width in range(1, cols + 1):\n            for i in range(rows - submatrix_height + 1):\n                for j in range(cols - submatrix_width + 1):\n                    submatrix = matrix[i: i+submatrix_height, j: j+submatrix_width]\n                    if np.sum(submatrix) == 901:\n                        result.append(submatrix.tolist())\n    return result\n```\nThe above Python function will iterate through each possible submatrix of given 'matrix', calculate their sum, and check if it's equal to 901. It returns the list of submatrices whose sum of elements is exactly 901. In case no such submatrix exists, it will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691014944,
+  "id": "chatcmpl-7jEWWu2lKtjtIbZ3cFKxDXt1KjFn5",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 121,
+    "total_tokens": 316
+  }
+}

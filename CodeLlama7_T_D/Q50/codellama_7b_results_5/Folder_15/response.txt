@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Check if there are at least 4 pairs of anagrams in the list
+    num_pairs = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if is_anagram(my_list[i], my_list[j])):
+                num_pairs += 1
+    return num_pairs >= 4
+```
+Explanation:
+
+* The function takes one argument `my_list`, which is a list of strings.
+* We first check if there are at least 4 pairs of anagrams in the list by initializing a counter variable `num_pairs` and setting it to 0.
+* We then iterate over each pair of adjacent strings in the list using two nested for loops.
+* Inside each iteration, we use the `is_anagram()` function to check if the two strings are anagrams of each other. If they are, we increment the `num_pairs` counter by 1.
+* Finally, we return the value of `num_pairs` as our final output. If it is greater than or equal to 4, then there are at least 4 pairs of anagrams in the list, and we return True. Otherwise, if `num_pairs` is less than 4, then there are not enough pairs of anagrams in the list, and we return False.

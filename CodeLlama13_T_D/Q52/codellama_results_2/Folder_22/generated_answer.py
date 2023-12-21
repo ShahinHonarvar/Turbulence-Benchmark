@@ -1,0 +1,8 @@
+
+def palindrome_of_length_n(string, n):
+    palindromes = set()
+    for i in range(len(string) - n + 1):
+        substr = string[i:i+n]
+        if len(substr) == n and substr.lower() == substr[::-1].lower():
+            palindromes.add(substr)
+    return palindromes

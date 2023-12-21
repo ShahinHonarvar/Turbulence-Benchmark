@@ -1,0 +1,10 @@
+```
+def return_n_greatest_chars(string):
+    char_dict = {}
+    for c in string:
+        if c not in char_dict:
+            char_dict[c] = ord(c)
+    sorted_char_list = sorted(char_dict.items(), key=lambda x: x[1], reverse=True)[:82]
+    return [x[0] for x in sorted_char_list]
+```
+Note that this function uses the `ord` built-in function to convert each character to its ASCII value, and then sorts the list of tuples based on the second element (the ASCII value). The resulting list is then truncated to 82 elements using slicing. Finally, the first element of each tuple in the sorted list is extracted to form a new list, which is returned by the function.

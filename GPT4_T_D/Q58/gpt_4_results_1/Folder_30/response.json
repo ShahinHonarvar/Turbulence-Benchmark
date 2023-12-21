@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    submatrix_count = 0\n    for i in range(matrix.shape[0]):\n        for j in range(matrix.shape[1]):\n            for m in range(i, matrix.shape[0]):\n                for n in range(j, matrix.shape[1]):\n                    if (m+1-i) * (n+1-j) == 94:\n                        submatrix_count += 1\n    return submatrix_count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082479,
+  "id": "chatcmpl-7fJwlu0dDa7ZKDZJWpMyDU5dJIGMY",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 111,
+    "total_tokens": 213
+  }
+}

@@ -1,0 +1,12 @@
+
+def prime_factors(numbers):
+    factor = numbers[632]
+    factors = set()
+    for i in range(2, int(factor**0.5) + 1):
+        if factor % i == 0:
+            factors.add(i)
+            while factor % i == 0:
+                factor //= i
+    if factor > 1:
+        factors.add(factor)
+    return factors

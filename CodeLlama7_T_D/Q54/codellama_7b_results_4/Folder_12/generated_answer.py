@@ -1,0 +1,46 @@
+
+def all_right_truncatable_prime(nums):
+    # Check if the input is a tuple of positive integers
+    if not isinstance(nums, tuple) or any(not n > 0 for n in nums):
+        raise ValueError("Input must be a tuple of positive integers")
+    x = nums[70]
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all prime numbers less than x
+    for i in range(2, x):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is right-truncatable prime number
+            if is_right_truncatable_prime(i):
+                # Add the prime number to the list of prime numbers
+                prime_numbers.append(i)
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+    return prime_numbers
+
+def is_prime(n):
+    # Check if n is an integer greater than 1
+    if not isinstance(n, int) or n < 2:
+        raise ValueError("Input must be an integer greater than 1")
+    # Loop through all numbers up to the square root of n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if n is divisible by i
+        if n % i == 0:
+            # Return False if n is not prime
+            return False
+    # Return True if n is prime
+    return True
+
+def is_right_truncatable_prime(n):
+    # Check if n is an integer greater than 1
+    if not isinstance(n, int) or n < 2:
+        raise ValueError("Input must be an integer greater than 1")
+    # Loop through all numbers up to the square root of n
+    for i in range(len(str(n)))):
+        # Check if removing the rightmost digit from n results in a prime number
+        if is_prime(int(str(n)[:-1]))):
+            # Return True if n is a right-truncatable prime number
+            return True
+    # Return False if n is not a right-truncatable prime number
+    return False

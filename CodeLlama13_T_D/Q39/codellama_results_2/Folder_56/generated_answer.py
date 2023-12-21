@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(s):
+    char_list = sorted([c for c in s if c.isalpha()], key=lambda x: ord(x), reverse=True)[:21]
+    return "".join(char_list)

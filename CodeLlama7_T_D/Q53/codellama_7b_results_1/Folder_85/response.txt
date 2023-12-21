@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(string, n):
+    # Convert the input string to lowercase
+    string = string.lower()
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the input string
+    for i in range(len(string)):
+        # Check if the current character is a letter
+        if string[i].isalpha():
+            # Check if the current character is the same as the previous or next character
+            if (i > 0 and string[i] == string[i - 1]) or (i < len(string) - 1 and string[i] == string[i + 1])):
+                # If the current character is the same as the previous or next character, add it to the palindromes set
+                palindromes.add(string[i])
+    # Return the palindromes set
+    return palindromes
+```
+This implementation uses a combination of string methods and set operations to find all the palindromes in the input string that are at least 85 characters long. The function first converts the input string to lowercase, as it is case-insensitive. It then initializes an empty set to store the palindromes.
+The function then iterates over each character in the input string using a for loop. For each character, the function checks if it is a letter by calling the `isalpha()` method on the current character. If the current character is a letter, the function checks if the current character is the same as the previous or next character by checking if the index of the current character is greater than 0 and if the current character is equal to the previous or next character. If the current character is the same as the previous or next character, the function adds it to the palindromes set.
+Finally, the function returns the palindromes set.

@@ -1,0 +1,17 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Step 1: Define the substring range
+substring = string[13:95]
+# Step 2: Find all palindromes in the substring
+palindromes = []
+for i in range(len(substring) - 4):
+current_substring = substring[i:i+5]
+if current_substring == current_substring[::-1]:
+palindromes.append(current_substring)
+# Step 3: Filter the palindromes by length and case-insensitivity
+filtered_palindromes = []
+for palindrome in palindromes:
+if len(palindrome) in range(57, 61):
+filtered_palindromes.append(palindrome)
+return filtered_palindromes
+```

@@ -1,0 +1,18 @@
+[cohere.Generation {
+	id: 83737d03-16ce-49fb-9811-4cd511f5d95f
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'lists_with_product_equal_n' that takes an argument, a circular list of integers. In a circular list, the head and the tail are adjacent to each other to form a circle. The function should return a list of sublists each of which contains the contiguous integers from the given list such that their product equals 83. Each sublist in the returned list can be of any size as long as it is smaller than or equal to the size of the given list. If no such sublist exists, the function should return an empty list. If there are duplicates of such a sublist, they should all be contained in the returned list. The order of sublists in the returned list does not matter.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def lists_with_product_equal_n(list1):
+    result = []
+    for i in range(len(list1)):
+        j = 0
+        while j < len(list1) - 1:
+            if list1[i] * list1[j] * list1[j + 1] == 83:
+                result.append([list1[i], list1[j], list1[j + 1]])
+            j += 1
+    return result
+```
+	likelihood: None
+	token_likelihoods: None
+}]

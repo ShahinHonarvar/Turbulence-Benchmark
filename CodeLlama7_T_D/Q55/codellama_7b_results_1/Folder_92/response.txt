@@ -1,0 +1,27 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+    # initialize empty list to store results
+    result = []
+
+    # loop through each element in the circular list
+    for i in range(len(circular_list)):
+
+        # initialize variables to keep track of sublist elements and product
+        current_sublist = []
+        current_product = 1
+
+        # append the current element to the current sublist
+        current_sublist.append(circular_list[i])
+
+        # calculate the product of the elements in the current sublist
+        for j in range(len(current_sublist)):
+            current_product *= current_sublist[j]
+
+        # if the product equals 5, append the sublist to the result list and break out of the loop
+        if current_product == 5:
+            result.append(current_sublist)
+            break
+
+    # return the result list
+    return result
+```

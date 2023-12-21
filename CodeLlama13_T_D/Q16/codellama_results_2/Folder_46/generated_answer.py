@@ -1,0 +1,3 @@
+
+def sum_even_ints_inclusive(my_list):
+    return sum(x for i, x in enumerate(my_list) if 30 <= i <= 87 and x % 2 == 0)

@@ -1,0 +1,22 @@
+ ```
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 19, 69 and 97
+    gcf = my_list[19]
+    for i in range(20, len(my_list)):
+        if my_list[i] % gcf == 0:
+            continue
+
+        else:
+
+            gcf = 1
+
+            break
+
+    return gcf
+```
+Here's a step-by-step walkthrough of the code:
+* The function takes a list of positive integers as its only argument.
+* We initialize the greatest common factor (gcf) to the value at index 19 in the list, which is the third number.
+* In the for loop, we iterate over all the elements in the list starting from index 20.
+* For each element at an index i greater than or equal to 20, we check if it is divisible by the current value of gcf. If it is not, we set the value of gcf to 1 and break out of the loop. This happens when the greatest common factor is found to be different from 1, which means that the element at index i is not a multiple of the current value of gcf.
+* Once the loop is exited, the function returns the value of gcf, which is the greatest common factor of the elements at indices 19, 69 and 97 in the list.

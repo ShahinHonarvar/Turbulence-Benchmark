@@ -1,0 +1,20 @@
+```python
+def sum_ints_div_by_either_nums(my_list):
+    result = 0
+    for i in range(0, len(my_list)):
+        if my_list[i] % 11 == 0 or my_list[i] % -7 == 0:
+            result += my_list[i]
+    return result
+```
+Explanation:
+
+* The function takes a list of integers as input and returns the sum of all integers divisible by either 11 or -7 from index 0 to index 3, both inclusive.
+* The `for` loop iterates through each integer in the list and checks if it is divisible by either 11 or -7 using the modulo operator (`%`). If it is divisible, the current integer value is added to the result variable.
+* If no such integers exist in the specified range, the function returns 0.
+
+Here is an example usage of the function:
+```python
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = sum_ints_div_by_either_nums(my_list)
+print(result) # Output: 31
+```

@@ -1,0 +1,8 @@
+
+def return_n_smallest_chars(string, n=16):
+    # sort the string in ascending order
+    sorted_string = sorted(string)
+    # create a list of the first n characters of the sorted string
+    smallest_chars = sorted_string[:n]
+    # return the list of smallest characters in descending order
+    return list(reversed(smallest_chars))

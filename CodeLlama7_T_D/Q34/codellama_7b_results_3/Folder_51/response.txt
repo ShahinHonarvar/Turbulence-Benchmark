@@ -1,0 +1,14 @@
+ ```
+def find_original_set(sets):
+# Step 1: Flatten the input sets into a single list
+flattened_list = []
+for set in sets:
+flattened_list.extend(set)
+# Step 2: Find the smallest subset of the flattened list
+smallest_subset = set()
+for element in flattened_list:
+if element not in smallest_subset:
+smallest_subset.add(element)
+return list(smallest_subset)
+```
+This code defines a function called `find_original_set` that takes as input a list of sets of integers. The function first flattens the input sets into a single list, and then finds the smallest subset of this list. The resulting set is returned by the function.

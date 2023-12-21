@@ -1,0 +1,17 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    # Initialize the result list
+    result = []
+    # Loop over all possible starting indices in the matrix
+    for i in range(matrix.shape[0] - 2):
+        for j in range(matrix.shape[1] - 2):
+            # Get the current submatrix
+            submatrix = matrix[i:i+3, j:j+3]
+            # Check if the sum of all integers in the submatrix is equal to 3
+            if np.sum(submatrix) == 3:
+                # Add the submatrix to the result list
+                result.append(submatrix)
+    # Return the result list
+    return result
+```

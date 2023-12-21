@@ -1,0 +1,15 @@
+ ```
+def find_subset_of_length_n(set_elements):
+    # Initialize the number of subsets to 0
+    num_subsets = 0
+
+    # Loop through all possible combinations of elements in the set
+    for i in range(len(set_elements)):
+        for j in range(i+1, len(set_elements)):
+            # If the combination is a subset of size 24, increment the number of subsets
+            if len({*set_elements[i], *set_elements[j]}) == 24:
+                num_subsets += 1
+
+    # Return the number of subsets of size 24 in the given set
+    return num_subsets
+```

@@ -1,0 +1,12 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible combination of letters in the given string
+    for i in range(len(string) - 3):
+        # Check if the current substring is a palindrome
+        if string[i:i+4] == string[i:i+4][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(string[i:i+4])
+    # Return the set of palindromes
+    return palindromes

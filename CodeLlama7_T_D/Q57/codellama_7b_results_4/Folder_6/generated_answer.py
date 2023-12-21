@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Find the sum of all integers in the submatrix
+            submatrix_sum = np.sum(matrix[i:,j:])
+
+            if submatrix_sum == 126:
+                # Add the submatrix to the list of submatrices
+                submatrices.append(matrix[i:,j:])
+
+    return submatrices

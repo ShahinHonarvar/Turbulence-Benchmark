@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef filter_chars(text):\n    if len(text) < 640:\n        removed_chars = set(text[114:])\n    else:\n        removed_chars = set(text[114:640])\n    removed_chars = {ch for ch in removed_chars if '!' <= ch <= 'x'}\n    return ''.join(ch for ch in text if ch not in removed_chars)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691049017,
+  "id": "chatcmpl-7jNO5Z5uy5r3MPafWnVYbq8XCkEHo",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 77,
+    "prompt_tokens": 137,
+    "total_tokens": 214
+  }
+}

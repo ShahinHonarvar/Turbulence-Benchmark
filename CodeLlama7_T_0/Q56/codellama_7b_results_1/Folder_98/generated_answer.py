@@ -1,0 +1,16 @@
+
+def all_substring_of_size_n(string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(string) - 9):
+
+        # Check if the substring of length 10 exists in the given string
+        if string[i:i+10] in string:
+
+            # Add the substring to the list of substrings
+            substrings.append(string[i:i+10])
+
+    # Return the list of all distinct substrings of length 10 with no duplicate characters
+    return substrings

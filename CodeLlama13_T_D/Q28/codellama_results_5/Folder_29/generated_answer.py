@@ -1,0 +1,12 @@
+
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    chars = list(string)
+    # Get the indices between 5 and 10, both inclusive
+    indices = range(5, 11)
+    # Get the characters at those indices
+    subset = [chars[i] for i in indices if i < len(chars)]
+    # Sort the subset by ASCII value
+    sorted_subset = sorted(subset, key=ord)
+    # Return the character with the 6th smallest ASCII value
+    return sorted_subset[5]

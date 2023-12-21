@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(nums):\n    n = len(nums)\n    nums = nums + nums  # duplicate the list to simulate the circular list\n    result = []\n    for i in range(n):\n        for j in range(i+1, i+n+1):\n            sublist = nums[i:j]\n            product = 1\n            for num in sublist:\n                product *= num\n            if product == 733:\n                result.append(sublist)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691011447,
+  "id": "chatcmpl-7jDc7UjIyGNwMG7MK2S4DQWp9te27",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 193,
+    "total_tokens": 299
+  }
+}

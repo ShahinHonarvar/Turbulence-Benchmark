@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(number for number in range(2, int(numbers[13]) + 1) if all(number % factor == 0 for factor in range(2, int(math.sqrt(number)) + 1)))

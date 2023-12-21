@@ -1,0 +1,14 @@
+
+def remove_repeat_chars(input_string):
+    # Create a new string that is the same length as the input string
+    output_string = ""
+
+    # Iterate over each character in the input string
+    for char in input_string:
+
+        # If the current character is not already in the output string, add it to the end of the output string
+        if char not in output_string:
+            output_string += char
+
+    # Return the altered string
+    return output_string

@@ -1,0 +1,15 @@
+ ```
+def find_subset_of_length_n(elements):
+    num_subsets = 0
+    for i in range(1 << len(elements)):
+        subset = set()
+        for j in range(len(elements)):
+            if i & (1 << j):
+                subset.add(elements[j])
+
+        if len(subset) == 17:
+            num_subsets += 1
+
+    return num_subsets
+```
+This code uses a bitmask to generate all possible subsets of the input set, and then checks each subset to see if it has size 17. If it does, the code increments a counter variable called `num_subsets`. The function returns the value of this counter at the end of its execution.

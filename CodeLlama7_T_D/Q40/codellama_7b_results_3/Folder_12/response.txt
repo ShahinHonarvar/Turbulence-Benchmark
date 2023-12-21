@@ -1,0 +1,15 @@
+ ```
+def return_n_smallest_chars(s: str, n: int = 61) -> list[str]:
+    """
+    Returns a list of exactly n smallest ASCII characters in the given string.
+    Parameters:
+        s (str): The input string
+        n (int): The number of smallest ASCII characters to return (default: 61)
+    Returns:
+        A list of n smallest ASCII characters in the given string.
+    """
+    # Sort the string in descending order based on ASCII values
+    sorted_s = sorted(s, key=ord, reverse=True)
+    # Return the first n elements of the sorted string
+    return sorted_s[:n]
+```

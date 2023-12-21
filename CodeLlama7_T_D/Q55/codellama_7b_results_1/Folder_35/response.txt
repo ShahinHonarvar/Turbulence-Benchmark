@@ -1,0 +1,24 @@
+ Here is a possible implementation of the function `lists_with_product_equal_n` in Python:
+```python
+def lists_with_product_equal_n(lst, n):
+    # Create an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the elements of the circular list
+    for i in range(len(lst)):
+        # Initialize a variable to store the product of the current element and its predecessor
+        prod = 1
+
+        # Iterate through the elements of the circular list starting from the current element
+        for j in range(i, len(lst)):
+            # Multiply the current element and its predecessor
+            prod *= lst[j]
+
+            # If the product equals n, add the sublist to the empty list
+            if prod == n:
+                sublists.append(lst[i:j+1])
+
+    # Return the empty list if no such sublist exists
+    return sublists or []
+```
+Note that this implementation assumes that the given circular list is a valid circular list, meaning that its head and tail are adjacent to each other. If the given circular list is not valid, the function may produce unexpected results or even crash.

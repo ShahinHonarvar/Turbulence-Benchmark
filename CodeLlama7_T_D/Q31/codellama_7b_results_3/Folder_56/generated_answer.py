@@ -1,0 +1,20 @@
+
+def if_perfect_num(my_list):
+    # Check if the element at index 60 is a perfect number
+    if my_list[60] == perfect_number(my_list[60])):
+        return True
+
+    else:
+
+        return False
+
+# Define a function to calculate the perfect number
+def perfect_number(num):
+
+    # Calculate the sum of the proper divisors
+    sum = 0
+    for i in range(1, num // 2 + 1):
+        if num % i == 0:
+            sum += i
+
+    return sum

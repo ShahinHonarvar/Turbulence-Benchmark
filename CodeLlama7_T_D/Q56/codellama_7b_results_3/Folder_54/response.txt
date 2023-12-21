@@ -1,0 +1,22 @@
+ ```
+def all_substring_of_size_n(string, n):
+    if len(string) < n:
+        return []
+
+    substrings = []
+
+    for i in range(len(string) - n + 1):
+
+        substring = string[i:i+n]
+
+        if not any(substring == other_substring for other_substring in substrings):
+            substrings.append(substring)
+
+    return substrings
+
+```
+This code defines a function called `all_substring_of_size_n` that takes two arguments: a string and an integer representing the size of the substrings to extract. The function returns a list of all distinct substrings of the specified length in the input string, or an empty list if no such substrings exist. The order of the substrings in the returned list does not matter.
+The code first checks whether the input string has at least as many characters as the requested substring size. If it does not, the function returns an empty list immediately.
+Next, the function initializes an empty list to store the extracted substrings.
+Then, the function iterates over all possible starting positions for a substring of length `n` in the input string. For each starting position, the function extracts the corresponding substring and checks whether it is already present in the list of substrings to return. If not, the function appends the substring to the list.
+Finally, the function returns the populated list of substrings.

@@ -1,0 +1,16 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Find the first index where the value is not divisible by 57
+    first_index = next((i for i, x in enumerate(my_list) if x % 57), None)
+    # If no such index exists, return an empty list
+    if first_index is None:
+        return []
+
+    # Find the last index where the value is not divisible by 57
+    last_index = next((i for i, x in enumerate(my_list[first_index:]) if x % 57), None)
+    # If no such index exists, return an empty list
+    if last_index is None:
+        return []
+
+    # Return the sublist of all integers not divisible by 57 from the first to the last index, both exclusive
+    return my_list[first_index:last_index+1]

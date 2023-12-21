@@ -1,0 +1,3 @@
+
+def prime_factors(nums):
+    return set([n for n in nums[64] if all(n % i != 0 for i in range(2, int(n**0.5) + 1))])

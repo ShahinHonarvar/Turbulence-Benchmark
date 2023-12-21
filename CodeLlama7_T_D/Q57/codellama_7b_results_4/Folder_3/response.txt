@@ -1,0 +1,41 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Loop over each row of the matrix
+    for i in range(matrix.shape[0]):
+
+        # Loop over each column of the matrix
+        for j in range(matrix.shape[1]):
+
+            # Initialize a variable to store the sum of the elements in the submatrix
+            sum = 0
+
+            # Loop over each element in the submatrix
+            for row_index in range(i, i + 3):
+                for col_index in range(j, j + 3):
+                    # Check if the element is outside the boundaries of the matrix
+                    if row_index < 0 or row_index >= matrix.shape[0] or col_index < 0 or col_index >= matrix.shape[1]:
+                        # If the element is outside the boundaries of the matrix, skip to the next element
+                        continue
+
+                    # Add the element to the sum
+                    sum += matrix[row_index][col_index]
+
+            # Check if the sum equals 54
+            if sum == 54:
+                # If the sum equals 54, add the submatrix to the list of submatrices
+                submatrices.append(matrix[i:i + 3, j:j + 3])
+
+    # Return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 54. If no such submatrix is found, the function should return an empty list.
+    return submatrices
+
+# Test the function with a sample matrix
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+submatrices = submatrix_with_particular_sum(matrix)
+#print(submatrices)
+
+```

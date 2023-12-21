@@ -1,0 +1,15 @@
+```
+def find_second_smallest_num(my_list):
+    second_smallest = None
+    for i in range(25, 60):
+        if my_list[i] < second_smallest or second_smallest is None:
+            second_smallest = my_list[i]
+    return second_smallest
+```
+This function takes a list of distinct numbers as input and returns the second smallest element from index 25 to index 59, both inclusive. If there is no such an element, the function should return 'None'. The function loops through the list from index 25 to index 59, keeping track of the current smallest number seen so far in the variable `second_smallest`. If a smaller number is encountered, it becomes the new smallest number. If there are no numbers smaller than the current smallest number, then `None` is returned.
+
+Here's an example usage of the function:
+```
+my_list = [54, 26, 93, 17, 77, 31, 44, 58, 20, 48, 65, 33]
+print(find_second_smallest_num(my_list)) # Output: 20
+```

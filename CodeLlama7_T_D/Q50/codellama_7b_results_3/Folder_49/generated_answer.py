@@ -1,0 +1,36 @@
+
+def if_contains_anagrams(my_list):
+    # check that the list is not empty
+    if len(my_list) == 0:
+        return False
+
+    # create a dictionary to store the anagram pairs
+    anagram_pairs = {}
+
+    # loop through each string in the list
+    for i in range(len(my_list)):
+
+        # get the current string
+        curr_str = my_list[i]
+
+        # check if the current string is at least three characters long
+        if len(curr_str) < 3:
+            continue
+
+        # loop through each character in the current string
+        for j in range(len(curr_str)):
+
+            # get the current character
+            curr_char = curr_str[j]
+
+            # check if there are any other strings in the list that have the same character as the current string
+            for k in range(len(my_list)):
+                if my_list[k].find(curr_char) != -1 and i != k:
+                    # create a new pair if it doesn't already exist
+                    if (i, k) not in anagram_pairs:
+                        anagram_pairs[(i, k)] = 1
+                    else:
+                        anagram_pairs[(i, k)] += 1
+
+    # return true if there are at least 59 pairs of anagrams in the list
+    return sum(anagram_pairs.values()) >= 59

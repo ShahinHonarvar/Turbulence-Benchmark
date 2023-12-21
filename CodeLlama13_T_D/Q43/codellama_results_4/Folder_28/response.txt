@@ -1,0 +1,13 @@
+```
+def find_primes_between_indices(my_list):
+    primes = []
+    for i in range(38, 54+1):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]/2)+1):
+                if my_list[i] % j == 0:
+                    break
+            else:
+                primes.append(my_list[i])
+    return sorted(primes, reverse=True)
+```
+This function iterates over the indices from 38 to 54 (both inclusive), and for each index, it checks if the corresponding element in the list is a prime number by checking if it's divisible by any number between 2 and half of itself (exclusive). If no such number is found, the function appends the current element to the list of primes. Finally, the list of primes is sorted in descending order before being returned.

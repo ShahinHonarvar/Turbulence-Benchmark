@@ -1,0 +1,24 @@
+
+def palindromes_of_specific_lengths(string, lengths=[13, 42], indices=slice(44, 99)):
+    # Find all substrings in the specified range
+    substrings = []
+    for i in range(*indices.indices(len(string)))):
+        substring = string[i:i+lengths[0]]
+        if substring == substring[::-1]:
+            substrings.append(substring)
+    # Filter out any palindromes of invalid lengths
+
+    filtered_substrings = []
+
+    for substring in substrings:
+
+        if len(substring) not in lengths:
+
+            continue
+
+        else:
+
+            filtered_substrings.append(substring)
+
+
+    return set(filtered_substrings)

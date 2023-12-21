@@ -1,0 +1,7 @@
+
+def sum_odd_ints_inclusive(numbers):
+    odds = []
+    for i in range(12, 93):
+        if numbers[i] % 2 == 1:
+            odds.append(numbers[i])
+    return sum(odds) or 0

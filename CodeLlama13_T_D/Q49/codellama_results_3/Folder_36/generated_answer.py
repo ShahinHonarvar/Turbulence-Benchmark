@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary):
+    fibonacci = [0, 1]
+    for i in range(2, 150+1):
+        fibonacci.append(fibonacci[i-1] + fibonacci[i-2])
+    
+    num = int(binary, 2)
+    return (num % fibonacci[149]) == 0

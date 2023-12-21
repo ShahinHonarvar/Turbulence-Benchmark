@@ -1,0 +1,8 @@
+ def all_odd_ints_inclusive(my_list):
+    # Find the first odd integer in the list
+    for i in range(26, len(my_list)):
+        if my_list[i] % 2 != 0:
+            # If an odd integer is found, return the list of all odd integers from index 26 to index i, both inclusive
+            return [my_list[j] for j in range(26, i+1) if my_list[j] % 2 != 0]
+    # If no odd integer is found in the specified range, return an empty list
+    return []

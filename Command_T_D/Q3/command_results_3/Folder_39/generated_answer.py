@@ -1,0 +1,2 @@
+def all_pos_ints_inclusive(lst):
+    return [x for x in lst if x >= 20 and x <= 30]

@@ -1,0 +1,15 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_numbers = set()
+
+    # Iterate through the list of positive integers
+    for i in range(28, 41):
+        # Check if the number is divisible by any number between 2 and itself (exclusive)
+        for j in range(2, i + 1):
+            if i % j == 0:
+                composite_numbers.add(i)
+                break
+
+    return composite_numbers
+```

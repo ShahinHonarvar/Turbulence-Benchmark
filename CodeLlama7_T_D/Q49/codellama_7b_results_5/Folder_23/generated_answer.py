@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the Fibonacci sequence term that corresponds to the decimal integer
+    fibonacci_term = (5 * decimal_integer ** 2 + 4) // 12
+    # Check if the Fibonacci sequence term is divisible by 48
+    return fibonacci_term % 48 == 0

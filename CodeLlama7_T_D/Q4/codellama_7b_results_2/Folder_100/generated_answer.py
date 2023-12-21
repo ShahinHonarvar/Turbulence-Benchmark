@@ -1,0 +1,15 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate over the input list, starting from index 22 (inclusive) and ending at index 24 (exclusive)
+    for i in range(22, 24):
+
+        # If the current element is a positive integer, add it to the result list
+        if my_list[i] > 0:
+            result.append(my_list[i])
+
+    # Return the result list
+
+    return result

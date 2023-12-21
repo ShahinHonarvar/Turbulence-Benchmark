@@ -1,0 +1,3 @@
+
+def sum_odd_ints_inclusive(my_list):
+    return sum([x for x in my_list[6:7] if x % 2 == 1]) or 0

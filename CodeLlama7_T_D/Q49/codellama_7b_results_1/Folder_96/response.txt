@@ -1,0 +1,21 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to a decimal integer
+    decimal_integer = int(binary_string, 2)
+    # Calculate the number of bits in the decimal integer
+    num_bits = len(bin(decimal_integer)) - 2
+    # Initialize variables for storing the Fibonacci sequence numbers
+    fib_seq_nums = []
+    # Calculate the first 47 Fibonacci sequence numbers
+    for i in range(47):
+        if i == 0:
+            fib_seq_nums.append(0)
+        else:
+            fib_seq_nums.append(fib_seq_nums[i - 1] + fib_seq_nums[i - 2])
+    # Check if the decimal integer is divisible by any of the Fibonacci sequence numbers
+    for i in range(47):
+        if decimal_integer % fib_seq_nums[i] == 0:
+            return True
+
+return False
+```

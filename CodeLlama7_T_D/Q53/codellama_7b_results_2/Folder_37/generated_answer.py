@@ -1,0 +1,19 @@
+
+def palindrome_of_length_at_least_n(string, n=67):
+    # convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+
+    # create a set to store all palindromes of length greater than or equal to n
+    palindromes = set()
+
+    # iterate over each word in the string
+    for word in string.split():
+
+        # check if the word is a palindrome of length greater than or equal to n
+        if word == word[::-1] and len(word) >= n:
+
+            # add the palindrome to the set
+            palindromes.add(word)
+
+    # return the set of all palindromes of length greater than or equal to n that exist in the given string
+    return palindromes

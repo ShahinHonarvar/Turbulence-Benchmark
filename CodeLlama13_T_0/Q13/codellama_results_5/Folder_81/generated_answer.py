@@ -1,0 +1,8 @@
+
+def find_second_largest_num(my_list):
+    if len(my_list) < 10 or len(my_list) > 100:
+        return None
+    
+    sorted_list = sorted(my_list)[9:101]
+    second_largest = sorted_list[1]
+    return second_largest

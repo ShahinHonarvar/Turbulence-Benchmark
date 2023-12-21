@@ -1,0 +1,94 @@
+[cohere.Generation {
+	id: 8113915c-d3c7-49b8-b1c8-96cb5fc613f2
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 69. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+import sys
+import bisect
+
+sys.setrecursionlimit(10**6)
+
+
+def all_left_right_truncatable_prime(n):
+    if n[69] < 2:
+        return []
+    x = [str(n[0]), str(n[1])]
+    y = [str(n[0]) + str(n[1]), str(n[0]) + str(n[2])]
+    for n in range(3, n[69] + 1):
+        x.append(str(n))
+        if x[-1][-1] == '9':
+            x.append(x[-1][:-1] + '0' + '9')
+        if x[-1][-2] == '9':
+            x.append(x[-1][:-2] + '0' + '9')
+        if x[-1][-3] == '9':
+            x.append(x[-1][:-3] + '0' + '9')
+        if x[-1][-4] == '9':
+            x.append(x[-1][:-4] + '0' + '9')
+        if x[-1][-5] == '9':
+            x.append(x[-1][:-5] + '0' + '9')
+        if x[-1][-6] == '9':
+            x.append(x[-1][:-6] + '0' + '9')
+        if x[-1][-7] == '9':
+            x.append(x[-1][:-7] + '0' + '9')
+        if x[-1][-8] == '9':
+            x.append(x[-1][:-8] + '0' + '9')
+        if x[-1][-9] == '9':
+            x.append(x[-1][:-9] + '0')
+        if x[-1][-10] == '9':
+            x.append(x[-1][:-10] + '0')
+        if x[-1][-11] == '9':
+            x.append(x[-1][:-11] + '0')
+        if x[-1][-12] == '9':
+            x.append(x[-1][:-12] + '0')
+        if x[-1][-13] == '9':
+            x.append(x[-1][:-13] + '0')
+        if x[-1][-14] == '9':
+            x.append(x[-1][:-14] + '0')
+        if x[-1][-15] == '9':
+            x.append(x[-1][:-15] + '0')
+        if x[-1][-16] == '9':
+            x.append(x[-1][:-16] + '0')
+        if x[-1][-17] == '9':
+            x.append(x[-1][:-17] + '0')
+        if x[-1][-18] == '9':
+            x.append(x[-1][:-18] + '0')
+        if x[-1][-19] == '9':
+            x.append(x[-1][:-19] + '0')
+        if x[-1][-20] == '9':
+            x.append(x[-1][:-20] + '0')
+        if x[-1][-21] == '9':
+            x.append(x[-1][:-21] + '0')
+        if x[-1][-22] == '9':
+            x.append(x[-1][:-22] + '0')
+        if x[-1][-23] == '9':
+            x.append(x[-1][:-23] + '0')
+        if x[-1][-24] == '9':
+            x.append(x[-1][:-24] + '0')
+        if x[-1][-25] == '9':
+            x.append(x[-1][:-25] + '0')
+        if x[-1][-26] == '9':
+            x.append(x[-1][:-26] + '0')
+        if x[-1][-27] == '9':
+            x.append(x[-1][:-27] + '0')
+        if x[-1][-28] == '9':
+            x.append(x[-1][:-28] + '0')
+        if x[-1][-29] == '9':
+            x.append(x[-1][:-29] + '0')
+        if x[-1][-30] == '9':
+            x.append(x[-1][:-30] + '0')
+        if x[-1][-31] == '9':
+            x.append(x[-1][:-31] + '0')
+        if x[-1][-32] == '9':
+            x.append(x[-1][:-32] + '0')
+        if x[-1][-33] == '9':
+            x.append(x[-1][:-33] + '0')
+        if x[-1][-34] == '9':
+            x.append(x[-1][:-34] + '0')
+        if x[-1][-35] == '9':
+            x.append(x[-1][:-35] + '0')
+        if x[-1][-36] == '9':
+            x.append(x[-1][:-36] +
+	likelihood: None
+	token_likelihoods: None
+}]

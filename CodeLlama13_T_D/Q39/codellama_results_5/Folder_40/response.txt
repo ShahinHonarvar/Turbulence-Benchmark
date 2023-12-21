@@ -1,0 +1,11 @@
+```python
+def return_n_greatest_chars(string):
+    # create a list of characters and their ASCII values
+    chars = [(char, ord(char)) for char in string]
+    
+    # sort the list by ASCII value in descending order
+    sorted_chars = sorted(chars, key=lambda x: -x[1])
+    
+    # return the first 7 characters with the greatest ASCII values
+    return [char for char, _ in sorted_chars[:7]]
+```

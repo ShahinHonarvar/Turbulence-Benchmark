@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    n = len(lst)\n    for i in range(n):\n        queue = deque()\n        product = 1\n        for j in range(i, i+n):\n            queue.append(lst[j%n])\n            product *= lst[j%n]\n            while product > 15 and queue:\n                removed = queue.popleft()\n                product /= removed\n            if product == 15:\n                result.append(list(queue))\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691088041,
+  "id": "chatcmpl-7jXXV9YRumowuyRzDTQ2Mdos3PvxP",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 107,
+    "prompt_tokens": 193,
+    "total_tokens": 300
+  }
+}

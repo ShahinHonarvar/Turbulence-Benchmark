@@ -1,0 +1,20 @@
+
+def all_left_right_truncatable_prime(numbers):
+    primes = []
+    for i in range(numbers[0], numbers[1] + 1):
+        if is_left_right_truncatable_prime(i):
+            primes.append(i)
+    return sorted(primes)
+
+def is_left_right_truncatable_prime(n):
+    if n < 2 or any([n % i == 0 for i in range(2, int(sqrt(n)) + 1)]):
+        return False
+    for i in range(int(log10(n)), -1, -1):
+        if not is_prime(str(n)[:i] + str(n)[i:]):
+            return False
+    return True
+
+def is_prime(n):
+    if n < 2 or any([n % i == 0 for i in range(2, int(sqrt(n)) + 1)]):
+        return False
+    return True

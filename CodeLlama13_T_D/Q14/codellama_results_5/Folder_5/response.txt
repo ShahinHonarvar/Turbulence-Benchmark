@@ -1,0 +1,21 @@
+```
+def find_second_smallest_num(nums):
+    if len(nums) < 5:
+        return None
+    
+    nums.sort()
+    second_smallest = None
+    for i in range(3, 6):
+        if second_smallest is None or nums[i] < second_smallest:
+            second_smallest = nums[i]
+            
+    return second_smallest
+```
+This function first checks if the length of the input list is less than 5, and returns `None` if it is. Then it sorts the list using the built-in `sort()` method, and sets a variable called `second_smallest` to None. It then iterates over the indices from 3 to 5 (both inclusive) and compares each element with the current value of `second_smallest`. If the current element is smaller than `second_smallest`, it updates `second_smallest` to that element. Finally, it returns the value of `second_smallest`, which will be None if there is no such an element.
+
+Here's a sample test case:
+```
+>>> nums = [1, 2, 3, 4, 5]
+>>> find_second_smallest_num(nums)
+2
+```

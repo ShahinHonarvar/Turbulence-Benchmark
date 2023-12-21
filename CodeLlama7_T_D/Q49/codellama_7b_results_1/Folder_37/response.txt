@@ -1,0 +1,14 @@
+ ```
+def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation to an integer
+    decimal_int = int(binary_rep, 2)
+    # Calculate the 46th number in the Fibonacci sequence
+    fib_seq = [0, 1]
+    while len(fib_seq) < 46:
+        fib_seq.append(fib_seq[-1] + fib_seq[-2])
+    # Check if the decimal integer is divisible by the 46th Fibonacci number
+    return decimal_int % fib_seq[45] == 0
+```
+This code defines a function called `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function first converts the binary representation to an integer using the `int()` built-in function and the `2` base.
+Next, the function calculates the 46th number in the Fibonacci sequence by starting with the first two numbers (0 and 1) and adding them together to form the next number in the sequence until it reaches the 46th number.
+Then, the function checks if the decimal integer is divisible by the 46th Fibonacci number using the modulo operator (`%`) and the `==` operator to determine whether the result is equal to zero. If the decimal integer is divisible by the 46th Fibonacci number, the function returns `True`. Otherwise, it returns `False`.

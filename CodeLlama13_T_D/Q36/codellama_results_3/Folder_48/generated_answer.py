@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(154, 223):
+        if string[i].isalpha() and string[i].lower() >= 'a' and string[i].lower() < 'f':
+            string = string.replace(string[i], '')
+    return string

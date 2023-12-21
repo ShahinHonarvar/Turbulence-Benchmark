@@ -1,0 +1,7 @@
+
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 25])
+
+def powerset(iterable):
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))

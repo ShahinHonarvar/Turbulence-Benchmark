@@ -1,0 +1,8 @@
+
+def insert_after_index(my_list):
+    new_list = []
+    for i, x in enumerate(my_list):
+        if i == 99:
+            new_list.append(15)
+        new_list.append(x)
+    return new_list

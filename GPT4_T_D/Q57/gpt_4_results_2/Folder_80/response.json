@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the provided text specification.\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    result = []\n    row, col = matrix.shape\n    for i in range(row):\n        for j in range(col):\n            for x in range(i+1, row+1):\n                for y in range(j+1, col+1):\n                    sub_matrix = matrix[i:x, j:y]\n                    if sub_matrix.sum() == 245:\n                        result.append(sub_matrix)\n    return result\n```\nPlease note that this code can be compute-intensive for very large matrices as it examines all possible subsets of the given matrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690906789,
+  "id": "chatcmpl-7imO5zJi7pzrZE2zY0ca7Il0cj1Ld",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 121,
+    "total_tokens": 259
+  }
+}

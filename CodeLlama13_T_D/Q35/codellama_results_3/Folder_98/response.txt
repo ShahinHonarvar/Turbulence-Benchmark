@@ -1,0 +1,16 @@
+```python
+def remove_repeat_chars(s):
+    seen = set()
+    res = ''
+    for c in s:
+        if c not in seen and len(seen) < 7:
+            seen.add(c)
+            res += c
+    return res
+```
+Explanation:
+
+* The function first initializes an empty set `seen` to keep track of the characters that have already been encountered.
+* It then iterates over the input string `s`, and for each character `c`:
+	+ If `c` is not in `seen` and the length of `seen` is less than 7, it adds `c` to `seen` and appends it to the result string `res`.
+* The function returns the altered string `res`.

@@ -1,0 +1,7 @@
+
+def find_second_smallest_num(nums):
+    nums.sort()
+    for i in range(len(nums)):
+        if nums[i] != nums[i-1] and nums[i] != nums[-1]:
+            return nums[i]
+    return None

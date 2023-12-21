@@ -1,0 +1,59 @@
+
+def all_left_right_truncatable_prime(tuple_of_ints):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through each integer in the tuple
+    for num in tuple_of_ints:
+        # Check if the number is a prime number
+        if is_prime(num):
+            # If the number is prime, check if it is left-and-right-truncatable
+            if is_left_right_truncatable(num):
+                # If the number is both prime and left-and-right-truncatable, add it to the list of prime numbers
+                prime_numbers.append(num)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the sorted list of prime numbers
+    return prime_numbers
+
+# Define a function to check if an integer is prime
+def is_prime(n):
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        # If n is less than or equal to 1, it is not prime
+        return False
+
+    # Check if n is divisible by 2 to n-1
+    for i in range(2, n):
+        # If n is divisible by i, it is not prime
+        if n % i == 0:
+            return False
+
+    # If n is greater than 1 and it is not divisible by 2 to n-1, it is prime
+    return True
+
+# Define a function to check if an integer is left-and-right-truncatable
+def is_left_right_truncatable(n):
+    # Check if the number is less than or equal to 1
+    if n <= 1:
+        # If the number is less than or equal to 1, it is not left-and-right-truncatable
+        return False
+
+    # Check if the number contains a 0
+    if '0' in str(n):
+        # If the number contains a 0, it is not left-and-right-truncatable
+        return False
+
+    # Check if removing the leading leftmost and last rightmost digits of the number results in a prime number
+    for i in range(1, n+1):
+        # Remove the leading leftmost digit from the number
+        num = str(n)[:-i]
+        # Check if the resulting number is prime
+        if is_prime(int(num)):
+            # If the resulting number is prime, return True
+            return True
+
+    # If no removing the leading leftmost and last rightmost digits of the number results in a prime number, return False
+    return False

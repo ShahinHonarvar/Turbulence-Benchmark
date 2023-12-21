@@ -1,0 +1,26 @@
+ ```
+def lists_with_product_equal_n(my_list):
+# check if the product of all elements in the list is equal to -3
+if all([element * element for element in my_list]) == -3:
+# return an empty list if no such sublist exists
+return []
+else:
+# create a copy of the original list
+my_copy = my_list[:]
+# initialize an empty list to store the sublists
+sublists = []
+# loop through each element in the original list
+for i in range(len(my_list)):
+# check if the product of all elements up to and including the current element is equal to -3
+if all([my_copy[j] * my_copy[j+1] for j in range(i+1)]) == -3:
+# add the sublist to the list of sublists
+sublists.append(my_copy[i:j+1])
+# remove the elements from the original list that were added to the sublist
+my_copy = my_copy[j+1:]
+# return the list of sublists if it is not empty
+if len(sublists) > 0:
+return sublists
+else:
+# return an empty list if no such sublist exists
+return []
+```

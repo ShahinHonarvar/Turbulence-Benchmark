@@ -1,0 +1,46 @@
+[cohere.Generation {
+	id: 3fcaa0d8-5b30-4aea-92af-e42e714fa388
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_right_truncatable_prime' that takes one argument which is a tuple of positive integers. Let x be the integer at index 30. The function should return the list of all left-and-right-truncatable prime numbers less than or equal to x. The return list should be sorted in descending order. If no left-and-right-truncatable prime number exists in the specified range, the function should return an empty list. A left-and-right-truncatable prime number is a prime number that contains no 0 and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+def all_left_right_truncatable_prime(x_list):
+    #sys.setrecursionlimit(10**5)
+    #sys.setrecursionlimit(1_000_000)
+    x = x_list[30]
+    #x = 1_000_000
+    #sys.setrecursionlimit(1_000_000)
+    left_right_truncatable_primes = []
+    for prime in range(2, x + 1):
+        if is_left_right_truncatable_prime(prime):
+            left_right_truncatable_primes.append(prime)
+    return left_right_truncatable_primes
+
+def is_left_right_truncatable_prime(n):
+    n_str = str(n)
+    prime = True
+    for c in range(1, len(n_str)):
+        if n_str[c] == '0':
+            prime = False
+            break
+        if n_str[0] == '0':
+            prime = False
+            break
+        if n_str[len(n_str) - 1] == '0':
+            prime = False
+            break
+        if n_str[0] == '1' and n_str[c] == '1':
+            prime = False
+            break
+        if n_str[len(n_str) - 1] == '9' and n_str[c] == '9':
+            prime = False
+            break
+        if n_str[0] == '2' and n_str[c] == '2':
+            prime = False
+            break
+    return prime
+```
+	likelihood: None
+	token_likelihoods: None
+}]

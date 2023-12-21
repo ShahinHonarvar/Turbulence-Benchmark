@@ -1,0 +1,18 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_integer = int(binary_string, 2)
+    # Find the index of the 47th occurrence of 1 in the binary representation of the integer
+    index_of_47th_one = binary_string.rfind('1', 0, 47)
+    # If the index is -1, it means that there are less than 47 ones in the binary representation of the integer, so we return False
+    if index_of_47th_one == -1:
+        return False
+
+    # If the index is not -1, it means that there are at least 47 ones in the binary representation of the integer, so we check whether the integer corresponding to the binary string is divisible by the number of ones in the binary representation of the integer
+    number_of_ones = len(binary_string) - index_of_47th_one
+    if decimal_integer % number_of_ones == 0:
+        return True
+
+    # If the integer is not divisible by the number of ones, we return False
+    else:
+        return False

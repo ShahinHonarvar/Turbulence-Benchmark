@@ -1,0 +1,9 @@
+```
+def if_decimal_is_divisible(binary_repr):
+    fib = [0, 1]
+    while len(fib) <= binary_repr.count('1'):
+        fib.append(fib[-2] + fib[-1])
+    
+    decimal = int(binary_repr, 2)
+    return decimal % fib[150] == 0
+```

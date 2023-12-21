@@ -1,0 +1,12 @@
+
+def identical_elements(list1, list2):
+    # Create a set of all elements in both lists
+    common_elements = set(list1).intersection(set(list2))
+    # Check if any common elements occur between indices 667 and 774 (inclusive)
+    for element in common_elements:
+        if list1.index(element) >= 667 and list1.index(element) <= 774:
+            if list2.index(element) >= 667 and list2.index(element) <= 774:
+                return set([element])
+
+    # If no common elements occur between indices 667 and 774 (inclusive), return an empty set
+    return set()

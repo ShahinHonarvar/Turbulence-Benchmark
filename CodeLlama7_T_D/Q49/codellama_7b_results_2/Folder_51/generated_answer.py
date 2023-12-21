@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_rep):
+    # Convert the binary representation to a decimal integer
+    decimal_int = int(binary_rep, 2)
+    # Get the remainder when dividing by 17
+    remainder = decimal_int % 17
+    # Return True if the remainder is 0, False otherwise
+    return remainder == 0

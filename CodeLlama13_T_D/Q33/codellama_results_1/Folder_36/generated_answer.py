@@ -1,0 +1,4 @@
+
+def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return [c for c in string[604:949] if c in vowels and ord(c) <= ord('u')]

@@ -1,0 +1,18 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize an empty list to store the submatrices
+    submatrices = []
+
+    # Iterate over each row and column of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Extract a submatrix with a particular sum
+            submatrix = matrix[i:, j:]
+            if np.sum(submatrix) == 87:
+                # Add the submatrix to the list of submatrices
+                submatrices.append(submatrix)
+
+    # Return the list of submatrices with a particular sum
+    return submatrices

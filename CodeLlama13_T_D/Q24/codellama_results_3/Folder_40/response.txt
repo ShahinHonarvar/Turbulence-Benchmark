@@ -1,0 +1,13 @@
+```
+def sum_of_divisors_in_range(n):
+    divisors = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            divisors.append(i)
+    return sum(divisors[1:3])
+```
+This function takes a positive integer `n` as an argument and returns the sum of all positive divisors of `n` that are between 1 and 2, both inclusive. The function first creates an empty list called `divisors`. Then it uses a for loop to iterate through all numbers from 1 to `n+1`, and checks if each number is a divisor of `n`. If a number is a divisor, it is added to the `divisors` list. Finally, the function returns the sum of the elements in the `divisors` list that are between 1 and 2, both inclusive.
+
+For example, if we call the function with `n=10`, the function will return the sum of all positive divisors of 10 that are between 1 and 2, both inclusive. The divisors of 10 are 1, 2, 5, and 10. The elements in this list that are between 1 and 2, both inclusive, are 1 and 2. So the function will return `1 + 2 = 3`.
+
+Note that the function only considers positive divisors of `n`, so it does not include any negative divisors or zero. Also, the function returns 0 if no such divisors exist in the specified range.

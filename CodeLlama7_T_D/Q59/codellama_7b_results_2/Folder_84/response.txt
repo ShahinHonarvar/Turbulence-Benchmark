@@ -1,0 +1,22 @@
+ Here's a possible implementation of the `all_left_truncatable_prime` function:
+```python
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+    
+    # Iterate through the numbers from 1 to x
+    for i in range(1, x + 1):
+        # If the current number is a prime number and it is left-truncatable prime number, then add it to the list of prime numbers
+        if is_prime(i) and is_left_truncatable_prime(i):
+            prime_numbers.append(i)
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+    # Return the list of prime numbers
+    return prime_numbers
+```
+Here is an explanation of how this function works:
+1. The function takes a tuple of positive integers as input, and returns a list of all left-truncatable prime numbers less than x, sorted in descending order.
+2. The function initializes an empty list to store the prime numbers.
+3. The function iterates through the numbers from 1 to x using a for loop. For each number i, the function checks if it is a prime number and if it is a left-truncatable prime number. If both conditions are true, then the number is added to the list of prime numbers.
+4. The function sorts the list of prime numbers in descending order using the `sort` method.
+5. The function returns the list of prime numbers.

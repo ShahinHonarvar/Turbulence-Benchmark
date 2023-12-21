@@ -1,0 +1,13 @@
+
+def find_subset_of_length_n(set_of_elements):
+    # Initialize a variable to keep track of the number of subsets
+    num_subsets = 0
+
+    # Iterate over all possible combinations of elements in the set
+    for combination in itertools.combinations(set_of_elements, 78):
+        # If the combination is a subset, increment the counter
+        if len(combination) == 78:
+            num_subsets += 1
+
+    # Return the number of subsets of length 78 in the set
+    return num_subsets

@@ -1,0 +1,20 @@
+ Here's a possible implementation of the `all_substring_of_size_n` function:
+```
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Iterate over the characters in the input string
+    for i in range(len(input_string) - 78 + 1):
+        # Extract a substring of length 78 from the input string
+        substring = input_string[i:i+78]
+
+        # Check if the substring contains any duplicate characters
+        if len(substring) == len(set(substring)):
+            # If it does not contain any duplicate characters, add it to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of substrings
+    return substrings
+```
+This implementation uses a nested loop to iterate over the characters in the input string and extracts substrings of length 78 using slicing. It then checks if each substring contains any duplicate characters by converting it to a set and checking its length, and only adds substrings that do not contain any duplicate characters to the list of substrings.

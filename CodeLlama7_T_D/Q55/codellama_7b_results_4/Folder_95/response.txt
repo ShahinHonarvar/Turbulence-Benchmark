@@ -1,0 +1,50 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(circular_list):
+    # create an empty list to store the sublists
+    sublists = []
+
+    # loop through the circular list
+
+    for i in range(len(circular_list)):
+
+        # initialize a variable to keep track of the product of the current sublist
+
+        product = 1
+
+
+        # loop through the elements of the current sublist
+
+        for j in range(i, len(circular_list)):
+
+            # calculate the product of the current sublist
+
+            product *= circular_list[j]
+
+
+            # check if the product is equal to 28
+
+            if product == 28:
+
+                # add the current sublist to the list of sublists
+
+                sublists.append(circular_list[i:j+1])
+
+                # break out of the inner loop
+
+                break
+
+
+        # check if the outer loop should be broken
+
+        if product == 28:
+
+            # break out of the outer loop
+
+            break
+
+
+# return the list of sublists
+
+return sublists
+```

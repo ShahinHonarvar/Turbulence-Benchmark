@@ -1,0 +1,17 @@
+```python
+def all_left_right_truncatable_prime(nums):
+    primes = []
+    for num in nums:
+        if is_prime(num) and not contains_zero(num):
+            primes.append(num)
+    return primes
+
+def is_prime(num):
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def contains_zero(num):
+    return '0' in str(num)
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef if_contains_anagrams(lst):\n    count = 0\n    for i in range(len(lst)):\n        for j in range(i+1, len(lst)):\n            if sorted(lst[i].lower()) == sorted(lst[j].lower()) and len(lst[i]) >= 3:\n                count += 1\n                if count >= 25:\n                    return True\n    return False\n```\nNote that the code assumes that the input list of strings contains only alphanumeric characters. If special characters are present, additional handling may be required.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689778286,
+  "id": "chatcmpl-7e2oQyx7rnnrPoGcUHGRuwyKGotWn",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 110,
+    "prompt_tokens": 126,
+    "total_tokens": 236
+  }
+}

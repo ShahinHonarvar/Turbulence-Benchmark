@@ -1,0 +1,13 @@
+
+def find_second_smallest_num(my_list):
+    smallest = None
+    second_smallest = None
+    
+    for i in range(59, 98):
+        if my_list[i] < smallest:
+            second_smallest = smallest
+            smallest = my_list[i]
+        elif my_list[i] > smallest and my_list[i] < second_smallest:
+            second_smallest = my_list[i]
+    
+    return second_smallest

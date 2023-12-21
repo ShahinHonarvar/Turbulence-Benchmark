@@ -1,0 +1,14 @@
+
+def palindromes_between_indices(string):
+    # Find the indices of the first and last letters in the string
+    first_index = 3
+    last_index = 4
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate through each letter in the string between the first and last indices
+    for i in range(first_index, last_index + 1):
+        # Check if the letter is a palindrome of length 3 or more
+        if string[i - 2:i + 1] == string[i - 2:i + 1][::-1]]:
+            # Add the palindrome to the set
+            palindromes.add(string[i - 2:i + 1])
+    return palindromes

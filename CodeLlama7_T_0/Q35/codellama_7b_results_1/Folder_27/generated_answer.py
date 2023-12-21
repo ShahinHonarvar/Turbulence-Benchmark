@@ -1,0 +1,14 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the characters removed
+    new_str = ""
+
+    # Iterate over the characters in the given string
+    for char in s:
+
+        # If the character is not present in the substring between indices 86 and 89, exclusive, then add it to the new string
+        if char not in s[85:88]:
+            new_str += char
+
+    # Return the altered string
+    return new_str

@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function in Python:
+```
+def palindromes_of_specific_lengths(string, lengths):
+    # Create a list to store the palindromes
+    palindromes = []
+    # Iterate over each length in the specified range
+    for length in lengths:
+        # Get the substring of the specified length from the input string
+        substring = string[124:length]
+        # Check if the substring is a palindrome
+        if is_palindrome(substring):
+            # Add the palindrome to the list
+            palindromes.append(substring)
+    return set(palindromes)
+# Test the function with an input string and lengths
+string = "abcdefghijklmnopqrstuvwxyz"
+lengths = [115, 124, 133]
+#print(palindromes_of_specific_lengths(string, lengths))
+```
+This implementation first creates an empty list to store the palindromes. It then iterates over each length in the specified range, using the `range` function to generate a sequence of integers from 115 to 134 (both inclusive). For each length, it uses slicing to extract the substring of that length from the input string, and then checks if the substring is a palindrome by calling the `is_palindrome` function. If the substring is a palindrome, it adds it to the list of palindromes. Finally, it returns the set of all palindromes found in the specified index range.

@@ -1,0 +1,17 @@
+ ```
+def all_odd_ints_exclusive(my_list):
+    # Get the indices of the first and last odd integers in the list
+    first_odd_index = None
+    last_odd_index = None
+    for i, x in enumerate(my_list):
+        if x % 2 == 1:
+            if first_odd_index is None:
+                first_odd_index = i
+            last_odd_index = i
+    # If no odd integers exist in the specified range, return an empty list
+    if first_odd_index is None or last_odd_index is None:
+        return []
+
+    # Return the list of all odd integers from index 51 to index 76, both exclusive
+    return my_list[first_odd_index + 1 : last_odd_index]
+```

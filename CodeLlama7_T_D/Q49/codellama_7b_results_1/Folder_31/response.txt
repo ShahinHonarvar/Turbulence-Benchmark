@@ -1,0 +1,16 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Find the index of the 69th Fibonacci number in the binary representation
+    fib_index = (decimal_integer - 1).bit_length() - 1
+    # Check if the decimal integer is divisible by the 69th Fibonacci number
+    return decimal_integer % fib(fib_index) == 0
+def fib(n):
+    if n <= 1:
+        return n
+
+    else:
+
+        return fib(n - 1) + fib(n - 2)
+```

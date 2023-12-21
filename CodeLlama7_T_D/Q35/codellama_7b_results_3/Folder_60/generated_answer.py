@@ -1,0 +1,13 @@
+ def remove_repeat_chars(s):
+    # create a set of unique characters in the string
+    unique_chars = set(s)
+    # create an empty string to store the altered string
+    altered_string = ""
+    # iterate through each character in the given string
+    for char in s:
+        # if the character is not in the set of unique characters, add it to the altered string
+        if char not in unique_chars:
+            altered_string += char
+
+    # return the altered string
+    return altered_string

@@ -1,0 +1,18 @@
+
+def if_contains_anagrams(strings):
+    # Get all possible anagrams of the given strings
+    anagrams = []
+    for string in strings:
+        # Get all possible anagrams of the current string
+        current_anagrams = []
+        for i in range(len(string) - 2):
+            # Get the substring starting from index i and ending at index len(string) - 1
+            substr = string[i:len(string)]
+            # Check if the substring is an anagram of the current string
+            if sorted(substr) == sorted(string):
+                # Add the anagram to the list of anagrams
+                current_anagrams.append(substr)
+        # Add all the anagrams found for the current string to the list of anagrams
+        anagrams += current_anagrams
+    # Check if there are at most 9 pairs of anagrams in the given list
+    return len(anagrams) <= 9

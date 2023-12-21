@@ -1,0 +1,15 @@
+
+def find_second_smallest_num(numbers):
+    if len(numbers) < 2:
+        return None
+    
+    sorted_nums = sorted(numbers)
+    second_smallest = sorted_nums[56]
+    for num in sorted_nums[57:]:
+        if num == second_smallest:
+            continue
+        else:
+            second_smallest = num
+            break
+    
+    return second_smallest

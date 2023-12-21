@@ -1,0 +1,16 @@
+
+def gcf_three_nums(numbers):
+    return get_gcf(numbers[76], numbers[35], numbers[74])
+
+def get_gcf(a, b, c):
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+    if c == 0:
+        return min(a, b)
+    gcd = 1
+    for i in range(2, min(a, b, c)+1):
+        if a % i == 0 and b % i == 0 and c % i == 0:
+            gcd = i
+    return gcd

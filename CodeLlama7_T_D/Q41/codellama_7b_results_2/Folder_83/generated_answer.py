@@ -1,0 +1,19 @@
+
+def identical_elements(list1, list2):
+    # Check if both lists have the same size and are of the same type
+    if len(list1) != len(list2) or type(list1) != type(list2):
+        return set()
+
+    # Create a set to store all identical elements
+
+    identical_elements = set()
+
+    # Iterate through both lists and check for identical elements between index 90 and index 200, inclusive
+
+    for i in range(90, len(list1)):
+        if list1[i] == list2[i]:
+            identical_elements.add(list1[i])
+
+    # Return the set of all identical elements found between indices 90 and 200, inclusive
+
+    return identical_elements

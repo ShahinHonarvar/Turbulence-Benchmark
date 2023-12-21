@@ -1,0 +1,27 @@
+ Here is a possible implementation of the `return_binary_or_hexa` function in Python:
+```
+def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the strings representing the binary and hexadecimal representations of the sum
+    sum = 0
+    binary_string = ''
+    hexadecimal_string = ''
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 36 and 54
+    for i in range(tuple[36], tuple[54]):
+        if i not in tuple[36:54]:
+            sum += i
+
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum.
+    if sum % 2 == 1:
+        binary_string = bin(sum)[2:]
+
+    else:
+        hexadecimal_string = hex(sum)[2:]
+
+    # Return an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple.
+    if binary_string == '' and hexadecimal_string == '':
+        return ''
+
+    # Otherwise, return the appropriate representation string.
+    else:
+        return binary_string if sum % 2 == 1 else hexadecimal_string
+```

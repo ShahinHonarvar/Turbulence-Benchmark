@@ -1,0 +1,20 @@
+[cohere.Generation {
+	id: 8447e610-9154-4579-8a79-1ae423e71b93
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'identical_elements' that takes two arguments, two lists of the same size, and returns the set of all elements that occur at least once in both lists anywhere between index 209 and index 556, both inclusive. If no such elements exist in the given lists, the function should return an empty set.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def identical_elements(lst1, lst2):
+    i = 209
+    j = 556
+    identical = set()
+    while i < j:
+        if lst1[i] in lst2[i]:
+            identical.add(lst1[i])
+        if lst2[i] in lst1[i]:
+            identical.add(lst2[i])
+        i += 1
+    return identical
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,20 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Calculate the number of subsets of size n
+    number_of_subsets = 2 ** len(elements)
+    # Initialize a counter for the number of subsets of size n
+    counter = 0
+
+    # Iterate over all possible subsets of size n
+    for subset in itertools.combinations(elements, n):
+        # Check if the current subset is of length n
+        if len(subset) == n:
+            # Increment the counter by one
+            counter += 1
+
+    # Return the number of all subsets of size n
+    return counter
+
+# Test the function with a set of elements and a desired subset size
+#print(find_subset_of_length_n({"a", "b", "c"}, 2))
+```

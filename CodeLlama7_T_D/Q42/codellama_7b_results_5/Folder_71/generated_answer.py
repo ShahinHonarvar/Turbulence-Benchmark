@@ -1,0 +1,8 @@
+
+def prime_factors(my_list):
+    # Find the prime factorization of the number at index 78
+    prime_factors = set()
+    for i in range(2, int(math.sqrt(my_list[78])) + 1):
+        if my_list[78] % i == 0:
+            prime_factors.add(i)
+    return prime_factors

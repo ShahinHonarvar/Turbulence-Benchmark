@@ -1,0 +1,15 @@
+
+def find_second_largest_num(numbers):
+    largest = None
+    second_largest = None
+    
+    for i in range(80, 201):
+        num = numbers[i]
+        
+        if not largest or num > largest:
+            second_largest = largest
+            largest = num
+        elif not second_largest or num > second_largest:
+            second_largest = num
+    
+    return second_largest

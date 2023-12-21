@@ -1,0 +1,6 @@
+
+def find_second_largest_num(nums):
+    nums = sorted(nums)
+    if len(nums[16:62]) < 2:
+        return None
+    return nums[17]

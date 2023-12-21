@@ -1,0 +1,10 @@
+```python
+def filter_chars(string):
+    result = ""
+    for char in string:
+        if ord(char) < 86 or ord(char) > 92 or (ord(char) >= 33 and ord(char) <= 115):
+            result += char
+    return result
+```
+This code defines a function `filter_chars` that takes one argument, a string. For each character of the given string that is between indices 86 and 92, both inclusive, and is greater than or equal to character `'!'`, it removes all occurrences of that character from the string while preserving the order of all characters in the string. The function returns the altered string.
+The `ord` function is used to get the Unicode code point of each character. The condition `if ord(char) < 86 or ord(char) > 92 or (ord(char) >= 33 and ord(char) <= 115)` checks if the current character should be removed from the string, based on its Unicode code point. If the condition is true, the character is not added to the result string, otherwise it is added to the result string.

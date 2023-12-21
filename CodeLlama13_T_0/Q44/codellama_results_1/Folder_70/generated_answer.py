@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(lst):
+    return {x for i, x in enumerate(lst) if 32 <= i <= 35 and x > 1}

@@ -1,0 +1,10 @@
+
+def find_second_largest_num(distinct_numbers):
+    if len(distinct_numbers) < 48:
+        return None
+    sorted_numbers = sorted(distinct_numbers, reverse=True)
+    second_largest = sorted_numbers[30]
+    for i in range(31, 49):
+        if sorted_numbers[i] != second_largest:
+            return second_largest
+    return None

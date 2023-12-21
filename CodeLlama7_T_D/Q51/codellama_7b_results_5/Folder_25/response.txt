@@ -1,0 +1,14 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Get all the anagram pairs in the list
+    anagram_pairs = []
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list))):
+            if sorted(my_list[i]) == sorted(my_list[j])):
+                anagram_pairs.append((my_list[i], my_list[j])))
+    # Check if there are more than 67 pairs of anagrams in the list
+    return len(anagram_pairs) <= 67
+```
+This code defines a function called `if_contains_anagrams` that takes a single argument, which is a list of strings. The function returns true if there are at most 67 pairs of anagrams in the given list; otherwise, it returns false.
+The function first gets all the anagram pairs in the list by iterating over each pair of adjacent strings and comparing them for anagrams using the `sorted` function to sort the characters in each string before comparison.
+Next, the function checks if there are more than 67 pairs of anagrams in the list by counting the number of anagram pairs and comparing it with the maximum allowed value of 67. If the number of anagram pairs is greater than or equal to 68, then the function returns false, indicating that the list contains more than 67 pairs of anagrams. Otherwise, if the number of anagram pairs is less than or equal to 67, then the function returns true, indicating that the list contains at most 67 pairs of anagrams.

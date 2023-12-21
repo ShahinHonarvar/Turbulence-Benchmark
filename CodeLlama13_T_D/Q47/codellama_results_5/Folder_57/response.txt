@@ -1,0 +1,11 @@
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the string that meet the length requirements
+    palindromes = {p for p in find_palindromes(string) if 39 <= len(p) <= 52}
+    
+    # Return only the palindromes found between indices 16 and 94 (inclusive)
+    return {p for p in palindromes if string.find(p) >= 16 and string.find(p) <= 94}
+```
+This function uses a set comprehension to find all palindromes in the given string that meet the length requirements, then returns only the palindromes found between indices 16 and 94 (inclusive). The `find_palindromes` function is not defined in this code.
+
+Note: This code assumes that the input string contains only English letters. If you want to include non-English letters, you will need to modify the `is_palindrome` function accordingly.

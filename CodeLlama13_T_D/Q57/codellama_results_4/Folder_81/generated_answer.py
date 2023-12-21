@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    submatrices = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            curr_submatrix = matrix[i:, j:]
+            if np.sum(curr_submatrix) == -90:
+                submatrices.append(curr_submatrix)
+    return submatrices

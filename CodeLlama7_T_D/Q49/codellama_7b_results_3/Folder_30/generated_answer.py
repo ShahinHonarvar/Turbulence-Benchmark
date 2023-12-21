@@ -1,0 +1,21 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the number of digits in the binary representation
+    num_digits = len(binary_representation)
+    # Initialize the variables for the Fibonacci sequence
+    a = 0
+    b = 1
+
+    # Check if the decimal integer is divisible by the 186th number that occurs in the Fibonacci sequence
+    for i in range(num_digits):
+        # Calculate the current digit in the binary representation
+        current_digit = (decimal_integer // (2 ** i))) % 2
+        # Check if the current digit is a 1
+        if current_digit == 1:
+            # If it is, add the corresponding value from the Fibonacci sequence to the sum
+            sum += a + b
+
+    # Return True if the sum is divisible by 186, False otherwise
+    return sum % 186 == 0

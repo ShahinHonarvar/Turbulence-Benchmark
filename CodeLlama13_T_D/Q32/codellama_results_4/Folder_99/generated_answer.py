@@ -1,0 +1,8 @@
+
+def insert_after_character(string, character):
+    result = ''
+    for c in string:
+        if c == character:
+            result += 'W'
+        result += c
+    return result

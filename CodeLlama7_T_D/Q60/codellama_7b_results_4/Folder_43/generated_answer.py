@@ -1,0 +1,50 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+
+    # Loop through the numbers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list
+                prime_list.append(i)
+
+    # Sort the list in descending order
+    prime_list = sorted(prime_list, reverse=True)
+
+    # Return the list of all left-and-right-truncatable prime numbers less than or equal to x
+    return prime_list
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through the numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if i divides n
+                return False
+
+    # If the loop completes successfully, return True
+    return True
+
+# Check if a number is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Initialize a string variable to store the decimal representation of n
+    num_str = str(n)
+
+    # Loop through the numbers from 1 to the length of the decimal representation of n - 1
+    for i in range(1, len(num_str) - 1):
+        # Check if the number at index i is equal to the number at index i + 1
+        if num_str[i] == num_str[i + 1]:
+            # If the condition is true, check if the number at index i is equal to the number at index i - 1
+            if num_str[i] == num_str[i - 1]:
+                # If the condition is true, return False because the number is not left-and-right-truncatable prime number
+                return False
+
+    # If the loop completes successfully, return True
+    return True

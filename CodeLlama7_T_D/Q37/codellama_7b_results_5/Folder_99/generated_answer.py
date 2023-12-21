@@ -1,0 +1,17 @@
+
+def filter_chars(string):
+    # Create a list of characters in the string
+    char_list = list(string)
+
+    # Iterate over the characters in the string
+    for i, char in enumerate(char_list):
+        # Check if the character is between indices 373 and 901, both inclusive, and is greater than or equal to character 'T' and smaller than or equal to character 'h'
+        if 373 <= i <= 901 and char >= 'T' and char <= 'h':
+            # Remove all occurrences of the character from the string
+            char_list.remove(char)
+
+    # Join the list of characters back into a string
+    altered_string = "".join(char_list)
+
+    # Return the altered string
+    return altered_string

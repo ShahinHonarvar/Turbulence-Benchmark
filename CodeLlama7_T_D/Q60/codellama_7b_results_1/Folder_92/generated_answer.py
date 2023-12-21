@@ -1,0 +1,25 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x (inclusive)
+    for i in range(1, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i contains no zeros and remains prime if the leading leftmost and last rightmost digits are simultaneously successively removed down to a one- or two-digit prime
+            if all(c != '0' for c in str(i)) and all(is_prime(i - 1) or is_prime(i + 1) for j in range(str(i).count('1') + str(i).count('2'), len(str(i))))):
+                # If i satisfies the above condition, add it to the list of prime numbers
+                prime_numbers.append(i)
+
+    return sorted(prime_numbers)
+
+def is_prime(n):
+    if n == 1 or n == 0:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True

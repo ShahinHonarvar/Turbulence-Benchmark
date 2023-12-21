@@ -1,0 +1,17 @@
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a set to store the anagram pairs
+    anagram_pairs = set()
+    
+    # Iterate through each string in the list
+    for s1 in my_list:
+        # Iterate through each string after the current string
+        for s2 in my_list[my_list.index(s1) + 1:]:
+            # Check if the two strings are anagrams of each other
+            if sorted(s1.lower()) == sorted(s2.lower()):
+                # Add the pair to the set of anagram pairs
+                anagram_pairs.add((s1, s2))
+    
+    # Return True if there are at most 52 pairs of anagrams in the list
+    return len(anagram_pairs) <= 52
+```

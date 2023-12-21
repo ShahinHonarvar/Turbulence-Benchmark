@@ -1,0 +1,20 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each possible arrangement of the English letters in the given string that occur between index 5 to index 9, both inclusive
+    for i in range(5, 10):
+        # Get the letter at index i in the given string
+        letter_i = string[i]
+        # Loop through each possible arrangement of the English letters in the given string that occur between index 5 to index 9, both inclusive
+        for j in range(5, 10):
+            # Get the letter at index j in the given string
+            letter_j = string[j]
+            # Check if the letter at index i is not equal to the letter at index j
+            if letter_i != letter_j:
+                # Check if the length of the palindrome formed by concatenating the letter at index i and the letter at index j is greater than or equal to 4
+                if len(letter_i + letter_j) >= 4:
+                    # Add the palindrome formed by concatenating the letter at index i and the letter at index j to the set of palindromes
+                    palindromes.add(letter_i + letter_j)
+    # Return the set of palindromes
+    return palindromes

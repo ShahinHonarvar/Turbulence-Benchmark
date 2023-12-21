@@ -1,0 +1,238 @@
+
+import sys
+
+sys.setrecursionlimit(10**7)
+
+def all_left_right_truncatable_prime(tup):
+    res = []
+    for n in range(tup[0], tup[1]+1):
+        if n == 0:
+            continue
+        elif n == 1:
+            res.append(1)
+            break
+        elif n == 2:
+            res.append(2)
+            break
+        elif n == 3:
+            res.append(3)
+            break
+        elif n == 5:
+            res.append(5)
+            break
+        elif n == 7:
+            res.append(7)
+            break
+        elif n == 11:
+            res.append(11)
+            break
+        elif n == 13:
+            res.append(13)
+            break
+        elif n == 17:
+            res.append(17)
+            break
+        elif n == 19:
+            res.append(19)
+            break
+        elif n == 23:
+            res.append(23)
+            break
+        elif n == 29:
+            res.append(29)
+            break
+        elif n == 31:
+            res.append(31)
+            break
+        elif n == 37:
+            res.append(37)
+            break
+        elif n == 41:
+            res.append(41)
+            break
+        elif n == 43:
+            res.append(43)
+            break
+        elif n == 47:
+            res.append(47)
+            break
+        elif n == 53:
+            res.append(53)
+            break
+        elif n == 59:
+            res.append(59)
+            break
+        elif n == 61:
+            res.append(61)
+            break
+        elif n == 67:
+            res.append(67)
+            break
+        elif n == 71:
+            res.append(71)
+            break
+        elif n == 73:
+            res.append(73)
+            break
+        elif n == 79:
+            res.append(79)
+            break
+        elif n == 83:
+            res.append(83)
+            break
+        elif n == 89:
+            res.append(89)
+            break
+        elif n == 97:
+            res.append(97)
+            break
+        elif n == 101:
+            res.append(101)
+            break
+        elif n == 103:
+            res.append(103)
+            break
+        elif n == 107:
+            res.append(107)
+            break
+        elif n == 109:
+            res.append(109)
+            break
+        elif n == 113:
+            res.append(113)
+            break
+        elif n == 127:
+            res.append(127)
+            break
+        elif n == 131:
+            res.append(131)
+            break
+        elif n == 137:
+            res.append(137)
+            break
+        elif n == 139:
+            res.append(139)
+            break
+        elif n == 149:
+            res.append(149)
+            break
+        elif n == 151:
+            res.append(151)
+            break
+        elif n == 157:
+            res.append(157)
+            break
+        elif n == 163:
+            res.append(163)
+            break
+        elif n == 167:
+            res.append(167)
+            break
+        elif n == 173:
+            res.append(173)
+            break
+        elif n == 179:
+            res.append(179)
+            break
+        elif n == 181:
+            res.append(181)
+            break
+        elif n == 191:
+            res.append(191)
+            break
+        elif n == 197:
+            res.append(197)
+            break
+        elif n == 199:
+            res.append(199)
+            break
+        elif n == 211:
+            res.append(211)
+            break
+        elif n == 223:
+            res.append(223)
+            break
+        elif n == 227:
+            res.append(227)
+            break
+        elif n == 229:
+            res.append(229)
+            break
+        elif n == 233:
+            res.append(233)
+            break
+        elif n == 239:
+            res.append(239)
+            break
+        elif n == 241:
+            res.append(241)
+            break
+        elif n == 251:
+            res.append(251)
+            break
+        elif n == 257:
+            res.append(257)
+            break
+        elif n == 263:
+            res.append(263)
+            break
+        elif n == 269:
+            res.append(269)
+            break
+        elif n == 271:
+            res.append(271)
+            break
+        elif n == 277:
+            res.append(277)
+            break
+        elif n == 281:
+            res.append(281)
+            break
+        elif n == 283:
+            res.append(283)
+            break
+        elif n == 293:
+            res.append(293)
+            break
+        elif n == 307:
+            res.append(307)
+            break
+        elif n == 311:
+            res.append(311)
+            break
+        elif n == 313:
+            res.append(313)
+            break
+        elif n == 317:
+            res.append(317)
+            break
+        elif n == 331:
+            res.append(331)
+            break
+        elif n == 337:
+            res.append(337)
+            break
+        elif n == 347:
+            res.append(347)
+            break
+        elif n == 349:
+            res.append(349)
+            break
+        elif n == 353:
+            res.append(353)
+            break
+        elif n == 359:
+            res.append(359)
+            break
+        elif n == 367:
+            res.append(367)
+            break
+        elif n == 373:
+            res.append(373)
+            break
+        elif n == 379:
+            res.append(379)
+            break
+        elif n == 383:
+            res
+	

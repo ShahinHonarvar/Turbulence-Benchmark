@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(int_list):
+    sum = 0
+    for i in range(20, 201):
+        if int_list[i] % -20 == 0 or int_list[i] % -200 == 0:
+            sum += int_list[i]
+    return sum

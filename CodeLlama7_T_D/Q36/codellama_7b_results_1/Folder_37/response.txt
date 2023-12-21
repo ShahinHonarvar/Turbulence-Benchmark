@@ -1,0 +1,18 @@
+ Here is a possible implementation of the `filter_chars` function:
+```
+def filter_chars(my_string):
+    # Create a list of characters in the string
+    char_list = list(my_string)
+    # Iterate over the characters and remove those that match the criteria
+    for i in range(len(char_list)):
+        if char_list[i] > '/' and char_list[i] < '6':
+            char_list.pop(i)
+            # Decrement the iterator to account for the removed character
+            i -= 1
+
+    # Join the list of characters back into a string
+    filtered_string = "".join(char_list)
+    return filtered_string
+```
+This function takes a single argument, `my_string`, which is a string that may contain characters outside the range of '/' and '6'. The function first creates a list of characters in the string using the built-in `list` function. It then iterates over the characters in the list using a for loop, and removes any character that matches the criteria specified in the problem statement (i.e., character must be greater than '/' and smaller than '6'). The function then joins the remaining characters back into a string and returns it.
+For example, if `my_string` is "Hello/World", the filtered string will be "Hello". If `my_string` is "/", the filtered string will be an empty string (i.e., no characters are removed).

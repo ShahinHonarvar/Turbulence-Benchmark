@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(lst):\n    sublists = []\n    n = len(lst)\n    \n    for i in range(1, n+1):\n        for j in range(n):\n            sublist = lst[j:j+i]\n            if len(sublist) > 0:\n                product = 1\n                for num in sublist:\n                    product *= num\n                if product == 96:\n                    sublists.append(sublist)\n    \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797376,
+  "id": "chatcmpl-7e7mKDSNEelUf4nJfhSuwWLWO4Rmx",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 193,
+    "total_tokens": 295
+  }
+}

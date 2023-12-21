@@ -1,0 +1,13 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Initialize the Fibonacci sequence with the first two numbers
+    fib_seq = [0, 1]
+    # Iterate through the Fibonacci sequence until we reach the 64th number
+    for i in range(63):
+        # Add the last two numbers of the Fibonacci sequence to get the next number
+        fib_seq.append(fib_seq[-1] + fib_seq[-2])
+    # Check if the decimal integer is divisible by the 64th number of the Fibonacci sequence
+    return decimal_int % fib_seq[63] == 0
+```

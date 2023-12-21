@@ -1,0 +1,3 @@
+
+def palindromes_of_specific_lengths(string):
+    return {palindrome for palindrome in string[103:276] if len(palindrome) in range(100, 169+1)}

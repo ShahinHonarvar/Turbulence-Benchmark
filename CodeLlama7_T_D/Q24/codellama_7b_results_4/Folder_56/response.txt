@@ -1,0 +1,19 @@
+ ```
+def sum_of_divisors_in_range(n):
+    if n < 6 or n > 9:
+        return 0
+
+    divisors = []
+
+    for i in range(1, int(n ** 0.5) + 1):
+
+        if n % i == 0:
+
+            divisors.append(i)
+
+    return sum(divisors)
+```
+Explanation:
+The function first checks if the input integer `n` is between 6 and 9, both inclusive. If it's not, it returns 0.
+Next, we find all the positive divisors of `n` that are between 6 and 9, both inclusive. We do this by using a loop to iterate over all the numbers between 1 and the square root of `n`, and then checking if each number is a factor of `n`. If it is, we add it to our list of divisors.
+Finally, we return the sum of all the positive divisors of `n` that are between 6 and 9, both inclusive. If there were no such divisors, the function would have returned 0 earlier.

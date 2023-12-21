@@ -1,0 +1,23 @@
+
+def find_original_set(sets):
+    # Create a set of all elements in the input sets
+    all_elements = set()
+    for s in sets:
+        all_elements |= s
+
+    # Create a dictionary mapping each element to its corresponding set
+
+    element_to_set = {}
+
+    for s, e in zip(sets, all_elements):
+        element_to_set[e] = s
+
+    # Find the smallest set that contains all elements
+
+    smallest_set = None
+
+    for e in all_elements:
+        if smallest_set is None or len(smallest_set) > len(element_to_set[e])):
+            smallest_set = element_to_set[e]
+
+    return smallest_set

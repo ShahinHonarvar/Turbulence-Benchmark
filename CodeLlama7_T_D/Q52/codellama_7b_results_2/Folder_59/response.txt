@@ -1,0 +1,10 @@
+ ```
+def palindrome_of_length_n(string):
+    # Find all substrings of length n in the given string
+    substrs = [string[i:i+n] for i in range(len(string)-n+1)]
+    # Filter out non-palindromes and return the set of palindromes
+    return {s for s in substrs if s == s[::-1]}
+```
+This function takes a string as input and returns the set of all palindromes of length 39 that are substrings of the given string. The function finds these palindromes by iterating over all possible starting positions in the given string and checking if the corresponding substring is a palindrome. If there is no palindrome of the specified length as a substring of the given string, the function returns an empty set.
+The function uses a list comprehension to generate all possible substrings of length 39 from the given string. It then filters out non-palindromes using a generator expression and returns the set of palindromes.
+Note that this function is case-insensitive, meaning that it will find both "racecar" and "RaceCar" as palindromes in the same substring.

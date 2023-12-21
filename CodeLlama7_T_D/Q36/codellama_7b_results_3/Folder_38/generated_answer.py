@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the given string
+    for c in s:
+        # If the current character is not between the indices 44 and 48 (both exclusive)
+        if not (44 < ord(c) < 48):
+            # Append the current character to the filtered string
+            filtered += c
+
+    # Return the filtered string
+    return filtered

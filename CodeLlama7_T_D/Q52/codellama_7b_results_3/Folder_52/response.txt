@@ -1,0 +1,24 @@
+ ```
+def palindrome_of_length_n(string, n):
+    # Check if the input string is a palindrome of length n
+    if len(string) != n:
+        return set()
+
+    # Convert the input string to lowercase
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+
+    # Iterate over the characters in the input string
+    for i in range(len(string)):
+        # Check if the character is a letter
+        if string[i].isalpha():
+            # Check if the character is the same as the last character of the substring
+            if string[i] == string[-i-1]:
+                # Add the substring to the set of palindromes
+                palindromes.add(string[i:len(string)-i])
+
+    # Return the set of palindromes
+    return palindromes
+```

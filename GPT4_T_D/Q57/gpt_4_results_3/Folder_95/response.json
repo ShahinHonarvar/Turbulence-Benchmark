@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    result = []\n    for sub_matrix_size in range(1, min(rows, cols) + 1):\n        for r in range(rows - sub_matrix_size + 1):\n            for c in range(cols - sub_matrix_size + 1):\n                sub_matrix = matrix[r:r + sub_matrix_size, c:c + sub_matrix_size]\n                if np.sum(sub_matrix) == 19:\n                    result.append(sub_matrix)\n    return result\n```\n\nThis function will check all possible submatrices of the given matrix and add it to the result list if the sum of its elements is 19.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690985116,
+  "id": "chatcmpl-7j6lQXUulh3TJAIYZjd5rM1MoG0Lz",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 158,
+    "prompt_tokens": 121,
+    "total_tokens": 279
+  }
+}

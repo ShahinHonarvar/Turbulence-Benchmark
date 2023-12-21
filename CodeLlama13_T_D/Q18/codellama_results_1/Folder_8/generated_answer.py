@@ -1,0 +1,7 @@
+
+def sum_ints_div_by_either_nums(numbers):
+    result = 0
+    for i in range(36, 86):
+        if numbers[i] % -27 == 0 or numbers[i] % -96 == 0:
+            result += numbers[i]
+    return result

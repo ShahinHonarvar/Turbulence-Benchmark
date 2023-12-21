@@ -1,0 +1,16 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # Initialize an empty list to store the result
+    result = []
+
+    # Iterate over the specified range of the input list
+    for i in range(58, 76):
+
+        # Check if the current element is divisible by both 72 and 62
+        if my_list[i] % 72 == 0 and my_list[i] % 62 == 0:
+
+            # If it is, add it to the result list
+            result.append(my_list[i])
+
+    # Return the result list
+    return result

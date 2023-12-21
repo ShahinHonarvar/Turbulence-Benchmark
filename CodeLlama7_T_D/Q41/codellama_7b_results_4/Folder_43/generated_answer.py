@@ -1,0 +1,14 @@
+
+def identical_elements(list1, list2):
+    # Initialize a set to store the identical elements
+    identical_elements = set()
+
+    # Iterate through both lists simultaneously
+    for element1 in list1:
+        for element2 in list2:
+            # If the two elements are identical and they are within the specified indices, add them to the set of identical elements
+            if element1 == element2 and 68 <= list1.index(element1) <= 86 and 68 <= list2.index(element2) <= 86:
+                identical_elements.add(element1)
+
+    # Return the set of identical elements
+    return identical_elements

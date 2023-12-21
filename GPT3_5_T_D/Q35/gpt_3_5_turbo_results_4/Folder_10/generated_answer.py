@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(string):
+    repeated_chars = set()
+    altered_string = ""
+    for index, char in enumerate(string):
+        if 36 < index < 54 and char in string[index+1:]:
+            repeated_chars.add(char)
+        if char not in repeated_chars:
+            altered_string += char
+    return altered_string

@@ -1,0 +1,21 @@
+
+def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the indices of the first and last elements in the tuple
+    sum = 0
+    first_index = 0
+    last_index = len(tuple) - 1
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 15 and 57
+    for i in range(first_index + 1, last_index):
+        if tuple[i] not in tuple[first_index:last_index]:
+            sum += tuple[i]
+    # Return an empty string if all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple
+    if sum == 0:
+        return ""
+
+    # Otherwise, return the binary or hexadecimal representation string of the sum
+
+    elif sum % 2 != 0:
+        return "{:b}".format(sum)
+
+    else:
+        return "{:x}".format(sum)

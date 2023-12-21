@@ -1,0 +1,17 @@
+ ```
+def palindromes_between_indices(string):
+    # Create a list of all possible palindromes
+    # between index 1 and index 8, both inclusive
+    palindromes = []
+    for i in range(1, 9):
+        for j in range(i + 1, 10):
+            sub_string = string[i:j]
+            if sub_string == sub_string[::-1]:
+                palindromes.append(sub_string)
+    return set(palindromes)
+```
+This code defines a function called `palindromes_between_indices` that takes one argument, which is a string. The given string may consist of any character. The function should return the set of all palindromes of the length of at least 4 such that each palindrome is created from any possible arrangement of the English letters in the given string that occur between index 1 to index 8, both inclusive. If no such palindromes of the specified length can be created from the English letters of the given string that occur in the specified range, the function should return an empty set. The function should form each palindrome in a case-insensitive manner.
+The code first initializes an empty list called `palindromes` to store all possible palindromes between index 1 and index 8, both inclusive. It then iterates over the indices of the given string using a for loop, starting from index 1 and ending at index 8, both inclusive.
+For each iteration of the for loop, the code uses another for loop to iterate over the remaining indices of the given string that occur after the current index. The code then extracts a substring of the given string between the current index and the next index, using slicing notation.
+The code then checks if the extracted substring is a palindrome by checking if it is equal to its reverse. If the extracted substring is not a palindrome, the code moves on to the next iteration of the outer for loop.
+If the extracted substring is a palindrome, the code appends it to the `palindromes` list. Once all possible palindromes between index 1 and index 8, both inclusive, have been extracted, the code returns the `palindromes` set as the output of the function.

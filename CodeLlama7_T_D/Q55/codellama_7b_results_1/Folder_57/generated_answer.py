@@ -1,0 +1,30 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+        # Initialize a variable to store the product of the current element and its predecessor
+        prod = 1
+
+        # Calculate the product of the current element and its predecessor
+        if i > 0:
+            prod *= circular_list[i - 1]
+
+        # Initialize a variable to store the index of the first element in the sublist
+        start = i
+
+        # Find the end of the sublist by iterating over the remaining elements until the product becomes negative or reaches the maximum size allowed
+        while start < len(circular_list) and prod <= -75:
+            prod *= circular_list[start]
+            start += 1
+
+        # If the end of the sublist has been reached, add it to the list of sublists
+        if start == len(circular_list):
+            sublists.append(circular_list[i:])
+        elif prod <= -75:
+            sublists.append(circular_list[i:start])
+
+    # Return the list of sublists
+    return sublists

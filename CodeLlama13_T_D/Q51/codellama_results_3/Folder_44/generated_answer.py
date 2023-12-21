@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(string_list):
+    anagram_pairs = 0
+    for s in string_list:
+        for t in string_list:
+            if s != t and len(s) >= 3 and len(t) >= 3 and ''.join(sorted(s.lower())) == ''.join(sorted(t.lower())):
+                anagram_pairs += 1
+    return anagram_pairs <= 75

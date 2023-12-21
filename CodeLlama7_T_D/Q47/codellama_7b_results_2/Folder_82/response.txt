@@ -1,0 +1,17 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Split the string into a list of substrings
+    substrings = []
+    for i in range(3, 300 + 1):
+        substrings += [string[i - 3:i + 1]]
+    # Create a set to store all palindromes
+    palindromes = set()
+    # Iterate over each substring and check if it is a palindrome
+    for substring in substrings:
+        if len(substring) < 30 or len(substring) > 300:
+            continue
+
+        if substring == substring[::-1]:
+            palindromes.add(substring)
+    return palindromes
+```

@@ -1,0 +1,20 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 19, 69 and 97
+    gcf = 1
+    for i in range(19, 100, 30):
+        if gcf > 1:
+            break
+
+        for j in range(69, 100, 30):
+            if gcf > 1:
+                break
+
+            for k in range(97, 100, 30):
+                if gcf > 1:
+                    break
+
+                candidate = my_list[i] * my_list[j] * my_list[k]
+                if candidate % gcf == 0:
+                    gcf = candidate / (my_list[i] * my_list[j] * my_list[k]))
+    return gcf

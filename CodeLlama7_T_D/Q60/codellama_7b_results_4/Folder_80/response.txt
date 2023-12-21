@@ -1,0 +1,53 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+    # Iterate over the tuple
+    for i in range(len(tuple)):
+        # Check if the current number is a prime number
+        if is_prime(tuple[i]):
+            # Check if the current number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(tuple[i]):
+                # Add the current number to the list of prime numbers
+                prime_list.append(tuple[i])
+    # Sort the list of prime numbers in descending order
+    prime_list.sort(reverse=True)
+    # Return the sorted list of prime numbers
+    return prime_list
+
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to n-1
+        for i in range(2, n):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False if a divisor is found
+                return False
+
+    # If n is a prime number, return True
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # Check if the current number contains no 0
+    if "0" in str(n):
+        # Return False if the current number contains any 0
+        return False
+
+    # Iterate over the digits of the current number
+    for i in range(len(str(n)))):
+        # Check if the leading leftmost digit is not a prime number
+        if not is_prime(int(str(n)[i])):
+            # Return False if the leading leftmost digit is not a prime number
+            return False
+
+    # Iterate over the digits of the current number in reverse order
+    for i in range(len(str(n)))):
+        # Check if the last rightmost digit is not a prime number
+        if not is_prime(int(str(n)[-i]))):
+            # Return False if the last rightmost digit is not a prime number
+            return False
+
+    # If all checks pass, return True
+    return True
+```

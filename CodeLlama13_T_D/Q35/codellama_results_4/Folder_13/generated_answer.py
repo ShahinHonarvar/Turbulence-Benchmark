@@ -1,0 +1,10 @@
+
+def remove_repeat_chars(string):
+    seen = {}
+    result = ""
+    for char in string:
+        if char in seen and seen[char] < 46 or seen[char] > 91:
+            continue
+        seen[char] = seen.get(char, 0) + 1
+        result += char
+    return result

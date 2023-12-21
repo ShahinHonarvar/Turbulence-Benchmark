@@ -1,0 +1,3 @@
+
+def sum_in_range(numbers):
+    return sum(filter(lambda x: 368 <= x <= 679, numbers))

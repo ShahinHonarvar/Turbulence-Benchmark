@@ -1,0 +1,1 @@
+This question requires three integer parameter, i, j, and k, with 4 <= i and 0 <= j < k.

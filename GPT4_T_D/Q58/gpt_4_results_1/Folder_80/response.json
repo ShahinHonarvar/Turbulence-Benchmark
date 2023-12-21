@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    n, m = matrix.shape\n    for i in range(n):\n        for j in range(m):\n            for x in range(i, n):\n                for y in range(j, m):\n                    if (x - i + 1) * (y - j + 1) == 180:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083111,
+  "id": "chatcmpl-7fK6xAyNv8x4z0eE0yJBoeILS1RA9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 111,
+    "total_tokens": 207
+  }
+}

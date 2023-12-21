@@ -1,0 +1,11 @@
+ def return_vowels(my_string):
+    vowels = []
+    for i in range(63, 79):
+        if my_string[i] > 'D' and my_string[i] <= 'y':
+            vowels.append(my_string[i])
+    return vowels
+
+def test_function(test_case):
+    input_string = test_case[0]
+    expected_result = test_case[1]
+    actual_result = return_vowels(input_string)

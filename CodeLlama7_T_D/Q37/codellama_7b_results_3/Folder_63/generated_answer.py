@@ -1,0 +1,12 @@
+
+def filter_chars(string):
+    filtered_string = ""
+    for i in range(42, 92 + 1):
+        if string[i] >= "/" and string[i] <= "a":
+            continue
+
+        else:
+
+            filtered_string += string[i]
+
+    return filtered_string

@@ -1,0 +1,12 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sums
+    sum_722 = 0
+    sum_731 = 0
+    # Iterate over the list and calculate the sums
+    for i in range(281, 695):
+        if my_list[i] % -722 == 0 or my_list[i] % -731 == 0:
+            sum_722 += my_list[i] if my_list[i] % -722 == 0 else 0
+            sum_731 += my_list[i] if my_list[i] % -731 == 0 else 0
+    # Return the sum of all integers divisible by either -722 or -731 from index 281 to index 694, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum_722 + sum_731

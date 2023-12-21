@@ -1,0 +1,25 @@
+
+def all_substring_of_size_n(s, n):
+    # Check if the input string is None or empty
+    if s is None or len(s) == 0:
+        return []
+
+    # Check if the substring size is valid
+
+    if n < 1 or n > len(s):
+        raise ValueError("Invalid substring size")
+
+    # Initialize an empty list to store the substrings
+
+    substrings = []
+
+    # Iterate over the input string and extract all substrings of length n
+
+    for i in range(len(s) - n + 1):
+        substring = s[i:i+n]
+        if substring not in substrings:
+            substrings.append(substring)
+
+    # Return the list of substrings
+
+    return substrings

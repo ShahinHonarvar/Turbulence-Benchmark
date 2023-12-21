@@ -1,0 +1,10 @@
+
+def return_vowels(my_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    starting_index = 20
+    ending_index = 43
+    found_vowels = []
+    for i in range(starting_index, ending_index):
+        if my_string[i].lower() in vowels and my_string[i] > '5' and my_string[i] <= 'M':
+            found_vowels.append(my_string[i])
+    return found_vowels

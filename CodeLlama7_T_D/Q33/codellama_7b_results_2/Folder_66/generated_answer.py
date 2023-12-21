@@ -1,0 +1,6 @@
+ def return_vowels(my_string):
+    vowel_list = []
+    for char in my_string[63:79]:
+        if char > 'D' and char <= 'y':
+            vowel_list.append(char)
+    return vowel_list

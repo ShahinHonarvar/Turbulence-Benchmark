@@ -1,0 +1,20 @@
+
+def all_even_ints_exclusive(my_list):
+    # Find the first even index in the list
+    first_even = next((i for i, x in enumerate(my_list) if x % 2 == 0), None)
+    # If there are no even integers in the list, return an empty list
+    if first_even is None:
+        return []
+
+    # Find the last even index in the list
+
+    last_even = next((i for i, x in enumerate(my_list[first_even:]) if x % 2 == 0), None)
+
+    # If there are no even integers in the specified range, return an empty list
+
+    if last_even is None:
+        return []
+
+    # Return the list of all even integers from index 111 to index 473, both exclusive
+
+    return my_list[first_even + 110 : last_even + 110]

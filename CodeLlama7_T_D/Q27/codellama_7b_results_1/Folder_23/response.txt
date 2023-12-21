@@ -1,0 +1,11 @@
+ ```
+def insert_after_index(my_list):
+    new_list = []
+    for i in range(len(my_list)):
+        if i == 38:
+            new_list.extend(my_list[:i+1])
+            new_list.append(45)
+            new_list.extend(my_list[i+1:])
+    return new_list
+```
+This code defines a function `insert_after_index` that takes a list as input and returns a modified list with 45 inserted at the index immediately succeeding index 38. The function first creates an empty list called `new_list`. It then iterates through each element in the original list using a for loop. For each element, it checks if the current index is equal to 38. If it is, it appends the original list up to and including the current index to `new_list`, followed by the value 45. Finally, it appends any remaining elements of the original list to `new_list`. The modified list with 45 inserted at the index immediately succeeding index 38 is then returned from the function.

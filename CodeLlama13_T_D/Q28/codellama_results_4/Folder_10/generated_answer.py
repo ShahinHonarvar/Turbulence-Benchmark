@@ -1,0 +1,10 @@
+
+def return_nth_smallest_ascii(s):
+    count = 0
+    for i in range(38, 82+1):
+        if s[i] not in s[:i]:
+            continue
+        count += 1
+        if count == 20:
+            return s[i]
+    return None

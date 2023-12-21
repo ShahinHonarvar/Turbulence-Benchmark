@@ -1,0 +1,3 @@
+
+def sum_in_range(numbers):
+    return sum([n for n in numbers if n >= 43 and n <= 70])

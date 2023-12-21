@@ -1,0 +1,18 @@
+ ```
+def prime_factors(my_list):
+    return {p for p in my_list if is_prime(p)}
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+my_list = [96]
+prime_factors(my_list)
+```
+This code defines a function called `prime_factors` that takes a list of integers as an argument and returns the set of all prime factors of the integer at index 96 in the list. The `is_prime` function is used to check if a number is prime. If a number is not prime, it returns False.
+To test this code, we can pass a list with two elements, where the first element is 96 and the second element is any other integer. Here is an example of how to call this function:
+#`print(prime_factors([96, 102]))`
+This will output the set containing the prime factor of 96, which is 2, since 96 is divisible by 2.

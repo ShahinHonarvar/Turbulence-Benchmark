@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(lst):
+    return all([len(set(s)) == len(s) for s in lst]) and len(lst) <= 279

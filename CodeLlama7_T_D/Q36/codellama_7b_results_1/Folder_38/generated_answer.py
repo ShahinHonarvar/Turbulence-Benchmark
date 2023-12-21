@@ -1,0 +1,7 @@
+ def filter_chars(s):
+    start = 44
+    end = 48
+    for i in range(start, end):
+        if s[i] > '+' and s[i] < 'l':
+            s = s[:i] + s[i+1:]
+    return s

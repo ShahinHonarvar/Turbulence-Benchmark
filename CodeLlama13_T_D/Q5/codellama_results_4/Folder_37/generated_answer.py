@@ -1,0 +1,3 @@
+
+def all_neg_ints_inclusive(numbers):
+    return [number for number in numbers[1:6] if number < 0]

@@ -1,0 +1,12 @@
+
+def if_contains_anagrams(strs):
+    pairs = 0
+    for i in range(len(strs)):
+        for j in range(i+1, len(strs)):
+            s1 = strs[i].lower()
+            s2 = strs[j].lower()
+            if len(s1) >= 3 and len(s2) >= 3 and sorted(s1) == sorted(s2):
+                pairs += 1
+                if pairs > 14:
+                    return False
+    return True

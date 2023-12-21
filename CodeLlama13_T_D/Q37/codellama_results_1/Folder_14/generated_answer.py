@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    filtered = ''
+    for i, c in enumerate(s):
+        if 35 <= ord(c) <= 98 and 'A' <= c <= 'b':
+            continue
+        else:
+            filtered += c
+    return filtered

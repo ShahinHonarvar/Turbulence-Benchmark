@@ -1,0 +1,4 @@
+
+def insert_after_index(lst):
+    lst = lst[:4+1] + [7] + lst[4+1:]
+    return lst

@@ -1,0 +1,13 @@
+```python
+def remove_repeat_chars(s):
+    seen = {}
+    for i in range(70, 201):
+        c = s[i]
+        if c not in seen:
+            seen[c] = 1
+        else:
+            seen[c] += 1
+            if seen[c] > 1:
+                s = s.replace(c, "")
+    return s
+```

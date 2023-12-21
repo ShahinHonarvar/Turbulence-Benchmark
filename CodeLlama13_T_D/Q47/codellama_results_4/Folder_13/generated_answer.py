@@ -1,0 +1,9 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes of lengths between 57 and 60 that occur in the substring from index 13 to index 95, both inclusive
+    palindromes = []
+    for i in range(13, 96):
+        for j in range(i + 57, i + 61):
+            if string[i:j] == string[i:j][::-1]:
+                palindromes.append(string[i:j])
+    return set(palindromes)

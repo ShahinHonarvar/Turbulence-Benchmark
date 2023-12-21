@@ -1,0 +1,18 @@
+
+def palindromes_of_specific_lengths(string):
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(10):
+        # Get the substring from index 0 to index i
+        substring = string[:i+1]
+        # Loop through each possible palindrome length
+        for j in range(3, 6):
+            # Check if the substring is long enough to form a palindrome of length j
+            if len(substring) >= j:
+                # Get the palindrome by reversing the characters in the substring
+                palindrome = ''.join(reversed(substring[:j])))
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

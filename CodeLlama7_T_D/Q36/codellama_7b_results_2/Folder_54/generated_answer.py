@@ -1,0 +1,17 @@
+
+def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+
+    # Iterate over the characters in the given string
+    for char in string:
+        # If the character is not between the indices 18 and 38 (both exclusive)
+        if not (18 < ord(char) < 38):
+            # Add the character to the list of filtered characters
+            filtered_chars.append(char)
+
+    # Join the filtered characters into a single string
+    filtered_string = "".join(filtered_chars)
+
+    # Return the altered string with all occurrences of characters between the indices 18 and 38 (both exclusive) removed while keeping the order of all characters in the string intact
+    return filtered_string

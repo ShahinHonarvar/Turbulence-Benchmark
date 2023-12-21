@@ -1,0 +1,11 @@
+ def palindromes_of_specific_lengths(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string, starting from index 15 and ending at index 89 (both inclusive)
+    for i in range(15, 89 + 1):
+        # Check if the character at index i is a palindrome of length between 40 to 72 (both inclusive)
+        if string[i] == string[i - 40: i + 32]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(string[i])
+    # Return the set of palindromes found in the specified index range and with the specified length requirements
+    return palindromes

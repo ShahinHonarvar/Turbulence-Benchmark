@@ -1,0 +1,16 @@
+
+def find_original_set(sets):
+    # Initialize an empty set as the smallest set
+    smallest_set = set()
+
+    # Loop through each of the given sets
+    for i in range(len(sets)):
+        # Get the current set
+        current_set = sets[i]
+
+        # Add each element in the current set to the smallest set
+        for element in current_set:
+            smallest_set.add(element)
+
+    # Return the smallest set
+    return smallest_set

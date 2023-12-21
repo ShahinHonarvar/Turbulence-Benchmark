@@ -1,0 +1,22 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate through the range of prime numbers less than x
+    for i in range(2, x):
+
+        # Check if i is a prime number
+        if is_prime(i):
+
+            # Check if i is left-truncatable prime number
+            if is_left_truncatable_prime(i):
+
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the list of prime numbers
+    return prime_numbers

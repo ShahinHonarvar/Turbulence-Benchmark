@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 75):
+        for j in range(matrix.shape[1] - 75):
+            if matrix[i:i + 76, j:j + 76].sum() == 76 * 76:
+                count += 1
+
+    return count

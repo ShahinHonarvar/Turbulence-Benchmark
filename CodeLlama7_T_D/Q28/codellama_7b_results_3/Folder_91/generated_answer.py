@@ -1,0 +1,16 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the characters that occur between indices 0 to 7, both inclusive
+    chars = string[0:8]
+    # Initialize a list to store the ASCII values of the characters
+    ascii_values = []
+
+    # Loop through each character in the string and append its ASCII value to the list
+    for char in chars:
+        ascii_values.append(ord(char))
+
+    # Sort the list of ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+
+    # Return the 8th smallest ASCII value from the sorted list
+    return sorted_ascii_values[7]

@@ -1,0 +1,15 @@
+```python
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the 179th number in the Fibonacci sequence
+    fib_179 = 0
+    a, b = 0, 1
+    for i in range(178):
+        fib_179 = a + b
+        a, b = b, fib_179
+    
+    # Check if the decimal integer is divisible by the 179th number
+    return decimal % fib_179 == 0
+```

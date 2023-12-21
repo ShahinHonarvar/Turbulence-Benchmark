@@ -1,0 +1,13 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring of interest (index 1 to index 299, both inclusive)
+    sub_string = string[1:299]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(sub_string)):
+        # Check if the current character is a palindrome of length 3 to 10 (both inclusive)
+        if sub_string[i:i+3] == sub_string[i:i+3][::-1]:
+            palindromes.add(sub_string[i:i+3])
+    # Return the set of palindromes in a case-insensitive manner
+    return palindromes

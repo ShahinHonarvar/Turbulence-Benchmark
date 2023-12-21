@@ -1,0 +1,17 @@
+
+def all_odd_ints_inclusive(my_list):
+    # Check if the input is a list of integers
+    if not all(isinstance(i, int) for i in my_list)):
+        raise ValueError("Input must be a list of integers.")
+    # Get the length of the list
+    n = len(my_list)
+    # Check if the specified range is valid
+    if 50 > n or 54 < n:
+        raise ValueError("Invalid range specified.")
+    # Initialize an empty list to store the odd integers
+    odd_ints = []
+    # Loop through the list and append the odd integers to the list
+    for i in range(50, 55):
+        if my_list[i] % 2 != 0:
+            odd_ints.append(my_list[i])
+    return odd_ints

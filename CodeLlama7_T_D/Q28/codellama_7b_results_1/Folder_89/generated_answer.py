@@ -1,0 +1,13 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string
+    indices = [i for i, c in enumerate(string) if c != ""]
+    # Find the indices between which the character with the 8th smallest ASCII value occurs
+    index_range = range(24, 71 + 1)
+    # Get the characters at the indices in the range
+    characters = [string[i] for i in index_range]
+    # Get the ASCII values of the characters
+    ascii_values = [ord(c) for c in characters]
+    # Find the index of the character with the 8th smallest ASCII value
+    nth_smallest_index = max(ascii_values).index(max(ascii_values)))
+    return characters[nth_smallest_index]

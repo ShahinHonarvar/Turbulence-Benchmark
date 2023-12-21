@@ -1,0 +1,20 @@
+[cohere.Generation {
+	id: 692f6c73-90a4-43f3-ac62-04a0994b6150
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_n_smallest_chars' that takes one argument, a string of distinct characters and creates a list of exactly 82 characters of the given string that have the smallest ASCII values. The function should sort the list in descending order and returns the list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+
+def return_n_smallest_chars(s):
+    # Regular expression for breaking string into individual characters
+    match = re.findall(r'[A-Z0-9]+', s)
+    char_list = []
+    for i in match:
+        if len(char_list) < 82:
+            char_list.append(i)
+    char_list.sort()
+    return char_list
+```
+	likelihood: None
+	token_likelihoods: None
+}]

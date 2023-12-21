@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    result = ''
+    for i in range(34, 67+1):
+        if s[i] >= 'W' and s[i] <= 'x':
+            result += s[i]
+    return result

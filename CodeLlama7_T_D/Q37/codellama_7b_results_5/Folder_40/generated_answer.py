@@ -1,0 +1,15 @@
+
+def filter_chars(string):
+    # create a list of characters in the given string
+    char_list = list(string)
+    # initialize an empty list to store the filtered characters
+    filtered_chars = []
+    # iterate over each character in the character list
+    for char in char_list:
+        # check if the current character is between indices 0 and 1, both inclusive, and is greater than or equal to character '*' and smaller than or equal to character 's'
+        if 0 <= char_list.index(char) <= 1 and ord('*') <= ord(char) <= ord('s'):
+            # remove all occurrences of the current character from the string
+            filtered_chars += [char for char in char_list if char != char]
+    # join the filtered characters into a single string
+    filtered_string = "".join(filtered_chars)
+    return filtered_string

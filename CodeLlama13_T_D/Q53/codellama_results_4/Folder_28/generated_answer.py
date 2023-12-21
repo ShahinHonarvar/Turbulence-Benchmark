@@ -1,0 +1,20 @@
+
+def palindrome_of_length_at_least_n(string):
+    # Convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+    
+    # Create a set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over the characters in the string
+    for i, char in enumerate(string):
+        # Check if the character is an English letter
+        if not char.isalpha():
+            continue
+        
+        # Check if the character is a palindrome of length greater than or equal to 42
+        if len(char) >= 42 and char == char[::-1]:
+            # Add the palindrome to the set
+            palindromes.add(char)
+    
+    return palindromes

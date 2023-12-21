@@ -1,0 +1,9 @@
+
+def prime_factors(my_list):
+    # Find the prime factor of the integer at index 38
+    prime_factor = my_list[38]
+    # Create a set of all prime factors
+    prime_factors = set()
+    # Add the prime factor to the set
+    prime_factors.add(prime_factor)
+    return prime_factors

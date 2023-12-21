@@ -1,0 +1,13 @@
+
+def prime_factors(my_list):
+    # Find the number at index 17 in the list
+    num = my_list[17]
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate through the numbers from 2 to the square root of the number
+    for i in range(2, int(num ** 0.5) + 1):
+        # If the number is divisible by the current number, add it to the set of prime factors
+        if num % i == 0:
+            prime_factors.add(i)
+    # Return the set of all prime factors of the number at index 17 in the list
+    return prime_factors

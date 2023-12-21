@@ -1,0 +1,11 @@
+
+def identical_elements(list1, list2):
+    # Initialize an empty set to store the identical elements
+    identical_elements = set()
+
+    # Iterate over both lists and find the common elements between them
+    for i in range(35, 49 + 1):
+        if list1[i] in list2:
+            identical_elements.add(list1[i])
+
+    return identical_elements

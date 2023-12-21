@@ -1,0 +1,20 @@
+
+def all_even_ints_inclusive(my_list):
+    # Find the first index of an even integer
+    first_even_index = next((i for i, x in enumerate(my_list) if x % 2 == 0), None)
+    # If no even integers exist in the specified range, return an empty list
+    if first_even_index is None:
+        return []
+
+    # Find the last index of an even integer
+
+    last_even_index = next((i for i in range(first_even_index, len(my_list)) if my_list[i] % 2 == 0)), None)
+
+    # If no even integers exist in the specified range, return an empty list
+
+    if last_even_index is None:
+        return []
+
+    # Return the list of all even integers from index 310 to index 370, both inclusive
+
+    return [my_list[i] for i in range(first_even_index, last_even_index + 1)]```

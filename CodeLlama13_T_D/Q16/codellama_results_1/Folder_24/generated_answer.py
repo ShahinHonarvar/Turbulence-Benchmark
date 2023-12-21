@@ -1,0 +1,12 @@
+
+def sum_even_ints_inclusive(my_list):
+    # Initialize an empty list to store even integers
+    even_ints = []
+    
+    # Iterate through the list and append even integers to the list
+    for i in range(74, 96):
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+            
+    # Return the sum of all even integers in the list
+    return sum(even_ints)

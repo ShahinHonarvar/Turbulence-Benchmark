@@ -1,0 +1,12 @@
+
+def prime_factors(my_list):
+    # Find the factorization of the number at index 64
+    num = my_list[64]
+    factors = []
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            factors.append(i)
+            while num % i == 0:
+                num /= i
+
+    return set(factors)

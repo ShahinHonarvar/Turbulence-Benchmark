@@ -1,0 +1,39 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize the list of left-truncatable prime numbers
+    left_truncatable_primes = []
+    # Loop through each element in the tuple
+    for element in tuple:
+        # Check if the element is a prime number
+        if is_prime(element):
+            # Initialize a variable to store the left-truncatable prime numbers
+            left_truncatable_prime_numbers = []
+            # Loop through each digit of the element
+            for digit in str(element):
+                # Check if the digit is not 0
+                if digit != '0':
+                    # Initialize a variable to store the number with the digit removed
+                    number_with_digit_removed = int(str(element)[:-1]))
+                    # Check if the number with the digit removed is a prime number
+                    if is_prime(number_with_digit_removed):
+                        # Add the number with the digit removed to the list of left-truncatable prime numbers
+                        left_truncatable_prime_numbers.append(number_with_digit_removed)
+            # Check if the list of left-truncatable prime numbers is not empty
+            if len(left_truncatable_prime_numbers) != 0:
+                # Add the element to the list of left-truncatable prime numbers
+                left_truncatable_primes.append(element)
+    # Sort the list of left-truncatable prime numbers in descending order
+    left_truncatable_primes.sort(reverse=True)
+    return left_truncatable_primes
+def is_prime(n):
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        return False
+
+    # Check if n is divisible by 2 to n-1
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    # If the loop completes, then n is a prime number
+    return True

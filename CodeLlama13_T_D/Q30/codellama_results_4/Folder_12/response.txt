@@ -1,0 +1,7 @@
+```python
+def insert_before_character(string, char):
+    return "".join([char if c == char else f"{c}{char}" for c in string])
+```
+Explanation: The function uses a list comprehension to iterate over the characters of the input string. For each character, it checks if the current character is equal to `char`, and if so, it concatenates the character with itself using an f-string. If the current character is not equal to `char`, then it just appends the current character to the list without modification. Finally, the list of characters is joined into a single string using `"".join()`.
+
+This solution uses an f-string to insert the character `char` before any occurrences of character `'I'`. The rest of the string remains unchanged.

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_perfect_num(lst):\n    def is_perfect_num(num):\n        if num == 1:\n            return False\n        divisors_sum = 1\n        divisor = 2\n        while divisor * divisor <= num:\n            if num % divisor == 0:\n                divisors_sum += divisor\n                if divisor * divisor != num:\n                    divisors_sum += num // divisor\n            divisor += 1\n        return divisors_sum == num\n\n    return is_perfect_num(lst[45])\n```\nNote: The code assumes that the index 45 exists in the list provided as an argument. If the list is shorter, an `IndexError` may occur.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689834024,
+  "id": "chatcmpl-7eHJQ5773YIpm0IaqesqqMUs0A2Su",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 143,
+    "prompt_tokens": 91,
+    "total_tokens": 234
+  }
+}

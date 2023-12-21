@@ -1,0 +1,9 @@
+
+def composite_nums_between_indices(lst):
+    composite_set = set()
+    for i in range(62, 93):
+        if i > len(lst) - 1:
+            break
+        if lst[i] > 1 and lst[i] not in composite_set:
+            composite_set.add(lst[i])
+    return composite_set

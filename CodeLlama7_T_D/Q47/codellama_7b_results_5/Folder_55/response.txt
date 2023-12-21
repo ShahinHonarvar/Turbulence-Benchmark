@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function:
+```python
+def palindromes_of_specific_lengths(string):
+    # Find all palindromes in the string
+    palindromes = []
+    for i in range(len(string)):
+        for j in range(i + 1, len(string) + 1):
+            substr = string[i:j]
+            if substr == substr[::-1]:
+                palindromes.append(substr)
+    # Filter the palindromes to only include those with lengths between 10 and 20 (both inclusive)
+    filtered_palindromes = []
+    for palindrome in palindromes:
+        if len(palindrome) >= 10 and len(palindrome) <= 20:
+            filtered_palindromes.append(palindrome)
+    # Return the set of filtered palindromes
+    return set(filtered_palindromes)
+```
+This implementation first finds all palindromes in the input string using a nested loop that iterates over each substring of the input string. The loop checks if each substring is a palindrome by comparing it to its reverse. If a palindrome is found, it is added to a list of palindromes.
+Next, the implementation filters the list of palindromes to only include those with lengths between 10 and 20 (both inclusive). This is done by iterating over each palindrome in the list and checking if its length falls within the specified range using an `if` statement. If a palindrome's length does not fall within the specified range, it is skipped.
+Finally, the implementation returns the set of filtered palindromes as the output of the function.

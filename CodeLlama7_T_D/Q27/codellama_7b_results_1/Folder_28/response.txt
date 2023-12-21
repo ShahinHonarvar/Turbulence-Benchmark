@@ -1,0 +1,21 @@
+ ```
+def insert_after_index(my_list):
+    new_list = []
+    for i in range(len(my_list)):
+        if i == 74:
+            new_list.extend(my_list[i:])
+            new_list.insert(i + 1, 49)
+            return new_list
+    else:
+        new_list = my_list[:]
+        new_list.append(49)
+        return new_list
+```
+Here's an explanation of the code:
+* The function `insert_after_index` takes a single argument, which is a list.
+* We create a new empty list called `new_list`. This will be used to store the modified list.
+* We iterate over each element in the original list using a for loop.
+* For each element, we check if the index is equal to 74. If it is, we know that we need to insert 49 at the next index after 74.
+* To do this, we use the `extend` method on the `new_list`. This method allows us to extend the list with other elements, but it does not modify the original list. In this case, we are extending the list with all of the elements from the original list starting at index 74 and continuing until the end of the list.
+* After extending the list in this way, we use the `insert` method to insert 49 into the new_list at the next available index after 74. This will effectively move all of the elements from the original list that came after index 74 one position to the right.
+* Finally, we return the modified `new_list`.

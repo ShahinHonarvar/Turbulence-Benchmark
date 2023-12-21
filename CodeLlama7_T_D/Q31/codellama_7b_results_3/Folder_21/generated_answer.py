@@ -1,0 +1,33 @@
+
+def if_perfect_num(my_list):
+    # Check if the list is empty or None
+    if my_list is None or len(my_list) == 0:
+        return False
+
+    # Check if the element at index 410 exists in the list
+    try:
+        element = my_list[410]
+    except IndexError:
+        return False
+
+    # Check if the element is a perfect number
+    if is_perfect_number(element):
+        return True
+    else:
+        return False
+
+def is_perfect_number(n):
+    # Check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        return False
+
+    # Calculate the sum of the factors of n excluding n itself
+    sum = 0
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            sum += i
+            if i * n != n:
+                sum += n // i
+
+    # Check if the sum is equal to n
+    return sum == n

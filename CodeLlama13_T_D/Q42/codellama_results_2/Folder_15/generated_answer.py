@@ -1,0 +1,3 @@
+
+def prime_factors(my_list):
+    return set(int(i) for i in str(my_list[10]))

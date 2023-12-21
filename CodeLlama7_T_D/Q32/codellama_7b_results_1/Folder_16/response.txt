@@ -1,0 +1,17 @@
+ ```
+def insert_after_character(string, character):
+    return string.replace(character, f"{character}n")
+```
+# (modified) 
+This function takes two arguments: `string`, which is the input string that we want to modify, and `character`, which is the character that we want to insert immediately after in the input string.
+The function first creates a copy of the input string using the `.replace()` method. This allows us to modify the original input string without making any changes to it.
+Next, the function uses a string literal (the "f" before the opening parenthesis) to create a new string that contains the modified version of the input string. The new string consists of three parts: the part before the first occurrence of the `character`, the inserted character itself, and the part after the last occurrence of the `character`.
+For example, if we call the function with the following arguments:
+
+insert_after_character("banana", "n")
+
+The function will return the following string:
+
+"banaanan"
+
+This is because the `character` "n" is inserted immediately after any occurrences of the `character` "a" in the input string.

@@ -1,0 +1,32 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(s):
+    # Split the string into characters
+    chars = list(s)
+    # Create a set to keep track of the unique characters
+    unique_chars = set()
+    # Loop through each character in the string
+    for char in chars:
+        # If the character is already in the set, remove all occurrences from the string
+        if char in unique_chars:
+            idx = 0
+            while True:
+                try:
+                    del chars[idx]
+                except IndexError:
+                    break
+
+                idx += 1
+
+        # Otherwise, add the character to the set and continue with the next character
+        else:
+            unique_chars.add(char)
+
+    # Join the characters back into a string
+    new_string = "".join(chars)
+
+    return new_string
+```
+This code works by first splitting the input string into individual characters using the `list` method. It then creates a set to keep track of the unique characters in the original string.
+Next, it loops through each character in the original string and checks if it is already present in the set. If it is, the code removes all occurrences of that character from the string by setting their indices to `del` in the list. This is done using a while loop that continues until all occurrences of the current character have been removed.
+Finally, the code joins the remaining characters back into a string and returns it.

@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: d59b84f3-301e-4810-8ab6-dc79d9ad25ab
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_n_greatest_chars' that takes one argument, a string of distinct characters and creates the sorted list of exactly 47 characters of the given string that have the greatest ASCII values. The function should sort the list in descending order and returns it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+import re
+
+def return_n_greatest_chars(s):
+    # Regular expression to match any sequence of one or more spaces and/or tabs
+    # followed by a non-space/tab character
+    spaces_re = re.compile(r'\s+')
+    # Regular expression to match exactly 47 characters
+    # whose ASCII values are the greatest in the given string
+    max_re = re.compile(r'(?! )([A-Z\d]+)$')
+    return sorted(list(filter(max_re.match, spaces_re.sub('', s))))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

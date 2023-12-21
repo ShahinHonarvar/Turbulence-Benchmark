@@ -1,0 +1,13 @@
+```
+def if_decimal_is_divisible(binary_string):
+    # Convert binary string to decimal integer
+    decimal = int(binary_string, 2)
+
+    # Get the 119th number that occurs in the Fibonacci sequence
+    fib119 = [0, 1]
+    for i in range(2, 120):
+        fib119.append((fib119[i-1] + fib119[i-2]) % (1 << 64))
+    
+    # Check if the decimal integer is divisible by the 119th number in Fibonacci sequence
+    return decimal % fib119[119] == 0
+```

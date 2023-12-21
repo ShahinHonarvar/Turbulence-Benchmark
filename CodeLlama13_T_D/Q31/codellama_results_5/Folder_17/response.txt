@@ -1,0 +1,9 @@
+```
+def if_perfect_num(numbers):
+    return numbers[632] == sum(set([i for i in range(1, int(numbers[632])**0.5 + 1) if numbers[632] % i == 0]))
+```
+Explanation:
+* The function `if_perfect_num` takes one argument, a list of positive integers, and returns true if the integer at index 632 is a perfect number, otherwise it should return false.
+* The condition `numbers[632] == sum(set([i for i in range(1, int(numbers[632])**0.5 + 1) if numbers[632] % i == 0]))` checks if the integer at index 632 is a perfect number by calculating the sum of its proper divisors and comparing it to the original value.
+* The expression `range(1, int(numbers[632])**0.5 + 1)` generates all positive integers up to and including the square root of the integer at index 632, and the set comprehension `[i for i in range(...)]` creates a set of these divisors, excluding duplicates.
+* The `sum` function is used to calculate the sum of the divisors, and the equality comparison with `numbers[632]` checks if the sum is equal to the original value, indicating that it is a perfect number.

@@ -1,0 +1,15 @@
+
+def lists_with_product_equal_n(circula_list):
+    result = []
+    for i in range(len(circula_list)):
+        product = 1
+
+        for j in range(i, len(circula_list)):
+            product *= circula_list[j]
+
+            if product == 90:
+                result.append(circula_list[i:j+1])
+
+                return result
+
+    return []

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(circular_list):\n    sublists = []\n    n = len(circular_list)\n    for i in range(1, n + 1):\n        for combination in combinations(circular_list, i):\n            if len(combination) == 1:\n                if combination[0] == 6:\n                    sublists.append(list(combination))\n            elif 6 in combination:\n                product = 1\n                for num in combination:\n                    product *= num\n                if product == 6:\n                    sublists.append(list(combination))\n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887314,
+  "id": "chatcmpl-7eVAwtM3RF1AqCzadlPnzREworf9M",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 128,
+    "prompt_tokens": 193,
+    "total_tokens": 321
+  }
+}

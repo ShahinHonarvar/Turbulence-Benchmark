@@ -1,0 +1,19 @@
+
+def all_substring_of_size_n(s):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(s) - 39):
+
+        # Extract a substring of length 49 starting at index i
+        substr = s[i:i+49]
+
+        # Check if the substring has no duplicate characters
+        if len(set(substr)) == 49:
+
+            # Add the substring to the list of substrings
+            substrings.append(substr)
+
+    # Return the list of all distinct substrings of length 49 with no duplicate characters, or an empty list if no such substrings exist in the given string
+    return substrings

@@ -1,0 +1,53 @@
+
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the range of numbers from 1 to x-1
+    for i in range(1, x-1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # If the number is a prime number, check if it is left-truncatable prime
+            if is_left_truncatable_prime(i):
+                # Add the left-truncatable prime number to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    return prime_numbers
+
+# Define a function to check if a number is prime
+def is_prime(n):
+    # Check if n is less than 2
+    if n < 2:
+        return False
+
+    # Loop through the range of numbers from 2 to sqrt(n)
+    for i in range(2, int(sqrt(n)))):
+        # Check if n is divisible by i
+        if n % i == 0:
+            # If n is divisible by i, return False
+            return False
+
+    # If n is not divisible by any number between 2 and sqrt(n), return True
+    return True
+
+# Define a function to check if a number is left-truncatable prime
+def is_left_truncatable_prime(n):
+    # Check if n is less than 10
+    if n < 10:
+        return False
+
+    # Loop through the range of numbers from 1 to len(str(n)))-1
+    for i in range(1, len(str(n)))):
+        # Get the substring of the number starting at position i and ending at the end of the string
+        substring = str(n)[i:]
+
+        # Check if the substring is a prime number
+        if is_prime(int(substring)):
+            # If the substring is a prime number, return True
+            return True
+
+    # If n is not divisible by any number between 2 and sqrt(n), return False
+    return False

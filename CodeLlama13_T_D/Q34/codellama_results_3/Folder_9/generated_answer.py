@@ -1,0 +1,6 @@
+
+def find_original_set(*sets):
+    original = set()
+    for s in sets:
+        original |= s
+    return original

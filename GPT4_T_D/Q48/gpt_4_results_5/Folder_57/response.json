@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(t):\n    a = t[25]\n    b = t[80]\n    excluded_sum = sum(set(range(a + 1, b)) - set(t[25:81]))\n    if excluded_sum % 2 != 0:\n        return bin(excluded_sum)[2:]\n    else:\n        return hex(excluded_sum)[2:].upper()\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690134308,
+  "id": "chatcmpl-7fXQiQZjxZkv2mDJ881LbPm0kFmpe",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 82,
+    "prompt_tokens": 263,
+    "total_tokens": 345
+  }
+}

@@ -1,0 +1,1 @@
+This question requires three non-negative integer parameters, i, j and k with i != j, i != k and j != k.

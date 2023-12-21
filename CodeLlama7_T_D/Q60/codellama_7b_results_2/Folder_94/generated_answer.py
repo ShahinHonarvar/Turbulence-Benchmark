@@ -1,0 +1,43 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x (inclusive)
+    for i in range(1, x + 1):
+
+        # Check if the number is a prime number using the Sieve of Eratosthenes algorithm
+        if is_prime(i):
+
+            # Check if the number is left-and-right-truncatable prime by iteratively removing the leading and last digits until a one- or two-digit prime remains
+            remaining_digits = i
+            while len(str(remaining_digits)) > 1:
+                remaining_digits = int(str(remaining_digits)[1:])
+            if is_prime(remaining_digits):
+
+                # If the number is a left-and-right-truncatable prime, add it to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in ascending order
+    prime_numbers.sort()
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Define a function to check if a number is prime using the Sieve of Eratosthenes algorithm
+def is_prime(n):
+
+    # Check if n is greater than 1
+    if n > 1:
+
+        # Iterate from 2 to the square root of n (inclusive)
+        for i in range(2, int(n ** 0.5) + 1):
+
+            # Check if i divides n without leaving a remainder
+            if n % i == 0:
+
+                # If i divides n without leaving a remainder, return False (not prime)
+                return False
+
+    # If the number is greater than 1 and does not have any divisors other than 1 and itself, it is prime
+    return True

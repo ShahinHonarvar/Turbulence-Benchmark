@@ -1,0 +1,16 @@
+ def return_binary_or_hexa(my_tuple):
+    a = my_tuple[18]
+    b = my_tuple[52]
+    sum = 0
+    for i in range(a + 1, b):
+        if i not in my_tuple:
+            sum += i
+
+    if sum % 2 == 1:
+        return bin(sum)[2:]
+
+    else:
+        return hex(sum)[2:].upper()
+
+    if all(i in my_tuple for i in range(a + 1, b)):
+        return ""

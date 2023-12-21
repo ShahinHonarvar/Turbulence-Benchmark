@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 61 or i > 70:
+            result += char
+        elif char >= "0" and char <= "@":
+            continue
+        else:
+            result += char
+    return result

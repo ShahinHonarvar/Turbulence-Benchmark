@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_right_truncatable_prime(t):\n    x = t[92]\n    def is_prime(n):\n        if n <= 1:\n            return False\n        if n <= 3:\n            return True\n        if n % 2 == 0 or n % 3 == 0:\n            return False\n        i = 5\n        while i * i <= n:\n            if n % i == 0 or n % (i + 2) == 0:\n                return False\n            i = i + 6\n        return True\n\n    def is_right_truncatable(n):\n        str_n = str(n)\n        while len(str_n) > 0:\n            if not is_prime(int(str_n)):\n                return False\n            str_n = str_n[:-1]\n        return True\n\n    truncatable_primes = []\n    for i in range(x):\n        if is_right_truncatable(i):\n            truncatable_primes.append(i)\n\n    return sorted(truncatable_primes)\n```\nThis code picks the integer at the 92nd index and checks all integers less than that for right-truncatability. Any such prime number is added to the list of results, which is then sorted and returned. If no such numbers are found, an empty list is returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691083965,
+  "id": "chatcmpl-7jWTlYvG8CbtGJqMtNi54dYsv2NXW",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 271,
+    "prompt_tokens": 157,
+    "total_tokens": 428
+  }
+}

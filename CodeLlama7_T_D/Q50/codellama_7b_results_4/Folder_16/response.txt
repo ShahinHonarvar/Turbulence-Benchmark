@@ -1,0 +1,20 @@
+ Here is the Python code for the given task:
+```python
+def if_contains_anagrams(my_list):
+    # Initialize a counter for the number of pairs of anagrams
+    num_pairs = 0
+    # Loop through each string in the list
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_string = my_list[i]
+        # Loop through each remaining string in the list
+        for j in range(i + 1, len(my_list)):
+            # Get the next string
+            next_string = my_list[j]
+            # Check if the current and next strings are anagrams of each other
+            if sorted(curr_string.lower()) == sorted(next_string.lower()):
+                # Increment the number of pairs of anagrams
+                num_pairs += 1
+    # Return whether there are at least 155 pairs of anagrams in the given list
+    return num_pairs >= 155
+```

@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_string):
+    binary_list = [int(i) for i in binary_string]
+    fibonacci_sequence = [0, 1]
+    while len(fibonacci_sequence) <= 185:
+        fibonacci_sequence.append(fibonacci_sequence[-1] + fibonacci_sequence[-2])
+    decimal_value = sum([i * 2 ** (len(binary_list) - j - 1) for j, i in enumerate(binary_list)])
+    return decimal_value % fibonacci_sequence[185] == 0

@@ -1,0 +1,22 @@
+
+def remove_repeat_chars(s):
+    # Initialize a new string with the same length as the original string
+    result = ""
+
+    # Iterate through each character in the original string
+    for i, c in enumerate(s):
+
+        # If the current character is not already in the new string
+        if c not in result:
+
+            # Add the current character to the new string
+            result += c
+
+        # If the current character is already in the new string
+        else:
+
+            # Remove all occurrences of the current character from the new string
+            result = result.replace(c, "")
+
+    # Return the altered string
+    return result

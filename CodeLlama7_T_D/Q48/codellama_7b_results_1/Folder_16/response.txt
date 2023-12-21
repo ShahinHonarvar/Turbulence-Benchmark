@@ -1,0 +1,15 @@
+ ```
+def return_binary_or_hexa(my_tuple):
+a = my_tuple[90]
+b = my_tuple[97]
+sum = 0
+for i in range(a + 1, b - 1 + 1):
+if i not in my_tuple[90:97]:
+sum += i
+if sum % 2 == 1:
+return "{:b}".format(sum)
+else:
+return "{:x}".format(sum)
+
+```
+This Python code implements the logic specified in the problem statement. It takes a tuple of distinct nonnegative integers as input and calculates the sum of all integers from `a + 1` to `b - 1` (both inclusive) that are not present in the tuple between indices 90 and 97. If the sum is an odd number, it returns the binary representation string of the sum; otherwise, it returns the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.

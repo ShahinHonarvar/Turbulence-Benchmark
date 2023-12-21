@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create a new string with all characters removed
+    filtered = ""
+
+    # Iterate over each character in the original string
+    for c in s:
+        if c == '-' or c == 'v':
+            # If the current character is '-' or 'v', skip it and move on to the next character
+            continue
+
+        filtered += c
+
+    return filtered

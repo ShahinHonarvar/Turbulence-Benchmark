@@ -1,0 +1,21 @@
+ ```
+def identical_elements(list1, list2):
+    # Check if both lists are of the same size
+    if len(list1) != len(list2):
+        return set()
+
+    # Create a set of all elements in both lists
+    all_elements = set(list1).union(set(list2))
+
+    # Iterate over all elements and check if they occur at least once in both lists between index 66 and index 93, both inclusive
+    identical_elements = set()
+    for element in all_elements:
+        # Check if the element occurs at least once in list1 between index 66 and index 93, both inclusive
+        if list1.count(element) >= 1 and (list1.index(element) >= 65 and list1.index(element) <= 93)):
+            # Check if the element also occurs at least once in list2 between index 66 and index 93, both inclusive
+            if list2.count(element) >= 1 and (list2.index(element) >= 65 and list2.index(element) <= 93)):
+                # If the element occurs at least once in both lists between index 66 and index 93, both inclusive, add it to the set of identical elements
+                identical_elements.add(element)
+
+    return identical_elements
+```

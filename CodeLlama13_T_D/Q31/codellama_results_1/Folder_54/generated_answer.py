@@ -1,0 +1,3 @@
+
+def if_perfect_num(lst):
+    return lst[51] in perfect_numbers

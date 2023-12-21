@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: bfad9fe7-50ab-4657-a50d-796406b63a5a
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_n_greatest_chars' that takes one argument, a string of distinct characters and creates the sorted list of exactly 6 characters of the given string that have the greatest ASCII values. The function should sort the list in descending order and returns it.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**6)
+
+def return_n_greatest_chars(s):
+    max_list = [ch for ch in s]
+    return [max(max_list[:6]) for max_list in zip(*sorted(zip(*max_list)))]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

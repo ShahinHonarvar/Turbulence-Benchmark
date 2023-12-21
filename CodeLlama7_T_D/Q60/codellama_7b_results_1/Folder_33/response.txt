@@ -1,0 +1,47 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the number to the list of prime numbers
+                prime_list.append(i)
+    # Sort the list of prime numbers in descending order
+    prime_list = sorted(prime_list, reverse=True)
+    return prime_list
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1)):
+            # Check if i divides n
+            if n % i == 0:
+                # If i divides n, return False
+                return False
+
+    # If n is a prime number, return True
+    return True
+
+# Define a function to check if a number is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if the number contains 0
+    if '0' in str(n):
+        # If the number contains 0, return False
+        return False
+
+    # Iterate from the leading leftmost digit to the last rightmost digit of the number
+    for i in range(len(str(n)))):
+        # Check if removing the leading leftmost and last rightmost digits simultaneously will result in a prime number
+        if is_prime(int(str(n)[1:-1])):
+            # If removing the leading leftmost and last rightmost digits simultaneously results in a prime number, return True
+            return True
+
+    # If none of the conditions are met, return False
+    return False
+```

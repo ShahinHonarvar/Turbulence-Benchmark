@@ -1,0 +1,15 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix)):
+            submatrix = matrix[i:j+1, :]
+            if (submatrix == 33).all():
+                count += 1
+
+    return count
+
+```
+This function takes a two-dimensional numpy matrix of integers as input. It then iterates over the rows and columns of the matrix using nested for loops. For each submatrix, it checks whether all elements are equal to 33 using the `==` operator and the `all()` method. If all elements are equal to 33, the function increments a counter variable by 1. Finally, the function returns the count of all submatrices that contain 33 integers each.

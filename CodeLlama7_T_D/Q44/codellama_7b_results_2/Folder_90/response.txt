@@ -1,0 +1,22 @@
+ Here is a Python function that meets the specifications you provided:
+```python
+def composite_nums_between_indices(my_list):
+    # Check if my_list is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("The input must be a list of positive integers.")
+    # Find the indices of the first and last composite numbers in the list
+    first_composite = None
+    last_composite = None
+    for i, n in enumerate(my_list):
+        if is_composite(n):
+            if first_composite is None:
+                first_composite = i
+
+            last_composite = i
+
+    # Return the set of all composite numbers between the first and last indices
+    return set(my_list[first_composite:last_composite+1])
+```
+Here, we first check that the input `my_list` is a list of positive integers. If it is not, we raise a `ValueError`.
+Next, we find the indices of the first and last composite numbers in the list by iterating over the elements of `my_list` using the `enumerate()` function. We check each element to see if it is a composite number using the `is_composite(n)` function. If an element is found to be a composite number, we set the `first_composite` and `last_composite` variables to the corresponding indices.
+Finally, we return the set of all composite numbers between the first and last indices by taking the slice of `my_list[first_composite:last_composite+1]` that contains only the composite numbers.

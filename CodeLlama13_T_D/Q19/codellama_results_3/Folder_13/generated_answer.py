@@ -1,0 +1,3 @@
+
+def all_ints_not_div_by_num(arr):
+    return [x for x in arr[32:44] if x % 34 != 0]

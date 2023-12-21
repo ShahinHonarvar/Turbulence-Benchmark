@@ -1,0 +1,9 @@
+
+def prime_factors(my_list):
+    return set([i for i in range(1, my_list[6]) if my_list[6] % i == 0 and is_prime(i)])
+
+def is_prime(n):
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True

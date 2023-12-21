@@ -1,0 +1,4 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:100] + [876, 203] + my_list[100:]
+    return new_list

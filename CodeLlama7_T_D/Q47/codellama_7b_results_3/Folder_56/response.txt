@@ -1,0 +1,8 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Split the string into a list of substrings
+    substrings = [string[i:j + 1] for i in range(len(string)) for j in range(i, len(string))]
+    # Filter out substrings that are not palindromes or do not meet the length requirements
+    palindromes = [substring for substring in substrings if (substring == substring[::-1]) and (3 <= len(substring) <= 7)]
+    return set(palindromes)
+```

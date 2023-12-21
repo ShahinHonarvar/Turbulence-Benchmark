@@ -1,0 +1,6 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    index_of_86 = my_list.index(86)
+    new_list.insert(index_of_86 + 1, 581.49)
+    return new_list

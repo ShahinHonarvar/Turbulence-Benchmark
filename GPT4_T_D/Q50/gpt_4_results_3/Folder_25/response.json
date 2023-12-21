@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import Counter\n\ndef if_contains_anagrams(lst):\n    count = 0\n    anagram_counter = Counter([''.join(sorted(word.lower())) for word in lst if len(word) >= 3])\n    for anagrams in anagram_counter.values():\n        count += anagrams * (anagrams - 1) // 2\n    return count >= 14\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690964296,
+  "id": "chatcmpl-7j1LcQBQxMqQH59HDQPvPquGIBY8Y",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 81,
+    "prompt_tokens": 126,
+    "total_tokens": 207
+  }
+}

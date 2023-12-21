@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    n = len(lst)\n    output = []\n    \n    def find_sublists(start_idx):\n        product = 1\n        sub_list = []\n        \n        for i in range(start_idx, start_idx+n):\n            idx = i % n\n            product *= lst[idx]\n            sub_list.append(lst[idx])\n            \n            if product == -938:\n                output.append(sub_list[:])\n            elif product > 0:\n                break\n    \n    for i in range(n):\n        find_sublists(i)\n    \n    return output\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866462,
+  "id": "chatcmpl-7ePkceKQVmqQgciNYtjqG6pjYcrLg",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 118,
+    "prompt_tokens": 193,
+    "total_tokens": 311
+  }
+}

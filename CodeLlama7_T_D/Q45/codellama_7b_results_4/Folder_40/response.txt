@@ -1,0 +1,16 @@
+ ```
+def palindromes_between_indices(input_string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(4, len(input_string) - 9):
+        # Check if the substring starting from index 4 and ending at index 9 is a palindrome
+        if input_string[i:i+9] == input_string[i:i+9][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(input_string[i:i+9])
+    return palindromes
+```
+This code defines a function called `palindromes_between_indices` that takes one argument, which is a string. The function returns the set of all palindromes of length at least 7 that can be created from any possible arrangement of the English letters in the given string that occur between index 4 to index 9, both inclusive.
+The code first initializes an empty set to store the palindromes. Then it loops through each character in the input string starting from index 4 and ending at index `len(input_string) - 9`.
+For each character, the code checks if the substring starting from index 4 and ending at index 9 is a palindrome by comparing it with its reverse. If the substring is a palindrome, the code adds it to the set of palindromes.
+Finally, the function returns the set of palindromes.

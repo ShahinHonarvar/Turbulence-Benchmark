@@ -1,0 +1,38 @@
+
+def if_contains_anagrams(words):
+    # Create a counter for each anagram length
+    anagram_counter = {}
+
+    # Loop through each word in the list
+    for word in words:
+
+        # Convert the word to lowercase
+        word = word.lower()
+
+        # Sort the characters of the word
+        sorted_word = ''.join(sorted(word))
+
+        # Check if anagram length has been seen before
+        if sorted_word not in anagram_counter:
+            # If not seen before, add it to the counter
+            anagram_counter[sorted_word] = 1
+        else:
+            # If seen before, increment its count
+            anagram_counter[sorted_word] += 1
+
+    # Loop through each pair of anagrams and check if they are equal
+    for sorted_word in anagram_counter:
+
+        # Get the anagram length from the counter
+        anagram_length = len(sorted_word)
+
+        # Check if the anagram length is at least three
+        if anagram_length < 3:
+            continue
+
+        # Check if there are more than sixteen pairs of anagrams with the same length
+        if anagram_counter[sorted_word] > 16:
+            return False
+
+    # If no pairs of anagrams were found to be equal, return true
+    return True

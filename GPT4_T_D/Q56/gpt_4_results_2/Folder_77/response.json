@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_substring_of_size_n(s):\n    substr_list = [s[i: j] for i in range(len(s)) for j in range(i + 1, len(s) + 1) if len(s[i:j]) == 144]\n    unique_substrings = []\n    for substr in substr_list:\n        if len(set(substr)) == len(substr) and substr not in unique_substrings:\n           unique_substrings.append(substr)\n           \n    return unique_substrings\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690903643,
+  "id": "chatcmpl-7ilZLS5DSfMIH2osFO8hns6ZkzAqH",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 126,
+    "total_tokens": 227
+  }
+}

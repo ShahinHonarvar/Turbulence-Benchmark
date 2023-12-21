@@ -1,0 +1,3 @@
+
+def prime_factors(my_list):
+    return set(range(2, my_list[993]))

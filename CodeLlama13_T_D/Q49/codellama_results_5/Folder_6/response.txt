@@ -1,0 +1,10 @@
+```python
+def if_decimal_is_divisible(binary_repr: str) -> bool:
+    num = int(binary_repr, 2)
+    fib_seq = [0, 1]
+    while True:
+        fib_seq.append(fib_seq[-1] + fib_seq[-2])
+        if len(fib_seq) == 185:
+            break
+    return num % fib_seq[184] == 0
+```

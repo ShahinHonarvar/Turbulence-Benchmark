@@ -1,0 +1,18 @@
+[cohere.Generation {
+	id: 43ef4221-b93f-4650-a2a4-7151c901f156
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_exclusive' that takes one argument, a list of integers, and returns the list of all elements from index 461 to index 986, both exclusive.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+
+def all_ints_exclusive(nums):
+    '''
+    The function finds the indices of the elements in the list that are
+    between 461 and 986, both exclusive, and returns a list of the
+    elements at those indices.
+    '''
+    return [nums[bisect.bisect_right(nums, i) - 1] for i in range(461, 986, 1)]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

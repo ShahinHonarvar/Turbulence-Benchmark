@@ -1,0 +1,20 @@
+ ```
+def sum_ints_div_by_either_nums(my_list):
+    # Find the first index where either 76 or 60 is not divisible by it
+    for i in range(78, 81 + 1):
+        if my_list[i] % 76 != 0 and my_list[i] % 60 != 0:
+            break
+
+    # Find the last index where either 76 or 60 is not divisible by it
+    for i in range(81, -1, -1):
+        if my_list[i] % 76 != 0 and my_list[i] % 60 != 0:
+            break
+
+    # Sum up all the integers divisible by either 76 or 60 within the specified range
+    return sum(my_list[i] for i in range(j, k + 1)))
+
+# Test the function with a list of integers
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#print(sum_ints_div_by_either_nums(my_list))
+```
+This code defines a function called `sum_ints_div_by_either_nums` that takes one argument, a list of integers. The function first finds the first and last indices in the specified range where either 76 or 60 is not divisible by it. Then it sums up all the integers divisible by either 76 or 60 within the specified range using a generator expression. Finally, it returns the sum of all integers divisible by either 76 or 60 from index 78 to index 81, both inclusive. If no such integers exist in the specified range, the function should return 0.

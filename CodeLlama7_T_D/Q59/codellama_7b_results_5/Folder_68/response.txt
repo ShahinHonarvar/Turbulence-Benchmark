@@ -1,0 +1,35 @@
+ ```
+def all_left_truncatable_prime(tuple):
+x = tuple[1]
+list = []
+for i in range(2, x):
+if is_prime(i) and left_truncatable_prime(i):
+list.append(i)
+return sorted(list, reverse=True)
+def is_prime(n):
+if n < 2:
+return False
+
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+
+return True
+
+def left_truncatable_prime(n):
+s = str(n)
+for i in range(len(s)):
+temp = s[:i] + s[i+1:]
+if not temp:
+continue
+
+if int(temp) == 0 or not is_prime(int(temp))):
+return False
+
+return True
+```
+This code defines a function `all_left_truncatable_prime` that takes a tuple of positive integers as its argument. The function returns the list of all left-truncatable prime numbers less than the integer at index 1 in the input tuple. The return list is sorted in descending order.
+The function uses two auxiliary functions: `is_prime` and `left_truncatable_prime`. The former checks whether an integer is prime, while the latter determines whether a number can be obtained by removing leftmost digits from a given prime number.
+The code first defines a variable `x` to store the integer at index 1 in the input tuple. Then it creates an empty list called `list` to store the final result.
+Next, the function iterates through all numbers between 2 and `x`, inclusive, using a loop. For each number `i` in the range, the function checks whether `i` is a prime number and a left-truncatable prime number by calling the `is_prime` and `left_truncatable_prime` functions, respectively.
+If both conditions are true for a given number `i`, then the function appends `i` to the `list`. The final result is returned by sorting the `list` in descending order.

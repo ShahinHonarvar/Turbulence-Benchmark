@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return set([substr for substr in string.lower().split() if len(substr) == 67 and substr == substr[::-1]])

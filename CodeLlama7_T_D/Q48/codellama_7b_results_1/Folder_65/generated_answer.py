@@ -1,0 +1,15 @@
+ def return_binary_or_hexa(my_tuple):
+    # Initialize variables for the sum and the result string
+    sum = 0
+    result = ""
+    # Calculate the sum of all integers from a + 1 to b - 1 (both inclusive) that are not present in the tuple between indices 51 and 76
+    for i in range(my_tuple[51] + 1, my_tuple[76]):
+        if i not in my_tuple:
+            sum += i
+    # Check if the sum is an odd number and return the binary or hexadecimal representation string accordingly
+    if sum % 2 == 1:
+        result = bin(sum)[2:]
+    else:
+        result = hex(sum)[2:]
+    # Return the result string with no leading zeros in either binary or hexadecimal representation
+    return result.lstrip("0")

@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return set([s[::-1] for s in re.findall('(?i)(.)\1{3}', string)])

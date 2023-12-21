@@ -1,0 +1,11 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 129):
+        for j in range(matrix.shape[1] - 129):
+            submatrix = matrix[i:i + 130, j:j + 130]
+            if np.count_nonzero(submatrix == 130) == 130:
+                count += 1
+    return count

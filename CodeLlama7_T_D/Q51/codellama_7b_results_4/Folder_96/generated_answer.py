@@ -1,0 +1,38 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables to keep track of anagram pairs
+    pair1 = None
+    pair2 = None
+
+    # Iterate over the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_str = my_list[i]
+
+        # Check if the current string is an anagram of any previous strings
+        for j in range(i):
+            # If the current string is an anagram of a previous string, set the pair variables accordingly
+            if sorted(curr_str) == sorted(my_list[j]):
+                if pair1 is None:
+                    pair1 = my_list[j]
+                elif pair2 is None:
+                    pair2 = my_list[j]
+
+        # Check if the current string is a long enough anagram of itself
+        if len(curr_str) >= 3:
+            # If the current string is a long enough anagram of itself, check if it is also a long enough anagram of any previous strings
+            for j in range(i):
+                # If the current string is a long enough anagram of a previous string, set the pair variables accordingly
+                if sorted(curr_str) == sorted(my_list[j]):
+                    if pair1 is None:
+                        pair1 = my_list[j]
+                    elif pair2 is None:
+                        pair2 = my_list[j]
+
+    # Check if there are at most 2 pairs of anagrams in the list
+    if pair1 is not None and pair2 is not None:
+        return False
+
+    else:
+
+        return True

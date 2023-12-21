@@ -1,0 +1,17 @@
+ ```
+def palindromes_of_specific_lengths(string, lengths=[12, 13, 14], start=18, end=88):
+# Step 1: Remove all non-alphabetical characters from the string
+import re
+cleaned_string = ''.join([char for char in string if char.isalpha()])
+# Step 2: Find palindromes of lengths specified in 'lengths' list
+palindromes = []
+for length in lengths:
+    # Find all substrings of length 'length' in the cleaned_string
+    substrs = [cleaned_string[i:i+length] for i in range(len(cleaned_string)-length+1)]
+    # Check if each substring is a palindrome and add it to the list if it is
+    for substr in substrs:
+        if substr == substr[::-1]:
+            palindromes.append(substr)
+# Step 3: Return the set of palindromes found
+return set(palindromes)
+```

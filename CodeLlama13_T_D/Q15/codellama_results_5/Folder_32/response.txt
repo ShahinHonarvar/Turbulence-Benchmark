@@ -1,0 +1,13 @@
+```python
+def sum_odd_ints_inclusive(nums):
+    result = 0
+    for i in range(21, 98):
+        if nums[i] % 2 != 0:
+            result += nums[i]
+    return result
+```
+Here is another solution using list comprehension:
+```python
+def sum_odd_ints_inclusive(nums):
+    return sum([num for i, num in enumerate(nums) if i >= 21 and i <= 97 and num % 2 != 0])
+```

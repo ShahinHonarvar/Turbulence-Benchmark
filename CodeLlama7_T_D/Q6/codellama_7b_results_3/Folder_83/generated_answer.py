@@ -1,0 +1,16 @@
+
+def all_neg_ints_exclusive(my_list):
+    # Find the first negative integer in the list
+    for i in range(90, len(my_list)):
+        if my_list[i] < 0:
+            break
+
+    # Find the last negative integer in the list
+
+    for j in range(200, -1, -1):
+        if my_list[j] < 0:
+            break
+
+    # Return the list of all negative integers from index 90 to index 200, both exclusive
+
+    return my_list[i + 1:j]

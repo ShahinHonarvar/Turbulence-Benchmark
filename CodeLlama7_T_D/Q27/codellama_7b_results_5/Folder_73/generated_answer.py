@@ -1,0 +1,10 @@
+
+def insert_after_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = []
+    # Iterate through my_list and append each element to new_list
+    for i in range(len(my_list)):
+        if i == 87:
+            new_list.append(637.22)
+        new_list.append(my_list[i])
+    return new_list

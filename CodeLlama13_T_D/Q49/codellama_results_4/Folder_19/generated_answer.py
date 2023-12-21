@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+
+    # Calculate the 29th number in the Fibonacci sequence
+    fib29 = (13 * 2**29 - 5 * 2**49 + 1) / 10
+
+    # Check if the decimal integer is divisible by the 29th number in the Fibonacci sequence
+    return decimal % fib29 == 0

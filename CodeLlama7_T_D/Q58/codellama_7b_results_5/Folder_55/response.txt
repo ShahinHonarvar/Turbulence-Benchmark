@@ -1,0 +1,25 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Loop over all rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Check if the current element is equal to 39
+            if matrix[i][j] == 39:
+                # If it is, increment the count variable
+                count += 1
+
+    # Return the count of all submatrices that contain 39 integers each
+    return count
+
+# Test the function with a simple example
+matrix = np.array([[1, 2], [3, 4]])
+#print(submatrix_with_n_numbers(matrix))  # Should print 2
+# Test the function with a more complex example
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#print(submatrix_with_n_numbers(matrix))  # Should print 10
+```

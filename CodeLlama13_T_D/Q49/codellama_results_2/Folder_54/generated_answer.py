@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary_string):
+    binary_list = list(map(int, binary_string))
+    decimal = 0
+    for i in range(len(binary_list)):
+        decimal += binary_list[i] * (2 ** i)
+    fibonacci = [0, 1]
+    for i in range(2, decimal + 1):
+        fibonacci.append((fibonacci[i - 1] + fibonacci[i - 2]) % 1e9 + 7)
+    return decimal % fibonacci[34] == 0

@@ -1,0 +1,17 @@
+[cohere.Generation {
+	id: 817ba40b-e6b8-4e4e-b43a-e5710566574a
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_both_two_nums' that takes one argument, a list of integers, and returns the list of all integers divisible by both -40 and -12 from index 10 to index 76, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import bisect
+
+def all_ints_div_by_both_two_nums(nums):
+    result = []
+    for i in range(10, 77):
+        if nums[i] % -40 == 0 and nums[i] % -12 == 0:
+            result.append(nums[i])
+    return result
+```
+	likelihood: None
+	token_likelihoods: None
+}]

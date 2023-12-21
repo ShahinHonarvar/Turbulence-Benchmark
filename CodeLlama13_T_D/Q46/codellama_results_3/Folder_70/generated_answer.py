@@ -1,0 +1,9 @@
+
+def gcf_three_nums(nums):
+    return _gcd(nums[990], _gcd(nums[671], nums[711]))
+
+def _gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return _gcd(b, a % b)

@@ -1,0 +1,30 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices with the sum of all integers in each submatrix equals 93
+    submatrices = []
+
+    # Iterate over the rows and columns of the matrix
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            # Initialize a new submatrix with the sum of all integers in each submatrix equals 93
+            submatrix = np.zeros((matrix.shape[0], matrix.shape[1]))
+
+            # Set the current row and column as the first element of the submatrix
+            submatrix[i, j] = 1
+
+            # Iterate over the rows and columns of the submatrix
+            for k in range(i, matrix.shape[0]):
+                for l in range(j, matrix.shape[1]):
+                    # Add the current element to the submatrix
+                    submatrix[k, l] = matrix[k, l]
+
+                    # Check if the sum of all integers in each submatrix equals 93
+                    if np.sum(submatrix) == 93:
+                        # Add the current submatrix to the list of submatrices with the sum of all integers in each submatrix equals 93
+                        submatrices.append(submatrix)
+
+            # Return the list of submatrices with the sum of all integers in each submatrix equals 93
+    return submatrices
+```

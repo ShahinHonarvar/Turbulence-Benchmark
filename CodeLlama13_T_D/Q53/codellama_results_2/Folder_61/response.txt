@@ -1,0 +1,11 @@
+```python
+def palindrome_of_length_at_least_n(string, n):
+    return set(word for word in string.split() if len(word) >= n and word == word[::-1])
+```
+Here's an explanation of the code:
+
+* `def palindrome_of_length_at_least_n(string, n):` declares a function called `palindrome_of_length_at_least_n`, which takes two arguments: `string` and `n`.
+* `return set(word for word in string.split() if len(word) >= n and word == word[::-1])`: returns a set of all palindromes in the given `string` that have length greater than or equal to `n`, using list comprehension syntax. The `if` clause filters out any words that are not palindromes, and the `[::-1]` index slicing is used to check if a word is its own reverse.
+* `word for word in string.split()` splits the input `string` into individual words using `.split()`.
+* `len(word) >= n`: filters out any words that are less than `n` characters long.
+* `and word == word[::-1]`: checks if each word is its own reverse, and returns only those palindromes that pass this test.

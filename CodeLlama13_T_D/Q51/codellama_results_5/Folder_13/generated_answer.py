@@ -1,0 +1,10 @@
+
+def if_contains_anagrams(my_list):
+    anagrams = {}
+    for word in my_list:
+        key = "".join(sorted(word.lower()))
+        if len(key) >= 3 and key not in anagrams:
+            anagrams[key] = [word]
+        elif len(key) >= 3 and key in anagrams:
+            anagrams[key].append(word)
+    return len(anagrams) <= 54

@@ -1,0 +1,16 @@
+
+def all_left_right_truncatable_prime(nums):
+    x = nums[992]
+    primes = []
+    for i in range(x + 1):
+        if is_left_right_truncatable_prime(i, nums):
+            primes.append(i)
+    return sorted(primes)
+
+def is_left_right_truncatable_prime(num, nums):
+    if not num:
+        return False
+    for i in range(992, len(nums)):
+        if num % nums[i] == 0:
+            return False
+    return True

@@ -1,0 +1,15 @@
+ ```
+def find_subset_of_length_n(elements):
+# Initialize an empty list to store all subsets of size 20
+all_subsets = []
+# Loop through each element in the set
+for element in elements:
+# Get all subsets of size 19 that contain the current element
+subsets = get_all_subsets(elements - {element}, 19)
+# Add the current element to each subset
+subsets = [subset + {element} for subset in subsets]
+# Add the subsets to the list of all subsets
+all_subsets += subsets
+
+return len(all_subsets)
+```

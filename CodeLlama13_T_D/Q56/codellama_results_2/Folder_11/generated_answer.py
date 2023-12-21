@@ -1,0 +1,3 @@
+
+def all_substring_of_size_n(s, n):
+    return [s[i:j+1] for i in range(len(s)-n) for j in range(i, len(s)) if s[j-n] != s[j]]

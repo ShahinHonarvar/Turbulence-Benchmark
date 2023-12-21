@@ -1,0 +1,22 @@
+
+def palindrome_of_length_at_least_n(string, n=35):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at position i
+        char = string[i]
+        # If the character is a letter (not a space or other non-letter character)
+        if char.isalpha():
+            # Loop through each character in the remaining part of the string, starting from position i + 1
+            for j in range(i + 1, len(string)):
+                # Get the character at position j
+                char2 = string[j]
+                # If the character is a letter (not a space or other non-letter character)
+                if char2.isalpha():
+                    # Check if the concatenation of the two characters is a palindrome of length greater than or equal to n
+                    if char + char2 == char2 + char:
+                        # If it is, add it to the set of palindromes
+                        palindromes.add(char + char2)
+    # Return the set of palindromes
+    return palindromes

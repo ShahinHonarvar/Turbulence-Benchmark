@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    s = list(s)
+    for i in range(41, 56):
+        if s[i].isalpha() and 'Z' < s[i] < 'c':
+            s.remove(s[i])
+    return "".join(s)

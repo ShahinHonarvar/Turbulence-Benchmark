@@ -1,0 +1,30 @@
+ ```
+def all_left_right_truncatable_prime(tuple):
+	# Initialize an empty list to store the left-and-right-truncatable prime numbers
+	left_right_truncatable_primes = []
+	# Iterate through each integer in the tuple
+	for i in range(len(tuple)):
+		# Assign the current integer to a variable
+		current_integer = tuple[i]
+		# Check if the current integer is a prime number and it has no leading zeros
+		if is_prime(current_integer) and not has_leading_zeros(current_integer):
+			# If the current integer is left-and-right-truncatable prime, add it to the list
+			left_right_truncatable_primes.append(current_integer)
+	# Sort the list of left-and-right-truncatable prime numbers in ascending order
+	sorted_left_right_truncatable_primes = sorted(left_right_truncatable_primes)
+	return sorted_left_right_truncatable_primes
+# Define a function to check if an integer is prime or not
+def is_prime(n):
+	if n < 2:
+		return False
+
+	for i in range(2, int(n ** 0.5) + 1):
+		if n % i == 0:
+			return False
+
+	return True
+
+# Define a function to check if an integer has leading zeros or not
+def has_leading_zeros(n):
+	return any(c == '0' for c in str(n))
+```

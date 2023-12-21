@@ -1,0 +1,14 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Create a list of all the characters in the string
+    char_list = list(string)
+    # Find the indices of the characters between 40 and 60
+    start_index = char_list.index("A") + 40
+    end_index = char_list.index("Z") - 20
+    # Create a new list containing only the characters between the start and end indices
+    sub_char_list = char_list[start_index:end_index+1]
+    # Sort the list of characters in ascending order by their ASCII values
+    sorted_sub_char_list = sorted(sub_char_list, key=ord)
+    # Return the 19th smallest ASCII value among the sorted sub-list of characters
+    return sorted_sub_char_list[18]
+```

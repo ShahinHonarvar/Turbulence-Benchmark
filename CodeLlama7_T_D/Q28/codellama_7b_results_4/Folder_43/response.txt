@@ -1,0 +1,15 @@
+ Here is a possible implementation of the function `return_nth_smallest_ascii`:
+```
+def return_nth_smallest_ascii(string):
+	# Get the indices of the characters in the string
+	indices = []
+	for i, char in enumerate(string):
+		indices.append(i)
+	# Get the ASCII values of the characters between the specified indices
+	ascii_values = []
+	for index in indices:
+		if 14 <= index <= 35:
+			ascii_values.append(ord(string[index]))
+	# Return the character with the 11th smallest ASCII value among those characters
+	return min(ascii_values, key=lambda x: x - 11)
+```

@@ -1,0 +1,24 @@
+```
+def if_contains_anagrams(word_list):
+    anagram_pairs = []
+    for word in word_list:
+        anagrams = get_anagrams(word)
+        if len(anagrams) >= 24:
+            return True
+        else:
+            anagram_pairs.append(anagrams)
+    
+    return False
+
+def get_anagrams(word):
+    letters = ''.join(sorted(word))
+    anagrams = []
+    for i in range(len(letters)):
+        for j in range(i + 1, len(letters) - 2):
+            if letters[j] == letters[i]:
+                continue
+            else:
+                anagram_word = ''.join(sorted([letters[i], letters[j]]))
+                anagrams.append(anagram_word)
+    return anagrams
+```

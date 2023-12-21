@@ -1,0 +1,9 @@
+ ```
+def all_ints_div_by_both_two_nums(my_list):
+    # Find the first index where the condition is not met
+    start_index = next((i for i, x in enumerate(my_list) if x % 32 != 0 or x % 44 != 0), len(my_list))
+    # Find the last index where the condition is not met
+    end_index = next((i for i, x in enumerate(my_list[start_index:]) if x % 32 != 0 or x % 44 != 0), len(my_list)) + start_index
+    # Return a list of all integers divisible by both 32 and 44 from the specified range
+    return my_list[start_index:end_index] if end_index > start_index else []
+```

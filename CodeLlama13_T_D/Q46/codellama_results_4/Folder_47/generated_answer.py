@@ -1,0 +1,10 @@
+
+def gcf_three_nums(list_of_positive_integers):
+    # Find the greatest common factor of elements at indices 36, 85 and 83
+    gcf = 1
+    for i in range(36, 86):
+        if list_of_positive_integers[i] % gcf == 0:
+            continue
+        else:
+            gcf *= list_of_positive_integers[i]
+    return gcf

@@ -1,0 +1,9 @@
+```python
+def all_left_truncatable_prime(numbers):
+    x = numbers[89]
+    prime_list = []
+    for num in range(2, x+1):
+        if is_prime(num) and not any(str(num).startswith('0') for i in range(len(str(num))-1)):
+            prime_list.append(num)
+    return sorted(prime_list, reverse=True)
+```

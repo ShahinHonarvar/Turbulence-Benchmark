@@ -1,0 +1,3 @@
+
+def gcf_two_nums(mylist):
+    return mylist[28]*mylist[49] // gcd(mylist[28], mylist[49])

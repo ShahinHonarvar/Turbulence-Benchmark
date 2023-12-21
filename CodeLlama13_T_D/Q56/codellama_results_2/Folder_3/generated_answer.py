@@ -1,0 +1,8 @@
+
+def all_substring_of_size_n(s):
+    subs = []
+    for i in range(len(s)-92):
+        sub = s[i:i+93]
+        if len(set(sub)) == 93 and not any(c in subs for c in sub):
+            subs.append(sub)
+    return subs

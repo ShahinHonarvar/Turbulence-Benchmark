@@ -1,0 +1,3 @@
+
+def filter_chars(string):
+    return ''.join([char for char in string if not (521 <= ord(char) <= 722 and char >= '>' and char <= '_')])

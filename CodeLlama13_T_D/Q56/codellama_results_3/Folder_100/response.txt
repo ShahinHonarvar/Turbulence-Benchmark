@@ -1,0 +1,13 @@
+```python
+def all_substring_of_size_n(s):
+    substrings = []
+    for i in range(len(s)):
+        for j in range(i+1, len(s)+1):
+            substring = s[i:j]
+            if len(substring) == 92 and all(c not in substring for c in substring[1:]):
+                substrings.append(substring)
+    return substrings
+```
+This function works by iterating over the indices of the input string, and using slicing to extract the substring starting at each index and ending at each index plus 92. The `all()` method is used to check that no duplicate characters are present in the substring, and if it passes this test, the substring is appended to the list of substrings.
+
+Note: This function will return an empty list if there are no substrings of length 92 with no duplicate characters in the input string.

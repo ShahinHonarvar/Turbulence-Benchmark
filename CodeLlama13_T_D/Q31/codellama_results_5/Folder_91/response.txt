@@ -1,0 +1,16 @@
+```python
+def if_perfect_num(numbers):
+    if len(numbers) <= 6:
+        return False
+    
+    perfect_number = numbers[6]
+    divisors = []
+    
+    for i in range(1, int(perfect_number ** 0.5) + 1):
+        if perfect_number % i == 0:
+            divisors.append(i)
+            if perfect_number // i != i:
+                divisors.append(perfect_number // i)
+    
+    return sum(divisors) == perfect_number
+```

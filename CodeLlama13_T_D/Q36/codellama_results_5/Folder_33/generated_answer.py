@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if ord(c) not in range(ord('9') + 1, ord('P'))])

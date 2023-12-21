@@ -1,0 +1,5 @@
+
+def return_n_smallest_chars(s):
+    n = 47
+    char_list = sorted(s, key=ord)[:n]
+    return char_list

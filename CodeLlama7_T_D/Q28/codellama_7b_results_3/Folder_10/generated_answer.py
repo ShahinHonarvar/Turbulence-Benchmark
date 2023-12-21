@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(s):
+    # Get the characters that occur between indices 38 and 82
+    chars = ''.join([c for c in s if 38 <= s.index(c) <= 82])
+    # Sort the characters by their ASCII values
+    sorted_chars = sorted(chars, key=ord)
+    # Return the character with the 20th smallest ASCII value
+    return sorted_chars[19]

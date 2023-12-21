@@ -1,0 +1,12 @@
+
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 20])
+```
+This function uses the `powerset` function from the `itertools` module to generate all subsets of the input set, and then filters out the ones that are not of size 20. The resulting list is then converted to a set using the `set()` constructor, which removes any duplicates. Finally, the length of the resulting set is returned as the number of subsets of size 20.
+
+Note: The `powerset` function is defined as follows:
+```
+from itertools import chain, combinations
+def powerset(iterable):
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))

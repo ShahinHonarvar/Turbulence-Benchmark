@@ -1,0 +1,7 @@
+
+def return_vowels(s):
+    vowels = []
+    for i in range(45, 76):
+        if s[i].isalpha() and s[i].lower() in "aeiou":
+            vowels.append(s[i])
+    return vowels

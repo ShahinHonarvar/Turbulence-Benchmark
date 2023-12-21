@@ -1,0 +1,11 @@
+ def filter_chars(string):
+    new_string = ""
+    for i in range(len(string)):
+        if (i >= 26 and i <= 64) and (string[i] >= "V" and string[i] <= "o"):
+            continue
+
+        else:
+
+            new_string += string[i]
+
+    return new_string

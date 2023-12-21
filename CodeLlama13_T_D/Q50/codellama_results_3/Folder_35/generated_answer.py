@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(my_list):
+    pairs = []
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list)):
+            if sorted([my_list[i], my_list[j]]) not in pairs:
+                pairs.append(sorted([my_list[i], my_list[j]]))
+    return (len(pairs) >= 153) and all(map(lambda x: len(x) > 2, pairs))

@@ -1,0 +1,5 @@
+ `def gcf_three_nums(my_list):
+    num1 = my_list[47]
+    num2 = my_list[10]
+    num3 = my_list[28]
+    return gcf(num1, num2, num3)`

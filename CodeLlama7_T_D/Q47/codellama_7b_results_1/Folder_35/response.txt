@@ -1,0 +1,22 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find the substring from index 34 to index 90, both inclusive
+    substring = string[34:91]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substring)):
+        # Check if the character is a letter (a-z or A-Z)
+        if substring[i].isalpha():
+            # Check if the character is uppercase (A-Z) and convert it to lowercase
+            if substring[i].isupper():
+                substring[i] = substring[i].lower()
+            # Get the reverse of the substring starting at index i
+            rev_substring = substring[i:][::-1]
+            # Check if the reverse of the substring starting at index i is equal to the original substring starting at index i
+            if rev_substring == substring[i:]:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(substring[i:])
+    # Return the set of palindromes
+    return palindromes
+```

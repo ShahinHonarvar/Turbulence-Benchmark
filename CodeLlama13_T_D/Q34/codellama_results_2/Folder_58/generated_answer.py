@@ -1,0 +1,7 @@
+
+def find_original_set(args):
+    original_set = set()
+    for arg in args:
+        if len(arg) > 0:
+            original_set |= arg
+    return original_set

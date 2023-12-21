@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+    
+    # Calculate the Fibonacci sequence up to 27th number
+    fibonacci_sequence = [0]
+    for i in range(1, 28):
+        fibonacci_sequence.append(fibonacci_sequence[i-1] + fibonacci_sequence[i-2])
+    
+    # Check if the decimal is divisible by the 27th number in the Fibonacci sequence
+    return decimal % fibonacci_sequence[26] == 0

@@ -1,0 +1,18 @@
+
+def composite_nums_between_indices(my_list):
+    # Find the indices of the first and last composite numbers in the list
+    start_index = None
+    end_index = None
+    for i in range(len(my_list)):
+        if is_composite(my_list[i]):
+            if start_index is None:
+                start_index = i
+
+            end_index = i
+
+    # Return the set of all composite numbers between the indices
+
+    return {my_list[i] for i in range(start_index, end_index + 1) if is_composite(my_list[i])}
+
+def is_composite(n):
+    return n > 1 and any(n % i == 0 for i in range(2, int(n ** 0.5) + 1))

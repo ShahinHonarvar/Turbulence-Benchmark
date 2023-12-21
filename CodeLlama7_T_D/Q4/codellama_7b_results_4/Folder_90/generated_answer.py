@@ -1,0 +1,9 @@
+
+def all_pos_ints_exclusive(my_list):
+    start = 389
+    end = 748
+    positive_ints = []
+    for i in range(start, end):
+        if my_list[i] > 0:
+            positive_ints.append(my_list[i])
+    return positive_ints

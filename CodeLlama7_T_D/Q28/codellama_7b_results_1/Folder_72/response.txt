@@ -1,0 +1,12 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Find the indices of the characters in the string that occur between 33 and 60, both inclusive
+start = string.find('!', 33)
+end = string.rfind('~', 60)
+# Get a list of all the characters in the string that occur between these indices
+char_list = string[start:end+1]
+# Sort the list of characters by their ASCII values
+char_list.sort(key=ord)
+# Return the character with the 18th smallest ASCII value
+return char_list[17]
+```

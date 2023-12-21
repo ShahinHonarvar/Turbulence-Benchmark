@@ -1,0 +1,3 @@
+
+def gcf_three_nums(nums):
+    return nums[25] * nums[76] // math.gcd(nums[25], nums[76]) * nums[57] // math.gcd(nums[57], nums[25] * nums[76] // math.gcd(nums[25], nums[76]))

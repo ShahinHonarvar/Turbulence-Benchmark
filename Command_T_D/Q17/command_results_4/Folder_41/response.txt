@@ -1,0 +1,19 @@
+[cohere.Generation {
+	id: c427f0c8-250c-4400-b0a5-1828f7bf2c21
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_both_two_nums' that takes one argument, a list of integers, and returns the list of all integers divisible by both 6 and -3 from index 0 to index 9, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_ints_div_by_both_two_nums(num_list):
+    list_of_tuples = list(itertools.permutations(range(0,10), 2))
+    for t in list_of_tuples:
+        x = t[0]
+        y = t[1]
+        if num_list[x]%6 == num_list[y]%6 == 0 and num_list[x]%3 == num_list[y]%3 == 0:
+            yield num_list[x]
+    return list(range(0,10))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

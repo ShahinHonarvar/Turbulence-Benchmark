@@ -1,0 +1,13 @@
+
+def all_pos_ints_exclusive(my_list):
+    # Get the range of positive integers in the list
+    pos_int_range = range(28, 49)
+    # Create an empty list to store the result
+    result = []
+    # Iterate over the range of positive integers
+    for i in pos_int_range:
+        # If the current index is within the bounds of the list and the value at that index is positive, add it to the result list
+        if 0 <= i < len(my_list) and my_list[i] > 0:
+            result.append(my_list[i])
+    # Return the result list
+    return result

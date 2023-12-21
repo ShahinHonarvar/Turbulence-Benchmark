@@ -1,0 +1,10 @@
+
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    submatrices = []
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix)):
+            submatrix = matrix[i:j+1]
+            if sum(submatrix) == -83:
+                submatrices.append(submatrix)
+    return submatrices

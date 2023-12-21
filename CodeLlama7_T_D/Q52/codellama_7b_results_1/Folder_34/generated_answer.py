@@ -1,0 +1,13 @@
+
+def palindrome_of_length_n(string):
+    # Check if the input string is a palindrome of length n
+    if len(string) != n:
+        return False
+
+    # Check if the input string is a palindrome in a case-insensitive manner
+    for i in range(len(string)):
+        if string[i] != string[-1 - i]:
+            return False
+
+    # If the input string is a palindrome of length n, return True
+    return True

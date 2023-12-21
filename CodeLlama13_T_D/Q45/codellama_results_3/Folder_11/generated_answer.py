@@ -1,0 +1,16 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each possible arrangement of English letters in the given string that occur between indices 3 and 7, both inclusive
+    for i in range(3, 8):
+        for j in range(i+1, 8):
+            # Check if the substring formed by the current indices is a palindrome
+            substr = string[i:j]
+            if substr == substr[::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr)
+    
+    # Return the set of palindromes
+    return palindromes

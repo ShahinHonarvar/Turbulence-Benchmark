@@ -1,0 +1,20 @@
+
+def remove_repeat_chars(s):
+    # create a new string with the characters removed
+    new_str = ""
+
+    # loop through each character in the given string
+    for char in s:
+
+        # check if the current character is repeated between indices 33 and 78, both exclusive
+        if s.count(char) > 1 and (s.index(char) >= 33 and s.index(char) <= 78)):
+
+            # remove all occurrences of the current character from the given string
+            s = s.replace(char, "", s.count(char))
+
+        # add the current character to the new string if it is not a repeated character between indices 33 and 78
+        else:
+            new_str += char
+
+    # return the altered string
+    return new_str

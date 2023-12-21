@@ -1,0 +1,17 @@
+
+def sum_of_divisors_in_range(n):
+    # Check if n is a positive integer
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+
+    # Initialize the sum to 0
+    sum = 0
+
+    # Iterate over the divisors of n
+    for i in range(1, int(n ** 0.5) + 1):
+        # If the current divisor is between 28 and 81, inclusive
+        if n % i == 0:
+            # Add the divisor to the sum
+            sum += i
+
+    return sum

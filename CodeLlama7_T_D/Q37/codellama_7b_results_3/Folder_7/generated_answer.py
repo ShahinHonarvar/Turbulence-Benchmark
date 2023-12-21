@@ -1,0 +1,20 @@
+
+def filter_chars(s):
+    # Create a list of characters from the given string
+    char_list = list(s)
+    # Initialize an empty list to store the filtered characters
+    filtered_list = []
+    # Iterate through the list of characters
+    for char in char_list:
+        # Check if the character is between indices 521 and 722, both inclusive
+        if 521 <= char <= 722:
+            # Check if the character is greater than or equal to '>' and smaller than or equal to '_'
+            if char >= '>' and char <= '_':
+                # Skip this character since it falls within the specified range
+                continue
+
+        # Add the character to the filtered list
+        filtered_list.append(char)
+    # Join the filtered characters into a string
+    filtered_string = "".join(filtered_list)
+    return filtered_string

@@ -1,0 +1,7 @@
+
+def all_neg_ints_exclusive(my_list):
+    negative_ints = []
+    for i in range(10):
+        if my_list[i] < 0:
+            negative_ints.append(my_list[i])
+    return negative_ints

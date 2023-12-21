@@ -1,0 +1,18 @@
+ def return_binary_or_hexa(tuple):
+    a = tuple[70]
+    b = tuple[200]
+    sum = 0
+
+    for i in range(a + 1, b - 1):
+        if not (i in tuple):
+            sum += i
+
+    if sum % 2 == 0:
+        return hex(sum)[2:]
+
+    else:
+        return bin(sum)[3:]
+
+return_binary_or_hexa((1, 2, 3, 4, 5)) # should return "1A"
+return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8)) # should return "1000000"
+return_binary_or_hexa((1, 2, 3, 4, 5, 6, 7, 8, 9)) # should return "1001000"

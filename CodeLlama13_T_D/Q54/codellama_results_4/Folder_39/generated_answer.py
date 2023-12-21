@@ -1,0 +1,13 @@
+
+def all_right_truncatable_prime(my_tuple):
+    x = my_tuple[30]
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    sorted_prime_numbers = sorted(prime_numbers, reverse=True)
+    right_truncatable_primes = []
+    for i in sorted_prime_numbers:
+        if is_right_truncatable_prime(i):
+            right_truncatable_primes.append(i)
+    return right_truncatable_primes

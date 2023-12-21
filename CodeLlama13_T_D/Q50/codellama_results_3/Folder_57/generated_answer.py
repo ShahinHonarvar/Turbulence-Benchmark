@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = []
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            if is_anagram(strings[i], strings[j]):
+                anagram_pairs.append((strings[i], strings[j]))
+    return len(anagram_pairs) >= 50

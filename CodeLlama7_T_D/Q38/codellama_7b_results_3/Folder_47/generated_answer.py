@@ -1,0 +1,15 @@
+
+def find_subset_of_length_n(my_set):
+    # Initialize a variable to keep track of the number of subsets
+    num_subsets = 0
+
+    # Iterate over all possible combinations of three elements in the set
+    for elem1 in my_set:
+        for elem2 in my_set:
+            for elem3 in my_set:
+                # If the combination is of length n, increment the number of subsets
+                if len({elem1, elem2, elem3}) == 34:
+                    num_subsets += 1
+
+    # Return the total number of subsets of size n
+    return num_subsets

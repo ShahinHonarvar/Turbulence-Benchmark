@@ -1,0 +1,11 @@
+ Here is a possible implementation of the `all_left_truncatable_prime` function in Python:
+```
+def all_left_truncatable_prime(tuple):
+    x = tuple[784]
+    list = []
+    for i in range(2, x):
+        if is_prime(i) and left_truncate(i) == True:
+            list.append(i)
+    return sorted(list)
+```
+Note that this function takes a tuple as input and returns a list of prime numbers that are left-truncatable prime numbers less than the 784th element of the tuple. The `is_prime` function is used to check if a number is prime, and the `left_truncate` function is used to check if a number is left-truncatable prime.

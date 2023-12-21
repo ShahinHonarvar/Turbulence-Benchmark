@@ -1,0 +1,48 @@
+[cohere.Generation {
+	id: 571f46a1-f9d8-4ae9-87dc-a951647c6c8e
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 79. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+import itertools
+
+sys.setrecursionlimit(10**6)
+
+def all_right_truncatable_prime(test_list):
+    res = []
+    for n in range(2, test_list[0]):
+        if n == 2 or n == 3:
+            res.append(n)
+            continue
+        elif n == 5:
+            res.append(n)
+            res.append(n-1)
+            res.append(n-2)
+            res.append(n-3)
+            res.append(n-4)
+            continue
+        elif n % 2 == 0:
+            res.append(n)
+            continue
+        elif n % 3 == 0:
+            res.append(n)
+            continue
+        elif n % 5 == 0:
+            res.append(n)
+            continue
+        elif n % 2 == 1 and n % 3 == 1 and n % 5 == 1:
+            res.append(n)
+            continue
+        for i in range(2, int(str(n)[-1])):
+            # print(str(n)[-1], i)
+            if str(n)[-1] % i == 0:
+                break
+            elif str(n)[-1] % i == 1:
+                res.append(n)
+                break
+    res.sort()
+    return res
+```
+	likelihood: None
+	token_likelihoods: None
+}]

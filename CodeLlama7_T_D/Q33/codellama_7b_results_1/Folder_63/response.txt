@@ -1,0 +1,10 @@
+ ```
+def return_vowels(my_string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    result = []
+    for i in range(34, 69):
+        if my_string[i].isalpha() and my_string[i] in vowels:
+            if (my_string[i-1].isalnum() or my_string[i-1] == '_') and (my_string[i+1].isalnum() or my_string[i+1] == '_'):
+                result.append(my_string[i])
+    return result
+```

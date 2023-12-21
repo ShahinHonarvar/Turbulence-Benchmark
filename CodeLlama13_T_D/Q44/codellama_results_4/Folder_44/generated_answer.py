@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(arr):
+    return {x for i, x in enumerate(arr) if 64 <= i <= 66 and x > 1}

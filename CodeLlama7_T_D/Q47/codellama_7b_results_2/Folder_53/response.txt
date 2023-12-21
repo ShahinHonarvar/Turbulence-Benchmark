@@ -1,0 +1,28 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Find the substring from index 1 to index 299, both inclusive
+    substring = string[1:299+1]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the substring
+    for i in range(len(substring)):
+        # Get the character at index i
+        char = substring[i]
+        # If the character is not an English letter, continue to the next iteration
+        if not char.isalpha():
+            continue
+
+        # Iterate over the characters in the substring from index i + 1 to index len(substring) - 1
+        for j in range(i+1, len(substring)):
+            # Get the character at index j
+            other_char = substring[j]
+            # If the character is not an English letter, continue to the next iteration
+            if not other_char.isalpha():
+                continue
+
+            # If the characters at indices i and j are the same, add the palindrome to the set
+            if char == other_char:
+                palindromes.add(substring[i:j+1])
+    # Return the set of palindromes that meet the specified requirements
+    return palindromes
+```

@@ -1,0 +1,16 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    count = 0
+    for i in range(matrix.shape[0] - 13 + 1):
+        for j in range(matrix.shape[1] - 13 + 1):
+            if np.all(matrix[i:i+13, j:j+13] == 1)):
+                count += 1
+    return count
+
+```
+This code first imports the NumPy library for working with matrices. The `submatrix_with_n_numbers` function takes in a two-dimensional matrix of integers as its argument.
+The function first calculates the number of rows and columns in the matrix, using the `shape` attribute of the NumPy array. It then uses two nested loops to iterate over every possible pair of starting indices for the submatrix (i, j) with a size of 13x13.
+For each possible pair of starting indices, the function checks if the current submatrix contains only ones by using the `np.all` function. If it does, the count of valid submatrices is incremented by 1.
+The final line of the code returns the number of valid submatrices that contain exactly 13 integers each.

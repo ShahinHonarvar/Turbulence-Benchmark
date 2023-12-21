@@ -1,0 +1,33 @@
+```
+def submatrix_with_particular_sum(matrix):
+    # Initialize a list to store the submatrices with the desired sum
+    submatrices = []
+    
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary list to store the submatrix elements
+            temp = []
+            
+            # Add the element at (i, j) to the temporary list
+            temp.append(matrix[i][j])
+            
+            # Iterate over each row and column of the matrix starting from (i + 1, j + 1)
+            for k in range(i + 1, matrix.shape[0]):
+                for l in range(j + 1, matrix.shape[1]):
+                    # If the sum of all elements in the temporary list is equal to 21, add it to the submatrices list and break from the inner loop
+                    if sum(temp) == 21:
+                        submatrices.append(temp)
+                        break
+                    
+                    # Add the element at (k, l) to the temporary list and continue iterating over the remaining rows and columns
+                    temp.append(matrix[k][l])
+            
+            # If no such submatrix is found, break from the outer loop
+            if not submatrices:
+                break
+    
+    # Return the submatrices list
+    return submatrices
+```

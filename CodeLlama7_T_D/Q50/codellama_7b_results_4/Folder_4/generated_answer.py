@@ -1,0 +1,18 @@
+
+def if_contains_anagrams(words):
+    # Count the number of anagram pairs in the list
+    pair_count = 0
+    for i in range(len(words)):
+        word1 = words[i].lower()
+        for j in range(i + 1, len(words)):
+            word2 = words[j].lower()
+            # Check if the two words are anagrams
+            if sorted(word1) == sorted(word2):
+                pair_count += 1
+                 # If there are at least 42 pairs of anagrams in the list, return True
+    if pair_count >= 42:
+        return True
+
+    # Otherwise, return False
+
+    return False

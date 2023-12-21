@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(s):
+    seen = set()
+    res = ''
+    for c in s:
+        if c not in seen and seen.add(c) is None:
+            res += c
+    return res

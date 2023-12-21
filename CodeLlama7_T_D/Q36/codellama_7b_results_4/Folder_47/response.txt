@@ -1,0 +1,13 @@
+ ```
+def filter_chars(s):
+    # Find the indices of the characters between 45 and 57 (both exclusive)
+    start_idx = s.find('<', 0) + 1
+    end_idx = s.rfind('>', 0) - 1
+    # Create a new string with all occurrences of the characters removed
+    new_s = ''
+    for i in range(start_idx, end_idx):
+        if s[i] < 'F' or s[i] > 'n':
+            new_s += s[i]
+    return new_s
+
+```

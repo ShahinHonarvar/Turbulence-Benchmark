@@ -1,0 +1,23 @@
+
+def return_binary_or_hexa(tuple):
+    # Initialize variables for the sum and the binary or hexadecimal representation
+    sum = 0
+    binary = ''
+    hexadecimal = ''
+
+    # Iterate over the integers in the tuple, starting from index 1 (i.e., a + 1) to index -1 (i.e., b - 1)
+    for i in range(1, len(tuple)):
+        # Calculate the sum of all integers from a + 1 to b - 1 that are not present in the tuple between indices 0 and 5
+        if tuple[i] not in tuple[:5]:
+            sum += tuple[i]
+
+    # Check whether the sum is an odd number
+    if sum % 2 == 1:
+        # Convert the sum to its binary representation and return it
+        binary = bin(sum)[2:]
+        return binary
+
+    else:
+        # Convert the sum to its hexadecimal representation and return it
+        hexadecimal = hex(sum)[2:]
+        return hexadecimal

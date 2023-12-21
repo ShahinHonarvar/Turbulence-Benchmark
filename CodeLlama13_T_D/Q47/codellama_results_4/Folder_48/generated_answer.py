@@ -1,0 +1,21 @@
+
+def palindromes_of_specific_lengths(string):
+    # Split the string into a list of characters
+    chars = list(string)
+    # Get the substring from index 155 to 283, both inclusive
+    substr = "".join(chars[155:284])
+    # Create an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the substring
+    for i in range(len(substr)):
+        # Check if the current character is a letter
+        if substr[i].isalpha():
+            # Get the length of the current palindrome
+            length = len(substr[i:])
+            # Check if the length is between 104 and 120 (both inclusive)
+            if 104 <= length <= 120:
+                # Check if the palindrome is a palindrome in a case-insensitive manner
+                if substr[i:].lower() == substr[i:].upper()[::-1]:
+                    # Add the palindrome to the set
+                    palindromes.add(substr[i:])
+    return palindromes

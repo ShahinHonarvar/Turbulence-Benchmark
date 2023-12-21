@@ -1,0 +1,3 @@
+
+def find_original_set(args):
+    return {i for set_ in args for i in set_}

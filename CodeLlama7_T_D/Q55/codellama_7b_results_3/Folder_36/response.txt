@@ -1,0 +1,26 @@
+ ```
+def lists_with_product_equal_n(circular_list):
+# Define a function to check if a given sublist has a product equal to n
+def check_sublist_product(sublist, n):
+product = 1
+for i in range(len(sublist)):
+product *= sublist[i]
+if product == n:
+return True
+else:
+return False
+
+# Define a function to find all contiguous sublists of a given list that have a product equal to n
+def find_all_contiguous_sublists(lst, n):
+result = []
+for i in range(len(lst)):
+sublist = lst[i:]
+if check_sublist_product(sublist, n):
+result.append(sublist)
+return result
+
+# Test the function with a sample circular list and expected output
+circular_list = [3, 4, 5, 6, 7, 8, 9, 10]
+expected_output = [[3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]]
+assert find_all_contiguous_sublists(circular_list, n=714) == expected_output
+```

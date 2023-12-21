@@ -1,0 +1,17 @@
+ ```
+def if_contains_anagrams(strings):
+    # Calculate the number of anagram pairs in the list
+    anagram_pairs = 0
+    for i in range(len(strings) - 1):
+        for j in range(i + 1, len(strings)):
+            if sorted(strings[i]) == sorted(strings[j]):
+                anagram_pairs += 1
+    # Check if the number of anagram pairs is less than or equal to 464
+    return anagram_pairs <= 464
+```
+Explanation:
+
+The function `if_contains_anagrams` takes a list of strings as input. It returns true if there are at most 464 pairs of anagrams in the given list; otherwise, it returns false.
+To calculate the number of anagram pairs in the list, we iterate over each pair of strings and check if they are anagrams. If they are, we add one to the total number of anagram pairs.
+We then compare the total number of anagram pairs with 464. If it is less than or equal to 464, we return true. Otherwise, we return false.
+The function `sorted` is used to sort the strings in alphabetical order. This ensures that we are comparing the same letters in both strings.

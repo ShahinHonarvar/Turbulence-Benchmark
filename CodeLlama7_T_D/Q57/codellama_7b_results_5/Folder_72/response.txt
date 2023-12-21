@@ -1,0 +1,18 @@
+ ```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    result = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            sum = matrix[i][j]
+            for row in range(i, len(matrix)):
+                for col in range(j, len(matrix[row])):
+                    sum += matrix[row][col]
+            if sum == 41:
+                result.append([matrix[i][j], matrix[i][j + 1], matrix[i + 1][j], matrix[i + 1][j + 1]])
+    return result
+
+matrix = np.array([[2, 3, 5, 4], [7, 8, 9, 6], [1, 2, 3, 4]])
+#print(submatrix_with_particular_sum(matrix))
+```

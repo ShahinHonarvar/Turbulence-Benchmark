@@ -1,0 +1,22 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the substring starting at the current index and ending at the end of the string
+        substr = string[i:]
+        # Check if the substring is a palindrome
+        if substr == substr[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(substr)
+    # Return the set of palindromes with length greater than or equal to n
+    return {p for p in palindromes if len(p) >= n}
+```
+This code defines a function called `palindrome_of_length_at_least_n` that takes two arguments: the first is a string, and the second is an integer representing the minimum length of the palindromes to return. The function returns a set of all palindromes in the given string with length greater than or equal to the minimum length specified.
+The code works as follows:
+1. It initializes an empty set `palindromes` to store the palindromes found in the given string.
+2. It loops through each character in the given string using a for loop.
+3. For each character, it gets the substring starting at that character and ending at the end of the string using slicing.
+4. For each substring, it checks if it is a palindrome by comparing it to its reverse. If it is a palindrome, it adds it to the set of palindromes `palindromes`.
+5. After iterating through all characters in the given string, the function returns the set of palindromes with length greater than or equal to the minimum length specified.

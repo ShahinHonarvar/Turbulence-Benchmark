@@ -1,0 +1,35 @@
+ ```
+def find_original_set(sets):
+    # Create a list of all the elements in the sets
+    all_elements = []
+    for set in sets:
+        all_elements += set
+
+    # Remove duplicates and get the unique elements
+
+    unique_elements = list(set(all_elements))
+
+    # Create an empty dictionary to store the counts of each element
+
+    element_counts = {}
+
+    for element in unique_elements:
+        element_counts[element] = 0
+
+    # Iterate over the input sets and increment the count of each element
+
+    for set in sets:
+        for element in set:
+            element_counts[element] += 1
+
+    # Find the smallest set that contains all elements with non-zero counts
+
+    smallest_set = []
+
+    for element, count in element_counts.items():
+        if count > 0:
+            smallest_set.append(element)
+
+    return smallest_set
+
+```

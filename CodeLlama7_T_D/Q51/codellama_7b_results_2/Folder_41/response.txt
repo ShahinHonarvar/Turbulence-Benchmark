@@ -1,0 +1,45 @@
+ ```
+def if_contains_anagrams(my_list):
+# Initialize a counter for the number of pairs of anagrams found
+num_pairs = 0
+# Loop through each string in the list
+for i in range(len(my_list)):
+# Get the current string
+current_string = my_list[i]
+# If the current string is not empty
+if len(current_string) > 0:
+# Get a list of all possible anagrams of the current string
+anagram_list = []
+for j in range(len(current_string)):
+# Get the substring starting from index j
+substring = current_string[j:]
+# Check if the substring is also a substring of the original string
+if substring in current_string:
+# If it is, add it to the list of anagrams
+anagram_list.append(substring)
+# Sort the list of anagrams in alphabetical order
+anagram_list = sorted(anagram_list)
+# Initialize a counter for the number of unique anagrams found
+num_unique_anagrams = 0
+# Loop through each anagram in the list
+for anagram in anagram_list:
+# If the current anagram is not already in the dictionary
+if anagram not in num_unique_anagrams_dict:
+# Add it to the dictionary with a value of 1
+num_unique_anagrams_dict[anagram] = 1
+# Otherwise, increment the count for that anagram
+else:
+num_unique_anagrams_dict[anagram] += 1
+# Loop through each key-value pair in the dictionary
+for anagram, count in num_unique_anagrams_dict.items():
+# If the current anagram has a count of at least three
+if count >= 3:
+# Increment the counter for the number of pairs of anagrams found
+num_pairs += 1
+# If there are more than 52 pairs of anagrams in the list, return false
+if num_pairs > 52:
+return False
+# Otherwise, return true
+else:
+return True
+```

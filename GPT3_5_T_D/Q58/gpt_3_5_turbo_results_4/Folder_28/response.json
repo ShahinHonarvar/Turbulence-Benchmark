@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    count = 0\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            if matrix[i, j] == 37:\n                count += check_submatrix(matrix, i, j)\n    return count\n\ndef check_submatrix(matrix, row, col):\n    rows, cols = matrix.shape\n    count = 0\n    for i in range(row, rows):\n        for j in range(col, cols):\n            if matrix[i, j] == 37:\n                count += 1\n            if count == 37:\n                return 1\n            if count > 37:\n                return 0\n    return 0\n```\nNote: The code assumes that the numpy library has been imported and is available.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689867436,
+  "id": "chatcmpl-7eQ0K5HVDDHGeHHnCZAF5ohlHhjh9",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 111,
+    "total_tokens": 288
+  }
+}

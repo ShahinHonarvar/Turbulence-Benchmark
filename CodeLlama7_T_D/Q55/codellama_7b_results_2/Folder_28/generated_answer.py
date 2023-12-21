@@ -1,0 +1,24 @@
+
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the elements of the given list
+    for i in range(len(my_list)):
+
+        # Initialize two variables to keep track of the start and end indices of the current sublist
+        start = i
+        end = i
+
+        # While the product of the elements of the sublist is less than or equal to 85, increment the end index and update the product
+        while (end < len(my_list)) and ((my_list[start] * my_list[end]) <= 85):
+            end += 1
+
+        # If the product of the elements of the sublist is equal to 85, add the sublist to the list of sublists and reset the start and end indices to the next element in the list
+        if (my_list[start] * my_list[end - 1]) == 85:
+            sublists.append(my_list[start:end])
+            start = end
+            end = i + 1
+
+    # Return the list of sublists
+    return sublists

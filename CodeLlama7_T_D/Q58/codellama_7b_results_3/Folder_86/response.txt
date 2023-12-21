@@ -1,0 +1,24 @@
+ ```
+import numpy as np
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+    # Iterate over each row of the matrix
+    for i in range(len(matrix)):
+        # Iterate over each column of the matrix
+        for j in range(len(matrix[i])):
+            # Initialize a counter variable to keep track of the number of integers in the submatrix
+            counter = 0
+            # Iterate over each element of the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    # If the element is not outside the bounds of the matrix, increment the counter and check if it reaches 138
+                    if 0 <= k < len(matrix) and 0 <= l < len(matrix[i])):
+                        counter += 1
+                        if counter == 138:
+                            count += 1
+                            break
+
+    # Return the count of all submatrices that contain 138 integers each
+    return count
+```

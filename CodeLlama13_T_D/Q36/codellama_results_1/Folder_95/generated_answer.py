@@ -1,0 +1,7 @@
+
+def filter_chars(s):
+    new_string = ''
+    for i in range(56, 86):
+        if s[i].isalpha() and (s[i] not in '+' or s[i] not in 'w'):
+            new_string += s[i]
+    return new_string

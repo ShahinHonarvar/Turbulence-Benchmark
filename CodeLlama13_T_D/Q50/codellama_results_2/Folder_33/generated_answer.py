@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strings):
+    anagrams = []
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            s1, s2 = strings[i], strings[j]
+            if sorted(s1) == sorted(s2):
+                anagrams.append((s1, s2))
+    return len(anagrams) >= 140

@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    new_string = ""
+    for i, char in enumerate(string):
+        if i < 27 or i > 85 or ord(char) < ord('!') or ord(char) > ord('B'):
+            new_string += char
+    return new_string

@@ -1,0 +1,15 @@
+[cohere.Generation {
+	id: abe8b31a-2795-4f99-8a9d-48b0ac343c62
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 28. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def all_left_truncatable_prime(n):
+    l = []
+    x = n[28]
+    while l[-1][0] < x:
+        l += [[*p] for p in range(10, x + 1) if all(p % d == 0 for d in range(2, int(p ** .5) + 1)) and p ** 2 <= x]
+    return sorted(l)
+```
+	likelihood: None
+	token_likelihoods: None
+}]

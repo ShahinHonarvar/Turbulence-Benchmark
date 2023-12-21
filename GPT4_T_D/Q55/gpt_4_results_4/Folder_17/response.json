@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef lists_with_product_equal_n(lst):\n    output = []\n    N = len(lst)\n    for i in range(N):\n        for j in range(i, N):\n            product = 1\n            for k in range(i, j + 1):\n                product *= lst[k % N]\n                if product == 18:\n                    output.append(lst[k % N for k in range(i, j + 1)])\n                elif product > 18:\n                    break\n    return output\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691087607,
+  "id": "chatcmpl-7jXQVnB03qmwHL6ZNsrTBfVGlmFVa",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 103,
+    "prompt_tokens": 193,
+    "total_tokens": 296
+  }
+}

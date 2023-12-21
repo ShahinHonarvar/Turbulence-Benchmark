@@ -1,0 +1,14 @@
+ ```
+def return_n_smallest_chars(my_string):
+    # Sort the characters of the string in ascending order based on their ASCII values
+    sorted_chars = sorted(my_string)
+    # Create a list of exactly 90 characters of the given string that have the smallest ASCII values
+    smallest_chars = sorted_chars[:90]
+    # Sort the list in descending order and returns the list
+    return sorted(smallest_chars, reverse=True)
+```
+Explanation:
+
+The function `return_n_smallest_chars` takes a single argument `my_string`, which is a string of distinct characters. The function first sorts the characters of the string in ascending order based on their ASCII values using the `sorted()` function.
+Next, the function creates a list of exactly 90 characters of the given string that have the smallest ASCII values by slicing the sorted list of all characters using the colon operator (`:`) to get the first 90 elements of the list.
+Finally, the function sorts the list of 90 characters in descending order and returns the list using the `sorted()` function again, this time with the `reverse=True` argument to sort the list in descending order.

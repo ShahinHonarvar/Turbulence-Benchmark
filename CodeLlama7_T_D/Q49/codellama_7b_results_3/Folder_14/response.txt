@@ -1,0 +1,18 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal_int = int(binary_string, 2)
+    # Check if the decimal integer is divisible by the 27th Fibonacci number
+    fib_27 = fibonacci(27)
+    return (decimal_int % fib_27) == 0
+def fibonacci(n):
+    # Base case
+    if n <= 1:
+        return n
+
+    # Recursive case
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+```
+This code defines a function `if_decimal_is_divisible` that takes a binary representation string of a non-negative decimal integer as input. The function first converts the binary string to an integer, and then checks if the integer is divisible by the 27th number in the Fibonacci sequence. If the integer is not divisible by the 27th Fibonacci number, the function returns `False`, otherwise it returns `True`.
+The code also defines a function `fibonacci` that takes an integer as input and returns the corresponding number in the Fibonacci sequence. The function uses recursion to compute the nth Fibonacci number by adding the (n-1)th and (n-2)th Fibonacci numbers.

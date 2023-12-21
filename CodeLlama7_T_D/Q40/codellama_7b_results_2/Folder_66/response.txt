@@ -1,0 +1,10 @@
+ ```
+def return_n_smallest_chars(string):
+    # Create a list of tuples containing the character and its ASCII value
+    char_list = [(char, ord(char)) for char in string]
+    # Sort the list in descending order based on the ASCII values
+    char_list.sort(key=lambda x: x[1], reverse=True)
+    # Return the top 33 characters from the sorted list
+    return [char for char, _ in char_list[:33]]
+```
+This function takes a single argument, a string of distinct characters, and returns a list of exactly 33 characters of the given string that have the smallest ASCII values. The function first creates a list of tuples containing the character and its ASCII value for each character in the input string. It then sorts this list in descending order based on the ASCII values using the `sort` method and the `reverse` parameter. Finally, it returns the top 33 characters from the sorted list using list comprehension.

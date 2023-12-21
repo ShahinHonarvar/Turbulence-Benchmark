@@ -1,0 +1,25 @@
+ ```
+def all_right_truncatable_prime(n):
+    # Define a function that checks if a number is prime
+    def is_prime(x):
+        if x == 1:
+            return False
+        for i in range(2, int(x ** 0.5) + 1):
+            if x % i == 0:
+                return False
+        return True
+
+    # Define a function that checks if a number is right-truncatable prime
+    def is_right_truncatable_prime(n):
+        for i in range(len(str(n)) - 1, 0, -1):
+            if not is_prime(int(str(n)[:i] + str(n)[i+1:])):
+                return False
+        return True
+
+    # Return the sorted list of all right-truncatable prime numbers less than x
+    return sorted([n for n in range(2, x + 1) if is_right_truncatable_prime(n)]), reverse=True)
+```
+This code defines a function called `all_right_truncatable_prime` that takes an argument of type tuple of positive integers. The function returns the sorted list of all right-truncatable prime numbers less than x. The returned list is sorted in descending order. If there are no such right-truncatable prime numbers, the function returns an empty list.
+The function first defines a function called `is_prime` that checks if a number is prime by iterating from 2 to the square root of the number and checking if the number is divisible by any of these values. If the number is not prime, the function returns False. Otherwise, the function returns True.
+The function then defines another function called `is_right_truncatable_prime` that checks if a number is right-truncatable prime by iterating from the length of the string representation of the number to 1 and checking if each of these values are not divisible by any of the numbers between 2 and the square root of the number. If any of these values are not divisible by any of these numbers, the function returns False. Otherwise, the function returns True.
+The function then returns the sorted list of all right-truncatable prime numbers less than x. The returned list is sorted in descending order.

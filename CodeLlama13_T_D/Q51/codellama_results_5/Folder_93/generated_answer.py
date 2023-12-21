@@ -1,0 +1,14 @@
+
+def if_contains_anagrams(lst):
+    english_letters = "abcdefghijklmnopqrstuvwxyz"
+    anagram_pairs = 0
+    for i in range(len(lst)):
+        s1 = lst[i].lower()
+        if len(s1) >= 3:
+            for j in range(i+1, len(lst)):
+                s2 = lst[j].lower()
+                if len(s2) >= 3 and set(s1) == set(s2):
+                    anagram_pairs += 1
+                    if anagram_pairs > 36:
+                        return False
+    return True

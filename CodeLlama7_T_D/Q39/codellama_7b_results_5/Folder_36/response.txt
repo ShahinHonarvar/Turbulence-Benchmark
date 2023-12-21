@@ -1,0 +1,16 @@
+ Here is a possible implementation of the `return_n_greatest_chars` function:
+```python
+def return_n_greatest_chars(my_string, n):
+    # Check if 'n' is a positive integer
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError("'n' must be a positive integer")
+    # Create a list of characters from the input string
+    char_list = [char for char in my_string]
+    # Sort the list of characters by their ASCII values in descending order
+    sorted_list = sorted(char_list, key=ord, reverse=True)
+    # Return the top 'n' elements of the sorted list
+    return sorted_list[:n]
+```
+This function takes two arguments: `my_string`, which is a string of distinct characters, and `n`, which is a positive integer indicating the number of characters to return. The function first checks if `n` is a positive integer and raises a `ValueError` otherwise.
+Next, the function creates a list of characters from the input string using a list comprehension. It then sorts the list of characters by their ASCII values in descending order using the `sorted()` function with the `key` parameter set to `ord`. The `reverse=True` parameter ensures that the sort is done in descending order instead of the default ascending order.
+Finally, the function returns the top `n` elements of the sorted list using slicing. Note that since the list is sorted in descending order, the top `n` elements correspond to the greatest ASCII values in the input string.

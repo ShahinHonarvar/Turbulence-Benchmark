@@ -1,0 +1,28 @@
+ ```
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    x = tuple_of_positive_integers[177]
+    list_of_all_left_truncatable_prime_numbers = []
+    for i in range(2, x):
+        if is_prime(i) and is_left_truncatable_prime(i):
+            list_of_all_left_truncatable_prime_numbers.append(i)
+    return sorted(list_of_all_left_truncatable_prime_numbers)
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_truncatable_prime(n):
+    if str(n)[-1] != '1':
+        return False
+
+    for i in range(2, int(str(n))[:-1].__len__()) + 1):
+        if int(str(n))[:-i]) == n:
+            return False
+
+    return True
+```

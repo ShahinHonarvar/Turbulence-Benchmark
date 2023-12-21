@@ -1,0 +1,10 @@
+ ```
+def return_n_greatest_chars(my_string):
+    # Sort the characters of the string in descending order based on their ASCII values
+    sorted_list = sorted(my_string, key=ord, reverse=True)
+    # Take the top 83 characters from the sorted list and return them as a new list
+    return sorted_list[:83]
+```
+This function takes a single argument `my_string`, which is a string of distinct characters. The function first sorts the characters of the string in descending order based on their ASCII values using the `sorted` function with the `key` parameter set to `ord`.
+Next, the function uses slicing to take the top 83 characters from the sorted list and returns them as a new list. The slice starts at index 0 (the first character in the string) and ends at index 82 (the 83rd character in the string). The `[:]` syntax is used to specify that the slice should include all elements up to, but not including, the element at index 82.
+Overall, this function returns a sorted list of exactly 83 characters of the given string that have the greatest ASCII values, based on the input string provided.

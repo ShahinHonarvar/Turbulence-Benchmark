@@ -1,0 +1,5 @@
+```python
+def if_contains_anagrams(my_list):
+    return len([a for a, b in zip(my_list, my_list[1:]) if sorted(a) == sorted(b) and len(a) >= 3]) <= 173
+```
+This function uses list comprehension to create a new list of pairs of strings that are anagrams of each other. It then checks the length of this new list, and returns `True` if it is less than or equal to 173. Otherwise, it returns `False`.

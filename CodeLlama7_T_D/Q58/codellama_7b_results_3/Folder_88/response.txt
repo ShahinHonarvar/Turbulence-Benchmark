@@ -1,0 +1,32 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize a counter for the number of submatrices with 67 integers each
+    count = 0
+
+    # Loop through each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a variable to keep track of the number of integers in the submatrix
+            num_ints = 0
+
+            # Loop through each element of the submatrix
+            for k in range(i, i + 3):
+                for l in range(j, j + 3):
+                    if matrix[k][l] == 67:
+                        num_ints += 1
+
+                    # If the number of integers in the submatrix is equal to 67, increase the counter by 1 and break out of the loops
+                    if num_ints == 67:
+                        count += 1
+                        break
+
+            # If the number of integers in the submatrix is greater than 67, break out of the loops
+            if num_ints > 67:
+                break
+
+# Return the counter as the result of the function
+return count
+```

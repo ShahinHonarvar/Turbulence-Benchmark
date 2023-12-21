@@ -1,0 +1,3 @@
+
+def insert_at_index(lst):
+    return lst[:0] + [0] + lst[0:]

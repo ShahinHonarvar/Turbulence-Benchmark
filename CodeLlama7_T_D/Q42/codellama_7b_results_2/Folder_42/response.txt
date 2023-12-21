@@ -1,0 +1,24 @@
+ ```
+def prime_factors(my_list):
+    # Find the factorization of the number at index 276
+    num = my_list[276]
+    factors = []
+
+    for i in range(1, int(num ** 0.5) + 1):
+
+        if num % i == 0:
+
+            factors.append(i)
+
+
+            if num / i != i:
+
+                factors.append(num // i)
+
+
+    return set(factors)
+
+```
+This code defines a function called `prime_factors` that takes one argument, a list of positive integers, and returns the set of all prime factors of the integer at index 276.
+The function first finds the number at index 276 in the input list, and stores it in the variable `num`.
+Next, the function uses a loop to iterate over all numbers less than or equal to the square root of `num`, and checks if each number is a factor of `num`. If a factor is found, it is added to the `factors` list. The factors are then stored in a set using the `set()` constructor, and returned as the final result of the function.

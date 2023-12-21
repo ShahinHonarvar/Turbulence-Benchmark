@@ -1,0 +1,13 @@
+```python
+def composite_nums_between_indices(lst):
+    # Initialize an empty set to store the composite numbers between indices 62 to 99, both inclusive
+    comp_set = set()
+    
+    # Iterate over the list and check if each number is composite using the modulo operator
+    for i in range(62, 100):
+        if lst[i] % 2 == 0:
+            comp_set.add(lst[i])
+    
+    return comp_set
+```
+Note that this solution uses a set to store the composite numbers, which is more efficient than using a list because sets have faster membership testing. Also, note that the function assumes that the input list `lst` contains only positive integers, and it checks if each number is composite by checking if its modulo with 2 is equal to 0.

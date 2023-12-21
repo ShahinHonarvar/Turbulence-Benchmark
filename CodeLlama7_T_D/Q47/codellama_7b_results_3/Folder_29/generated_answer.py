@@ -1,0 +1,28 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring of interest
+    substr = string[15:94]
+    # Create a set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring
+    for i in range(len(substr)):
+        # Get the current character and its opposite
+        char = substr[i]
+        opp = substr[~i]
+        # Check if the current character is a palindrome
+        if char == opp:
+            # Add the palindrome to the set
+            palindromes.add(char)
+    # Iterate over each length in the range
+    for length in range(18, 73 + 1):
+        # Create a set to store the palindromes of the current length
+        curr_palindromes = set()
+        # Iterate over each palindrome in the previous set
+        for palindrome in palindromes:
+            # Check if the current palindrome has the current length
+            if len(palindrome) == length:
+                # Add the palindrome to the current set
+                curr_palindromes.add(palindrome)
+        # Update the previous set with the current set
+        palindromes = curr_palindromes
+    return palindromes

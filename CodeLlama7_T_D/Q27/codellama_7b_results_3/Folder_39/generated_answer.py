@@ -1,0 +1,5 @@
+
+def insert_after_index(my_list):
+    # create a new list with an extra element at index 98
+    new_list = my_list[:97] + [47, 22] + my_list[97:]
+    return new_list

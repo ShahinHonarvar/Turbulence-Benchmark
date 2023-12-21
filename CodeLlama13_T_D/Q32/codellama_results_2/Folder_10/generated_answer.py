@@ -1,0 +1,3 @@
+
+def insert_after_character(string):
+    return "".join([char + "v" if char == "j" else char for char in string])

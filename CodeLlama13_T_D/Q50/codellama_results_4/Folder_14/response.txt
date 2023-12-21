@@ -1,0 +1,10 @@
+```
+def if_contains_anagrams(strs):
+    anagrams = set()
+    for s in strs:
+        t = tuple(sorted(s.lower()))
+        if len(t) < 3: continue
+        if t not in anagrams: anagrams.add(t)
+        else: return True
+    return False
+```

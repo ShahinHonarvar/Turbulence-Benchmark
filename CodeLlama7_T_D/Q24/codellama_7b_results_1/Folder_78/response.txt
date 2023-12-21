@@ -1,0 +1,21 @@
+ ```
+def sum_of_divisors_in_range(n):
+# Check if n is a positive integer
+if not isinstance(n, int) or n <= 0:
+raise ValueError("n must be a positive integer")
+
+# Initialize the sum to 0
+sum = 0
+
+# Iterate through the divisors of n in the specified range
+for i in range(20, 51):
+if n % i == 0:
+sum += i
+
+return sum
+```
+This code defines a function `sum_of_divisors_in_range` that takes a positive integer as its argument and returns the sum of all positive divisors of the given integer that are between 20 and 50, both inclusive. If no such divisors exist in the specified range, the function should return 0.
+The code first checks if `n` is a positive integer using the `isinstance` method. If `n` is not an integer or is less than or equal to 0, the function raises a `ValueError`.
+Next, the code initializes the sum of divisors to 0.
+Then, the code iterates through the divisors of `n` in the specified range using a for loop. For each divisor `i`, the code checks if `n % i == 0`, which means that `i` is a divisor of `n`. If this condition is true, the code adds `i` to the sum of divisors.
+Finally, the function returns the sum of divisors.

@@ -1,0 +1,21 @@
+ Here is a possible implementation of the filter_chars function:
+```python
+def filter_chars(s):
+    # Initialize an empty string to store the filtered characters
+    filtered = ""
+
+    # Iterate over the characters in the given string
+    for char in s:
+
+        # If the current character is between indices 8 and 9, both inclusive, and is greater than or equal to character 'R' and smaller than or equal to character 't', then remove all occurrences of that character from the filtered string
+        if (8 <= ord(char) <= 9) and ('R' <= char <= 't'):
+            continue
+
+        # Otherwise, add the current character to the filtered string
+        else:
+            filtered += char
+
+    # Return the altered string containing only the filtered characters
+    return filtered
+```
+This function takes a single argument, which is a string. It then iterates over the characters in this string using a for loop. For each character, it checks if it falls between indices 8 and 9, both inclusive, and is greater than or equal to character 'R' and smaller than or equal to character 't'. If this condition is met, then the function skips adding that character to the filtered string. If the condition is not met, then the function adds the current character to the filtered string. Finally, the function returns the altered string containing only the filtered characters.

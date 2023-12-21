@@ -1,0 +1,15 @@
+
+def remove_repeat_chars(string):
+    chars = {}
+    for i in range(86, 99):
+        if string[i] in chars:
+            chars[string[i]] += 1
+        else:
+            chars[string[i]] = 1
+
+    for char in chars:
+        while chars[char] > 1:
+            string = string.replace(char, "")
+            chars[char] -= 1
+
+    return string

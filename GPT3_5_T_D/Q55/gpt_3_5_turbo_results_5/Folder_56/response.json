@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import chain, combinations\n\ndef lists_with_product_equal_n(lst):\n    def product(lst):\n        result = 1\n        for num in lst:\n            result *= num\n        return result\n\n    def find_sublists(lst):\n        sublists = []\n        for i in range(1, len(lst) + 1):\n            for combination in combinations(lst, i):\n                sublists.append(list(combination))\n        return sublists\n\n    n = -65\n    sublists = find_sublists(list(chain(lst, lst[:-1])))\n    return [sublist for sublist in sublists if product(sublist) == n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887263,
+  "id": "chatcmpl-7eVA7GDcnuqlIXfCWj9YwqrdHFdpU",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 193,
+    "total_tokens": 326
+  }
+}

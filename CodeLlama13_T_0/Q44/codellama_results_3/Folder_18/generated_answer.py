@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(lst):
+    return {x for i, x in enumerate(lst) if 25 <= i <= 87 and x > 1}

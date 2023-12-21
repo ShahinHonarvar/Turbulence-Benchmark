@@ -1,0 +1,14 @@
+ def palindromes_of_specific_lengths(string):
+    # Define the substring and palindrome lengths
+    substr = string[2:8+1]
+    plen34 = [p for p in substr if len(p) in range(3, 5)]
+    # Convert to lowercase and check for palindromes
+    plen34_lower = [p.lower() for p in plen34]
+    palindromes = []
+    # Check for letters that are not in the English alphabet
+    for p in plen34_lower:
+        if any(c not in 'abcdefghijklmnopqrstuvwxyz' for c in p):
+            continue
+
+        palindromes.append(p)
+    return set(palindromes)

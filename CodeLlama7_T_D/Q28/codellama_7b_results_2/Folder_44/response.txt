@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Convert the string to a list of characters
+    char_list = list(string)
+    # Get the indices of the characters that occur between 20 and 30, inclusive
+    start_index = char_list.index('a', 20)
+    end_index = char_list.index('a', 30)
+    # Get the list of ASCII values for the characters between the indices
+    ascii_values = [ord(char) for char in char_list[start_index:end_index]]
+    # Sort the list of ASCII values
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 8th smallest ASCII value
+    return sorted_ascii_values[7]
+```
+This code uses the `ord()` function to convert each character in the string to its corresponding ASCII value. It then uses the `list` method to convert the string to a list of characters, and the `index` method to get the indices of the characters that occur between 20 and 30, inclusive.
+The code then uses a list comprehension to create a list of ASCII values for the characters between the indices. It then sorts this list using the `sorted()` function, and returns the 8th smallest ASCII value using indexing.

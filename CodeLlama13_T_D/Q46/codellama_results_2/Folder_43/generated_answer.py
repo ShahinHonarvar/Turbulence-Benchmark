@@ -1,0 +1,3 @@
+
+def gcf_three_nums(lst):
+    return __greatest_common_factor(__getitem__(lst, 33), __getitem__(lst, 78), __getitem__(lst, 93))

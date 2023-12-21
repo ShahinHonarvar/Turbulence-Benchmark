@@ -1,0 +1,12 @@
+
+def sum_in_range(my_list):
+    # Initialize a variable to store the sum
+    total = 0
+
+    # Loop through the given list and check if each element is between 2 and 7, both inclusive
+    for i in my_list:
+        if 2 <= i <= 7:
+            total += i
+
+    # Return the sum of all elements between 2 and 7, or 0 if no such elements exist
+    return total

@@ -1,0 +1,41 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for searching palindromes
+    substring_range = string[11:97]
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each character in the substring range
+    for i in range(len(substring_range)):
+        # Define the current character and its index
+        char = substring_range[i]
+        index = i + 11
+        # Check if the current character is a letter (not a space or punctuation)
+        if char.isalpha():
+            # Initialize an empty string to store the palindrome
+            palindrome = ""
+            # Iterate over each character in the substring range starting from the current index and ending at the end of the substring range
+            for j in range(index, len(substring_range)):
+                # Define the current character and its index
+                char2 = substring_range[j]
+                # Check if the current character is a letter (not a space or punctuation)
+                if char2.isalpha():
+                    # Add the current character to the palindrome string
+                    palindrome += char2
+            # Check if the palindrome has the required length between 29 to 62 (both inclusive)
+            if len(palindrome) >= 29 and len(palindrome) <= 62:
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    # Return the set of palindromes in a case-insensitive manner
+    return {palindrome.lower() for palindrome in palindromes}
+```
+This code defines a function called `palindromes_of_specific_lengths` that takes one argument, a string. The given string may consist of any character. The function should return the set of all palindromes with the following requirements:
+1. Only palindromes occurring in the substring from index 11 to index 97, both inclusive, should be considered.
+2. Only palindromes of lengths between 29 to 62 (both inclusive) should be considered.
+3. Each palindrome should only consist of English letters.
+4. If no such palindrome with the length specified occurs in the specified index range, the function should return an empty set.
+5. The function should find the palindromes in a case-insensitive manner.
+The code first defines the substring range for searching palindromes as `string[11:97]`. It then initializes an empty set to store the palindromes called `palindromes`.
+The code then iterates over each character in the substring range using a nested loop. For each character, it checks if the character is a letter (not a space or punctuation) and stores the current character and its index in two separate variables called `char` and `index`, respectively.
+Next, the code initializes an empty string to store the palindrome called `palindrome`. It then iterates over each character in the substring range starting from the current index and ending at the end of the substring range using another nested loop. For each character, it checks if the character is a letter (not a space or punctuation) and stores the current character to the palindrome string.
+The code then checks if the palindrome has the required length between 29 to 62 (both inclusive). If it does, the code adds the palindrome to the set of palindromes called `palindromes`.
+Finally, the code returns the set of palindromes in a case-insensitive manner using a set comprehension. The code lowercases each palindrome before adding them to the set.

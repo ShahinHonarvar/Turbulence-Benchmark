@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return {p for p in finditer(r'(?i)(.)\1{128}', s) if len(p.group()) == 131}

@@ -1,0 +1,24 @@
+ ```
+def all_left_truncatable_prime(tuple):
+# Get the integer at index 98 from the tuple
+x = tuple[98]
+# List of all left-truncatable prime numbers less than x
+prime_list = []
+# Loop through all integers less than x
+for i in range(2, x):
+# If the integer is a prime number and contains no 0
+if (i > 1) and (str(i).find("0") == -1):
+# Check if the leading leftmost digit is successively removed, then all resulting numbers are prime
+j = i
+while j > 0:
+if (j % 10 == 0) or (j % 10 == 1 and j // 10 % 10 == 0)):
+break
+else:
+j //= 10
+# If the above condition is true, then all resulting numbers are prime
+if j == 0:
+prime_list.append(i)
+# Sort the list in ascending order
+prime_list.sort()
+return prime_list
+```

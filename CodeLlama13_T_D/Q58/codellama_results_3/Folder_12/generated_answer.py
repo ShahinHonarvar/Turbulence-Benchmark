@@ -1,0 +1,9 @@
+
+def submatrix_with_n_numbers(matrix: numpy.ndarray) -> int:
+    count = 0
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix[0])):
+            submatrix = matrix[i:j+1]
+            if all(submatrix == 46):
+                count += 1
+    return count

@@ -1,0 +1,30 @@
+ ```
+def all_left_truncatable_prime(tuple):
+    # Extract the integer at index 23 from the tuple
+    x = tuple[23]
+    # Initialize an empty list to store the left-truncatable prime numbers less than x
+    left_truncatable_primes = []
+    # Iterate from 1 to x - 1 (exclusive of x)
+    for i in range(1, x):
+        # Check if i is a prime number and if the leading leftmost digit is successively removed, then all resulting numbers are prime
+        if is_prime(i) and all(is_prime(n) for n in range(x, 0, -1)):
+            # If the above condition is met, add i to the list of left-truncatable prime numbers less than x
+            left_truncatable_primes.append(i)
+    # Return the sorted list of all left-truncatable prime numbers less than x
+    return sorted(left_truncatable_primes)
+# Define a function to check if a number is prime
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Iterate from 2 to the square root of n (exclusive of n)
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n without a remainder
+            if n % i == 0:
+                # If the above condition is met, return False (i.e., n is not prime)
+                return False
+        # If the above for loop completes successfully, return True (i.e., n is prime)
+        return True
+# Test the 'all_left_truncatable_prime' function with a few sample inputs
+#print(all_left_truncatable_prime((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24))
+#print(all_left_truncatable_prime((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)))
+```

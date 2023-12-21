@@ -1,0 +1,22 @@
+ ```
+def lists_with_product_equal_n(lst):
+# Find the product of all elements in the list
+prod = 1
+for i in lst:
+prod *= i
+
+# Initialize an empty list to store sublists
+sublists = []
+
+# Iterate through the list and find contiguous sequences of elements whose product equals 54
+for i in range(len(lst)):
+# Find the start index of the current sequence
+start = i
+
+# Find the end index of the current sequence
+while start < len(lst) and prod == 54:
+prod /= lst[start]
+sublists.append(lst[start:end])
+return sublists
+
+```

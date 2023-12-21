@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(string):
+    for i in range(45, 48):
+        char = string[i]
+        if char in string[45:48]:
+            string = string.replace(char, "")
+    return string

@@ -1,0 +1,3 @@
+
+def all_substring_of_size_n(s):
+    return [''.join(s[i:i+19]) for i in range(len(s)-18) if len(set(s[i:i+19])) == 19 and not any(''.join(s[j:j+19]) in s[i+1:i+19] for j in range(i, len(s)-18))]

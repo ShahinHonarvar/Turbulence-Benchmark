@@ -1,0 +1,17 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the substring range for palindrome search
+    substring_range = string[100:300]
+    # Initialize an empty set to store palindromes
+    palindromes = set()
+    # Iterate over each character in the substring range
+    for i in range(len(substring_range)):
+        # Define the current character and its corresponding mirrored character
+        current_char = substring_range[i]
+        mirrored_char = substring_range[len(substring_range) - 1 - i]
+        # Check if the current character is a palindrome of length 50 to 100 (both inclusive)
+        if len(current_char + mirrored_char) in range(50, 101) and current_char.lower() == mirrored_char.lower():
+            # Add the palindrome to the set of palindromes
+            palindromes.add(current_char + mirrored_char)
+    return palindromes
+```

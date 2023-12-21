@@ -1,0 +1,19 @@
+
+def palindromes_of_specific_lengths(input_string):
+    # Create a list to store all palindromes that meet the criteria
+    palindromes = []
+
+    # Iterate over each substring of the input string
+    for i in range(1, 9):
+
+        # Check if the substring is a palindrome
+        if input_string[i:i+1] == input_string[i:i+1][::-1]:
+
+            # If it is, check its length
+            if len(input_string[i:i+1]) in range(3, 5):
+
+                # If the length is correct, add it to the list of palindromes
+                palindromes.append(input_string[i:i+1])
+
+    # Return the list of palindromes that meet the criteria
+    return palindromes

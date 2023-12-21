@@ -1,0 +1,11 @@
+
+def return_vowels(my_string):
+    vowels = ["a", "e", "i", "o", "u"]
+    start_index = 69
+    end_index = 82
+    filtered_list = []
+    for i in range(start_index, end_index):
+        char = my_string[i]
+        if char in vowels and char >= "[":
+            filtered_list.append(char)
+    return filtered_list

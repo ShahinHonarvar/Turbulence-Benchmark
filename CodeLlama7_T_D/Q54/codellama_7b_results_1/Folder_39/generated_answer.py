@@ -1,0 +1,22 @@
+
+def all_right_truncatable_prime(tuple):
+    x = tuple[30]
+    prime_numbers = []
+    for i in range(2, x + 1):
+        if is_prime(i) and is_right_truncatable_prime(i, x):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+def is_prime(n):
+    for i in range(2, n + 1):
+        if n % i == 0:
+            return False
+    return True
+def is_right_truncatable_prime(n, x):
+    last_digit = str(n)[-1]
+    while int(last_digit) != 0 and int(last_digit) <= x:
+        if n % int(last_digit) == 0:
+            return False
+        else:
+            n //= int(last_digit)
+            last_digit = str(n)[-1]
+    return True

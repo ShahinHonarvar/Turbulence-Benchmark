@@ -1,0 +1,12 @@
+
+def gcf_two_nums(my_list):
+    return _gcf(my_list[872], my_list[219])
+def _gcf(a, b):
+    if a == 0:
+        return b
+
+    while True:
+
+        if a % b == 0:
+
+            return b

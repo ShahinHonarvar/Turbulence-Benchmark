@@ -1,0 +1,8 @@
+
+def gcf_two_nums(numbers):
+    return get_gcf(numbers[60], numbers[64])
+
+def get_gcf(a, b):
+    if a == 0:
+        return b
+    return get_gcf(b % a, a)

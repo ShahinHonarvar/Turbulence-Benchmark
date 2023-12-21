@@ -1,0 +1,7 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    num = int(binary_repr, 2)
+    # Check if the number is divisible by the 39th Fibonacci number
+    fib39 = 63245986
+    return (num % fib39 == 0)

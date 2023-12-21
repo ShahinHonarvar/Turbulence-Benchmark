@@ -1,0 +1,18 @@
+
+def palindromes_of_specific_lengths(string):
+    # Find the substring from index 13 to index 95, both inclusive
+    substr = string[12:96]
+    
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each length between 57 and 60 (both inclusive)
+    for length in range(57, 61):
+        # Iterate over each position in the substring
+        for i in range(len(substr) - length + 1):
+            # Check if the substring from position i to position i + length - 1 is a palindrome
+            if substr[i:i+length] == substr[i:i+length][::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr[i:i+length])
+    
+    return palindromes

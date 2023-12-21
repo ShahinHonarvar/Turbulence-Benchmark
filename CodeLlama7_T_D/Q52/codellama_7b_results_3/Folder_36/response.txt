@@ -1,0 +1,17 @@
+ ```
+def palindrome_of_length_n(string):
+    # Find all substrings of length n in the given string
+    substrings = []
+    for i in range(len(string) - n + 1):
+        substring = string[i:i+n]
+        if substring == substring[::-1]:
+            substrings.append(substring)
+
+    # Return the set of all palindromes found
+    return set(substrings)
+
+```
+Explanation:
+This function takes a string as input and returns the set of all palindromes of length equal to 338, where each palindrome is a substring of the given string. Each palindrome should only consist of English letters. If there is no palindrome of the specified length as a substring of the given string, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.
+The function first finds all substrings of length 338 in the given string using a nested loop. Each substring is then checked to see if it is a palindrome by comparing it to its reverse. If the substring is a palindrome, it is added to a set of all palindromes found so far.
+Finally, the function returns the set of all palindromes found as a result of searching for substrings of length 338 in the given string.

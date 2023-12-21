@@ -1,0 +1,37 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables for keeping track of anagram pairs
+    pair_count = 0
+    three_or_more = False
+
+    # Iterate over the list and check each string for anagrams
+    for i in range(len(my_list)):
+        # Get the current string
+        current_string = my_list[i]
+
+        # Check if the current string is an anagram of any other string in the list
+        for j in range(len(my_list)):
+            # Skip the current string if it's the same as the string we're checking against
+            if i == j:
+                continue
+
+            # Check if the current string is an anagram of the other string
+            if sorted(current_string) == sorted(my_list[j])):
+                pair_count += 1
+
+                # If there are at least three pairs of anagrams, we don't need to keep looking
+                if pair_count >= 3:
+                    three_or_more = True
+                    break
+
+            # If we found a matching string, move on to the next iteration
+            if three_or_more == True:
+                break
+
+        # If we found a matching string, move on to the next iteration
+        if three_or_more == True:
+            break
+
+    # Return true if there are at most 11 pairs of anagrams in the given list; otherwise, return false.
+    return pair_count <= 11 and not three_or_more
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrix_list = []\n    for i in range(matrix.shape[0]):\n        for j in range(matrix.shape[1]):\n            for k in range(i+1, matrix.shape[0]+1):\n                for l in range(j+1, matrix.shape[1]+1):\n                    submatrix = matrix[i:k, j:l]\n                    if np.sum(submatrix) == 432:\n                        submatrix_list.append(submatrix.tolist())\n    return submatrix_list\n```\nNote: Make sure to import the numpy library before using the code above, as numpy is required for working with matrices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866951,
+  "id": "chatcmpl-7ePsVb8WlZuHpnKbzut47SM4UHfde",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 121,
+    "total_tokens": 259
+  }
+}

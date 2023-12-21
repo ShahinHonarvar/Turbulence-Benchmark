@@ -1,0 +1,19 @@
+ ```
+import numpy as np
+def submatrix_with_particular_sum(matrix):
+    submatrices = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            current_submatrix = matrix[i][j]
+            if sum(current_submatrix) == 17:
+                submatrices.append(current_submatrix)
+    return submatrices
+
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#print(submatrix_with_particular_sum(matrix))
+```
+This code creates a function called `submatrix_with_particular_sum` that takes one argument which is a two-dimensional numpy matrix of integers. The function should return the list of all submatrices of the given matrix such that the sum of all integers in each submatrix equals 17. If no such submatrix is found, the function should return an empty list.
+The code first creates an empty list called `submatrices` to store the submatrices with the particular sum. It then loops through every row and column of the given matrix using two nested for loops.
+For each element in the current row, the code checks if the sum of all elements in the current submatrix equals 17. If it does, the code appends the current submatrix to the `submatrices` list.
+Finally, the function returns the `submatrices` list.
+The code can be tested by passing a matrix with different values and checking if the correct submatrices are returned.

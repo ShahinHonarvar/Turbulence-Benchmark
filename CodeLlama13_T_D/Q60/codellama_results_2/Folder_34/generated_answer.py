@@ -1,0 +1,8 @@
+
+def all_left_right_truncatable_prime(tuple):
+    x = tuple[18]
+    left_right_truncatable_primes = []
+    for i in range(2,x+1):
+        if is_prime(i) and not '0' in str(i):
+            left_right_truncatable_primes.append(i)
+    return sorted(left_right_truncatable_primes, reverse = True)

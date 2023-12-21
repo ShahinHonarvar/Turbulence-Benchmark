@@ -1,0 +1,12 @@
+ ```
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Find the 68th number in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    while len(fibonacci_sequence) < 68:
+        fibonacci_sequence.append(fibonacci_sequence[-2] + fibonacci_sequence[-1])
+    # Check if the decimal integer is divisible by the 68th number in the Fibonacci sequence
+    return decimal_integer % fibonacci_sequence[67] == 0
+```
+This code defines a function called `if_decimal_is_divisible` that takes one argument, a binary representation string of a non-negative decimal integer. The function first converts the binary representation to a decimal integer using the `int()` function with the `base=2` parameter. Then, it finds the 68th number in the Fibonacci sequence using a loop that appends the previous two numbers until the desired length is reached. Finally, the function checks if the decimal integer is divisible by the 68th number in the Fibonacci sequence using the modulo operator (`%`). If the remainder of the division is zero, then the function returns `True`, otherwise it returns `False`.

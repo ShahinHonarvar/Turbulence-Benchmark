@@ -1,0 +1,19 @@
+
+def if_decimal_is_divisible(binary_str):
+    # Convert the binary string to an integer
+    num = int(binary_str, 2)
+    # Get the number of digits in the integer
+    n = len(bin(num)[2:])
+    # Calculate the 90th Fibonacci number
+    fib_90 = (5 ** 0.5 + 1) / 2
+    # Calculate the modulo of the integer and the 90th Fibonacci number
+    mod = num % fib_90
+    # If the modulo is equal to 0, return true
+    if mod == 0:
+        return True
+
+    # Otherwise, return false
+
+    else:
+
+        return False

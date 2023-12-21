@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    # Get the indices of the characters between 12 and 77
+    start = string.find(':', 12)
+    end = string.rfind('L', 0, 77)
+    # Create a new string without the filtered characters
+    filtered_string = ''.join([char for char in string[start:end+1] if char not in ':;<=>?@[\\]^`{}|~'])
+    return filtered_string

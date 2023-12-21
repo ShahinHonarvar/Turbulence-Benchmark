@@ -1,0 +1,14 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables to keep track of the sum and the range of indices
+    sum = 0
+    start_index = 69
+    end_index = 70
+    # Iterate through the list from the starting index to the ending index
+    for i in range(start_index, end_index + 1):
+        # Check if the current element is divisible by either 72 or 70
+        if my_list[i] % 72 == 0 or my_list[i] % 70 == 0:
+            # If it is, add it to the sum
+            sum += my_list[i]
+    # Return the sum of all integers divisible by either 72 or 70 from index 69 to index 70, both inclusive. If no such integers exist in the specified range, return 0
+    return sum

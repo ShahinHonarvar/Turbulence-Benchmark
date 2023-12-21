@@ -1,0 +1,17 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    new_str = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+
+        # If the current character is between indices 24 and 82, both inclusive, and is greater than or equal to character '5' and smaller than or equal to character '<', then remove all occurrences of that character from the new string
+        if (char >= '5') and (char <= '<'):
+            continue
+
+        # Otherwise, add the current character to the new string
+        else:
+            new_str += char
+
+    return new_str

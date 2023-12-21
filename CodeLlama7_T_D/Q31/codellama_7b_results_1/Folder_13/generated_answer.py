@@ -1,0 +1,17 @@
+
+def if_perfect_num(my_list):
+    if len(my_list) < 126:
+        return False
+
+    perfect_number = my_list[126]
+
+    sum = 0
+
+    for i in range(1, perfect_number):
+
+        if perfect_number % i == 0:
+
+            sum += i
+
+
+    return perfect_number == sum

@@ -1,0 +1,15 @@
+ ```
+def prime_factors(n):
+    factors = []
+    for i in range(2, int(n ** 0.5) + 1):
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+
+    if n > 1:
+        factors.append(n)
+
+    return set(factors)
+
+```
+Note that this code assumes that the input list contains only positive integers. If the input list can contain negative or floating-point numbers, then additional validation and error handling may be necessary in the `prime_factors` function.

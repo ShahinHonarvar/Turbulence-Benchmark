@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import permutations\nfrom math import sqrt\n\ndef all_left_right_truncatable_prime(tuple_of_integers):\n    def is_prime(n):\n        if n == 1: \n            return False\n        for k in range(2, int(sqrt(n) + 1)):\n            if n % k == 0:\n                return False\n        return True\n\n    def is_truncatable(n):\n        str_n = str(n)\n        if '0' in str_n:\n            return False\n        for i in range(len(str_n)):\n            if not is_prime(int(str_n[i:])) or not is_prime(int(str_n[:len(str_n)-i])):\n                return False\n        return True\n\n    x = tuple_of_integers[466]\n    truncatable_primes = []\n    for length in range(1, len(str(x)) + 1):\n        for comb in permutations('123456789', length):\n            number = int(''.join(comb))\n            if number <= x and is_truncatable(number):\n                truncatable_primes.append(number)\n    return sorted(truncatable_primes, reverse=True)\n\n```\nThe function is_prime check whether a number is prime or not. The is_truncatable function checks whether a prime is truncatable or not by slicing the number from left to right and right to left and checking if all the resulted sliced numbers are prime. At the end, permutations are generated for 1 to n length and checked if they are less than or equal to x and are truncatable also.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690086991,
+  "id": "chatcmpl-7fL7XhrD09jJ58goSE7E1zGbg58DU",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 316,
+    "prompt_tokens": 187,
+    "total_tokens": 503
+  }
+}

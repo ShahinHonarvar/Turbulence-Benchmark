@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(s):
+    ascii_values = []
+    for c in s[32:67]:
+        if c not in ascii_values:
+            ascii_values.append(ord(c))
+    return chr(sorted(ascii_values)[11])

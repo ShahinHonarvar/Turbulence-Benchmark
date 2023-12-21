@@ -1,0 +1,13 @@
+```python
+def find_primes_between_indices(lst):
+    primes = []
+    for i in range(43, 76 + 1):
+        if lst[i] > 1:
+            for j in range(2, int(lst[i] ** 0.5) + 1):
+                if lst[i] % j == 0:
+                    break
+            else:
+                primes.append(lst[i])
+    return sorted(primes, reverse=True)
+```
+Note that this solution uses a list comprehension to find the prime numbers in the range, and then sorts the list in descending order using the `sorted()` function with the `reverse` argument set to `True`.

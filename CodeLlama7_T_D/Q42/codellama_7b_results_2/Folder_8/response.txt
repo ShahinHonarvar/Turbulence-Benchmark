@@ -1,0 +1,15 @@
+ ```
+def prime_factors(my_list):
+return {p for p in my_list if is_prime(p)}
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+
+my_list = [...your list of integers...]
+prime_factors(my_list)
+```
+This code uses a list comprehension to generate the set of prime factors for the integer at index 49. The `is_prime` function is used to check if a number is prime. If it is not prime, then it is not a factor and should be discarded.

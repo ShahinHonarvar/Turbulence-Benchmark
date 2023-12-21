@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: ab9c4dd6-7a50-4aa4-8290-ba01633a326c
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'insert_at_index' that takes one argument, a list, and returns a list that is identical except that 249.61 has been inserted at index 19 and, as a result, the returned list should have one more element than the given list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def insert_at_index(a):
+    i = len(a)
+    j = i + 1
+    a[i:j] = re.sub(r"(\d+\.,){2}\d+)", r"\1 249.61\3", a[i:j])
+    return a[:i] + a[j:]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

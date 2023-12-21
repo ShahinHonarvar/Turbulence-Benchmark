@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices = []\n    for start_row in range(rows):\n        for start_col in range(cols):\n            for end_row in range(start_row + 1, rows + 1):\n                for end_col in range(start_col + 1, cols + 1):\n                    submatrix = matrix[start_row : end_row, start_col : end_col]\n                    if np.sum(submatrix) == -157:\n                        submatrices.append(submatrix)\n    return submatrices\n```\nThis function checks every possible submatrix in the given matrix and add it to the list of submatrices if the sum of all integers in each submatrix equals -157. If no submatrix meets this requirement, an empty list is returned.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690080875,
+  "id": "chatcmpl-7fJWtwd3469X3pjiky6wepkjYJQzf",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 184,
+    "prompt_tokens": 121,
+    "total_tokens": 305
+  }
+}

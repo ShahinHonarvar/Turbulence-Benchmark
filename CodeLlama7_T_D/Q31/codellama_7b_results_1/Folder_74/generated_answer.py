@@ -1,0 +1,23 @@
+
+def if_perfect_num(my_list):
+    if len(my_list) < 48:
+        return False
+
+    perfect_number = my_list[48]
+
+    if perfect_number <= 0:
+
+        return False
+
+
+    divisors = 1
+
+
+    for i in range(2, int(perfect_number ** 0.5) + 1):
+
+        if perfect_number % i == 0:
+
+            divisors += 2
+
+
+    return divisors == perfect_number

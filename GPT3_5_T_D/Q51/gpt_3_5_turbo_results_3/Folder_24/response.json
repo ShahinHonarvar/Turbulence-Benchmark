@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport itertools\n\ndef if_contains_anagrams(str_list):\n    checked = set()\n    anagram_pairs = 0\n\n    for i, word1 in enumerate(str_list):\n        if word1.lower() not in checked and len(word1) >= 3:\n            checked.add(word1.lower())\n            sorted_word1 = sorted(word1.lower())\n\n            for j, word2 in enumerate(str_list[i + 1:], start=i + 1):\n                if len(word2) >= 3:\n                    sorted_word2 = sorted(word2.lower())\n\n                    if sorted_word1 == sorted_word2:\n                        anagram_pairs += 1\n\n                        if anagram_pairs > 96:\n                            return False\n    \n    return True\n```\nNow, you can call the `if_contains_anagrams` function with a list of strings as an argument to check if the list contains at most 96 pairs of anagrams.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689841548,
+  "id": "chatcmpl-7eJGmR4nUoB4IIqZOALnLFD1F8tcF",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 139,
+    "total_tokens": 326
+  }
+}

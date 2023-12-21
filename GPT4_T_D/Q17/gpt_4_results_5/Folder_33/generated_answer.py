@@ -1,0 +1,7 @@
+
+def all_ints_div_by_both_two_nums(int_list):
+    divisible_ints = []
+    for i in range(281, 695):
+        if int_list[i] % -722 == 0 and int_list[i] % -731 == 0:
+            divisible_ints.append(int_list[i])
+    return divisible_ints

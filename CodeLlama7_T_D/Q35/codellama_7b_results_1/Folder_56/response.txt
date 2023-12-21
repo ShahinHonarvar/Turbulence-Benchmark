@@ -1,0 +1,18 @@
+ ```
+def remove_repeat_chars(s):
+    # Create a dictionary to keep track of repeated characters
+    char_dict = {}
+
+    # Iterate over the string and check for repeated characters
+    for i in range(len(s)):
+        if s[i] in char_dict:
+            # If the character is repeated, remove all occurrences from the string
+            while s[i] in s[i+1:]:
+                s = s[:i] + s[i+1:]
+
+    # Return the altered string
+    return s
+```
+This function takes a single argument `s`, which is a string. It then creates a dictionary called `char_dict` to keep track of all repeated characters in the given string.
+The function then iterates over each character in the string and checks if it has been seen before. If the character is repeated, the function removes all occurrences of that character from the string by replacing them with an empty string. This is done using a while loop to ensure that all occurrences of the repeated character are removed.
+Finally, the function returns the altered string after removing all repeated characters.

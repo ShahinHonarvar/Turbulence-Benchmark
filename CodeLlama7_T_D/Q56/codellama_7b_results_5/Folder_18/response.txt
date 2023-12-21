@@ -1,0 +1,25 @@
+ ```
+def all_substring_of_size_n(input_string):
+# Check if the input string is valid
+if not input_string or len(input_string) < 63:
+return []
+
+# Initialize an empty list to store substrings
+substrings = []
+
+# Loop through each character in the input string
+for i in range(len(input_string) - 62):
+substring = input_string[i : i + 63]
+
+# Check if the substring is valid (contains no duplicate characters)
+if not substring or len(set(substring)) != len(substring):
+continue
+
+
+# Add the substring to the list of substrings
+substrings.append(substring)
+
+
+# Return the list of substrings
+return substrings
+```

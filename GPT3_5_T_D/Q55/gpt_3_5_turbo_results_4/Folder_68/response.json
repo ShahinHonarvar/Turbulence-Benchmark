@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle\n\ndef lists_with_product_equal_n(nums):\n    def product(lst):\n        result = 1\n        for num in lst:\n            result *= num\n        return result\n    \n    sublists = []\n    for i, num in enumerate(nums):\n        curr_product = 1\n        for j, next_num in enumerate(cycle(nums[i:])):\n            curr_product *= next_num\n            if curr_product == 6:\n                sublists.append(nums[i:i+j+1])\n            elif curr_product > 6:\n                break\n    \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689866296,
+  "id": "chatcmpl-7ePhw2lmktyPqEy5v1wBEX1enac1O",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 193,
+    "total_tokens": 313
+  }
+}

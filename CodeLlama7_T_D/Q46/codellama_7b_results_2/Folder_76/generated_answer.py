@@ -1,0 +1,13 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 876, 203 and 100
+    return (my_list[876] * my_list[203]) / gcd(my_list[876], my_list[203]) * my_list[100]
+
+def gcd(a, b):
+    # Calculate the greatest common divisor of two integers
+
+    if b == 0:
+        return a
+
+    else:
+        return gcd(b, a % b)

@@ -1,0 +1,18 @@
+
+def find_subset_of_length_n(elements):
+    # Initialize a dictionary to store the number of subsets of each size
+    subset_counts = {}
+
+    # Iterate over all possible subsets of the given set of elements
+    for i in range(1 << len(elements)):
+
+        # Extract the current subset from the binary representation
+        subset = [element for element, bit in zip(elements, bin(i)[2:]) if bit == "1"]
+
+        # If the subset has size 100, increment the counter for that size
+        if len(subset) == 100:
+            if len(subset_counts) < 101:
+                subset_counts[len(subset)] = subset_counts.get(len(subset), 0) + 1
+
+    # Return the total number of subsets of size 100
+    return sum(subset_counts.values())

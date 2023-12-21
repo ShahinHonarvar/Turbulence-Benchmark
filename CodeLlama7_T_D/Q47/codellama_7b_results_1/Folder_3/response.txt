@@ -1,0 +1,20 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function in Python:
+```
+def palindromes_of_specific_lengths(string):
+    # Convert string to lowercase for case-insensitive matching
+    string = string.lower()
+    # Extract substring from index 27 to index 95, both inclusive
+    substring = string[27:96]
+    # Initialize set to store palindromes
+    palindromes = set()
+    # Iterate over all possible palindromes of lengths between 49 and 51 (both inclusive) in the substring
+    for i in range(49, 52):
+        # Generate palindrome with current length from substring
+        palindrome = substring[i - 1:i + 1]
+        # Check if generated palindrome is a valid palindrome in the substring
+        if palindrome == palindrome[::-1]:
+            # Add valid palindrome to set of palindromes
+            palindromes.add(palindrome)
+    # Return set of palindromes found in substring
+    return palindromes
+```

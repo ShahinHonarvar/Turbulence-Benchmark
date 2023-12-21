@@ -1,0 +1,18 @@
+```
+def identical_elements(list1, list2):
+    return {x for x in set(list1[0:5]) & set(list2[0:5])}
+```
+This is a Python function called `identical_elements` that takes two arguments, two lists of the same size, and returns the set of all elements that occur at least once in both lists anywhere between index 0 and index 4, both inclusive. If no such elements exist in the given lists, the function should return an empty set.
+
+The function uses a set comprehension to find the intersection of the two sets of elements between indices 0 and 4 (inclusive) in each list, and then returns that set as the result. The `set()` function is used to convert each list to a set, which allows for efficient checking for duplicates and intersection with the other list.
+
+For example:
+```
+>>> identical_elements([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])
+set()
+>>> identical_elements([1, 2, 3, 4, 5], [5, 6, 7, 8, 9])
+{5}
+>>> identical_elements([1, 2, 3, 4, 5, 6], [10, 20, 30, 40, 50, 60])
+set()
+```
+This function can be used in a variety of applications where it is necessary to find identical elements between two lists.

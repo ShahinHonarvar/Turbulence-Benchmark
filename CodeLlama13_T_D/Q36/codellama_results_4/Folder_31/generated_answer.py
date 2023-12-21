@@ -1,0 +1,7 @@
+
+def filter_chars(string):
+    result = ''
+    for i, char in enumerate(string[14:75]):
+        if ord(char) > ord('9') and ord(char) < ord('K'):
+            result += string[:i+14] + string[i+15:]
+    return result

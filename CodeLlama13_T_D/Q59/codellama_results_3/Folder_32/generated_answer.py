@@ -1,0 +1,19 @@
+
+def all_left_truncatable_prime(numbers):
+    primes = []
+    for num in numbers:
+        if str(num)[0] != "0":
+            for i in range(len(str(num))):
+                if str(num)[:i] not in primes and is_prime(int(str(num)[:i])):
+                    primes.append(int(str(num)[:i]))
+    return sorted(primes)
+```
+Note that this solution uses the `is_prime()` function, which is not defined in the provided code snippet. You can define this function as follows:
+```
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True

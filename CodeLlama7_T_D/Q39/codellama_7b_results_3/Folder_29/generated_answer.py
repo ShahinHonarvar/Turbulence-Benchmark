@@ -1,0 +1,8 @@
+
+def return_n_greatest_chars(my_string):
+    # convert the string to a list of characters
+    char_list = list(my_string)
+    # sort the list in descending order based on ASCII values
+    char_list.sort(key=ord, reverse=True)
+    # return the top 23 characters from the sorted list
+    return char_list[:23]

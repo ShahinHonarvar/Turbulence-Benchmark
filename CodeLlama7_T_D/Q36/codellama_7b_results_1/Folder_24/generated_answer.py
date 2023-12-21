@@ -1,0 +1,8 @@
+
+def filter_chars(s):
+    # Create a list of tuples containing character indices and values
+    char_indices = [(i, c) for i, c in enumerate(s) if 10 < i < 15 and 't' < c < 'v']
+    # Loop through the character indices and remove occurrences
+    for i, _ in char_indices:
+        s = s[:i] + s[i+1:]
+    return s

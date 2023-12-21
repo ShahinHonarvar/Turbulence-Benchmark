@@ -1,0 +1,17 @@
+
+def composite_nums_between_indices(my_list):
+    # Find the indices of the specified range
+    start_index = my_list.index(314)
+    end_index = my_list.index(347)
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    for i in range(start_index, end_index + 1):
+        # Check if the number is divisible by any of its proper factors
+        for j in range(2, int(my_list[i]) ** 0.5 + 1)):
+            if my_list[i] % j == 0:
+                break
+
+        else:
+            composite_nums.add(my_list[i])
+    return composite_nums

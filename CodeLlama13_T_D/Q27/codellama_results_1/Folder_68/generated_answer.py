@@ -1,0 +1,4 @@
+
+def insert_after_index(lst):
+    new_lst = lst[:7+1] + [1, 7] + lst[7+1:]
+    return new_lst

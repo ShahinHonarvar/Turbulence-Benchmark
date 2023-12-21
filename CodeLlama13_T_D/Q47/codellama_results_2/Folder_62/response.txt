@@ -1,0 +1,11 @@
+```
+def palindromes_of_specific_lengths(string):
+    # Find the substring from index 26 to index 87, both inclusive
+    substr = string[26:88]
+    
+    # Create a set of all palindromes with the specified length requirements
+    palindromes = {palindrome for palindrome in substr.split() if len(palindrome) in range(52, 57)}
+    
+    # Return the set of palindromes that only consist of English letters
+    return {palindrome for palindrome in palindromes if all(letter.isalpha() for letter in palindrome)}
+```

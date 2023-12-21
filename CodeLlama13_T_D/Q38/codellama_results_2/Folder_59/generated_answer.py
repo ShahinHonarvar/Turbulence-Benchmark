@@ -1,0 +1,9 @@
+
+def find_subset_of_length_n(elements):
+    return len([subset for subset in powerset(elements) if len(subset) == 2])
+```
+Please note that this solution relies on a function `powerset()` which is not defined in the text specification. However, it can be easily implemented using recursion as follows:
+```
+def powerset(iterable):
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))

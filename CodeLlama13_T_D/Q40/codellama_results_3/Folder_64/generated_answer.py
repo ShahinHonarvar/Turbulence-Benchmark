@@ -1,0 +1,10 @@
+
+def return_n_smallest_chars(string):
+    char_list = []
+    for c in string:
+        if len(char_list) < 39:
+            char_list.append((c, ord(c)))
+        elif (c, ord(c)) < char_list[-1]:
+            char_list.pop()
+            char_list.append((c, ord(c)))
+    return sorted(char_list, key=lambda x: -x[1])

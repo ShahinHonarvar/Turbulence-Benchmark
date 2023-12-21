@@ -1,0 +1,6 @@
+
+def filter_chars(s):
+    for char in s[42:98]:
+        if '*' <= char <= 'b':
+            s = s.replace(char, '')
+    return s

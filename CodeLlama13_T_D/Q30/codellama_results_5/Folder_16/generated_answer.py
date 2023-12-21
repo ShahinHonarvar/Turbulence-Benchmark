@@ -1,0 +1,3 @@
+
+def insert_before_character(string, character):
+    return "".join([f"{character if c == 'w' else ''}n{c}" for c in string])

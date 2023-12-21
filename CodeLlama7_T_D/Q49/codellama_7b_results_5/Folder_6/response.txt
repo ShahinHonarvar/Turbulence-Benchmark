@@ -1,0 +1,24 @@
+ def if_decimal_is_divisible(binary_rep):
+	# convert binary representation to decimal integer
+	decimal = int(binary_rep, 2)
+	# calculate the number of bits in the binary representation
+	nbits = len(binary_rep)
+	# calculate the power of two corresponding to the most significant digit
+	pow_two = 2 ** (nbits - 1)
+	# initialize the Fibonacci sequence with the first two numbers
+	fib = [0, 1]
+	# loop through the powers of two and check if they divide the decimal integer
+	for i in range(nbits - 1):
+		if pow_two % fib[-2] == 0:
+			# if it does, return true
+			return True
+
+		elif pow_two % fib[-1] == 0:
+			# if it doesn't but the next number in the sequence does, add the current number to the list and check the next power of two
+			fib.append(fib[-2] + fib[-1])
+		else:
+			# if the current number doesn't divide the power of two, return false
+			return False
+
+	# if the loop completes without returning true or false, return false since the Fibonacci sequence does not contain a number that divides the decimal integer
+	return False

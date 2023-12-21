@@ -1,0 +1,11 @@
+
+def find_sum_of_multiples(num):
+    if num < 1:
+        return None
+
+    sum = 0
+
+    for i in range(1, 55):
+        sum += i * num
+
+    return sum

@@ -1,0 +1,16 @@
+
+def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string)):
+        # Check if the current character is a vowel or not
+        if string[i].lower() in "aeiou":
+            # If it's a vowel, check if there are any consonants before and after it
+            if i > 1 and string[i - 2].lower() not in "aeiou":
+                # If there is a consonant before the vowel, add the palindrome to the set
+                palindromes.add(string[i - 2] + string[i].lower() + string[i - 2])
+            if i < len(string) - 1 and string[i + 1].lower() not in "aeiou":
+                # If there is a consonant after the vowel, add the palindrome to the set
+                palindromes.add(string[i].lower() + string[i + 1] + string[i - 2])
+    return palindromes

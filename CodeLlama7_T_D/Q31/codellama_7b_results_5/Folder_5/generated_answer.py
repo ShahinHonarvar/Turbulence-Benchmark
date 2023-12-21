@@ -1,0 +1,16 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 67 elements
+    if len(my_list) < 67:
+        return False
+
+    # Get the value of the element at index 67
+    num = my_list[67]
+
+    # Check if the number is a perfect number
+    sum = 0
+    for i in range(1, num // 2 + 1):
+        if num % i == 0:
+            sum += i
+
+    return sum == num

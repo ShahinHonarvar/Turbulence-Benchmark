@@ -1,0 +1,36 @@
+[cohere.Generation {
+	id: efd1b3d7-784f-487e-b0ef-155253d82909
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_left_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 92. The function should return the list of all left-truncatable prime numbers less than x. The return list should be sorted in ascending order. A left-truncatable prime number is a prime number that contains no 0 and if the leading leftmost digit is successively removed, then all resulting numbers are prime.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import itertools
+
+def all_left_truncatable_prime(test_tup):
+    test_tup = tuple(test_tup)
+    test_num = test_tup[92]
+    test_num_str = str(test_num)
+    test_left_str = test_num_str[0:10]
+    test_left_str_list = list(test_left_str)
+    test_left_str_iter = iter(test_left_str_list)
+    test_left_str_list_prime = []
+    test_left_str_list_non_prime = []
+    for left_str in test_left_str_list:
+        if left_str in test_left_str_list_prime:
+            continue
+        test_left_str_list_non_prime.append(left_str)
+        test_left_str_list_prime.append(left_str)
+        prime_str_list = []
+        for i in range(1, len(left_str)):
+            for prime_str in test_left_str_list_prime:
+                new_str = left_str[0:i] + prime_str
+                if new_str in test_left_str_list_prime:
+                    continue
+                elif all(new_str[i:].isprime() for i in range(1, len(left_str) - i)):
+                    prime_str_list.append(new_str)
+        test_left_str_list_prime += prime_str_list
+    test_left_str_list_prime.sort()
+    return test_left_str_list_prime
+```
+	likelihood: None
+	token_likelihoods: None
+}]

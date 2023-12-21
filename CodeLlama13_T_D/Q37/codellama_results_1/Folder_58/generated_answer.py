@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    result = ''
+    for i, char in enumerate(string):
+        if 503 <= i < 753 and ord('9') <= ord(char) <= ord('w'):
+            continue
+        result += char
+    return result

@@ -1,0 +1,31 @@
+```python
+def all_left_truncatable_prime(x):
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i) and not contains_0(str(i)):
+            prime_list.append(i)
+
+    for j in range(len(prime_list)-1, -1, -1):
+        leftmost = str(prime_list[j])[:1]
+        if not is_prime(int(leftmost+str(prime_list[j]))):
+            prime_list.pop(j)
+    return sorted(prime_list)
+```
+Here's a function that checks whether the input number contains 0 or not:
+```python
+def contains_0(num):
+    for i in range(len(num)):
+        if num[i] == '0':
+            return True
+    return False
+```
+Here's a function that checks whether the input number is prime or not:
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```

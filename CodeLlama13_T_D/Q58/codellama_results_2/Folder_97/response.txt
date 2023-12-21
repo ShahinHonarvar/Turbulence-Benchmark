@@ -1,0 +1,7 @@
+```python
+import numpy as np
+
+def submatrix_with_n_numbers(matrix, n):
+    return len([submatrix for row in matrix for submatrix in itertools.combinations(row, n) if sum(submatrix) == 120])
+```
+This function uses `itertools.combinations` to generate all possible combinations of length `n` from each row of the input matrix. It then checks if the sum of the elements in each combination is equal to 120, and if so, adds it to a list. The length of this list is returned as the count of submatrices that contain 120 integers each.

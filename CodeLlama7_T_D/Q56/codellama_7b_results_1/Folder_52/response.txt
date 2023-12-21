@@ -1,0 +1,18 @@
+ ```
+def all_substring_of_size_n(s):
+    # initialize result list and counter for distinct substrings
+    result = []
+    count = {}
+
+    # iterate over the string s
+    for i in range(len(s)):
+        # generate a substring of length n starting at index i
+        substr = s[i:i+n]
+        # if the substring is not in the result list and not already in the count dictionary, add it to the result list and update the count dictionary
+        if substr not in result and substr not in count:
+            result.append(substr)
+            count[substr] = 1
+
+    # return the result list
+    return result
+```

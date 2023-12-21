@@ -1,0 +1,25 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Create a dictionary to store the frequency of each letter
+    letter_freq = {}
+    for word in my_list:
+        # Ignore words that are not at least three letters long
+        if len(word) < 3:
+            continue
+
+        # Convert the word to lowercase
+        word = word.lower()
+
+        # Iterate over each letter in the word
+        for letter in word:
+            # Increment the frequency of the letter
+            letter_freq[letter] = letter_freq.get(letter, 0) + 1
+
+    # Check if there are at most 181 pairs of anagrams in the list
+    num_anagrams = 0
+    for freq in letter_freq.values():
+        if freq > 1:
+            num_anagrams += 1
+
+    return num_anagrams <= 181
+```

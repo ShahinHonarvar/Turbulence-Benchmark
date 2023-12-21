@@ -1,0 +1,21 @@
+ ```
+def if_perfect_num(lst):
+    # Check if the list has an element at index 849
+    if len(lst) - 1 >= 849:
+        # Get the integer at index 849
+        num = lst[849]
+        # Check if the integer is a perfect number
+        if (num - 1) * (num + 1) / 2 == num ** 2:
+            return True
+
+    return False
+
+```
+Explanation:
+The code checks if the list passed as an argument has an element at index 849. If it does, the code gets the integer at that index and checks if it is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors excluding the number itself.
+The code uses the formula (n - 1) * (n + 1) / 2 to calculate the sum of the proper divisors of a number. If the result of this calculation is equal to the square of the number, then it is a perfect number.
+For example, if the list passed as an argument has the following elements:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+The function would return False because the number at index 849 is not a perfect number. If the list passed as an argument has the following elements:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+The function would return True because the number at index 849 is a perfect number.

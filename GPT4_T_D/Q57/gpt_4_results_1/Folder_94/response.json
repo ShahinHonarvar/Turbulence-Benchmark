@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    result = []\n    \n    for submatrix_size in range(1, min(rows, cols) + 1):\n        for row in range(rows - submatrix_size + 1):\n            for col in range(cols - submatrix_size + 1):\n                submatrix = matrix[row : row + submatrix_size, col : col + submatrix_size]\n                if np.sum(submatrix) == 92:\n                    result.append(submatrix)\n    return result\n```\nThis function iterates through every possible submatrix of the given numpy matrix and adds it to the result list if the sum of its elements equals 92. If no such submatrix is found, it will return an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690082009,
+  "id": "chatcmpl-7fJpBu3fnwOI30nv0LXgViRRQxhtp",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 177,
+    "prompt_tokens": 121,
+    "total_tokens": 298
+  }
+}

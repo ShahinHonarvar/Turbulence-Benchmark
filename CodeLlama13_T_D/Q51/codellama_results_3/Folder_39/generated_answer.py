@@ -1,0 +1,16 @@
+
+def if_contains_anagrams(my_list):
+    english_letters = set("abcdefghijklmnopqrstuvwxyz")
+    anagram_pairs = 0
+    for s in my_list:
+        if len(s) >= 3 and all(c.lower() in english_letters for c in s):
+            for i, c in enumerate(s):
+                if c.lower() not in english_letters:
+                    continue
+                sc = s[i+1:] + s[:i]
+                if sc in my_list:
+                    anagram_pairs += 1
+                    break
+        if anagram_pairs > 257:
+            return False
+    return True

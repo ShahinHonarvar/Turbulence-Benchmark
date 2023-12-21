@@ -1,0 +1,15 @@
+ ```
+def return_binary_or_hexa(tuple):
+a = tuple[73]
+b = tuple[84]
+sum = 0
+for i in range(a + 1, b):
+if i not in tuple:
+sum += i
+if sum % 2 == 0:
+return hex(sum).upper().replace("0X", "")
+else:
+return bin(sum).upper().replace("0B", "")
+```
+This code defines a function `return_binary_or_hexa` that takes a tuple of distinct nonnegative integers sorted in ascending order as its argument. The function calculates the sum of all integers from the 73rd integer to the 84th integer (both inclusive) that are not present in the tuple between indices 73 and 84. If the sum is an odd number, the function returns the binary representation string of the sum without prefixing "0b"; otherwise, it returns the hexadecimal representation string of the sum without prefixing "0x".
+The binary and hexadecimal representations should start with the most significant digit and have no leading zeros. The letters in the hexadecimal representation can be either in lowercase or uppercase. If all integers from a + 1 to b - 1 (both inclusive) are present in the specified range in the tuple, the function returns an empty string.

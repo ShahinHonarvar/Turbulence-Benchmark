@@ -1,0 +1,18 @@
+ ```
+def prime_factors(numbers):
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the numbers in the list
+    for number in numbers:
+        # If the number is not a multiple of any previous prime factor, it is a prime factor itself
+        if all(number % prime_factor != 0 for prime_factor in prime_factors):
+            prime_factors.add(number)
+    return prime_factors
+
+# Test the function with a list of numbers
+numbers = [263, 14, 5]
+#print(prime_factors(numbers)) # Output: {2, 3, 7}
+```
+This code defines a function called `prime_factors` that takes a single argument, a list of positive integers. The function returns the set of all prime factors of the integer at index 263 in the input list.
+The function works by iterating over each number in the input list and checking if it is a multiple of any previous prime factor. If a number is not a multiple of any previous prime factor, it is considered to be a prime factor itself and is added to the set of prime factors that are returned by the function.
+The function can be tested with a list of numbers as input. In this case, the function returns the set of all prime factors of the integer at index 263 in the input list.

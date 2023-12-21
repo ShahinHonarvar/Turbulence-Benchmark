@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `palindrome_of_length_at_least_n` function in Python:
+```python
+def palindrome_of_length_at_least_n(s, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each word in the string s
+    for word in s.split():
+        # Check if the word is a palindrome of length greater than or equal to 15
+        if len(word) >= n and word == word[::-1]:
+            # If it is, add it to the set of palindromes
+            palindromes.add(word)
+    # Return the set of palindromes
+    return palindromes
+```
+To use this function, you can pass in a string and an integer representing the minimum length of the palindromes you want to find. For example:
+```python
+>>> s = "A man, a plan, a canal, Panama!"
+>>> palindrome_of_length_at_least_n(s, 15)
+{'Panama'}
+```
+In this example, the function returns the set `{'Panama'}` because it contains the only palindrome in the string `s` that has a length greater than or equal to 15.

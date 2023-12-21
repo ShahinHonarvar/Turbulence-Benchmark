@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code that fulfills the above specification:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    n, m = matrix.shape\n    result = []\n    for x in range(n):\n        for y in range(m):\n            for x1 in range(x, n):\n                for y1 in range(y, m):\n                    sub = matrix[x:x1+1, y:y1+1]\n                    if np.sum(sub) == -157:\n                        result.append(sub)\n    return result\n```\nThis function loops through all possible submatrices and checks if their sum equals -157. If so, it appends them to the result list. The function uses numpy for the matrix computations.\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690904547,
+  "id": "chatcmpl-7ilnvPvJdhSAdVlzPP6oBAumU4dEw",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 151,
+    "prompt_tokens": 121,
+    "total_tokens": 272
+  }
+}

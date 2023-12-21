@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef if_contains_anagrams(str_list):\n    def is_anagram(s1, s2):\n        s1 = s1.lower()\n        s2 = s2.lower()\n        if s1 == s2:\n            return False\n        return sorted(s1) == sorted(s2)\n\n    count = 0\n    for i in range(len(str_list)):\n        for j in range(i + 1, len(str_list)):\n            if len(str_list[i]) >= 3 and len(str_list[j]) >= 3 and is_anagram(str_list[i], str_list[j]):\n                count += 1\n                if count > 79:\n                    return False\n    return True\n```\nNote: The provided code will check each pair of strings in the given list and determine if they are anagrams. It will keep track of the count of anagram pairs encountered and return False if the count exceeds 79. The code first converts the strings to lowercase for case-insensitive comparison.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689863859,
+  "id": "chatcmpl-7eP4dbj8TzsOczhOkRQHP0FDxnJBF",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 203,
+    "prompt_tokens": 139,
+    "total_tokens": 342
+  }
+}

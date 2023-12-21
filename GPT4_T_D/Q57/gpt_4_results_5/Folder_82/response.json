@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code based on your specifications:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    all_submatrices = []\n    n, m = matrix.shape\n\n    for x1 in range(n):\n        for y1 in range(m):\n            for x2 in range(x1, n):\n                for y2 in range(y1, m):\n                    submatrix = matrix[x1:x2+1, y1:y2+1]\n                    if np.sum(submatrix) == -27:\n                        all_submatrices.append(submatrix)\n    return all_submatrices\n```\nThis function will iterate over the given matrix to generate all possible submatrices. Then, it will check the sum of each submatrix. If the sum equals -27, that submatrix will be added to the result list. Finally, it returns the list of all submatrices satisfying the condition.\n\nNOTE: This code will only work properly for matrices with a particular size. Performance can be low for large matrices due to the time complexity of the function. Additionally, the size of the submatrix is determined by the range of the variables 'x2' and 'y2'. It is computed inclusively, that's why we use 'x2+1' and 'y2+1' indices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691016488,
+  "id": "chatcmpl-7jEvQJLIcUpCAYHLRS1tu9BDU56KW",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 271,
+    "prompt_tokens": 121,
+    "total_tokens": 392
+  }
+}

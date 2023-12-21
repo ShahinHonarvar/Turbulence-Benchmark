@@ -1,0 +1,19 @@
+ ```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0] - 16 + 1):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1] - 16 + 1):
+            # Check if the submatrix has 16 integers
+            if np.count_nonzero(matrix[i:i+16, j:j+16]) == 16:
+                # Increment the count variable
+                count += 1
+
+    # Return the count of all submatrices with 16 integers each
+    return count
+```

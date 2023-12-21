@@ -1,0 +1,21 @@
+
+def return_binary_or_hexa(my_tuple):
+    # Get the values of a and b from the tuple
+    a = my_tuple[50]
+    b = my_tuple[92]
+    # Initialize an empty list to store the missing integers
+    missing_integers = []
+    # Loop through all integers between a + 1 and b - 1 (both inclusive)
+    for i in range(a + 1, b):
+        # If the integer is not present in the tuple between indices 50 and 92, add it to the list of missing integers
+        if i not in my_tuple[50:92]:
+            missing_integers.append(i)
+    # Calculate the sum of all missing integers
+    sum = sum(missing_integers)
+    # Check if the sum is an odd number
+    if sum % 2 == 1:
+        # If it is, return the binary representation string of the sum
+        return bin(sum)[2:]
+    else:
+        # Otherwise, return the hexadecimal representation string of the sum
+        return hex(sum)[2:]

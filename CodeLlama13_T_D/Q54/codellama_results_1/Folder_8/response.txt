@@ -1,0 +1,20 @@
+```
+def all_right_truncatable_prime(numbers):
+    x = numbers[41]
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_list.append(i)
+    
+    right_truncatable_list = []
+    for i in prime_list:
+        j = str(i)
+        while len(j) > 1:
+            k = int(j[:-1])
+            if is_prime(k):
+                right_truncatable_list.append(k)
+            j = j[:-1]
+    
+    return sorted(right_truncatable_list, reverse=True)
+```
+It's important to note that this function assumes the `is_prime` function is already defined and returns `True` if the given number is prime and `False` otherwise. The `sorted` function is used to sort the list of right-truncatable numbers in descending order, and the `reverse=True` parameter is used to specify that we want the list sorted in reverse (descending) order.

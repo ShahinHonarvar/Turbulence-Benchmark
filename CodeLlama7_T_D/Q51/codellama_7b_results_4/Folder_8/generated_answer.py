@@ -1,0 +1,25 @@
+
+def if_contains_anagrams(strings):
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    # Iterate over each string in the list
+    for string in strings:
+        # Get the anagram of the current string
+        anagram = ''.join(sorted(string.lower()))
+
+        # If the anagram is already in the dictionary, increment its count
+        if anagram in anagram_counts:
+            anagram_counts[anagram] += 1
+
+        # Otherwise, add it to the dictionary with a count of one
+        else:
+            anagram_counts[anagram] = 1
+
+    # Iterate over each anagram in the dictionary and check if its count is greater than six eight
+    for anagram, count in anagram_counts.items():
+        if count > 68:
+            return True
+
+    # If no anagrams have a count greater than sixty eight, return false
+    return False

@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for s in strings:
+        s = s.lower()
+        if len(s) >= 3 and not all(c in "abcdefghijklmnopqrstuvwxyz" for c in s):
+            continue
+        if s in anagrams:
+            return True
+        anagrams.add(s)
+    return False

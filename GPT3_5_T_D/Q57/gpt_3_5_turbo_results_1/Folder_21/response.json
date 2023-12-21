@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices = []\n    \n    for r in range(rows):\n        for c in range(cols):\n            for i in range(r+1, rows+1):\n                for j in range(c+1, cols+1):\n                    submatrix = matrix[r:i, c:j]\n                    if np.sum(submatrix) == -936:\n                        submatrices.append(submatrix.tolist())\n    \n    return submatrices\n```\nNote: The code assumes that the numpy library has been imported as 'np' and the input matrix is a 2D numpy matrix.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797894,
+  "id": "chatcmpl-7e7ug5ISYmxOY5UBngan9JyM7Jmgp",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 140,
+    "prompt_tokens": 121,
+    "total_tokens": 261
+  }
+}

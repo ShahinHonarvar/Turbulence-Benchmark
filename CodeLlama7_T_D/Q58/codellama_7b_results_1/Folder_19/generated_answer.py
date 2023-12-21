@@ -1,0 +1,17 @@
+
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    # Initialize the count variable
+    count = 0
+
+    # Loop over all possible starting indices
+    for i in range(matrix.shape[0] - 17 + 1):
+        for j in range(matrix.shape[1] - 17 + 1):
+            # Check if the current submatrix has 17 integers
+            if np.count_nonzero(matrix[i:i+17, j:j+17]) == 17:
+                # Increment the count variable
+                count += 1
+
+    # Return the count of all submatrices with 17 integers each
+    return count

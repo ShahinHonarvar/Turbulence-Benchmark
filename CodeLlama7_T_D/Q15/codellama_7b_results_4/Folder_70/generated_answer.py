@@ -1,0 +1,10 @@
+ def sum_odd_ints_inclusive(my_list):
+    start = 28
+    end = 32
+    sum = 0
+
+    for i in range(start, end + 1):
+        if my_list[i] % 2 != 0:
+            sum += my_list[i]
+
+    return sum

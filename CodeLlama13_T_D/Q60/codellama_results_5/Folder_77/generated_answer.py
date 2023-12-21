@@ -1,0 +1,12 @@
+
+def all_left_right_truncatable_prime(nums):
+    primes = []
+    for num in nums:
+        if is_prime(num) and len(str(num)) > 1:
+            for i in range(len(str(num))-1):
+                if not str(num)[i] == '0' and is_prime(int(str(num)[i+1:])):
+                    primes.append(int(str(num)[i+1:]))
+            for i in range(len(str(num))-1, 1, -1):
+                if not str(num)[i] == '0' and is_prime(int(str(num)[:i])):
+                    primes.append(int(str(num)[:i]))
+    return sorted(primes, reverse=True)

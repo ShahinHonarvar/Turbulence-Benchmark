@@ -1,0 +1,39 @@
+ ```
+def all_right_truncatable_prime(tuple):
+x = tuple[43]
+list = []
+for i in range(2, x):
+if is_prime(i) and is_right_truncatable_prime(i):
+list.append(i)
+return sorted(list)
+else:
+return []
+
+def is_prime(n):
+if n < 2:
+return False
+for i in range(2, int(n ** 0.5) + 1):
+if n % i == 0:
+return False
+return True
+
+def is_right_truncatable_prime(n):
+while n > 0:
+if not is_prime(n % 10):
+return False
+n = int(n / 10)
+return True
+```
+Explanation:
+
+The `all_right_truncatable_prime` function takes a tuple of positive integers as input. The function first extracts the integer at index 43 from the tuple and assigns it to the variable `x`.
+Next, the function creates an empty list called `list` that will store all right-truncatable prime numbers less than `x`.
+The function then iterates over the range of positive integers between 2 and `x`, inclusive. For each integer `i` in this range, the function checks if `i` is a prime number using the `is_prime` function. If `i` is not a prime number, the function moves on to the next integer in the range.
+If `i` is a prime number, the function checks if it is also a right-truncatable prime number using the `is_right_truncatable_prime` function. If `i` is not a right-truncatable prime number, the function moves on to the next integer in the range.
+If `i` is both a prime number and a right-truncatable prime number, the function appends `i` to the `list`. The function then returns the sorted list of all right-truncatable prime numbers less than `x`, or an empty list if there are no such prime numbers.
+The `is_prime` function takes a single integer `n` as input and returns `True` if `n` is a prime number, and `False` otherwise. The function first checks if `n` is less than 2, in which case it cannot be a prime number and the function returns `False`.
+Next, the function iterates over the range of positive integers between 2 and the square root of `n`, inclusive. For each integer `i` in this range, the function checks if `n` is divisible by `i`. If `n` is divisible by `i`, the function returns `False`, indicating that `n` is not a prime number.
+If the function reaches the end of its loop without finding any divisors of `n`, it means that `n` is prime and the function returns `True`.
+The `is_right_truncatable_prime` function takes a single integer `n` as input and returns `True` if `n` is a right-truncatable prime number, and `False` otherwise. The function first checks if `n` is less than 2, in which case it cannot be a right-truncatable prime number and the function returns `False`.
+Next, the function repeatedly removes the last rightmost digit of `n` until the resulting integer is less than or equal to 1. The function then checks if the resulting integer is a prime number using the `is_prime` function. If the resulting integer is not a prime number, the function returns `False`, indicating that `n` is not a right-truncatable prime number.
+If the function reaches the end of its loop without finding any non-prime numbers in the range of positive integers between 1 and the square root of `n`, inclusive, it means that `n` is a right-truncatable prime number and the function returns `True`.

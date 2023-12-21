@@ -1,0 +1,26 @@
+ ```
+def find_second_largest_num(my_list):
+    if len(my_list) < 2:
+        return None
+
+    second_largest = None
+
+    for i in range(1, 9):
+
+        if my_list[i] > my_list[i - 1]:
+
+            if second_largest == None or second_largest < my_list[i]:
+                second_largest = my_list[i]
+
+    return second_largest
+
+```
+Explanation:
+The function takes a list of distinct numbers as input and returns the second largest element from index 1 to index 8, both inclusive. If there is no such element, the function should return 'None'.
+The function first checks if the length of the input list is less than 2. If it is, then there are not enough elements in the list to find the second largest number, so the function returns 'None'.
+If the length of the input list is greater than or equal to 2, then the function continues with finding the second largest number. The function starts by setting the variable 'second_largest' to None. This indicates that no second largest element has been found yet.
+The function then enters a loop that iterates over all elements in the input list from index 1 to index 8, both inclusive. For each element in the loop, the function checks if it is greater than the previous element. If it is not, then the function does nothing and moves on to the next element in the list.
+If the current element in the loop is greater than the previous element, then the function checks if the second largest element has been found yet. If it has not, then the function sets the variable 'second_largest' to the current element. This indicates that the current element is now the second largest element.
+After setting the variable 'second_largest', the function moves on to the next element in the list by incrementing the loop counter by 1. The function continues this process until all elements in the input list have been processed.
+At the end of the loop, the function checks if the variable 'second_largest' is still equal to None. If it is not, then the function returns the second largest element. This will be the element that was found to be the second largest element during the processing of the input list.
+If the variable 'second_largest' is still equal to None after processing all elements in the input list, then no second largest element was found and the function returns 'None'.

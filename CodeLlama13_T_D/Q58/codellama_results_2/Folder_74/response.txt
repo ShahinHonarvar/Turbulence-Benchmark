@@ -1,0 +1,14 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(matrix):
+    rows, cols = matrix.shape
+    count = 0
+    for i in range(rows-3):
+        for j in range(cols-3):
+            submatrix = matrix[i:i+4,j:j+4]
+            if np.all(submatrix == 48):
+                count += 1
+    return count
+```
+Note that this code uses the `numpy` library to work with matrices and the `np.all()` function to check whether all elements of a submatrix are equal to 48.

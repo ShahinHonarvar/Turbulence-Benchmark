@@ -1,0 +1,18 @@
+```
+def lists_with_product_equal_n(circular_list):
+    result = []
+    for i in range(len(circular_list)):
+        prod = 1
+        sublist = [circular_list[i]]
+        j = (i + 1) % len(circular_list)
+        while j != i:
+            prod *= circular_list[j]
+            if prod == n:
+                result.append(sublist)
+            elif prod > n:
+                break
+            else:
+                sublist.append(circular_list[j])
+            j = (j + 1) % len(circular_list)
+    return result
+```

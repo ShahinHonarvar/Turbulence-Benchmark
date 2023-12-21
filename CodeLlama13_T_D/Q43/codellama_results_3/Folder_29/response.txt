@@ -1,0 +1,13 @@
+```
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(24, 33):
+        if my_list[i] > 1:
+            for j in range(2, int(my_list[i]) + 1):
+                if my_list[i] % j == 0:
+                    break
+            else:
+                prime_numbers.append(my_list[i])
+    return sorted(prime_numbers, reverse=True)
+```
+Note: This function uses a for-loop to iterate over the list of integers and checks if each number is a prime number between indices 24 and 32 (both inclusive). If a number is a prime number, it is added to the `prime_numbers` list. The `sorted()` function is used to sort the list in descending order.

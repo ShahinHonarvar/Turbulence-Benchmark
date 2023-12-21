@@ -1,0 +1,14 @@
+
+def prime_factors(my_list):
+    # Find the number with the highest factorization
+    num_with_max_factorization = max(my_list, key=len)
+    # Initialize an empty set to store the prime factors
+    prime_factors = set()
+    # Iterate over the divisors of the number with the highest factorization
+    for i in range(1, num_with_max_factorization + 1):
+        # If the current divisor is a prime number and it divides the number with the highest factorization
+        if my_list.count(i) == 1 and i > 1:
+            # Add the prime factor to the set of prime factors
+            prime_factors.add(i)
+    # Return the set of prime factors
+    return prime_factors

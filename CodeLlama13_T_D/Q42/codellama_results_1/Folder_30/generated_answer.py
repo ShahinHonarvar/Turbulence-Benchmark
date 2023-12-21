@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set(reduce(operator.mul, (factor for factor in range(2, int(math.sqrt(numbers[94])) + 1) if numbers[94] % factor == 0), 1))

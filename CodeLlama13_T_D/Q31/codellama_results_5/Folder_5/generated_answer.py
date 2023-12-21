@@ -1,0 +1,6 @@
+
+def if_perfect_num(list):
+    if list[67] % sum(list) == 0:
+        return True
+    else:
+        return False

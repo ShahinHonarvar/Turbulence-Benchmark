@@ -1,0 +1,9 @@
+
+def filter_chars(string):
+    new_str = ""
+    for i, char in enumerate(string):
+        if i < 318 or i > 337:
+            new_str += char
+        elif char > "B" and char < "z":
+            new_str += char
+    return new_str

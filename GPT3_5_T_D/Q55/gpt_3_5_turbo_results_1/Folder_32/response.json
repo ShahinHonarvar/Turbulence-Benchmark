@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(nums):\n    def find_sublists(nums, target):\n        sublists = []\n        for i in range(len(nums)):\n            for j in range(i+1, len(nums)+1):\n                sublist = nums[i:j]\n                if product(sublist) == target:\n                    sublists.append(sublist)\n        return sublists\n\n    def product(nums):\n        result = 1\n        for num in nums:\n            result *= num\n        return result\n\n    return find_sublists(nums + nums[:-1], 76)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689797251,
+  "id": "chatcmpl-7e7kJgUhmEIL62mrVlr3TVJei2fue",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 193,
+    "total_tokens": 308
+  }
+}

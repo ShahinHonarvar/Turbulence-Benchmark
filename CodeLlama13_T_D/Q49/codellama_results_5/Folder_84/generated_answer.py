@@ -1,0 +1,13 @@
+
+def if_decimal_is_divisible(binary):
+    # Convert the binary string to an integer
+    num = int(binary, 2)
+    
+    # Calculate the 196th number in the Fibonacci sequence
+    fib = [0] * (197)
+    fib[0], fib[1] = 0, 1
+    for i in range(2, 197):
+        fib[i] = fib[i-1] + fib[i-2]
+    
+    # Check if the decimal integer is divisible by the 196th number in the Fibonacci sequence
+    return num % fib[196] == 0

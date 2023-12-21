@@ -1,0 +1,16 @@
+[cohere.Generation {
+	id: b4e3de0a-e90e-4300-a570-6efb5035c5a9
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'sum_of_divisors_in_range' that takes a positive integer as its argument, and returns the sum of all positive divisors of the given integer that are between 372 and 494, both inclusive. If no such divisors exist in the specified range, the function should return 0.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def sum_of_divisors_in_range(n):
+    sm = [0] * (n + 1)
+    sm[0] = 1
+    sm[1] = 1
+    for i in range(2, n + 1):
+        sm[i] = sm[i - 1] + sm[i]
+    return sm[372] - sm[494]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

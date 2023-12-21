@@ -1,0 +1,8 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    # create a list of all integers divisible by both -46 and -82 from index 48 to index 76, both inclusive
+    result = []
+    for i in range(48, 77):
+        if my_list[i] % (-46 * -82) == 0:
+            result.append(my_list[i])
+    return result

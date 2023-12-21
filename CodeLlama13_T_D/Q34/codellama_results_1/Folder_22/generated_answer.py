@@ -1,0 +1,6 @@
+
+def find_original_set(a1, a2, ..., a24):
+    original_set = set()
+    for s in (a1, a2, ..., a24):
+        original_set |= s
+    return original_set

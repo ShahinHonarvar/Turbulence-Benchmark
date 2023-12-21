@@ -1,0 +1,3 @@
+
+def all_odd_ints_inclusive(numbers):
+    return [x for x in numbers[22:51] if x % 2 == 1]

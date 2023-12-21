@@ -1,0 +1,14 @@
+
+def filter_chars(my_string):
+    # Create a new string with the filtered characters
+    filtered_string = ""
+
+    for i in range(24, 37):
+        if my_string[i] > "A" and my_string[i] < "h":
+            continue
+
+        else:
+
+            filtered_string += my_string[i]
+
+    return filtered_string

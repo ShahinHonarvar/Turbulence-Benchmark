@@ -1,0 +1,12 @@
+```
+import numpy as np
+
+def submatrix_with_n_numbers(arr):
+    count = 0
+    for i in range(arr.shape[0] - 137):
+        for j in range(arr.shape[1] - 137):
+            if np.sum(arr[i:i+138, j:j+138]) == 138**2:
+                count += 1
+    return count
+```
+Note: This code uses the `numpy` library to perform matrix operations.

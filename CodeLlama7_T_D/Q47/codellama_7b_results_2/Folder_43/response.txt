@@ -1,0 +1,22 @@
+ ```
+def palindromes_of_specific_lengths(string):
+# Create a substring of the given string from index 41 to index 89, both inclusive
+substring = string[41:89]
+# Create an empty set to store the palindromes
+palindromes = set()
+# Loop through each character in the substring and check if it is a palindrome
+for i in range(len(substring)):
+# Get the current character and its mirrored version
+current_char = substring[i]
+mirrored_char = substring[len(substring) - 1 - i]
+# Check if the current character and its mirrored version are the same
+if current_char == mirrored_char:
+# If they are the same, add the current character to the set of palindromes
+palindromes.add(current_char)
+# Check if the length of the current character is between 23 and 38 (both inclusive)
+if len(current_char) >= 23 and len(current_char) <= 38:
+# If it is, add the palindrome to the set of palindromes
+palindromes.add(current_char)
+# Return the set of palindromes
+return palindromes
+```

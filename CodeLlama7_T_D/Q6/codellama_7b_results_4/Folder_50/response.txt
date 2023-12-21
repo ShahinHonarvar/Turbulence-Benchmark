@@ -1,0 +1,4 @@
+ def all_neg_ints_exclusive(my_list):
+    start = 70
+    end = 98
+    return [x for x in my_list[start:end] if x < 0]

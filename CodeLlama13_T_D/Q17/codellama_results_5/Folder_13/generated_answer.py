@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(my_list):
+    return [x for x in my_list[13:20] if x % 45 == 0 and x % 20 == 0]

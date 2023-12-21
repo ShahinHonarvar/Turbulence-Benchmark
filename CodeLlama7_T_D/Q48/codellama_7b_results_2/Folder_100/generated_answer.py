@@ -1,0 +1,22 @@
+
+def return_binary_or_hexa(tuple):
+    # Initialize variables for sum and count
+    sum = 0
+    count = 0
+    
+    # Iterate through tuple from index 44 to index 78
+    for i in range(44, 79):
+        
+        # Add the current integer to the sum if it is not present in the tuple between indices 44 and 78
+        if tuple[i] not in tuple[44:78]:
+            sum += tuple[i]
+            
+            # Increment count by 1
+            count += 1
+    
+    # If the sum is an odd number, return the binary representation string of the sum; otherwise, return the hexadecimal representation string of the sum. The binary and hexadecimal representations should start with the most significant digit and have no leading zeros.
+    if sum % 2 == 1:
+        return f"{sum:b}"
+    
+    else:
+        return f"{sum:x}"

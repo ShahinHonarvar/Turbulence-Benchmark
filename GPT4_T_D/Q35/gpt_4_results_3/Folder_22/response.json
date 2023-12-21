@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(s):\n    start = 50\n    end = 200\n    if len(s) < end:\n        end = len(s)\n    \n    string_between_indices = s[start + 1:end]\n    repeat_chars = [char for char in string_between_indices if string_between_indices.count(char) > 1]\n    \n    result = ''\n    for i in s:\n        if i not in repeat_chars:\n            result += i\n            \n    return result\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690942465,
+  "id": "chatcmpl-7ivfVQCNwmAUEX26QROMNTtIqMb9f",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 122,
+    "total_tokens": 223
+  }
+}

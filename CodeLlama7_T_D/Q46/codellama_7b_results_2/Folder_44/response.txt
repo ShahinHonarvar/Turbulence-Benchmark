@@ -1,0 +1,11 @@
+ ```
+def gcf_three_nums(my_list):
+    # Find the greatest common factor of the elements at indices 62, 96 and 26
+    gcf = 1
+    for i in range(62, 97, 26):
+        if my_list[i] % gcf == 0 and my_list[i + 26] % gcf == 0:
+            gcf = my_list[i]
+    return gcf
+```
+This function takes a list of positive integers as an argument, and returns the greatest common factor of the elements at indices 62, 96 and 26.
+To calculate the GCF, we start with `gcf` equal to 1, and then iterate over the elements at indices 62, 96 and 26. For each element, we check if it is divisible by the current value of `gcf`, and if so, we update `gcf` to be the new divisor. Once we have iterated over all three elements, the value of `gcf` will be the greatest common factor of the elements at indices 62, 96 and 26.

@@ -1,0 +1,58 @@
+ ```
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate from 1 to x
+    for i in range(1, x + 1):
+
+        # Check if the number is a prime number
+        if is_prime(i):
+
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+
+                # Add the number to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+
+    # Check if the number is greater than 1
+    if n > 1:
+
+        # Iterate from 2 to the square root of the number
+        for i in range(2, int(n ** 0.5) + 1):
+
+            # Check if the number is divisible by any number between 2 and the square root of the number
+            if n % i == 0:
+
+                # Return False if the number is divisible by any number between 2 and the square root of the number
+                return False
+
+    # Return True if the number is greater than 1 and not divisible by any number between 2 and the square root of the number
+    return True
+
+# Check if a number is left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+
+    # Check if the number is a prime number
+    if is_prime(n):
+
+        # Check if the number contains any 0
+        for i in range(len(str(n)))):
+
+            # Return False if the number contains any 0
+            if str(n)[i] == '0':
+
+                return False
+
+    # Return True if the number is a prime number and not divisible by any number between 2 and the square root of the number
+    return True
+```

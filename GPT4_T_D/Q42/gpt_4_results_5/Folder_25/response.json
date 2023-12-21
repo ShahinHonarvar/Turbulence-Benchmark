@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom math import sqrt\n\ndef prime_factors(integer_list):\n    number = integer_list[90]\n    factors = []\n    divisibility = 2\n    while divisibility * divisibility <= number:\n        if number % divisibility:\n            divisibility += 1\n        else:\n            number //= divisibility\n            factors.append(divisibility)\n    if number > 1:\n        factors.append(number)\n    return set(factors)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690128640,
+  "id": "chatcmpl-7fVxIXvfDCxXZBohcLUN52FUz2PSm",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 84,
+    "total_tokens": 177
+  }
+}

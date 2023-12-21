@@ -1,0 +1,3 @@
+
+def if_perfect_num(my_list):
+    return my_list[132] == sum(divisors(my_list[132])) - my_list[132]

@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(s):
+    return {pal for pal in {s[i:i+78] for i in range(len(s)-77)} if pal == pal[::-1]}

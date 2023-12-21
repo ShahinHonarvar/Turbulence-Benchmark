@@ -1,0 +1,15 @@
+ def palindromes_between_indices(input_string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the input string
+    for i in range(4, len(input_string)):
+        # Check if the current character is a vowel or not
+        if input_string[i].lower() in "aeiou":
+            # Create a substring of the input string from index 4 to index i-1
+            substr = input_string[4:i]
+            # Check if the substring is a palindrome
+            if substr == substr[::-1]:
+                # Add the palindrome to the set
+                palindromes.add(substr)
+    # Return the set of palindromes
+    return palindromes

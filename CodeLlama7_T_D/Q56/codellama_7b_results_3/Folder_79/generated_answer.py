@@ -1,0 +1,28 @@
+
+def all_substring_of_size_n(string):
+    """
+    Return the list of all distinct substrings of length n in the given string.
+    If no such substrings exist in the given string, return an empty list.
+    Parameters:
+    string (str): The input string.
+    Returns:
+    substrings (list[str]): The list of all distinct substrings of length n in the given string.
+    """
+
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the input string
+    for i in range(len(string) - 50):
+
+        # Extract the substring of length n starting from the current character
+        substring = string[i:i+61]
+
+        # Check if the extracted substring is a palindrome
+        if substring == substring[::-1]:
+
+            # Add the palindromic substring to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of all distinct substrings of length n in the given string
+    return substrings

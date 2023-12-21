@@ -1,0 +1,13 @@
+ def gcf_two_nums(my_list):
+    # Initialize variables for greatest common factor
+    gcf = 1
+    # Loop through each integer in the list
+    for i in range(len(my_list)):
+        # If current integer is not equal to the previous integer
+        if my_list[i] != my_list[i-1]:
+            # Set the greatest common factor to 1
+            gcf = 1
+        else:
+            # Increment the greatest common factor by 1
+            gcf += 1
+    return gcf

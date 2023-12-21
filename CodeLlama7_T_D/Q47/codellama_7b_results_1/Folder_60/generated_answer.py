@@ -1,0 +1,23 @@
+ def palindromes_of_specific_lengths(string, indices=(23,82), lengths=(32,34)):
+    # Convert the input string to lowercase for case-insensitive comparison
+    string = string.lower()
+
+    # Initialize an empty set to store the palindromes
+
+    palindromes = set()
+
+    # Iterate over each index in the specified range
+
+    for i in range(indices[0], indices[1] + 1):
+
+        # Extract the substring starting at the current index
+
+        substr = string[i:]
+
+        # Check if the extracted substring is a palindrome with one of the specified lengths
+
+        if len(substr) in lengths:
+            if substr == substr[::-1]:
+                palindromes.add(substr)
+
+    return palindromes

@@ -1,0 +1,5 @@
+```python
+def palindrome_of_length_at_least_n(string, n):
+    return {palindrome for palindrome in re.findall("[a-zA-Z]{" + str(n) + ",}", string) if palindrome == palindrome[::-1]}
+```
+Note: This solution uses the `re` module to search for all occurrences of a sequence of English letters with length greater than or equal to `n`, and then checks each occurrence to see if it is a palindrome using its reversed version.

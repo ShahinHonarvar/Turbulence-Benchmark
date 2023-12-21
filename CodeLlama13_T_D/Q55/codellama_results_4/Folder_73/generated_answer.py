@@ -1,0 +1,15 @@
+
+def lists_with_product_equal_n(list_):
+    sublists = []
+    for i in range(len(list_)):
+        product = 1
+        sublist = []
+        for j in range(i, len(list_)):
+            product *= list_[j]
+            if product == n:
+                sublist.append(list_[j])
+            elif product > n:
+                break
+        if sublist:
+            sublists.append(sublist)
+    return sublists

@@ -1,0 +1,6 @@
+ def filter_chars(string):
+    filtered = ''
+    for i in range(len(string)):
+        if i < 43 or i > 59:
+            filtered += string[i]
+    return filtered

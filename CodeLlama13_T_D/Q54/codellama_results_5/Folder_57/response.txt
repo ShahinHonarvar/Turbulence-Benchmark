@@ -1,0 +1,13 @@
+```
+def all_right_truncatable_prime(x):
+    prime_list = []
+    for i in range(10**53, x):
+        if is_prime(i) and is_right_truncatable_prime(i):
+            prime_list.append(i)
+    return sorted(prime_list, reverse=True)
+```
+This function takes an argument `x` which is a tuple of positive integers. It first initializes an empty list called `prime_list`. Then it uses a for loop to iterate from 10**53 to `x`, and checks if the current number is prime and right-truncatable prime using the function `is_prime` and `is_right_truncatable_prime`. If both conditions are satisfied, the current number is added to the list. Finally, it returns the sorted list of all right-truncatable prime numbers less than `x`, sorted in descending order.
+
+The function `is_prime` checks if an integer is prime using a simple trial division method. It first checks if the input is greater than 1 and not divisible by any number between 2 and its square root. If both conditions are satisfied, it returns True, otherwise False.
+
+The function `is_right_truncatable_prime` checks if an integer is right-truncatable prime using a similar method as `is_prime`. It first checks if the input is greater than 1 and not divisible by any number between 2 and its square root. Then it iterates from the length of the string representation of the input to 0, and removes the last digit from the input. For each iteration, it checks if the remaining digits are prime using the same method as `is_prime`. If both conditions are satisfied for all iterations, it returns True, otherwise False.

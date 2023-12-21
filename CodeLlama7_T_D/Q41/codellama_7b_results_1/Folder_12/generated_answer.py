@@ -1,0 +1,11 @@
+
+def identical_elements(list1, list2):
+    # create a set of all elements in both lists
+    common_elements = set(list1).intersection(set(list2))
+    # check if there are any elements that occur at least once in both lists anywhere between index 14 and index 64, both inclusive
+    for i in range(14, 65):
+        if list1[i] in common_elements and list2[i] in common_elements:
+            return {list1[i], list2[i]}
+    # if no such elements exist in the given lists, return an empty set
+
+    return set()

@@ -1,0 +1,21 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate over the elements of the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize two pointers, one pointing to the current element and the other pointing to the next element
+        curr = i
+        next = (i + 1) % len(circular_list)
+
+        # Initialize a product variable to store the product of the elements in the sublist
+        product = circular_list[curr] * circular_list[next]
+
+        # If the product is equal to -69, add the sublist to the list of sublists
+        if product == -69:
+            sublists.append([circular_list[curr], circular_list[next]])
+
+    # Return the list of sublists
+    return sublists

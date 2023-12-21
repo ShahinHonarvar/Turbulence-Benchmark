@@ -1,0 +1,14 @@
+ def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_numbers = set()
+
+    # Loop through the list of positive integers
+    for i in range(len(my_list)):
+        # Check if the current number is a composite number by dividing it by all the prime numbers less than or equal to its square root
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                composite_numbers.add(i)
+                break
+
+    # Return the set of all composite numbers in the specified range
+    return composite_numbers

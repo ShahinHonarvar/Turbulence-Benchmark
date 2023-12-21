@@ -1,0 +1,13 @@
+ ```
+def all_pos_ints_exclusive(my_list):
+    # Find the first positive integer in the list
+    first_positive = next((i for i in my_list if i > 0), None)
+    # If there are no positive integers in the list, return an empty list
+    if first_positive is None:
+        return []
+
+    # Find the index of the first positive integer in the list
+    first_positive_index = my_list.index(first_positive)
+    # Return the list of all positive integers from index 2 to index 5, both exclusive
+    return [i for i in my_list[first_positive_index + 1:first_positive_index + 6] if i > 0]
+```

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code corresponding to the specified requirements:\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    m, n = matrix.shape\n    out = []\n    for size in range(1, min(m, n)+1):\n        for i in range(m-size+1):\n            for j in range(n-size+1):\n                submatrix = matrix[i:i+size, j:j+size]\n                if np.sum(submatrix) == 862:\n                    out.append(submatrix)\n    return out\n```\n\nThis function goes through all possible submatrices of the input matrix and checks if their sum equals 862. If it does, it appends the submatrix to the output list. The function finally returns this list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690983146,
+  "id": "chatcmpl-7j6FeBNGlbflGh68ulp0dURew3xTt",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 157,
+    "prompt_tokens": 121,
+    "total_tokens": 278
+  }
+}

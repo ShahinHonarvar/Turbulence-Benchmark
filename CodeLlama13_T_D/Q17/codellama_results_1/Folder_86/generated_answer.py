@@ -1,0 +1,3 @@
+
+def all_ints_div_by_both_two_nums(list_of_ints):
+    return [x for x in list_of_ints[54:80] if x % 54 == 0 and x % 28 == 0]

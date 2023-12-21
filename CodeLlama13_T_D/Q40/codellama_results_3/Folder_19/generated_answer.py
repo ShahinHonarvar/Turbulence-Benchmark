@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(string):
+    chars = sorted(set(string))
+    return sorted([char for char in chars if ord(char) <= 58])

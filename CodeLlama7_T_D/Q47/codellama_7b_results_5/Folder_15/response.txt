@@ -1,0 +1,34 @@
+ ```
+def palindromes_of_specific_lengths(string):
+    # Define the range of lengths to consider
+    lengths = range(3, 7)
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over each length in the range
+    for length in lengths:
+        # Get the substring of the specified length from the string
+        substring = string[0:length]
+        # Check if the substring is a palindrome
+        if is_palindrome(substring):
+            # Add the palindrome to the set
+            palindromes.add(substring)
+    return palindromes
+
+def is_palindrome(string):
+    # Convert the string to lowercase for case-insensitive comparison
+    string = string.lower()
+    # Check if the string is equal to its reverse
+    return string == string[::-1]
+
+# Test the function with a sample input
+input_string = "abcdcba"
+palindromes = palindromes_of_specific_lengths(input_string)
+#print(palindromes)
+```
+This code defines a function `palindromes_of_specific_lengths` that takes a string as input and returns the set of all palindromes with lengths between 3 to 6 (both inclusive), occurring in the substring from index 0 to index 6, both inclusive. The function also considers only English letters and ignores case while finding the palindromes.
+The function first defines a range of lengths to consider, which is `range(3, 7)`. It then initializes an empty set `palindromes` to store all the found palindromes.
+Next, the function iterates over each length in the range using a for loop. For each length, it gets the substring of the specified length from the input string using slicing.
+The function then checks if the obtained substring is a palindrome using the `is_palindrome` function. If the substring is a palindrome, the function adds it to the `palindromes` set.
+Finally, the function returns the `palindromes` set.
+The code also defines an `is_palindrome` function that checks if a string is equal to its reverse. This function is used by the `palindromes_of_specific_lengths` function to check if a substring is a palindrome.
+Note that this code assumes that the input string consists only of English letters. If the input string contains other characters, such as digits or special characters, the function may not work correctly.

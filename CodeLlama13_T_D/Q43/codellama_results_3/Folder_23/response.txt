@@ -1,0 +1,27 @@
+```python
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in range(20, 49):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+
+You can also use the `islice()` function from the itertools module to achieve this:
+```python
+from itertools import islice
+
+def find_primes_between_indices(my_list):
+    prime_numbers = []
+    for i in islice(my_list, 20, 49):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers, reverse=True)
+```
+
+And here's a solution using list comprehension:
+```python
+def find_primes_between_indices(my_list):
+    prime_numbers = [i for i in my_list[20:49] if is_prime(i)]
+    return sorted(prime_numbers, reverse=True)
+```

@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(my_list):
+    return {x for i, x in enumerate(my_list) if 25 <= i <= 59 and len([y for y in range(1, int(sqrt(x)) + 1) if x % y == 0]) > 1}

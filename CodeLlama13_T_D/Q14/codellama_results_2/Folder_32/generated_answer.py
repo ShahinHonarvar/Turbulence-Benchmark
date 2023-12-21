@@ -1,0 +1,4 @@
+
+def find_second_smallest_num(distinct_nums):
+    nums = sorted(distinct_nums)
+    return nums[32:36][1] if len(nums[32:36]) > 0 else None

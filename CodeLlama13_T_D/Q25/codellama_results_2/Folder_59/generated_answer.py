@@ -1,0 +1,4 @@
+
+def insert_at_index(mylist):
+    mylist.insert(9, 426.08)
+    return mylist

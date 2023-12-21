@@ -1,0 +1,19 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize the counter variable
+    count = 0
+
+    # Iterate over the list of strings
+    for string1 in my_list:
+
+        # Iterate over the remaining strings in the list
+        for string2 in my_list[my_list.index(string1) + 1:]:
+
+            # Check if the two strings are anagrams of each other
+            if sorted(string1) == sorted(string2):
+
+                # Increment the counter variable
+                count += 1
+
+    # Return the value of the counter variable
+    return count >= 34

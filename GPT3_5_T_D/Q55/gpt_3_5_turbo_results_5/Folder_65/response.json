@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import cycle\n\ndef lists_with_product_equal_n(lst):\n    lst_cycle = cycle(lst)\n    sublists = []\n    \n    for _ in range(len(lst)):\n        product = 1\n        sublist = []\n        \n        for num in lst_cycle:\n            product *= num\n            sublist.append(num)\n            \n            if product == 46:\n                sublists.append(sublist.copy())\n                \n        lst_cycle.__next__()\n        \n    return sublists\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689887296,
+  "id": "chatcmpl-7eVAeXWEk79L5dV4KjBKhEc5KHxfI",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 193,
+    "total_tokens": 288
+  }
+}

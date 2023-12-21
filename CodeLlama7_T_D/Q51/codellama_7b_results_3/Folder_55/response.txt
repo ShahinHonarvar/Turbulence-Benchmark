@@ -1,0 +1,46 @@
+ ```
+def if_contains_anagrams(str_list):
+    # Initialize variables
+    count = 0
+    anagram_count = 0
+
+    # Check if the list is empty
+    if not str_list:
+        return False
+
+    # Iterate over the list of strings
+    for string in str_list:
+        # Convert the string to lowercase
+        lowercase_string = string.lower()
+
+        # Remove all non-alphanumeric characters from the string
+        alphanumeric_string = ''.join(c for c in lowercase_string if c.isalnum())
+
+        # Split the string into individual letters
+        letter_list = list(alphanumeric_string)
+
+        # Sort the letter list
+        sorted_letter_list = sorted(letter_list)
+
+        # Join the sorted letter list back into a single string
+        sorted_string = ''.join(sorted_letter_list)
+
+        # Check if the sorted string is already in the anagram count dictionary
+        if sorted_string not in anagram_count:
+            # If it's not, add it to the anagram count dictionary and set its value to 1
+            anagram_count[sorted_string] = 1
+
+        else:
+            # If it is, increment its value by 1
+            anagram_count[sorted_string] += 1
+
+    # Iterate over the anagram count dictionary
+    for sorted_string, count in anagram_count.items():
+        # Check if the number of occurrences of each anagram is greater than or equal to 3
+        if count >= 3:
+            # If it is, increment the overall anagram count by the number of occurrences of that anagram
+            anagram_count += count
+
+    # Return the result of the comparison between the number of occurrences of each anagram and 44
+    return anagram_count <= 44
+```

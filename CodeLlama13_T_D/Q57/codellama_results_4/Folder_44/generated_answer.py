@@ -1,0 +1,20 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Convert the matrix to a 1D array for easier iteration
+    flat_matrix = np.ravel(matrix)
+    
+    # Initialize an empty list to store the results
+    submatrices = []
+    
+    # Iterate over all possible starting indices of submatrices
+    for i in range(len(flat_matrix)):
+        # Calculate the sum of integers in the current submatrix
+        current_sum = np.sum(flat_matrix[i:i+8])
+        
+        # If the sum is 830, add the submatrix to the list
+        if current_sum == 830:
+            submatrices.append(np.reshape(flat_matrix[i:i+8], (3,3)))
+    
+    return submatrices

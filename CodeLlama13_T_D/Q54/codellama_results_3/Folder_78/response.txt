@@ -1,0 +1,12 @@
+```
+def all_right_truncatable_prime(nums):
+    x = nums[23]
+    prime_list = []
+    
+    for i in range(x):
+        if is_prime(i) and is_truncatable_prime(i):
+            prime_list.append(i)
+            
+    return sorted(prime_list)
+```
+This function uses a helper function called `is_prime` to check if a number is prime, and another helper function called `is_truncatable_prime` to check if a number is right-truncatable. The main function first calls the `is_prime` function to check if the input number is prime, then it checks if the number is truncatable using the `is_truncatable_prime` function. If both conditions are met, the function adds the number to a list and returns the sorted list of all right-truncatable primes less than `x`.

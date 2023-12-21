@@ -1,0 +1,36 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Iterate over the tuple of positive integers
+    for i in range(len(tuple)):
+        x = tuple[i]
+
+        # Check if x is a prime number using the Sieve of Eratosthenes algorithm
+        if x > 1:
+            for p in range(2, int(x ** 0.5) + 1):
+                if x % p == 0:
+                    break
+            else:
+                prime_numbers.append(x)
+
+    # Iterate over the list of prime numbers and check if they are right-truncatable prime numbers
+    for i in range(len(prime_numbers)):
+        x = prime_numbers[i]
+
+        # Check if x is a right-truncatable prime number by iteratively removing the last rightmost digit until it becomes non-prime
+        while x > 1:
+            if x % 10 == 0:
+                x = int(x / 10)
+            else:
+                break
+
+        # If x is a right-truncatable prime number, add it to the list of sorted right-truncatable prime numbers
+        if x > 1:
+            prime_numbers.append(x)
+
+    # Sort the list of sorted right-truncatable prime numbers in ascending order and return it
+    prime_numbers = sorted(prime_numbers)
+
+    return prime_numbers

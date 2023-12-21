@@ -1,0 +1,64 @@
+from Q45.$5_results_$6.Folder_$3.generated_answer import $4
+
+
+def test_string_of_similar_chars():
+    s = ''.join('a' for _ in range($2 + 1))
+    if $2 - $1 + 1 < $0:
+        assert not $4(s)
+    else:
+        assert $4(s) == {'a' * i for i in range($0, $2 - $1 + 2)}
+
+
+def test_string_of_distinct_chars():
+    s = 'abcdefghijkl'
+    assert not $4(s)
+
+
+def test_string_of_spaces():
+    s = ' ' * ($2 * 2)
+    assert not $4(s)
+
+
+def test_string_of_same_punctuations():
+    s = '@' * ($2 * 2)
+    assert not $4(s)
+
+
+def test_string_of_same_numbers():
+    s = '0' * ($2 * 2)
+    assert not $4(s)
+        
+
+def test_length_of_palindrome():
+    s = ''.join('a' for _ in range($2 + 1))
+    returned_result = $4(s)
+    for i in returned_result:
+        assert $0 <= len(i) <= $2 - $1 + 1
+
+
+def test_string_of_spaces_and_letters():
+    s = ' a ' * ($2 + 1)
+    ss = s[$1:$2 + 1]
+    ss = ss.replace(' ', '')
+    length = len(ss)
+    if length < $0:
+        assert not $4(s)
+    else:
+        min_ = min(length, $0)
+        max_ = max(length, $0)
+        assert $4(s) == {'a' * i for i in range(min_, max_ + 1)}
+
+
+def test_string_of_punctuations_and_letters():
+    s = '%a&' * ($2 + 1)
+    ss = s[$1:$2 + 1]
+    ss = ss.replace('%', '')
+    ss = ss.replace('&', '')
+    length = len(ss)
+    if length < $0:
+        assert not $4(s)
+    else:
+        min_ = min(length, $0)
+        max_ = max(length, $0)
+        assert $4(s) == {'a' * i for i in range(min_, max_ + 1)}
+        

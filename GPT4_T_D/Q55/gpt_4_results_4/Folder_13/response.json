@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```\ndef lists_with_product_equal_n(list):\n    from itertools import chain\n    from operator import mul\n    from functools import reduce\n    double_list = list + list\n    one_way_list = [double_list[i: j + 1] for i in range(len(list)) for j in range(i + 1, len(list))]\n    all_lists = list(chain(*one_way_list))\n    final_result = [item for item in all_lists if reduce(mul, item, 1) == 54]\n    return final_result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691087486,
+  "id": "chatcmpl-7jXOYxYdHerTbe5TIBTJ05UThfvJz",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 193,
+    "total_tokens": 305
+  }
+}

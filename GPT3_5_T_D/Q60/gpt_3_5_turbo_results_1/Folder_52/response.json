@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "``` python\ndef is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ndef is_truncatable_prime(n):\n    if '0' in str(n):\n        return False\n    str_n = str(n)\n    for i in range(len(str_n)):\n        if not is_prime(int(str_n[i:])):\n            return False\n        if not is_prime(int(str_n[:i+1])):\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(numbers):\n    x = numbers[52]\n    primes = []\n    for i in range(2, x+1):\n        if is_truncatable_prime(i):\n            primes.append(i)\n    return sorted(primes, reverse=True)\n```\nNote: The given text specification is not clear about what should be considered as a \"one- or two-digit prime\". In the code above, a prime number with one or two digits is considered as a \"one- or two-digit prime\".",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689800533,
+  "id": "chatcmpl-7e8bFaTsZ0cKsPya9GWZu5i785PV8",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 235,
+    "prompt_tokens": 187,
+    "total_tokens": 422
+  }
+}

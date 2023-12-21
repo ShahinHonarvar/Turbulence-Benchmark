@@ -1,0 +1,17 @@
+ ```
+def all_odd_ints_exclusive(my_list):
+    # Find the first odd integer in the list, starting from index 15
+    for i in range(15, len(my_list)):
+        if my_list[i] % 2 != 0:
+            first_odd = my_list[i]
+            break
+
+    # Find the last odd integer in the list, ending at index 40
+    for i in range(len(my_list) - 1, 40, -1):
+        if my_list[i] % 2 != 0:
+            last_odd = my_list[i]
+            break
+
+    # Return the list of all odd integers from index 15 to index 40, both exclusive
+    return my_list[first_odd - 1 : last_odd + 1]
+```

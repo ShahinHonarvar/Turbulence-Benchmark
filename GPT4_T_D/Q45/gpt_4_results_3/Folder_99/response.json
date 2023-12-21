@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import permutations\n\ndef palindromes_between_indices(string):\n    sub_string = string[4:9]\n    english_sub_string = \"\".join(char for char in sub_string if char.isalpha())\n    english_sub_string = english_sub_string.lower()\n    palindromes = set()\n\n    for i in range(3,len(english_sub_string) +1):\n        for perm in permutations(english_sub_string, i):\n            possible_palindrome = \"\".join(perm)\n            if possible_palindrome == possible_palindrome[::-1]:\n                palindromes.add(possible_palindrome)\n\n    return palindromes\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690955791,
+  "id": "chatcmpl-7iz8RsVh5LZwGdoZILZVkV6asctMj",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 132,
+    "prompt_tokens": 182,
+    "total_tokens": 314
+  }
+}

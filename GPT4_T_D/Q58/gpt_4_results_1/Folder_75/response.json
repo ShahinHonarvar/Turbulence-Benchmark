@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    rows, cols = matrix.shape\n    count = 0\n    for r in range(rows):\n        for c in range(cols):\n            for x in range(r, rows):\n                for y in range(c, cols):\n                    if (x - r + 1) * (y - c + 1) == 80:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690083040,
+  "id": "chatcmpl-7fK5oDohOmscwx5KB1xf08V5ZVgi2",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 96,
+    "prompt_tokens": 111,
+    "total_tokens": 207
+  }
+}

@@ -1,0 +1,9 @@
+```python
+def return_n_smallest_chars(string):
+    char_list = []
+    for i in range(59):
+        char_list.append(min(string, key=ord))
+        string = string.replace(char_list[-1], '')
+    return sorted(char_list, reverse=True)
+```
+This is one possible solution to the problem. The `ord` function is used to get the ASCII value of each character in the input string and then we use the `min` function with a custom key argument to find the smallest character in the list. We append it to the output list and remove it from the input string using the `replace` method. Finally, we sort the output list in descending order using the `sorted` function.

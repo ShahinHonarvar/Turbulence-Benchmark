@@ -1,0 +1,3 @@
+
+def gcf_two_nums(nums):
+    return nums[87] * nums[95] // math.gcd(nums[87], nums[95])

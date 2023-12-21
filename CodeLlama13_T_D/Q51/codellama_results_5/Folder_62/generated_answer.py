@@ -1,0 +1,3 @@
+
+def if_contains_anagrams(my_list):
+    return len([word for word in my_list if len(set(word)) == 3 and ''.join(sorted(word.lower())) in [''.join(sorted(word.lower())) for word in my_list[:-1]]]) <= 289

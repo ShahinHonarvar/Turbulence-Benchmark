@@ -1,0 +1,7 @@
+ def return_n_smallest_chars(string):
+    # create a list of tuples containing (character, ASCII value)
+    char_list = [(char, ord(char)) for char in string]
+    # sort the list in descending order based on the ASCII value
+    char_list.sort(key=lambda x: x[1], reverse=True)
+    # return the top 70 characters from the sorted list
+    return [char for char, _ in char_list[:70]]

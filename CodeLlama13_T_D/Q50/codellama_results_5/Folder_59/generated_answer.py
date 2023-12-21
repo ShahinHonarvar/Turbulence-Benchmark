@@ -1,0 +1,12 @@
+
+def if_contains_anagrams(strings):
+    anagram_count = 0
+    for i in range(len(strings)):
+        for j in range(i + 1, len(strings)):
+            s1 = "".join(sorted(strings[i].lower()))
+            s2 = "".join(sorted(strings[j].lower()))
+            if s1 == s2 and len(s1) >= 3:
+                anagram_count += 1
+                if anagram_count >= 10:
+                    return True
+    return False

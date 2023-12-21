@@ -1,0 +1,20 @@
+
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(len(string)):
+        # Get the character at position i
+        char = string[i]
+        # If the character is a letter, add it to the current palindrome
+        if char.isalpha():
+            current_palindrome += char
+        # If the character is not a letter or if we have reached the end of the string, check if the current palindrome is at least n characters long and add it to the set of palindromes
+        elif not char.isalpha() or i == len(string) - 1:
+            # Check if the current palindrome is at least n characters long
+            if len(current_palindrome) >= n:
+                # Add the current palindrome to the set of palindromes
+                palindromes.add(current_palindrome)
+            # Reset the current palindrome
+            current_palindrome = ""
+    return palindromes

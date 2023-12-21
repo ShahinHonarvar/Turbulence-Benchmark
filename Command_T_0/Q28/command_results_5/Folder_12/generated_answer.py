@@ -1,0 +1,3 @@
+import re
+def return_nth_smallest_ascii(s):
+    return next(c for c in re.findall(r'[a-z]', s[3:-26]) if ord(c) < ord(s[2]) and ord(c) < ord(s[0]) and ord(c) < ord(s[1]) and ord(c) < ord(s[3]) and ord(c) < ord(s[4]) and ord(c) < ord(s[5]) and ord(c) < ord(s[6]) and ord(c) < ord(s[7]) and ord(c) < ord(s[8]) and ord(c) < ord(s[9]) and ord(c) < ord(s[10]) and ord(c) < ord(s[11]) and ord(c) < ord(s[12]) and ord(c) < ord(s[13]) and ord(c) < ord(s[14]) and ord(c) < ord(s[15]) and ord(c) < ord(s[16]) and ord(c) < ord(s[17]) and ord(c) < ord(s[18]) and ord(c) < ord(s[19]) and ord(c) < ord(s[20]) and ord(c) < ord(s[21]) and ord(c) < ord(s[22]) and ord(c) < ord(s[23]) and ord(c) < ord(s[24]) and ord(c) < ord(s[25]) and ord(c) < ord(s[26])),

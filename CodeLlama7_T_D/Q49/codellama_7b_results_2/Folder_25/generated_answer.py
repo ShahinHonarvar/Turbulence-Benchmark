@@ -1,0 +1,11 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the index of the 19th number in the Fibonacci sequence
+    fibonacci_sequence = [0, 1]
+    for i in range(2, len(fibonacci_sequence)):
+        fibonacci_sequence.append(fibonacci_sequence[i - 1] + fibonacci_sequence[i])
+    index_of_19th_number = len(fibonacci_sequence) - 20
+    # Check if the decimal integer is divisible by the 19th number in the Fibonacci sequence
+    return decimal_integer % fibonacci_sequence[index_of_19th_number] == 0

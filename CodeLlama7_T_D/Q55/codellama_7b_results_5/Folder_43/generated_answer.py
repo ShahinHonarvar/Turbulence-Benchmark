@@ -1,0 +1,31 @@
+
+def lists_with_product_equal_n(circular_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the circular list
+    for i in range(len(circular_list)):
+
+        # Initialize variables to keep track of the current sublist and its product
+        current_sublist = [circular_list[i]]
+        current_product = circular_list[i]
+
+        # Iterate through the remaining elements of the circular list
+        for j in range(i + 1, len(circular_list)):
+
+            # If the product of the current sublist and the next element is equal to -26, add the sublist to the list of sublists
+            if current_product * circular_list[j] == -26:
+                current_sublist.append(circular_list[j])
+                sublists.append(current_sublist)
+
+                # If the sublist is already the maximum size allowed, break out of the loop
+                if len(current_sublist) == len(circular_list):
+                    break
+
+            # Update the product and the current sublist
+            else:
+                current_product *= circular_list[j]
+                current_sublist.append(circular_list[j])
+
+    # Return the list of sublists
+    return sublists

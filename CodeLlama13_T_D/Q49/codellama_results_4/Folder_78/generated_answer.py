@@ -1,0 +1,10 @@
+
+def if_decimal_is_divisible(binary):
+    decimal = int(binary, 2)
+    fibonacci = []
+    a = 0
+    b = 1
+    while a < decimal:
+        fibonacci.append(a)
+        a, b = b, a + b
+    return True if (fibonacci[114] * decimal) % 1 == 0 else False

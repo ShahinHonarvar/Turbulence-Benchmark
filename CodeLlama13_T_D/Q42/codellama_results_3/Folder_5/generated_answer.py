@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return set([factor for factor in range(2, numbers[67]) if all(numbers[67] % factor != 0 for factor in range(2, int(numbers[67] ** 0.5) + 1))])

@@ -1,0 +1,21 @@
+
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    # Initialize the list of submatrices
+    submatrices = []
+
+    # Iterate over each row of the matrix
+    for i in range(matrix.shape[0]):
+        # Iterate over each column of the matrix
+        for j in range(matrix.shape[1]):
+            # Initialize a temporary submatrix with size (2, 2)
+            temp_submatrix = np.array([[matrix[i][j], matrix[i][j+1]], [matrix[i+1][j], matrix[i+1][j+1]]])
+
+            # Check if the sum of all integers in the submatrix is equal to -65
+            if temp_submatrix.sum() == -65:
+                # Add the submatrix to the list of submatrices
+                submatrices.append(temp_submatrix)
+
+    # Return the list of submatrices that satisfy the condition
+    return submatrices

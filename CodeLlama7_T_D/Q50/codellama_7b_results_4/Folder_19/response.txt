@@ -1,0 +1,14 @@
+ ```
+def if_contains_anagrams(my_list):
+    count = 0
+    for i in range(len(my_list)):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i].lower()) == sorted(my_list[j].lower()):
+                count += 1
+
+    return count >= 84
+```
+Explanation:
+The function `if_contains_anagrams` takes a list of strings as input. It then iterates over the list using nested loops, comparing each pair of strings for anagrammaticity.
+To check if two strings are anagrams of each other, we first convert them to lowercase and then sort their characters. If the sorted characters of both strings match, then they must be anagrams of each other.
+The function returns `True` if there are at least 84 pairs of anagrams in the given list, and `False` otherwise. Note that the function only considers anagrams of length three or more.

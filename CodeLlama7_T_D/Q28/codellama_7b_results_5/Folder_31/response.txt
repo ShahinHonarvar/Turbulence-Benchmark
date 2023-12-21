@@ -1,0 +1,28 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between 10 and 82, both inclusive
+    indices = []
+    for i in range(len(string)):
+        if (i >= 10) and (i <= 82):
+            indices.append(i)
+    # Get the ASCII values of the characters at the indices found above
+
+    ascii_values = []
+
+    for index in indices:
+
+        char = string[index]
+
+        ascii_value = ord(char)
+
+        ascii_values.append(ascii_value)
+
+    # Return the character with the 18th smallest ASCII value among those characters at the indices found above
+
+    sorted_ascii_values = sorted(ascii_values)
+
+    nth_smallest_ascii_value = sorted_ascii_values[17]
+
+    return chr(nth_smallest_ascii_value)
+
+```

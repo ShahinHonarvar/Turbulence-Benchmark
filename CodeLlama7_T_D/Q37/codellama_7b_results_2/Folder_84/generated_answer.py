@@ -1,0 +1,14 @@
+
+def filter_chars(s):
+    # Create a new string with the filtered characters
+    filtered = ""
+
+    # Iterate over each character in the input string
+    for c in s:
+
+        # If the current character is not between indices 138 and 920, or it does not meet the condition of being greater than or equal to character '6' and smaller than or equal to character 'A', then add it to the filtered string
+        if (c < "6" or c > "A") and (c.index("138") or c.index("920")):
+            filtered += c
+
+    # Return the filtered string
+    return filtered

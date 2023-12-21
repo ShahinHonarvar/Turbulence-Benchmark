@@ -1,0 +1,3 @@
+
+def if_perfect_num(numbers):
+    return numbers[88] == sum(range(1, int(numbers[88])**0.5 + 1))

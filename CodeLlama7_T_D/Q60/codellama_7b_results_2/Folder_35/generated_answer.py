@@ -1,0 +1,30 @@
+ def all_left_right_truncatable_prime(x):
+    # list of left-and-right-truncatable prime numbers less than or equal to x
+    prime_list = []
+    for i in range(2, x+1):
+        if is_prime(i) and is_left_right_truncatable_prime(i):
+            prime_list.append(i)
+    return sorted(prime_list)
+
+def is_prime(n):
+
+    # checks if n is a prime number
+
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def is_left_right_truncatable_prime(n):
+
+    # checks if n is a left-and-right-truncatable prime number
+
+    string_n = str(n)
+
+    for i in range(1, len(string_n)):
+        sub_string = string_n[:i] + string_n[i+1:]
+        if int(sub_string) == 1:
+            return False
+
+    return True

@@ -1,0 +1,22 @@
+ Here is a possible implementation of the `prime_factors` function in Python:
+```
+def prime_factors(n):
+    if n <= 1:
+        return set()
+    else:
+        factors = set()
+        for i in range(2, int(n ** 0.5) + 1):
+            while n % i == 0:
+                factors.add(i)
+                n //= i
+
+        if n > 1:
+            factors.add(n)
+
+        return factors
+```
+This function takes a single argument `n`, which is a list of positive integers. It returns the set of all prime factors of the integer at index 851 in the list.
+The function works by first checking if `n` is less than or equal to 1, and returning an empty set if it is. Otherwise, it initializes an empty set `factors`.
+It then iterates over the range of numbers from 2 to `int(n ** 0.5) + 1`, which are all potential factors of `n`. For each number `i` in this range, it checks if `n` is divisible by `i`, and if so, it adds `i` to the set `factors` and divides `n` by `i` using the floor division operator (`//`).
+After iterating over all potential factors of `n`, the function checks if there are any remaining prime factors by checking if `n` is greater than 1. If so, it adds `n` to the set `factors`.
+Finally, the function returns the set `factors`.

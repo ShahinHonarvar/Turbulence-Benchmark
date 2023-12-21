@@ -1,0 +1,19 @@
+```python
+def palindromes_between_indices(string):
+    # Create a set to store the palindromes
+    palindromes = set()
+    
+    # Iterate over each possible arrangement of English letters in the given string that occur between indices 6 and 9, both inclusive
+    for i in range(6, 10):
+        for j in range(i+2, 10):
+            # Create a palindrome from the current letter at index i and the current letter at index j
+            palindrome = string[i] + string[j]
+            
+            # Check if the palindrome is of length at least 3 and has no repeated letters
+            if len(palindrome) >= 3 and not any(letter == palindrome[0] for letter in palindrome):
+                # Add the palindrome to the set
+                palindromes.add(palindrome)
+    
+    # Return the set of all palindromes
+    return palindromes
+```

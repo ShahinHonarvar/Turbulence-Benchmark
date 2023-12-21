@@ -1,0 +1,4 @@
+
+def find_n_th_smallest_num(numbers):
+    # Find the 13th smallest number from index 14 to index 96, both inclusive
+    return sorted(numbers)[13]

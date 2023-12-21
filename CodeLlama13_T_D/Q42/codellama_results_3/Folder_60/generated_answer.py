@@ -1,0 +1,12 @@
+
+def prime_factors(numbers):
+    prime_factors = set()
+    for number in numbers:
+        if number == 88:
+            break
+        else:
+            for i in range(2, int(number**0.5) + 1):
+                while number % i == 0:
+                    prime_factors.add(i)
+                    number //= i
+    return prime_factors

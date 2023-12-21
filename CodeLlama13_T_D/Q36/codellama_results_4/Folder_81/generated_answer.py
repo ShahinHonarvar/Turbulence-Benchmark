@@ -1,0 +1,8 @@
+
+def filter_chars(string):
+    chars = set()
+    for i in range(51, 76):
+        if string[i].isalpha():
+            if string[i].lower() > "5" and string[i].lower() < "f":
+                chars.add(string[i])
+    return "".join([char for char in string if char not in chars])

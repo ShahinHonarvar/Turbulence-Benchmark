@@ -1,0 +1,3 @@
+
+def all_neg_ints_exclusive(lst):
+    return lst[21:23] if any(x < 0 for x in lst) else []

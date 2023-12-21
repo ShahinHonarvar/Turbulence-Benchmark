@@ -1,0 +1,13 @@
+ def palindromes_between_indices(string):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each character in the string
+    for i in range(2, len(string) - 1):
+        # Check if the character is a vowel or not
+        if string[i].lower() in ["a", "e", "i", "o", "u"]:
+            # Form the palindrome by concatenating the characters around the current index
+            palindrome = string[i - 2] + string[i - 1] + string[i] + string[i + 1] + string[i + 2]
+            # Add the palindrome to the set of palindromes
+            palindromes.add(palindrome)
+    # Return the set of palindromes
+    return palindromes

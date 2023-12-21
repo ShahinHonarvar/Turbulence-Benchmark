@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(s):
+    chars = sorted(set(s), key=ord)
+    return chars[-7:]

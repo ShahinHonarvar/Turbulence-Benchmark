@@ -1,0 +1,3 @@
+
+def all_ints_inclusive(my_list):
+    return my_list[0:1] + list(range(1, len(my_list)))

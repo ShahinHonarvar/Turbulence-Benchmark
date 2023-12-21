@@ -1,0 +1,11 @@
+
+def return_binary_or_hexa(t):
+    a, b = t[1], t[7]
+    s = 0
+    for i in range(a + 1, b - 1 + 1):
+        if i not in t:
+            s += 1
+    if s % 2 == 1:
+        return bin(s)[2:]
+    else:
+        return hex(s).upper()[2:]

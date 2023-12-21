@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_n_numbers(matrix):\n    row, col = matrix.shape\n    count = 0\n    for i in range(row):\n        for j in range(col):\n            for m in range(i, row):\n                for n in range(j, col):\n                    if (m-i+1) * (n-j+1) == 18:\n                        count += 1\n    return count\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691018949,
+  "id": "chatcmpl-7jFZ7hTXqfZNIPfEctvbkca1axDr9",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 111,
+    "total_tokens": 203
+  }
+}

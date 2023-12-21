@@ -1,0 +1,17 @@
+
+def return_nth_smallest_ascii(string):
+    # create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+
+    # loop through each character in the string and add its ASCII value to the dictionary
+
+    for char in string:
+        ascii_values[char] = ord(char)
+
+    # sort the dictionary by the values (ASCII values) in ascending order
+
+    sorted_values = sorted(ascii_values.items(), key=lambda x: x[1])
+
+    # return the 6th smallest ASCII value
+
+    return sorted_values[5][1]

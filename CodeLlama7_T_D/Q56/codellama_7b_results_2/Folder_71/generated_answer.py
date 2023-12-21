@@ -1,0 +1,19 @@
+
+def all_substring_of_size_n(input_string):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the input string
+    for i in range(len(input_string) - 17 + 1)):
+
+        # Extract the substring of length 17 starting from the current index
+        substring = input_string[i:i+17]
+
+        # Check if the substring has no duplicate characters
+        if len(set(substring)) == 17:
+
+            # Add the substring to the list of substrings
+            substrings.append(substring)
+
+    # Return the list of substrings
+    return substrings

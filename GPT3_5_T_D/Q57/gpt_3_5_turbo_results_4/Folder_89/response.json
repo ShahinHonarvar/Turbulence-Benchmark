@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    submatrices = []\n    rows, cols = matrix.shape\n    for i in range(rows):\n        for j in range(cols):\n            for k in range(i + 1, rows + 1):\n                for l in range(j + 1, cols + 1):\n                    submatrix = matrix[i:k, j:l]\n                    if np.sum(submatrix) == 80:\n                        submatrices.append(submatrix.tolist())\n    return submatrices\n```\nNote: The code assumes that the numpy library is already imported.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689867237,
+  "id": "chatcmpl-7ePx7usj3Mo3giOEo1h8obDDcRJTP",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 127,
+    "prompt_tokens": 121,
+    "total_tokens": 248
+  }
+}

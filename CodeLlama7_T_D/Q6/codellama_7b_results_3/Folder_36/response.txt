@@ -1,0 +1,28 @@
+ ```
+def all_neg_ints_exclusive(my_list):
+    # Find the index of the first negative integer
+    first_neg_index = next((i for i, x in enumerate(my_list) if x < 0)), None)
+    # If no negative integers exist in the list, return an empty list
+    if first_neg_index is None:
+        return []
+
+    # Find the index of the last negative integer
+
+    last_neg_index = next((i for i, x in enumerate(my_list[first_neg_index:]) if x < 0), None)
+    # If no negative integers exist in the specified range, return an empty list
+    if last_neg_index is None:
+        return []
+
+    # Return the list of all negative integers from index 598 to index 767, both exclusive
+
+    return my_list[first_neg_index:last_neg_index+1]
+```
+Explanation:
+
+The function takes a single argument `my_list`, which is expected to be a list of integers.
+
+The function first finds the index of the first negative integer in the list using a generator expression with the `next` function, which returns the next item in the iterable after exhausting all items in the iterable. If no negative integers exist in the list, the function returns an empty list.
+
+Next, the function finds the index of the last negative integer in the specified range by using a similar generator expression with the `next` function to iterate over the slice of the list starting at `first_neg_index`. The `None` argument to the `next` function is used to stop the iteration when a value that is less than 0 is found. If no negative integers exist in the specified range, the function returns an empty list.
+
+Finally, the function returns the slice of the list starting at `first_neg_index` and ending at `last_neg_index+1`, which contains all the negative integers from index 598 to index 767, both exclusive.

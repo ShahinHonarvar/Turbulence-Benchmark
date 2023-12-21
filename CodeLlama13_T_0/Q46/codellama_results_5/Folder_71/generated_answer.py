@@ -1,0 +1,3 @@
+
+def gcf_three_nums(my_list):
+    return __gcd(my_list[24], __gcd(my_list[45], my_list[38]))

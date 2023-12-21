@@ -1,0 +1,8 @@
+
+def insert_after_index(my_list):
+    new_list = my_list[:]
+    # Find the index of 32 in the list
+    index_32 = my_list.index(32)
+    # Insert [54, 96] at the next index after 32
+    new_list.insert(index_32 + 1, [54, 96])
+    return new_list

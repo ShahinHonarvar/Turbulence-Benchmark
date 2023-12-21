@@ -1,0 +1,13 @@
+[cohere.Generation {
+	id: c77de389-3f07-49be-a293-e5ff99b45b1f
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'palindromes_of_specific_lengths' that takes one argument, a string. The given string may consist of any character. The function should return the set of all palindromes with the following requirements. Only palindromes occurring in the substring from index 27 to index 95, both inclusive, should be considered. Only palindromes of lengths between 49 to 51 (both inclusive) should be considered. Each palindrome should only consist of English letters. If no such palindrome with the length specified occurs in the specified index range, the function should return an empty set. The function should find the palindromes in a case-insensitive manner.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def palindromes_of_specific_lengths(s):
+    return set(re.findall(r'(?i)(?P<a>.{49,50})(?P<b>.{49,50})\1(?P<c>.{49,50})\2(?P<d>.{49,50})\3(?P<e>.{49,50})\4(?P=a)\5(?P=b)\6(?P=c)\7(?P=d)\8(?P=e)\9(?P=a)\10(?P=b)\11(?P=c)\12(?P=d)\13(?P=e)\14(?P=a)\15(?P=b)\16(?P=c)\17(?P=d)\18(?P=e)', s[27:95]))
+```
+	likelihood: None
+	token_likelihoods: None
+}]

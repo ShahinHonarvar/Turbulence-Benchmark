@@ -1,0 +1,34 @@
+```python
+def all_left_truncatable_prime(tuple_of_positive_integers):
+    # Initialize an empty list to store the left-truncatable prime numbers
+    left_truncatable_primes = []
+
+    # Iterate over the tuple of positive integers
+    for i in range(len(tuple_of_positive_integers)):
+        # Get the current integer
+        current_integer = tuple_of_positive_integers[i]
+
+        # Initialize a flag to indicate if the number is prime
+        is_prime = True
+
+        # Check if the number contains any 0
+        if "0" in str(current_integer):
+            continue
+
+        # Iterate over all possible truncated versions of the number
+        for j in range(1, len(str(current_integer)) + 1):
+            # Get the truncated version of the number
+            truncated_number = current_integer // (10 ** j)
+
+            # Check if the truncated number is prime
+            if not is_prime(truncated_number):
+                is_prime = False
+                break
+
+        # If the number is prime, add it to the list of left-truncatable primes
+        if is_prime:
+            left_truncatable_primes.append(current_integer)
+
+    # Return the sorted list of left-truncatable primes in descending order
+    return sorted(left_truncatable_primes, reverse=True)
+```

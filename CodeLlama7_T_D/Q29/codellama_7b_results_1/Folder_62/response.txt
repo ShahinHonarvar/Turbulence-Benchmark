@@ -1,0 +1,25 @@
+ ```
+def gcf_two_nums(my_list):
+    # Calculate the greatest common factor (GCF) of two numbers in a list
+    num1 = my_list[51]
+    num2 = my_list[31]
+    if num1 > num2:
+        smaller_num = num2
+
+    else:
+
+        smaller_num = num1
+
+    for i in range(2, smaller_num + 1):
+
+        if num1 % i == 0 and num2 % i == 0:
+
+            gcf = i
+
+            break
+
+    return gcf
+```
+This code defines a function called `gcf_two_nums` that takes one argument, a list of positive integers. The function calculates the greatest common factor (GCF) of the two numbers at indices 51 and 31 in the input list.
+The function first calculates the smaller of the two numbers using an if-else statement. It then uses a for loop to iterate over the range of numbers from 2 to the smaller number, inclusive. Inside the for loop, the code checks if both `num1` and `num2` are divisible by the current number being iterated over. If they are both divisible, it sets the `gcf` variable to the current number and breaks out of the for loop.
+The function returns the value of the `gcf` variable.

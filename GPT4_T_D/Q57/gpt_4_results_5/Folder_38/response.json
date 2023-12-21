@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here is the Python code according to the specified text.\n\n```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(mat):\n    nrows, ncols = mat.shape\n\n    submatrices = []\n\n    for row1 in range(nrows):\n        for row2 in range(row1 + 1, nrows + 1):\n            for col1 in range(ncols):\n                for col2 in range(col1 + 1, ncols + 1):\n\n                    submatrix = mat[row1:row2, col1:col2]\n                    if submatrix.sum() == 34:\n                        submatrices.append(submatrix)\n    \n    return submatrices\n```\nThe function `submatrix_with_particular_sum` accepts a 2-D numpy array. It goes through each sub-matrix within the original matrix and calculates the sum of all elements of the sub-matrix. If the sum is equal to 34, the function stores the sub-matrix. Once all sub-matrices are processed, the function returns all stored sub-matrices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691015115,
+  "id": "chatcmpl-7jEZHWPmQkhqqzFcRNWQgGMEtG4xA",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 216,
+    "prompt_tokens": 121,
+    "total_tokens": 337
+  }
+}

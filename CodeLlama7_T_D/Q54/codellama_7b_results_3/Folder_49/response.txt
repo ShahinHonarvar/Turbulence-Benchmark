@@ -1,0 +1,63 @@
+ ```
+def all_right_truncatable_prime(tuple_of_positive_integers):
+    # Initialize an empty list to store the right-truncatable prime numbers
+    list_of_right_truncatable_primes = []
+    # Iterate over the elements in the tuple
+    for element in tuple_of_positive_integers:
+        # If the current element is a prime number, check if it is right-truncatable prime
+        if is_prime(element):
+            if is_right_truncatable_prime(element):
+                list_of_right_truncatable_primes.append(element)
+    # Return the sorted list of all right-truncatable prime numbers less than x
+    return sorted(list_of_right_truncatable_primes)
+# Define a function to check if an integer is prime
+def is_prime(n):
+    # Check if n is an integer
+    if not isinstance(n, int):
+        raise ValueError("n must be an integer")
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        return False
+
+    # Check if n is divisible by 2 to n-1
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    # If no factors other than itself have been found, it must be prime
+    return True
+
+# Define a function to check if an integer is right-truncatable prime
+def is_right_truncatable_prime(n):
+    # Check if n is an integer
+    if not isinstance(n, int):
+        raise ValueError("n must be an integer")
+    # Check if n is less than or equal to 1
+    if n <= 1:
+        return False
+
+    # Iterate over the digits of n in reverse order
+    for digit in str(n)[::-1]:
+        # If any digit other than the last one is found, return False
+        if int(digit) != n % 10:
+            return False
+
+        # If the current digit matches the last digit, divide the number by 10 and check if it is a prime number
+        else:
+            n //= 10
+
+    # If no factors other than itself have been found, it must be right-truncatable prime
+    return True
+
+# Test the functions with different inputs
+if __name__ == "__main__":
+    # Test case 1: (17,)
+#    print(all_right_truncatable_prime((17,))))
+    # Output: [17]
+    # Test case 2: (19,)
+#    print(all_right_truncatable_prime((19,))))
+    # Output: [19]
+    # Test case 3: (100,)
+#    print(all_right_truncatable_prime((100,))))
+    # Output: []
+```

@@ -1,0 +1,13 @@
+ def filter_chars(string):
+    # Initialize an empty list to store the filtered characters
+    filtered_chars = []
+    # Iterate over each character in the given string
+    for char in string:
+        # Check if the current character is between indices 1 and 5, both inclusive
+        if 1 <= string.index(char) <= 5:
+            # Check if the current character is greater than or equal to '$' and smaller than or equal to ';'
+            if '$' <= char <= ';':
+                continue
+            else:
+                filtered_chars.append(char)
+    return "".join(filtered_chars)

@@ -1,0 +1,13 @@
+```python
+def sum_odd_ints_inclusive(nums):
+    odd_sum = 0
+    for i in range(82, 87):
+        if nums[i] % 2 != 0:
+            odd_sum += nums[i]
+    return odd_sum
+```
+Here is another solution using list comprehension and a generator expression. It also uses the `sum()` function to calculate the sum of all odd numbers in the specified range.
+```python
+def sum_odd_ints_inclusive(nums):
+    return sum(num for i, num in enumerate(nums) if i >= 82 and i <= 86 and num % 2 != 0)
+```

@@ -1,0 +1,4 @@
+
+def all_substring_of_size_n(s):
+    n = 105
+    return [ss for i in range(len(s) - n + 1) for ss in [s[i:j] for j in range(i + 1, len(s)) if not any(c in s[i+n] for c in s[i])]]

@@ -1,0 +1,24 @@
+ Here is a possible implementation of the `if_contains_anagrams` function:
+```python
+def if_contains_anagrams(my_list):
+    # Create a list to store the anagram pairs
+    anagram_pairs = []
+    # Loop through each string in the input list
+    for i in range(len(my_list)):
+        # Get the current string
+        curr_string = my_list[i]
+        # Convert the current string to lowercase
+        lowercase_curr_string = curr_string.lower()
+        # Loop through each string in the input list again, starting from the next string after the current one
+        for j in range(i + 1, len(my_list)):
+            # Get the next string
+            next_string = my_list[j]
+            # Convert the next string to lowercase
+            lowercase_next_string = next_string.lower()
+            # Check if the current string and the next string are anagrams of each other
+            if sorted(lowercase_curr_string) == sorted(lowercase_next_string):
+                # Add a pair of anagrams to the list
+                anagram_pairs.append((i, j))
+    # Check if there are at most 79 pairs of anagrams in the input list
+    return len(anagram_pairs) <= 79
+```

@@ -1,0 +1,39 @@
+from Q40.$4_results_$5.Folder_$2.generated_answer import $3
+import random
+import string
+
+
+def test_strings_of_size_equal_to_$0():
+    selection_range = string.ascii_letters + string.digits + ' ' + "!#$%&()*+,-./:;<=>?@[]^_{|}~"
+    s = ''.join(random.sample(selection_range, k=$0))
+    if '$1' == 'ascending':
+        assert $3(s) == sorted(s)
+    else:
+        assert $3(s) == sorted(s, reverse=True)
+
+
+def test_length_of_result():
+    selection_range = string.ascii_letters + string.digits + ' ' + "!#$%&()*+,-./:;<=>?@[]^_{|}~"
+    s = ''.join(random.sample(selection_range, k=$0 + 1))
+    assert len($3(s)) == $0
+
+
+def test_if_result_is_sorted():
+    selection_range = string.ascii_letters + string.digits + ' ' + "!#$%&()*+,-./:;<=>?@[]^_{|}~"
+    s = ''.join(random.sample(selection_range, k=$0 + 1))
+    result = $3(s)
+    if '$1' == 'ascending':
+        assert result == sorted(result)
+    else:
+        assert result == sorted(result, reverse=True)
+
+
+def test_if_result_contains_highest_chars():
+    selection_range = string.ascii_letters + string.digits + ' ' + "!#$%&()*+,-./:;<=>?@[]^_{|}~"
+    s = ''.join(random.sample(selection_range, k=$0 + 1))
+    result = $3(s)
+    for char_r in result:
+        for char_s in s:
+            if char_s not in result:
+                assert char_r < char_s
+                            

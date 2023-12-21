@@ -1,0 +1,15 @@
+ ```
+def filter_chars(s):
+    # Create a list of characters in the given string
+    char_list = list(s)
+    # Loop through each character in the list
+    for i in range(len(char_list)):
+        # Check if the current character is between 3 and 9 (exclusive)
+        if 3 <= ord(char_list[i]) <= 9:
+            # If the current character is between 3 and 9, check if it is greater than '*' and smaller than 'E'
+            if char_list[i] > '*' and char_list[i] < 'E':
+                # Remove all occurrences of the current character within the string
+                char_list = [c for c in char_list if c != char_list[i]]
+    # Return the altered string
+    return "".join(char_list)
+```

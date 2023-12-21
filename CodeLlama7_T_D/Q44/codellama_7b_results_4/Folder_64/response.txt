@@ -1,0 +1,20 @@
+ ```
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list of positive integers
+    for i in range(len(my_list)):
+        # If the current number is greater than 1 and is divisible by any number between 2 and the square root of the current number, it is composite
+        if my_list[i] > 1 and any(my_list[i] % j == 0 for j in range(2, int(my_sqrt)))):
+            # Add the current number to the set of composite numbers
+            composite_nums.add(my_list[i])
+
+    # Return the set of all composite numbers in the given list that are between index 0 to index 4, both inclusive
+    return composite_nums
+
+# Test the function with a list of positive integers
+my_list = [1, 2, 3, 4, 5, 6]
+composite_nums = composite_nums_between_indices(my_list)
+#print(composite_nums)
+```

@@ -1,0 +1,29 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_count = 0
+    three_or_more_length_count = 0
+    case_insensitive_count = 0
+    # Iterate through the list of strings
+    for string in my_list:
+        # Get a list of all possible anagrams
+        anagram_strings = [string]
+        # Check if there are any other strings in the list that are anagrams of this one
+        for other_string in my_list:
+            # If the string is not this one and it is an anagram, add it to the list of possible anagrams
+            if other_string != string and sorted(other_string) == sorted(string):
+                anagram_strings.append(other_string)
+        # Check if there are at least three strings in the list that have the same length as this one and are anagrams of each other
+        if len(anagram_strings) >= 3:
+            for string1 in anagram_strings:
+                for string2 in anagram_strings:
+                    # If the two strings are not the same and they have the same length as this one, add them to the list of possible pairs
+                    if string1 != string2 and len(string1) == len(string2):
+                        anagram_count += 1
+            three_or_more_length_count += 1
+    # Check if there are at most 72 pairs of anagrams in the list
+    if anagram_count <= 72:
+        case_insensitive_count += 1
+# Return whether or not the given list contains any anagrams that meet the specified criteria
+return case_insensitive_count > 0
+```

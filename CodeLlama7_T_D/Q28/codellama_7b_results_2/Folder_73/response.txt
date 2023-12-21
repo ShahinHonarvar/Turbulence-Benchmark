@@ -1,0 +1,12 @@
+ def return_nth_smallest_ascii(s):
+    # Create a dictionary to store the frequency of each character in the string
+    freq = {}
+    for c in s:
+        if c in freq:
+            freq[c] += 1
+        else:
+            freq[c] = 1
+    # Sort the dictionary by value in descending order
+    sorted_freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+    # Return the character with the 10th smallest ASCII value among those characters in the string that occur between indices 0 to 69, both inclusive.
+    return sorted_freq[10][0]

@@ -1,0 +1,15 @@
+ ```
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation to an integer
+    decimal = int(binary_repr, 2)
+    # Calculate the number of bits in the binary representation
+    num_bits = len(binary_repr)
+    # Calculate the index of the 28th Fibonacci number in the binary representation
+    fib_index = 27 * (num_bits - 1) // 30
+    # Extract the 28th Fibonacci number from the binary representation
+    fib_repr = binary_repr[fib_index:fib_index + 3]
+    # Convert the 28th Fibonacci number to an integer
+    fib = int(fib_repr, 2)
+    # Return true if the decimal integer is divisible by the 28th Fibonacci number
+    return decimal % fib == 0
+```

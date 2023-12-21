@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport numpy as np\n\ndef submatrix_with_particular_sum(matrix):\n    rows, cols = matrix.shape\n    submatrices_that_sum_to_40 = []\n    \n    for sub_matrix_height in range(1, rows + 1):\n        for sub_matrix_width in range(1, cols + 1):\n            for row in range(rows - sub_matrix_height + 1):\n                for col in range(cols - sub_matrix_width + 1):\n                    sub_matrix = matrix[row : row + sub_matrix_height, col : col + sub_matrix_width]\n                    if np.sum(sub_matrix) == 40:\n                        submatrices_that_sum_to_40.append(sub_matrix.tolist())\n    \n    return submatrices_that_sum_to_40\n```\nNOTE: This function is checking for all possible submatrices which includes single cell matrices as well. Adjust the range parameters if you don't want to include single cell matrices.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690081619,
+  "id": "chatcmpl-7fJitaQO5sopCgsYjEpk6d1Yyr4TR",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 121,
+    "total_tokens": 311
+  }
+}

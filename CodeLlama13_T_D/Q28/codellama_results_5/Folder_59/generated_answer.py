@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    chars = {}
+    for char in string:
+        if char not in chars:
+            chars[char] = 1
+        else:
+            chars[char] += 1
+    
+    sorted_chars = sorted(chars.items(), key=lambda x: x[0])
+    return sorted_chars[12][0]

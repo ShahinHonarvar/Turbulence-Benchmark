@@ -1,0 +1,17 @@
+ def palindromes_of_specific_lengths(string):
+    # Define the index range for searching palindromes
+    start_index = 0
+    end_index = 30
+    # Define the minimum and maximum lengths of palindromes to consider
+    min_length = 20
+    max_length = 30
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Iterate over the characters in the string within the defined index range
+    for i in range(start_index, end_index + 1):
+        # Check if the character at position i is a palindrome of length between min_length and max_length
+        if (string[i - 1:i] == string[i - 1:i][::-1]) and (len(string[i - 1:i]) >= min_length) and (len(string[i - 1:i]) <= max_length):
+            # If it is a palindrome, add it to the set of palindromes
+            palindromes.add(string[i - 1:i])
+    # Return the set of palindromes found within the specified index range and length requirements
+    return palindromes

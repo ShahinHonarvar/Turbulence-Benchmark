@@ -1,0 +1,42 @@
+
+def all_left_truncatable_prime(tuple):
+    # Initialize a list to store the left-truncatable prime numbers
+    left_truncatable_primes = []
+    # Iterate over the elements in the tuple
+    for element in tuple:
+        # Check if the element is a prime number
+        if is_prime(element):
+            # Initialize a variable to store the element with its leading digit removed
+            left_truncatable_prime = element
+            # Remove the leading digit from the element until it becomes 1 or a non-prime number
+            while left_truncatable_prime > 1:
+                # Check if the remaining number is a prime number
+                if is_prime(left_truncatable_prime):
+                    # Add the remaining number to the list of left-truncatable prime numbers
+                    left_truncatable_primes.append(left_truncatable_prime)
+                    # Break out of the while loop
+                    break
+                else:
+                    # Remove the leading digit from the remaining number and repeat the process
+                    left_truncatable_prime = int(str(left_truncatable_prime)[1:])
+            # Check if the element is a prime number and not already in the list of left-truncatable prime numbers
+            if element > 1 and is_prime(element) and element not in left_truncatable_primes:
+                # Add the element to the list of left-truncatable prime numbers
+                left_truncatable_primes.append(element)
+    # Sort the list of left-truncatable prime numbers in descending order
+    left_truncatable_primes.sort(reverse=True)
+    return left_truncatable_primes
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if the number is less than or equal to 1
+    if n <= 1:
+        # Return False if the number is less than or equal to 1
+        return False
+    # Check if the number is divisible by 2 to 6
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if the number is divisible by any number between 2 and its square root
+        if n % i == 0:
+            # Return False if the number is divisible by any number between 2 and its square root
+            return False
+    # Return True if the number is not divisible by any number between 2 and its square root
+    return True

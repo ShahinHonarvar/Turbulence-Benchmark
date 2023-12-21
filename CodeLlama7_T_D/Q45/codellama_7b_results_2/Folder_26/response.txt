@@ -1,0 +1,23 @@
+ ```
+def palindromes_between_indices(input_string):
+# Check if the input string is valid
+if len(input_string) < 6 or len(input_string) > 10:
+return set()
+# Get the indices of the letters between which we want to find palindromes
+start_index = 4
+end_index = 6
+# Create an empty set to store the palindromes
+palindromes = set()
+# Iterate over the possible arrangements of the English letters in the given string that occur between the start and end indices
+for i in range(start_index, end_index + 1):
+for j in range(i, end_index + 1):
+if input_string[i] == input_string[j]:
+# Check if the two letters form a palindrome
+palindrome = ''.join([input_string[i], input_string[j]])
+# Add the palindrome to the set
+palindromes.add(palindrome)
+# Break out of the inner loop once we have found all possible palindromes between the start and end indices
+break
+# Return the set of palindromes
+return palindromes
+```

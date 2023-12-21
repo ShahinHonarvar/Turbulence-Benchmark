@@ -1,0 +1,12 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```python
+def remove_repeat_chars(s):
+    # Create a new string with the same characters as s, but without any duplicates
+    new_string = ""
+    for i in range(len(s)):
+        if not s[i] in new_string:
+            new_string += s[i]
+    return new_string
+```
+This function takes a string `s` as input and returns the same string with all duplicates removed. The function does this by creating a new string, `new_string`, which starts out empty. Then it loops through each character in the original string, and if that character is not already present in `new_string`, it adds it to `new_string`. Once the loop is finished, the function returns `new_string` as its output.
+Note that this function only removes duplicates within a certain range of indices. If you want to remove all duplicates from the entire string, you will need to modify the function accordingly.

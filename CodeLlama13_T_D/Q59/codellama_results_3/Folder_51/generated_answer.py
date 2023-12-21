@@ -1,0 +1,14 @@
+
+def all_left_truncatable_prime(numbers):
+    result = []
+    for number in numbers:
+        if number <= 10:
+            continue
+        prime_number = True
+        for i in range(2, number):
+            if number % i == 0:
+                prime_number = False
+                break
+        if prime_number:
+            result.append(number)
+    return sorted(result)

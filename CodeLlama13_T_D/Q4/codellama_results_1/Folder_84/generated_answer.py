@@ -1,0 +1,3 @@
+
+def all_pos_ints_exclusive(my_list):
+    return list(filter(lambda x: 50 < x < 92, my_list))

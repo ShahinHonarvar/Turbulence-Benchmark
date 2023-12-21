@@ -1,0 +1,7 @@
+
+def return_nth_smallest_ascii(string):
+    chars = {}
+    for i in range(18, 46):
+        if string[i].isalpha():
+            chars[string[i]] = ord(string[i])
+    return sorted(chars.items(), key=lambda x: x[1])[6][0]

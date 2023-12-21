@@ -1,0 +1,5 @@
+
+def return_nth_smallest_ascii(string):
+    chars = list(set(string[17:35]))
+    nth_smallest = sorted(chars)[17]
+    return nth_smallest

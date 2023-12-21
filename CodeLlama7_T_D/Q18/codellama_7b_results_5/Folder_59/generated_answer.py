@@ -1,0 +1,12 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Initialize variables for the sum and the range of indices
+    sum = 0
+    start = 0
+    end = len(my_list) - 1
+    # Iterate through the list, checking if each element is divisible by either -3 or 8
+    for i in range(start, end + 1):
+        if my_list[i] % (-3) == 0 or my_list[i] % (8) == 0:
+            sum += my_list[i]
+    # Return the sum of all integers divisible by either -3 or 8 from index 0 to index 8, both inclusive. If no such integers exist in the specified range, the function should return 0.
+    return sum

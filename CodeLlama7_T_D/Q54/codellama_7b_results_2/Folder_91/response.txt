@@ -1,0 +1,53 @@
+ ```
+def all_right_truncatable_prime(x):
+# Initialize an empty list to store the right-truncatable prime numbers
+primes = []
+
+
+# Loop through all numbers less than x that are divisible by 2 or 5
+
+
+for num in range(1, x, 2) or range(1, x, 5):
+
+
+# Check if the number is a prime number
+if is_prime(num):
+
+
+# Add the number to the list of primes
+primes.append(num)
+
+
+return sorted(primes, reverse=True)
+
+
+def is_prime(num):
+
+
+# Initialize a variable to store the value of the number raised to the power of its number of digits
+product = 1
+
+
+# Loop through the digits of the number
+for digit in str(num):
+
+
+# Multiply the product by the current digit
+product *= int(digit)
+
+
+# Check if the product is equal to the number
+if product == num:
+
+
+# Return True if the number is a prime number
+return True
+
+
+else:
+
+
+# Return False if the number is not a prime number
+return False
+
+```

@@ -1,0 +1,3 @@
+
+def find_subset_of_length_n(s):
+    return len(set(itertools.combinations(s, 48))))

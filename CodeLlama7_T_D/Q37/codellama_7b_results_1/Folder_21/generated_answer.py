@@ -1,0 +1,13 @@
+
+def filter_chars(my_string):
+    filtered_string = ""
+    for i in range(len(my_string)):
+        char = my_string[i]
+        if (char >= 'Q' and char <= 'h') and i >= 603 and i <= 759:
+            continue
+
+        else:
+
+            filtered_string += char
+
+    return filtered_string

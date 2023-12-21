@@ -1,0 +1,7 @@
+
+def return_vowels(s):
+    vowels = []
+    for i in range(323, 526):
+        if s[i].lower() in ['a', 'e', 'i', 'o', 'u']:
+            vowels.append(s[i])
+    return vowels

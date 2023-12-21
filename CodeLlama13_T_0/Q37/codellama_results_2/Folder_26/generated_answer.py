@@ -1,0 +1,6 @@
+
+def filter_chars(string):
+    for i in range(20, 63):
+        if string[i].isalpha():
+            string = string.replace(string[i], "")
+    return string

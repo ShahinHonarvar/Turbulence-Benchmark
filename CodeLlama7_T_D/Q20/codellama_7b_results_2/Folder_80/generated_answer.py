@@ -1,0 +1,10 @@
+
+def find_n_th_smallest_num(numbers):
+    # Sort the list of numbers in ascending order
+    sorted_numbers = sorted(numbers)
+
+    # Find the index of the 5th smallest number in the sorted list
+    fifth_smallest_index = (len(sorted_numbers) - 1) * 0.2
+
+    # Return the 5th smallest number from the specified range
+    return sorted_numbers[int(fifth_smallest_index)]

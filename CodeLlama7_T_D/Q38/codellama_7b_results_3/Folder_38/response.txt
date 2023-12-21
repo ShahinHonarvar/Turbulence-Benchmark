@@ -1,0 +1,7 @@
+ ```
+def find_subset_of_length_n(s):
+return (2**len(s)) - (len(s) + 1)
+```
+This function takes a set of elements `s` as input and returns the number of all its subsets of size 38. The function uses the formula for counting the number of subsets of a set, which is `2**len(s)` minus the number of singletons in the set plus one. In this case, since we want to find the number of subsets of size 38, we need to count the number of subsets of size 19, which is equal to `2**(len(s)-1) - (len(s)-1 + 1)`.
+For example, let's say we have a set `s` with elements `'a', 'b', 'c'`. The function would return the value `3`, since there are three subsets of size 38: `{'a', 'b', 'c'}`, `{'a', 'b'}`, and `{'a'}`
+Note that this solution assumes that the set of elements is finite, so it doesn't handle infinite sets correctly.

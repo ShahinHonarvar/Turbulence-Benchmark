@@ -1,0 +1,3 @@
+
+def prime_factors(numbers):
+    return {prime for number in numbers[96] for prime in range(2, int(number ** 0.5) + 1) if number % prime == 0}

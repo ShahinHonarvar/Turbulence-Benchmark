@@ -1,0 +1,18 @@
+ ```
+def if_contains_anagrams(my_list):
+# Initialize variables
+count = 0
+# Iterate through the list of strings
+for i in range(len(my_list)):
+# Get the current string
+current_string = my_list[i]
+# Check if the current string is an anagram of at least three English letters
+if len(current_string) >= 3 and sorted(current_string.lower()) == sorted("e n l a t e".lower()):
+count += 1
+# If there are more than 97 pairs of anagrams in the list, return False
+if count > 97:
+return False
+
+# If all the strings are valid anagrams, return True
+return True
+```

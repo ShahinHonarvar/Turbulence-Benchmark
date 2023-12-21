@@ -1,0 +1,10 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    # Slice the list from index 29 to index 53, both inclusive
+    sliced_list = my_list[29:54]
+    
+    # Use a set comprehension to create a set of all integers divisible by -68 or -85
+    divisible_nums = {x for x in sliced_list if x % -68 == 0 or x % -85 == 0}
+    
+    # Return the sum of the set of divisible numbers
+    return sum(divisible_nums)

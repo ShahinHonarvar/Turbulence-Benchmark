@@ -1,0 +1,10 @@
+
+def all_even_ints_inclusive(my_list):
+    # Create a new list to store the even integers
+    even_ints = []
+    # Loop through the list from index 25 to index 87, both inclusive
+    for i in range(len(my_list)):
+        # If the current element is an even integer, append it to the new list
+        if my_list[i] % 2 == 0:
+            even_ints.append(my_list[i])
+    return even_ints

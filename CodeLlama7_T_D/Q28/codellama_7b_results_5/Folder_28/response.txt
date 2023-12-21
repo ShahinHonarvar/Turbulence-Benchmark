@@ -1,0 +1,14 @@
+ ```
+def return_nth_smallest_ascii(string):
+# Convert the string to a list of characters
+char_list = list(string)
+# Find the indices of the characters between 25 and 77 (inclusive)
+start_idx = char_list.index('@') + 1
+end_idx = char_list.index('&') - 1
+# Filter out the characters that are not in the desired range
+filtered_char_list = [char for char in char_list[start_idx:end_idx+1] if ord(char) >= 25 and ord(char) <= 77]
+# Sort the filtered characters by their ASCII values
+sorted_char_list = sorted(filtered_char_list, key=ord)
+# Return the character with the 16th smallest ASCII value among the remaining characters
+return char_list[start_idx:end_idx+1][ord(sorted_char_list[15]) - 25]]
+```

@@ -1,0 +1,13 @@
+
+def sum_ints_div_by_either_nums(lst):
+    # initialize the sum to 0
+    total = 0
+    
+    # iterate over the list from index 8 to 9, both inclusive
+    for i in range(8, 10):
+        # check if the current integer is divisible by -3 or 6
+        if lst[i] % (-3) == 0 or lst[i] % 6 == 0:
+            # if it is, add it to the sum
+            total += lst[i]
+    
+    return total

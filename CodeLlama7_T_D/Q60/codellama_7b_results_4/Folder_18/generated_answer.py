@@ -1,0 +1,55 @@
+
+def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    primes = []
+
+    # Loop through the numbers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # Check if the number is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # Add the prime number to the list of prime numbers
+                primes.append(i)
+
+    # Sort the list of prime numbers in descending order
+    primes.sort(reverse=True)
+
+    # Return the list of prime numbers
+    return primes
+
+# Define a function to check if a number is a prime number
+def is_prime(n):
+    # Check if the number is greater than 1
+    if n > 1:
+        # Loop through the numbers from 2 to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if the number is divisible by any number between 2 and the square root of n
+            if n % i == 0:
+                # Return False if the number is divisible by any number between 2 and the square root of n
+                return False
+
+        # Return True if the number is not divisible by any number between 2 and the square root of n
+        return True
+
+    # Return False if the number is less than or equal to 1
+    return False
+
+# Define a function to check if a number is a left-and-right-truncatable prime number
+def is_left_right_truncatable_prime(n):
+    # Check if the number contains any 0 digits
+    if '0' in str(n):
+        # Return False if the number contains any 0 digits
+        return False
+
+    # Loop through the numbers from 1 to n
+    for i in range(1, n + 1):
+        # Check if the number is divisible by any number between 1 and n
+        if n % i == 0:
+            # Check if the number is a prime number
+            if is_prime(i):
+                # Return True if the number is a left-and-right-truncatable prime number
+                return True
+
+    # Return False if the number is not a left-and-right-truncatable prime number
+    return False

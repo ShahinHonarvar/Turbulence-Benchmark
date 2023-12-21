@@ -1,0 +1,6 @@
+ def return_vowels(my_string):
+    vowels = []
+    for char in my_string:
+        if ord(char) > 32 and ord(char) < 97 and char > "Q" and char <= "]:
+            vowels.append(char)
+    return vowels

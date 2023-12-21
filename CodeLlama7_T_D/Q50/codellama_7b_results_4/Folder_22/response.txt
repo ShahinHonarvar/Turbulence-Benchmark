@@ -1,0 +1,45 @@
+ ```
+def if_contains_anagrams(list_of_strings):
+# Check if the length of the list is at least 3
+if len(list_of_strings) < 3:
+return False
+
+# Create a dictionary to store the anagram pairs
+anagram_pairs = {}
+
+# Iterate over the list of strings
+for string in list_of_strings:
+
+# Check if the string is at least three characters long
+if len(string) < 3:
+continue
+
+
+# Convert the string to lowercase for case-insensitive comparison
+lowercase_string = string.lower()
+
+# Iterate over the list of strings again
+for other_string in list_of_strings:
+
+# Skip the current string since we don't want to compare it with itself
+if other_string == string:
+continue
+
+
+# Convert the other string to lowercase for case-insensitive comparison
+lowercase_other_string = other_string.lower()
+
+# Check if the two strings are anagrams of each other
+if sorted(lowercase_string) == sorted(lowercase_other_string):
+
+# Add the pair of anagrams to the dictionary
+anagram_pairs[string] = other_string
+
+
+# Check if there are at least 72 pairs of anagrams in the list
+if len(anagram_pairs) >= 72:
+return True
+
+
+return False
+```

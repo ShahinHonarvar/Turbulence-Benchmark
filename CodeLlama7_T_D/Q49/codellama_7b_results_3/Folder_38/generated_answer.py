@@ -1,0 +1,18 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to an integer
+    decimal_integer = int(binary_representation, 2)
+    # Calculate the number of digits in the binary representation
+    number_of_digits = len(binary_representation)
+    # Calculate the index of the 78th Fibonacci number that occurs in the binary representation
+    index_of_78th_fibonacci_number = (number_of_digits - 1) // 78
+    # Extract the last digit from the binary representation
+    last_digit = int(binary_representation[-1])
+
+    # Check if the last digit is divisible by the 78th Fibonacci number that occurs in the binary representation
+    if last_digit % (567 + 397 * index_of_78th_fibonacci_number) == 0:
+        return True
+
+    else:
+
+        return False

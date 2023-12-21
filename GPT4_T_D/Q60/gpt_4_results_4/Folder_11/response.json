@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(t):\n    from sympy import isprime\n    def check_prime(num):\n        return all(isprime(int(num[i:])) and isprime(int(num[:len(num)-i])) for i in range(len(num)))\n\n    x = t[86]\n    prime_numbers = ['2', '3', '5', '7']\n    for num in range(23, x + 1, 2):\n        if '0' not in str(num) and check_prime(str(num)):\n            prime_numbers.append(str(num))\n    return list(map(int, prime_numbers))\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691101807,
+  "id": "chatcmpl-7jb7XIINKt1pdpa2vUDrOQw9vA5Cg",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 127,
+    "prompt_tokens": 187,
+    "total_tokens": 314
+  }
+}

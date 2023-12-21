@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(s):\n    unique_char_list = []\n    final_string_list = list(s)\n    if len(s) > 200:\n        for i in s[31:200]:\n            if s[31:200].count(i) > 1 and i not in unique_char_list:\n                unique_char_list.append(i)\n                final_string_list = list(filter(lambda x: x != i, final_string_list))\n    return \"\".join(final_string_list)\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690125905,
+  "id": "chatcmpl-7fVFBAvrmGW4OU1339LYXuOSZwTve",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 99,
+    "prompt_tokens": 122,
+    "total_tokens": 221
+  }
+}

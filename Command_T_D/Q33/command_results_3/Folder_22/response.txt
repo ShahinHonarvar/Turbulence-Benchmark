@@ -1,0 +1,13 @@
+[cohere.Generation {
+	id: 9c2b0a02-43ec-4782-a14c-22c1ba454342
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'return_vowels' that takes one argument, a string. From the given string the function should return the list of all vowel English letters between index 56 (inclusive) and index 90 (exclusive) that are greater than character K and smaller than or equal to character z. If no such characters exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import re
+
+def return_vowels(text):
+    return [m.group() for m in re.finditer(r'[aeiou]', text[56:90]) if m.group() > 'k' and m.group() <= 'z']
+```
+	likelihood: None
+	token_likelihoods: None
+}]

@@ -1,0 +1,5 @@
+
+def return_n_greatest_chars(s):
+    n = 61
+    chars = list(set(s))
+    return sorted(chars, key=lambda x: ord(x), reverse=True)[:n]

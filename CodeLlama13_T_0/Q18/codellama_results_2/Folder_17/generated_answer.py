@@ -1,0 +1,3 @@
+
+def sum_ints_div_by_either_nums(my_list):
+    return sum([x for x in my_list[81:90] if x % 56 == 0 or x % 68 == 0])

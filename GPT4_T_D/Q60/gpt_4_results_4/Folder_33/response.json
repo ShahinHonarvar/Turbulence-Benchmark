@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef all_left_right_truncatable_prime(t):\n    x = t[945]\n    primes = [2]\n    truncs = []\n\n    # Create a list of primes upto x\n    for num in range(3, x+1, 2):\n        if all(num%i != 0 for i in range(2, int(num**0.5) + 1)):\n            primes.append(num)\n\n    # Check for left and right truncatable primes\n    for prime in primes:\n        str_prime = str(prime)\n        if \"0\" not in str_prime:\n            truncatable_prime = True\n            for i in range(1, len(str_prime)):\n                left = int(str_prime[i:]) in primes\n                right = int(str_prime[:-i]) in primes\n                if not left or not right:\n                    truncatable_prime = False\n                    break\n            if truncatable_prime:\n                truncs.append(prime)\n    \n    # Returning sorted truncatable primes in descending order\n    return sorted(truncs, reverse=True)\n```\nThe function first finds the prime numbers up to the specified integer. Then it checks each prime number to see if it's a left-and-right-truncatable prime by removing the leftmost and rightmost digits one by one and checking if the remaining number is prime. If it is, it's added to the list of left-and-right-truncatable primes. If no such primes exist, it returns an empty list.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691102805,
+  "id": "chatcmpl-7jbNdZkZWHqFrwrt6zgJFDxWQk0fy",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 303,
+    "prompt_tokens": 187,
+    "total_tokens": 490
+  }
+}

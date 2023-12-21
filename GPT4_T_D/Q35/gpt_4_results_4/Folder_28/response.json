@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef remove_repeat_chars(s):\n    char_dict= {}\n    for i in range(87, 99):\n        if i < len(s):\n            if s[i] in char_dict:\n                char_dict[s[i]] += 1\n            else:\n                char_dict[s[i]] = 1\n    unique_chars = [key for key, value in char_dict.items() if value==1]\n    result = [char for char in s if char in unique_chars or (s.index(char) <=86 or s.index(char)>=99 )]\n    return ''.join(result)\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691045895,
+  "id": "chatcmpl-7jMZj8LpAFKxiEMWxPrBpVS5Q5Dwt",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 120,
+    "prompt_tokens": 122,
+    "total_tokens": 242
+  }
+}

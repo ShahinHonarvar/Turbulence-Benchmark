@@ -1,0 +1,14 @@
+
+def palindrome_of_length_n(string):
+    # Split the string into a list of characters
+    char_list = list(string)
+    # Create an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each substring of length n in the string
+    for i in range(len(char_list) - 4):
+        # Check if the substring is a palindrome
+        if char_list[i:i+5] == char_list[i:i+5][::-1]:
+            # Add the palindrome to the set
+            palindromes.add(char_list[i:i+5])
+    # Return the set of palindromes
+    return palindromes

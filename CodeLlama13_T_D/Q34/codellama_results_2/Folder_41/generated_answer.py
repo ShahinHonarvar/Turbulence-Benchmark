@@ -1,0 +1,3 @@
+
+def find_original_set(s1, s2, s3, ..., s20):
+    return set([i for j in range(20) for i in locals()[f's{j+1}']])

@@ -1,0 +1,3 @@
+
+def all_ints_div_by_num(my_list):
+    return [i for i in my_list[62:63] if i % 99 == 0] or []

@@ -1,0 +1,12 @@
+
+def if_decimal_is_divisible(binary_repr):
+    # Convert the binary representation string to an integer
+    decimal = int(binary_repr, 2)
+    
+    # Compute the Fibonacci sequence up to 47
+    fib = [0] * (48 - 1) + [1] * (49 - 1)
+    for i in range(2, 49):
+        fib[i] = fib[i - 1] + fib[i - 2]
+    
+    # Check if the decimal integer is divisible by the 47th number in the Fibonacci sequence
+    return decimal % fib[46] == 0

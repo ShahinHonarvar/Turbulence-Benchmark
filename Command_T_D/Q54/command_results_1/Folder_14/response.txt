@@ -1,0 +1,58 @@
+[cohere.Generation {
+	id: ff1ab9de-c197-47a0-9c37-93b9d6813dfb
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_right_truncatable_prime' that takes an argument which is a tuple of positive integers. Let x be the integer at index 78. The function should return the sorted list of all right-truncatable prime numbers less than x. The returned list should be sorted in descending order. If there is no such right-truncatable prime number, the function should return an empty list. A right-truncatable prime number is a prime number that remains prime when the last rightmost digit is successively removed.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+def all_right_truncatable_prime(x):
+    res = []
+    for num in range(2, x // 2):
+        while num * num <= x:
+            if x % num == 0:
+                break
+            elif num == 1:
+                res.append(num)
+            elif num == 2:
+                res += [num, x // num]
+            elif num == 3:
+                res += [num, x // num, x / num]
+            elif num == 5:
+                res += [num, x // num, x / num, x / 2]
+            elif num == 7:
+                res += [num, x // num, x / num, x / 2, x / 3]
+            elif num == 11:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5]
+            elif num == 13:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7]
+            elif num == 17:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11]
+            elif num == 19:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13]
+            elif num == 23:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17]
+            elif num == 29:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23]
+            elif num == 31:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29]
+            elif num == 37:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31]
+            elif num == 41:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37]
+            elif num == 43:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41]
+            elif num == 47:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43]
+            elif num == 53:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43, x / 47]
+            elif num == 59:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43, x / 47, x / 53]
+            elif num == 61:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43, x / 47, x / 53, x / 59]
+            elif num == 67:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43, x / 47, x / 53, x / 59, x / 61]
+            elif num == 71:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x / 31, x / 37, x / 41, x / 43, x / 47, x / 53, x / 59, x / 61, x / 67]
+            elif num == 73:
+                res += [num, x // num, x / num, x / 2, x / 3, x / 5, x / 7, x / 11, x / 13, x / 17, x / 23, x / 29, x
+	likelihood: None
+	token_likelihoods: None
+}]

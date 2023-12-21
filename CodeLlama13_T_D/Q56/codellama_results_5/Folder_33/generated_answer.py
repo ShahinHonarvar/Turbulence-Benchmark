@@ -1,0 +1,8 @@
+
+def all_substring_of_size_105(string):
+    substrings = []
+    for i in range(len(string) - 104):
+        substring = string[i:i+105]
+        if len(set(substring)) == 105 and all(substring.count(c) == 1 for c in substring):
+            substrings.append(substring)
+    return substrings

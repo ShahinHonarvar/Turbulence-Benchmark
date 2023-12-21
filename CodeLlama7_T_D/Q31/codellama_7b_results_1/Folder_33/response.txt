@@ -1,0 +1,36 @@
+ ```
+def if_perfect_num(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Check if the element at index 321 exists in the list
+    if my_list[321] != None:
+        # Check if the element at index 321 is a perfect number
+        if is_perfect_num(my_list[321])):
+            return True
+
+    return False
+
+def is_perfect_num(n):
+    # Check if n is greater than 0
+    if n > 0:
+        sum = 0
+
+        # Calculate the sum of the proper divisors of n (excluding n itself)
+        for i in range(1, int(n ** 0.5) + 1):
+            if n % i == 0:
+                sum += i
+
+                if i * n != n:
+                    sum += n // i
+
+        # Check if the sum of the proper divisors of n (excluding n itself) is equal to n
+        if sum == n:
+            return True
+
+    return False
+```
+This code defines two functions: `if_perfect_num` and `is_perfect_num`. The former function takes a list of positive integers as an argument and returns `True` if the element at index 321 in the list is a perfect number, otherwise it returns `False`. The latter function takes a single positive integer `n` as an argument and returns `True` if `n` is a perfect number, otherwise it returns `False`.
+The code uses a for loop to iterate over the elements of the list from index 1 to index `int(n ** 0.5) + 1`, where `n ** 0.5` is the square root of `n`. For each element `i` in the list, it calculates the sum of the proper divisors of `i` (excluding `i` itself), and checks if the sum is equal to `i`. If the sum is not equal to `i`, then it calculates the sum of the proper divisors of `n / i` (excluding `n / i` itself), and adds that sum to the previous sum. It repeats this process until it reaches the end of the list.
+Once it has iterated over all the elements in the list, the function checks if the sum of the proper divisors of `n` (excluding `n` itself) is equal to `n`. If so, then it returns `True`, indicating that `n` is a perfect number. Otherwise, it returns `False`.

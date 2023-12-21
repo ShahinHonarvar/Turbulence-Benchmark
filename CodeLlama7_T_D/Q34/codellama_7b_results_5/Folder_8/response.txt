@@ -1,0 +1,22 @@
+ ```
+def find_original_set(sets):
+\# check if all sets are distinct and have the same size
+if len(set(map(len, sets))) != 1:
+raise ValueError("All sets must be of the same size")
+
+\# sort the sets in ascending order by their sizes
+sorted_sets = sorted(sets, key=len)
+
+\# initialize the smallest set as the first element of the sorted sets
+smallest_set = sorted_sets[0]
+
+\# iterate over the remaining elements of the sorted sets
+for i in range(1, len(sorted_sets)):
+
+\# if the current element is not a subset of the smallest set, then update the smallest set
+if not sorted_sets[i].issubset(smallest_set):
+smallest_set = sorted_sets[i]
+
+\# return the smallest set
+return smallest_set
+```

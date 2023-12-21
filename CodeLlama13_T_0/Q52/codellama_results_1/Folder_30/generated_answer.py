@@ -1,0 +1,3 @@
+
+def palindrome_of_length_n(string):
+    return {palindrome for i in range(len(string) - 94 + 1) if string[i:i+94].isalpha() and string[i:i+94] == string[i:i+94][::-1]}

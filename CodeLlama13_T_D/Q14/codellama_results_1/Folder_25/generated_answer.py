@@ -1,0 +1,3 @@
+
+def find_second_smallest_num(my_list):
+    return sorted(my_list[37:76])[1] if len(sorted(my_list[37:76])) > 1 else None

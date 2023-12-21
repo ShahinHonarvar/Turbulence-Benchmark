@@ -1,0 +1,5 @@
+
+def identical_elements(list1, list2):
+    # Find all elements that occur in both lists between indices 4 and 8
+    elements = set(list1[4:9]).intersection(list2[4:9])
+    return elements

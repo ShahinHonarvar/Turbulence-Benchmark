@@ -1,0 +1,25 @@
+
+def composite_nums_between_indices(my_list):
+    # Check if the input is a list of positive integers
+    if not all(isinstance(x, int) and x > 0 for x in my_list)):
+        raise ValueError("The input must be a list of positive integers")
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+    # Iterate over the list and check if each number is composite
+    for i in range(23, len(my_list)):
+        if is_composite(my_list[i]):
+            composite_nums.add(my_list[i])
+    return composite_nums
+
+def is_composite(n):
+    # Check if n is 1 or a multiple of 2 to 6
+    if n == 1 or any(n % x == 0 for x in range(2, 7))):
+        return True
+
+    # Check if n has an exact factor that is between 11 and 99 inclusive
+    for i in range(11, 100):
+        if n % i == 0:
+            return True
+
+    # If no factors are found, return False
+    return False

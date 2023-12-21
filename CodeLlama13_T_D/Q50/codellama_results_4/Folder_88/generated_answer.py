@@ -1,0 +1,8 @@
+
+def if_contains_anagrams(strings):
+    anagrams = []
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            if sorted(strings[i].lower()) == sorted(strings[j].lower()):
+                anagrams.append((i, j))
+    return len(anagrams) >= 34 and all(len(x) >= 3 for x in anagrams)

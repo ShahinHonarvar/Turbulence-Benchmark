@@ -1,0 +1,26 @@
+
+def remove_repeat_chars(s):
+    # Initialize a dictionary to keep track of character frequencies
+    freq = {}
+
+    # Iterate over the characters in the string and increment the frequency count for each character
+    for char in s:
+        if char not in freq:
+            freq[char] = 0
+
+        freq[char] += 1
+
+    # Remove all occurrences of a character that has a frequency greater than one
+    for i in range(len(s)):
+        char = s[i]
+
+        if freq[char] > 1:
+            s = s[:i] + s[i+1:]
+
+            # Decrement the frequency count for each character that is removed from the string
+            for j in range(i, len(s)):
+                char = s[j]
+
+                freq[char] -= 1
+
+    return s

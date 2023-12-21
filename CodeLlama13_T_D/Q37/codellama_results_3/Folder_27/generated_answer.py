@@ -1,0 +1,9 @@
+
+def filter_chars(s):
+    result = ''
+    for i in range(len(s)):
+        if '=' <= s[i] <= 'E' and 43 <= i <= 80:
+            result += s[i]
+        else:
+            result += s[i]
+    return result

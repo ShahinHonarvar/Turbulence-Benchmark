@@ -1,0 +1,79 @@
+
+def all_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all the numbers less than x
+    for i in range(2, x + 1):
+        # Check if i is a prime number
+        if is_prime(i):
+            # Check if i remains prime when the last rightmost digit is successively removed
+            if is_right_truncatable_prime(i):
+                # Add i to the list of prime numbers
+                prime_numbers.append(i)
+
+    # Sort the list of prime numbers in descending order
+    prime_numbers.sort(reverse=True)
+
+    # Return the sorted list of prime numbers
+    return prime_numbers
+
+# Check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through all the numbers less than or equal to the square root of n
+        for i in range(2, int(n ** 0.5) + 1):
+            # Check if i divides n
+            if n % i == 0:
+                # Return False since n is not a prime number
+                return False
+
+    # Return True since n is a prime number
+    return True
+
+# Check if a right-truncatable prime number remains prime when the last rightmost digit is successively removed
+def is_right_truncatable_prime(n):
+    # Initialize an empty list to store the digits of n in reverse order
+    digits = []
+
+    # Loop through all the digits of n in reverse order
+    for digit in str(n)[::-1]:
+        # Add each digit to the list of digits
+        digits.append(digit)
+
+    # Check if the last rightmost digit is equal to 0
+    if digits[0] == '0':
+        # Return False since the last rightmost digit is equal to 0
+        return False
+
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through all the prime numbers less than or equal to n
+    for i in range(2, int(n ** 0.5) + 1):
+        # Check if i divides n without leaving a remainder
+        if n % i == 0:
+            # Add i to the list of prime numbers
+            prime_numbers.append(i)
+
+    # Check if the last rightmost digit is equal to the number of prime numbers
+    if len(digits) - 1 != len(prime_numbers):
+        # Return False since the last rightmost digit is not equal to the number of prime numbers
+        return False
+
+    # Initialize an empty list to store the digits of n in reverse order without the last rightmost digit
+    new_digits = []
+
+    # Loop through all the digits of n in reverse order without the last rightmost digit
+    for digit in str(n)[::-1][:-1]:
+        # Add each digit to the list of digits
+        new_digits.append(digit)
+
+    # Check if the number obtained by concatenating the digits of n in reverse order without the last rightmost digit is equal to the product of the prime numbers
+    if int(''.join(map(str, new_digits)))) != (int(''.join(map(str, prime_numbers)))):
+        # Return False since the number obtained by concatenating the digits of n in reverse order without the last rightmost digit is not equal to the product of the prime numbers
+        return False
+
+    # Return True since the last rightmost digit is equal to the number of prime numbers and the number obtained by concatenating the digits of n in reverse order without the last rightmost digit is equal to the product of the prime numbers
+    return True

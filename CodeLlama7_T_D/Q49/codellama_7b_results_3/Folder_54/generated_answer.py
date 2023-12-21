@@ -1,0 +1,8 @@
+
+def if_decimal_is_divisible(binary_representation):
+    # Convert the binary representation to a decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Get the Fibonacci sequence up to the 34th term
+    fibonacci_sequence = [0, 1] + [fibonacci_sequence[i-1] + fibonacci_sequence[i-2] for i in range(2, 35)]
+    # Check if the decimal integer is divisible by the 34th term of the Fibonacci sequence
+    return decimal_integer % fibonacci_sequence[33] == 0

@@ -1,0 +1,13 @@
+ ```
+def all_substring_of_size_n(string):
+# Initialize an empty list to store the substrings
+substrings = []
+# Loop through each character in the string
+for i in range(len(string) - 99 + 1):
+# Extract the substring of length 99 starting at index i
+substring = string[i:i+99]
+# Check if the substring contains any duplicate characters
+if len(set(substring)) == 99:
+substrings.append(substring)
+return substrings
+```

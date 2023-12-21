@@ -1,0 +1,10 @@
+```python
+def find_subset_of_length_n(set_elements, n):
+    return len([subset for subset in subsets(set_elements) if len(subset) == n])
+
+def subsets(iterable):
+    subsets = []
+    for element in iterable:
+        subsets.extend([subset + [element] for subset in subsets])
+    return subsets
+```

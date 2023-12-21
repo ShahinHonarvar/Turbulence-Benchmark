@@ -1,0 +1,16 @@
+ ```
+def return_nth_smallest_ascii(string):
+    # Find the indices of the characters in the string
+    start_index = string.find("[")
+    end_index = string.rfind("]")
+    # Extract the substring containing the characters between indices 63 and 76
+    substring = string[start_index + 1:end_index - 1]
+    # Convert the substring to a list of characters
+    char_list = list(substring)
+    # Find the ASCII value of each character in the list
+    ascii_values = [ord(c) for c in char_list]
+    # Sort the ASCII values in ascending order
+    sorted_ascii_values = sorted(ascii_values)
+    # Return the 14th smallest ASCII value from the sorted list
+    return sorted_ascii_values[13]
+```

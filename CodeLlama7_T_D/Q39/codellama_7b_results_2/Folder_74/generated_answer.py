@@ -1,0 +1,6 @@
+
+def return_n_greatest_chars(input_str, n=5):
+    # sort the input string in descending order based on ASCII values
+    sorted_list = sorted(input_str, key=ord, reverse=True)
+    # return the top 'n' characters from the sorted list
+    return sorted_list[:n]

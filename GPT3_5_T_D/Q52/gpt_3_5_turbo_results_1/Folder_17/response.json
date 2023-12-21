@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport re\n\ndef palindrome_of_length_n(string):\n    palindromes = set()\n    string = string.lower()\n    for i in range(len(string)-288):\n        substring = string[i:i+289]\n        if re.match('^[a-zA-Z]+$', substring): # check if substring consists only of English letters\n            if substring == substring[::-1]: # check if substring is a palindrome\n                palindromes.add(substring)\n    return palindromes\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689779521,
+  "id": "chatcmpl-7e38Lrk0VIUZTaGza71paHZI4tR1Y",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 147,
+    "total_tokens": 249
+  }
+}

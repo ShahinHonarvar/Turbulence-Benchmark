@@ -1,0 +1,11 @@
+
+def find_second_smallest_num(my_list):
+    if len(my_list) < 2:
+        return None
+    
+    my_list = sorted(my_list)[1:-1] # remove the smallest and largest elements
+    for i in range(29,79+1):
+        if my_list[i] == 'None':
+            return None
+        else:
+            return my_list[i]

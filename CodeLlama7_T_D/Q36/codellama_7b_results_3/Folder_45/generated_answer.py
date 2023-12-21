@@ -1,0 +1,13 @@
+
+def filter_chars(string):
+    # Create a list of all characters in the string
+    char_list = list(string)
+
+    # Iterate over each character in the list
+    for i, char in enumerate(char_list):
+        # Check if the character is between indices 81 and 86 (both exclusive)
+        if 80 < i < 87:
+            # If the character is greater than '!' and smaller than 's', remove all occurrences of that character within the string
+            if char > '!' and char < 's':
+                char_list.remove(char)
+    return "".join(char_list)

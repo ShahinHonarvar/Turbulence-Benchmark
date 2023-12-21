@@ -1,0 +1,4 @@
+
+def return_n_smallest_chars(s):
+    lst = sorted([c for c in s if c.isalpha()])
+    return lst[:37]

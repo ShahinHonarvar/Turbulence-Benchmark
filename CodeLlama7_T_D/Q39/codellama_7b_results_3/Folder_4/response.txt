@@ -1,0 +1,11 @@
+ Here is a possible implementation of the `return_n_greatest_chars` function:
+```python
+def return_n_greatest_chars(string, n):
+    # Convert string to list of characters
+    char_list = list(string)
+    # Sort list in descending order based on ASCII values
+    char_list.sort(key=ord, reverse=True)
+    # Return the first n elements of the sorted list
+    return char_list[:n]
+```
+This function takes two arguments: `string`, which is a string of distinct characters, and `n`, which is an integer representing the number of characters to be returned. The function first converts the input string into a list of individual characters using the `list` function. Then it sorts the list in descending order based on the ASCII values of each character using the `sort` function with the `key` argument set to `ord`. Finally, it returns the first n elements of the sorted list using slicing notation.

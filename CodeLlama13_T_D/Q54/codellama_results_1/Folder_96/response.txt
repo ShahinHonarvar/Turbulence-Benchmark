@@ -1,0 +1,11 @@
+```python
+def all_right_truncatable_prime(x):
+    prime_numbers = []
+    for i in range(2, x+1):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted([p for p in prime_numbers if all([is_prime(p//10**n) for n in range(len(str(p))-1, -1, -1)])])
+```
+This function first generates a list of prime numbers up to `x`, and then checks whether each number is right-truncatable by iterating over the digits from right to left and checking if it's still a prime. If all those checks pass, the number is added to the result list. Finally, the list is sorted and returned.
+
+Note that this solution assumes that you have already implemented the `is_prime()` function for checking whether an integer is a prime number or not.

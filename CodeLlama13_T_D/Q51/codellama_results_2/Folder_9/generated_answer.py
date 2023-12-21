@@ -1,0 +1,9 @@
+
+def if_contains_anagrams(strings):
+    anagram_pairs = set()
+    for string in strings:
+        lowercase_string = string.lower()
+        sorted_string = ''.join(sorted(lowercase_string))
+        if len(sorted_string) >= 3 and sorted_string not in anagram_pairs:
+            anagram_pairs.add(sorted_string)
+    return len(anagram_pairs) <= 475

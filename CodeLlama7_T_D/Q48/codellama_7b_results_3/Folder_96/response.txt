@@ -1,0 +1,17 @@
+ ```
+def return_binary_or_hexa(tuple):
+# Get the values of a and b from the tuple
+a = tuple[50]
+b = tuple[200]
+# Initialize an empty string for the result
+result = ""
+# Calculate the sum of all integers between a + 1 and b - 1 that are not present in the tuple between indices 50 and 200
+for i in range(a + 1, b):
+if i not in tuple[50:200]:
+result += str(i)
+# Check if the sum is an odd number
+if int(result) % 2 == 1:
+return "binary: {}".format(result)
+else:
+return "hexadecimal: {}".format(result.lower())
+```

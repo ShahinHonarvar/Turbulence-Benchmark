@@ -1,0 +1,9 @@
+
+def return_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    char_range = range(56, 91)
+    result = []
+    for i in char_range:
+        if string[i] in vowels and string[i] <= 'z' and string[i] >= 'k':
+            result.append(string[i])
+    return result

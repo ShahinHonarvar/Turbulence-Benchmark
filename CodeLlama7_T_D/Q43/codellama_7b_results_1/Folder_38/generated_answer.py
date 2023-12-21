@@ -1,0 +1,20 @@
+
+def find_primes_between_indices(my_list):
+    # Find all prime numbers between indices 33 and 47
+    prime_numbers = []
+    for i in range(33, 48):
+        if is_prime(my_list[i]):
+            prime_numbers.append(my_list[i])
+    return sorted(prime_numbers, reverse=True)
+
+def is_prime(n):
+
+    # Check if 'n' is divisible only by 1 and itself
+
+    for i in range(2, n):
+
+        if n % i == 0:
+
+            return False
+
+    return True

@@ -1,0 +1,13 @@
+ def filter_chars(s):
+    start = 44
+    end = 48
+    filtered = ''
+
+    for i in range(len(s)):
+        if i >= start and i < end:
+            if s[i] > '+' and s[i] < 'l':
+                continue
+
+        filtered += s[i]
+
+    return filtered

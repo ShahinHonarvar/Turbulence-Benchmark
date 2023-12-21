@@ -1,0 +1,8 @@
+
+def gcf_three_nums(mylist):
+    return __gcf(mylist[78], mylist[19], mylist[13])
+
+def __gcf(a, b, c):
+    if a == 0:
+        return b
+    return __gcf(b % a, a, c)

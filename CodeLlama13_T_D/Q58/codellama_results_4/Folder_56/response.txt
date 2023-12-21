@@ -1,0 +1,25 @@
+```
+def submatrix_with_n_numbers(mat):
+    # Initialize a counter for the number of submatrices with 68 integers each
+    count = 0
+    
+    # Loop through each row of the matrix
+    for i in range(mat.shape[0]):
+        # Loop through each column of the matrix
+        for j in range(mat.shape[1]):
+            # Initialize a temporary list to store the elements of the submatrix
+            temp = []
+            
+            # Loop through the rows below the current row and columns to the right of the current column
+            for k in range(i, mat.shape[0]):
+                for l in range(j, mat.shape[1]):
+                    # Add the element at the current position (k, l) to the temporary list
+                    temp.append(mat[k, l])
+            
+            # Check if the temporary list contains 68 integers
+            if len(temp) == 68:
+                count += 1
+    
+    # Return the number of submatrices with 68 integers each
+    return count
+```

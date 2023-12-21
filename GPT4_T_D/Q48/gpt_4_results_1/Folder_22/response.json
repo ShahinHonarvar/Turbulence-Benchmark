@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef return_binary_or_hexa(input_tuple):\n    a = input_tuple[40]\n    b = input_tuple[200]\n    num_set = set(input_tuple[41:200])\n    sum_not_present = sum(set(range(a+1, b)) - num_set)\n    if sum_not_present == 0:\n        return \"\"\n\n    if sum_not_present % 2 == 1:\n        return format(sum_not_present, 'b')\n    else:\n        return format(sum_not_present, 'X')\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690072594,
+  "id": "chatcmpl-7fHNKNNteqaUIZN0DtkVmSeCqGPR7",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 263,
+    "total_tokens": 369
+  }
+}

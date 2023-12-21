@@ -1,0 +1,11 @@
+
+def insert_after_index(my_list):
+    # Find the index of the first occurrence of 99
+    idx = my_list.index(99) if 99 in my_list else -1
+    # If the index is found, create a new list with 99 inserted at the next index
+    if idx != -1:
+        new_list = my_list[:idx+1] + [99] + my_list[idx+1:]
+        return new_list
+    # If the index is not found, return the original list
+    else:
+        return my_list

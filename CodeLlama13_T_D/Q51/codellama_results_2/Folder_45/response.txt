@@ -1,0 +1,7 @@
+```
+def if_contains_anagrams(my_list):
+    # Create a set of all possible anagrams of length 3 or more using the English letters
+    anagram_set = { ''.join(sorted(s)) for s in my_list if len(s) >= 3 and set(s) <= set('abcdefghijklmnopqrstuvwxyz') }
+    # Check if there are at most 464 pairs of anagrams in the given list
+    return len({a for a in anagram_set if a[::-1] in anagram_set}) <= 464
+```

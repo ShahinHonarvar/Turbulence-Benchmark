@@ -1,0 +1,9 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the same characters as s, but without any duplicates
+    new_string = ""
+    for i in range(len(s)):
+        # If the current character is not already in the new string, add it
+        if s[i] not in new_string:
+            new_string += s[i]
+    return new_string

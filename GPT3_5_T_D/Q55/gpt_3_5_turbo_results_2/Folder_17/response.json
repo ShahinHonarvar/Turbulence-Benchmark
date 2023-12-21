@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\n\ndef lists_with_product_equal_n(nums):\n    def product(lst):\n        prod = 1\n        for num in lst:\n            prod *= num\n        return prod\n\n    result = []\n    n = len(nums)\n    for r in range(n):\n        for subset in combinations(nums, r + 1):\n            if product(subset) == 18:\n                result.append(list(subset))\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689821770,
+  "id": "chatcmpl-7eE7mph4C9IR5yKDw8aJmDDyeMOIa",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 93,
+    "prompt_tokens": 193,
+    "total_tokens": 286
+  }
+}

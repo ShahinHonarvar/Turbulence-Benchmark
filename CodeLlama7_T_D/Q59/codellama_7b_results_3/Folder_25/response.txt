@@ -1,0 +1,46 @@
+ ```
+def all_left_truncatable_prime(x):
+    # Initialize an empty list to store the left-truncatable prime numbers
+    ltprimes = []
+    # Iterate from 1 to x - 1 (exclusive of x)
+    for i in range(1, x):
+        # If i is a prime number and it is left-truncatable, add it to the list of left-truncatable prime numbers
+        if is_prime(i) and is_left_truncatable(i):
+            ltprimes.append(i)
+    # Sort the list of left-truncatable prime numbers in ascending order
+    ltprimes.sort()
+    return ltprimes
+
+# Check if a number is a prime number
+def is_prime(n):
+    # If n is less than 2, it is not a prime number
+    if n < 2:
+        return False
+
+    # If any number between 2 and the square root of n divides n without leaving a remainder, it is not a prime number
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    # If no numbers between 2 and the square root of n divide n without leaving a remainder, it is a prime number
+    return True
+
+# Check if a number is left-truncatable
+def is_left_truncatable(n):
+    # If n is less than 10, it is not left-truncatable
+    if n < 10:
+        return False
+
+    # If the leading digit of n is 1, it is not left-truncatable (unless the remaining digits are all 0)
+    if str(n)[0] == '1':
+        if str(n)[1:] == '0' * len(str(n))[1:]:
+            return True
+
+        else:
+
+            return False
+
+
+    # If the leading digit of n is not 1, it is left-truncatable
+    return True
+```

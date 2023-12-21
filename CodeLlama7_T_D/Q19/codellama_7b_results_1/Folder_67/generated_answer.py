@@ -1,0 +1,15 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Initialize an empty list to store the results
+    result = []
+
+    # Iterate through the list of integers, starting from index 48 and ending at index 92 (exclusive)
+    for i in range(48, 92):
+        # Check if the current integer is not divisible by 90
+        if my_list[i] % 90 != 0:
+            # If it is not divisible, add it to the results list
+            result.append(my_list[i])
+
+    # Return the results list
+
+    return result

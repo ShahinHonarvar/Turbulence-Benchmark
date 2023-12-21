@@ -1,0 +1,20 @@
+ ```
+def if_decimal_is_divisible(binary_string):
+# Convert the binary string to an integer
+decimal_int = int(binary_string, 2)
+# Initialize variables for the Fibonacci sequence
+fib0 = 0
+fib1 = 1
+fib2 = fib0 + fib1
+
+# Check if the decimal integer is divisible by the 56th number in the Fibonacci sequence
+while fib2 < decimal_int:
+fib0, fib1 = fib1, fib2
+fib2 = fib0 + fib1
+if fib2 == decimal_int:
+return True
+
+# If the decimal integer is not divisible by the 56th number in the Fibonacci sequence, return False
+return False
+```
+Explanation: The function `if_decimal_is_divisible` takes a binary representation string of a non-negative decimal integer as its argument. It converts the binary string to an integer using the built-in `int()` function and then checks if the corresponding decimal integer is divisible by the 56th number in the Fibonacci sequence. The function returns `True` if the decimal integer is divisible, and `False` otherwise.

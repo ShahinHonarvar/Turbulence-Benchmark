@@ -1,0 +1,8 @@
+
+def find_original_set(sets):
+    # Find the smallest set in the input list
+    smallest_set = sets[0]
+    for i in range(1, len(sets)):
+        if len(sets[i]) < len(smallest_set):
+            smallest_set = sets[i]
+    return smallest_set

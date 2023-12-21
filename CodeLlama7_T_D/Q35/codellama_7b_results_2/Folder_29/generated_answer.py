@@ -1,0 +1,25 @@
+
+def remove_repeat_chars(s):
+    # Create a new string to store the modified characters
+    new_str = ""
+
+    # Iterate over each character in the given string
+    for char in s:
+
+        # If the current character is not already present in the new string
+        if char not in new_str:
+
+            # Add the current character to the new string
+            new_str += char
+
+        # If the current character is already present in the new string
+        else:
+
+            # Get the index of the first occurrence of the current character in the new string
+            idx = new_str.index(char)
+
+            # Remove all occurrences of the current character from the new string
+            new_str = new_str[:idx] + new_str[idx+1:]
+
+    # Return the modified string
+    return new_str

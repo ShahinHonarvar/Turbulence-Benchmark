@@ -1,0 +1,10 @@
+```python
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for s in strings:
+        key = tuple(sorted(s.lower()))
+        if len(key) >= 3 and key not in anagrams:
+            anagrams.add(key)
+    return len(anagrams) >= 57
+```
+This solution uses a set to keep track of the anagrams found so far, and it checks that each string is at least three characters long and has not been seen before by using a tuple of sorted lowercase letters as the key. The function then returns `True` if there are at least 57 unique anagrams in the list, and `False` otherwise.

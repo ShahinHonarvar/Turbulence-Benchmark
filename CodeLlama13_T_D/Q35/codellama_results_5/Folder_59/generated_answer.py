@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(string):
+    result = ''
+    for i in range(len(string)):
+        if string[i] not in result[:10]:
+            result += string[i]
+    return result

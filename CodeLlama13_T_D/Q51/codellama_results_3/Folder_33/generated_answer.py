@@ -1,0 +1,7 @@
+
+def if_contains_anagrams(list_of_strings):
+    anagrams = set()
+    for s in list_of_strings:
+        if len(s) >= 3 and ''.join(sorted(s.lower())) not in anagrams:
+            anagrams.add(''.join(sorted(s.lower())))
+    return len(anagrams) <= 85

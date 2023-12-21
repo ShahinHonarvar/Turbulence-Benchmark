@@ -1,0 +1,15 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Count the number of anagrams in the list
+    num_anagrams = 0
+    for i in range(len(my_list) - 1):
+        for j in range(i + 1, len(my_list)):
+            if sorted(my_list[i]) == sorted(my_list[j]):
+                num_anagrams += 1
+    # Return True if there are at most 34 pairs of anagrams in the list
+    return num_anagrams <= 34
+```
+Explanation:
+The function `if_contains_anagrams` takes a single argument, a list of strings. It returns true if there are at most 34 pairs of anagrams in the given list, and false otherwise.
+The function first counts the number of anagrams in the list by comparing each pair of adjacent strings for equality. If two strings are equal, it means they are anagrams of each other. The `sorted` function is used to sort the letters in each string, so that two strings are considered equal if they have the same letters in the same order.
+Once the number of anagrams has been counted, the function checks whether the number of anagrams is less than or equal to 34. If it is, the function returns true. Otherwise, the function returns false.

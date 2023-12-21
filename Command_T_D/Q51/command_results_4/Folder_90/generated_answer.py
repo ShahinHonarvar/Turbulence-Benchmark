@@ -1,0 +1,8 @@
+import collections
+def if_contains_anagrams(s):
+    c=0
+    for i in range(len(s)):
+        for j in range(i+1,len(s)):
+            if s[i].lower()==s[j].lower():
+                c+=1
+    return c<=147

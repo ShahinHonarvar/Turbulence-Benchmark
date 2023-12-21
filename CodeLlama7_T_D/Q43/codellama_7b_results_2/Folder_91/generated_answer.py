@@ -1,0 +1,27 @@
+
+def find_primes_between_indices(my_list):
+    # Create an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through the list of integers from index 0 to index 1, both inclusive
+    for i in range(len(my_list)):
+        # Check if the current element is a prime number
+        if is_prime(my_list[i]):
+            # If it is a prime number, add it to the list of prime numbers
+            prime_numbers.append(my_list[i])
+
+    # Return the sorted list of prime numbers in ascending order
+    return sorted(prime_numbers)
+
+# Function to check if a number is a prime number
+def is_prime(n):
+    # Check if n is greater than 1
+    if n > 1:
+        # Loop through the numbers from 2 to n-1
+        for i in range(2, n):
+            # If any of the numbers divisible by i, then it is not a prime number
+            if n % i == 0:
+                return False
+
+    # If none of the numbers from 2 to n-1 divisible by it, then it is a prime number
+    return True

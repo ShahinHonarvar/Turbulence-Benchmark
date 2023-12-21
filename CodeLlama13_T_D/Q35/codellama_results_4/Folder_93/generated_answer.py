@@ -1,0 +1,7 @@
+
+def remove_repeat_chars(s):
+    for i in range(57, 86):
+        if s[i] in s[57:86]:
+            while s[i] in s:
+                s = s.replace(s[i], '')
+    return s

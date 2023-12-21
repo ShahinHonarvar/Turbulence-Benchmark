@@ -1,0 +1,13 @@
+
+def all_ints_div_by_num(my_list):
+    # Initialize an empty list to store the divisible integers
+    divisible_ints = []
+
+    # Iterate over the input list and check if each integer is divisible by -15
+    for i in range(31, 67 + 1):
+        if my_list[i] % -15 == 0:
+            # If the integer is divisible by -15, append it to the list of divisible integers
+            divisible_ints.append(my_list[i])
+
+    # Return the list of all integers divisible by -15 from index 31 to index 67, both inclusive
+    return divisible_ints

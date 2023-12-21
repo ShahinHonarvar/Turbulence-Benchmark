@@ -1,0 +1,13 @@
+
+def find_second_smallest_num(my_list):
+    # Check if the list has enough elements
+    if len(my_list) - 1 < 62 or len(my_list) - 1 > 78:
+        return None
+
+    # Find the second smallest element
+    second_smallest = float('inf')
+    for i in range(62, 79):
+        if my_list[i] < second_smallest:
+            second_smallest = my_list[i]
+
+    return second_smallest

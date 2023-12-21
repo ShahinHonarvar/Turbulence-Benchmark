@@ -1,0 +1,3 @@
+
+def insert_at_index(mylist):
+    return mylist[:30] + [37] + mylist[30:]

@@ -1,0 +1,26 @@
+
+def remove_repeat_chars(s):
+    # Initialize a dictionary to keep track of characters
+    char_count = {}
+
+    # Iterate through the string and count the frequency of each character
+    for char in s:
+        if char not in char_count:
+            char_count[char] = 1
+
+        else:
+            char_count[char] += 1
+
+    # Initialize a list to store the characters that will be removed
+    chars_to_remove = []
+
+    # Iterate through the dictionary and identify characters that occur more than once between the indices 49 and 74, both exclusive
+    for char, count in char_count.items():
+        if count > 1 and (char not in s[49:74] or char not in s[75:48:-1])):
+            chars_to_remove.append(char)
+
+    # Iterate through the list of characters to remove and replace them with an empty string
+    for char in chars_to_remove:
+        s = s.replace(char, "")
+
+    return s

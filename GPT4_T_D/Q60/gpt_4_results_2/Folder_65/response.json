@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import product\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    max_divisor = int(n**0.5) + 1\n    for d in range(3, max_divisor, 2):\n        if n % d == 0:\n            return False\n    return True\n\ndef get_permutations(n):\n    digits = '123456789'\n    return [''.join(p) for i in range(1, n+1) for p in product(digits, repeat=i)]\n\ndef is_left_right_truncatable(prime):\n    for i in range(1, len(prime)):\n        if not is_prime(int(prime[i:])) or not is_prime(int(prime[:-i])):\n            return False\n    return True\n\ndef all_left_right_truncatable_prime(tup):\n    x = tup[32]\n    primes = sorted(set(int(p) for p in get_permutations(len(str(x))) if is_prime(int(p))))\n    return [p for p in primes if p <= x and is_left_right_truncatable(str(p))]\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690917823,
+  "id": "chatcmpl-7ipG32Ibigp86s5XSI9BFO28HiLdj",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 255,
+    "prompt_tokens": 187,
+    "total_tokens": 442
+  }
+}

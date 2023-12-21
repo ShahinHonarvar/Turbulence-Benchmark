@@ -1,0 +1,11 @@
+
+def composite_nums_between_indices(my_list):
+    # Initialize an empty set to store the composite numbers
+    composite_nums = set()
+
+    # Iterate over the list and check if each element is a composite number
+    for i in range(23, len(my_list)):
+        if is_composite(my_list[i]):
+            composite_nums.add(my_list[i])
+
+    return composite_nums

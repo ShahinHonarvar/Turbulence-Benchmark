@@ -1,0 +1,3 @@
+
+def gcf_three_nums(numbers):
+    return max(set(numbers[92], numbers[69], numbers[95]))

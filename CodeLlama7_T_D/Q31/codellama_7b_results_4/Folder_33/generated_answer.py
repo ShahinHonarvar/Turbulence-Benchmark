@@ -1,0 +1,13 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has at least 321 elements
+    if len(my_list) < 321:
+        return False
+
+    # Check if the element at index 321 is a perfect number
+    for i in range(321, len(my_list)):
+        if sum(range(1, my_list[i]))) == my_list[i]:
+            return True
+
+    # If we reach this point, then the element at index 321 is not a perfect number
+    return False

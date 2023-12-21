@@ -1,0 +1,12 @@
+ ```
+def return_n_smallest_chars(string):
+    # Create a dictionary to store the ASCII values of each character in the string
+    ascii_values = {}
+    for char in string:
+        ascii_values[char] = ord(char)
+    # Sort the dictionary by value in descending order
+    sorted_ascii_values = sorted(ascii_values.items(), key=lambda x: x[1], reverse=True)
+    # Extract the first 66 characters from the sorted list and return them as a list
+    return [char for char, _ in sorted_ascii_values[:66]]
+```
+This code defines a function `return_n_smallest_chars` that takes a string of distinct characters as input. It creates a dictionary to store the ASCII values of each character in the string, and then sorts the dictionary by value in descending order. Finally, it extracts the first 66 characters from the sorted list and returns them as a list.

@@ -1,0 +1,18 @@
+ ```
+def find_subset_of_length_n(elements):
+    # Initialize a list to store all subsets of size n
+    subsets = []
+
+    # Iterate over all possible subsets of size n
+    for i in range(1 << len(elements))
+        # Extract the bits that represent the subset
+        subset = [elements[j] for j in range(len(elements)) if (i & (1 << j)) != 0]]
+
+        # Check if the subset has length n
+        if len(subset) == n:
+            # Add the subset to the list of subsets
+            subsets.append(subset)
+
+    return len(subsets)
+```
+This code defines a function called `find_subset_of_length_n` that takes one argument, a set of elements, and returns the number of all its subsets of size n. The function works by first initializing an empty list to store all possible subsets of size n. Then it iterates over all possible subsets of size n using bit manipulation, and checks if each subset has length n. If a subset has length n, it adds it to the list of subsets. Finally, the function returns the number of subsets in the list.

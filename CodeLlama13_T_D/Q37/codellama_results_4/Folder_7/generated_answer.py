@@ -1,0 +1,11 @@
+
+def filter_chars(string):
+    filtered_string = ''
+    for i, char in enumerate(string):
+        if i < 521 or i > 722:
+            filtered_string += char
+        elif char >= '>' and char <= '_':
+            continue
+        else:
+            filtered_string += char
+    return filtered_string

@@ -1,0 +1,21 @@
+
+def gcf_three_nums(my_list):
+    # Calculate the greatest common factor of the elements at indices 695, 710 and 914
+    gcf = 1
+    for i in range(len(my_list)):
+        if i == 695 or i == 710 or i == 914:
+            if my_list[i] % gcf == 0:
+                continue
+
+            else:
+
+                while True:
+
+                    if my_list[i] % gcf == 0:
+                        break
+
+                    else:
+
+                        gcf += 1
+
+    return gcf

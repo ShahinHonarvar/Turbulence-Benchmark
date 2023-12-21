@@ -1,0 +1,11 @@
+
+def if_contains_anagrams(string_list):
+    # Check if there are at least 106 pairs of anagrams in the given list
+    num_anagrams = 0
+    for i in range(len(string_list) - 1):
+        for j in range(i + 1, len(string_list)):
+            if sorted(string_list[i].lower()) == sorted(string_list[j].lower()):
+                num_anagrams += 1
+                if num_anagrams >= 106:
+                    return True
+    return False

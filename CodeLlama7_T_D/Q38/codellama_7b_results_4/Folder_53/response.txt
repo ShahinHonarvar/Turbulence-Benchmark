@@ -1,0 +1,13 @@
+ ```
+def find_subset_of_length_n(set):
+    # Initialize the number of subsets as 0
+    num_subsets = 0
+    # Iterate over all possible combinations of elements in the set
+    for i in range(len(set) + 1):
+        for combination in itertools.combinations(set, i):
+            # If the combination has a size equal to n, increment the number of subsets
+            if len(combination) == n:
+                num_subsets += 1
+
+    return num_subsets
+```

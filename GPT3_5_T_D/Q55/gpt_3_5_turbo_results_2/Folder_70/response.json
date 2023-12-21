@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\n\ndef lists_with_product_equal_n(lst):\n    result = []\n    for i in range(1, len(lst) + 1):\n        for j in range(len(lst)):\n            sublists = list(combinations(lst, i))\n            for sublist in sublists:\n                if len(sublist) == len(lst):\n                    sublist += sublist[:-1]\n                \n                product = 1\n                for num in sublist:\n                    product *= num\n                    \n                if product == 32:\n                    result.append(list(sublist))\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689822027,
+  "id": "chatcmpl-7eEBvf85DTHnYlOzyVuBirrxiQR63",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 193,
+    "total_tokens": 308
+  }
+}

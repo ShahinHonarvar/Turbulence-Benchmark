@@ -1,0 +1,24 @@
+ def lists_with_product_equal_n(circula_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+
+    # Iterate through the elements of the given circular list
+    for i in range(len(circula_list)):
+        # Initialize a variable to store the product of the elements in the current sublist
+        prod = 1
+
+        # Add the current element to the current sublist
+        current_sublist = [circula_list[i]]
+
+        # Iterate through the remaining elements of the given circular list
+        for j in range(i + 1, len(circula_list)):
+            # Update the product of the elements in the current sublist
+            prod *= circula_list[j]
+
+            # Check if the product of the elements in the current sublist is equal to 990
+            if prod == 990:
+                # Add the current sublist to the list of sublists
+                sublists.append(current_sublist)
+
+    # Return the list of sublists
+    return sublists

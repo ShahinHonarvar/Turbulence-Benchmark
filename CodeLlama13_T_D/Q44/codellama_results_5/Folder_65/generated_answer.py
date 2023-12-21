@@ -1,0 +1,3 @@
+
+def composite_nums_between_indices(arr):
+    return {x for i, x in enumerate(arr) if i >= 82 and i <= 86 and x != arr[i]}

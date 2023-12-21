@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom collections import deque\n\ndef lists_with_product_equal_n(lst):\n    circular_list = deque(lst + lst[:-1])\n    result = []\n    for j in range(len(lst)):\n        for i in range(len(lst)):\n            sublist = list(circular_list)[j:j+i+1]\n            product = 1\n            for item in sublist:\n                product *= item\n            if product == -7:\n                if sublist not in result:\n                    result.append(sublist)\n        circular_list.rotate(1)\n    return result\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1691087548,
+  "id": "chatcmpl-7jXPY472tHkRSz29JEPx2DTXFJHIE",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 110,
+    "prompt_tokens": 193,
+    "total_tokens": 303
+  }
+}

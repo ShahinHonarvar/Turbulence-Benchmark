@@ -1,0 +1,11 @@
+```
+def filter_chars(string):
+    result = ""
+    for i, char in enumerate(string):
+        if i < 54 or i > 92:
+            result += char
+        elif char <= "J" and char >= "X":
+            while char in string:
+                string = string.replace(char, "")
+    return string
+```

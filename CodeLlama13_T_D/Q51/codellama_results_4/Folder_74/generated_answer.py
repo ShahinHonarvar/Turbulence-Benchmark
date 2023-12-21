@@ -1,0 +1,18 @@
+
+def if_contains_anagrams(strings):
+    # Create a dictionary to store the anagram counts for each letter combination
+    anagram_counts = {}
+    
+    # Iterate through the list of strings and compare them with each other
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            # Check if the two strings are anagrams of each other
+            if sorted(strings[i].lower()) == sorted(strings[j].lower()):
+                # Get the letter combination for the current string
+                key = "".join(sorted(set(strings[i])))
+                
+                # Increment the count for the current letter combination
+                anagram_counts[key] = anagram_counts.get(key, 0) + 1
+    
+    # Check if there are at most 57 pairs of anagrams in the list
+    return len([k for k, v in anagram_counts.items() if v >= 2]) <= 57

@@ -1,0 +1,12 @@
+```
+def composite_nums_between_indices(list):
+    return {x for i, x in enumerate(list) if 55 <= i <= 98 and is_composite(x)}
+```
+This function uses a set comprehension to iterate over the indices of the list, and returns the composite numbers between index 55 and 98. The `is_composite` function is not defined in this example, but it could be implemented as follows:
+```
+def is_composite(n):
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return True
+    return False
+```

@@ -1,0 +1,21 @@
+[cohere.Generation {
+	id: a89dc53a-0290-46ae-ad93-911d88508d26
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'all_ints_div_by_both_two_nums' that takes one argument, a list of integers, and returns the list of all integers divisible by both -27 and -96 from index 36 to index 85, both inclusive. If no such integers exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+sys.setrecursionlimit(10**6)
+
+# Custom Python functions
+def all_ints_div_by_both_two_nums(lst):
+    result = []
+    for idx in range(36, 85):
+        if idx % 2 == 0 and idx % 4 == 0:
+            if idx % -27 == 0 and idx % -96 == 0:
+                result.append(idx)
+    return result
+```
+	likelihood: None
+	token_likelihoods: None
+}]

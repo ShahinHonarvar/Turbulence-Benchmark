@@ -1,0 +1,31 @@
+ ```
+def lists_with_product_equal_n(my_list):
+# Check if the input is a list
+if not isinstance(my_list, list):
+    return []
+
+# Initialize an empty list to store the sublists
+sublists = []
+
+# Iterate over the elements of the input list
+for i in range(len(my_list)):
+
+    # Check if the product of the current element and the previous one is equal to 4
+    if my_list[i] * my_list[(i - 1) % len(my_list)] == 4:
+
+        # Initialize an empty list to store the contiguous elements from the input list
+        sublist = []
+
+        # Append the current element and the previous one to the sublist
+        sublist.append(my_list[i])
+        sublist.append(my_list[(i - 1) % len(my_list)]))
+
+        # Check if the size of the sublist is greater than or equal to the size of the input list
+        if len(sublist) >= len(my_list):
+
+            # Add the sublist to the list of sublists
+            sublists.append(sublist)
+
+# Return the list of sublists
+return sublists
+```

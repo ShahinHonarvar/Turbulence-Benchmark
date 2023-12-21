@@ -1,0 +1,3 @@
+
+def gcf_three_nums(list_positive):
+    return __

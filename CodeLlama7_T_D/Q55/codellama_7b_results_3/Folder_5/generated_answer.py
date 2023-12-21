@@ -1,0 +1,38 @@
+
+def lists_with_product_equal_n(my_list):
+    # Find the product of all elements in the list
+    product = 1
+    for element in my_list:
+        product *= element
+
+    # Initialize an empty list to store sublists
+
+    sublists = []
+
+    # Iterate through the list and find contiguous sublists with a product equal to -33
+
+    for i in range(len(my_list)):
+
+        # Initialize variables to keep track of the current sublist and its product
+
+        current_sublist = [my_list[i]]
+        current_product = my_list[i]
+
+        # Iterate through the rest of the list to find contiguous sublists with a product equal to -33
+
+        for j in range(i+1, len(my_list)):
+
+            # Add the next element to the current sublist and update the product
+
+            current_sublist.append(my_list[j])
+            current_product *= my_list[j]
+
+            # If the product of the current sublist is equal to -33, add it to the list of sublists and break out of the loop
+
+            if current_product == -33:
+                sublists.append(current_sublist)
+                break
+
+    # Return the list of sublists
+
+    return sublists

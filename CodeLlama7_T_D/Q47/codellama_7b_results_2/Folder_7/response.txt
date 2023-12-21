@@ -1,0 +1,28 @@
+ Here is a possible implementation of the `palindromes_of_specific_lengths` function:
+```python
+def palindromes_of_specific_lengths(string):
+    # Find the starting and ending indices of the substring
+    start = 119
+    end = 256
+    # Create a set to store all palindromes that meet the requirements
+    palindromes = set()
+    # Iterate over the characters in the substring
+    for i in range(start, end + 1):
+        # Check if the character at index i is a letter
+        if string[i].isalpha():
+            # Create a copy of the substring starting from index i
+            substr = string[i:]
+            # Find the length of the palindrome
+            length = len(substr)
+            # Iterate over the characters in the palindrome
+            for j in range(length):
+                # Check if the character at index j is a letter
+                if substr[j].isalpha():
+                    # Create a copy of the substring starting from index 0 and ending at index j
+                    substr2 = substr[:j]
+                    # Check if the substring is a palindrome
+                    if substr2 == substr2[::-1]:
+                        # Add the palindrome to the set
+                        palindromes.add(substr)
+    return palindromes
+```

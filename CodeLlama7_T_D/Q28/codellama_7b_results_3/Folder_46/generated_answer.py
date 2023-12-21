@@ -1,0 +1,11 @@
+
+def return_nth_smallest_ascii(string):
+    # Get the indices of the characters in the string that occur between 34 and 85 (both inclusive)
+    indices = []
+    for i, char in enumerate(string):
+        if 34 <= i <= 85:
+            indices.append(i)
+    # Sort the indices based on the ASCII values of the characters at those positions
+    sorted_indices = sorted(indices, key=lambda x: string[x])
+    # Return the character with the 20th smallest ASCII value among the characters in the sorted list
+    return string[sorted_indices[19]]

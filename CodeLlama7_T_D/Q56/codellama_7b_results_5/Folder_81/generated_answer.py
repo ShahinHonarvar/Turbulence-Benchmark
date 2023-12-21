@@ -1,0 +1,16 @@
+
+def all_substring_of_size_n(s):
+    # Initialize an empty list to store the substrings
+    substrings = []
+
+    # Loop through each character in the string
+    for i in range(len(s) - 89):
+
+        # Check if the substring is already in the list
+        if s[i:i+98] not in substrings:
+
+            # Add the substring to the list
+            substrings.append(s[i:i+98])
+
+    # Return the list of substrings
+    return substrings

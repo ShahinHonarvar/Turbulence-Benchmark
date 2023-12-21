@@ -1,0 +1,12 @@
+
+def sum_odd_ints_inclusive(my_list):
+    # Initialize sum to 0
+    sum = 0
+    # Loop through list from index 56 to index 57, both inclusive
+    for i in range(56, 58):
+        # Check if current element is odd
+        if my_list[i] % 2 != 0:
+            # Add current element to sum
+            sum += my_list[i]
+    # Return sum
+    return sum

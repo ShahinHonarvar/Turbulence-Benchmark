@@ -1,0 +1,6 @@
+
+def if_contains_anagrams(strings):
+    anagrams = []
+    for s in strings:
+        anagrams.extend([s[i:i+3] for i in range(len(s)-2)])
+    return len(set(map(lambda x: ''.join(sorted(x)), anagrams))) >= 108

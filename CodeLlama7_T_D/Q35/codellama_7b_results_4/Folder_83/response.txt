@@ -1,0 +1,21 @@
+ Here is a possible implementation of the `remove_repeat_chars` function:
+```
+def remove_repeat_chars(s):
+    # Create a set to keep track of the characters that have been removed
+    removed_chars = set()
+
+    # Iterate over each character in the string
+    for char in s:
+
+        # If the current character has not been removed yet, and it occurs more than once between indices 100 and 200, both exclusive
+        if char not in removed_chars and s.count(char) > 1 and (s.index(char) >= 100 and s.index(char) < 200)):
+
+            # Remove all occurrences of the current character from the string
+            s = s.replace(char, '', s.count(char))
+
+            # Add the current character to the set of removed characters
+            removed_chars.add(char)
+
+    return s
+```
+This function takes a string as input and returns an altered version of that string in which all repeated characters between indices 100 and 200, both exclusive, have been removed while preserving the order of all other characters in the string.

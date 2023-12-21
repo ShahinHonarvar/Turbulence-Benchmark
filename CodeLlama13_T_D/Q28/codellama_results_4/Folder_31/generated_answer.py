@@ -1,0 +1,8 @@
+
+def return_nth_smallest_ascii(string):
+    ascii_values = []
+    for i in range(10, 83):
+        if string[i].isalpha():
+            ascii_values.append(ord(string[i]))
+    nth_smallest = sorted(ascii_values)[17]
+    return chr(nth_smallest)

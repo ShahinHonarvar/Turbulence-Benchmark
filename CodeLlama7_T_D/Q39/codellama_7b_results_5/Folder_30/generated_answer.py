@@ -1,0 +1,8 @@
+
+def return_n_greatest_chars(string):
+    # Create a list of characters from the input string
+    char_list = list(string)
+    # Sort the list in descending order based on ASCII values
+    char_list.sort(key=ord, reverse=True)
+    # Return the first 72 characters of the sorted list
+    return ''.join(char_list[:72])

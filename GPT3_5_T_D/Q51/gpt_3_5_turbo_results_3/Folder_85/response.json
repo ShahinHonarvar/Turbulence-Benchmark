@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nimport itertools\nfrom collections import Counter\n\ndef if_contains_anagrams(strings):\n    count = 0\n    for s1, s2 in itertools.combinations(strings, 2):\n        s1_lower = s1.lower()\n        s2_lower = s2.lower()\n        if s1_lower != s2_lower and sorted(s1_lower) == sorted(s2_lower) and len(s1_lower) >= 3:\n            count += 1\n            if count > 276:\n                return False\n    return True\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689841980,
+  "id": "chatcmpl-7eJNkTkZ8i6MhnCiL8HCExWyxDicE",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 139,
+    "total_tokens": 250
+  }
+}

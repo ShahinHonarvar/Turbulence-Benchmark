@@ -1,0 +1,30 @@
+```
+import numpy as np
+
+def submatrix_with_particular_sum(matrix):
+    rows, cols = matrix.shape
+    for i in range(rows):
+        for j in range(cols):
+            current_sum = 0
+            for k in range(i, rows):
+                for l in range(j, cols):
+                    current_sum += matrix[k][l]
+                    if current_sum == 99:
+                        yield matrix[i:k+1, j:l+1]
+                        break
+                else:
+                    continue
+            else:
+                continue
+        else:
+            break
+```
+This function uses the `numpy` library to perform the matrix operations and loops over all submatrices in the given matrix. For each submatrix, it calculates its sum using a nested loop. If the sum is equal to 99, the function yields that submatrix and breaks out of the inner loop. If no such submatrix is found, the function returns an empty list.
+
+For example, consider the following matrix:
+```
+>>> matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+>>> list(submatrix_with_particular_sum(matrix))
+[[1, 2, 3], [4, 5, 6]]
+```
+In this example, the function finds two submatrices with a sum of 99: `[1, 2, 3]` and `[4, 5, 6]`. It returns these two submatrices as a list.

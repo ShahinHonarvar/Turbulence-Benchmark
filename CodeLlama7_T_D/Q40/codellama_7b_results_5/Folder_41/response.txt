@@ -1,0 +1,11 @@
+ def return_n_smallest_chars(string):
+    # create a list of all characters in the string
+    char_list = list(string)
+
+    # sort the list in ascending order based on the ASCII value of each character
+
+    sorted_list = sorted(char_list, key=ord)
+
+    # return the first 37 characters of the sorted list
+
+    return sorted_list[:37]

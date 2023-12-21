@@ -1,0 +1,6 @@
+
+def find_n_th_smallest_num(my_list):
+    # Sort the list in ascending order
+    my_list.sort()
+    # Return the 5th smallest number from index 291 to index 312, both inclusive
+    return my_list[290:313].index(my_list[290])

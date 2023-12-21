@@ -1,0 +1,26 @@
+ ```
+def palindromes_between_indices(string):
+    # Define the range of indices for which we want to find palindromes
+    start_index = 5
+    end_index = 7
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each letter in the given string
+    for i in range(start_index, end_index + 1):
+        # Check if the letter at index 'i' is a vowel or not
+        if string[i].lower() in "aeiou":
+            # If the letter is a vowel, then we can form a palindrome by using this vowel and two other letters that are not vowels
+            non_vowel = ""
+            for j in range(start_index, end_index + 1):
+                # Check if the letter at index 'j' is a vowel or not
+                if string[j].lower() in "aeiou":
+                    # If the letter is a vowel, then we can form a palindrome by using this vowel and two other letters that are not vowels
+                    non_vowel = string[start_index:end_index]
+            if non_vowel != "":
+                # Form the palindrome by using the vowel at index 'i' and the two non-vowel letters that we found earlier
+                palindrome = non_vowel + string[i].lower() + non_vowel
+                # Add the palindrome to the set of palindromes
+                palindromes.add(palindrome)
+    return palindromes
+```
+Note that this code assumes that the input string is a valid Python string and does not contain any special characters or escape sequences. If the input string may contain such characters, you will need to modify the code accordingly.

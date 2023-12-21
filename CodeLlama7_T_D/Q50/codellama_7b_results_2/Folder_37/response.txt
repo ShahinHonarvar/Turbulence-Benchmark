@@ -1,0 +1,23 @@
+ ```
+def if_contains_anagrams(str_list):
+    # Create a dictionary to store the anagram counts
+    anagram_counts = {}
+
+    # Iterate over each string in the list
+    for str in str_list:
+        # Check if the string is at least three characters long
+        if len(str) >= 3:
+            # Create a sorted version of the string
+            sorted_str = ''.join(sorted(str))
+            # Increment the count for this anagram
+            anagram_counts[sorted_str] = anagram_counts.get(sorted_str, 0) + 1
+
+    # Iterate over each anagram in the dictionary
+    for sorted_str, count in anagram_counts.items():
+        # Check if there are at least two pairs of anagrams with this length
+        if count >= 2:
+            return True
+
+    # If we reach this point, there are no pairs of anagrams with a length of at least three
+    return False
+```

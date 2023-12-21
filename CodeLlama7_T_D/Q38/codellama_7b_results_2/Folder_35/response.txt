@@ -1,0 +1,20 @@
+ ```
+def find_subset_of_length_n(elements):
+# Initialize an empty list to store the subsets
+subsets = []
+# Iterate through all possible combinations of 300 elements from the input set
+for i in range(2**len(elements))):
+# Convert the binary representation of the combination to a decimal number
+decimal_number = int(bin(i)[2:])
+# Initialize an empty list to store the current subset
+current_subset = []
+# Iterate through the bits of the decimal number
+for j in range(len(elements))):
+# If the bit is set, add the corresponding element to the subset
+if (decimal_number & 2**j) > 0:
+current_subset.append(elements[j])
+# Add the current subset to the list of subsets
+subsets.append(current_subset)
+return len(subsets)
+```
+This function takes a set of elements as input and returns the number of all its subsets of size 300. The function first iterates through all possible combinations of 300 elements from the input set, using the binary representation of each combination to determine which elements are included in the subset. It then adds each subset to a list of subsets and returns the length of this list at the end.

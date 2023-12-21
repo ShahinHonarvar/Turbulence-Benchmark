@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef filter_chars(s):\n    s1 = s[:82]\n    s2 = s[82:89]\n    s3 = s[89:]\n    chars_to_remove = set()\n    for char in s2:\n        if '*' < char < '[':\n            chars_to_remove.add(char)\n    filtered_chars = ''.join(char for char in s2 if char not in chars_to_remove)\n    return s1 + filtered_chars + s3\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689879132,
+  "id": "chatcmpl-7eT2yChicuRHNo2DoQkK8L0Zu2MNI",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 95,
+    "prompt_tokens": 131,
+    "total_tokens": 226
+  }
+}

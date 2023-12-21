@@ -1,0 +1,58 @@
+ def all_left_right_truncatable_prime(x):
+    # Initialize an empty list to store the prime numbers
+    prime_list = []
+    # Loop through the range of integers from 1 to x
+    for i in range(1, x + 1):
+        # Check if the number is a prime number
+        if is_prime(i):
+            # If the number is a prime number, check if it is left-and-right-truncatable prime number
+            if is_left_right_truncatable_prime(i):
+                # If the number is a left-and-right-truncatable prime number, add it to the list
+                prime_list.append(i)
+    # Sort the list in descending order
+    prime_list.sort(reverse=True)
+    # Return the sorted list of all left-and-right-truncatable prime numbers less than or equal to x
+    return prime_list
+
+def is_prime(n):
+    # Check if n is an integer greater than 1
+    if not (isinstance(n, int) and n > 1):
+        # If n is not a positive integer, return False
+        return False
+
+    # Check if n is divisible by 2 to n-1
+    for i in range(2, n):
+        # If n is divisible by i, it is not prime
+        if n % i == 0:
+            # Return False if n is not prime
+            return False
+
+    # If n is greater than 1 and it is not divisible by 2 to n-1, it is prime
+    return True
+
+def is_left_right_truncatable_prime(n):
+    # Check if the number is a prime number
+    if not is_prime(n):
+        # If the number is not a prime number, return False
+        return False
+
+    # Check if the number contains 0
+    if '0' in str(n):
+        # If the number contains 0, return False
+        return False
+
+    # Check if the number is left-and-right-truncatable prime number by removing the leading leftmost and last rightmost digits
+    for i in range(1, len(str(n)))):
+        # Remove the leading leftmost digit of the number
+        left_digits = str(n)[i:]
+        # Check if the remaining digits are still a prime number
+        if is_prime(int(left_digits)):
+            # If the remaining digits are a prime number, remove the last rightmost digit of the number
+            right_digits = str(n)[:-i]
+            # Check if the resulting number is still a prime number
+            if is_prime(int(right_digits)):
+                # If the resulting number is a prime number, return True
+                return True
+
+    # If none of the leading leftmost and last rightmost digits are successfully removed, return False
+    return False

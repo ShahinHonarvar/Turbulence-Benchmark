@@ -1,0 +1,28 @@
+ ```
+def if_contains_anagrams(my_list):
+    # Check if the list is empty
+    if len(my_list) == 0:
+        return False
+
+    # Initialize a dictionary to store the number of anagrams for each length
+    anagram_count = {}
+
+    # Iterate over the list of strings
+    for string in my_list:
+        # Get the length of the string
+        length = len(string)
+
+        # Check if the length is at least three
+        if length < 3:
+            continue
+
+        # Check if the length is not in the dictionary
+        if length not in anagram_count:
+            anagram_count[length] = 0
+
+        # Increment the number of anagrams for the length
+        anagram_count[length] += 1
+
+    # Check if there are at most 60 pairs of anagrams in the list
+    return sum(anagram_count.values()) <= 60 * len(my_list)
+```

@@ -1,0 +1,11 @@
+
+def find_subset_of_length_n(elements):
+    # Initialize the result variable
+    result = 0
+    # Iterate over all possible subsets of size 87
+    for subset in itertools.combinations(elements, 87):
+        # Increment the result variable by 1 for each subset found
+        result += 1
+
+    # Return the final value of the result variable
+    return result

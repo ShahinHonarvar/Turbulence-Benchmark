@@ -1,0 +1,23 @@
+ Here is a possible implementation of the `if_decimal_is_divisible` function in Python:
+```
+def if_decimal_is_divisible(binary_representation):
+    # Convert binary representation to decimal integer
+    decimal_integer = int(binary_representation, 2)
+    # Check if decimal integer is divisible by 105th Fibonacci number
+    if decimal_integer % fibonacci(105) == 0:
+        return True
+
+    else:
+
+        return False
+
+# Define function to compute Fibonacci numbers
+def fibonacci(n):
+    if n <= 1:
+        return n
+
+    else:
+
+        return fibonacci(n-1) + fibonacci(n-2)
+```
+Note that the above implementation assumes that the input binary representation is a valid string of digits in binary format. If this assumption is not met, then the function may produce unexpected results or even crash. Therefore, it is important to carefully test and validate any input data before passing it to this or any other function.

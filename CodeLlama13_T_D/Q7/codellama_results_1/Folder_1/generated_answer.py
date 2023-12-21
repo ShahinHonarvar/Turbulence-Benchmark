@@ -1,0 +1,3 @@
+
+def all_even_ints_inclusive(mylist):
+    return [x for x in mylist[31:72+1] if x % 2 == 0]

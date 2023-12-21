@@ -1,0 +1,15 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the same characters as s, but without any repeated characters between indices 20 and 35
+    new_string = ""
+    for i in range(len(s)):
+        if i < 20 or i > 35:
+            new_string += s[i]
+        else:
+            unique_chars = set()
+            for j in range(20, 36):
+                if s[j] not in unique_chars:
+                    unique_chars.add(s[j])
+            for char in unique_chars:
+                new_string += char
+    return new_string

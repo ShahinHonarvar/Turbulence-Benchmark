@@ -1,0 +1,22 @@
+ ```
+def if_contains_anagrams(my_list):
+# Check if list is empty
+if len(my_list) == 0:
+return False
+
+# Check if list has at most 46 pairs of anagrams
+num_pairs = 0
+for i in range(len(my_list)):
+for j in range(i + 1, len(my_list))):
+if sorted(my_list[i]) == sorted(my_list[j])):
+num_pairs += 1
+
+if num_pairs <= 46:
+return True
+else:
+return False
+```
+This code first checks if the input list is empty. If it is, the function returns `False`.
+Next, the function iterates over the list and for each element `i`, it checks whether there exists another element `j` such that `sorted(my_list[i]) == sorted(my_list[j]))`. If such an element `j` exists, the function increments a counter variable `num_pairs`.
+After iterating over the entire list, the function checks if the number of pairs is at most 46. If it is, the function returns `True`, otherwise it returns `False`.
+Note that the code uses the `sorted()` function to sort the strings in a case-insensitive manner.

@@ -1,0 +1,7 @@
+
+def all_left_truncatable_prime(tuple):
+    prime_numbers = []
+    for i in range(2, 10):
+        if is_prime(i):
+            prime_numbers.append(i)
+    return sorted(prime_numbers)

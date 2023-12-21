@@ -1,0 +1,45 @@
+
+def all_right_truncatable_prime(tuple):
+    # Initialize an empty list to store the prime numbers
+    prime_numbers = []
+
+    # Loop through each number in the tuple
+    for num in tuple:
+
+        # Check if the number is a prime number
+        if is_prime(num):
+
+            # Check if the number is a right-truncatable prime number
+            if is_right_truncatable_prime(num):
+                # Add the number to the list of prime numbers
+                prime_numbers.append(num)
+
+    # Return the sorted list of prime numbers in descending order
+    return sorted(prime_numbers, reverse=True)
+
+# Check if a number is a prime number
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+# Check if a number is a right-truncatable prime number
+def is_right_truncatable_prime(n):
+    # Initialize an empty string to store the number in string form
+    num_str = ""
+
+    # Loop through each digit of the number in reverse order
+    for i in range(len(str(n)) - 1, -1, -1)):
+        # Append the digit to the string
+        num_str += str(n)[i]
+
+        # Check if the number is still prime
+        if not is_prime(int(num_str)):
+            return False
+
+    return True

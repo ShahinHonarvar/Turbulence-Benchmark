@@ -1,0 +1,4 @@
+
+def return_n_greatest_chars(string):
+    chars = sorted([char for char in string if char not in '\r\n'])
+    return chars[-12:]

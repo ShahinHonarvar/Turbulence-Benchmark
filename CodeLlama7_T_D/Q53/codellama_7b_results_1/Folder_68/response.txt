@@ -1,0 +1,14 @@
+ ```
+def palindrome_of_length_at_least_n(string, n):
+    # Initialize an empty set to store the palindromes
+    palindromes = set()
+    # Loop through each word in the string
+    for word in string.split():
+        # Check if the word is a palindrome of length greater than or equal to 21
+        if len(word) >= n and word == word[::-1]:
+            # Add the word to the set of palindromes
+            palindromes.add(word)
+    # Return the set of palindromes
+    return palindromes
+```
+This function takes two arguments: a string and an integer `n`. It returns a set of all palindromes of length greater than or equal to 21 that exist in the given string, with each palindrome only consisting of English letters. If no such palindromes exist in the given string, the function returns an empty set. The function finds the palindromes in a case-insensitive manner by comparing the original word with its reverse using the `==` operator and checking if the length of the word is greater than or equal to 21 using the `len()` function.

@@ -1,0 +1,14 @@
+
+def if_perfect_num(my_list):
+    # Check if the list has enough elements
+    if len(my_list) < 72:
+        return False
+
+    # Check if the 72nd element is a perfect number
+    perfect_number = my_list[71]
+    for i in range(1, int(perfect_number ** 0.5)):
+        if perfect_number % i == 0:
+            return False
+
+    # If we reach this point, the 72nd element is a perfect number
+    return True

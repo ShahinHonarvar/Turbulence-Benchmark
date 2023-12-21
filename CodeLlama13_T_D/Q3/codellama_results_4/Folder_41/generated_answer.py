@@ -1,0 +1,3 @@
+
+def all_pos_ints_inclusive(numbers):
+    return [x for x in numbers if 6 <= x <= 6 and x > 0]

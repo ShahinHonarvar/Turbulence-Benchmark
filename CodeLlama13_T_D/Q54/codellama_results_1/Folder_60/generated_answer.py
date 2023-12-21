@@ -1,0 +1,16 @@
+
+def all_right_truncatable_prime(x):
+    if x < 2:
+        return []
+    
+    prime_numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    right_truncatable_primes = []
+    
+    for p in prime_numbers:
+        if p < x:
+            rtp = [p]
+            while len(rtp) > 0 and rtp[-1] % 10 != 0:
+                rtp.append(int(str(rtp[-1])[:-1]))
+            right_truncatable_primes.extend(rtp[::-1])
+            
+    return sorted(right_truncatable_primes)

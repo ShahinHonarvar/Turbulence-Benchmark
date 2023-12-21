@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\ndef prime_factors(numbers):\n    def factors(n):\n        i = 2\n        prime_factors = []\n        while i * i <= n:\n            if n % i:\n                i += 1\n            else:\n                n //= i\n                prime_factors.append(i)\n        if n > 1:\n            prime_factors.append(n)\n        return set(prime_factors)\n\n    if len(numbers) > 72:\n        return factors(numbers[72])\n    else:\n        return \"List has less than 73 elements\"\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690128613,
+  "id": "chatcmpl-7fVwr6TNV3QNErRmmjXRVgTWHvWDn",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 110,
+    "prompt_tokens": 84,
+    "total_tokens": 194
+  }
+}

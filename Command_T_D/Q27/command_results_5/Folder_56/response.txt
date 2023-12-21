@@ -1,0 +1,18 @@
+[cohere.Generation {
+	id: 7090240c-8ba5-40ad-8094-81edc95bb2b7
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'insert_after_index' that takes one argument, a list, and returns a list that is identical except that 655.24 has been inserted at the index immediately succeeding index 21 and, as a result, the returned list should have one more element than the given list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```python
+import sys
+
+def insert_after_index(nums):
+    ins_idx = 21
+    ins_val = 655.24
+    idx = sys.maxsize - 1
+    while idx > ins_idx:
+        idx -= 1
+    return nums[:idx] + [ins_val] + nums[idx+1:]
+```
+	likelihood: None
+	token_likelihoods: None
+}]

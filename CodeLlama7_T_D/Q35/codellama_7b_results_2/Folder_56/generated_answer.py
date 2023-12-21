@@ -1,0 +1,14 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the characters removed
+    new_str = ''
+
+    # Iterate over each character in the given string
+    for char in s:
+        # If the current character is not repeated between the indices 7 and 9, inclusive
+        if not s[7:9].count(char):
+            # Add the current character to the new string
+            new_str += char
+
+    # Return the altered string
+    return new_str

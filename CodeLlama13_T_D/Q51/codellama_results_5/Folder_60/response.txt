@@ -1,0 +1,12 @@
+```python
+def if_contains_anagrams(strings):
+    anagrams = set()
+    for s in strings:
+        s_lower = s.lower()
+        if len(s_lower) < 3:
+            continue
+        s_sorted = "".join(sorted(s_lower))
+        if s_sorted not in anagrams:
+            anagrams.add(s_sorted)
+    return len(anagrams) <= 77
+```

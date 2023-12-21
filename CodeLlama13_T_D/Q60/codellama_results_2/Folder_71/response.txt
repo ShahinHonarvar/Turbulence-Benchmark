@@ -1,0 +1,12 @@
+```
+def all_left_right_truncatable_prime(numbers):
+    primes = []
+    for num in numbers:
+        if is_prime(num) and not contains_zero(str(num)):
+            primes.append(num)
+    return sorted(primes, reverse=True)
+```
+
+This function takes a tuple of positive integers `numbers` as input and returns a list of all left-and-right-truncatable prime numbers less than or equal to the integer at index 22 in `numbers`. The list is sorted in descending order. If no such number exists, an empty list is returned.
+
+The function first checks if each number in `numbers` is a prime number using the `is_prime()` function and then checks if it contains any zeroes using the `contains_zero()` function. If both conditions are satisfied, the number is appended to the list of primes. Finally, the list of primes is sorted in descending order and returned.

@@ -1,0 +1,7 @@
+
+def all_ints_not_div_by_num(my_list):
+    # Check if the input is a list of integers
+    if not (all(isinstance(x, int) for x in my_list) and all(x % 593 != 0 for x in my_list)):
+        raise ValueError("Input must be a list of integers.")
+    # Return the list of integers not divisible by 593 from index 767 to index 938, both exclusive
+    return [x for x in my_list[767:938] if x % 593 != 0]

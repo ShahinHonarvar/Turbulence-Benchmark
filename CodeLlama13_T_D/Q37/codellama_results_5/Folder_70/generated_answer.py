@@ -1,0 +1,3 @@
+
+def filter_chars(s):
+    return ''.join([c for c in s if (ord(c) < 515 or ord(c) > 538 or ord(c) < ord('+') or ord(c) > ord('}'))])

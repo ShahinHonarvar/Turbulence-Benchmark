@@ -1,0 +1,27 @@
+[cohere.Generation {
+	id: 6175c9ab-2446-4ec4-a2ed-6da51f475570
+	prompt: Here is a text specification delimited by angle brackets. Create Python code according to the text specification. <Write a function called 'find_divisors_in_range' that takes a positive integer as its argument, and returns the list of all positive divisors of the given integer that are between 6 and 7, both inclusive. If no such divisors exist in the specified range, the function should return an empty list.> The Python code should not contain any comments. The Python code should be delimited only by triple backticks.
+	text: 
+```
+def find_divisors_in_range(n):
+    lst = []
+    for i in range(6, n // 2 + 1):
+        if n % i == 0:
+            lst.append(i)
+    for i in range(n // 2, 1, -1):
+        if n % i == 0:
+            lst.append(i)
+    if n == 1:
+        lst.append(1)
+    if n == 2:
+        lst.append(1)
+        lst.append(2)
+    if n == 3:
+        lst.append(1)
+        lst.append(2)
+        lst.append(3)
+    return lst
+```
+	likelihood: None
+	token_likelihoods: None
+}]

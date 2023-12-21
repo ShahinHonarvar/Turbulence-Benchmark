@@ -1,0 +1,35 @@
+
+def if_contains_anagrams(my_list):
+    # Initialize variables
+    anagram_pairs = 0
+    anagram_length = 3
+
+    # Iterate through the list of strings
+    for i in range(len(my_list)):
+        # Get the current string
+        current_string = my_list[i]
+
+        # Check if the current string is at least three characters long
+        if len(current_string) >= anagram_length:
+            # Convert the current string to lowercase
+            current_string = current_string.lower()
+
+            # Iterate through the rest of the list of strings
+            for j in range(i + 1, len(my_list)):
+                # Get the next string
+                next_string = my_list[j]
+
+                # Check if the next string is at least three characters long
+                if len(next_string) >= anagram_length:
+                    # Convert both strings to lowercase
+                    current_string = current_string.lower()
+                    next_string = next_string.lower()
+
+                    # Check if the current string and next string are anagrams of each other
+                    if sorted(current_string) == sorted(next_string):
+                        # Increment the number of anagram pairs found
+                        anagram_pairs += 1
+
+                        # If at least six pairs of anagrams have been found, return True
+                        if anagram_pairs >= 6:
+                            return True

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```python\nfrom itertools import combinations\nfrom collections import defaultdict\n\ndef if_contains_anagrams(words):\n    freqs = defaultdict(list)\n    for word in words:\n        key = \"\".join(sorted(word.lower()))\n        if len(key) >= 3:\n            freqs[key].append(word)\n\n    pairs = 0\n    for same, group in freqs.items():\n        for combo in combinations(group, 2):\n            pairs += 1\n            if pairs >= 36:\n                return True\n    return False\n```\n",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1690074631,
+  "id": "chatcmpl-7fHuB2OUTAWXa37u1eoeNdSS3JwcV",
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 126,
+    "total_tokens": 234
+  }
+}

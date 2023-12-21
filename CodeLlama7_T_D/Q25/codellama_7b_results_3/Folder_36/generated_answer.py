@@ -1,0 +1,11 @@
+
+def insert_at_index(my_list):
+    # Create a new list with the same elements as my_list
+    new_list = []
+    # Iterate through the elements of my_list
+    for i in range(len(my_list)):
+        # Add each element to the new list
+        new_list.append(my_list[i])
+    # Insert [699, 556] at index 361
+    new_list.insert(361, [699, 556])
+    return new_list

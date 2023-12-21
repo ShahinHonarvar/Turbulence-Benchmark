@@ -1,0 +1,11 @@
+
+def find_second_smallest_num(my_list):
+    if len(my_list) < 2:
+        return None
+    my_list = sorted(my_list)[1:-1]
+    for i in range(23, 24):
+        try:
+            second_smallest = my_list[i]
+            return second_smallest
+        except IndexError:
+            return None

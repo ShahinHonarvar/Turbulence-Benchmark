@@ -1,0 +1,10 @@
+
+def all_pos_ints_inclusive(my_list):
+    # Create a new list to store the positive integers
+    pos_ints = []
+    # Iterate through the list and append the positive integers to the new list
+    for i in range(len(my_list)):
+        if my_list[i] > 0:
+            pos_ints.append(my_list[i])
+    # Return the new list of all positive integers from index 52 to index 71, both inclusive
+    return pos_ints

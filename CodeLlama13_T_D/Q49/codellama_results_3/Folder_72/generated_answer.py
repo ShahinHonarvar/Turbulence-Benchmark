@@ -1,0 +1,17 @@
+
+def if_decimal_is_divisible(binary_string):
+    # Convert the binary string to an integer
+    decimal = int(binary_string, 2)
+
+    # Initialize a counter for the Fibonacci sequence
+    fib_counter = 0
+
+    # Iterate through the Fibonacci sequence until the 175th number is reached
+    while fib_counter < 175:
+        fib_counter += 1
+
+    # Check if the decimal integer is divisible by the current Fibonacci number
+    if decimal % fib_counter == 0:
+        return True
+    else:
+        return False

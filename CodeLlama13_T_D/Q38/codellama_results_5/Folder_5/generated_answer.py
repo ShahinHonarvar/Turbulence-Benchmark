@@ -1,0 +1,7 @@
+
+def find_subset_of_length_n(elements, n):
+    subsets = []
+    for i in range(len(elements)):
+        for subset in itertools.combinations(elements[i+1:], n-1):
+            subsets.append([elements[i]] + list(subset))
+    return len(subsets)

@@ -1,0 +1,19 @@
+
+def all_left_truncatable_prime(x):
+    # initialize an empty list to store prime numbers
+    prime_list = []
+    
+    # loop through each number from 10**96 to x
+    for i in range(int(10**96), x+1):
+        # check if the current number is a prime number
+        if is_prime(i):
+            # check if the current number contains any 0s
+            if '0' not in str(i):
+                # loop through each digit of the current number
+                for j in range(len(str(i))):
+                    # remove the leading leftmost digit and check if the resulting number is still a prime number
+                    if is_prime(int(str(i)[j+1:])):
+                        # add the current number to the list of prime numbers
+                        prime_list.append(i)
+    
+    return sorted(prime_list, reverse=True)

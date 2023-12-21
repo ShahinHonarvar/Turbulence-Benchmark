@@ -1,0 +1,25 @@
+
+def find_original_set(sets):
+    # Get the smallest set from the input sets
+    smallest_set = min(sets, key=len)
+    # Check if the smallest set is already a subset of all the other sets
+    if all(smallest_set.issubset(s) for s in sets):
+        return smallest_set
+
+    # If the smallest set is not a subset of all the other sets,
+    # we need to find the smallest set that is a subset of all the other sets
+    else:
+        # Initialize an empty list to store the subsets of the smallest set
+        subsets = []
+
+        for s in smallest_set:
+            # Get the set that contains only the element s
+            subset = {s}
+
+            # Check if the subset is a subset of all the other sets
+            if all(subset.issubset(s) for s in sets):
+                # If the subset is a subset of all the other sets, add it to the list of subsets
+                subsets.append(subset)
+
+        # Return the smallest set that is a subset of all the other sets
+        return min(subsets, key=len)

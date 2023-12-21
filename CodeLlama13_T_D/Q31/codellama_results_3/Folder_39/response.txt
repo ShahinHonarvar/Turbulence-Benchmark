@@ -1,0 +1,19 @@
+```python
+def if_perfect_num(my_list):
+    return my_list[59] in get_perfect_nums(my_list)
+
+def get_perfect_nums(my_list):
+    perfect_nums = []
+    for i in range(1, 60):
+        n = sum(my_list[:i])
+        if n == sum(get_divisors(n)):
+            perfect_nums.append(n)
+    return perfect_nums
+
+def get_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            divisors.extend([i, n // i])
+    return sorted(set(divisors))
+```

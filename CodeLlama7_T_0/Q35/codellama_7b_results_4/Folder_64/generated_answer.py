@@ -1,0 +1,8 @@
+
+def remove_repeat_chars(s):
+    # Create a new string with the characters from the original string that are not repeated between indices 0 and 5, exclusive
+    new_string = ""
+    for i in range(len(s)):
+        if s[i] not in s[:i] and s[i] not in s[i+1:]:
+            new_string += s[i]
+    return new_string

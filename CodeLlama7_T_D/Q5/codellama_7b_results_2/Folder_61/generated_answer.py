@@ -1,0 +1,7 @@
+
+def all_neg_ints_inclusive(my_list):
+    neg_ints = []
+    for i in range(len(my_list)):# Checking each element of the list
+        if my_list[i] < 0: # If an element is negative
+            neg_ints.append(my_list[i]) # Add it to the list of negative integers
+    return neg_ints # Return the list of all negative integers in the specified range

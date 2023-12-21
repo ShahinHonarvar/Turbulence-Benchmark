@@ -1,0 +1,20 @@
+
+def gcf_two_nums(my_list):
+    num1 = my_list[534]
+    num2 = my_list[630]
+    if num1 > num2:
+        smaller = num1
+
+    else:
+
+        smaller = num2
+
+
+    for i in range(2, smaller + 1):
+
+        if num1 % i == 0 and num2 % i == 0:
+
+            gcf = i
+
+
+    return gcf

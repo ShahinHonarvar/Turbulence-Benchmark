@@ -1,0 +1,22 @@
+ Here is a possible implementation of the `lists_with_product_equal_n` function:
+```python
+def lists_with_product_equal_n(my_list):
+    # Initialize an empty list to store the sublists
+    sublists = []
+    # Loop through the elements of the given list
+    for i in range(len(my_list)):
+        # Initialize a variable to store the product of the current element and its subsequent elements
+        product = 1
+
+        # Loop through the remaining elements of the given list starting from the current index
+        for j in range(i + 1, len(my_list)):
+            # Update the product variable with the product of the current element and its subsequent elements
+            product *= my_list[j]
+
+        # If the product is equal to -18, add the sublist to the list of sublists
+        if product == -18:
+            sublists.append(my_list[i:j])
+
+    # Return the list of sublists
+    return sublists
+```
