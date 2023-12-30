@@ -1,5 +1,9 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/turbulence-systematically-and-automatically/code-generation-on-turbulence)](https://paperswithcode.com/sota/code-generation-on-turbulence?p=turbulence-systematically-and-automatically)
 
+# Turbulence Benchmark
+
+Turbulence is a new benchmark for systematically evaluating the correctness and robustness of instruction-tuned large language models (LLMs) for code generation. Turbulence consists of a large set of natural language question templates, each of which is a programming problem, parameterised so that it can be asked in many different forms. Each question template has an associated test oracle that judges whether a code solution returned by an LLM is correct. Thus, from a single question template, it is possible to ask an LLM a neighbourhood of very similar programming questions, and assess the correctness of the result returned for each question. This new benchmark systematically and automatically identifies cases where LLMs are able to solve some problems in a neighbourhood but do not manage to generalise to solve the whole neighbourhood. Therefore, this method is effective at highlighting robustness issues.
+
 # Turbulence Execution Instructions
 
 To execute the benchmark, please ensure that your operating system is either Linux or macOS and the version of Python installed is at least 3.10. Follow the steps below in the specified order:
