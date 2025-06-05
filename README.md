@@ -3,7 +3,20 @@
 # Turbulence Benchmark
 
 Turbulence is a new benchmark for systematically evaluating the correctness and robustness of instruction-tuned large language models (LLMs) for code generation. Turbulence consists of a large set of natural language question templates, each of which is a programming problem, parameterised so that it can be asked in many different forms. Each question template has an associated test oracle that judges whether a code solution returned by an LLM is correct. Thus, from a single question template, it is possible to ask an LLM a neighbourhood of very similar programming questions, and assess the correctness of the result returned for each question. This new benchmark systematically and automatically identifies cases where LLMs are able to solve some problems in a neighbourhood but do not manage to generalise to solve the whole neighbourhood. Therefore, this method is effective at highlighting robustness issues.
-The corresponding paper is available at https://arxiv.org/abs/2312.14856. 
+The corresponding paper is published at ICST2025 (https://ieeexplore.ieee.org/abstract/document/10989005). The free pdf file ia also available at https://arxiv.org/abs/2312.14856. 
+To cite the work please use:
+```
+@INPROCEEDINGS{10989005,
+  author={Honarvar, Shahin and van der Wilk, Mark and Donaldson, Alastair F.},
+  booktitle={2025 IEEE Conference on Software Testing, Verification and Validation (ICST)}, 
+  title={Turbulence: Systematically and Automatically Testing Instruction-Tuned Large Language Models for Code}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={80-91},
+  keywords={Software testing;Codes;Large language models;Natural languages;Programming;Benchmark testing;Robustness;Cognition;Large language models;correctness;robustness;AI evaluation;code generation},
+  doi={10.1109/ICST62969.2025.10989005}}
+```
 
 # Turbulence Execution Instructions
 
